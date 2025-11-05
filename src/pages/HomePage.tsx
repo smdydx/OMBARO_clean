@@ -147,13 +147,13 @@ export const HomePage: React.FC = () => {
       <main>
         <HeroSlider />
 
-        <section className="py-20 bg-gradient-to-br from-white via-primary-50/30 to-white relative overflow-hidden">
+        <section className="py-12 sm:py-20 bg-gradient-to-br from-white via-primary-50/30 to-white relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1920&q=80')] bg-cover bg-center opacity-5" />
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-200/20 rounded-full blur-3xl animate-float" />
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent-200/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
               {stats.map((stat, index) => (
                 <div 
                   key={index} 
@@ -161,11 +161,11 @@ export const HomePage: React.FC = () => {
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-primary-100/50 to-accent-100/50 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="relative bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-soft hover:shadow-strong transition-all duration-500 hover:-translate-y-3 border border-primary-100/50 hover:border-primary-300/50 text-center">
-                    <div className="text-4xl md:text-5xl font-display font-bold bg-gradient-to-br from-primary-600 via-accent-500 to-primary-700 bg-clip-text text-transparent mb-3 group-hover:scale-125 transition-transform duration-500">
+                  <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-4 sm:p-8 shadow-soft hover:shadow-strong transition-all duration-500 hover:-translate-y-3 border border-primary-100/50 hover:border-primary-300/50 text-center">
+                    <div className="text-2xl sm:text-4xl md:text-5xl font-display font-bold bg-gradient-to-br from-primary-600 via-accent-500 to-primary-700 bg-clip-text text-transparent mb-2 sm:mb-3 group-hover:scale-125 transition-transform duration-500">
                       {stat.number}
                     </div>
-                    <div className="text-neutral-700 font-semibold tracking-wide">{stat.label}</div>
+                    <div className="text-xs sm:text-sm md:text-base text-neutral-700 font-semibold tracking-wide">{stat.label}</div>
                     <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-transparent via-primary-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
                 </div>
@@ -367,12 +367,12 @@ export const HomePage: React.FC = () => {
 
             <div className="relative bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-600 rounded-3xl overflow-hidden shadow-2xl">
               <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/3865676/pexels-photo-3865676.jpeg?auto=compress&cs=tinysrgb&w=1200')] bg-cover bg-center opacity-10" />
-              <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center p-12">
+              <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center p-8 sm:p-12">
                 <div className="text-white">
-                  <h3 className="text-3xl md:text-4xl font-bold mb-6">
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
                     Ready to Transform Your Business?
                   </h3>
-                  <p className="text-xl text-white/90 mb-8 leading-relaxed">
+                  <p className="text-lg sm:text-xl text-white/90 mb-6 sm:mb-8 leading-relaxed">
                     Join thousands of successful beauty professionals who have already grown their business with OMBARO. Start your journey today.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4">
