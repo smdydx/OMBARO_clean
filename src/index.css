@@ -91,6 +91,19 @@
     scrollbar-width: none;  /* Firefox */
   }
   
+  /* Responsive text sizes */
+  @media (max-width: 640px) {
+    .text-responsive-xl { font-size: 1.5rem; }
+    .text-responsive-2xl { font-size: 1.75rem; }
+    .text-responsive-3xl { font-size: 2rem; }
+    .text-responsive-4xl { font-size: 2.25rem; }
+  }
+  
+  /* Ensure full width on mobile */
+  @media (max-width: 768px) {
+    .container { padding-left: 1rem; padding-right: 1rem; }
+  }
+  
   .text-gradient {
     @apply bg-gradient-to-r from-primary-700 to-primary-600 bg-clip-text text-transparent;
   }

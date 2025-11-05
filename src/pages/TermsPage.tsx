@@ -329,18 +329,18 @@ export const TermsPage: React.FC = () => {
                       className="w-full px-8 py-6 flex items-center justify-between hover:bg-neutral-50 transition-colors duration-300 group"
                     >
                       <div className="flex items-center space-x-4 flex-1">
-                        <div className={`w-14 h-14 bg-gradient-to-br ${section.color} rounded-xl flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-all duration-300`}>
-                          <Icon className="w-7 h-7 text-white" />
+                        <div className="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center shadow-md transform group-hover:scale-110 transition-all duration-300">
+                          <Icon className="w-7 h-7 text-primary-700" />
                         </div>
                         <h3 className="text-xl md:text-2xl font-bold text-neutral-900 text-left group-hover:text-primary-600 transition-colors">
                           {section.title}
                         </h3>
                       </div>
-                      <div className={`w-10 h-10 bg-gradient-to-br ${section.color} rounded-lg flex items-center justify-center transform transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}>
+                      <div className={`w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center transform transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}>
                         {isExpanded ? (
-                          <ChevronUp className="w-6 h-6 text-white" />
+                          <ChevronUp className="w-6 h-6 text-primary-700" />
                         ) : (
-                          <ChevronDown className="w-6 h-6 text-white" />
+                          <ChevronDown className="w-6 h-6 text-primary-700" />
                         )}
                       </div>
                     </button>
@@ -350,7 +350,7 @@ export const TermsPage: React.FC = () => {
                         <ul className="space-y-4">
                           {section.content.map((item, idx) => (
                             <li key={idx} className="flex items-start space-x-3">
-                              <CheckCircle className={`w-6 h-6 flex-shrink-0 mt-0.5 bg-gradient-to-br ${section.color} rounded-full p-1 text-white`} />
+                              <CheckCircle className="w-6 h-6 flex-shrink-0 mt-0.5 text-primary-600" />
                               <span className="text-neutral-700 leading-relaxed text-lg">{item}</span>
                             </li>
                           ))}

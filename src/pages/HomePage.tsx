@@ -144,7 +144,7 @@ export const HomePage: React.FC = () => {
         </div>
       </div>
 
-      <main>
+      <main className="pt-20">
         <HeroSlider />
 
         <section className="py-20 bg-gradient-to-br from-white via-primary-50/30 to-white relative overflow-hidden">
@@ -181,8 +181,7 @@ export const HomePage: React.FC = () => {
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16 animate-fade-in-up">
-              <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-primary-100 to-accent-100 rounded-full px-6 py-3 mb-6 shadow-soft animate-bounce-subtle">
-                <Sparkles className="w-5 h-5 text-primary-600" />
+              <div className="inline-flex items-center space-x-2 bg-primary-100 rounded-full px-6 py-3 mb-6 shadow-soft">
                 <span className="text-primary-700 font-bold text-sm tracking-wider uppercase">Why Choose Us</span>
               </div>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-700 bg-clip-text text-transparent mb-6">
