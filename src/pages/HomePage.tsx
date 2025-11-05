@@ -124,6 +124,26 @@ export const HomePage: React.FC = () => {
     <div className="min-h-screen bg-white">
       <MarketingHeader />
 
+      {/* Terms & Conditions Notice Banner */}
+      <div className="bg-gradient-to-r from-primary-600 to-primary-700 border-b-4 border-primary-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex items-center justify-center space-x-3 text-white">
+            <Shield className="w-6 h-6 animate-pulse" />
+            <p className="text-sm md:text-base font-semibold">
+              📋 Please read our{' '}
+              <Link 
+                to="/terms" 
+                className="underline font-bold hover:text-primary-100 transition-colors"
+              >
+                Terms & Conditions
+              </Link>
+              {' '}before booking any service
+            </p>
+            <Shield className="w-6 h-6 animate-pulse" />
+          </div>
+        </div>
+      </div>
+
       <main className="pt-16">
         <HeroSlider />
 
@@ -131,7 +151,7 @@ export const HomePage: React.FC = () => {
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1920&q=80')] bg-cover bg-center opacity-5" />
           <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-200/20 rounded-full blur-3xl animate-float" />
           <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent-200/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
-          
+
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
@@ -158,7 +178,7 @@ export const HomePage: React.FC = () => {
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1920&q=80')] bg-cover bg-center opacity-5" />
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-primary-200/30 to-accent-200/30 rounded-full blur-3xl animate-float" />
           <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-accent-200/30 to-primary-200/30 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
-          
+
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16 animate-fade-in-up">
               <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-primary-100 to-accent-100 rounded-full px-6 py-3 mb-6 shadow-soft animate-bounce-subtle">
@@ -172,7 +192,7 @@ export const HomePage: React.FC = () => {
                 We make beauty and wellness services accessible, convenient, and reliable with cutting-edge technology.
               </p>
             </div>
-            
+
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {features.map((feature, index) => {
                 const Icon = feature.icon;
@@ -185,18 +205,18 @@ export const HomePage: React.FC = () => {
                     <div className="absolute inset-0 bg-gradient-to-br from-primary-200/40 to-accent-200/40 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700 group-hover:scale-110" />
                     <div className="relative bg-white rounded-3xl p-8 shadow-soft hover:shadow-strong transition-all duration-700 hover:-translate-y-4 border border-primary-100/30 hover:border-primary-300/70 overflow-hidden">
                       <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-100/50 to-accent-100/50 rounded-full -translate-y-16 translate-x-16 opacity-50 group-hover:opacity-100 transition-opacity duration-700" />
-                      
+
                       <div className="relative mb-6">
                         <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-accent-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-700">
                           <Icon className="w-8 h-8 text-white" />
                         </div>
                       </div>
-                      
+
                       <h3 className="text-xl font-bold text-neutral-900 mb-3 group-hover:text-primary-700 transition-colors duration-300">
                         {feature.title}
                       </h3>
                       <p className="text-neutral-600 leading-relaxed">{feature.description}</p>
-                      
+
                       <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-500 to-accent-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
                     </div>
                   </div>
@@ -236,12 +256,12 @@ export const HomePage: React.FC = () => {
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                      
+
                       {/* Floating Icon */}
                       <div className="absolute top-4 right-4 w-14 h-14 bg-white rounded-2xl shadow-xl flex items-center justify-center transform group-hover:rotate-12 group-hover:scale-110 transition-all duration-300">
                         <service.IconComponent className="w-7 h-7 text-primary-600" />
                       </div>
-                      
+
                       {/* Title Overlay */}
                       <div className="absolute bottom-0 left-0 right-0 p-5">
                         <h3 className="text-xl font-bold text-white mb-1 transform group-hover:translate-x-1 transition-transform duration-300">
@@ -250,13 +270,13 @@ export const HomePage: React.FC = () => {
                         <div className="w-12 h-1 bg-gradient-to-r from-primary-400 to-secondary-400 rounded-full transform origin-left group-hover:scale-x-150 transition-transform duration-300" />
                       </div>
                     </div>
-                    
+
                     {/* Content Container */}
                     <div className="p-5">
                       <p className="text-neutral-600 text-sm leading-relaxed line-clamp-2 group-hover:text-neutral-700 transition-colors">
                         {service.description}
                       </p>
-                      
+
                       {/* Action Button */}
                       <div className="mt-4 flex items-center justify-between">
                         <span className="text-sm font-semibold text-primary-600 group-hover:text-primary-700 transition-colors">
@@ -267,7 +287,7 @@ export const HomePage: React.FC = () => {
                         </div>
                       </div>
                     </div>
-                    
+
                     {/* Decorative gradient border on hover */}
                     <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-primary-200 transition-colors duration-300 pointer-events-none" />
                   </div>
@@ -288,7 +308,7 @@ export const HomePage: React.FC = () => {
         <section className="py-20 bg-white relative overflow-hidden">
           <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-primary-100/50 to-secondary-100/50 rounded-full blur-3xl" />
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-accent-100/50 to-primary-100/50 rounded-full blur-3xl" />
-          
+
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-primary-100 to-secondary-100 rounded-full px-6 py-2 mb-4">
@@ -376,7 +396,7 @@ export const HomePage: React.FC = () => {
                 </div>
                 <div className="relative hidden md:block">
                   <img
-                    src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1200&q=90"
+                    src="https://images.unsplash.com/photo-1522337360788-8b13dee7045427?w=1200&q=90"
                     alt="Beauty professional at work"
                     className="rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-300"
                   />
@@ -395,7 +415,7 @@ export const HomePage: React.FC = () => {
         <section className="py-24 bg-gradient-to-br from-neutral-50 via-primary-50/20 to-white relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1920&q=80')] bg-cover bg-center opacity-5" />
           <div className="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-amber-200/30 to-orange-200/30 rounded-full blur-3xl animate-float" />
-          
+
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16 animate-fade-in-up">
               <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-amber-100 to-orange-100 rounded-full px-6 py-3 mb-6 shadow-soft animate-bounce-subtle">
@@ -409,7 +429,7 @@ export const HomePage: React.FC = () => {
                 Join thousands of satisfied customers who trust OMBARO for their beauty and wellness needs
               </p>
             </div>
-            
+
             <div className="grid md:grid-cols-3 gap-8">
               {testimonials.map((testimonial, index) => (
                 <div
@@ -420,7 +440,7 @@ export const HomePage: React.FC = () => {
                   <div className="absolute inset-0 bg-gradient-to-br from-amber-200/40 to-orange-200/40 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700 group-hover:scale-105" />
                   <div className="relative bg-white rounded-3xl p-8 shadow-soft hover:shadow-strong transition-all duration-700 hover:-translate-y-4 border border-amber-100/50 hover:border-amber-300/70 overflow-hidden">
                     <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-amber-100/60 to-orange-100/60 rounded-full group-hover:scale-150 transition-transform duration-1000" />
-                    
+
                     <div className="relative">
                       <div className="flex items-center space-x-1 mb-6">
                         {[...Array(testimonial.rating)].map((_, i) => (
@@ -431,14 +451,14 @@ export const HomePage: React.FC = () => {
                           />
                         ))}
                       </div>
-                      
+
                       <div className="mb-8">
                         <div className="text-6xl text-amber-200 font-serif mb-2">"</div>
                         <p className="text-neutral-700 leading-relaxed text-lg italic relative z-10">
                           {testimonial.comment}
                         </p>
                       </div>
-                      
+
                       <div className="flex items-center space-x-4 pt-6 border-t border-amber-100">
                         <div className="relative">
                           <div className="absolute inset-0 bg-gradient-to-br from-amber-400 to-orange-400 rounded-full blur-md opacity-50 group-hover:opacity-100 transition-opacity duration-500" />

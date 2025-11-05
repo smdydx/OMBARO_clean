@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { MarketingHeader } from '../components/marketing/MarketingHeader';
 import { MarketingFooter } from '../components/marketing/MarketingFooter';
-import { Shield, FileText, CheckCircle, ChevronDown, ChevronUp, Scale, Info, AlertCircle, Lock, Users, CreditCard, Calendar, Phone, Mail } from 'lucide-react';
+import { Shield, FileText, CheckCircle, ChevronDown, ChevronUp, Scale, Info, AlertCircle, Lock, Users, CreditCard, Calendar, Phone, Mail, XCircle, UserX, Ban, Gavel } from 'lucide-react';
 
 export const TermsPage: React.FC = () => {
   const [expandedSection, setExpandedSection] = useState<number | null>(null);
@@ -96,7 +96,7 @@ export const TermsPage: React.FC = () => {
     },
     {
       title: '8. Cancellations and Refunds',
-      icon: AlertCircle,
+      icon: XCircle,
       color: 'from-red-500 to-pink-600',
       content: [
         'Cancellation rules apply as shown on the Platform at booking.',
@@ -116,6 +116,142 @@ export const TermsPage: React.FC = () => {
         'OMBARO may suspend or ban users who violate conduct standards.',
         'Any disputes should be reported to OMBARO support immediately.'
       ]
+    },
+    {
+      title: '10. Monodose Kits and Product Sales',
+      icon: Info,
+      color: 'from-cyan-500 to-blue-600',
+      content: [
+        'OMBARO may sell or recommend Monodose Kits for certain services.',
+        'Product descriptions, ingredients, and usage instructions are for reference only.',
+        'OMBARO is not liable for allergic reactions or adverse effects from product use.',
+        'Customers should check ingredients and consult professionals if needed.',
+        'Returns and refunds for products follow OMBARO\'s return policy.'
+      ]
+    },
+    {
+      title: '11. Prohibited Conduct - ZERO TOLERANCE',
+      icon: Ban,
+      color: 'from-red-600 to-red-800',
+      content: [
+        '⚠️ OMBARO has a ZERO TOLERANCE policy for exploitation and illegal activities.',
+        'OMBARO does NOT engage in, promote, or support human trafficking, forced labor, or any form of exploitation.',
+        'Sexual activity, sexual services, or any illegal conduct is STRICTLY PROHIBITED.',
+        'Customers are prohibited from soliciting or attempting to engage Providers in any inappropriate activity.',
+        'Any attempt to force, coerce, harass, or exploit a Provider will result in IMMEDIATE service termination.',
+        'Violators will face account suspension, permanent ban, and possible LEGAL ACTION.',
+        'OMBARO fully cooperates with law enforcement in cases of misconduct.'
+      ]
+    },
+    {
+      title: '12. Provider Safety and Rights',
+      icon: Shield,
+      color: 'from-purple-600 to-pink-600',
+      content: [
+        'Providers have the RIGHT TO REFUSE SERVICE if they feel unsafe or disrespected.',
+        'Providers can decline service if pressured to perform outside the agreed scope.',
+        'OMBARO protects Provider safety and dignity at all times.',
+        'Any customer misconduct will be reported and acted upon immediately.',
+        'Providers are protected by OMBARO\'s safety policies and legal support.'
+      ]
+    },
+    {
+      title: '13. Liability and Disclaimers',
+      icon: AlertCircle,
+      color: 'from-orange-500 to-red-600',
+      content: [
+        'OMBARO is a platform connecting customers and providers only.',
+        'OMBARO is not liable for the quality, safety, or legality of Services performed by Providers.',
+        'Customers use Services at their own risk.',
+        'OMBARO is not responsible for injuries, damages, or losses arising from Services.',
+        'Maximum liability is limited to the amount paid for the specific Service.',
+        'OMBARO does not guarantee availability of Providers or Services.'
+      ]
+    },
+    {
+      title: '14. Indemnity',
+      icon: Gavel,
+      color: 'from-indigo-600 to-purple-600',
+      content: [
+        'Customers agree to indemnify and hold harmless OMBARO from any liability arising from:',
+        '• Customer misconduct or breach of these Terms',
+        '• Unlawful actions by the Customer',
+        '• Disputes between Customer and Provider',
+        '• Any violation of third-party rights',
+        'This indemnity includes all legal fees and damages.'
+      ]
+    },
+    {
+      title: '15. Data Protection and Privacy',
+      icon: Lock,
+      color: 'from-blue-600 to-cyan-600',
+      content: [
+        'OMBARO collects and processes personal data as described in the Privacy Policy.',
+        'By using the Platform, you consent to data collection and processing.',
+        'OMBARO may share data with Providers, payment processors, and authorities as needed.',
+        'OMBARO implements security measures but cannot guarantee absolute security.',
+        'You have rights to access, correct, or delete your personal data as per applicable law.'
+      ]
+    },
+    {
+      title: '16. Intellectual Property',
+      icon: Shield,
+      color: 'from-green-600 to-emerald-600',
+      content: [
+        'All Platform content, trademarks, and logos are owned by OMBARO or licensors.',
+        'You may not copy, modify, or distribute Platform content without permission.',
+        'User-generated content remains your property, but you grant OMBARO a license to use it.',
+        'OMBARO may remove any content that violates these Terms or third-party rights.'
+      ]
+    },
+    {
+      title: '17. Termination and Suspension',
+      icon: UserX,
+      color: 'from-red-500 to-orange-600',
+      content: [
+        'OMBARO may suspend or terminate your Account at any time for violations.',
+        'You may close your Account by contacting support.',
+        'Upon termination, all rights and licenses granted to you will cease.',
+        'OMBARO may retain your data as required by law or policy.',
+        'Termination does not affect outstanding obligations or liabilities.'
+      ]
+    },
+    {
+      title: '18. Dispute Resolution and Governing Law',
+      icon: Scale,
+      color: 'from-purple-500 to-indigo-600',
+      content: [
+        'These Terms are governed by the laws of India.',
+        'Disputes should first be resolved through good-faith negotiation.',
+        'If negotiation fails, disputes will be resolved through arbitration in accordance with Indian Arbitration law.',
+        'Arbitration will be conducted in English in the city where OMBARO is headquartered.',
+        'You waive any right to a jury trial or class action lawsuit.'
+      ]
+    },
+    {
+      title: '19. Changes to Terms',
+      icon: FileText,
+      color: 'from-cyan-500 to-teal-600',
+      content: [
+        'OMBARO may update these Terms from time to time.',
+        'Updated Terms will be posted on the Platform with the "Last updated" date.',
+        'Continued use of the Platform after updates constitutes acceptance.',
+        'Material changes will be notified via email or Platform notification.',
+        'You should review Terms periodically.'
+      ]
+    },
+    {
+      title: '20. Acceptance and Acknowledgment',
+      icon: CheckCircle,
+      color: 'from-green-600 to-lime-600',
+      content: [
+        '✅ By confirming a booking or using OMBARO, you confirm that:',
+        '• You have READ and UNDERSTOOD these Terms & Conditions',
+        '• You AGREE to abide by all Terms and policies',
+        '• You understand the ZERO TOLERANCE policy against exploitation',
+        '• You acknowledge that violations may result in permanent ban and legal action',
+        '• You consent to OMBARO cooperating with law enforcement if needed'
+      ]
     }
   ];
 
@@ -124,29 +260,41 @@ export const TermsPage: React.FC = () => {
       <MarketingHeader />
 
       <main className="pt-16">
+        {/* Critical Notice Banner */}
+        <div className="bg-gradient-to-r from-red-600 to-red-700 border-b-4 border-red-800">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div className="text-center text-white">
+              <div className="flex items-center justify-center space-x-3 mb-3">
+                <Ban className="w-8 h-8 animate-pulse" />
+                <h2 className="text-2xl md:text-3xl font-black">MANDATORY READING</h2>
+                <Ban className="w-8 h-8 animate-pulse" />
+              </div>
+              <p className="text-lg md:text-xl font-semibold">
+                ⚠️ All customers MUST read these Terms & Conditions before booking
+              </p>
+              <p className="text-sm md:text-base mt-2 font-medium">
+                Violation of these terms will result in permanent ban and legal action
+              </p>
+            </div>
+          </div>
+        </div>
+
         {/* Hero Section */}
-        <section className="relative py-24 bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-600 text-white overflow-hidden">
-          {/* Animated Background Elements */}
+        <section className="relative py-24 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white overflow-hidden">
           <div className="absolute inset-0">
             <div className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }} />
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '6s', animationDelay: '1s' }} />
-            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/5 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '8s', animationDelay: '2s' }} />
           </div>
-          
-          {/* Pattern Overlay */}
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0djItaDJ2LTJoLTJ6bTAtNHYyaDJ2LTJoLTJ6bTAtNHYyaDJ2LTJoLTJ6bTAtNHYyaDJ2LTJoLTJ6bTAtNHYyaDJ2LTJoLTJ6bTQgMTZ2LTJoLTJ2Mmgyem00IDB2LTJoLTJ2Mmgyem00IDB2LTJoLTJ2Mmgyem00IDB2LTJoLTJ2Mmgyem0wLTR2LTJoLTJ2Mmgyem0wLTR2LTJoLTJ2Mmgyem0wLTR2LTJoLTJ2Mmgyem0wLTR2LTJoLTJ2MmgyeiIvPjwvZz48L2c+PC9zdmc+')] opacity-30" />
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 mb-8 animate-fade-in-down">
+            <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 mb-8">
               <Scale className="w-5 h-5 text-amber-300 animate-bounce" style={{ animationDuration: '2s' }} />
               <span className="text-white text-sm font-semibold tracking-wide">Legal Information</span>
             </div>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-6 animate-fade-in-up leading-tight">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-amber-100 to-white">
-                Terms & Conditions
-              </span>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight">
+              Terms & Conditions
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+            <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto leading-relaxed">
               Please read these terms carefully before using the OMBARO platform
             </p>
           </div>
@@ -155,13 +303,13 @@ export const TermsPage: React.FC = () => {
         {/* Introduction Section */}
         <section className="py-16 bg-white">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-gradient-to-br from-primary-50 via-white to-secondary-50 rounded-3xl p-8 md:p-12 shadow-xl border-l-4 border-primary-600 transform hover:scale-105 transition-all duration-500 hover:shadow-2xl">
+            <div className="bg-gradient-to-br from-primary-50 via-white to-primary-50 rounded-3xl p-8 md:p-12 shadow-xl border-l-4 border-primary-600">
               <div className="flex items-start space-x-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary-600 to-secondary-600 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg animate-bounce" style={{ animationDuration: '3s' }}>
+                <div className="w-16 h-16 bg-gradient-to-br from-primary-600 to-primary-700 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
                   <FileText className="w-8 h-8 text-white" />
                 </div>
                 <div className="flex-1">
-                  <h2 className="text-3xl md:text-4xl font-black text-neutral-900 mb-6 bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent">
+                  <h2 className="text-3xl md:text-4xl font-black text-neutral-900 mb-6">
                     OMBARO — Terms & Conditions
                   </h2>
                   <p className="text-lg text-neutral-700 leading-relaxed mb-6">
@@ -179,7 +327,7 @@ export const TermsPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Terms Sections - Accordion Style */}
+        {/* Terms Sections */}
         <section className="py-16 bg-gradient-to-br from-neutral-50 to-white">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="space-y-4">
@@ -190,19 +338,14 @@ export const TermsPage: React.FC = () => {
                 return (
                   <div
                     key={index}
-                    className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border border-neutral-100"
-                    style={{
-                      animationDelay: `${index * 0.1}s`,
-                      animation: 'fadeInUp 0.6s ease-out forwards',
-                      opacity: 0
-                    }}
+                    className="bg-white rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 overflow-hidden border-2 border-neutral-100"
                   >
                     <button
                       onClick={() => toggleSection(index)}
                       className="w-full px-8 py-6 flex items-center justify-between hover:bg-neutral-50 transition-colors duration-300 group"
                     >
                       <div className="flex items-center space-x-4 flex-1">
-                        <div className={`w-14 h-14 bg-gradient-to-br ${section.color} rounded-xl flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:rotate-6 transition-all duration-300`}>
+                        <div className={`w-14 h-14 bg-gradient-to-br ${section.color} rounded-xl flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-all duration-300`}>
                           <Icon className="w-7 h-7 text-white" />
                         </div>
                         <h3 className="text-xl md:text-2xl font-bold text-neutral-900 text-left group-hover:text-primary-600 transition-colors">
@@ -218,22 +361,11 @@ export const TermsPage: React.FC = () => {
                       </div>
                     </button>
                     
-                    <div
-                      className={`overflow-hidden transition-all duration-500 ease-in-out ${
-                        isExpanded ? 'max-h-[1000px] opacity-100' : 'max-h-0 opacity-0'
-                      }`}
-                    >
+                    <div className={`overflow-hidden transition-all duration-500 ease-in-out ${isExpanded ? 'max-h-[2000px] opacity-100' : 'max-h-0 opacity-0'}`}>
                       <div className="px-8 pb-8 pt-4 bg-gradient-to-br from-neutral-50 to-white">
                         <ul className="space-y-4">
                           {section.content.map((item, idx) => (
-                            <li
-                              key={idx}
-                              className="flex items-start space-x-3 transform hover:translate-x-2 transition-transform duration-300"
-                              style={{
-                                animation: isExpanded ? `slideInLeft 0.4s ease-out ${idx * 0.1}s forwards` : 'none',
-                                opacity: isExpanded ? 1 : 0
-                              }}
-                            >
+                            <li key={idx} className="flex items-start space-x-3">
                               <CheckCircle className={`w-6 h-6 flex-shrink-0 mt-0.5 bg-gradient-to-br ${section.color} rounded-full p-1 text-white`} />
                               <span className="text-neutral-700 leading-relaxed text-lg">{item}</span>
                             </li>
@@ -251,34 +383,33 @@ export const TermsPage: React.FC = () => {
         {/* Contact Section */}
         <section className="py-20 bg-white">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="relative bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-600 rounded-3xl p-12 text-white overflow-hidden shadow-2xl transform hover:scale-105 transition-all duration-500">
-              {/* Animated Background */}
+            <div className="relative bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 rounded-3xl p-12 text-white overflow-hidden shadow-2xl">
               <div className="absolute inset-0">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }} />
                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '5s', animationDelay: '1s' }} />
               </div>
 
               <div className="relative z-10 text-center">
-                <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl mb-6 animate-bounce" style={{ animationDuration: '3s' }}>
-                  <Shield className="w-10 h-10 text-amber-300" />
+                <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl mb-6">
+                  <Shield className="w-10 h-10 text-white" />
                 </div>
                 <h3 className="text-3xl md:text-4xl font-black mb-6">Questions About Our Terms?</h3>
                 <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
-                  If you have any questions or concerns about our Terms & Conditions, please don't hesitate to contact our support team.
+                  If you have any questions or concerns about our Terms & Conditions, please contact our support team.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
                   <a
                     href="mailto:legal@ombaro.com"
                     className="group bg-white text-primary-600 px-8 py-4 rounded-2xl font-bold hover:bg-neutral-100 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 flex items-center justify-center space-x-3"
                   >
-                    <Mail className="w-5 h-5 group-hover:animate-bounce" />
+                    <Mail className="w-5 h-5" />
                     <span>legal@ombaro.com</span>
                   </a>
                   <a
                     href="tel:+911234567890"
                     className="group bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-2xl font-bold hover:bg-white/20 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 flex items-center justify-center space-x-3"
                   >
-                    <Phone className="w-5 h-5 group-hover:animate-bounce" />
+                    <Phone className="w-5 h-5" />
                     <span>+91 123 456 7890</span>
                   </a>
                 </div>
@@ -289,60 +420,6 @@ export const TermsPage: React.FC = () => {
       </main>
 
       <MarketingFooter />
-
-      <style>{`
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes slideInLeft {
-          from {
-            opacity: 0;
-            transform: translateX(-20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-
-        @keyframes fade-in-down {
-          from {
-            opacity: 0;
-            transform: translateY(-20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes fade-in-up {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        .animate-fade-in-down {
-          animation: fade-in-down 0.6s ease-out forwards;
-        }
-
-        .animate-fade-in-up {
-          animation: fade-in-up 0.6s ease-out forwards;
-        }
-      `}</style>
     </div>
   );
 };

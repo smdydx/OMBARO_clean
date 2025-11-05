@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Sparkles, Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, Briefcase } from 'lucide-react';
+import { Sparkles, Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, Briefcase, Shield, FileText } from 'lucide-react';
 
 export const MarketingFooter: React.FC = () => {
   return (
@@ -135,6 +135,39 @@ export const MarketingFooter: React.FC = () => {
                 </a>
               </li>
             </ul>
+          </div>
+
+          {/* Legal Links - Prominent */}
+          <div>
+            <h3 className="text-white font-semibold mb-4 flex items-center space-x-2">
+              <Shield className="w-5 h-5 text-primary-600" />
+              <span>Legal</span>
+            </h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link
+                  to="/terms"
+                  className="text-primary-600 hover:text-primary-700 font-semibold transition-colors flex items-center space-x-1"
+                >
+                  <FileText className="w-4 h-4" />
+                  <span>Terms & Conditions</span>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/privacy"
+                  className="text-neutral-600 hover:text-primary-600 transition-colors flex items-center space-x-1"
+                >
+                  <Shield className="w-4 h-4" />
+                  <span>Privacy Policy</span>
+                </Link>
+              </li>
+            </ul>
+            <div className="mt-4 bg-primary-50 border-2 border-primary-200 rounded-lg p-3">
+              <p className="text-xs text-primary-800 font-medium">
+                ⚠️ By using OMBARO, you agree to our Terms & Conditions
+              </p>
+            </div>
           </div>
         </div>
 
