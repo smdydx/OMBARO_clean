@@ -22,7 +22,7 @@ export const HeroSlider: React.FC = () => {
 
   const slides: SlideContent[] = [
     {
-      image: 'https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg?auto=compress&cs=tinysrgb&w=1920',
+      image: 'https://images.pexels.com/photos/3757942/pexels-photo-3757942.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080',
       title: 'Luxury Spa Experiences',
       subtitle: 'Premium Wellness Sanctuary',
       description: 'Indulge in our signature spa treatments designed for ultimate relaxation and rejuvenation',
@@ -32,7 +32,7 @@ export const HeroSlider: React.FC = () => {
       rating: 4.9
     },
     {
-      image: 'https://images.pexels.com/photos/3997987/pexels-photo-3997987.jpeg?auto=compress&cs=tinysrgb&w=1920',
+      image: 'https://images.pexels.com/photos/3997987/pexels-photo-3997987.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080',
       title: 'Therapeutic Massages',
       subtitle: 'Healing Touch Therapy',
       description: 'Deep tissue, Swedish, Thai, and aromatherapy massages by certified professionals',
@@ -42,7 +42,7 @@ export const HeroSlider: React.FC = () => {
       rating: 5.0
     },
     {
-      image: 'https://images.pexels.com/photos/3992870/pexels-photo-3992870.jpeg?auto=compress&cs=tinysrgb&w=1920',
+      image: 'https://images.pexels.com/photos/3992870/pexels-photo-3992870.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080',
       title: 'Bridal Beauty Studio',
       subtitle: 'Your Dream Wedding Look',
       description: 'Expert makeup artists and stylists to create your perfect bridal transformation',
@@ -52,7 +52,7 @@ export const HeroSlider: React.FC = () => {
       rating: 4.8
     },
     {
-      image: 'https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=1920',
+      image: 'https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080',
       title: 'Premium Hair Salon',
       subtitle: 'Hair Artistry & Styling',
       description: 'Transform your look with our expert hair treatments, coloring, and styling services',
@@ -62,7 +62,7 @@ export const HeroSlider: React.FC = () => {
       rating: 4.9
     },
     {
-      image: 'https://images.pexels.com/photos/3985360/pexels-photo-3985360.jpeg?auto=compress&cs=tinysrgb&w=1920',
+      image: 'https://images.pexels.com/photos/3985360/pexels-photo-3985360.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080',
       title: 'Advanced Skincare',
       subtitle: 'Radiant Skin Solutions',
       description: 'Professional facials and skincare treatments for glowing, healthy skin',
@@ -72,7 +72,7 @@ export const HeroSlider: React.FC = () => {
       rating: 5.0
     },
     {
-      image: 'https://images.pexels.com/photos/3997987/pexels-photo-3997987.jpeg?auto=compress&cs=tinysrgb&w=1920',
+      image: 'https://images.pexels.com/photos/3738386/pexels-photo-3738386.jpeg?auto=compress&cs=tinysrgb&w=1920&h=1080',
       title: 'Nail Art Studio',
       subtitle: 'Creative Nail Designs',
       description: 'Express your style with our artistic nail designs and premium manicure services',
@@ -139,12 +139,14 @@ export const HeroSlider: React.FC = () => {
                   </video>
                 ) : (
                   /* Image Background for other slides */
-                  <div
-                    className="absolute inset-0 bg-cover bg-center bg-no-repeat transform transition-transform duration-[2000ms] hover:scale-110"
-                    style={{
-                      backgroundImage: `url(${slide.image})`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center center'
+                  <img
+                    src={slide.image}
+                    alt={slide.title}
+                    className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-[2000ms] hover:scale-110"
+                    loading="lazy"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
                     }}
                   />
                 )}
