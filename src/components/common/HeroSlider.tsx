@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
-import { ArrowRight, Sparkles } from 'lucide-react';
+import { ArrowRight, Sparkles, Play, Star, Award, TrendingUp } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -12,135 +12,247 @@ interface SlideContent {
   description: string;
   cta: string;
   ctaLink: string;
+  features: string[];
+  rating: number;
 }
 
 export const HeroSlider: React.FC = () => {
+  const [activeSlide, setActiveSlide] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
   const slides: SlideContent[] = [
     {
-      image: 'https://images.pexels.com/photos/3865676/pexels-photo-3865676.jpeg?auto=compress&cs=tinysrgb&w=1200',
-      title: 'Relaxing Body Massage',
-      subtitle: 'Premium Massage Therapy',
-      description: 'Deep tissue, Swedish, Thai, and aromatherapy massages by expert therapists',
-      cta: 'Book Massage',
-      ctaLink: '/app'
-    },
-    {
-      image: 'https://images.pexels.com/photos/3757952/pexels-photo-3757952.jpeg?auto=compress&cs=tinysrgb&w=1200',
-      title: 'Therapeutic Body Treatments',
-      subtitle: 'Healing Touch Therapy',
-      description: 'Professional body massage and spa treatments for complete relaxation and wellness',
-      cta: 'Book Now',
-      ctaLink: '/app'
-    },
-    {
-      image: 'https://images.pexels.com/photos/3997392/pexels-photo-3997392.jpeg?auto=compress&cs=tinysrgb&w=1200',
-      title: 'Luxury Spa & Massage',
-      subtitle: 'Rejuvenate Your Body & Mind',
-      description: 'Experience premium spa treatments and therapeutic massages from certified professionals',
+      image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1920&q=80',
+      title: 'Luxury Spa Experiences',
+      subtitle: 'Premium Wellness Sanctuary',
+      description: 'Indulge in our signature spa treatments designed for ultimate relaxation and rejuvenation',
       cta: 'Book Spa Session',
-      ctaLink: '/app'
+      ctaLink: '/app',
+      features: ['Expert Therapists', '100% Natural Products', 'Private Suites'],
+      rating: 4.9
     },
     {
-      image: 'https://images.pexels.com/photos/3992860/pexels-photo-3992860.jpeg?auto=compress&cs=tinysrgb&w=1200',
-      title: 'Bridal Makeup & Styling',
+      image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1920&q=80',
+      title: 'Therapeutic Massages',
+      subtitle: 'Healing Touch Therapy',
+      description: 'Deep tissue, Swedish, Thai, and aromatherapy massages by certified professionals',
+      cta: 'Book Massage',
+      ctaLink: '/app',
+      features: ['Swedish Massage', 'Deep Tissue', 'Hot Stone'],
+      rating: 5.0
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1920&q=80',
+      title: 'Bridal Beauty Studio',
       subtitle: 'Your Dream Wedding Look',
-      description: 'Expert bridal makeup artists to make your special day unforgettable',
+      description: 'Expert makeup artists and stylists to create your perfect bridal transformation',
       cta: 'Book Bridal Package',
-      ctaLink: '/app'
+      ctaLink: '/app',
+      features: ['HD Makeup', 'Hair Styling', 'Pre-Wedding Care'],
+      rating: 4.8
     },
     {
-      image: 'https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=1200',
-      title: 'Premium Beauty Salon',
-      subtitle: 'Hair, Skin & Nails',
-      description: 'Complete beauty services including haircuts, styling, facials, and manicures',
-      cta: 'Explore Services',
-      ctaLink: '/app'
+      image: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1920&q=80',
+      title: 'Premium Hair Salon',
+      subtitle: 'Hair Artistry & Styling',
+      description: 'Transform your look with our expert hair treatments, coloring, and styling services',
+      cta: 'Explore Hair Services',
+      ctaLink: '/app',
+      features: ['Color Expert', 'Keratin Treatment', 'Hair Spa'],
+      rating: 4.9
     },
     {
-      image: 'https://images.pexels.com/photos/3997986/pexels-photo-3997986.jpeg?auto=compress&cs=tinysrgb&w=1200',
-      title: 'Wellness & Skincare',
+      image: 'https://images.unsplash.com/photo-1552693673-1bf958298935?w=1920&q=80',
+      title: 'Advanced Skincare',
       subtitle: 'Radiant Skin Solutions',
-      description: 'Professional skincare treatments and wellness programs tailored for you',
-      cta: 'Start Your Journey',
-      ctaLink: '/app'
+      description: 'Professional facials and skincare treatments for glowing, healthy skin',
+      cta: 'Start Skincare Journey',
+      ctaLink: '/app',
+      features: ['Anti-Aging', 'Hydra Facial', 'Skin Analysis'],
+      rating: 5.0
+    },
+    {
+      image: 'https://images.unsplash.com/photo-1519415387722-a1c3bbef716c?w=1920&q=80',
+      title: 'Nail Art Studio',
+      subtitle: 'Creative Nail Designs',
+      description: 'Express your style with our artistic nail designs and premium manicure services',
+      cta: 'Book Nail Art',
+      ctaLink: '/app',
+      features: ['Gel Extensions', '3D Art', 'Spa Manicure'],
+      rating: 4.8
     }
   ];
 
   const settings = {
     dots: true,
     infinite: true,
-    speed: 800,
+    speed: 1000,
     slidesToShow: 1,
     slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 5000,
+    autoplay: !isHovered,
+    autoplaySpeed: 6000,
     fade: true,
     pauseOnHover: true,
     arrows: true,
-    cssEase: 'ease-in-out',
+    cssEase: 'cubic-bezier(0.4, 0, 0.2, 1)',
     dotsClass: 'slick-dots custom-dots',
+    beforeChange: (current: number, next: number) => setActiveSlide(next),
   };
 
   return (
-    <div className="hero-slider-container relative">
+    <div 
+      className="hero-slider-container relative overflow-hidden"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
+      {/* Premium Background Pattern */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary-950 via-primary-900 to-primary-950 opacity-50 z-0" />
+      
       <Slider {...settings}>
         {slides.map((slide, index) => (
           <div key={index} className="slider-slide">
-            <div className="relative h-[600px] md:h-[700px] lg:h-[750px] overflow-hidden">
+            <div className="relative h-[650px] md:h-[750px] lg:h-[850px] overflow-hidden">
+              {/* Background Image with Parallax Effect */}
               <div
-                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat transform transition-transform duration-[2000ms] hover:scale-110"
                 style={{
                   backgroundImage: `url(${slide.image})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center center'
                 }}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-900/95 via-primary-800/90 to-primary-950/95" />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary-950/80 via-transparent to-transparent" />
+                {/* Modern Gradient Overlays */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-900/90 via-primary-800/85 to-accent-900/90" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent_50%)]" />
               </div>
 
-              <div className="relative z-10 h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center">
-                <div className="max-w-2xl animate-fade-in-up">
-                  <div className="inline-flex items-center space-x-2 glass backdrop-blur-lg border border-white/30 rounded-full px-6 py-3 mb-8 animate-fade-in-down shadow-lg">
-                    <Sparkles className="w-5 h-5 text-amber-300 animate-bounce-subtle" />
-                    <span className="text-white text-sm font-semibold tracking-wide">{slide.subtitle}</span>
-                  </div>
+              {/* Animated Particles */}
+              <div className="absolute inset-0 overflow-hidden pointer-events-none">
+                {[...Array(20)].map((_, i) => (
+                  <div
+                    key={i}
+                    className="absolute w-1 h-1 bg-white/30 rounded-full animate-float"
+                    style={{
+                      left: `${Math.random() * 100}%`,
+                      top: `${Math.random() * 100}%`,
+                      animationDelay: `${Math.random() * 5}s`,
+                      animationDuration: `${3 + Math.random() * 4}s`
+                    }}
+                  />
+                ))}
+              </div>
 
-                  <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-black text-white mb-8 leading-tight animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-                    {slide.title}
-                  </h1>
-
-                  <p className="text-xl md:text-2xl text-white/95 mb-10 leading-relaxed max-w-xl font-light animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-                    {slide.description}
-                  </p>
-
-                  <div className="flex flex-col sm:flex-row gap-6 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
-                    <Link to={slide.ctaLink}>
-                      <button className="w-full sm:w-auto bg-white text-primary-900 hover:bg-primary-50 font-bold rounded-2xl px-10 py-5 shadow-strong transition-all duration-300 hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-white/30 focus:outline-none flex items-center justify-center group">
-                        {slide.cta}
-                        <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-1 transition-transform duration-300" />
-                      </button>
-                    </Link>
-                    <Link to="/services">
-                      <button className="w-full sm:w-auto border-3 border-white text-white hover:bg-white hover:text-primary-900 font-bold rounded-2xl px-10 py-5 transition-all duration-300 backdrop-blur-sm hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-white/30 focus:outline-none">
-                        View All Services
-                      </button>
-                    </Link>
-                  </div>
-
-                  <div className="mt-10 flex items-center space-x-6 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-                    <div className="flex items-center space-x-3">
-                      <div className="flex -space-x-3">
-                        {[1, 2, 3, 4].map((i) => (
-                          <div
-                            key={i}
-                            className="w-12 h-12 rounded-full border-3 border-white bg-gradient-to-br from-accent-400 via-primary-400 to-primary-600 shadow-lg animate-float"
-                            style={{ animationDelay: `${i * 0.2}s` }}
-                          />
-                        ))}
+              {/* Premium Content Container */}
+              <div className="relative z-10 h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="grid lg:grid-cols-2 gap-12 h-full items-center">
+                  {/* Left Content */}
+                  <div className="space-y-8 animate-fade-in-up">
+                    {/* Premium Badge */}
+                    <div className="inline-flex items-center space-x-3 glass backdrop-blur-2xl border border-white/40 rounded-2xl px-6 py-4 shadow-2xl group hover:scale-105 transition-all duration-300 cursor-pointer">
+                      <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl flex items-center justify-center animate-bounce-subtle">
+                        <Sparkles className="w-5 h-5 text-white" />
                       </div>
-                      <span className="text-white text-base font-semibold drop-shadow-lg">50,000+ Happy Customers</span>
+                      <div>
+                        <div className="text-white text-sm font-bold tracking-wider uppercase">{slide.subtitle}</div>
+                        <div className="flex items-center space-x-1 mt-1">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className={`w-3 h-3 ${i < Math.floor(slide.rating) ? 'fill-amber-400 text-amber-400' : 'text-white/30'}`} />
+                          ))}
+                          <span className="text-white/90 text-xs ml-1">{slide.rating}</span>
+                        </div>
+                      </div>
                     </div>
+
+                    {/* Title with Gradient */}
+                    <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-black leading-tight animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+                      <span className="bg-gradient-to-r from-white via-amber-100 to-white bg-clip-text text-transparent drop-shadow-2xl">
+                        {slide.title}
+                      </span>
+                    </h1>
+
+                    {/* Description */}
+                    <p className="text-xl md:text-2xl text-white/95 leading-relaxed max-w-xl font-light animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                      {slide.description}
+                    </p>
+
+                    {/* Features Grid */}
+                    <div className="grid grid-cols-3 gap-4 animate-fade-in-up" style={{ animationDelay: '0.25s' }}>
+                      {slide.features.map((feature, idx) => (
+                        <div key={idx} className="glass backdrop-blur-xl border border-white/30 rounded-xl p-3 text-center hover:scale-105 transition-all duration-300 cursor-pointer group">
+                          <div className="w-8 h-8 bg-gradient-to-br from-primary-400 to-accent-500 rounded-lg mx-auto mb-2 flex items-center justify-center group-hover:rotate-12 transition-transform">
+                            <Award className="w-4 h-4 text-white" />
+                          </div>
+                          <div className="text-white text-xs font-semibold">{feature}</div>
+                        </div>
+                      ))}
+                    </div>
+
+                    {/* CTA Buttons */}
+                    <div className="flex flex-col sm:flex-row gap-4 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+                      <Link to={slide.ctaLink} className="flex-1">
+                        <button className="w-full bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 hover:from-amber-600 hover:via-orange-600 hover:to-amber-700 text-white font-bold rounded-2xl px-8 py-5 shadow-2xl transition-all duration-500 hover:scale-105 hover:shadow-amber-500/50 focus:ring-4 focus:ring-amber-500/50 focus:outline-none flex items-center justify-center group relative overflow-hidden">
+                          <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
+                          <Play className="w-6 h-6 mr-3 group-hover:scale-125 transition-transform" />
+                          {slide.cta}
+                          <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform duration-300" />
+                        </button>
+                      </Link>
+                      <Link to="/services" className="flex-1">
+                        <button className="w-full glass backdrop-blur-xl border-2 border-white/50 text-white hover:bg-white hover:text-primary-900 font-bold rounded-2xl px-8 py-5 transition-all duration-500 hover:scale-105 hover:shadow-2xl focus:ring-4 focus:ring-white/30 focus:outline-none flex items-center justify-center group">
+                          <TrendingUp className="w-6 h-6 mr-3 group-hover:rotate-12 transition-transform" />
+                          View Services
+                        </button>
+                      </Link>
+                    </div>
+
+                    {/* Social Proof */}
+                    <div className="flex items-center space-x-6 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+                      <div className="flex items-center space-x-3">
+                        <div className="flex -space-x-4">
+                          {[1, 2, 3, 4, 5].map((i) => (
+                            <div
+                              key={i}
+                              className="w-14 h-14 rounded-full border-4 border-white shadow-xl bg-gradient-to-br from-primary-400 via-accent-400 to-amber-400 animate-float hover:scale-125 transition-transform cursor-pointer"
+                              style={{ 
+                                animationDelay: `${i * 0.2}s`,
+                                backgroundImage: `url(https://i.pravatar.cc/150?img=${i})`
+                              }}
+                            />
+                          ))}
+                        </div>
+                        <div className="glass backdrop-blur-xl border border-white/30 rounded-xl px-4 py-2">
+                          <div className="text-white text-sm font-bold">50,000+</div>
+                          <div className="text-white/80 text-xs">Happy Customers</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right Content - Interactive Feature Cards */}
+                  <div className="hidden lg:flex flex-col space-y-4 animate-fade-in-up" style={{ animationDelay: '0.5s' }}>
+                    {[
+                      { icon: Award, title: 'Premium Quality', desc: 'Top-rated services' },
+                      { icon: Star, title: 'Expert Professionals', desc: 'Certified therapists' },
+                      { icon: TrendingUp, title: 'Best Prices', desc: 'Affordable luxury' }
+                    ].map((item, idx) => (
+                      <div
+                        key={idx}
+                        className="glass backdrop-blur-2xl border border-white/40 rounded-3xl p-6 hover:scale-105 transition-all duration-500 cursor-pointer group shadow-2xl"
+                        style={{ animationDelay: `${0.6 + idx * 0.1}s` }}
+                      >
+                        <div className="flex items-center space-x-4">
+                          <div className="w-16 h-16 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform shadow-xl">
+                            <item.icon className="w-8 h-8 text-white" />
+                          </div>
+                          <div className="flex-1">
+                            <h3 className="text-white text-xl font-bold mb-1">{item.title}</h3>
+                            <p className="text-white/80 text-sm">{item.desc}</p>
+                          </div>
+                          <ArrowRight className="w-6 h-6 text-white/60 group-hover:text-white group-hover:translate-x-2 transition-all" />
+                        </div>
+                      </div>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -151,77 +263,151 @@ export const HeroSlider: React.FC = () => {
 
       <style>{`
         .hero-slider-container .slick-dots {
-          bottom: 40px;
-          z-index: 20;
+          bottom: 50px;
+          z-index: 30;
+          display: flex !important;
+          justify-content: center;
+          align-items: center;
+          gap: 12px;
         }
 
         .hero-slider-container .slick-dots li {
-          margin: 0 8px;
+          margin: 0;
+          width: auto;
+          height: auto;
         }
 
         .hero-slider-container .slick-dots li button {
-          width: 16px;
-          height: 16px;
+          width: 12px;
+          height: 12px;
+          padding: 0;
         }
 
         .hero-slider-container .slick-dots li button:before {
-          color: white;
-          opacity: 0.4;
-          font-size: 14px;
-          line-height: 16px;
-          width: 16px;
-          height: 16px;
-          transition: all 0.3s ease;
+          content: '';
+          position: absolute;
+          width: 12px;
+          height: 12px;
+          background: rgba(255, 255, 255, 0.4);
+          border-radius: 50%;
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          border: 2px solid transparent;
         }
 
         .hero-slider-container .slick-dots li.slick-active button:before {
-          opacity: 1;
-          color: white;
-          transform: scale(1.3);
+          width: 40px;
+          border-radius: 12px;
+          background: linear-gradient(135deg, #f59e0b, #f97316);
+          box-shadow: 0 4px 20px rgba(245, 158, 11, 0.5);
+          border-color: rgba(255, 255, 255, 0.3);
         }
 
         .hero-slider-container .slick-dots li:hover button:before {
-          opacity: 0.8;
-          transform: scale(1.2);
+          background: rgba(255, 255, 255, 0.7);
+          transform: scale(1.3);
         }
 
         .hero-slider-container .slick-prev,
         .hero-slider-container .slick-next {
-          z-index: 20;
-          width: 60px;
-          height: 60px;
+          z-index: 30;
+          width: 70px;
+          height: 70px;
           background: rgba(255, 255, 255, 0.15);
-          backdrop-filter: blur(10px);
+          backdrop-filter: blur(20px);
+          border: 2px solid rgba(255, 255, 255, 0.3);
           border-radius: 50%;
-          transition: all 0.3s ease;
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
 
         .hero-slider-container .slick-prev:hover,
         .hero-slider-container .slick-next:hover {
-          background: rgba(255, 255, 255, 0.25);
-          transform: scale(1.1);
+          background: linear-gradient(135deg, #f59e0b, #f97316);
+          border-color: rgba(255, 255, 255, 0.5);
+          transform: scale(1.15);
+          box-shadow: 0 12px 40px rgba(245, 158, 11, 0.4);
         }
 
         .hero-slider-container .slick-prev {
-          left: 30px;
+          left: 40px;
         }
 
         .hero-slider-container .slick-next {
-          right: 30px;
+          right: 40px;
         }
 
         .hero-slider-container .slick-prev:before,
         .hero-slider-container .slick-next:before {
-          font-size: 28px;
+          font-size: 32px;
           opacity: 1;
-          line-height: 60px;
+          line-height: 70px;
+          font-weight: bold;
+        }
+
+        .hero-slider-container .slick-prev:hover:before,
+        .hero-slider-container .slick-next:hover:before {
+          color: white;
+        }
+
+        @keyframes slideInFromLeft {
+          from {
+            opacity: 0;
+            transform: translateX(-100px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes slideInFromRight {
+          from {
+            opacity: 0;
+            transform: translateX(100px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        .glass {
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(20px);
+          -webkit-backdrop-filter: blur(20px);
+        }
+
+        @media (max-width: 1024px) {
+          .hero-slider-container .slick-prev,
+          .hero-slider-container .slick-next {
+            width: 60px;
+            height: 60px;
+          }
+
+          .hero-slider-container .slick-prev {
+            left: 20px;
+          }
+
+          .hero-slider-container .slick-next {
+            right: 20px;
+          }
+
+          .hero-slider-container .slick-prev:before,
+          .hero-slider-container .slick-next:before {
+            font-size: 28px;
+            line-height: 60px;
+          }
+
+          .hero-slider-container .slick-dots {
+            bottom: 30px;
+          }
         }
 
         @media (max-width: 640px) {
           .hero-slider-container .slick-prev,
           .hero-slider-container .slick-next {
-            width: 48px;
-            height: 48px;
+            width: 50px;
+            height: 50px;
           }
 
           .hero-slider-container .slick-prev {
@@ -235,7 +421,11 @@ export const HeroSlider: React.FC = () => {
           .hero-slider-container .slick-prev:before,
           .hero-slider-container .slick-next:before {
             font-size: 24px;
-            line-height: 48px;
+            line-height: 50px;
+          }
+
+          .hero-slider-container .slick-dots {
+            bottom: 20px;
           }
         }
       `}</style>
