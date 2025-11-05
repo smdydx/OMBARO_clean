@@ -40,12 +40,12 @@ export const MarketingHeader: React.FC = () => {
 
           <div className="hidden md:flex items-center space-x-4">
             <Link to="/app">
-              <button className="px-6 py-3 text-primary-900 hover:text-primary-700 font-semibold transition-all duration-300 hover:bg-primary-50 rounded-xl">
+              <button className="px-6 py-3 text-primary-900 hover:text-primary-700 font-semibold transition-all duration-300 hover:bg-primary-50 rounded-xl border-2 border-transparent hover:border-primary-200">
                 Login
               </button>
             </Link>
             <Link to="/app">
-              <button className="px-8 py-3 gradient-green text-white font-bold rounded-xl shadow-medium hover:shadow-strong transition-all duration-300 hover:scale-105">
+              <button className="px-8 py-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-bold rounded-xl shadow-medium hover:shadow-strong transition-all duration-300 hover:scale-105">
                 Sign Up
               </button>
             </Link>
@@ -85,7 +85,7 @@ export const MarketingHeader: React.FC = () => {
                 </button>
               </Link>
               <Link to="/app" onClick={() => setIsMobileMenuOpen(false)}>
-                <button className="w-full py-3 gradient-green text-white font-bold rounded-xl shadow-medium hover:shadow-strong transition-all duration-300">
+                <button className="w-full py-3 bg-gradient-to-r from-primary-600 to-primary-700 text-white font-bold rounded-xl shadow-medium hover:shadow-strong transition-all duration-300">
                   Sign Up
                 </button>
               </Link>

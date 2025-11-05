@@ -125,7 +125,7 @@ export const HomePage: React.FC = () => {
       <MarketingHeader />
 
       {/* Terms & Conditions Notice Banner */}
-      <div className="bg-gradient-to-r from-primary-600 to-primary-700 border-b-4 border-primary-800">
+      <div className="bg-gradient-to-r from-primary-600 to-primary-700 border-b-4 border-primary-800 mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-center space-x-3 text-white">
             <Shield className="w-6 h-6 animate-pulse" />
@@ -144,7 +144,7 @@ export const HomePage: React.FC = () => {
         </div>
       </div>
 
-      <main className="pt-16">
+      <main>
         <HeroSlider />
 
         <section className="py-20 bg-gradient-to-br from-white via-primary-50/30 to-white relative overflow-hidden">
