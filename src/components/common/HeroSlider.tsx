@@ -22,7 +22,7 @@ export const HeroSlider: React.FC = () => {
 
   const slides: SlideContent[] = [
     {
-      image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1920&q=80',
+      image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1920&q=95',
       title: 'Luxury Spa Experiences',
       subtitle: 'Premium Wellness Sanctuary',
       description: 'Indulge in our signature spa treatments designed for ultimate relaxation and rejuvenation',
@@ -32,7 +32,7 @@ export const HeroSlider: React.FC = () => {
       rating: 4.9
     },
     {
-      image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1920&q=80',
+      image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1920&q=95',
       title: 'Therapeutic Massages',
       subtitle: 'Healing Touch Therapy',
       description: 'Deep tissue, Swedish, Thai, and aromatherapy massages by certified professionals',
@@ -42,7 +42,7 @@ export const HeroSlider: React.FC = () => {
       rating: 5.0
     },
     {
-      image: 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1920&q=80',
+      image: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=95',
       title: 'Bridal Beauty Studio',
       subtitle: 'Your Dream Wedding Look',
       description: 'Expert makeup artists and stylists to create your perfect bridal transformation',
@@ -52,7 +52,7 @@ export const HeroSlider: React.FC = () => {
       rating: 4.8
     },
     {
-      image: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1920&q=80',
+      image: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?w=1920&q=95',
       title: 'Premium Hair Salon',
       subtitle: 'Hair Artistry & Styling',
       description: 'Transform your look with our expert hair treatments, coloring, and styling services',
@@ -62,7 +62,7 @@ export const HeroSlider: React.FC = () => {
       rating: 4.9
     },
     {
-      image: 'https://images.unsplash.com/photo-1552693673-1bf958298935?w=1920&q=80',
+      image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1920&q=95',
       title: 'Advanced Skincare',
       subtitle: 'Radiant Skin Solutions',
       description: 'Professional facials and skincare treatments for glowing, healthy skin',
@@ -72,7 +72,7 @@ export const HeroSlider: React.FC = () => {
       rating: 5.0
     },
     {
-      image: 'https://images.unsplash.com/photo-1519415387722-a1c3bbef716c?w=1920&q=80',
+      image: 'https://images.unsplash.com/photo-1604654894610-df63bc536371?w=1920&q=95',
       title: 'Nail Art Studio',
       subtitle: 'Creative Nail Designs',
       description: 'Express your style with our artistic nail designs and premium manicure services',

@@ -122,7 +122,7 @@ export const SpaMassagePage: React.FC = () => {
 
       <main className="pt-16">
         <section className="relative py-20 bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 text-white overflow-hidden">
-          <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/3997392/pexels-photo-3997392.jpeg?auto=compress&cs=tinysrgb&w=1600')] bg-cover bg-center opacity-20" />
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1920&q=90')] bg-cover bg-center opacity-20" />
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
               <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
@@ -282,7 +282,7 @@ export const SpaMassagePage: React.FC = () => {
               </div>
               <div className="relative">
                 <img
-                  src="https://images.pexels.com/photos/3865676/pexels-photo-3865676.jpeg?auto=compress&cs=tinysrgb&w=800"
+                  src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1200&q=90"
                   alt="Spa and massage therapy"
                   className="rounded-2xl shadow-xl"
                 />

@@ -34,56 +34,56 @@ export const HomePage: React.FC = () => {
     {
       title: 'Spa & Massage Therapy',
       description: 'Relaxing spa treatments, deep tissue massage, aromatherapy, and rejuvenation packages',
-      image: 'https://images.pexels.com/photos/3997392/pexels-photo-3997392.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1200&q=90',
       IconComponent: Sparkles,
       link: '/spa-massage'
     },
     {
       title: 'Bridal Makeup & Styling',
       description: 'Complete bridal makeup, hair styling, pre-wedding packages, and special occasion looks',
-      image: 'https://images.pexels.com/photos/1585325/pexels-photo-1585325.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=90',
       IconComponent: Star,
       link: '/bridal-makeup'
     },
     {
       title: 'Hair Salon Services',
       description: 'Professional haircuts, styling, coloring, keratin treatments, and hair spa',
-      image: 'https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?w=1200&q=90',
       IconComponent: Users,
       link: '/beauty-salon'
     },
     {
       title: 'Skincare & Facials',
       description: 'Advanced facial treatments, skin analysis, anti-aging solutions, and beauty routines',
-      image: 'https://images.pexels.com/photos/3997986/pexels-photo-3997986.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1200&q=90',
       IconComponent: Sparkles,
       link: '/beauty-salon'
     },
     {
       title: 'Nail Art & Manicure',
       description: 'Professional manicure, pedicure, nail extensions, and creative nail art designs',
-      image: 'https://images.pexels.com/photos/1249611/pexels-photo-1249611.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.unsplash.com/photo-1604654894610-df63bc536371?w=1200&q=90',
       IconComponent: Star,
       link: '/beauty-salon'
     },
     {
       title: 'Makeup & Cosmetics',
       description: 'Party makeup, professional makeup services, and personalized beauty consultations',
-      image: 'https://images.pexels.com/photos/1535244/pexels-photo-1535244.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1200&q=90',
       IconComponent: Award,
       link: '/beauty-salon'
     },
     {
       title: 'Body Treatments',
       description: 'Body scrubs, wraps, waxing services, and complete body care solutions',
-      image: 'https://images.pexels.com/photos/3865676/pexels-photo-3865676.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1200&q=90',
       IconComponent: TrendingUp,
       link: '/spa-massage'
     },
     {
       title: 'Wellness Programs',
       description: 'Holistic wellness, yoga, meditation, and lifestyle improvement programs',
-      image: 'https://images.pexels.com/photos/3822621/pexels-photo-3822621.jpeg?auto=compress&cs=tinysrgb&w=800',
+      image: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&q=90',
       IconComponent: CheckCircle,
       link: '/spa-massage'
     },
@@ -100,21 +100,21 @@ export const HomePage: React.FC = () => {
     {
       name: 'Priya Sharma',
       role: 'Regular Customer',
-      image: 'https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&cs=tinysrgb&w=150',
+      image: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=90',
       rating: 5,
       comment: 'OMBARO has made booking spa appointments so easy! The therapists are professional and the service is always top-notch.',
     },
     {
       name: 'Rahul Verma',
       role: 'Business Professional',
-      image: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=150',
+      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=90',
       rating: 5,
       comment: 'As a busy professional, I love how convenient it is to book wellness services on the go. Highly recommended!',
     },
     {
       name: 'Anjali Reddy',
       role: 'Wellness Enthusiast',
-      image: 'https://images.pexels.com/photos/1239291/pexels-photo-1239291.jpeg?auto=compress&cs=tinysrgb&w=150',
+      image: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=90',
       rating: 5,
       comment: 'The quality of service providers on OMBARO is exceptional. I have found my go-to spa and salon through this platform.',
     },
@@ -376,7 +376,7 @@ export const HomePage: React.FC = () => {
                 </div>
                 <div className="relative hidden md:block">
                   <img
-                    src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1200&q=90"
                     alt="Beauty professional at work"
                     className="rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-300"
                   />
