@@ -280,15 +280,15 @@ export const BecomePartnerPage: React.FC = () => {
 
       <main className="pt-16">
         {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-to-br from-rose-600 via-pink-600 to-orange-500 text-white overflow-hidden">
+        <section className="relative py-20 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900 text-white overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/3865676/pexels-photo-3865676.jpeg?auto=compress&cs=tinysrgb&w=1600')] bg-cover bg-center opacity-10" />
-          <div className="absolute inset-0 bg-gradient-to-br from-black/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-br from-black/30 to-transparent" />
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
                 <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
-                  <Sparkles className="w-4 h-4 text-amber-300" />
+                  <Sparkles className="w-4 h-4 text-white" />
                   <span className="text-white text-sm font-medium">Join India's Leading Beauty Platform</span>
                 </div>
 
@@ -303,7 +303,7 @@ export const BecomePartnerPage: React.FC = () => {
 
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
                   <Link to="/app">
-                    <Button size="lg" className="w-full sm:w-auto bg-white text-rose-600 hover:bg-neutral-100 shadow-xl hover:shadow-2xl transition-all transform hover:scale-105">
+                    <Button size="lg" className="w-full sm:w-auto bg-white text-primary-700 hover:bg-neutral-100 shadow-xl hover:shadow-2xl transition-all transform hover:scale-105">
                       Register Now
                       <ArrowRight className="w-5 h-5 ml-2" />
                     </Button>
@@ -354,7 +354,7 @@ export const BecomePartnerPage: React.FC = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center group">
-                  <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-rose-600 via-pink-600 to-orange-500 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
                     {stat.number}
                   </div>
                   <div className="text-neutral-900 font-semibold mb-1">{stat.label}</div>
@@ -369,9 +369,9 @@ export const BecomePartnerPage: React.FC = () => {
         <section className="py-20 bg-neutral-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <div className="inline-flex items-center space-x-2 bg-rose-100 rounded-full px-4 py-2 mb-4">
-                <Briefcase className="w-4 h-4 text-rose-600" />
-                <span className="text-rose-600 text-sm font-medium">Perfect For All Business Types</span>
+              <div className="inline-flex items-center space-x-2 bg-primary-100 rounded-full px-4 py-2 mb-4">
+                <Briefcase className="w-4 h-4 text-primary-700" />
+                <span className="text-primary-700 text-sm font-medium">Perfect For All Business Types</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
                 Built for Every Beauty Professional
@@ -435,9 +435,9 @@ export const BecomePartnerPage: React.FC = () => {
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <div className="inline-flex items-center space-x-2 bg-orange-100 rounded-full px-4 py-2 mb-4">
-                <Target className="w-4 h-4 text-orange-600" />
-                <span className="text-orange-600 text-sm font-medium">Platform Benefits</span>
+              <div className="inline-flex items-center space-x-2 bg-primary-100 rounded-full px-4 py-2 mb-4">
+                <Target className="w-4 h-4 text-primary-700" />
+                <span className="text-primary-700 text-sm font-medium">Platform Benefits</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
                 Everything You Need to Succeed
@@ -454,10 +454,10 @@ export const BecomePartnerPage: React.FC = () => {
                 return (
                   <div
                     key={index}
-                    className="bg-gradient-to-br from-neutral-50 to-white rounded-2xl p-6 border border-neutral-200 hover:border-rose-300 hover:shadow-lg transition-all duration-300"
+                    className="bg-gradient-to-br from-neutral-50 to-white rounded-2xl p-6 border border-neutral-200 hover:border-primary-500 hover:shadow-lg transition-all duration-300"
                   >
-                    <div className="w-12 h-12 bg-gradient-to-br from-rose-100 to-orange-100 rounded-xl flex items-center justify-center mb-4">
-                      <Icon className="w-6 h-6 text-rose-600" />
+                    <div className="w-12 h-12 bg-gradient-to-br from-primary-100 to-primary-200 rounded-xl flex items-center justify-center mb-4">
+                      <Icon className="w-6 h-6 text-primary-700" />
                     </div>
                     <h3 className="text-lg font-semibold text-neutral-900 mb-2">
                       {benefit.title}
@@ -760,10 +760,10 @@ export const BecomePartnerPage: React.FC = () => {
         </section>
 
         {/* Final CTA Section */}
-        <section className="py-20 bg-gradient-to-br from-rose-600 via-pink-600 to-orange-500 text-white relative overflow-hidden">
+        <section className="py-20 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900 text-white relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/3865676/pexels-photo-3865676.jpeg?auto=compress&cs=tinysrgb&w=1600')] bg-cover bg-center opacity-10" />
           <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <Sparkles className="w-16 h-16 text-amber-300 mx-auto mb-6" />
+            <Sparkles className="w-16 h-16 text-white mx-auto mb-6" />
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
               Ready to Transform Your Business?
             </h2>
@@ -774,7 +774,7 @@ export const BecomePartnerPage: React.FC = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Link to="/app">
-                <Button size="lg" className="w-full sm:w-auto bg-white text-rose-600 hover:bg-neutral-100 shadow-xl hover:shadow-2xl transition-all transform hover:scale-105">
+                <Button size="lg" className="w-full sm:w-auto bg-white text-primary-700 hover:bg-neutral-100 shadow-xl hover:shadow-2xl transition-all transform hover:scale-105">
                   Register Your Business Now
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>

@@ -112,19 +112,46 @@ export const HeroSlider: React.FC = () => {
         {slides.map((slide, index) => (
           <div key={index} className="slider-slide">
             <div className="relative h-[650px] md:h-[750px] lg:h-[850px] overflow-hidden">
-              {/* Background Image with Parallax Effect */}
-              <div
-                className="absolute inset-0 bg-cover bg-center bg-no-repeat transform transition-transform duration-[2000ms] hover:scale-110"
-                style={{
-                  backgroundImage: `url(${slide.image})`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center center'
-                }}
-              >
-                {/* Modern Gradient Overlays */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-900/90 via-primary-800/85 to-accent-900/90" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent_50%)]" />
+              {/* Background Video/Image with Parallax Effect */}
+              <div className="absolute inset-0 overflow-hidden">
+                {index === 0 || index === 1 ? (
+                  /* Video Background for Spa/Massage slides */
+                  <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-[2000ms] hover:scale-110"
+                  >
+                    <source
+                      src={index === 0 
+                        ? "https://cdn.pixabay.com/video/2020/06/15/42127-430599018_large.mp4"
+                        : "https://cdn.pixabay.com/video/2022/11/07/138375-768944427_large.mp4"
+                      }
+                      type="video/mp4"
+                    />
+                    {/* Fallback to image if video doesn't load */}
+                    <img
+                      src={slide.image}
+                      alt="Background"
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                  </video>
+                ) : (
+                  /* Image Background for other slides */
+                  <div
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat transform transition-transform duration-[2000ms] hover:scale-110"
+                    style={{
+                      backgroundImage: `url(${slide.image})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center center'
+                    }}
+                  />
+                )}
+                
+                {/* Reduced Gradient Overlays - Lower transparency to show video */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-900/50 via-primary-800/40 to-primary-900/50" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
               </div>
 
               {/* Animated Particles */}
