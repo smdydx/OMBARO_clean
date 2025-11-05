@@ -16,7 +16,7 @@ export const MarketingHeader: React.FC = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md border-b border-neutral-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16">
           <Link to="/" className="flex items-center space-x-3 group">
             <div className="w-12 h-12 gradient-green rounded-2xl flex items-center justify-center shadow-strong group-hover:scale-110 transition-all duration-300">
               <Sparkles className="w-6 h-6 text-white animate-bounce-subtle" />

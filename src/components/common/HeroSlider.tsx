@@ -107,11 +107,11 @@ export const HeroSlider: React.FC = () => {
     >
       {/* Premium Background Pattern */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary-950 via-primary-900 to-primary-950 opacity-50 z-0" />
-      
+
       <Slider {...settings}>
         {slides.map((slide, index) => (
           <div key={index} className="slider-slide">
-            <div className="relative h-[650px] md:h-[750px] lg:h-[850px] overflow-hidden">
+            <div className="relative h-[500px] sm:h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
               {/* Background Video/Image with Parallax Effect */}
               <div className="absolute inset-0 overflow-hidden">
                 {index === 0 || index === 1 ? (
@@ -150,27 +150,13 @@ export const HeroSlider: React.FC = () => {
                     }}
                   />
                 )}
-                
+
                 {/* Reduced Gradient Overlays - Lower transparency to show video */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary-900/50 via-primary-800/40 to-primary-900/50" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
               </div>
 
-              {/* Animated Particles */}
-              <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                {[...Array(20)].map((_, i) => (
-                  <div
-                    key={i}
-                    className="absolute w-1 h-1 bg-white/30 rounded-full animate-float"
-                    style={{
-                      left: `${Math.random() * 100}%`,
-                      top: `${Math.random() * 100}%`,
-                      animationDelay: `${Math.random() * 5}s`,
-                      animationDuration: `${3 + Math.random() * 4}s`
-                    }}
-                  />
-                ))}
-              </div>
+              {/* Animated Particles - Removed */}
 
               {/* Premium Content Container */}
               <div className="relative z-10 h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -235,27 +221,7 @@ export const HeroSlider: React.FC = () => {
                       </Link>
                     </div>
 
-                    {/* Social Proof */}
-                    <div className="flex items-center space-x-6 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-                      <div className="flex items-center space-x-3">
-                        <div className="flex -space-x-4">
-                          {[1, 2, 3, 4, 5].map((i) => (
-                            <div
-                              key={i}
-                              className="w-14 h-14 rounded-full border-4 border-white shadow-xl bg-gradient-to-br from-primary-400 via-accent-400 to-amber-400 animate-float hover:scale-125 transition-transform cursor-pointer"
-                              style={{ 
-                                animationDelay: `${i * 0.2}s`,
-                                backgroundImage: `url(https://i.pravatar.cc/150?img=${i})`
-                              }}
-                            />
-                          ))}
-                        </div>
-                        <div className="glass backdrop-blur-xl border border-white/30 rounded-xl px-4 py-2">
-                          <div className="text-white text-sm font-bold">50,000+</div>
-                          <div className="text-white/80 text-xs">Happy Customers</div>
-                        </div>
-                      </div>
-                    </div>
+                    {/* Social Proof - Removed */}
                   </div>
 
                   {/* Right Content - Interactive Feature Cards */}

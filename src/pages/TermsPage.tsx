@@ -328,19 +328,19 @@ export const TermsPage: React.FC = () => {
                       onClick={() => toggleSection(index)}
                       className="w-full px-8 py-6 flex items-center justify-between hover:bg-neutral-50 transition-colors duration-300 group"
                     >
-                      <div className="flex items-center space-x-4 flex-1">
-                        <div className="w-14 h-14 bg-primary-100 rounded-xl flex items-center justify-center shadow-md transform group-hover:scale-110 transition-all duration-300">
-                          <Icon className="w-7 h-7 text-primary-700" />
+                      <div className="flex items-center space-x-3 md:space-x-4 flex-1">
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-primary-100 rounded-lg md:rounded-xl flex items-center justify-center shadow-md transform group-hover:scale-110 transition-all duration-300">
+                          <Icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-primary-700" />
                         </div>
                         <h3 className="text-xl md:text-2xl font-bold text-neutral-900 text-left group-hover:text-primary-600 transition-colors">
                           {section.title}
                         </h3>
                       </div>
-                      <div className={`w-10 h-10 bg-primary-100 rounded-lg flex items-center justify-center transform transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}>
+                      <div className={`w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-primary-100 rounded-lg flex items-center justify-center transform transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}>
                         {isExpanded ? (
-                          <ChevronUp className="w-6 h-6 text-primary-700" />
+                          <ChevronUp className="w-5 h-5 sm:w-5.5 sm:h-5.5 md:w-6 md:h-6 text-primary-700" />
                         ) : (
-                          <ChevronDown className="w-6 h-6 text-primary-700" />
+                          <ChevronDown className="w-5 h-5 sm:w-5.5 sm:h-5.5 md:w-6 md:h-6 text-primary-700" />
                         )}
                       </div>
                     </button>
