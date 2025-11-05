@@ -206,25 +206,54 @@ export const SpaMassagePage: React.FC = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+        <section className="py-24 bg-gradient-to-br from-white via-emerald-50/30 to-white relative overflow-hidden">
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1920&q=80')] bg-cover bg-center opacity-5" />
+          <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-emerald-200/20 to-teal-200/20 rounded-full blur-3xl animate-float" />
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tr from-teal-200/20 to-cyan-200/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '1.5s' }} />
+          
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16 animate-fade-in-up">
+              <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-emerald-100 to-teal-100 rounded-full px-6 py-3 mb-6 shadow-soft animate-bounce-subtle">
+                <Sparkles className="w-5 h-5 text-emerald-600" />
+                <span className="text-emerald-700 font-bold text-sm tracking-wider uppercase">Premium Facilities</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold bg-gradient-to-r from-emerald-600 via-teal-500 to-cyan-600 bg-clip-text text-transparent mb-6">
                 Types of Spa Centers on Our Platform
               </h2>
-              <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+              <p className="text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
                 From day spas to destination wellness resorts, find every type of spa facility through our comprehensive network.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {spaTypes.map((type, index) => (
                 <div
                   key={index}
-                  className="bg-gradient-to-br from-white to-emerald-50 rounded-2xl p-6 border-2 border-emerald-200 hover:border-emerald-400 hover:shadow-xl transition-all duration-300"
+                  className="group relative animate-fade-in-up cursor-pointer"
+                  style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <h3 className="text-xl font-bold text-neutral-900 mb-3">{type.title}</h3>
-                  <p className="text-neutral-600 leading-relaxed">{type.description}</p>
+                  <div className="absolute inset-0 bg-gradient-to-br from-emerald-200/40 to-teal-200/40 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700 group-hover:scale-110" />
+                  <div className="relative bg-gradient-to-br from-white via-emerald-50/50 to-white rounded-3xl p-8 border-2 border-emerald-200/50 hover:border-emerald-400 hover:shadow-strong transition-all duration-700 hover:-translate-y-3 overflow-hidden">
+                    <div className="absolute -top-20 -right-20 w-40 h-40 bg-gradient-to-br from-emerald-100/60 to-teal-100/60 rounded-full group-hover:scale-150 transition-transform duration-1000" />
+                    
+                    <div className="relative">
+                      <div className="w-14 h-14 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:shadow-2xl group-hover:scale-110 group-hover:rotate-12 transition-all duration-700">
+                        <Sparkles className="w-7 h-7 text-white" />
+                      </div>
+                      
+                      <h3 className="text-2xl font-bold text-neutral-900 mb-4 group-hover:text-emerald-700 transition-colors duration-300">
+                        {type.title}
+                      </h3>
+                      <p className="text-neutral-600 leading-relaxed">{type.description}</p>
+                      
+                      <div className="mt-6 flex items-center text-emerald-600 font-semibold opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
+                        <span>Explore More</span>
+                        <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-2 transition-transform duration-300" />
+                      </div>
+                      
+                      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 to-teal-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>

@@ -127,46 +127,78 @@ export const HomePage: React.FC = () => {
       <main className="pt-16">
         <HeroSlider />
 
-        <section className="py-16 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="py-20 bg-gradient-to-br from-white via-primary-50/30 to-white relative overflow-hidden">
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1920&q=80')] bg-cover bg-center opacity-5" />
+          <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-200/20 rounded-full blur-3xl animate-float" />
+          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent-200/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
+          
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
-                <div key={index} className="text-center group">
-                  <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 via-secondary-600 to-accent-600 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
-                    {stat.number}
+                <div 
+                  key={index} 
+                  className="group relative animate-fade-in-up"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary-100/50 to-accent-100/50 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="relative bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-soft hover:shadow-strong transition-all duration-500 hover:-translate-y-3 border border-primary-100/50 hover:border-primary-300/50 text-center">
+                    <div className="text-4xl md:text-5xl font-display font-bold bg-gradient-to-br from-primary-600 via-accent-500 to-primary-700 bg-clip-text text-transparent mb-3 group-hover:scale-125 transition-transform duration-500">
+                      {stat.number}
+                    </div>
+                    <div className="text-neutral-700 font-semibold tracking-wide">{stat.label}</div>
+                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-transparent via-primary-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   </div>
-                  <div className="text-neutral-600 font-medium">{stat.label}</div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="py-20 bg-neutral-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+        <section className="py-24 bg-gradient-to-br from-neutral-50 via-white to-primary-50/20 relative overflow-hidden">
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1920&q=80')] bg-cover bg-center opacity-5" />
+          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-primary-200/30 to-accent-200/30 rounded-full blur-3xl animate-float" />
+          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-accent-200/30 to-primary-200/30 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
+          
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16 animate-fade-in-up">
+              <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-primary-100 to-accent-100 rounded-full px-6 py-3 mb-6 shadow-soft animate-bounce-subtle">
+                <Sparkles className="w-5 h-5 text-primary-600" />
+                <span className="text-primary-700 font-bold text-sm tracking-wider uppercase">Why Choose Us</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold bg-gradient-to-r from-primary-600 via-accent-500 to-primary-700 bg-clip-text text-transparent mb-6">
                 Why Choose OMBARO?
               </h2>
-              <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-                We make beauty and wellness services accessible, convenient, and reliable.
+              <p className="text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
+                We make beauty and wellness services accessible, convenient, and reliable with cutting-edge technology.
               </p>
             </div>
+            
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {features.map((feature, index) => {
                 const Icon = feature.icon;
                 return (
                   <div
                     key={index}
-                    className="bg-white rounded-2xl p-6 shadow-soft hover:shadow-strong transition-shadow"
+                    className="group relative animate-fade-in-up cursor-pointer"
+                    style={{ animationDelay: `${index * 0.15}s` }}
                   >
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary-100 to-secondary-100 rounded-xl flex items-center justify-center mb-4">
-                      <Icon className="w-6 h-6 text-primary-600" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary-200/40 to-accent-200/40 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700 group-hover:scale-110" />
+                    <div className="relative bg-white rounded-3xl p-8 shadow-soft hover:shadow-strong transition-all duration-700 hover:-translate-y-4 border border-primary-100/30 hover:border-primary-300/70 overflow-hidden">
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary-100/50 to-accent-100/50 rounded-full -translate-y-16 translate-x-16 opacity-50 group-hover:opacity-100 transition-opacity duration-700" />
+                      
+                      <div className="relative mb-6">
+                        <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-accent-500 rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-2xl group-hover:scale-110 group-hover:rotate-6 transition-all duration-700">
+                          <Icon className="w-8 h-8 text-white" />
+                        </div>
+                      </div>
+                      
+                      <h3 className="text-xl font-bold text-neutral-900 mb-3 group-hover:text-primary-700 transition-colors duration-300">
+                        {feature.title}
+                      </h3>
+                      <p className="text-neutral-600 leading-relaxed">{feature.description}</p>
+                      
+                      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-500 to-accent-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-700 origin-left" />
                     </div>
-                    <h3 className="text-xl font-semibold text-neutral-900 mb-2">
-                      {feature.title}
-                    </h3>
-                    <p className="text-neutral-600">{feature.description}</p>
                   </div>
                 );
               })}
@@ -360,37 +392,67 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-neutral-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+        <section className="py-24 bg-gradient-to-br from-neutral-50 via-primary-50/20 to-white relative overflow-hidden">
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=1920&q=80')] bg-cover bg-center opacity-5" />
+          <div className="absolute top-20 right-20 w-72 h-72 bg-gradient-to-br from-amber-200/30 to-orange-200/30 rounded-full blur-3xl animate-float" />
+          
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16 animate-fade-in-up">
+              <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-amber-100 to-orange-100 rounded-full px-6 py-3 mb-6 shadow-soft animate-bounce-subtle">
+                <Star className="w-5 h-5 text-amber-600 fill-current" />
+                <span className="text-amber-700 font-bold text-sm tracking-wider uppercase">Customer Love</span>
+              </div>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold bg-gradient-to-r from-amber-600 via-orange-500 to-amber-700 bg-clip-text text-transparent mb-6">
                 What Our Customers Say
               </h2>
-              <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-                Join thousands of satisfied customers who trust OMBARO for their beauty needs
+              <p className="text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
+                Join thousands of satisfied customers who trust OMBARO for their beauty and wellness needs
               </p>
             </div>
+            
             <div className="grid md:grid-cols-3 gap-8">
               {testimonials.map((testimonial, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-2xl p-6 shadow-soft hover:shadow-strong transition-all duration-300 hover:-translate-y-2"
+                  className="group relative animate-fade-in-up cursor-pointer"
+                  style={{ animationDelay: `${index * 0.2}s` }}
                 >
-                  <div className="flex items-center space-x-1 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
-                    ))}
-                  </div>
-                  <p className="text-neutral-600 mb-6 italic leading-relaxed">"{testimonial.comment}"</p>
-                  <div className="flex items-center space-x-3">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className="w-12 h-12 rounded-full object-cover border-2 border-primary-200"
-                    />
-                    <div>
-                      <p className="font-semibold text-neutral-900">{testimonial.name}</p>
-                      <p className="text-sm text-neutral-600">{testimonial.role}</p>
+                  <div className="absolute inset-0 bg-gradient-to-br from-amber-200/40 to-orange-200/40 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-all duration-700 group-hover:scale-105" />
+                  <div className="relative bg-white rounded-3xl p-8 shadow-soft hover:shadow-strong transition-all duration-700 hover:-translate-y-4 border border-amber-100/50 hover:border-amber-300/70 overflow-hidden">
+                    <div className="absolute -top-10 -right-10 w-32 h-32 bg-gradient-to-br from-amber-100/60 to-orange-100/60 rounded-full group-hover:scale-150 transition-transform duration-1000" />
+                    
+                    <div className="relative">
+                      <div className="flex items-center space-x-1 mb-6">
+                        {[...Array(testimonial.rating)].map((_, i) => (
+                          <Star 
+                            key={i} 
+                            className="w-6 h-6 fill-amber-400 text-amber-400 group-hover:scale-125 transition-transform duration-300" 
+                            style={{ transitionDelay: `${i * 50}ms` }}
+                          />
+                        ))}
+                      </div>
+                      
+                      <div className="mb-8">
+                        <div className="text-6xl text-amber-200 font-serif mb-2">"</div>
+                        <p className="text-neutral-700 leading-relaxed text-lg italic relative z-10">
+                          {testimonial.comment}
+                        </p>
+                      </div>
+                      
+                      <div className="flex items-center space-x-4 pt-6 border-t border-amber-100">
+                        <div className="relative">
+                          <div className="absolute inset-0 bg-gradient-to-br from-amber-400 to-orange-400 rounded-full blur-md opacity-50 group-hover:opacity-100 transition-opacity duration-500" />
+                          <img
+                            src={testimonial.image}
+                            alt={testimonial.name}
+                            className="relative w-16 h-16 rounded-full object-cover border-3 border-white shadow-lg group-hover:scale-110 transition-transform duration-500"
+                          />
+                        </div>
+                        <div>
+                          <p className="font-bold text-neutral-900 text-lg">{testimonial.name}</p>
+                          <p className="text-sm text-neutral-600 font-medium">{testimonial.role}</p>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

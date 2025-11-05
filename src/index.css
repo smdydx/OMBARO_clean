@@ -124,4 +124,52 @@
   .section-divider {
     @apply border-t border-primary-200/30;
   }
+  
+  .interactive-card {
+    @apply transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl cursor-pointer;
+  }
+  
+  .hover-lift {
+    @apply transform transition-all duration-300 hover:-translate-y-1;
+  }
+  
+  .glow-effect {
+    @apply shadow-lg transition-shadow duration-500;
+  }
+  
+  .glow-effect:hover {
+    box-shadow: 0 0 30px rgba(177, 125, 82, 0.4), 0 0 60px rgba(177, 125, 82, 0.2);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: linear-gradient(to bottom, #faf7f5, #f5ede7);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #b17d52, #9d6846);
+  border-radius: 10px;
+  border: 2px solid #faf7f5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #9d6846, #82533c);
+}
+
+/* Selection Color */
+::selection {
+  background-color: rgba(177, 125, 82, 0.3);
+  color: #2f1e18;
+}
+
+::-moz-selection {
+  background-color: rgba(177, 125, 82, 0.3);
+  color: #2f1e18;
 }
