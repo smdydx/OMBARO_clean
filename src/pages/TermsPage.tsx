@@ -261,23 +261,7 @@ export const TermsPage: React.FC = () => {
 
       <main className="pt-16">
         {/* Critical Notice Banner */}
-        <div className="bg-gradient-to-r from-red-600 to-red-700 border-b-4 border-red-800">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <div className="text-center text-white">
-              <div className="flex items-center justify-center space-x-3 mb-3">
-                <Ban className="w-8 h-8 animate-pulse" />
-                <h2 className="text-2xl md:text-3xl font-black">MANDATORY READING</h2>
-                <Ban className="w-8 h-8 animate-pulse" />
-              </div>
-              <p className="text-lg md:text-xl font-semibold">
-                ⚠️ All customers MUST read these Terms & Conditions before booking
-              </p>
-              <p className="text-sm md:text-base mt-2 font-medium">
-                Violation of these terms will result in permanent ban and legal action
-              </p>
-            </div>
-          </div>
-        </div>
+        
 
         {/* Hero Section */}
         <section className="relative py-24 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white overflow-hidden">
