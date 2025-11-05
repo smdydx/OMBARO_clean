@@ -327,26 +327,22 @@ export const HomePage: React.FC = () => {
                 {
                   icon: TrendingUp,
                   title: 'Increase Revenue',
-                  description: 'Get more bookings and increase your monthly revenue by 40%',
-                  gradient: 'from-green-500 to-emerald-600'
+                  description: 'Get more bookings and increase your monthly revenue by 40%'
                 },
                 {
                   icon: Clock,
                   title: 'Smart Scheduling',
-                  description: 'Manage your schedule efficiently with automated booking system',
-                  gradient: 'from-blue-500 to-cyan-600'
+                  description: 'Manage your schedule efficiently with automated booking system'
                 },
                 {
                   icon: Star,
                   title: 'Build Reputation',
-                  description: 'Build your professional reputation with verified customer reviews',
-                  gradient: 'from-amber-500 to-orange-600'
+                  description: 'Build your professional reputation with verified customer reviews'
                 },
                 {
                   icon: Users,
                   title: 'Business Analytics',
-                  description: 'Access to business analytics and insights to grow smarter',
-                  gradient: 'from-purple-500 to-pink-600'
+                  description: 'Access to business analytics and insights to grow smarter'
                 },
               ].map((benefit, index) => {
                 const Icon = benefit.icon;
@@ -355,7 +351,7 @@ export const HomePage: React.FC = () => {
                     key={index}
                     className="group bg-white rounded-3xl p-8 shadow-soft hover:shadow-strong transition-all duration-300 hover:-translate-y-2 border border-neutral-100"
                   >
-                    <div className={`w-16 h-16 bg-gradient-to-br ${benefit.gradient} rounded-2xl flex items-center justify-center mb-6 shadow-lg transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300`}>
+                    <div className="w-16 h-16 bg-gradient-to-br from-primary-500 to-primary-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
                       <Icon className="w-8 h-8 text-white" />
                     </div>
                     <h3 className="text-2xl font-bold text-neutral-900 mb-3">
