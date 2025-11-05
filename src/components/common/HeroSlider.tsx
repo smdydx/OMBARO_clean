@@ -22,7 +22,7 @@ export const HeroSlider: React.FC = () => {
 
   const slides: SlideContent[] = [
     {
-      image: 'https://images.pexels.com/photos/3757657/pexels-photo-3757657.jpeg?auto=compress&cs=tinysrgb&w=1920',
+      image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1920&q=90',
       title: 'Luxury Spa Experiences',
       subtitle: 'Premium Wellness Sanctuary',
       description: 'Indulge in our signature spa treatments designed for ultimate relaxation and rejuvenation',
@@ -32,7 +32,7 @@ export const HeroSlider: React.FC = () => {
       rating: 4.9
     },
     {
-      image: 'https://images.pexels.com/photos/3764568/pexels-photo-3764568.jpeg?auto=compress&cs=tinysrgb&w=1920',
+      image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1920&q=90',
       title: 'Therapeutic Massages',
       subtitle: 'Healing Touch Therapy',
       description: 'Deep tissue, Swedish, Thai, and aromatherapy massages by certified professionals',
@@ -114,42 +114,16 @@ export const HeroSlider: React.FC = () => {
             <div className="relative h-[500px] sm:h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
               {/* Background Video/Image with Parallax Effect */}
               <div className="absolute inset-0 overflow-hidden">
-                {index === 0 || index === 1 ? (
-                  /* Video Background for Spa/Massage slides */
-                  <video
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-[2000ms] hover:scale-110"
-                  >
-                    <source
-                      src={index === 0 
-                        ? "https://cdn.pixabay.com/video/2020/06/15/42127-430599018_large.mp4"
-                        : "https://cdn.pixabay.com/video/2022/11/07/138375-768944427_large.mp4"
-                      }
-                      type="video/mp4"
-                    />
-                    {/* Fallback to image if video doesn't load */}
-                    <img
-                      src={slide.image}
-                      alt="Background"
-                      className="absolute inset-0 w-full h-full object-cover"
-                    />
-                  </video>
-                ) : (
-                  /* Image Background for other slides */
-                  <img
-                    src={slide.image}
-                    alt={slide.title}
-                    className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-[2000ms] hover:scale-110"
-                    loading="lazy"
-                    onError={(e) => {
-                      const target = e.target as HTMLImageElement;
-                      target.style.display = 'none';
-                    }}
-                  />
-                )}
+                <img
+                  src={slide.image}
+                  alt={slide.title}
+                  className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-[2000ms] hover:scale-110"
+                  loading="lazy"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = 'none';
+                  }}
+                />
 
                 {/* Reduced Gradient Overlays - Lower transparency to show video */}
                 <div className="absolute inset-0 bg-gradient-to-br from-primary-900/50 via-primary-800/40 to-primary-900/50" />

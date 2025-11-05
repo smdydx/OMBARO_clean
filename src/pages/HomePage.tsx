@@ -130,7 +130,7 @@ export const HomePage: React.FC = () => {
           <div className="flex items-center justify-center space-x-3 text-white">
             <Shield className="w-6 h-6 animate-pulse" />
             <p className="text-sm md:text-base font-semibold">
-              📋 Please read our{' '}
+              Please read our{' '}
               <Link 
                 to="/terms" 
                 className="underline font-bold hover:text-primary-100 transition-colors"

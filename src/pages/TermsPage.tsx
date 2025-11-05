@@ -13,7 +13,7 @@ export const TermsPage: React.FC = () => {
 
   const sections = [
     {
-      title: '1. Parties and Scope',
+      title: 'Parties and Scope',
       icon: Users,
       color: 'from-blue-500 to-cyan-600',
       content: [
@@ -24,7 +24,7 @@ export const TermsPage: React.FC = () => {
       ]
     },
     {
-      title: '2. Definitions',
+      title: 'Definitions',
       icon: FileText,
       color: 'from-purple-500 to-pink-600',
       content: [
@@ -35,7 +35,7 @@ export const TermsPage: React.FC = () => {
       ]
     },
     {
-      title: '3. Eligibility and Account',
+      title: 'Eligibility and Account',
       icon: Lock,
       color: 'from-green-500 to-emerald-600',
       content: [
@@ -47,7 +47,7 @@ export const TermsPage: React.FC = () => {
       ]
     },
     {
-      title: '4. Registration and KYC for Providers',
+      title: 'Registration and KYC for Providers',
       icon: Shield,
       color: 'from-amber-500 to-orange-600',
       content: [
@@ -58,7 +58,7 @@ export const TermsPage: React.FC = () => {
       ]
     },
     {
-      title: '5. Booking Process',
+      title: 'Booking Process',
       icon: Calendar,
       color: 'from-rose-500 to-red-600',
       content: [
@@ -70,7 +70,7 @@ export const TermsPage: React.FC = () => {
       ]
     },
     {
-      title: '6. Pricing, Fees, and Payments',
+      title: 'Pricing, Fees, and Payments',
       icon: CreditCard,
       color: 'from-indigo-500 to-blue-600',
       content: [
@@ -84,7 +84,7 @@ export const TermsPage: React.FC = () => {
       ]
     },
     {
-      title: '7. Promotions and Credits',
+      title: 'Promotions and Credits',
       icon: Info,
       color: 'from-teal-500 to-cyan-600',
       content: [
@@ -95,7 +95,7 @@ export const TermsPage: React.FC = () => {
       ]
     },
     {
-      title: '8. Cancellations and Refunds',
+      title: 'Cancellations and Refunds',
       icon: XCircle,
       color: 'from-red-500 to-pink-600',
       content: [
@@ -107,7 +107,7 @@ export const TermsPage: React.FC = () => {
       ]
     },
     {
-      title: '9. Service Standards and Customer Conduct',
+      title: 'Service Standards and Customer Conduct',
       icon: CheckCircle,
       color: 'from-green-500 to-lime-600',
       content: [
@@ -118,7 +118,7 @@ export const TermsPage: React.FC = () => {
       ]
     },
     {
-      title: '10. Monodose Kits and Product Sales',
+      title: 'Monodose Kits and Product Sales',
       icon: Info,
       color: 'from-cyan-500 to-blue-600',
       content: [
@@ -130,7 +130,7 @@ export const TermsPage: React.FC = () => {
       ]
     },
     {
-      title: '11. Prohibited Conduct - ZERO TOLERANCE',
+      title: 'Prohibited Conduct - ZERO TOLERANCE',
       icon: Ban,
       color: 'from-red-600 to-red-800',
       content: [
@@ -144,7 +144,7 @@ export const TermsPage: React.FC = () => {
       ]
     },
     {
-      title: '12. Provider Safety and Rights',
+      title: 'Provider Safety and Rights',
       icon: Shield,
       color: 'from-purple-600 to-pink-600',
       content: [
@@ -156,7 +156,7 @@ export const TermsPage: React.FC = () => {
       ]
     },
     {
-      title: '13. Liability and Disclaimers',
+      title: 'Liability and Disclaimers',
       icon: AlertCircle,
       color: 'from-orange-500 to-red-600',
       content: [
@@ -169,7 +169,7 @@ export const TermsPage: React.FC = () => {
       ]
     },
     {
-      title: '14. Indemnity',
+      title: 'Indemnity',
       icon: Gavel,
       color: 'from-indigo-600 to-purple-600',
       content: [
@@ -182,7 +182,7 @@ export const TermsPage: React.FC = () => {
       ]
     },
     {
-      title: '15. Data Protection and Privacy',
+      title: 'Data Protection and Privacy',
       icon: Lock,
       color: 'from-blue-600 to-cyan-600',
       content: [
@@ -194,7 +194,7 @@ export const TermsPage: React.FC = () => {
       ]
     },
     {
-      title: '16. Intellectual Property',
+      title: 'Intellectual Property',
       icon: Shield,
       color: 'from-green-600 to-emerald-600',
       content: [
@@ -205,7 +205,7 @@ export const TermsPage: React.FC = () => {
       ]
     },
     {
-      title: '17. Termination and Suspension',
+      title: 'Termination and Suspension',
       icon: UserX,
       color: 'from-red-500 to-orange-600',
       content: [
@@ -217,7 +217,7 @@ export const TermsPage: React.FC = () => {
       ]
     },
     {
-      title: '18. Dispute Resolution and Governing Law',
+      title: 'Dispute Resolution and Governing Law',
       icon: Scale,
       color: 'from-purple-500 to-indigo-600',
       content: [
@@ -229,7 +229,7 @@ export const TermsPage: React.FC = () => {
       ]
     },
     {
-      title: '19. Changes to Terms',
+      title: 'Changes to Terms',
       icon: FileText,
       color: 'from-cyan-500 to-teal-600',
       content: [
@@ -241,7 +241,7 @@ export const TermsPage: React.FC = () => {
       ]
     },
     {
-      title: '20. Acceptance and Acknowledgment',
+      title: 'Acceptance and Acknowledgment',
       icon: CheckCircle,
       color: 'from-green-600 to-lime-600',
       content: [
