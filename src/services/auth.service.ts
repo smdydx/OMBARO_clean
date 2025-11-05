@@ -1,4 +1,4 @@
-import { supabase } from '../lib/supabase';
+import { apiClient } from '../lib/api-client';
 import { UserRole } from '../types/auth';
 
 export interface LoginCredentials {
@@ -20,86 +20,15 @@ export class AuthService {
 
       console.log('Login attempt:', { username, userType });
 
-      // Try to find user by mobile first
-      let { data: userProfile, error: profileError } = await supabase
-        .from('user_profiles')
-        .select('*')
-        .eq('mobile', username)
-        .eq('role', userType)
-        .maybeSingle();
+      const response = await apiClient.auth.login({
+        username,
+        password,
+        userType,
+      });
 
-      // If not found by mobile, try by email
-      if (!userProfile && !profileError) {
-        const result = await supabase
-          .from('user_profiles')
-          .select('*')
-          .eq('email', username)
-          .eq('role', userType)
-          .maybeSingle();
-        userProfile = result.data;
-        profileError = result.error;
-      }
+      console.log('Login response:', response);
 
-      console.log('User profile query result:', { userProfile, profileError });
-
-      if (profileError && profileError.code !== 'PGRST116') {
-        console.error('Error fetching user profile:', profileError);
-        return { success: false, error: 'Error checking user credentials' };
-      }
-
-      if (!userProfile) {
-        console.log('No user profile found for:', username, 'with role:', userType);
-        return { success: false, error: 'Invalid credentials or user type' };
-      }
-
-      console.log('User profile found:', userProfile.name, 'with role:', userProfile.role);
-
-      if (password === '1234' && userProfile.mobile === '1234') {
-        console.log('Using unified authentication system (username: 1234, password: 1234)');
-        return {
-          success: true,
-          user: {
-            id: userProfile.id,
-            name: userProfile.name,
-            email: userProfile.email,
-            mobile: userProfile.mobile,
-            role: userProfile.role,
-          },
-        };
-      }
-
-      let authResult;
-
-      if (/^\d{10}$/.test(username)) {
-        console.log('Attempting phone authentication');
-        authResult = await supabase.auth.signInWithPassword({
-          phone: username,
-          password: password,
-        });
-      } else {
-        console.log('Attempting email authentication with:', userProfile.email);
-        authResult = await supabase.auth.signInWithPassword({
-          email: userProfile.email || username,
-          password: password,
-        });
-      }
-
-      if (authResult.error) {
-        console.error('Supabase Auth error:', authResult.error);
-        return { success: false, error: 'Invalid password' };
-      }
-
-      console.log('Authentication successful via Supabase Auth');
-      return {
-        success: true,
-        user: {
-          id: authResult.data.user.id,
-          name: userProfile.name,
-          email: userProfile.email,
-          mobile: userProfile.mobile,
-          role: userProfile.role,
-        },
-      };
+      return response as LoginResponse;
     } catch (error: any) {
       console.error('Login error:', error);
       return { success: false, error: error.message || 'Login failed' };
@@ -108,11 +37,8 @@ export class AuthService {
 
   static async logout(): Promise<{ success: boolean; error?: string }> {
     try {
-      const { error } = await supabase.auth.signOut();
-      if (error) {
-        return { success: false, error: error.message };
-      }
-      return { success: true };
+      const response = await apiClient.auth.logout();
+      return response as { success: boolean; error?: string };
     } catch (error: any) {
       return { success: false, error: error.message };
     }
@@ -120,50 +46,26 @@ export class AuthService {
 
   static async getCurrentUser(): Promise<{ success: boolean; user?: any; error?: string }> {
     try {
-      const { data: { user }, error } = await supabase.auth.getUser();
-
-      if (error || !user) {
-        return { success: false, error: 'Not authenticated' };
-      }
-
-      const { data: userProfile, error: profileError } = await supabase
-        .from('user_profiles')
-        .select('*')
-        .eq('id', user.id)
-        .single();
-
-      if (profileError) {
-        return { success: false, error: 'User profile not found' };
-      }
-
-      return {
-        success: true,
-        user: {
-          id: userProfile.id,
-          name: userProfile.name,
-          email: userProfile.email,
-          mobile: userProfile.mobile,
-          role: userProfile.role,
-        },
-      };
+      const response = await apiClient.auth.getCurrentUser();
+      return response as { success: boolean; user?: any; error?: string };
     } catch (error: any) {
       return { success: false, error: error.message };
     }
   }
 
-  static async checkUserExists(username: string, userType: UserRole): Promise<boolean> {
-    try {
-      const { data, error } = await supabase
-        .from('user_profiles')
-        .select('id')
-        .or('mobile.eq.' + username + ',email.eq.' + username)
-        .eq('role', userType)
-        .maybeSingle();
+  static async getSession() {
+    // Mock implementation for compatibility
+    return { data: { session: null }, error: null };
+  }
 
-      return !error && data !== null;
-    } catch (error) {
-      console.error('Error checking user existence:', error);
-      return false;
-    }
+  static onAuthStateChange(callback: (event: string, session: any) => void) {
+    // Mock implementation for compatibility
+    return {
+      data: {
+        subscription: {
+          unsubscribe: () => {},
+        },
+      },
+    };
   }
 }
