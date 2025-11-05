@@ -144,7 +144,7 @@ export const HomePage: React.FC = () => {
         </div>
       </div>
 
-      <main className="pt-16">
+      <main>
         <HeroSlider />
 
         <section className="py-20 bg-gradient-to-br from-white via-primary-50/30 to-white relative overflow-hidden">
