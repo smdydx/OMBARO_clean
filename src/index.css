@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -10,15 +10,15 @@
   }
   
   body {
-    font-family: 'Poppins', 'Inter', system-ui, sans-serif;
+    font-family: 'Montserrat', 'Inter', system-ui, sans-serif;
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
-    @apply antialiased;
+    @apply antialiased bg-neutral-50;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', Georgia, serif;
-    font-weight: 700;
-    letter-spacing: -0.02em;
+    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    font-weight: 600;
+    letter-spacing: 0.01em;
     @apply text-primary-900;
   }
   
@@ -29,37 +29,38 @@
 
 @layer components {
   .card {
-    @apply bg-white rounded-2xl shadow-soft border border-neutral-200/50 backdrop-blur-sm;
-    @apply hover:shadow-medium hover:border-primary-200/50 transition-all duration-300;
+    @apply bg-white rounded-lg shadow-soft border border-primary-100/30 backdrop-blur-sm;
+    @apply hover:shadow-medium hover:border-primary-200/50 transition-all duration-500;
     @apply transform hover:-translate-y-1;
   }
   
   .card-hover {
-    @apply transition-all duration-300 hover:shadow-strong hover:border-primary-300/50;
+    @apply transition-all duration-500 hover:shadow-strong hover:border-primary-300/50;
   }
   
   .btn-primary {
-    @apply bg-gradient-to-r from-primary-700 via-primary-600 to-primary-700 hover:from-primary-800 hover:via-primary-700 hover:to-primary-800;
-    @apply text-white font-semibold rounded-2xl px-8 py-4 shadow-medium;
-    @apply transition-all duration-300 hover:shadow-strong hover:scale-105;
-    @apply focus:ring-4 focus:ring-primary-500/30 focus:outline-none;
-    @apply relative overflow-hidden;
+    @apply bg-gradient-to-r from-primary-600 via-primary-500 to-primary-600 hover:from-primary-700 hover:via-primary-600 hover:to-primary-700;
+    @apply text-white font-medium rounded-sm px-10 py-3.5 shadow-soft tracking-wide;
+    @apply transition-all duration-500 hover:shadow-medium;
+    @apply focus:ring-2 focus:ring-primary-400/50 focus:outline-none;
+    @apply relative overflow-hidden uppercase text-sm;
   }
   
   .btn-secondary {
-    @apply bg-white hover:bg-primary-50 text-primary-900 font-semibold;
-    @apply border-2 border-primary-200 hover:border-primary-400;
-    @apply rounded-2xl px-8 py-4 transition-all duration-300;
-    @apply hover:shadow-medium hover:scale-105;
-    @apply focus:ring-4 focus:ring-primary-500/30 focus:outline-none;
+    @apply bg-white hover:bg-primary-50 text-primary-800 font-medium;
+    @apply border border-primary-300 hover:border-primary-500;
+    @apply rounded-sm px-10 py-3.5 transition-all duration-500;
+    @apply hover:shadow-soft tracking-wide;
+    @apply focus:ring-2 focus:ring-primary-400/50 focus:outline-none;
+    @apply uppercase text-sm;
   }
   
   .btn-outline {
-    @apply border-2 border-white hover:border-white text-white hover:text-primary-900;
-    @apply hover:bg-white font-semibold rounded-2xl px-8 py-4;
-    @apply transition-all duration-300 backdrop-blur-sm;
-    @apply hover:shadow-medium hover:scale-105;
-    @apply focus:ring-4 focus:ring-white/30 focus:outline-none;
+    @apply border border-white hover:border-primary-100 text-white hover:text-primary-900;
+    @apply hover:bg-white font-medium rounded-sm px-10 py-3.5;
+    @apply transition-all duration-500 backdrop-blur-sm tracking-wide;
+    @apply hover:shadow-soft uppercase text-sm;
+    @apply focus:ring-2 focus:ring-white/30 focus:outline-none;
   }
   
   .input-field {
@@ -91,32 +92,36 @@
   }
   
   .text-gradient {
-    @apply bg-gradient-to-r from-primary-700 via-accent-600 to-primary-700 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary-600 via-primary-500 to-primary-600 bg-clip-text text-transparent;
   }
   
   .text-gradient-gold {
-    @apply bg-gradient-to-r from-amber-400 via-amber-200 to-amber-400 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-primary-400 via-accent-300 to-primary-400 bg-clip-text text-transparent;
   }
   
   .glass {
-    @apply bg-white/90 backdrop-blur-md border border-white/30 shadow-soft;
+    @apply bg-white/95 backdrop-blur-md border border-primary-100/20 shadow-soft;
   }
   
   .glass-dark {
-    @apply bg-primary-900/80 backdrop-blur-md border border-primary-700/30;
+    @apply bg-primary-900/85 backdrop-blur-md border border-primary-700/20;
   }
   
   .shimmer-effect {
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    background: linear-gradient(90deg, transparent, rgba(177, 125, 82, 0.15), transparent);
     background-size: 200% 100%;
     animation: shimmer 2s infinite;
   }
   
-  .gradient-green {
-    @apply bg-gradient-to-br from-primary-600 via-primary-700 to-primary-900;
+  .gradient-earthy {
+    @apply bg-gradient-to-br from-primary-500 via-primary-600 to-primary-800;
   }
   
-  .gradient-green-light {
-    @apply bg-gradient-to-br from-primary-50 via-accent-50 to-white;
+  .gradient-earthy-light {
+    @apply bg-gradient-to-br from-primary-50 via-accent-50 to-neutral-50;
+  }
+  
+  .section-divider {
+    @apply border-t border-primary-200/30;
   }
 }
