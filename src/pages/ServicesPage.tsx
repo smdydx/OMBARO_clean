@@ -303,11 +303,10 @@ export const ServicesPage: React.FC = () => {
                 <Link to="/become-partner">
                   <Button
                     size="lg"
-                    className="bg-white hover:bg-white/95 hover:shadow-2xl hover:scale-105 transition-all duration-300 font-bold text-lg px-8 py-6"
-                    style={{ color: 'rgba(255, 255, 255, 0.98)' }}
+                    className="bg-white hover:bg-white/95 hover:shadow-2xl hover:scale-105 transition-all duration-300 font-bold text-lg px-8 py-6 mt-6 md:mt-0"
                   >
-                    <span style={{ color: '#b17d52' }}>Become a Partner Today</span>
-                    <ArrowRight className="w-6 h-6 ml-2" style={{ color: '#b17d52' }} />
+                    <span style={{ color: '#b17d52', opacity: 1 }}>Become a Partner Today</span>
+                    <ArrowRight className="w-6 h-6 ml-2" style={{ color: '#b17d52', opacity: 1 }} />
                   </Button>
                 </Link>
               </div>

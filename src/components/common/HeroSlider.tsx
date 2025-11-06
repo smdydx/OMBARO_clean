@@ -136,7 +136,7 @@ export const HeroSlider: React.FC = () => {
               <div className="relative z-10 h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-12 h-full items-center">
                   {/* Left Content */}
-                  <div className="space-y-4 sm:space-y-6 lg:space-y-8 animate-fade-in-up py-8 sm:py-0">
+                  <div className="space-y-4 sm:space-y-6 lg:space-y-8 animate-fade-in-up py-8 sm:py-0 pb-16 sm:pb-8">
                     {/* Premium Badge */}
                     <div className="inline-flex items-center space-x-3 glass backdrop-blur-2xl border border-white/40 rounded-2xl px-6 py-4 shadow-2xl group hover:scale-105 transition-all duration-300 cursor-pointer">
                       <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl flex items-center justify-center animate-bounce-subtle">
@@ -178,19 +178,19 @@ export const HeroSlider: React.FC = () => {
                     </div>
 
                     {/* CTA Buttons */}
-                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-fade-in-up" style={{ animationDelay: '0.3s' }}>
+                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-fade-in-up pb-4 sm:pb-0" style={{ animationDelay: '0.3s' }}>
                       <Link to={slide.ctaLink} className="flex-1">
-                        <button className="w-full bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 hover:from-amber-600 hover:via-orange-600 hover:to-amber-700 text-white font-bold rounded-2xl px-4 sm:px-8 py-3 sm:py-5 text-sm sm:text-base shadow-2xl transition-all duration-500 hover:scale-105 hover:shadow-amber-500/50 focus:ring-4 focus:ring-amber-500/50 focus:outline-none flex items-center justify-center group relative overflow-hidden">
+                        <button className="w-full bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 hover:from-amber-600 hover:via-orange-600 hover:to-amber-700 text-white font-bold rounded-2xl px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-base shadow-2xl transition-all duration-500 hover:scale-105 hover:shadow-amber-500/50 focus:ring-4 focus:ring-amber-500/50 focus:outline-none flex items-center justify-center group relative overflow-hidden">
                           <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
-                          <Play className="w-4 h-4 sm:w-6 sm:h-6 mr-2 sm:mr-3 group-hover:scale-125 transition-transform" />
-                          <span className="truncate">{slide.cta}</span>
-                          <ArrowRight className="w-4 h-4 sm:w-6 sm:h-6 ml-2 sm:ml-3 group-hover:translate-x-2 transition-transform duration-300" />
+                          <Play className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:scale-125 transition-transform" />
+                          <span className="truncate text-xs sm:text-base">{slide.cta}</span>
+                          <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-2 transition-transform duration-300" />
                         </button>
                       </Link>
                       <Link to="/services" className="flex-1">
-                        <button className="w-full glass backdrop-blur-xl border-2 border-white/50 text-white hover:bg-white hover:text-primary-900 font-bold rounded-2xl px-4 sm:px-8 py-3 sm:py-5 text-sm sm:text-base transition-all duration-500 hover:scale-105 hover:shadow-2xl focus:ring-4 focus:ring-white/30 focus:outline-none flex items-center justify-center group">
-                          <TrendingUp className="w-4 h-4 sm:w-6 sm:h-6 mr-2 sm:mr-3 group-hover:rotate-12 transition-transform" />
-                          <span className="truncate">View Services</span>
+                        <button className="w-full glass backdrop-blur-xl border-2 border-white/50 text-white hover:bg-white hover:text-primary-900 font-bold rounded-2xl px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-base transition-all duration-500 hover:scale-105 hover:shadow-2xl focus:ring-4 focus:ring-white/30 focus:outline-none flex items-center justify-center group">
+                          <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:rotate-12 transition-transform" />
+                          <span className="truncate text-xs sm:text-base">View Services</span>
                         </button>
                       </Link>
                     </div>
