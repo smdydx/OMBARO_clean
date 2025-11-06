@@ -143,113 +143,40 @@ export const HomePage: React.FC = () => {
       <MarketingHeader />
 
       {/* Animated Terms & Conditions Banner */}
-      {showTermsBanner && (
-        <div 
-          className={`relative mt-16 overflow-hidden transition-all duration-800 ${
-            isClosing ? 'banner-closing' : 'banner-open'
-          }`}
-          style={{
-            transformOrigin: 'top center'
-          }}
-        >
-          <div className="bg-gradient-to-r from-primary-600 to-primary-700 border-b-4 border-primary-800 relative">
-            {/* Door closing effect overlay */}
-            <div className={`absolute inset-0 flex ${isClosing ? 'closing-doors' : ''}`}>
-              <div className="door-left w-1/2 bg-gradient-to-r from-primary-900 to-primary-800"></div>
-              <div className="door-right w-1/2 bg-gradient-to-l from-primary-900 to-primary-800"></div>
-            </div>
-
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 relative z-10">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center justify-center space-x-3 text-white flex-1">
-                  <Shield className="w-6 h-6 animate-pulse" />
-                  <p className="text-sm md:text-base font-semibold">
-                    Please read our{' '}
-                    <Link 
-                      to="/terms" 
-                      className="underline font-bold hover:text-primary-100 transition-colors"
-                      onClick={handleCloseBanner}
-                    >
-                      Terms & Conditions
-                    </Link>
-                    {' '}before booking any service
-                  </p>
-                  <Shield className="w-6 h-6 animate-pulse" />
-                </div>
-                <button
-                  onClick={handleCloseBanner}
-                  className="ml-4 p-2 hover:bg-white/20 rounded-lg transition-colors"
-                  aria-label="Close banner"
-                >
-                  <X className="w-5 h-5 text-white" />
-                </button>
+      <div 
+        className={`transition-all duration-700 ease-in-out ${
+          showTermsBanner ? 'mt-16 opacity-100 max-h-32' : 'mt-16 opacity-0 max-h-0 overflow-hidden'
+        }`}
+      >
+        <div className="bg-gradient-to-r from-primary-600 to-primary-700 border-b-4 border-primary-800">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div className="flex items-center justify-between flex-col sm:flex-row gap-2 sm:gap-0">
+              <div className="flex items-center justify-center space-x-2 sm:space-x-3 text-white flex-1">
+                <Shield className="w-5 h-5 sm:w-6 sm:h-6 animate-pulse flex-shrink-0" />
+                <p className="text-xs sm:text-sm md:text-base font-semibold text-center sm:text-left">
+                  Please read our{' '}
+                  <Link 
+                    to="/terms" 
+                    className="underline font-bold hover:text-primary-100 transition-colors"
+                    onClick={handleCloseBanner}
+                  >
+                    Terms & Conditions
+                  </Link>
+                  {' '}before booking any service
+                </p>
+                <Shield className="w-5 h-5 sm:w-6 sm:h-6 animate-pulse flex-shrink-0 hidden sm:block" />
               </div>
+              <button
+                onClick={handleCloseBanner}
+                className="ml-0 sm:ml-4 p-2 hover:bg-white/20 rounded-lg transition-colors"
+                aria-label="Close banner"
+              >
+                <X className="w-5 h-5 text-white" />
+              </button>
             </div>
           </div>
         </div>
-      )}
-
-      <style>{`
-        .banner-open {
-          animation: slideDown 0.5s ease-out;
-        }
-
-        .banner-closing {
-          animation: slideUp 0.8s ease-in forwards;
-        }
-
-        .closing-doors .door-left {
-          animation: closeDoorLeft 0.8s ease-in-out forwards;
-        }
-
-        .closing-doors .door-right {
-          animation: closeDoorRight 0.8s ease-in-out forwards;
-        }
-
-        @keyframes slideDown {
-          from {
-            transform: translateY(-100%);
-            opacity: 0;
-          }
-          to {
-            transform: translateY(0);
-            opacity: 1;
-          }
-        }
-
-        @keyframes slideUp {
-          from {
-            transform: translateY(0) scaleY(1);
-            opacity: 1;
-          }
-          to {
-            transform: translateY(-100%) scaleY(0);
-            opacity: 0;
-          }
-        }
-
-        @keyframes closeDoorLeft {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-100%);
-          }
-        }
-
-        @keyframes closeDoorRight {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(100%);
-          }
-        }
-
-        .door-left, .door-right {
-          transition: transform 0.8s ease-in-out;
-        }
-      `}</style>
+      </div>
 
       <main>
         <HeroSlider />
@@ -472,19 +399,19 @@ export const HomePage: React.FC = () => {
               })}
             </div>
 
-            <div className="relative bg-gradient-to-br from-primary-600 via-secondary-600 to-accent-600 rounded-3xl overflow-hidden shadow-2xl">
-              <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/3865676/pexels-photo-3865676.jpeg?auto=compress&cs=tinysrgb&w=1200')] bg-cover bg-center opacity-10" />
+            <div className="relative bg-white rounded-3xl overflow-hidden shadow-2xl border-2 border-primary-100">
+              <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-primary-50 opacity-50" />
               <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center p-8 sm:p-12">
-                <div className="text-white">
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6">
+                <div className="text-neutral-900">
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-primary-600 via-accent-500 to-primary-700 bg-clip-text text-transparent">
                     Ready to Transform Your Business?
                   </h3>
-                  <p className="text-lg sm:text-xl text-white/90 mb-6 sm:mb-8 leading-relaxed">
+                  <p className="text-lg sm:text-xl text-neutral-700 mb-6 sm:mb-8 leading-relaxed">
                     Join thousands of successful beauty professionals who have already grown their business with OMBARO. Start your journey today.
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4">
                     <Link to="/app">
-                      <Button size="lg" className="w-full sm:w-auto bg-white text-primary-600 hover:bg-neutral-100 shadow-xl hover:shadow-2xl transition-all transform hover:scale-105">
+                      <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-primary-600 to-accent-600 text-white hover:from-primary-700 hover:to-accent-700 shadow-xl hover:shadow-2xl transition-all transform hover:scale-105">
                         Become a Partner
                         <ArrowRight className="w-5 h-5 ml-2" />
                       </Button>
