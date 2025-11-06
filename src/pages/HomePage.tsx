@@ -145,15 +145,15 @@ export const HomePage: React.FC = () => {
       {/* Animated Terms & Conditions Banner */}
       <div 
         className={`transition-all duration-700 ease-in-out ${
-          showTermsBanner ? 'mt-16 opacity-100 max-h-32' : 'mt-16 opacity-0 max-h-0 overflow-hidden'
+          showTermsBanner ? 'mt-16 opacity-100 max-h-20 sm:max-h-24' : 'mt-16 opacity-0 max-h-0 overflow-hidden'
         }`}
       >
-        <div className="bg-gradient-to-r from-primary-600 to-primary-700 border-b-4 border-primary-800">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <div className="flex items-center justify-between flex-col sm:flex-row gap-2 sm:gap-0">
-              <div className="flex items-center justify-center space-x-2 sm:space-x-3 text-white flex-1">
-                <Shield className="w-5 h-5 sm:w-6 sm:h-6 animate-pulse flex-shrink-0" />
-                <p className="text-xs sm:text-sm md:text-base font-semibold text-center sm:text-left">
+        <div className="bg-gradient-to-r from-primary-600 to-primary-700 border-b-2 sm:border-b-4 border-primary-800">
+          <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2 sm:py-4">
+            <div className="flex items-center justify-between gap-2">
+              <div className="flex items-center space-x-2 text-white flex-1">
+                <Shield className="w-4 h-4 sm:w-6 sm:h-6 animate-pulse flex-shrink-0" />
+                <p className="text-xs sm:text-sm md:text-base font-semibold">
                   Please read our{' '}
                   <Link 
                     to="/terms" 
@@ -162,16 +162,16 @@ export const HomePage: React.FC = () => {
                   >
                     Terms & Conditions
                   </Link>
-                  {' '}before booking any service
+                  {' '}before booking
                 </p>
-                <Shield className="w-5 h-5 sm:w-6 sm:h-6 animate-pulse flex-shrink-0 hidden sm:block" />
+                <Shield className="w-4 h-4 sm:w-6 sm:h-6 animate-pulse flex-shrink-0 hidden sm:block" />
               </div>
               <button
                 onClick={handleCloseBanner}
-                className="ml-0 sm:ml-4 p-2 hover:bg-white/20 rounded-lg transition-colors"
+                className="p-1.5 sm:p-2 hover:bg-white/20 rounded-lg transition-colors flex-shrink-0"
                 aria-label="Close banner"
               >
-                <X className="w-5 h-5 text-white" />
+                <X className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
               </button>
             </div>
           </div>
@@ -400,7 +400,7 @@ export const HomePage: React.FC = () => {
             </div>
 
             <div className="relative bg-white rounded-3xl overflow-hidden shadow-2xl border-2 border-primary-100">
-              <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-primary-50 opacity-50" />
+              <div className="absolute inset-0 bg-white" />
               <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center p-8 sm:p-12">
                 <div className="text-neutral-900">
                   <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-primary-600 via-accent-500 to-primary-700 bg-clip-text text-transparent">
