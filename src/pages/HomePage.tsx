@@ -1,12 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Clock, Star, Shield, Award, Users, TrendingUp, CheckCircle, Sparkles, ArrowRight } from 'lucide-react';
+import { MapPin, Clock, Star, Shield, Award, Users, TrendingUp, CheckCircle, Sparkles, ArrowRight, X } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { MarketingHeader } from '../components/marketing/MarketingHeader';
 import { MarketingFooter } from '../components/marketing/MarketingFooter';
 import { HeroSlider } from '../components/common/HeroSlider';
 
 export const HomePage: React.FC = () => {
+  const [showTermsBanner, setShowTermsBanner] = useState(true);
+  const [isClosing, setIsClosing] = useState(false);
+
+  useEffect(() => {
+    // Auto-close after 5 seconds
+    const timer = setTimeout(() => {
+      handleCloseBanner();
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  const handleCloseBanner = () => {
+    setIsClosing(true);
+    setTimeout(() => {
+      setShowTermsBanner(false);
+    }, 800); // Animation duration
+  };
   const features = [
     {
       icon: MapPin,
@@ -124,25 +142,114 @@ export const HomePage: React.FC = () => {
     <div className="min-h-screen bg-white">
       <MarketingHeader />
 
-      {/* Terms & Conditions Notice Banner */}
-      <div className="bg-gradient-to-r from-primary-600 to-primary-700 border-b-4 border-primary-800 mt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex items-center justify-center space-x-3 text-white">
-            <Shield className="w-6 h-6 animate-pulse" />
-            <p className="text-sm md:text-base font-semibold">
-              Please read our{' '}
-              <Link 
-                to="/terms" 
-                className="underline font-bold hover:text-primary-100 transition-colors"
-              >
-                Terms & Conditions
-              </Link>
-              {' '}before booking any service
-            </p>
-            <Shield className="w-6 h-6 animate-pulse" />
+      {/* Animated Terms & Conditions Banner */}
+      {showTermsBanner && (
+        <div 
+          className={`fixed top-16 left-0 right-0 z-40 overflow-hidden transition-all duration-800 ${
+            isClosing ? 'banner-closing' : 'banner-open'
+          }`}
+          style={{
+            transformOrigin: 'top center'
+          }}
+        >
+          <div className="bg-gradient-to-r from-primary-600 to-primary-700 border-b-4 border-primary-800 relative">
+            {/* Door closing effect overlay */}
+            <div className={`absolute inset-0 flex ${isClosing ? 'closing-doors' : ''}`}>
+              <div className="door-left w-1/2 bg-gradient-to-r from-primary-900 to-primary-800"></div>
+              <div className="door-right w-1/2 bg-gradient-to-l from-primary-900 to-primary-800"></div>
+            </div>
+
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 relative z-10">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center justify-center space-x-3 text-white flex-1">
+                  <Shield className="w-6 h-6 animate-pulse" />
+                  <p className="text-sm md:text-base font-semibold">
+                    Please read our{' '}
+                    <Link 
+                      to="/terms" 
+                      className="underline font-bold hover:text-primary-100 transition-colors"
+                      onClick={handleCloseBanner}
+                    >
+                      Terms & Conditions
+                    </Link>
+                    {' '}before booking any service
+                  </p>
+                  <Shield className="w-6 h-6 animate-pulse" />
+                </div>
+                <button
+                  onClick={handleCloseBanner}
+                  className="ml-4 p-2 hover:bg-white/20 rounded-lg transition-colors"
+                  aria-label="Close banner"
+                >
+                  <X className="w-5 h-5 text-white" />
+                </button>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      )}
+
+      <style>{`
+        .banner-open {
+          animation: slideDown 0.5s ease-out;
+        }
+
+        .banner-closing {
+          animation: slideUp 0.8s ease-in forwards;
+        }
+
+        .closing-doors .door-left {
+          animation: closeDoorLeft 0.8s ease-in-out forwards;
+        }
+
+        .closing-doors .door-right {
+          animation: closeDoorRight 0.8s ease-in-out forwards;
+        }
+
+        @keyframes slideDown {
+          from {
+            transform: translateY(-100%);
+            opacity: 0;
+          }
+          to {
+            transform: translateY(0);
+            opacity: 1;
+          }
+        }
+
+        @keyframes slideUp {
+          from {
+            transform: translateY(0) scaleY(1);
+            opacity: 1;
+          }
+          to {
+            transform: translateY(-100%) scaleY(0);
+            opacity: 0;
+          }
+        }
+
+        @keyframes closeDoorLeft {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-100%);
+          }
+        }
+
+        @keyframes closeDoorRight {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(100%);
+          }
+        }
+
+        .door-left, .door-right {
+          transition: transform 0.8s ease-in-out;
+        }
+      `}</style>
 
       <main>
         <HeroSlider />
