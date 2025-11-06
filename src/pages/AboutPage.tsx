@@ -186,7 +186,7 @@ export const AboutPage: React.FC = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Join Our Growing Community
             </h2>
-            <p className="text-xl text-white/90 mb-8">
+            <p className="text-xl text-white/95 mb-8">
               Experience the future of beauty and wellness services
             </p>
             <Link to="/app">

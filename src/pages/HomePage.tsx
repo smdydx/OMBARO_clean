@@ -505,27 +505,27 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-white">
+        <section className="py-12 sm:py-20 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="relative bg-gradient-to-br from-primary-50 via-accent-50 to-secondary-50 rounded-3xl p-12 overflow-hidden shadow-xl">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-primary-200/30 to-accent-200/30 rounded-full blur-3xl" />
-              <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-secondary-200/30 to-primary-200/30 rounded-full blur-3xl" />
+            <div className="relative bg-gradient-to-br from-primary-50 via-accent-50 to-secondary-50 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-12 overflow-hidden shadow-xl">
+              <div className="absolute top-0 right-0 w-32 sm:w-64 h-32 sm:h-64 bg-gradient-to-br from-primary-200/30 to-accent-200/30 rounded-full blur-3xl" />
+              <div className="absolute bottom-0 left-0 w-32 sm:w-64 h-32 sm:h-64 bg-gradient-to-tr from-secondary-200/30 to-primary-200/30 rounded-full blur-3xl" />
               <div className="relative z-10">
-                <Sparkles className="w-12 h-12 text-primary-600 mx-auto mb-4" />
-                <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+                <Sparkles className="w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 text-primary-600 mx-auto mb-3 sm:mb-4" />
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-neutral-900 mb-3 sm:mb-4">
                   Ready to Get Started?
                 </h2>
-                <p className="text-lg text-neutral-600 mb-8">
+                <p className="text-sm sm:text-base md:text-lg text-neutral-600 mb-6 sm:mb-8 px-2 sm:px-0">
                   Join thousands of customers who have transformed their beauty routine with OMBARO
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link to="/app">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+                  <Link to="/app" className="w-full sm:w-auto">
                     <Button size="lg" className="w-full sm:w-auto shadow-lg hover:shadow-xl transition-shadow">
                       Sign Up Now
                       <ArrowRight className="w-5 h-5 ml-2" />
                     </Button>
                   </Link>
-                  <Link to="/contact">
+                  <Link to="/contact" className="w-full sm:w-auto">
                     <Button size="lg" variant="outline" className="w-full sm:w-auto">
                       Contact Us
                     </Button>

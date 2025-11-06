@@ -136,7 +136,7 @@ export const HeroSlider: React.FC = () => {
               <div className="relative z-10 h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="grid lg:grid-cols-2 gap-12 h-full items-center">
                   {/* Left Content */}
-                  <div className="space-y-8 animate-fade-in-up">
+                  <div className="space-y-4 sm:space-y-6 lg:space-y-8 animate-fade-in-up py-8 sm:py-0">
                     {/* Premium Badge */}
                     <div className="inline-flex items-center space-x-3 glass backdrop-blur-2xl border border-white/40 rounded-2xl px-6 py-4 shadow-2xl group hover:scale-105 transition-all duration-300 cursor-pointer">
                       <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl flex items-center justify-center animate-bounce-subtle">
@@ -154,14 +154,14 @@ export const HeroSlider: React.FC = () => {
                     </div>
 
                     {/* Title with Gradient */}
-                    <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-black leading-tight animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+                    <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-black leading-tight animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
                       <span className="bg-gradient-to-r from-white via-amber-100 to-white bg-clip-text text-transparent drop-shadow-2xl">
                         {slide.title}
                       </span>
                     </h1>
 
                     {/* Description */}
-                    <p className="text-xl md:text-2xl text-white/95 leading-relaxed max-w-xl font-light animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/95 leading-relaxed max-w-xl font-light animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                       {slide.description}
                     </p>
 
@@ -375,22 +375,7 @@ export const HeroSlider: React.FC = () => {
         @media (max-width: 640px) {
           .hero-slider-container .slick-prev,
           .hero-slider-container .slick-next {
-            width: 50px;
-            height: 50px;
-          }
-
-          .hero-slider-container .slick-prev {
-            left: 15px;
-          }
-
-          .hero-slider-container .slick-next {
-            right: 15px;
-          }
-
-          .hero-slider-container .slick-prev:before,
-          .hero-slider-container .slick-next:before {
-            font-size: 24px;
-            line-height: 50px;
+            display: none !important;
           }
 
           .hero-slider-container .slick-dots {
