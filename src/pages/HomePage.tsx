@@ -145,7 +145,7 @@ export const HomePage: React.FC = () => {
       {/* Animated Terms & Conditions Banner */}
       {showTermsBanner && (
         <div 
-          className={`fixed top-16 left-0 right-0 z-40 overflow-hidden transition-all duration-800 ${
+          className={`relative mt-16 overflow-hidden transition-all duration-800 ${
             isClosing ? 'banner-closing' : 'banner-open'
           }`}
           style={{
