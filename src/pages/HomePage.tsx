@@ -399,21 +399,21 @@ export const HomePage: React.FC = () => {
               })}
             </div>
 
-            <div className="relative bg-white rounded-3xl overflow-hidden shadow-2xl border-2 border-primary-100">
+            <div className="relative bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 border-primary-100">
               <div className="absolute inset-0 bg-white" />
-              <div className="relative z-10 grid md:grid-cols-2 gap-8 items-center p-8 sm:p-12">
+              <div className="relative z-10 grid md:grid-cols-2 gap-6 sm:gap-8 items-center p-6 sm:p-8 md:p-12">
                 <div className="text-neutral-900">
-                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-primary-600 via-accent-500 to-primary-700 bg-clip-text text-transparent">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 md:mb-6 bg-gradient-to-r from-primary-600 via-accent-500 to-primary-700 bg-clip-text text-transparent">
                     Ready to Transform Your Business?
                   </h3>
-                  <p className="text-lg sm:text-xl text-neutral-700 mb-6 sm:mb-8 leading-relaxed">
+                  <p className="text-sm sm:text-base md:text-lg lg:text-xl text-neutral-700 mb-4 sm:mb-6 md:mb-8 leading-relaxed">
                     Join thousands of successful beauty professionals who have already grown their business with OMBARO. Start your journey today.
                   </p>
-                  <div className="flex flex-col sm:flex-row gap-4">
-                    <Link to="/app">
-                      <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-primary-600 to-accent-600 text-white hover:from-primary-700 hover:to-accent-700 shadow-xl hover:shadow-2xl transition-all transform hover:scale-105">
+                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                    <Link to="/app" className="w-full sm:w-auto">
+                      <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-primary-600 to-accent-600 text-white hover:from-primary-700 hover:to-accent-700 shadow-xl hover:shadow-2xl transition-all transform hover:scale-105 text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4">
                         Become a Partner
-                        <ArrowRight className="w-5 h-5 ml-2" />
+                        <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
                       </Button>
                     </Link>
                   </div>

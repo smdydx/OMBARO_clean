@@ -190,7 +190,7 @@ export const AboutPage: React.FC = () => {
               Experience the future of beauty and wellness services
             </p>
             <Link to="/app">
-              <Button size="lg" className="bg-white text-primary-600 hover:bg-neutral-100">
+              <Button size="lg" className="bg-primary-400 hover:bg-primary-500 border-2 border-primary-300" style={{ color: 'rgba(255, 255, 255, 0.98)' }}>
                 Get Started Today
               </Button>
             </Link>

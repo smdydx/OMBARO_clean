@@ -272,7 +272,7 @@ export const HowItWorksPage: React.FC = () => {
                 </Button>
               </Link>
               <Link to="/contact">
-                <Button size="lg" variant="outline">
+                <Button size="lg" className="bg-white text-primary-700 border-2 border-primary-600 hover:bg-white hover:border-primary-700 hover:shadow-lg">
                   Contact Us
                 </Button>
               </Link>

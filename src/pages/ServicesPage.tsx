@@ -303,23 +303,24 @@ export const ServicesPage: React.FC = () => {
                 <Link to="/become-partner">
                   <Button
                     size="lg"
-                    className="bg-white text-primary-700 hover:bg-white/95 hover:shadow-2xl hover:scale-105 transition-all duration-300 font-bold text-lg px-8 py-6"
+                    className="bg-white hover:bg-white/95 hover:shadow-2xl hover:scale-105 transition-all duration-300 font-bold text-lg px-8 py-6"
+                    style={{ color: 'rgba(255, 255, 255, 0.98)' }}
                   >
-                    Become a Partner Today
-                    <ArrowRight className="w-6 h-6 ml-2" />
+                    <span style={{ color: '#b17d52' }}>Become a Partner Today</span>
+                    <ArrowRight className="w-6 h-6 ml-2" style={{ color: '#b17d52' }} />
                   </Button>
                 </Link>
               </div>
 
               {/* Right Content - Stats Cards */}
               <div className="relative">
-                <div className="bg-white/10 backdrop-blur-xl border border-white/30 rounded-3xl p-8 shadow-2xl">
-                  <div className="mb-6">
-                    <h3 className="text-2xl font-bold text-white mb-2">Partner Success Stats</h3>
-                    <p className="text-white/80">Real results from our professionals</p>
+                <div className="bg-white/10 backdrop-blur-xl border border-white/30 rounded-3xl p-4 sm:p-6 md:p-8 shadow-2xl">
+                  <div className="mb-4 sm:mb-6">
+                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">Partner Success Stats</h3>
+                    <p className="text-sm sm:text-base text-white/80">Real results from our professionals</p>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-5">
+                  <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-5">
                     {[
                       {
                         icon: TrendingUp,
@@ -352,13 +353,13 @@ export const ServicesPage: React.FC = () => {
                     ].map((stat, index) => (
                       <div
                         key={index}
-                        className={`bg-gradient-to-br ${stat.bgGradient} backdrop-blur-sm border border-white/30 rounded-2xl p-6 text-center hover:scale-105 transition-all duration-300 group shadow-lg`}
+                        className={`bg-gradient-to-br ${stat.bgGradient} backdrop-blur-sm border border-white/30 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 text-center hover:scale-105 transition-all duration-300 group shadow-lg`}
                       >
-                        <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${stat.gradient} mx-auto mb-4 flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform duration-300`}>
-                          <stat.icon className="w-7 h-7 text-white" />
+                        <div className={`w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br ${stat.gradient} mx-auto mb-2 sm:mb-3 md:mb-4 flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform duration-300`}>
+                          <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-white" />
                         </div>
-                        <p className="text-3xl font-bold text-white mb-1">{stat.value}</p>
-                        <p className="text-sm font-medium text-white/90">{stat.label}</p>
+                        <p className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1">{stat.value}</p>
+                        <p className="text-xs sm:text-sm font-medium text-white/90">{stat.label}</p>
                       </div>
                     ))}
                   </div>
