@@ -38,7 +38,8 @@ export const FixedHeader: React.FC<FixedHeaderProps> = ({
             <img
               src="/ombaro-logo.png"
               alt="OMBARO"
-              className="h-12 sm:h-14 md:h-16 lg:h-18 w-auto max-w-[100px] sm:max-w-[120px] md:max-w-[140px] lg:max-w-[160px] object-contain transition-transform duration-300 hover:scale-105"
+              className="h-14 sm:h-16 md:h-20 lg:h-24 w-auto max-w-[140px] sm:max-w-[160px] md:max-w-[200px] lg:max-w-[240px] object-contain transition-transform duration-300 hover:scale-105"
+              style={{ filter: 'brightness(1.15) drop-shadow(0 2px 4px rgba(255,255,255,0.3))' }}
             />
             <div className="hidden sm:block w-px h-8 bg-white/30 flex-shrink-0"></div>
             <div className="hidden sm:flex items-center space-x-2 min-w-0 flex-1">

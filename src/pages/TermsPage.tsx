@@ -15,7 +15,7 @@ export const TermsPage: React.FC = () => {
     {
       title: 'Parties and Scope',
       icon: Users,
-      color: 'from-blue-500 to-cyan-600',
+      color: 'from-sky-400 to-sky-500',
       content: [
         'These Terms form a contract between you and OMBARO.',
         'OMBARO runs a marketplace that connects customers and service providers.',
@@ -26,7 +26,7 @@ export const TermsPage: React.FC = () => {
     {
       title: 'Definitions',
       icon: FileText,
-      color: 'from-purple-500 to-pink-600',
+      color: 'from-sky-500 to-sky-600',
       content: [
         'Customer: a user who books services on the Platform.',
         'Provider: a freelance beautician or partner salon registered on the Platform.',
@@ -37,7 +37,7 @@ export const TermsPage: React.FC = () => {
     {
       title: 'Eligibility and Account',
       icon: Lock,
-      color: 'from-green-500 to-emerald-600',
+      color: 'from-sky-400 to-cyan-500',
       content: [
         'You must be at least 18 years old to create an Account.',
         'Provide true, current, and complete information.',
@@ -49,7 +49,7 @@ export const TermsPage: React.FC = () => {
     {
       title: 'Registration and KYC for Providers',
       icon: Shield,
-      color: 'from-amber-500 to-orange-600',
+      color: 'from-sky-500 to-blue-500',
       content: [
         'Providers must register with required documents and KYC details.',
         'OMBARO may verify identity, address, and other documents.',
@@ -60,7 +60,7 @@ export const TermsPage: React.FC = () => {
     {
       title: 'Booking Process',
       icon: Calendar,
-      color: 'from-rose-500 to-red-600',
+      color: 'from-cyan-400 to-sky-500',
       content: [
         'Bookings are requests to receive Services at a chosen time and place.',
         'OMBARO will try to match a Provider for your booking.',
@@ -72,7 +72,7 @@ export const TermsPage: React.FC = () => {
     {
       title: 'Pricing, Fees, and Payments',
       icon: CreditCard,
-      color: 'from-indigo-500 to-blue-600',
+      color: 'from-blue-500 to-sky-600',
       content: [
         'Prices shown at booking include taxes unless stated otherwise.',
         'OMBARO may charge a facilitation fee for using the Platform.',
@@ -86,7 +86,7 @@ export const TermsPage: React.FC = () => {
     {
       title: 'Promotions and Credits',
       icon: Info,
-      color: 'from-teal-500 to-cyan-600',
+      color: 'from-sky-400 to-cyan-600',
       content: [
         'Promotional codes or credits follow separate terms.',
         'Credits are not cash and they may expire.',
@@ -97,7 +97,7 @@ export const TermsPage: React.FC = () => {
     {
       title: 'Cancellations and Refunds',
       icon: XCircle,
-      color: 'from-red-500 to-pink-600',
+      color: 'from-sky-500 to-sky-700',
       content: [
         'Cancellation rules apply as shown on the Platform at booking.',
         'If you cancel after confirmation, cancellation fees may apply.',
@@ -109,7 +109,7 @@ export const TermsPage: React.FC = () => {
     {
       title: 'Service Standards and Customer Conduct',
       icon: CheckCircle,
-      color: 'from-green-500 to-lime-600',
+      color: 'from-cyan-500 to-sky-600',
       content: [
         'Providers must deliver Services professionally and safely.',
         'Customers must treat Providers with respect and follow instructions.',
@@ -120,7 +120,7 @@ export const TermsPage: React.FC = () => {
     {
       title: 'Monodose Kits and Product Sales',
       icon: Info,
-      color: 'from-cyan-500 to-blue-600',
+      color: 'from-sky-400 to-blue-500',
       content: [
         'OMBARO may sell or recommend Monodose Kits for certain services.',
         'Product descriptions, ingredients, and usage instructions are for reference only.',
@@ -146,7 +146,7 @@ export const TermsPage: React.FC = () => {
     {
       title: 'Provider Safety and Rights',
       icon: Shield,
-      color: 'from-purple-600 to-pink-600',
+      color: 'from-sky-500 to-blue-600',
       content: [
         'Providers have the RIGHT TO REFUSE SERVICE if they feel unsafe or disrespected.',
         'Providers can decline service if pressured to perform outside the agreed scope.',
@@ -158,7 +158,7 @@ export const TermsPage: React.FC = () => {
     {
       title: 'Liability and Disclaimers',
       icon: AlertCircle,
-      color: 'from-orange-500 to-red-600',
+      color: 'from-sky-500 to-cyan-600',
       content: [
         'OMBARO is a platform connecting customers and providers only.',
         'OMBARO is not liable for the quality, safety, or legality of Services performed by Providers.',
@@ -171,7 +171,7 @@ export const TermsPage: React.FC = () => {
     {
       title: 'Indemnity',
       icon: Gavel,
-      color: 'from-indigo-600 to-purple-600',
+      color: 'from-blue-500 to-sky-600',
       content: [
         'Customers agree to indemnify and hold harmless OMBARO from any liability arising from:',
         '• Customer misconduct or breach of these Terms',
@@ -184,7 +184,7 @@ export const TermsPage: React.FC = () => {
     {
       title: 'Data Protection and Privacy',
       icon: Lock,
-      color: 'from-blue-600 to-cyan-600',
+      color: 'from-sky-400 to-cyan-500',
       content: [
         'OMBARO collects and processes personal data as described in the Privacy Policy.',
         'By using the Platform, you consent to data collection and processing.',
@@ -196,7 +196,7 @@ export const TermsPage: React.FC = () => {
     {
       title: 'Intellectual Property',
       icon: Shield,
-      color: 'from-green-600 to-emerald-600',
+      color: 'from-cyan-500 to-sky-600',
       content: [
         'All Platform content, trademarks, and logos are owned by OMBARO or licensors.',
         'You may not copy, modify, or distribute Platform content without permission.',
@@ -207,7 +207,7 @@ export const TermsPage: React.FC = () => {
     {
       title: 'Termination and Suspension',
       icon: UserX,
-      color: 'from-red-500 to-orange-600',
+      color: 'from-sky-500 to-blue-500',
       content: [
         'OMBARO may suspend or terminate your Account at any time for violations.',
         'You may close your Account by contacting support.',
@@ -219,7 +219,7 @@ export const TermsPage: React.FC = () => {
     {
       title: 'Dispute Resolution and Governing Law',
       icon: Scale,
-      color: 'from-purple-500 to-indigo-600',
+      color: 'from-sky-400 to-blue-600',
       content: [
         'These Terms are governed by the laws of India.',
         'Disputes should first be resolved through good-faith negotiation.',
@@ -231,7 +231,7 @@ export const TermsPage: React.FC = () => {
     {
       title: 'Changes to Terms',
       icon: FileText,
-      color: 'from-cyan-500 to-teal-600',
+      color: 'from-cyan-400 to-sky-500',
       content: [
         'OMBARO may update these Terms from time to time.',
         'Updated Terms will be posted on the Platform with the "Last updated" date.',
@@ -243,7 +243,7 @@ export const TermsPage: React.FC = () => {
     {
       title: 'Acceptance and Acknowledgment',
       icon: CheckCircle,
-      color: 'from-green-600 to-lime-600',
+      color: 'from-sky-500 to-cyan-600',
       content: [
         '✅ By confirming a booking or using OMBARO, you confirm that:',
         '• You have READ and UNDERSTOOD these Terms & Conditions',
@@ -256,7 +256,7 @@ export const TermsPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-neutral-50 via-white to-neutral-50">
+    <div className="min-h-screen bg-gradient-to-br from-sky-50 via-white to-sky-50">
       <MarketingHeader />
 
       <main className="pt-16">
@@ -264,7 +264,7 @@ export const TermsPage: React.FC = () => {
         
 
         {/* Hero Section */}
-        <section className="relative py-24 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white overflow-hidden">
+        <section className="relative py-24 bg-gradient-to-br from-sky-400 via-sky-500 to-sky-600 text-white overflow-hidden">
           <div className="absolute inset-0">
             <div className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }} />
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '6s', animationDelay: '1s' }} />
@@ -287,9 +287,9 @@ export const TermsPage: React.FC = () => {
         {/* Introduction Section */}
         <section className="py-16 bg-white">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-gradient-to-br from-primary-50 via-white to-primary-50 rounded-3xl p-8 md:p-12 shadow-xl border-l-4 border-primary-600">
+            <div className="bg-gradient-to-br from-sky-50 via-white to-sky-50 rounded-3xl p-8 md:p-12 shadow-xl border-l-4 border-sky-500">
               <div className="flex items-start space-x-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-primary-600 to-primary-700 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                <div className="w-16 h-16 bg-gradient-to-br from-sky-500 to-sky-600 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
                   <FileText className="w-8 h-8 text-white" />
                 </div>
                 <div className="flex-1">
@@ -300,8 +300,8 @@ export const TermsPage: React.FC = () => {
                     These Terms govern your use of the OMBARO website and app (the Platform). By using the Platform, you accept and agree to these Terms. If you do not agree, do not use the Platform.
                   </p>
                   <div className="flex items-center space-x-3 text-sm text-neutral-600">
-                    <div className="flex items-center space-x-2 bg-primary-100 px-4 py-2 rounded-full">
-                      <Calendar className="w-4 h-4 text-primary-600" />
+                    <div className="flex items-center space-x-2 bg-sky-100 px-4 py-2 rounded-full">
+                      <Calendar className="w-4 h-4 text-sky-600" />
                       <span className="font-semibold">Last updated: January 2025</span>
                     </div>
                   </div>
@@ -329,18 +329,18 @@ export const TermsPage: React.FC = () => {
                       className="w-full px-8 py-6 flex items-center justify-between hover:bg-neutral-50 transition-colors duration-300 group"
                     >
                       <div className="flex items-center space-x-3 md:space-x-4 flex-1">
-                        <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-primary-100 rounded-lg md:rounded-xl flex items-center justify-center shadow-md transform group-hover:scale-110 transition-all duration-300">
-                          <Icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-primary-700" />
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-sky-100 rounded-lg md:rounded-xl flex items-center justify-center shadow-md transform group-hover:scale-110 transition-all duration-300">
+                          <Icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-sky-600" />
                         </div>
-                        <h3 className="text-xl md:text-2xl font-bold text-neutral-900 text-left group-hover:text-primary-600 transition-colors">
+                        <h3 className="text-xl md:text-2xl font-bold text-neutral-900 text-left group-hover:text-sky-600 transition-colors">
                           {section.title}
                         </h3>
                       </div>
-                      <div className={`w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-primary-100 rounded-lg flex items-center justify-center transform transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}>
+                      <div className={`w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-sky-100 rounded-lg flex items-center justify-center transform transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}>
                         {isExpanded ? (
-                          <ChevronUp className="w-5 h-5 sm:w-5.5 sm:h-5.5 md:w-6 md:h-6 text-primary-700" />
+                          <ChevronUp className="w-5 h-5 sm:w-5.5 sm:h-5.5 md:w-6 md:h-6 text-sky-600" />
                         ) : (
-                          <ChevronDown className="w-5 h-5 sm:w-5.5 sm:h-5.5 md:w-6 md:h-6 text-primary-700" />
+                          <ChevronDown className="w-5 h-5 sm:w-5.5 sm:h-5.5 md:w-6 md:h-6 text-sky-600" />
                         )}
                       </div>
                     </button>
@@ -350,7 +350,7 @@ export const TermsPage: React.FC = () => {
                         <ul className="space-y-4">
                           {section.content.map((item, idx) => (
                             <li key={idx} className="flex items-start space-x-3">
-                              <CheckCircle className="w-6 h-6 flex-shrink-0 mt-0.5 text-primary-600" />
+                              <CheckCircle className="w-6 h-6 flex-shrink-0 mt-0.5 text-sky-500" />
                               <span className="text-neutral-700 leading-relaxed text-lg">{item}</span>
                             </li>
                           ))}
@@ -367,7 +367,7 @@ export const TermsPage: React.FC = () => {
         {/* Contact Section */}
         <section className="py-20 bg-white">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="relative bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 rounded-3xl p-12 text-white overflow-hidden shadow-2xl">
+            <div className="relative bg-gradient-to-br from-sky-500 via-sky-600 to-sky-700 rounded-3xl p-12 text-white overflow-hidden shadow-2xl">
               <div className="absolute inset-0">
                 <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }} />
                 <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '5s', animationDelay: '1s' }} />
@@ -384,7 +384,7 @@ export const TermsPage: React.FC = () => {
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
                   <a
                     href="mailto:legal@ombaro.com"
-                    className="group bg-white text-primary-600 px-8 py-4 rounded-2xl font-bold hover:bg-neutral-100 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 flex items-center justify-center space-x-3"
+                    className="group bg-white text-sky-600 px-8 py-4 rounded-2xl font-bold hover:bg-neutral-100 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 flex items-center justify-center space-x-3"
                   >
                     <Mail className="w-5 h-5" />
                     <span>legal@ombaro.com</span>
