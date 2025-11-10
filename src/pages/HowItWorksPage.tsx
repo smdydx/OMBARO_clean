@@ -92,10 +92,10 @@ export const HowItWorksPage: React.FC = () => {
       <main className="pt-16">
         <section className="relative bg-gradient-to-br from-cyan-50 via-white to-cyan-50/30 py-20 overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-            <h1 className="text-4xl md:text-5xl font-light text-gray-800 mb-6">
-              How It <span className="font-normal text-cyan-600">Works</span>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-800 mb-6 leading-tight">
+              How It <span className="font-normal text-cyan-600 whitespace-nowrap">Works</span>
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Simple, fast, and convenient. Book your beauty and wellness services in just a few steps.
             </p>
           </div>

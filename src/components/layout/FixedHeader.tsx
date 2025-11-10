@@ -35,43 +35,44 @@ export const FixedHeader: React.FC<FixedHeaderProps> = ({
       <div className="pt-3 pb-3 px-3 sm:px-4 md:px-6 backdrop-blur-sm">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2 sm:space-x-3 min-w-0 flex-1">
-            <img
-              src="/ombaro-logo.png"
-              alt="OMBARO"
-              className="h-14 sm:h-16 md:h-20 lg:h-24 w-auto max-w-[140px] sm:max-w-[160px] md:max-w-[200px] lg:max-w-[240px] object-contain transition-transform duration-300 hover:scale-105"
-              style={{ filter: 'brightness(1.15) drop-shadow(0 2px 4px rgba(255,255,255,0.3))' }}
-            />
-            <div className="hidden sm:block w-px h-8 bg-white/30 flex-shrink-0"></div>
-            <div className="hidden sm:flex items-center space-x-2 min-w-0 flex-1">
-              <div className="w-6 sm:w-7 h-6 sm:h-7 glass rounded-lg flex items-center justify-center flex-shrink-0">
-                <MapPin className="w-3.5 h-3.5 text-white" />
+            <div className="bg-white/95 backdrop-blur-sm rounded-lg p-1.5 sm:p-2 shadow-lg">
+              <img
+                src="/ombaro-logo.png"
+                alt="OMBARO"
+                className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain transition-transform duration-300 hover:scale-105"
+              />
+            </div>
+            <div className="hidden md:block w-px h-8 bg-white/30 flex-shrink-0"></div>
+            <div className="hidden md:flex items-center space-x-2 min-w-0 flex-1 max-w-xs lg:max-w-sm">
+              <div className="w-7 h-7 glass rounded-lg flex items-center justify-center flex-shrink-0">
+                <MapPin className="w-4 h-4 text-white" />
               </div>
               <div className="min-w-0 flex-1">
                 <p className="text-white/80 text-xs">Current Location</p>
-                <p className="text-white font-medium text-xs sm:text-sm truncate">Bangalore, Karnataka</p>
+                <p className="text-white font-medium text-sm truncate">Bangalore, Karnataka</p>
               </div>
             </div>
           </div>
-          <div className="flex items-center space-x-1 sm:space-x-2 flex-shrink-0">
+          <div className="flex items-center space-x-1.5 sm:space-x-2 flex-shrink-0">
             <button
               onClick={handleSearchToggle}
               aria-label="Toggle search"
-              className="w-6 sm:w-8 h-6 sm:h-8 glass rounded-lg flex items-center justify-center hover:bg-white/30 transition-colors"
+              className="w-8 h-8 sm:w-9 sm:h-9 glass rounded-lg flex items-center justify-center hover:bg-white/30 transition-colors"
             >
-              <Search className="w-4 h-4 text-white" />
+              <Search className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white" />
             </button>
             <button
               aria-label="View notifications"
-              className="w-6 sm:w-8 h-6 sm:h-8 glass rounded-lg flex items-center justify-center hover:bg-white/30 transition-colors"
+              className="w-8 h-8 sm:w-9 sm:h-9 glass rounded-lg flex items-center justify-center hover:bg-white/30 transition-colors"
             >
-              <Bell className="w-4 h-4 text-white" />
+              <Bell className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white" />
             </button>
             <button
               onClick={onLogout}
               aria-label="Logout from account"
-              className="w-6 sm:w-8 h-6 sm:h-8 glass rounded-lg flex items-center justify-center hover:bg-white/30 transition-colors"
+              className="w-8 h-8 sm:w-9 sm:h-9 glass rounded-lg flex items-center justify-center hover:bg-white/30 transition-colors"
             >
-              <LogOut className="w-4 h-4 text-white" />
+              <LogOut className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white" />
             </button>
           </div>
         </div>

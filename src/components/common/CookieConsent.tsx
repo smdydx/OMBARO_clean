@@ -37,24 +37,24 @@ export const CookieConsent: React.FC = () => {
         <div className="max-w-7xl mx-auto p-2 sm:p-4 md:p-6">
           <div className="relative">
             {/* Gradient Background */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary-50 via-white to-secondary-50 opacity-50 rounded-2xl" />
+            <div className="absolute inset-0 bg-gradient-to-br from-cyan-50 via-white to-sky-50 opacity-50 rounded-2xl" />
 
             {/* Animated Background Elements */}
             <div
-              className="absolute top-0 left-0 w-32 h-32 bg-primary-200/30 rounded-full blur-3xl animate-pulse"
+              className="absolute top-0 left-0 w-32 h-32 bg-cyan-200/30 rounded-full blur-3xl animate-pulse"
               style={{ animationDuration: '4s' }}
             />
             <div
-              className="absolute bottom-0 right-0 w-32 h-32 bg-secondary-200/30 rounded-full blur-3xl animate-pulse"
+              className="absolute bottom-0 right-0 w-32 h-32 bg-sky-200/30 rounded-full blur-3xl animate-pulse"
               style={{ animationDuration: '5s', animationDelay: '1s' }}
             />
 
-            <div className="relative p-4 sm:p-6 md:p-8 lg:p-10 rounded-2xl border-2 border-primary-200/50 bg-white/80 backdrop-blur-sm shadow-2xl">
+            <div className="relative p-4 sm:p-6 md:p-8 lg:p-10 rounded-2xl border-2 border-cyan-200/50 bg-white/80 backdrop-blur-sm shadow-2xl">
               <div className="flex flex-col md:flex-row gap-4 sm:gap-6 items-start">
                 {/* Icon Section */}
                 <div className="flex-shrink-0 hidden sm:block">
                   <div
-                    className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-primary-600 to-secondary-600 rounded-2xl flex items-center justify-center shadow-xl animate-bounce"
+                    className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-cyan-500 to-sky-600 rounded-2xl flex items-center justify-center shadow-xl animate-bounce"
                     style={{ animationDuration: '3s' }}
                   >
                     <Cookie className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
@@ -72,7 +72,7 @@ export const CookieConsent: React.FC = () => {
                     more in our{' '}
                     <Link
                       to="/privacy"
-                      className="text-primary-600 hover:text-primary-700 font-semibold underline decoration-2 underline-offset-2"
+                      className="text-cyan-600 hover:text-cyan-700 font-semibold underline decoration-2 underline-offset-2"
                     >
                       Privacy Policy
                     </Link>
@@ -103,14 +103,14 @@ export const CookieConsent: React.FC = () => {
                   <div className="flex flex-wrap gap-4 text-sm mb-6">
                     <Link
                       to="/privacy"
-                      className="flex items-center space-x-1 text-primary-600 hover:text-primary-700 font-semibold transition-colors"
+                      className="flex items-center space-x-1 text-cyan-600 hover:text-cyan-700 font-semibold transition-colors"
                     >
                       <Shield className="w-4 h-4" />
                       <span>Privacy Policy</span>
                     </Link>
                     <Link
                       to="/terms"
-                      className="flex items-center space-x-1 text-primary-600 hover:text-primary-700 font-semibold transition-colors"
+                      className="flex items-center space-x-1 text-cyan-600 hover:text-cyan-700 font-semibold transition-colors"
                     >
                       <Shield className="w-4 h-4" />
                       <span>Terms & Conditions</span>
@@ -121,13 +121,13 @@ export const CookieConsent: React.FC = () => {
                   <div className="flex flex-col sm:flex-row gap-2 sm:gap-3">
                     <button
                       onClick={handleAccept}
-                      className="flex-1 bg-gradient-to-r from-primary-600 to-secondary-600 hover:from-primary-700 hover:to-secondary-700 text-white font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl focus:ring-4 focus:ring-primary-300 focus:outline-none text-sm sm:text-base"
+                      className="flex-1 bg-gradient-to-r from-cyan-500 to-sky-600 hover:from-cyan-600 hover:to-sky-700 text-white font-bold py-3 sm:py-4 px-6 sm:px-8 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl focus:ring-4 focus:ring-cyan-300 focus:outline-none text-sm sm:text-base"
                     >
                       Accept All Cookies
                     </button>
                     <button
                       onClick={handleDecline}
-                      className="flex-1 bg-white hover:bg-neutral-50 text-neutral-700 font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-xl border-2 border-neutral-300 hover:border-primary-400 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg focus:ring-4 focus:ring-neutral-200 focus:outline-none text-sm sm:text-base"
+                      className="flex-1 bg-white hover:bg-neutral-50 text-neutral-700 font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-xl border-2 border-neutral-300 hover:border-cyan-400 transition-all duration-300 transform hover:scale-105 shadow-md hover:shadow-lg focus:ring-4 focus:ring-neutral-200 focus:outline-none text-sm sm:text-base"
                     >
                       Decline Optional
                     </button>
