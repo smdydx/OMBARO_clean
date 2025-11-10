@@ -21,7 +21,7 @@ export const MarketingHeader: React.FC = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-b border-gray-100 shadow-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-sky-50 via-white to-sky-50 backdrop-blur-xl border-b border-sky-100 shadow-sm">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-18 md:h-20">
           <Link to="/" className="flex items-center group py-2">
@@ -115,7 +115,7 @@ export const MarketingHeader: React.FC = () => {
       </div>
 
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100 shadow-xl">
+        <div className="md:hidden bg-gradient-to-br from-sky-50 via-white to-sky-50 border-t border-sky-100 shadow-xl">
           <nav className="px-4 py-6 space-y-2">
             {navLinks.map((link) => (
               link.hasSubmenu ? (
