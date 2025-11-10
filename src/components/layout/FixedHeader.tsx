@@ -39,7 +39,7 @@ export const FixedHeader: React.FC<FixedHeaderProps> = ({
               <img
                 src="/ombaro-logo.png"
                 alt="OMBARO"
-                className="h-8 sm:h-9 md:h-10 lg:h-11 w-auto object-contain transition-transform duration-300 hover:scale-105"
+                className="h-9 sm:h-10 md:h-11 lg:h-12 w-auto object-contain transition-transform duration-300 hover:scale-105"
               />
             </div>
             <div className="hidden md:block w-px h-8 bg-white/30 flex-shrink-0"></div>
