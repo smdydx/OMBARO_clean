@@ -35,11 +35,11 @@ export const FixedHeader: React.FC<FixedHeaderProps> = ({
       <div className="pt-3 pb-3 px-3 sm:px-4 md:px-6 backdrop-blur-sm">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2 sm:space-x-3 min-w-0 flex-1">
-            <div className="bg-white/95 backdrop-blur-sm rounded-lg p-1.5 sm:p-2 shadow-lg">
+            <div className="bg-white rounded-lg p-1">
               <img
                 src="/ombaro-logo.png"
                 alt="OMBARO"
-                className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain transition-transform duration-300 hover:scale-105"
+                className="h-8 sm:h-9 md:h-10 lg:h-11 w-auto object-contain transition-transform duration-300 hover:scale-105"
               />
             </div>
             <div className="hidden md:block w-px h-8 bg-white/30 flex-shrink-0"></div>
