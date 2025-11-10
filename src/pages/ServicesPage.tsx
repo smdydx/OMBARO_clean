@@ -144,12 +144,12 @@ export const ServicesPage: React.FC = () => {
       <MarketingHeader />
 
       <main className="pt-16">
-        <section className="bg-gradient-to-br from-primary-50 via-accent-50 to-secondary-50 py-20">
+        <section className="bg-gradient-to-br from-cyan-50 via-white to-cyan-50/30 py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-6">
-              Our Services
+            <h1 className="text-4xl md:text-5xl font-light text-gray-800 mb-6">
+              Our <span className="font-normal text-cyan-600">Services</span>
             </h1>
-            <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Explore our comprehensive range of beauty and wellness services designed to make you look and feel your best
             </p>
           </div>
