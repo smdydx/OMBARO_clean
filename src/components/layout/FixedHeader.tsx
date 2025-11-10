@@ -38,7 +38,7 @@ export const FixedHeader: React.FC<FixedHeaderProps> = ({
             <img
               src="/ombaro-logo.png"
               alt="OMBARO"
-              className="h-16 sm:h-18 md:h-20 lg:h-24 w-auto max-w-[120px] sm:max-w-[140px] md:max-w-[180px] lg:max-w-[220px] object-contain transition-transform duration-300 hover:scale-105"
+              className="h-12 sm:h-14 md:h-16 lg:h-18 w-auto max-w-[100px] sm:max-w-[120px] md:max-w-[140px] lg:max-w-[160px] object-contain transition-transform duration-300 hover:scale-105"
             />
             <div className="hidden sm:block w-px h-8 bg-white/30 flex-shrink-0"></div>
             <div className="hidden sm:flex items-center space-x-2 min-w-0 flex-1">

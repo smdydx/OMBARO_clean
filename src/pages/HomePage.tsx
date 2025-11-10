@@ -75,13 +75,29 @@ export const HomePage: React.FC = () => {
     },
   ];
 
+  // Hero slider images
+  const [currentSlideImage, setCurrentSlideImage] = React.useState(0);
+  const heroImages = [
+    '/attached_assets/stock_images/spa_treatment_room_i_609c3288.jpg',
+    '/attached_assets/stock_images/luxury_spa_massage_t_690db67f.jpg',
+    '/attached_assets/stock_images/spa_treatment_room_i_a3b5e6e7.jpg',
+    '/attached_assets/stock_images/luxury_spa_massage_t_2767ba26.jpg'
+  ];
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlideImage((prev) => (prev + 1) % heroImages.length);
+    }, 4000); // Change image every 4 seconds
+    return () => clearInterval(interval);
+  }, []);
+
   // Updated services array with unique images for each service
   const services = [
     {
       title: 'Relax & Enjoy a Unique Experience',
       subtitle: 'SPA TREATMENTS',
       description: 'Indulge in our premium spa treatments designed to rejuvenate your body and mind. Experience tranquility like never before.',
-      image: '/attached_assets/stock_images/beauty_salon_facial__29de6e5b.jpg',
+      image: '/attached_assets/stock_images/spa_treatment_room_i_79626365.jpg',
       link: '/spa-massage',
       reverse: false
     },
@@ -89,7 +105,7 @@ export const HomePage: React.FC = () => {
       title: 'Massage & Therapy',
       subtitle: 'HEALING TOUCH',
       description: 'Expert therapeutic massages that relieve stress, ease muscle tension, and promote overall wellness and relaxation.',
-      image: '/attached_assets/stock_images/spa_treatment_room_i_609c3288.jpg',
+      image: '/attached_assets/stock_images/luxury_spa_massage_t_3fdc8d75.jpg',
       link: '/spa-massage',
       reverse: true
     },
@@ -97,7 +113,7 @@ export const HomePage: React.FC = () => {
       title: 'Relax at the Hot tub',
       subtitle: 'HOTTUB THERAPY',
       description: 'Immerse yourself in our luxurious hot tub facilities, perfect for unwinding and soothing tired muscles.',
-      image: '/attached_assets/stock_images/luxury_spa_massage_t_48a88152.jpg',
+      image: '/attached_assets/stock_images/spa_treatment_room_i_f52c1c96.jpg',
       link: '/spa-massage',
       reverse: false
     },
@@ -105,7 +121,7 @@ export const HomePage: React.FC = () => {
       title: 'Beauty & Wellness',
       subtitle: 'COMPLETE CARE',
       description: 'Comprehensive beauty and wellness services tailored to enhance your natural beauty and boost your confidence.',
-      image: '/attached_assets/stock_images/beauty_salon_facial__338eb5d5.jpg',
+      image: '/attached_assets/stock_images/beauty_salon_facial__65176adc.jpg',
       link: '/beauty-salon',
       reverse: true
     }
@@ -208,15 +224,28 @@ export const HomePage: React.FC = () => {
                 </Link>
               </div>
 
-              {/* Right Content - Hero Image */}
+              {/* Right Content - Hero Image Slider */}
               <div className="relative">
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                   <img 
-                    src="/attached_assets/stock_images/spa_treatment_room_i_609c3288.jpg"
+                    src={heroImages[currentSlideImage]}
                     alt="Spa Experience"
-                    className="w-full h-[350px] md:h-[500px] object-cover"
+                    className="w-full h-[350px] md:h-[500px] object-cover transition-opacity duration-1000"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/20 to-transparent"></div>
+                  {/* Slider indicators */}
+                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
+                    {heroImages.map((_, index) => (
+                      <button
+                        key={index}
+                        onClick={() => setCurrentSlideImage(index)}
+                        className={`w-2 h-2 rounded-full transition-all ${
+                          index === currentSlideImage ? 'bg-white w-6' : 'bg-white/50'
+                        }`}
+                        aria-label={`Go to slide ${index + 1}`}
+                      />
+                    ))}
+                  </div>
                 </div>
                 
                 {/* Floating Card */}

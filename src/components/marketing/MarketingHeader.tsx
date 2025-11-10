@@ -18,11 +18,11 @@ export const MarketingHeader: React.FC = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-xl border-b border-gray-100 shadow-sm">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-18 md:h-20">
-          <Link to="/" className="flex items-center group">
+          <Link to="/" className="flex items-center group py-2">
             <img 
               src="/ombaro-logo.png" 
               alt="OMBARO" 
-              className="h-14 sm:h-16 md:h-20 lg:h-24 w-auto max-w-[140px] sm:max-w-[160px] md:max-w-[200px] lg:max-w-[240px] object-contain transition-all duration-300 group-hover:scale-105 mix-blend-multiply"
+              className="h-12 sm:h-13 md:h-14 lg:h-16 w-auto max-w-[120px] sm:max-w-[140px] md:max-w-[160px] lg:max-w-[180px] object-contain transition-all duration-300 group-hover:scale-105 mix-blend-multiply"
               style={{ backgroundColor: 'transparent' }}
             />
           </Link>
