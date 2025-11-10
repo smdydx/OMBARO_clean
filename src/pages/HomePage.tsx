@@ -75,12 +75,12 @@ export const HomePage: React.FC = () => {
     },
   ];
 
-  // Updated services array with new titles, subtitles, and image paths
+  // Updated services array with unique images for each service
   const services = [
     {
       title: 'Relax & Enjoy a Unique Experience',
       subtitle: 'SPA TREATMENTS',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      description: 'Indulge in our premium spa treatments designed to rejuvenate your body and mind. Experience tranquility like never before.',
       image: '/attached_assets/stock_images/beauty_salon_facial__29de6e5b.jpg',
       link: '/spa-massage',
       reverse: false
@@ -88,24 +88,24 @@ export const HomePage: React.FC = () => {
     {
       title: 'Massage & Therapy',
       subtitle: 'HEALING TOUCH',
-      description: 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.',
-      image: '/attached_assets/stock_images/spa_treatment_room_i_f52c1c96.jpg',
+      description: 'Expert therapeutic massages that relieve stress, ease muscle tension, and promote overall wellness and relaxation.',
+      image: '/attached_assets/stock_images/spa_treatment_room_i_609c3288.jpg',
       link: '/spa-massage',
       reverse: true
     },
     {
       title: 'Relax at the Hot tub',
       subtitle: 'HOTTUB THERAPY',
-      description: 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione.',
-      image: '/attached_assets/stock_images/luxury_spa_massage_t_6f866171.jpg',
+      description: 'Immerse yourself in our luxurious hot tub facilities, perfect for unwinding and soothing tired muscles.',
+      image: '/attached_assets/stock_images/luxury_spa_massage_t_48a88152.jpg',
       link: '/spa-massage',
       reverse: false
     },
     {
-      title: 'Spa Treatments',
-      subtitle: 'WELLNESS JOURNEY',
-      description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-      image: '/attached_assets/stock_images/spa_treatment_room_i_79626365.jpg',
+      title: 'Beauty & Wellness',
+      subtitle: 'COMPLETE CARE',
+      description: 'Comprehensive beauty and wellness services tailored to enhance your natural beauty and boost your confidence.',
+      image: '/attached_assets/stock_images/beauty_salon_facial__338eb5d5.jpg',
       link: '/beauty-salon',
       reverse: true
     }
@@ -230,16 +230,82 @@ export const HomePage: React.FC = () => {
           </section>
         ))}
 
+        {/* All Services Section */}
+        <section className="py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-light text-gray-800 mb-4">
+                Explore Our <span className="font-normal text-cyan-600">Services</span>
+              </h2>
+              <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+                Discover a wide range of premium beauty and wellness services
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {categories.map((category, index) => (
+                <Link key={index} to={category.path}>
+                  <div className="group relative overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer">
+                    <div className="relative h-80">
+                      <img
+                        src={category.image}
+                        alt={category.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                    </div>
+                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                      <h3 className="text-2xl font-bold mb-2">{category.title}</h3>
+                      <p className="text-sm text-gray-200 mb-4">{category.description}</p>
+                      <button className="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 inline-flex items-center">
+                        Explore Services
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </button>
+                    </div>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Why Choose Us Section */}
+        <section className="py-20 bg-gradient-to-b from-white to-cyan-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-light text-gray-800 mb-4">
+                Why Choose <span className="font-normal text-cyan-600">OMBARO</span>
+              </h2>
+              <p className="text-gray-600 text-lg max-w-2xl mx-auto">
+                Your trusted partner for premium beauty and wellness services across India
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+              {features.map((feature, index) => (
+                <div
+                  key={index}
+                  className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 text-center"
+                >
+                  <div className="w-16 h-16 rounded-full bg-cyan-100 flex items-center justify-center mb-4 mx-auto">
+                    <feature.icon className="w-8 h-8 text-cyan-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-800 mb-2">{feature.title}</h3>
+                  <p className="text-gray-600 leading-relaxed text-sm">{feature.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Testimonials Section */}
         <section className="py-20 bg-gradient-to-b from-cyan-50 to-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-light text-gray-800 mb-4">
-                After years of constant research we came up with
-                <br />
-                <span className="font-normal text-cyan-600">Halcyon. A new Experience</span>
+                What Our Customers Say
               </h2>
-              <p className="text-gray-600 text-lg">www.yourwebsite.com</p>
+              <p className="text-gray-600 text-lg">Real experiences from our valued customers</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8 mb-12">
