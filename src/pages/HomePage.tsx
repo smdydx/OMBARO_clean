@@ -75,21 +75,7 @@ export const HomePage: React.FC = () => {
     },
   ];
 
-  // Hero slider images
-  const [currentSlideImage, setCurrentSlideImage] = React.useState(0);
-  const heroImages = [
-    '/attached_assets/stock_images/spa_treatment_room_i_609c3288.jpg',
-    '/attached_assets/stock_images/luxury_spa_massage_t_690db67f.jpg',
-    '/attached_assets/stock_images/spa_treatment_room_i_a3b5e6e7.jpg',
-    '/attached_assets/stock_images/luxury_spa_massage_t_2767ba26.jpg'
-  ];
-
-  React.useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlideImage((prev) => (prev + 1) % heroImages.length);
-    }, 4000); // Change image every 4 seconds
-    return () => clearInterval(interval);
-  }, []);
+  
 
   // Updated services array with unique images for each service
   const services = [
@@ -199,14 +185,12 @@ export const HomePage: React.FC = () => {
       </div>
 
       <main>
-        {/* Hero Section with Images */}
-        <section className="relative bg-gradient-to-b from-cyan-50/30 via-white to-white overflow-hidden pt-20">
-          <div className="absolute inset-0 bg-[url('/attached_assets/stock_images/luxury_spa_massage_t_48a88152.jpg')] bg-cover bg-center opacity-5"></div>
-          
+        {/* Hero Section - Relax & Enjoy with Split Background */}
+        <section className="relative overflow-hidden pt-20">
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-            <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
-              {/* Left Content */}
-              <div className="text-center lg:text-left">
+            <div className="grid lg:grid-cols-5 gap-8 md:gap-12 items-center">
+              {/* Left Content - 4/5 width on white background */}
+              <div className="lg:col-span-3 text-center lg:text-left relative z-10">
                 <h1 className="text-4xl md:text-5xl lg:text-7xl font-light text-gray-800 mb-6 leading-tight">
                   RELAX
                   <br />
@@ -224,28 +208,15 @@ export const HomePage: React.FC = () => {
                 </Link>
               </div>
 
-              {/* Right Content - Hero Image Slider */}
-              <div className="relative">
+              {/* Right Content - 1/5 width with sky background and image */}
+              <div className="lg:col-span-2 relative">
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                   <img 
-                    src={heroImages[currentSlideImage]}
+                    src="/attached_assets/stock_images/beauty_salon_facial__338eb5d5.jpg"
                     alt="Spa Experience"
-                    className="w-full h-[350px] md:h-[500px] object-cover transition-opacity duration-1000"
+                    className="w-full h-[350px] md:h-[500px] object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/20 to-transparent"></div>
-                  {/* Slider indicators */}
-                  <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
-                    {heroImages.map((_, index) => (
-                      <button
-                        key={index}
-                        onClick={() => setCurrentSlideImage(index)}
-                        className={`w-2 h-2 rounded-full transition-all ${
-                          index === currentSlideImage ? 'bg-white w-6' : 'bg-white/50'
-                        }`}
-                        aria-label={`Go to slide ${index + 1}`}
-                      />
-                    ))}
-                  </div>
                 </div>
                 
                 {/* Floating Card */}
@@ -262,6 +233,19 @@ export const HomePage: React.FC = () => {
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* Split Background with Left Circle */}
+          <div className="absolute inset-0 -z-10 flex">
+            {/* White background - 80% width (4/5) */}
+            <div className="w-4/5 bg-white"></div>
+            {/* Sky blue background - 20% width (1/5) with rounded left edge */}
+            <div className="w-1/5 bg-gradient-to-br from-cyan-100 to-sky-200 rounded-l-[100px]"></div>
+          </div>
+
+          {/* Decorative Half Circle on Left */}
+          <div className="absolute left-0 top-1/2 -translate-y-1/2 -z-5">
+            <div className="w-32 h-64 md:w-48 md:h-96 bg-gradient-to-r from-sky-200 to-cyan-200 rounded-r-full opacity-40"></div>
           </div>
           
           {/* Wave Divider */}
