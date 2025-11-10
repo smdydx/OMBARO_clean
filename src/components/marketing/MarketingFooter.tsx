@@ -62,7 +62,7 @@ export const MarketingFooter: React.FC = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
           {/* Quick Links */}
           <div>
-            <h3 className="text-sm sm:text-base font-bold mb-2 sm:mb-3 text-gray-800">Quick Links</h3>
+            <h3 className="text-xs sm:text-base font-semibold mb-2 sm:mb-3 text-gray-800">Quick Links</h3>
             <ul className="space-y-1 sm:space-y-1.5">
               <li>
                 <Link to="/" className="text-xs sm:text-sm text-gray-600 hover:text-cyan-600 transition-colors block py-0.5 sm:py-1">
@@ -89,7 +89,7 @@ export const MarketingFooter: React.FC = () => {
 
           {/* For Businesses */}
           <div>
-            <h3 className="text-sm sm:text-base font-bold mb-2 sm:mb-3 text-gray-800">For Business</h3>
+            <h3 className="text-xs sm:text-base font-semibold mb-2 sm:mb-3 text-gray-800">For Business</h3>
             <ul className="space-y-1 sm:space-y-1.5">
               <li>
                 <Link to="/become-a-partner" className="text-xs sm:text-sm text-gray-600 hover:text-cyan-600 transition-colors block py-0.5 sm:py-1">
@@ -111,7 +111,7 @@ export const MarketingFooter: React.FC = () => {
 
           {/* Contact Us */}
           <div>
-            <h3 className="text-sm sm:text-base font-bold mb-2 sm:mb-3 text-gray-800">Contact Us</h3>
+            <h3 className="text-xs sm:text-base font-semibold mb-2 sm:mb-3 text-gray-800">Contact Us</h3>
             <ul className="space-y-1 sm:space-y-1.5">
               <li className="flex items-start space-x-1.5">
                 <Phone className="w-3 h-3 sm:w-3.5 sm:h-3.5 mt-0.5 flex-shrink-0 text-cyan-600" />
@@ -134,7 +134,7 @@ export const MarketingFooter: React.FC = () => {
 
           {/* Legal */}
           <div>
-            <h3 className="text-sm sm:text-base font-bold mb-2 sm:mb-3 text-gray-800">Legal</h3>
+            <h3 className="text-xs sm:text-base font-semibold mb-2 sm:mb-3 text-gray-800">Legal</h3>
             <ul className="space-y-1 sm:space-y-1.5">
               <li>
                 <Link to="/terms" className="text-xs sm:text-sm text-cyan-600 hover:text-cyan-700 font-semibold transition-colors block py-0.5 sm:py-1">

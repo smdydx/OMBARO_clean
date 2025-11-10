@@ -185,11 +185,11 @@ export const HomePage: React.FC = () => {
       </div>
 
       <main>
-        {/* Hero Section - Relax & Enjoy with Split Background */}
-        <section className="relative overflow-hidden pt-16 sm:pt-20">
+        {/* Hero Section - Relax & Enjoy with Water Flow */}
+        <section className="relative overflow-hidden pt-16 sm:pt-20 bg-gradient-to-b from-sky-100 via-cyan-50 to-white">
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 md:py-24">
             <div className="grid lg:grid-cols-5 gap-6 sm:gap-8 md:gap-12 items-center">
-              {/* Left Content - 4/5 width on white background */}
+              {/* Left Content */}
               <div className="lg:col-span-3 text-center lg:text-left relative z-10">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-light text-gray-800 mb-4 sm:mb-6 leading-tight">
                   RELAX
@@ -208,7 +208,7 @@ export const HomePage: React.FC = () => {
                 </Link>
               </div>
 
-              {/* Right Content - 1/5 width with sky background and image */}
+              {/* Right Content - Image */}
               <div className="lg:col-span-2 relative">
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                   <img 
@@ -235,29 +235,39 @@ export const HomePage: React.FC = () => {
             </div>
           </div>
 
-          {/* Split Background with Left Circle */}
-          <div className="absolute inset-0 -z-10 flex">
-            {/* White background - 80% width (4/5) */}
-            <div className="w-4/5 bg-white"></div>
-            {/* Sky blue background - 20% width (1/5) with rounded left edge */}
-            <div className="w-1/5 bg-gradient-to-br from-cyan-100 to-sky-200 rounded-l-[100px]"></div>
+          {/* Animated Water Flow Wave - Bottom */}
+          <div className="absolute bottom-0 left-0 right-0 h-32 md:h-40">
+            <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="waterGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" style={{ stopColor: '#67e8f9', stopOpacity: 0.8 }} />
+                  <stop offset="100%" style={{ stopColor: '#0891b2', stopOpacity: 0.3 }} />
+                </linearGradient>
+              </defs>
+              <path fill="url(#waterGradient)" fillOpacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+                <animate attributeName="d" dur="8s" repeatCount="indefinite" values="
+                  M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
+                  M0,128L48,144C96,160,192,192,288,186.7C384,181,480,139,576,128C672,117,768,139,864,154.7C960,171,1056,181,1152,176C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
+                  M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" />
+              </path>
+            </svg>
           </div>
 
-          {/* Decorative Half Circle on Left - Bigger */}
-          <div className="absolute left-0 top-1/2 -translate-y-1/2 -z-5">
-            <div className="w-48 h-96 md:w-64 md:h-[500px] lg:w-80 lg:h-[600px] bg-gradient-to-r from-sky-200 to-cyan-200 rounded-r-full opacity-40"></div>
-          </div>
-
-          {/* Wave Divider */}
-          <div className="absolute bottom-0 left-0 right-0">
-            <svg viewBox="0 0 1200 120" className="w-full h-12 md:h-16" preserveAspectRatio="none">
-              <path d="M0,0 Q300,60 600,30 T1200,0 L1200,120 L0,120 Z" fill="#ffffff" />
+          {/* Additional Wave Layer */}
+          <div className="absolute bottom-0 left-0 right-0 h-24 md:h-32 opacity-60">
+            <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
+              <path fill="#e0f2fe" fillOpacity="1" d="M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,154.7C672,149,768,171,864,181.3C960,192,1056,192,1152,181.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+                <animate attributeName="d" dur="6s" repeatCount="indefinite" values="
+                  M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,154.7C672,149,768,171,864,181.3C960,192,1056,192,1152,181.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
+                  M0,192L48,181.3C96,171,192,149,288,154.7C384,160,480,192,576,197.3C672,203,768,181,864,170.7C960,160,1056,160,1152,170.7C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
+                  M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,154.7C672,149,768,171,864,181.3C960,192,1056,192,1152,181.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" />
+              </path>
             </svg>
           </div>
         </section>
 
         {/* Services Sections - Alternating Layout */}
-        <section className="relative py-12 md:py-20 overflow-hidden bg-white mt-4 md:mt-0">
+        <section className="relative py-12 md:py-20 overflow-hidden bg-gradient-to-b from-white via-sky-50 to-white mt-4 md:mt-0">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className={`grid lg:grid-cols-2 gap-12 items-center ${services[0].reverse ? 'lg:grid-flow-dense' : ''}`}>
               {/* Image */}
@@ -383,8 +393,15 @@ export const HomePage: React.FC = () => {
         </section>
 
         {/* Why Choose Us Section */}
-        <section className="py-20 bg-gradient-to-b from-white to-cyan-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative py-20 bg-gradient-to-b from-sky-100 via-cyan-50 to-white overflow-hidden">
+          {/* Top Wave */}
+          <div className="absolute top-0 left-0 right-0 h-24">
+            <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
+              <path fill="#ffffff" fillOpacity="1" d="M0,64L48,85.3C96,107,192,149,288,154.7C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,176C1248,171,1344,149,1392,138.7L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+            </svg>
+          </div>
+
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-light text-gray-800 mb-4">
                 Why Choose <span className="font-normal text-cyan-600">OMBARO</span>
@@ -408,6 +425,13 @@ export const HomePage: React.FC = () => {
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* Bottom Wave */}
+          <div className="absolute bottom-0 left-0 right-0 h-24">
+            <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
+              <path fill="#ffffff" fillOpacity="1" d="M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,154.7C672,149,768,171,864,181.3C960,192,1056,192,1152,181.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
           </div>
         </section>
 
