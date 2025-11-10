@@ -1,9 +1,34 @@
 import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
-import { ArrowRight, Sparkles, Play, Star, Award, TrendingUp } from 'lucide-react';
+import { ArrowRight, Sparkles, Play, Star, Award, TrendingUp, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+
+// Assume Button component is imported from a UI library like shadcn/ui
+// For this example, we'll mock it if it's not provided in the original code context
+// If Button is from shadcn/ui, it would typically be imported like:
+// import { Button } from "@/components/ui/button";
+// Since Button is used in the changes, and not in the original code, I'll assume it's available.
+// If not, the code would need a Button component definition.
+// For now, I'll proceed assuming Button is available and correctly imported.
+
+// Mock Button component if not globally available
+const Button: React.FC<any> = ({ children, className, variant, size, ...props }) => {
+  const baseStyles = "inline-flex items-center justify-center font-bold rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none";
+  const variantStyles = variant === "outline"
+    ? "bg-transparent border-2 hover:bg-white/10"
+    : "bg-white text-primary-900 hover:bg-neutral-100";
+  const sizeStyles = size === "lg"
+    ? "h-10 px-6 py-3 text-base"
+    : "h-9 px-4 py-2 text-sm";
+  return (
+    <button className={`${baseStyles} ${variantStyles} ${sizeStyles} ${className || ''}`} {...props}>
+      {children}
+    </button>
+  );
+};
+
 
 interface SlideContent {
   image: string;
@@ -100,7 +125,7 @@ export const HeroSlider: React.FC = () => {
   };
 
   return (
-    <div 
+    <div
       className="hero-slider-container relative overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -120,7 +145,7 @@ export const HeroSlider: React.FC = () => {
                     alt={slide.title}
                     className="w-full h-full object-cover object-center transform transition-all duration-[1500ms] ease-out hover:scale-105"
                     loading="lazy"
-                    style={{ 
+                    style={{
                       objectFit: 'cover',
                       objectPosition: 'center',
                     }}
