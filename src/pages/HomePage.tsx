@@ -75,7 +75,7 @@ export const HomePage: React.FC = () => {
     },
   ];
 
-  
+
 
   // Updated services array with unique images for each service
   const services = [
@@ -218,7 +218,7 @@ export const HomePage: React.FC = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/20 to-transparent"></div>
                 </div>
-                
+
                 {/* Floating Card */}
                 <div className="absolute -bottom-4 md:-bottom-6 -left-4 md:-left-6 bg-white/90 backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-xl max-w-[200px] md:max-w-xs">
                   <div className="flex items-center space-x-3 md:space-x-4">
@@ -247,7 +247,7 @@ export const HomePage: React.FC = () => {
           <div className="absolute left-0 top-1/2 -translate-y-1/2 -z-5">
             <div className="w-48 h-96 md:w-64 md:h-[500px] lg:w-80 lg:h-[600px] bg-gradient-to-r from-sky-200 to-cyan-200 rounded-r-full opacity-40"></div>
           </div>
-          
+
           {/* Wave Divider */}
           <div className="absolute bottom-0 left-0 right-0">
             <svg viewBox="0 0 1200 120" className="w-full h-12 md:h-16" preserveAspectRatio="none">
@@ -257,7 +257,49 @@ export const HomePage: React.FC = () => {
         </section>
 
         {/* Services Sections - Alternating Layout */}
-        {services.map((service, index) => (
+        <section className="relative py-12 md:py-20 overflow-hidden bg-white mt-4 md:mt-0">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className={`grid lg:grid-cols-2 gap-12 items-center ${services[0].reverse ? 'lg:grid-flow-dense' : ''}`}>
+              {/* Image */}
+              <div className={services[0].reverse ? 'lg:col-start-2' : ''}>
+                <img
+                  src={services[0].image}
+                  alt={services[0].title}
+                  className="rounded-3xl shadow-2xl w-full object-cover h-[400px]"
+                />
+              </div>
+
+              {/* Content */}
+              <div className={`${services[0].reverse ? 'lg:col-start-1 lg:row-start-1' : ''} text-center lg:text-left`}>
+                <div className="text-sm font-semibold text-cyan-600 tracking-wider mb-3">
+                  {services[0].subtitle}
+                </div>
+                <h2 className="text-4xl md:text-5xl font-light text-gray-800 mb-6 leading-tight">
+                  {services[0].title}
+                </h2>
+                <p className="text-gray-600 leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0">
+                  {services[0].description}
+                </p>
+                <Link to={services[0].link}>
+                  <button className="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl">
+                    Learn More
+                  </button>
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Wave Divider - Only on last item */}
+          {services.length === 1 && (
+            <div className="absolute bottom-0 left-0 right-0">
+              <svg viewBox="0 0 1200 120" className="w-full h-24" preserveAspectRatio="none">
+                <path d="M0,0 Q300,60 600,30 T1200,0 L1200,120 L0,120 Z" fill="#f0fdfa" />
+              </svg>
+            </div>
+          )}
+        </section>
+
+        {services.slice(1).map((service, index) => (
           <section key={index} className="relative py-20 overflow-hidden bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className={`grid lg:grid-cols-2 gap-12 items-center ${service.reverse ? 'lg:grid-flow-dense' : ''}`}>
@@ -291,7 +333,7 @@ export const HomePage: React.FC = () => {
             </div>
 
             {/* Wave Divider - Only on last item */}
-            {index === services.length - 1 && (
+            {index === services.length - 2 && ( // Adjusted index for slice
               <div className="absolute bottom-0 left-0 right-0">
                 <svg viewBox="0 0 1200 120" className="w-full h-24" preserveAspectRatio="none">
                   <path d="M0,0 Q300,60 600,30 T1200,0 L1200,120 L0,120 Z" fill="#f0fdfa" />
