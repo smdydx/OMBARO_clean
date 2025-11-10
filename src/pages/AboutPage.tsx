@@ -192,7 +192,7 @@ export const AboutPage: React.FC = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-gradient-to-br from-primary-600 to-secondary-600 rounded-tl-[50px] rounded-tr-[50px]">
+        <section className="py-20 bg-gradient-to-br from-sky-500 via-cyan-500 to-sky-600 text-white rounded-tl-[50px] rounded-tr-[50px]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Join Our Growing Community
@@ -201,11 +201,41 @@ export const AboutPage: React.FC = () => {
               Experience the future of beauty and wellness services
             </p>
             <Link to="/app">
-              <button className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center">
+              <button className="bg-white text-sky-600 hover:bg-sky-50 px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center">
                 Get Started
                 <ArrowRight className="w-5 h-5 ml-2" />
               </button>
             </Link>
+          </div>
+        </section>
+
+        {/* Download Mobile App Section with Water Flow */}
+        <section className="relative overflow-hidden py-20 bg-gradient-to-b from-sky-50 via-cyan-50 to-white">
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-0 left-0 w-full h-full">
+              <div className="animate-pulse">
+                <svg className="w-full h-full" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                  <path fill="currentColor" fillOpacity="0.3" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,106.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" className="text-sky-400"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          
+          <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-800">
+              Download Our Mobile App
+            </h2>
+            <p className="text-xl text-gray-600 mb-8">
+              Get the full OMBARO experience on your mobile device
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="#" className="bg-gradient-to-r from-sky-500 to-cyan-500 text-white px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center justify-center">
+                Download on App Store
+              </a>
+              <a href="#" className="bg-gradient-to-r from-sky-500 to-cyan-500 text-white px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center justify-center">
+                Get it on Google Play
+              </a>
+            </div>
           </div>
         </section>
       </main>
