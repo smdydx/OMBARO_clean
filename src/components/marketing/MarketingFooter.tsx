@@ -23,7 +23,7 @@ export const MarketingFooter: React.FC = () => {
                 href="https://facebook.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 bg-neutral-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors"
+                className="w-9 h-9 bg-neutral-100 rounded-lg flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors"
                 aria-label="Facebook"
               >
                 <Facebook className="w-4 h-4" />
@@ -32,7 +32,7 @@ export const MarketingFooter: React.FC = () => {
                 href="https://twitter.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 bg-neutral-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors"
+                className="w-9 h-9 bg-neutral-100 rounded-lg flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors"
                 aria-label="Twitter"
               >
                 <Twitter className="w-4 h-4" />
@@ -41,7 +41,7 @@ export const MarketingFooter: React.FC = () => {
                 href="https://instagram.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 bg-neutral-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors"
+                className="w-9 h-9 bg-neutral-100 rounded-lg flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors"
                 aria-label="Instagram"
               >
                 <Instagram className="w-4 h-4" />
@@ -50,7 +50,7 @@ export const MarketingFooter: React.FC = () => {
                 href="https://linkedin.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-9 h-9 bg-neutral-800 rounded-lg flex items-center justify-center hover:bg-primary-600 transition-colors"
+                className="w-9 h-9 bg-neutral-100 rounded-lg flex items-center justify-center hover:bg-primary-600 hover:text-white transition-colors"
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-4 h-4" />

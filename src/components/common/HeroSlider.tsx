@@ -5,15 +5,6 @@ import { Link } from 'react-router-dom';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-// Assume Button component is imported from a UI library like shadcn/ui
-// For this example, we'll mock it if it's not provided in the original code context
-// If Button is from shadcn/ui, it would typically be imported like:
-// import { Button } from "@/components/ui/button";
-// Since Button is used in the changes, and not in the original code, I'll assume it's available.
-// If not, the code would need a Button component definition.
-// For now, I'll proceed assuming Button is available and correctly imported.
-
-// Mock Button component if not globally available
 const Button: React.FC<any> = ({ children, className, variant, size, ...props }) => {
   const baseStyles = "inline-flex items-center justify-center font-bold rounded-md transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none";
   const variantStyles = variant === "outline"
@@ -28,7 +19,6 @@ const Button: React.FC<any> = ({ children, className, variant, size, ...props })
     </button>
   );
 };
-
 
 interface SlideContent {
   image: string;
@@ -126,18 +116,30 @@ export const HeroSlider: React.FC = () => {
 
   return (
     <div
-      className="hero-slider-container relative overflow-hidden"
+      className="hero-slider-container relative overflow-visible mt-20"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      {/* Premium Background Pattern */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary-950 via-primary-900 to-primary-950 opacity-50 z-0" />
+      {/* Zigzag Top Border Design */}
+      <div className="absolute top-0 left-0 right-0 h-8 z-20 overflow-hidden">
+        <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 40" preserveAspectRatio="none">
+          <path d="M0,40 L40,0 L80,40 L120,0 L160,40 L200,0 L240,40 L280,0 L320,40 L360,0 L400,40 L440,0 L480,40 L520,0 L560,40 L600,0 L640,40 L680,0 L720,40 L760,0 L800,40 L840,0 L880,40 L920,0 L960,40 L1000,0 L1040,40 L1080,0 L1120,40 L1160,0 L1200,40 L1200,40 L0,40 Z" 
+                fill="url(#zigzagGradient)" />
+          <defs>
+            <linearGradient id="zigzagGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stopColor="#e0f2fe" />
+              <stop offset="50%" stopColor="#bae6fd" />
+              <stop offset="100%" stopColor="#7dd3fc" />
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
 
       <Slider {...settings}>
         {slides.map((slide, index) => (
           <div key={index} className="slider-slide">
-            <div className="relative h-[500px] sm:h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
-              {/* Background Image with Smooth Transitions */}
+            <div className="relative h-[600px] sm:h-[650px] md:h-[700px] lg:h-[800px] overflow-hidden">
+              {/* Background Image with Premium Overlay */}
               <div className="absolute inset-0 overflow-hidden">
                 <div className="w-full h-full">
                   <img
@@ -156,12 +158,10 @@ export const HeroSlider: React.FC = () => {
                   />
                 </div>
 
-                {/* Navy Blue Gradient Overlays for Luxury Look */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-900/60 via-primary-800/50 to-primary-900/60" />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary-950/50 via-transparent to-transparent" />
+                {/* Soft Gradient Overlays - Light and Premium */}
+                <div className="absolute inset-0 bg-gradient-to-br from-sky-100/40 via-blue-50/30 to-cyan-100/40" />
+                <div className="absolute inset-0 bg-gradient-to-t from-white/60 via-transparent to-transparent" />
               </div>
-
-              {/* Animated Particles - Removed */}
 
               {/* Premium Content Container */}
               <div className="relative z-10 h-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -169,41 +169,41 @@ export const HeroSlider: React.FC = () => {
                   {/* Left Content */}
                   <div className="space-y-4 sm:space-y-6 lg:space-y-8 animate-fade-in-up py-8 sm:py-0 pb-16 sm:pb-8">
                     {/* Premium Badge */}
-                    <div className="inline-flex items-center space-x-3 glass backdrop-blur-2xl border border-white/40 rounded-2xl px-6 py-4 shadow-2xl group hover:scale-105 transition-all duration-300 cursor-pointer">
-                      <div className="w-10 h-10 bg-gradient-to-br from-amber-400 to-orange-500 rounded-xl flex items-center justify-center animate-bounce-subtle">
+                    <div className="inline-flex items-center space-x-3 bg-white/90 backdrop-blur-xl border border-sky-200 rounded-2xl px-6 py-4 shadow-xl group hover:scale-105 transition-all duration-300 cursor-pointer">
+                      <div className="w-10 h-10 bg-gradient-to-br from-sky-400 to-blue-500 rounded-xl flex items-center justify-center animate-bounce-subtle">
                         <Sparkles className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <div className="text-white text-sm font-bold tracking-wider uppercase">{slide.subtitle}</div>
+                        <div className="text-sky-800 text-sm font-bold tracking-wider uppercase">{slide.subtitle}</div>
                         <div className="flex items-center space-x-1 mt-1">
                           {[...Array(5)].map((_, i) => (
-                            <Star key={i} className={`w-3 h-3 ${i < Math.floor(slide.rating) ? 'fill-amber-400 text-amber-400' : 'text-white/30'}`} />
+                            <Star key={i} className={`w-3 h-3 ${i < Math.floor(slide.rating) ? 'fill-amber-400 text-amber-400' : 'text-neutral-300'}`} />
                           ))}
-                          <span className="text-white/90 text-xs ml-1">{slide.rating}</span>
+                          <span className="text-sky-700 text-xs ml-1">{slide.rating}</span>
                         </div>
                       </div>
                     </div>
 
-                    {/* Title with Gradient */}
+                    {/* Title with Soft Gradient */}
                     <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl xl:text-8xl font-display font-black leading-tight animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
-                      <span className="bg-gradient-to-r from-white via-amber-100 to-white bg-clip-text text-transparent drop-shadow-2xl">
+                      <span className="bg-gradient-to-r from-sky-700 via-blue-600 to-cyan-700 bg-clip-text text-transparent drop-shadow-xl">
                         {slide.title}
                       </span>
                     </h1>
 
                     {/* Description */}
-                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/95 leading-relaxed max-w-xl font-light animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
+                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-neutral-700 leading-relaxed max-w-xl font-light animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
                       {slide.description}
                     </p>
 
                     {/* Features Grid */}
                     <div className="grid grid-cols-3 gap-4 animate-fade-in-up" style={{ animationDelay: '0.25s' }}>
                       {slide.features.map((feature, idx) => (
-                        <div key={idx} className="glass backdrop-blur-xl border border-white/30 rounded-xl p-3 text-center hover:scale-105 transition-all duration-300 cursor-pointer group">
-                          <div className="w-8 h-8 bg-gradient-to-br from-primary-400 to-accent-500 rounded-lg mx-auto mb-2 flex items-center justify-center group-hover:rotate-12 transition-transform">
+                        <div key={idx} className="bg-white/90 backdrop-blur-xl border border-sky-200 rounded-xl p-3 text-center hover:scale-105 transition-all duration-300 cursor-pointer group shadow-md">
+                          <div className="w-8 h-8 bg-gradient-to-br from-sky-400 to-blue-500 rounded-lg mx-auto mb-2 flex items-center justify-center group-hover:rotate-12 transition-transform">
                             <Award className="w-4 h-4 text-white" />
                           </div>
-                          <div className="text-white text-xs font-semibold">{feature}</div>
+                          <div className="text-sky-800 text-xs font-semibold">{feature}</div>
                         </div>
                       ))}
                     </div>
@@ -211,7 +211,7 @@ export const HeroSlider: React.FC = () => {
                     {/* CTA Buttons */}
                     <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 animate-fade-in-up pb-4 sm:pb-0" style={{ animationDelay: '0.3s' }}>
                       <Link to={slide.ctaLink} className="flex-1">
-                        <button className="w-full bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600 hover:from-amber-600 hover:via-orange-600 hover:to-amber-700 text-white font-bold rounded-2xl px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-base shadow-2xl transition-all duration-500 hover:scale-105 hover:shadow-amber-500/50 focus:ring-4 focus:ring-amber-500/50 focus:outline-none flex items-center justify-center group relative overflow-hidden">
+                        <button className="w-full bg-gradient-to-r from-sky-500 via-blue-500 to-cyan-500 hover:from-sky-600 hover:via-blue-600 hover:to-cyan-600 text-white font-bold rounded-2xl px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-base shadow-xl transition-all duration-500 hover:scale-105 hover:shadow-sky-500/50 focus:ring-4 focus:ring-sky-500/50 focus:outline-none flex items-center justify-center group relative overflow-hidden">
                           <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] group-hover:translate-x-[200%] transition-transform duration-1000" />
                           <Play className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:scale-125 transition-transform" />
                           <span className="truncate text-xs sm:text-base">{slide.cta}</span>
@@ -219,14 +219,12 @@ export const HeroSlider: React.FC = () => {
                         </button>
                       </Link>
                       <Link to="/services" className="flex-1">
-                        <button className="w-full glass backdrop-blur-xl border-2 border-white/50 text-white hover:bg-white hover:text-primary-900 font-bold rounded-2xl px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-base transition-all duration-500 hover:scale-105 hover:shadow-2xl focus:ring-4 focus:ring-white/30 focus:outline-none flex items-center justify-center group">
+                        <button className="w-full bg-white/90 backdrop-blur-xl border-2 border-sky-300 text-sky-700 hover:bg-sky-50 hover:border-sky-400 font-bold rounded-2xl px-4 sm:px-8 py-3 sm:py-4 text-sm sm:text-base transition-all duration-500 hover:scale-105 hover:shadow-xl focus:ring-4 focus:ring-sky-200 focus:outline-none flex items-center justify-center group">
                           <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 mr-2 group-hover:rotate-12 transition-transform" />
                           <span className="truncate text-xs sm:text-base">View Services</span>
                         </button>
                       </Link>
                     </div>
-
-                    {/* Social Proof - Removed */}
                   </div>
 
                   {/* Right Content - Interactive Feature Cards */}
@@ -238,18 +236,18 @@ export const HeroSlider: React.FC = () => {
                     ].map((item, idx) => (
                       <div
                         key={idx}
-                        className="glass backdrop-blur-2xl border border-white/40 rounded-3xl p-6 hover:scale-105 transition-all duration-500 cursor-pointer group shadow-2xl"
+                        className="bg-white/90 backdrop-blur-xl border border-sky-200 rounded-3xl p-6 hover:scale-105 transition-all duration-500 cursor-pointer group shadow-xl"
                         style={{ animationDelay: `${0.6 + idx * 0.1}s` }}
                       >
                         <div className="flex items-center space-x-4">
-                          <div className="w-16 h-16 bg-gradient-to-br from-amber-400 to-orange-500 rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform shadow-xl">
+                          <div className="w-16 h-16 bg-gradient-to-br from-sky-400 to-blue-500 rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform shadow-lg">
                             <item.icon className="w-8 h-8 text-white" />
                           </div>
                           <div className="flex-1">
-                            <h3 className="text-white text-xl font-bold mb-1">{item.title}</h3>
-                            <p className="text-white/80 text-sm">{item.desc}</p>
+                            <h3 className="text-sky-800 text-xl font-bold mb-1">{item.title}</h3>
+                            <p className="text-neutral-600 text-sm">{item.desc}</p>
                           </div>
-                          <ArrowRight className="w-6 h-6 text-white/60 group-hover:text-white group-hover:translate-x-2 transition-all" />
+                          <ArrowRight className="w-6 h-6 text-neutral-400 group-hover:text-sky-600 group-hover:translate-x-2 transition-all" />
                         </div>
                       </div>
                     ))}
@@ -263,7 +261,7 @@ export const HeroSlider: React.FC = () => {
 
       <style>{`
         .hero-slider-container .slick-dots {
-          bottom: 50px;
+          bottom: 30px;
           z-index: 30;
           display: flex !important;
           justify-content: center;
@@ -288,7 +286,7 @@ export const HeroSlider: React.FC = () => {
           position: absolute;
           width: 12px;
           height: 12px;
-          background: rgba(255, 255, 255, 0.4);
+          background: rgba(14, 165, 233, 0.4);
           border-radius: 50%;
           transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
           border: 2px solid transparent;
@@ -297,67 +295,26 @@ export const HeroSlider: React.FC = () => {
         .hero-slider-container .slick-dots li.slick-active button:before {
           width: 40px;
           border-radius: 12px;
-          background: linear-gradient(135deg, #f59e0b, #f97316);
-          box-shadow: 0 4px 20px rgba(245, 158, 11, 0.5);
+          background: linear-gradient(135deg, #0ea5e9, #06b6d4);
+          box-shadow: 0 4px 20px rgba(14, 165, 233, 0.5);
           border-color: rgba(255, 255, 255, 0.3);
         }
 
         .hero-slider-container .slick-dots li:hover button:before {
-          background: rgba(255, 255, 255, 0.7);
+          background: rgba(14, 165, 233, 0.7);
           transform: scale(1.3);
         }
 
-        .hero-slider-container .slick-prev,
-        .hero-slider-container .slick-next {
-          display: none !important;
-        }
-
-        @keyframes slideInFromLeft {
-          from {
-            opacity: 0;
-            transform: translateX(-100px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-
-        @keyframes slideInFromRight {
-          from {
-            opacity: 0;
-            transform: translateX(100px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-
-        .glass {
-          background: rgba(255, 255, 255, 0.1);
-          backdrop-filter: blur(20px);
-          -webkit-backdrop-filter: blur(20px);
-        }
-
         @media (max-width: 1024px) {
-          .hero-slider-container .slick-dots {
-            bottom: 30px;
-          }
-        }
-
-        @media (max-width: 640px) {
           .hero-slider-container .slick-dots {
             bottom: 20px;
           }
         }
 
-        .hero-slider-container .slick-slide {
-          transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .hero-slider-container .slick-slide img {
-          transition: transform 1.5s cubic-bezier(0.4, 0, 0.2, 1);
+        @media (max-width: 640px) {
+          .hero-slider-container .slick-dots {
+            bottom: 15px;
+          }
         }
       `}</style>
     </div>
