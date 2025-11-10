@@ -260,32 +260,39 @@ export const ServicesPage: React.FC = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-gradient-to-br from-primary-700 via-accent-600 to-secondary-700 text-white relative overflow-hidden rounded-tl-[50px] rounded-tr-[50px]">
-          {/* Animated Background Pattern */}
-          <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/3865676/pexels-photo-3865676.jpeg?auto=compress&cs=tinysrgb&w=1200')] bg-cover bg-center opacity-10 rounded-tl-[50px] rounded-tr-[50px]" />
-          <div className="absolute inset-0 bg-gradient-to-br from-primary-600/20 via-transparent to-accent-600/20 rounded-tl-[50px] rounded-tr-[50px]" />
+        <section className="py-20 bg-gradient-to-b from-sky-50 via-cyan-50 to-white relative overflow-hidden rounded-tl-[50px] rounded-tr-[50px]">
+          {/* Water Flow Effect */}
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-0 left-0 w-full h-full">
+              <div className="animate-pulse">
+                <svg className="w-full h-full" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                  <path fill="currentColor" fillOpacity="0.3" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,106.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" className="text-sky-400"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
 
           {/* Decorative Elements */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-sky-200/30 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-200/30 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2" />
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               {/* Left Content */}
               <div className="space-y-8">
-                <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-md border border-white/30 rounded-full px-5 py-2.5 shadow-lg">
-                  <Sparkles className="w-5 h-5 text-amber-300 animate-pulse" />
-                  <span className="text-white text-sm font-semibold tracking-wide">Join Our Professional Network</span>
+                <div className="inline-flex items-center space-x-2 bg-sky-100/80 backdrop-blur-md border border-sky-200 rounded-full px-5 py-2.5 shadow-lg">
+                  <Sparkles className="w-5 h-5 text-sky-600 animate-pulse" />
+                  <span className="text-sky-700 text-sm font-semibold tracking-wide">Join Our Professional Network</span>
                 </div>
 
                 <div>
-                  <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+                  <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight text-gray-800">
                     Are You a Beauty
-                    <span className="block bg-gradient-to-r from-amber-200 via-yellow-200 to-amber-300 bg-clip-text text-transparent">
+                    <span className="block bg-gradient-to-r from-sky-500 via-cyan-500 to-sky-600 bg-clip-text text-transparent">
                       Professional?
                     </span>
                   </h2>
-                  <p className="text-xl text-white/90 leading-relaxed">
+                  <p className="text-xl text-gray-600 leading-relaxed">
                     Join our network of verified professionals and grow your business.
                     Reach thousands of customers looking for quality services.
                   </p>
@@ -294,41 +301,38 @@ export const ServicesPage: React.FC = () => {
                 {/* Benefits List */}
                 <div className="space-y-4">
                   {[
-                    { icon: TrendingUp, text: 'Get more bookings and increase revenue', color: 'from-accent-400 to-accent-500' },
-                    { icon: Clock, text: 'Manage your schedule efficiently', color: 'from-secondary-400 to-secondary-500' },
-                    { icon: Star, text: 'Build your professional reputation', color: 'from-primary-400 to-primary-500' },
-                    { icon: BarChart3, text: 'Access to business analytics and insights', color: 'from-accent-500 to-primary-500' }
+                    { icon: TrendingUp, text: 'Get more bookings and increase revenue', color: 'from-sky-400 to-sky-500' },
+                    { icon: Clock, text: 'Manage your schedule efficiently', color: 'from-cyan-400 to-cyan-500' },
+                    { icon: Star, text: 'Build your professional reputation', color: 'from-sky-500 to-cyan-500' },
+                    { icon: BarChart3, text: 'Access to business analytics and insights', color: 'from-cyan-500 to-sky-600' }
                   ].map((benefit, index) => (
                     <div
                       key={index}
-                      className="flex items-center space-x-4 bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-4 hover:bg-white/15 transition-all duration-300 group"
+                      className="flex items-center space-x-4 bg-white/70 backdrop-blur-md border border-sky-200 rounded-2xl p-4 hover:bg-white/90 transition-all duration-300 group shadow-md"
                     >
                       <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${benefit.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                         <benefit.icon className="w-6 h-6 text-white" />
                       </div>
-                      <span className="text-white/95 font-medium flex-1">{benefit.text}</span>
-                      <CheckCircle className="w-5 h-5 text-accent-300 flex-shrink-0" />
+                      <span className="text-gray-700 font-medium flex-1">{benefit.text}</span>
+                      <CheckCircle className="w-5 h-5 text-sky-500 flex-shrink-0" />
                     </div>
                   ))}
                 </div>
 
                 <Link to="/become-partner">
-                  <Button
-                    size="lg"
-                    className="bg-white hover:bg-white/95 hover:shadow-2xl hover:scale-105 transition-all duration-300 font-bold text-lg px-8 py-6 mt-6 md:mt-0"
-                  >
-                    <span style={{ color: '#b17d52', opacity: 1 }}>Become a Partner Today</span>
-                    <ArrowRight className="w-6 h-6 ml-2" style={{ color: '#b17d52', opacity: 1 }} />
-                  </Button>
+                  <button className="bg-gradient-to-r from-sky-500 to-cyan-500 hover:from-sky-600 hover:to-cyan-600 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 inline-flex items-center">
+                    Become a Partner Today
+                    <ArrowRight className="w-6 h-6 ml-2" />
+                  </button>
                 </Link>
               </div>
 
               {/* Right Content - Stats Cards */}
               <div className="relative">
-                <div className="bg-white/10 backdrop-blur-xl border border-white/30 rounded-3xl p-4 sm:p-6 md:p-8 shadow-2xl">
+                <div className="bg-white/70 backdrop-blur-xl border border-sky-200 rounded-3xl p-4 sm:p-6 md:p-8 shadow-2xl">
                   <div className="mb-4 sm:mb-6">
-                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">Partner Success Stats</h3>
-                    <p className="text-sm sm:text-base text-white/80">Real results from our professionals</p>
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-2">Partner Success Stats</h3>
+                    <p className="text-sm sm:text-base text-gray-600">Real results from our professionals</p>
                   </div>
 
                   <div className="grid grid-cols-2 gap-3 sm:gap-4 md:gap-5">
@@ -337,64 +341,64 @@ export const ServicesPage: React.FC = () => {
                         icon: TrendingUp,
                         label: 'Revenue Growth',
                         value: '40%+',
-                        gradient: 'from-accent-400 to-accent-600',
-                        bgGradient: 'from-accent-500/20 to-accent-600/20'
+                        gradient: 'from-sky-400 to-sky-600',
+                        bgGradient: 'from-sky-50 to-sky-100'
                       },
                       {
                         icon: Users,
                         label: 'Active Customers',
                         value: '50,000+',
-                        gradient: 'from-secondary-400 to-secondary-600',
-                        bgGradient: 'from-secondary-500/20 to-secondary-600/20'
+                        gradient: 'from-cyan-400 to-cyan-600',
+                        bgGradient: 'from-cyan-50 to-cyan-100'
                       },
                       {
                         icon: Star,
                         label: 'Average Rating',
                         value: '4.8/5',
-                        gradient: 'from-primary-400 to-primary-600',
-                        bgGradient: 'from-primary-500/20 to-primary-600/20'
+                        gradient: 'from-sky-500 to-cyan-500',
+                        bgGradient: 'from-sky-50 to-cyan-100'
                       },
                       {
                         icon: Clock,
                         label: 'Booking Rate',
                         value: '85%+',
-                        gradient: 'from-accent-500 to-primary-600',
-                        bgGradient: 'from-accent-500/20 to-primary-600/20'
+                        gradient: 'from-cyan-500 to-sky-600',
+                        bgGradient: 'from-cyan-50 to-sky-100'
                       }
                     ].map((stat, index) => (
                       <div
                         key={index}
-                        className={`bg-gradient-to-br ${stat.bgGradient} backdrop-blur-sm border border-white/30 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 text-center hover:scale-105 transition-all duration-300 group shadow-lg`}
+                        className={`bg-gradient-to-br ${stat.bgGradient} backdrop-blur-sm border border-sky-200 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 text-center hover:scale-105 transition-all duration-300 group shadow-lg`}
                       >
                         <div className={`w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br ${stat.gradient} mx-auto mb-2 sm:mb-3 md:mb-4 flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform duration-300`}>
                           <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-white" />
                         </div>
-                        <p className="text-xl sm:text-2xl md:text-3xl font-bold text-white mb-1">{stat.value}</p>
-                        <p className="text-xs sm:text-sm font-medium text-white/90">{stat.label}</p>
+                        <p className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-1">{stat.value}</p>
+                        <p className="text-xs sm:text-sm font-medium text-gray-600">{stat.label}</p>
                       </div>
                     ))}
                   </div>
 
                   {/* Additional Info */}
-                  <div className="mt-6 pt-6 border-t border-white/20">
-                    <div className="flex items-center justify-center space-x-2 text-white/90">
+                  <div className="mt-6 pt-6 border-t border-sky-200">
+                    <div className="flex items-center justify-center space-x-2 text-gray-700">
                       <div className="flex -space-x-2">
                         {[1, 2, 3, 4].map((i) => (
                           <div
                             key={i}
-                            className="w-10 h-10 rounded-full border-2 border-white bg-gradient-to-br from-primary-400 to-accent-500"
+                            className="w-10 h-10 rounded-full border-2 border-white bg-gradient-to-br from-sky-400 to-cyan-500"
                           />
                         ))}
                       </div>
                       <span className="text-sm font-medium">
-                        Join <span className="font-bold text-white">500+</span> verified professionals
+                        Join <span className="font-bold text-gray-800">500+</span> verified professionals
                       </span>
                     </div>
                   </div>
                 </div>
 
                 {/* Floating Badge */}
-                <div className="absolute -top-4 -right-4 bg-gradient-to-br from-accent-400 to-primary-600 rounded-2xl p-4 shadow-2xl transform rotate-3 hover:rotate-6 transition-transform duration-300">
+                <div className="absolute -top-4 -right-4 bg-gradient-to-br from-sky-400 to-cyan-600 rounded-2xl p-4 shadow-2xl transform rotate-3 hover:rotate-6 transition-transform duration-300">
                   <div className="text-center">
                     <p className="text-2xl font-bold text-white">🎉</p>
                     <p className="text-xs font-bold text-white">Limited Slots</p>

@@ -22,10 +22,6 @@ export const MarketingHeader: React.FC = () => {
               src="/ombaro-logo.png" 
               alt="OMBARO" 
               className="h-12 sm:h-13 md:h-14 lg:h-16 w-auto max-w-[120px] sm:max-w-[140px] md:max-w-[160px] lg:max-w-[180px] object-contain transition-all duration-300 group-hover:scale-105"
-              style={{ 
-                filter: 'brightness(0) saturate(100%) invert(64%) sepia(94%) saturate(464%) hue-rotate(157deg) brightness(96%) contrast(91%)',
-                mixBlendMode: 'normal'
-              }}
             />
           </Link>
 
