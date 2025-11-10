@@ -243,9 +243,9 @@ export const HomePage: React.FC = () => {
             <div className="w-1/5 bg-gradient-to-br from-cyan-100 to-sky-200 rounded-l-[100px]"></div>
           </div>
 
-          {/* Decorative Half Circle on Left */}
+          {/* Decorative Half Circle on Left - Bigger */}
           <div className="absolute left-0 top-1/2 -translate-y-1/2 -z-5">
-            <div className="w-32 h-64 md:w-48 md:h-96 bg-gradient-to-r from-sky-200 to-cyan-200 rounded-r-full opacity-40"></div>
+            <div className="w-48 h-96 md:w-64 md:h-[500px] lg:w-80 lg:h-[600px] bg-gradient-to-r from-sky-200 to-cyan-200 rounded-r-full opacity-40"></div>
           </div>
           
           {/* Wave Divider */}

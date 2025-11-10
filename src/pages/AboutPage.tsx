@@ -57,14 +57,25 @@ export const AboutPage: React.FC = () => {
       <MarketingHeader />
 
       <main className="pt-16">
-        <section className="bg-gradient-to-br from-cyan-50 via-white to-cyan-50/30 py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section className="relative bg-gradient-to-br from-cyan-50 via-white to-cyan-50/30 py-20 overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <h1 className="text-4xl md:text-5xl font-light text-gray-800 mb-6">
               About <span className="font-normal text-cyan-600">OMBARO</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Revolutionizing the beauty and wellness industry by connecting customers with verified professionals
             </p>
+          </div>
+
+          {/* Split Background with Rounded Edges */}
+          <div className="absolute inset-0 -z-10 flex">
+            <div className="w-4/5 bg-white"></div>
+            <div className="w-1/5 bg-gradient-to-br from-cyan-100 to-sky-200 rounded-l-[100px]"></div>
+          </div>
+
+          {/* Decorative Circle */}
+          <div className="absolute left-0 top-1/2 -translate-y-1/2 -z-5">
+            <div className="w-48 h-96 bg-gradient-to-r from-sky-200 to-cyan-200 rounded-r-full opacity-40"></div>
           </div>
         </section>
 
