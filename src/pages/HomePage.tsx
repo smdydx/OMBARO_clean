@@ -30,31 +30,12 @@ const categories = [
     image: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?w=1200&q=90',
     path: '/beauty-salon',
   },
-  {
-    title: 'Manicure & Pedicure',
-    description: 'Pamper your hands and feet with our professional nail care and grooming services.',
-    image: 'https://images.unsplash.com/photo-1604654894610-df63bc536371?w=1200&q=90',
-    path: '/beauty-salon',
-  },
-  {
-    title: 'Facial Treatments',
-    description: 'Revitalize your skin with our customized facial treatments for a radiant glow.',
-    image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=1200&q=90',
-    path: '/spa-massage',
-  },
-  {
-    title: 'Body Massage',
-    description: 'Experience deep relaxation with our therapeutic full body massage sessions.',
-    image: 'https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=1200&q=90',
-    path: '/spa-massage',
-  },
 ];
 
 
 export const HomePage: React.FC = () => {
   const [showTermsBanner, setShowTermsBanner] = useState(true);
   const [isClosing, setIsClosing] = useState(false);
-  const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
     // Auto-close after 5 seconds
@@ -63,15 +44,6 @@ export const HomePage: React.FC = () => {
     }, 5000);
 
     return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    // Auto-slide for hero images
-    const slideInterval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % 4);
-    }, 4000);
-
-    return () => clearInterval(slideInterval);
   }, []);
 
   const handleCloseBanner = () => {
@@ -236,49 +208,19 @@ export const HomePage: React.FC = () => {
                 </Link>
               </div>
 
-              {/* Right Content - Swipeable Image Slider */}
+              {/* Right Content - Image */}
               <div className="lg:col-span-2 relative">
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                  {/* Swiper Container */}
-                  <div className="relative w-full h-[350px] md:h-[500px] overflow-hidden group">
-                    {[
-                      'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=90',
-                      'https://images.unsplash.com/photo-1596178065887-1198b6148b2b?w=800&q=90',
-                      'https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?w=800&q=90',
-                      'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&q=90'
-                    ].map((image, index) => (
-                      <div
-                        key={index}
-                        className="absolute inset-0 transition-transform duration-700 ease-in-out"
-                        style={{
-                          transform: `translateX(${(index - currentSlide) * 100}%)`,
-                        }}
-                      >
-                        <img 
-                          src={image}
-                          alt={`Spa Experience ${index + 1}`}
-                          className="w-full h-full object-cover"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/20 to-transparent"></div>
-                      </div>
-                    ))}
-                    
-                    {/* Slide Indicators */}
-                    <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
-                      {[0, 1, 2, 3].map((idx) => (
-                        <div
-                          key={idx}
-                          className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                            currentSlide === idx ? 'bg-white w-6' : 'bg-white/50'
-                          }`}
-                        />
-                      ))}
-                    </div>
-                  </div>
+                  <img 
+                    src="/images/beauty_salon_facial__338eb5d5.jpg"
+                    alt="Spa Experience"
+                    className="w-full h-[350px] md:h-[500px] object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/20 to-transparent"></div>
                 </div>
 
                 {/* Floating Card */}
-                <div className="absolute -bottom-4 md:-bottom-6 -left-4 md:-left-6 bg-white/90 backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-xl max-w-[200px] md:max-w-xs z-20">
+                <div className="absolute -bottom-4 md:-bottom-6 -left-4 md:-left-6 bg-white/90 backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-xl max-w-[200px] md:max-w-xs">
                   <div className="flex items-center space-x-3 md:space-x-4">
                     <div className="w-10 h-10 md:w-12 md:h-12 bg-cyan-100 rounded-full flex items-center justify-center">
                       <Star className="w-5 h-5 md:w-6 md:h-6 text-cyan-600" />
@@ -423,7 +365,7 @@ export const HomePage: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+            <div className="grid md:grid-cols-3 gap-8">
               {categories.map((category, index) => (
                 <Link key={index} to={category.path}>
                   <div className="group relative overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer">
