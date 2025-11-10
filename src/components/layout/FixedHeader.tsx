@@ -35,10 +35,13 @@ export const FixedHeader: React.FC<FixedHeaderProps> = ({
       <div className="pt-3 pb-3 px-3 sm:px-4 md:px-6 backdrop-blur-sm">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-3 min-w-0 flex-1">
-            <img 
-              src="/ombaro-logo.png" 
-              alt="OMBARO" 
-              className="h-8 sm:h-10 w-auto flex-shrink-0"
+            <img
+              src="/ombaro-logo.png"
+              alt="OMBARO"
+              className="h-16 md:h-20 w-auto object-contain group-hover:scale-105 transition-transform duration-500"
+              onError={(e) => {
+                e.currentTarget.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="60"><text x="10" y="40" font-family="Arial" font-size="32" fill="%231a2d9b" font-weight="bold">OMBARO</text></svg>';
+              }}
             />
             <div className="w-px h-8 bg-white/30 flex-shrink-0"></div>
             <div className="flex items-center space-x-2 min-w-0 flex-1">
@@ -59,7 +62,7 @@ export const FixedHeader: React.FC<FixedHeaderProps> = ({
             >
               <Search className="w-4 h-4 text-white" />
             </button>
-            <button 
+            <button
               aria-label="View notifications"
               className="w-6 sm:w-8 h-6 sm:h-8 glass rounded-lg flex items-center justify-center hover:bg-white/30 transition-colors"
             >
@@ -75,7 +78,7 @@ export const FixedHeader: React.FC<FixedHeaderProps> = ({
           </div>
         </div>
       </div>
-      
+
       {/* Search Bar - Toggleable */}
       {showSearch && (
         <div className="px-3 sm:px-4 md:px-6 pb-4 border-t border-white/20">

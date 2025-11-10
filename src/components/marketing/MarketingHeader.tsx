@@ -21,7 +21,10 @@ export const MarketingHeader: React.FC = () => {
             <img 
               src="/ombaro-logo.png" 
               alt="OMBARO" 
-              className="h-12 md:h-14 w-auto group-hover:scale-105 transition-transform duration-300"
+              className="h-16 md:h-20 w-auto object-contain group-hover:scale-105 transition-transform duration-500"
+              onError={(e) => {
+                e.currentTarget.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="60"><text x="10" y="40" font-family="Arial" font-size="32" fill="%231a2d9b" font-weight="bold">OMBARO</text></svg>';
+              }}
             />
           </Link>
 
