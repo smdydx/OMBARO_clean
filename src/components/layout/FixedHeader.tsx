@@ -34,14 +34,14 @@ export const FixedHeader: React.FC<FixedHeaderProps> = ({
     <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-primary-600 to-secondary-600 shadow-strong">
       <div className="pt-3 pb-3 px-3 sm:px-4 md:px-6 backdrop-blur-sm">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-3 min-w-0 flex-1">
+          <div className="flex items-center space-x-2 sm:space-x-3 min-w-0 flex-1">
             <img
               src="/ombaro-logo.png"
               alt="OMBARO"
-              className="h-14 md:h-16 lg:h-18 w-auto object-contain transition-transform duration-300 hover:scale-105"
+              className="h-16 sm:h-18 md:h-20 lg:h-24 w-auto max-w-[120px] sm:max-w-[140px] md:max-w-[180px] lg:max-w-[220px] object-contain transition-transform duration-300 hover:scale-105"
             />
-            <div className="w-px h-8 bg-white/30 flex-shrink-0"></div>
-            <div className="flex items-center space-x-2 min-w-0 flex-1">
+            <div className="hidden sm:block w-px h-8 bg-white/30 flex-shrink-0"></div>
+            <div className="hidden sm:flex items-center space-x-2 min-w-0 flex-1">
               <div className="w-6 sm:w-7 h-6 sm:h-7 glass rounded-lg flex items-center justify-center flex-shrink-0">
                 <MapPin className="w-3.5 h-3.5 text-white" />
               </div>
