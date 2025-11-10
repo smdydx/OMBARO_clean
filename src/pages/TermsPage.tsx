@@ -264,16 +264,52 @@ export const TermsPage: React.FC = () => {
         
 
         {/* Hero Section */}
-        <section className="relative py-24 bg-gradient-to-br from-sky-400 via-sky-500 to-sky-600 text-white overflow-hidden">
+        <section className="relative py-16 sm:py-20 md:py-24 bg-gradient-to-br from-sky-400 via-sky-500 to-sky-600 text-white overflow-hidden">
+          {/* Animated Water Wave - Top */}
+          <div className="absolute top-0 left-0 right-0 h-24 sm:h-32 md:h-40 opacity-30 rotate-180">
+            <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="waveGradientTop" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" style={{ stopColor: '#ffffff', stopOpacity: 0.4 }} />
+                  <stop offset="100%" style={{ stopColor: '#e0f2fe', stopOpacity: 0.2 }} />
+                </linearGradient>
+              </defs>
+              <path fill="url(#waveGradientTop)" fillOpacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+                <animate attributeName="d" dur="10s" repeatCount="indefinite" values="
+                  M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
+                  M0,128L48,138.7C96,149,192,171,288,165.3C384,160,480,128,576,122.7C672,117,768,139,864,144C960,149,1056,139,1152,128C1248,117,1344,107,1392,101.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
+                  M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" />
+              </path>
+            </svg>
+          </div>
+          
+          {/* Animated Water Wave - Bottom */}
+          <div className="absolute bottom-0 left-0 right-0 h-24 sm:h-32 md:h-40 opacity-40">
+            <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="waveGradientBottom" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" style={{ stopColor: '#e0f2fe', stopOpacity: 0.3 }} />
+                  <stop offset="100%" style={{ stopColor: '#ffffff', stopOpacity: 0.5 }} />
+                </linearGradient>
+              </defs>
+              <path fill="url(#waveGradientBottom)" fillOpacity="1" d="M0,192L48,181.3C96,171,192,149,288,154.7C384,160,480,192,576,197.3C672,203,768,181,864,170.7C960,160,1056,160,1152,170.7C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+                <animate attributeName="d" dur="8s" repeatCount="indefinite" values="
+                  M0,192L48,181.3C96,171,192,149,288,154.7C384,160,480,192,576,197.3C672,203,768,181,864,170.7C960,160,1056,160,1152,170.7C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
+                  M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,154.7C672,149,768,171,864,181.3C960,192,1056,192,1152,181.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
+                  M0,192L48,181.3C96,171,192,149,288,154.7C384,160,480,192,576,197.3C672,203,768,181,864,170.7C960,160,1056,160,1152,170.7C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" />
+              </path>
+            </svg>
+          </div>
+          
           <div className="absolute inset-0">
-            <div className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }} />
-            <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '6s', animationDelay: '1s' }} />
+            <div className="absolute top-0 left-0 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-white/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }} />
+            <div className="absolute bottom-0 right-0 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-white/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '6s', animationDelay: '1s' }} />
           </div>
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-6 py-3 mb-8">
-              <Scale className="w-5 h-5 text-amber-300 animate-bounce" style={{ animationDuration: '2s' }} />
-              <span className="text-white text-sm font-semibold tracking-wide">Legal Information</span>
+            <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 sm:px-4 md:px-6 py-2 sm:py-2.5 md:py-3 mb-6 sm:mb-8">
+              <Scale className="w-4 h-4 sm:w-5 sm:h-5 text-amber-300 animate-bounce" style={{ animationDuration: '2s' }} />
+              <span className="text-white text-xs sm:text-sm font-semibold tracking-wide">Legal Information</span>
             </div>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-black mb-6 leading-tight">
               Terms & Conditions
@@ -288,9 +324,9 @@ export const TermsPage: React.FC = () => {
         <section className="py-16 bg-white">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-gradient-to-br from-sky-50 via-white to-sky-50 rounded-3xl p-8 md:p-12 shadow-xl border-l-4 border-sky-500">
-              <div className="flex items-start space-x-6">
-                <div className="w-16 h-16 bg-gradient-to-br from-sky-500 to-sky-600 rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
-                  <FileText className="w-8 h-8 text-white" />
+              <div className="flex items-start space-x-3 sm:space-x-4 md:space-x-6">
+                <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 bg-gradient-to-br from-sky-500 to-sky-600 rounded-xl md:rounded-2xl flex items-center justify-center flex-shrink-0 shadow-lg">
+                  <FileText className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 text-white" />
                 </div>
                 <div className="flex-1">
                   <h2 className="text-3xl md:text-4xl font-black text-neutral-900 mb-6">
@@ -326,21 +362,21 @@ export const TermsPage: React.FC = () => {
                   >
                     <button
                       onClick={() => toggleSection(index)}
-                      className="w-full px-8 py-6 flex items-center justify-between hover:bg-neutral-50 transition-colors duration-300 group"
+                      className="w-full px-3 sm:px-4 md:px-6 lg:px-8 py-3 sm:py-4 md:py-5 lg:py-6 flex items-center justify-between hover:bg-neutral-50 transition-colors duration-300 group"
                     >
-                      <div className="flex items-center space-x-3 md:space-x-4 flex-1">
-                        <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 bg-sky-100 rounded-lg md:rounded-xl flex items-center justify-center shadow-md transform group-hover:scale-110 transition-all duration-300">
-                          <Icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-sky-600" />
+                      <div className="flex items-center space-x-2 sm:space-x-3 md:space-x-4 flex-1">
+                        <div className="w-9 h-9 xs:w-10 xs:h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 lg:w-14 lg:h-14 bg-sky-100 rounded-lg md:rounded-xl flex items-center justify-center shadow-md transform group-hover:scale-110 transition-all duration-300 flex-shrink-0">
+                          <Icon className="w-4 h-4 xs:w-5 xs:h-5 sm:w-5.5 sm:h-5.5 md:w-6 md:h-6 lg:w-7 lg:h-7 text-sky-600" />
                         </div>
-                        <h3 className="text-xl md:text-2xl font-bold text-neutral-900 text-left group-hover:text-sky-600 transition-colors">
+                        <h3 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-neutral-900 text-left group-hover:text-sky-600 transition-colors">
                           {section.title}
                         </h3>
                       </div>
-                      <div className={`w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-sky-100 rounded-lg flex items-center justify-center transform transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}>
+                      <div className={`w-7 h-7 xs:w-8 xs:h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-sky-100 rounded-lg flex items-center justify-center transform transition-transform duration-300 flex-shrink-0 ${isExpanded ? 'rotate-180' : ''}`}>
                         {isExpanded ? (
-                          <ChevronUp className="w-5 h-5 sm:w-5.5 sm:h-5.5 md:w-6 md:h-6 text-sky-600" />
+                          <ChevronUp className="w-4 h-4 xs:w-5 xs:h-5 sm:w-5.5 sm:h-5.5 md:w-6 md:h-6 text-sky-600" />
                         ) : (
-                          <ChevronDown className="w-5 h-5 sm:w-5.5 sm:h-5.5 md:w-6 md:h-6 text-sky-600" />
+                          <ChevronDown className="w-4 h-4 xs:w-5 xs:h-5 sm:w-5.5 sm:h-5.5 md:w-6 md:h-6 text-sky-600" />
                         )}
                       </div>
                     </button>
@@ -367,15 +403,27 @@ export const TermsPage: React.FC = () => {
         {/* Contact Section */}
         <section className="py-20 bg-white">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="relative bg-gradient-to-br from-sky-500 via-sky-600 to-sky-700 rounded-3xl p-12 text-white overflow-hidden shadow-2xl">
+            <div className="relative bg-gradient-to-br from-sky-500 via-sky-600 to-sky-700 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 text-white overflow-hidden shadow-2xl">
+              {/* Water Wave Effect */}
+              <div className="absolute bottom-0 left-0 right-0 h-20 sm:h-24 md:h-32 opacity-20">
+                <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
+                  <path fill="#ffffff" fillOpacity="1" d="M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,154.7C672,149,768,171,864,181.3C960,192,1056,192,1152,181.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+                    <animate attributeName="d" dur="7s" repeatCount="indefinite" values="
+                      M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,154.7C672,149,768,171,864,181.3C960,192,1056,192,1152,181.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
+                      M0,192L48,181.3C96,171,192,149,288,154.7C384,160,480,192,576,197.3C672,203,768,181,864,170.7C960,160,1056,160,1152,170.7C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
+                      M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,154.7C672,149,768,171,864,181.3C960,192,1056,192,1152,181.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" />
+                  </path>
+                </svg>
+              </div>
+              
               <div className="absolute inset-0">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }} />
-                <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '5s', animationDelay: '1s' }} />
+                <div className="absolute top-0 right-0 w-48 sm:w-56 md:w-64 h-48 sm:h-56 md:h-64 bg-white/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }} />
+                <div className="absolute bottom-0 left-0 w-48 sm:w-56 md:w-64 h-48 sm:h-56 md:h-64 bg-white/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '5s', animationDelay: '1s' }} />
               </div>
 
               <div className="relative z-10 text-center">
-                <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl mb-6">
-                  <Shield className="w-10 h-10 text-white" />
+                <div className="inline-flex items-center justify-center w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 bg-white/20 backdrop-blur-sm rounded-xl md:rounded-2xl mb-4 sm:mb-5 md:mb-6">
+                  <Shield className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 text-white" />
                 </div>
                 <h3 className="text-3xl md:text-4xl font-black mb-6">Questions About Our Terms?</h3>
                 <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
@@ -384,17 +432,19 @@ export const TermsPage: React.FC = () => {
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
                   <a
                     href="mailto:legal@ombaro.com"
-                    className="group bg-white text-sky-600 px-8 py-4 rounded-2xl font-bold hover:bg-neutral-100 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 flex items-center justify-center space-x-3"
+                    className="group bg-white text-sky-600 px-4 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 rounded-xl md:rounded-2xl font-bold hover:bg-neutral-100 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 flex items-center justify-center space-x-2 sm:space-x-3 text-sm sm:text-base"
                   >
-                    <Mail className="w-5 h-5" />
-                    <span>legal@ombaro.com</span>
+                    <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
+                    <span className="hidden xs:inline">legal@ombaro.com</span>
+                    <span className="xs:hidden">Email</span>
                   </a>
                   <a
                     href="tel:+911234567890"
-                    className="group bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-2xl font-bold hover:bg-white/20 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 flex items-center justify-center space-x-3"
+                    className="group bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-4 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 rounded-xl md:rounded-2xl font-bold hover:bg-white/20 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 flex items-center justify-center space-x-2 sm:space-x-3 text-sm sm:text-base"
                   >
-                    <Phone className="w-5 h-5" />
-                    <span>+91 123 456 7890</span>
+                    <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
+                    <span className="hidden xs:inline">+91 123 456 7890</span>
+                    <span className="xs:hidden">Call</span>
                   </a>
                 </div>
               </div>
