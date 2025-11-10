@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&family=Lora:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Gilda+Display&family=Tenor+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,600;6..96,700;6..96,800&family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@100;200;300;400;500;600;700;800&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,19 +7,19 @@
 
 @layer base {
   * {
-    @apply transition-all duration-500;
+    @apply transition-all duration-300;
   }
 
   body {
-    font-family: 'Tenor Sans', 'Montserrat', sans-serif;
-    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11', 'ss01', 'ss02';
     @apply antialiased;
-    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
-    background-attachment: fixed;
+    background: #ffffff;
     position: relative;
-    font-size: 15px;
-    line-height: 1.7;
-    color: #e2e8f0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #1a1a1a;
+    font-weight: 400;
   }
 
   body::before {
@@ -30,42 +30,44 @@
     right: 0;
     bottom: 0;
     background: 
-      radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
-      radial-gradient(circle at 80% 70%, rgba(147, 197, 253, 0.08) 0%, transparent 50%),
-      radial-gradient(circle at 50% 50%, rgba(30, 58, 138, 0.12) 0%, transparent 70%);
+      radial-gradient(circle at 10% 20%, rgba(26, 45, 155, 0.03) 0%, transparent 50%),
+      radial-gradient(circle at 90% 80%, rgba(26, 45, 155, 0.02) 0%, transparent 50%);
     pointer-events: none;
     z-index: 0;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Gilda Display', 'Playfair Display', Georgia, serif;
-    font-weight: 400;
-    letter-spacing: 0.03em;
-    color: #f1f5f9;
-    line-height: 1.2;
+    font-family: 'Bodoni Moda', 'Cinzel', Georgia, serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: #0a0a0a;
+    line-height: 1.15;
   }
   
   h1 {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 400;
-    letter-spacing: 0.05em;
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
   }
   
   h2 {
-    font-size: clamp(2rem, 4vw, 3rem);
-    letter-spacing: 0.04em;
+    font-size: clamp(2.25rem, 4.5vw, 4rem);
+    font-weight: 600;
+    letter-spacing: -0.025em;
   }
   
   h3 {
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    letter-spacing: 0.03em;
+    font-size: clamp(1.75rem, 3vw, 2.5rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
   }
   
   p, span, div {
-    font-family: 'Tenor Sans', 'Montserrat', sans-serif;
-    font-size: clamp(0.95rem, 2vw, 1.05rem);
-    line-height: 1.8;
-    color: #cbd5e1;
+    font-family: 'Inter', sans-serif;
+    font-size: clamp(1rem, 2vw, 1.125rem);
+    line-height: 1.7;
+    color: #4a4a4a;
+    font-weight: 400;
   }
 
   html {
@@ -92,15 +94,23 @@
 
 @layer components {
   .card {
-    @apply rounded-3xl shadow-2xl;
-    @apply hover:shadow-[0_0_50px_rgba(255,215,0,0.3)] transition-all duration-700;
-    @apply transform hover:-translate-y-6 hover:scale-[1.05];
-    background: linear-gradient(135deg, rgba(26, 45, 155, 0.15) 0%, rgba(10, 14, 39, 0.25) 100%);
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
-    border: 1px solid rgba(255, 215, 0, 0.2);
+    @apply rounded-2xl;
+    background: #ffffff;
+    border: 1px solid rgba(26, 45, 155, 0.08);
+    box-shadow: 
+      0 1px 3px rgba(0, 0, 0, 0.02),
+      0 8px 24px rgba(26, 45, 155, 0.04);
     position: relative;
     overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .card:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+      0 4px 6px rgba(0, 0, 0, 0.03),
+      0 16px 48px rgba(26, 45, 155, 0.08);
+    border-color: rgba(26, 45, 155, 0.12);
   }
 
   .card::before {
@@ -150,20 +160,28 @@
   }
 
   .btn-primary {
-    @apply text-white font-medium rounded-sm px-8 sm:px-10 md:px-12 py-3 sm:py-3.5 md:py-4 shadow-lg;
-    @apply transition-all duration-500 hover:scale-105;
-    @apply focus:ring-4 focus:ring-blue-400/50 focus:outline-none;
-    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #1e40af 100%);
-    background-size: 200% 200%;
-    animation: gradientShift 3s ease infinite;
-    font-size: clamp(0.875rem, 2vw, 1rem);
-    letter-spacing: 0.15em;
-    font-family: 'Tenor Sans', sans-serif;
-    text-transform: uppercase;
+    @apply text-white font-medium rounded-full px-8 sm:px-10 md:px-12 py-3.5 sm:py-4 md:py-4;
+    @apply transition-all duration-300 ease-out;
+    @apply focus:ring-4 focus:ring-blue-900/20 focus:outline-none;
+    background: linear-gradient(135deg, #1a2d9b 0%, #2545c7 100%);
+    font-size: clamp(0.9375rem, 2vw, 1.0625rem);
+    letter-spacing: 0.01em;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
     position: relative;
     overflow: hidden;
-    border: 1px solid rgba(59, 130, 246, 0.3);
-    box-shadow: 0 4px 20px rgba(30, 64, 175, 0.4);
+    border: none;
+    box-shadow: 
+      0 2px 8px rgba(26, 45, 155, 0.15),
+      0 8px 24px rgba(26, 45, 155, 0.12);
+  }
+  
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+      0 4px 12px rgba(26, 45, 155, 0.2),
+      0 12px 32px rgba(26, 45, 155, 0.18);
+    background: linear-gradient(135deg, #152478 0%, #1f3bb0 100%);
   }
   
   @media (min-width: 640px) {
