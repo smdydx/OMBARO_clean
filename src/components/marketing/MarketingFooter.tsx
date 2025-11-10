@@ -4,8 +4,8 @@ import { Sparkles, Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, 
 
 export const MarketingFooter: React.FC = () => {
   return (
-    <footer className="bg-neutral-900 text-neutral-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <footer className="bg-white text-gray-800 border-t border-gray-200">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center mb-4">
@@ -59,30 +59,30 @@ export const MarketingFooter: React.FC = () => {
           </div>
 
           <div>
-            <h3 className="text-white font-semibold mb-4">Quick Links</h3>
+            <h3 className="text-base sm:text-lg font-bold mb-3 sm:mb-4 text-gray-800">Quick Links</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/" className="hover:text-primary-400 transition-colors">
+                <Link to="/" className="text-xs sm:text-sm text-gray-600 hover:text-cyan-600 transition-colors duration-200 block py-1 sm:py-1.5">
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="hover:text-primary-400 transition-colors">
+                <Link to="/about" className="text-xs sm:text-sm text-gray-600 hover:text-cyan-600 transition-colors duration-200 block py-1 sm:py-1.5">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="hover:text-primary-400 transition-colors">
+                <Link to="/services" className="text-xs sm:text-sm text-gray-600 hover:text-cyan-600 transition-colors duration-200 block py-1 sm:py-1.5">
                   Services
                 </Link>
               </li>
               <li>
-                <Link to="/how-it-works" className="hover:text-primary-400 transition-colors">
+                <Link to="/how-it-works" className="text-xs sm:text-sm text-gray-600 hover:text-cyan-600 transition-colors duration-200 block py-1 sm:py-1.5">
                   How It Works
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="hover:text-primary-400 transition-colors">
+                <Link to="/contact" className="text-xs sm:text-sm text-gray-600 hover:text-cyan-600 transition-colors duration-200 block py-1 sm:py-1.5">
                   Contact
                 </Link>
               </li>
@@ -90,26 +90,26 @@ export const MarketingFooter: React.FC = () => {
           </div>
 
           <div>
-            <h3 className="text-white font-semibold mb-4">For Businesses</h3>
+            <h3 className="text-base sm:text-lg font-bold mb-3 sm:mb-4 text-gray-800">For Businesses</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link to="/become-a-partner" className="hover:text-primary-400 transition-colors flex items-center space-x-2 group">
-                  <Briefcase className="w-4 h-4 text-primary-400 group-hover:text-primary-300" />
+                <Link to="/become-a-partner" className="text-xs sm:text-sm text-gray-600 hover:text-cyan-600 transition-colors duration-200 block py-1 sm:py-1.5 flex items-center space-x-2 group">
+                  <Briefcase className="w-4 h-4 text-cyan-600 group-hover:text-cyan-300" />
                   <span>Partner With Us</span>
                 </Link>
               </li>
               <li>
-                <Link to="/app" className="hover:text-primary-400 transition-colors">
+                <Link to="/app" className="text-xs sm:text-sm text-gray-600 hover:text-cyan-600 transition-colors duration-200 block py-1 sm:py-1.5">
                   Vendor Login
                 </Link>
               </li>
               <li>
-                <Link to="/become-a-partner" className="hover:text-primary-400 transition-colors">
+                <Link to="/become-a-partner" className="text-xs sm:text-sm text-gray-600 hover:text-cyan-600 transition-colors duration-200 block py-1 sm:py-1.5">
                   Partner Benefits
                 </Link>
               </li>
               <li>
-                <Link to="/app" className="hover:text-primary-400 transition-colors">
+                <Link to="/app" className="text-xs sm:text-sm text-gray-600 hover:text-cyan-600 transition-colors duration-200 block py-1 sm:py-1.5">
                   Support Center
                 </Link>
               </li>
@@ -117,21 +117,21 @@ export const MarketingFooter: React.FC = () => {
           </div>
 
           <div>
-            <h3 className="text-white font-semibold mb-4">Contact Us</h3>
+            <h3 className="text-base sm:text-lg font-bold mb-3 sm:mb-4 text-gray-800">Contact Us</h3>
             <ul className="space-y-3 text-sm">
               <li className="flex items-start space-x-2">
-                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
+                <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0 text-cyan-600" />
                 <span>123 Beauty Street, Wellness City, IN 110001</span>
               </li>
               <li className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 flex-shrink-0" />
-                <a href="tel:+911234567890" className="hover:text-primary-400 transition-colors">
+                <Phone className="w-4 h-4 flex-shrink-0 text-cyan-600" />
+                <a href="tel:+911234567890" className="text-xs sm:text-sm text-gray-600 hover:text-cyan-600 transition-colors duration-200 block py-1 sm:py-1.5">
                   +91 123 456 7890
                 </a>
               </li>
               <li className="flex items-center space-x-2">
-                <Mail className="w-4 h-4 flex-shrink-0" />
-                <a href="mailto:hello@ombaro.com" className="hover:text-primary-400 transition-colors">
+                <Mail className="w-4 h-4 flex-shrink-0 text-cyan-600" />
+                <a href="mailto:hello@ombaro.com" className="text-xs sm:text-sm text-gray-600 hover:text-cyan-600 transition-colors duration-200 block py-1 sm:py-1.5">
                   hello@ombaro.com
                 </a>
               </li>
@@ -140,15 +140,15 @@ export const MarketingFooter: React.FC = () => {
 
           {/* Legal Links - Prominent */}
           <div>
-            <h3 className="text-white font-semibold mb-4 flex items-center space-x-2">
-              <Shield className="w-5 h-5 text-primary-600" />
+            <h3 className="text-base sm:text-lg font-bold mb-3 sm:mb-4 text-gray-800 flex items-center space-x-2">
+              <Shield className="w-5 h-5 text-cyan-600" />
               <span>Legal</span>
             </h3>
             <ul className="space-y-2 text-sm">
               <li>
                 <Link
                   to="/terms"
-                  className="text-primary-600 hover:text-primary-700 font-semibold transition-colors flex items-center space-x-1"
+                  className="text-cyan-600 hover:text-cyan-700 font-semibold transition-colors duration-200 block py-1 sm:py-1.5 flex items-center space-x-1"
                 >
                   <FileText className="w-4 h-4" />
                   <span>Terms & Conditions</span>
@@ -157,36 +157,38 @@ export const MarketingFooter: React.FC = () => {
               <li>
                 <Link
                   to="/privacy"
-                  className="text-neutral-600 hover:text-primary-600 transition-colors flex items-center space-x-1"
+                  className="text-gray-600 hover:text-cyan-600 transition-colors duration-200 block py-1 sm:py-1.5 flex items-center space-x-1"
                 >
                   <Shield className="w-4 h-4" />
                   <span>Privacy Policy</span>
                 </Link>
               </li>
             </ul>
-            <div className="mt-4 bg-primary-50 border-2 border-primary-200 rounded-lg p-3">
-              <p className="text-xs text-primary-800 font-medium">
+            <div className="mt-4 bg-cyan-50 border-2 border-cyan-200 rounded-lg p-3">
+              <p className="text-xs font-medium text-cyan-800">
                 ⚠️ By using OMBARO, you agree to our Terms & Conditions
               </p>
             </div>
           </div>
         </div>
 
-        <div className="border-t border-neutral-800 mt-8 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <p className="text-sm text-neutral-400">
-              &copy; 2025 OMBARO. All rights reserved.
-            </p>
-            <div className="flex space-x-6 text-sm">
-              <Link to="/privacy" className="hover:text-primary-400 transition-colors">
-                Privacy Policy
-              </Link>
-              <Link to="/terms" className="hover:text-primary-400 transition-colors">
-                Terms of Service
-              </Link>
-              <Link to="/cookies" className="hover:text-primary-400 transition-colors">
-                Cookie Policy
-              </Link>
+        <div className="border-t border-gray-200 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
+            <div className="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
+              <p className="text-xs sm:text-sm text-gray-600 text-center md:text-left">
+                &copy; 2025 OMBARO. All rights reserved.
+              </p>
+              <div className="flex space-x-6 text-sm">
+                <Link to="/privacy" className="text-xs sm:text-sm text-gray-600 hover:text-cyan-600 transition-colors duration-200 block py-1 sm:py-1.5">
+                  Privacy Policy
+                </Link>
+                <Link to="/terms" className="text-xs sm:text-sm text-gray-600 hover:text-cyan-600 transition-colors duration-200 block py-1 sm:py-1.5">
+                  Terms of Service
+                </Link>
+                <Link to="/cookies" className="text-xs sm:text-sm text-gray-600 hover:text-cyan-600 transition-colors duration-200 block py-1 sm:py-1.5">
+                  Cookie Policy
+                </Link>
+              </div>
             </div>
           </div>
         </div>
