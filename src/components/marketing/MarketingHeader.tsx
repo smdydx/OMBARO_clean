@@ -17,13 +17,12 @@ export const MarketingHeader: React.FC = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md border-b border-neutral-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <Link to="/" className="flex items-center space-x-3 group">
-            <div className="w-12 h-12 gradient-green rounded-2xl flex items-center justify-center shadow-strong group-hover:scale-110 transition-all duration-300">
-              <Sparkles className="w-6 h-6 text-white animate-bounce-subtle" />
-            </div>
-            <span className="text-3xl font-display font-black text-transparent bg-gradient-to-r from-primary-700 via-primary-600 to-accent-600 bg-clip-text">
-              OMBARO
-            </span>
+          <Link to="/" className="flex items-center group">
+            <img 
+              src="/ombaro-logo.png" 
+              alt="OMBARO" 
+              className="h-12 md:h-14 w-auto group-hover:scale-105 transition-transform duration-300"
+            />
           </Link>
 
           <nav className="hidden md:flex items-center space-x-1">

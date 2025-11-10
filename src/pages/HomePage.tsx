@@ -195,12 +195,15 @@ export const HomePage: React.FC = () => {
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-br from-primary-100/50 to-accent-100/50 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-4 sm:p-8 shadow-soft hover:shadow-strong transition-all duration-500 hover:-translate-y-3 border border-primary-100/50 hover:border-primary-300/50 text-center">
-                    <div className="text-2xl sm:text-4xl md:text-5xl font-display font-bold bg-gradient-to-br from-primary-600 via-accent-500 to-primary-700 bg-clip-text text-transparent mb-2 sm:mb-3 group-hover:scale-125 transition-transform duration-500">
-                      {stat.number}
+                  <div className="relative bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 hover:scale-105 border border-primary-100 hover:border-primary-400 text-center overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary-50/50 to-accent-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="relative z-10">
+                      <div className="text-2xl sm:text-4xl md:text-5xl font-display font-bold bg-gradient-to-br from-primary-600 via-accent-500 to-primary-700 bg-clip-text text-transparent mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-500">
+                        {stat.number}
+                      </div>
+                      <div className="text-xs sm:text-sm md:text-base text-gray-900 font-semibold tracking-wide">{stat.label}</div>
                     </div>
-                    <div className="text-xs sm:text-sm md:text-base text-neutral-700 font-semibold tracking-wide">{stat.label}</div>
-                    <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-16 h-1 bg-gradient-to-r from-transparent via-primary-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-400 via-accent-400 to-primary-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
                   </div>
                 </div>
               ))}

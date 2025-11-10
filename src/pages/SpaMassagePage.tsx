@@ -121,8 +121,9 @@ export const SpaMassagePage: React.FC = () => {
       <MarketingHeader />
 
       <main className="pt-16">
-        <section className="relative py-20 bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 text-white overflow-hidden">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1920&q=90')] bg-cover bg-center opacity-20" />
+        <section className="relative py-20 bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 overflow-hidden">
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1920&q=90')] bg-cover bg-center opacity-30" />
+          <div className="absolute inset-0 bg-gradient-to-b from-emerald-900/60 via-transparent to-teal-900/60" />
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
               <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">

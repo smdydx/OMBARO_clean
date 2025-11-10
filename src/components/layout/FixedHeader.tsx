@@ -32,15 +32,23 @@ export const FixedHeader: React.FC<FixedHeaderProps> = ({
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-primary-600 to-secondary-600 shadow-strong">
-      <div className="pt-4 pb-3 sm:pb-4 px-3 sm:px-4 md:px-6 backdrop-blur-sm">
+      <div className="pt-3 pb-3 px-3 sm:px-4 md:px-6 backdrop-blur-sm">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2 min-w-0 flex-1">
-            <div className="w-6 sm:w-8 h-6 sm:h-8 glass rounded-lg flex items-center justify-center flex-shrink-0">
-              <MapPin className="w-4 h-4 text-white" />
-            </div>
-            <div className="min-w-0 flex-1">
-              <p className="text-white/80 text-xs">Current Location</p>
-              <p className="text-white font-medium text-xs sm:text-sm truncate">Bangalore, Karnataka</p>
+          <div className="flex items-center space-x-3 min-w-0 flex-1">
+            <img 
+              src="/ombaro-logo.png" 
+              alt="OMBARO" 
+              className="h-8 sm:h-10 w-auto flex-shrink-0"
+            />
+            <div className="w-px h-8 bg-white/30 flex-shrink-0"></div>
+            <div className="flex items-center space-x-2 min-w-0 flex-1">
+              <div className="w-6 sm:w-7 h-6 sm:h-7 glass rounded-lg flex items-center justify-center flex-shrink-0">
+                <MapPin className="w-3.5 h-3.5 text-white" />
+              </div>
+              <div className="min-w-0 flex-1">
+                <p className="text-white/80 text-xs">Current Location</p>
+                <p className="text-white font-medium text-xs sm:text-sm truncate">Bangalore, Karnataka</p>
+              </div>
             </div>
           </div>
           <div className="flex items-center space-x-1 sm:space-x-2 flex-shrink-0">
