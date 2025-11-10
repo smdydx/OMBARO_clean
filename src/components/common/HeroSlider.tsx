@@ -22,7 +22,7 @@ export const HeroSlider: React.FC = () => {
 
   const slides: SlideContent[] = [
     {
-      image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1920&q=90',
+      image: '/attached_assets/stock_images/luxury_spa_massage_t_2767ba26.jpg',
       title: 'Luxury Spa Experiences',
       subtitle: 'Premium Wellness Sanctuary',
       description: 'Indulge in our signature spa treatments designed for ultimate relaxation and rejuvenation',
@@ -32,7 +32,7 @@ export const HeroSlider: React.FC = () => {
       rating: 4.9
     },
     {
-      image: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1920&q=90',
+      image: '/attached_assets/stock_images/spa_treatment_room_i_f52c1c96.jpg',
       title: 'Therapeutic Massages',
       subtitle: 'Healing Touch Therapy',
       description: 'Deep tissue, Swedish, Thai, and aromatherapy massages by certified professionals',
@@ -42,7 +42,7 @@ export const HeroSlider: React.FC = () => {
       rating: 5.0
     },
     {
-      image: 'https://images.pexels.com/photos/3865676/pexels-photo-3865676.jpeg?auto=compress&cs=tinysrgb&w=1920',
+      image: '/attached_assets/stock_images/beauty_salon_facial__29de6e5b.jpg',
       title: 'Bridal Beauty Studio',
       subtitle: 'Your Dream Wedding Look',
       description: 'Expert makeup artists and stylists to create your perfect bridal transformation',
@@ -52,7 +52,7 @@ export const HeroSlider: React.FC = () => {
       rating: 4.8
     },
     {
-      image: 'https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=1920',
+      image: '/attached_assets/stock_images/luxury_spa_massage_t_6f866171.jpg',
       title: 'Premium Hair Salon',
       subtitle: 'Hair Artistry & Styling',
       description: 'Transform your look with our expert hair treatments, coloring, and styling services',
@@ -62,7 +62,7 @@ export const HeroSlider: React.FC = () => {
       rating: 4.9
     },
     {
-      image: 'https://images.pexels.com/photos/3373736/pexels-photo-3373736.jpeg?auto=compress&cs=tinysrgb&w=1920',
+      image: '/attached_assets/stock_images/spa_treatment_room_i_79626365.jpg',
       title: 'Advanced Skincare',
       subtitle: 'Radiant Skin Solutions',
       description: 'Professional facials and skincare treatments for glowing, healthy skin',
@@ -72,7 +72,7 @@ export const HeroSlider: React.FC = () => {
       rating: 5.0
     },
     {
-      image: 'https://images.pexels.com/photos/3997379/pexels-photo-3997379.jpeg?auto=compress&cs=tinysrgb&w=1920',
+      image: '/attached_assets/stock_images/beauty_salon_facial__338eb5d5.jpg',
       title: 'Nail Art Studio',
       subtitle: 'Creative Nail Designs',
       description: 'Express your style with our artistic nail designs and premium manicure services',
@@ -86,14 +86,14 @@ export const HeroSlider: React.FC = () => {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 1000,
+    speed: 1200,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: !isHovered,
-    autoplaySpeed: 6000,
+    autoplaySpeed: 5000,
     fade: true,
     pauseOnHover: true,
-    arrows: true,
+    arrows: false,
     cssEase: 'cubic-bezier(0.4, 0, 0.2, 1)',
     dotsClass: 'slick-dots custom-dots',
     beforeChange: (current: number, next: number) => setActiveSlide(next),
@@ -112,22 +112,28 @@ export const HeroSlider: React.FC = () => {
         {slides.map((slide, index) => (
           <div key={index} className="slider-slide">
             <div className="relative h-[500px] sm:h-[600px] md:h-[700px] lg:h-[800px] overflow-hidden">
-              {/* Background Video/Image with Parallax Effect */}
+              {/* Background Image with Smooth Transitions */}
               <div className="absolute inset-0 overflow-hidden">
-                <img
-                  src={slide.image}
-                  alt={slide.title}
-                  className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-[2000ms] hover:scale-110"
-                  loading="lazy"
-                  onError={(e) => {
-                    const target = e.target as HTMLImageElement;
-                    target.style.display = 'none';
-                  }}
-                />
+                <div className="w-full h-full">
+                  <img
+                    src={slide.image}
+                    alt={slide.title}
+                    className="w-full h-full object-cover object-center transform transition-all duration-[1500ms] ease-out hover:scale-105"
+                    loading="lazy"
+                    style={{ 
+                      objectFit: 'cover',
+                      objectPosition: 'center',
+                    }}
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1920&q=90';
+                    }}
+                  />
+                </div>
 
-                {/* Reduced Gradient Overlays - Lower transparency to show video */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-900/50 via-primary-800/40 to-primary-900/50" />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                {/* Navy Blue Gradient Overlays for Luxury Look */}
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-900/60 via-primary-800/50 to-primary-900/60" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary-950/50 via-transparent to-transparent" />
               </div>
 
               {/* Animated Particles - Removed */}
@@ -278,44 +284,7 @@ export const HeroSlider: React.FC = () => {
 
         .hero-slider-container .slick-prev,
         .hero-slider-container .slick-next {
-          z-index: 30;
-          width: 70px;
-          height: 70px;
-          background: rgba(255, 255, 255, 0.15);
-          backdrop-filter: blur(20px);
-          border: 2px solid rgba(255, 255, 255, 0.3);
-          border-radius: 50%;
-          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-          box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-        }
-
-        .hero-slider-container .slick-prev:hover,
-        .hero-slider-container .slick-next:hover {
-          background: linear-gradient(135deg, #f59e0b, #f97316);
-          border-color: rgba(255, 255, 255, 0.5);
-          transform: scale(1.15);
-          box-shadow: 0 12px 40px rgba(245, 158, 11, 0.4);
-        }
-
-        .hero-slider-container .slick-prev {
-          left: 40px;
-        }
-
-        .hero-slider-container .slick-next {
-          right: 40px;
-        }
-
-        .hero-slider-container .slick-prev:before,
-        .hero-slider-container .slick-next:before {
-          font-size: 32px;
-          opacity: 1;
-          line-height: 70px;
-          font-weight: bold;
-        }
-
-        .hero-slider-container .slick-prev:hover:before,
-        .hero-slider-container .slick-next:hover:before {
-          color: white;
+          display: none !important;
         }
 
         @keyframes slideInFromLeft {
@@ -347,40 +316,23 @@ export const HeroSlider: React.FC = () => {
         }
 
         @media (max-width: 1024px) {
-          .hero-slider-container .slick-prev,
-          .hero-slider-container .slick-next {
-            width: 60px;
-            height: 60px;
-          }
-
-          .hero-slider-container .slick-prev {
-            left: 20px;
-          }
-
-          .hero-slider-container .slick-next {
-            right: 20px;
-          }
-
-          .hero-slider-container .slick-prev:before,
-          .hero-slider-container .slick-next:before {
-            font-size: 28px;
-            line-height: 60px;
-          }
-
           .hero-slider-container .slick-dots {
             bottom: 30px;
           }
         }
 
         @media (max-width: 640px) {
-          .hero-slider-container .slick-prev,
-          .hero-slider-container .slick-next {
-            display: none !important;
-          }
-
           .hero-slider-container .slick-dots {
             bottom: 20px;
           }
+        }
+
+        .hero-slider-container .slick-slide {
+          transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .hero-slider-container .slick-slide img {
+          transition: transform 1.5s cubic-bezier(0.4, 0, 0.2, 1);
         }
       `}</style>
     </div>
