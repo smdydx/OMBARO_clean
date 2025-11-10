@@ -186,17 +186,17 @@ export const HomePage: React.FC = () => {
 
       <main>
         {/* Hero Section - Relax & Enjoy with Split Background */}
-        <section className="relative overflow-hidden pt-20">
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-            <div className="grid lg:grid-cols-5 gap-8 md:gap-12 items-center">
+        <section className="relative overflow-hidden pt-16 sm:pt-20">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 md:py-24">
+            <div className="grid lg:grid-cols-5 gap-6 sm:gap-8 md:gap-12 items-center">
               {/* Left Content - 4/5 width on white background */}
               <div className="lg:col-span-3 text-center lg:text-left relative z-10">
-                <h1 className="text-4xl md:text-5xl lg:text-7xl font-light text-gray-800 mb-6 leading-tight">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-light text-gray-800 mb-4 sm:mb-6 leading-tight">
                   RELAX
                   <br />
                   <span className="font-normal text-cyan-600">& ENJOY</span>
                 </h1>
-                <p className="text-base md:text-lg text-gray-600 mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
+                <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-6 sm:mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
                   Experience ultimate relaxation with our premium spa and wellness services. 
                   Book your perfect moment of tranquility today.
                 </p>
