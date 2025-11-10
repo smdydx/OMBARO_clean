@@ -265,40 +265,52 @@ export const TermsPage: React.FC = () => {
 
         {/* Hero Section */}
         <section className="relative py-16 sm:py-20 md:py-24 bg-gradient-to-br from-sky-400 via-sky-500 to-sky-600 text-white overflow-hidden">
-          {/* Animated Water Wave - Top */}
-          <div className="absolute top-0 left-0 right-0 h-24 sm:h-32 md:h-40 opacity-30 rotate-180">
+          {/* Animated Water Wave - Top with Enhanced Gradient */}
+          <div className="absolute top-0 left-0 right-0 h-32 sm:h-40 md:h-48 opacity-40 rotate-180">
             <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
               <defs>
-                <linearGradient id="waveGradientTop" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" style={{ stopColor: '#ffffff', stopOpacity: 0.4 }} />
-                  <stop offset="100%" style={{ stopColor: '#e0f2fe', stopOpacity: 0.2 }} />
+                <linearGradient id="waveGradientTop" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" style={{ stopColor: '#0ea5e9', stopOpacity: 0.6 }} />
+                  <stop offset="50%" style={{ stopColor: '#38bdf8', stopOpacity: 0.4 }} />
+                  <stop offset="100%" style={{ stopColor: '#7dd3fc', stopOpacity: 0.3 }} />
                 </linearGradient>
               </defs>
               <path fill="url(#waveGradientTop)" fillOpacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
-                <animate attributeName="d" dur="10s" repeatCount="indefinite" values="
+                <animate attributeName="d" dur="12s" repeatCount="indefinite" values="
                   M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
                   M0,128L48,138.7C96,149,192,171,288,165.3C384,160,480,128,576,122.7C672,117,768,139,864,144C960,149,1056,139,1152,128C1248,117,1344,107,1392,101.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
+                  M0,64L48,80C96,96,192,128,288,138.7C384,149,480,139,576,128C672,117,768,107,864,112C960,117,1056,139,1152,144C1248,149,1344,139,1392,133.3L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
                   M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" />
               </path>
             </svg>
           </div>
           
-          {/* Animated Water Wave - Bottom */}
-          <div className="absolute bottom-0 left-0 right-0 h-24 sm:h-32 md:h-40 opacity-40">
+          {/* Animated Water Wave - Bottom with Enhanced Gradient */}
+          <div className="absolute bottom-0 left-0 right-0 h-32 sm:h-40 md:h-48 opacity-50">
             <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
               <defs>
-                <linearGradient id="waveGradientBottom" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" style={{ stopColor: '#e0f2fe', stopOpacity: 0.3 }} />
-                  <stop offset="100%" style={{ stopColor: '#ffffff', stopOpacity: 0.5 }} />
+                <linearGradient id="waveGradientBottom" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" style={{ stopColor: '#bae6fd', stopOpacity: 0.5 }} />
+                  <stop offset="50%" style={{ stopColor: '#7dd3fc', stopOpacity: 0.4 }} />
+                  <stop offset="100%" style={{ stopColor: '#38bdf8', stopOpacity: 0.6 }} />
                 </linearGradient>
               </defs>
               <path fill="url(#waveGradientBottom)" fillOpacity="1" d="M0,192L48,181.3C96,171,192,149,288,154.7C384,160,480,192,576,197.3C672,203,768,181,864,170.7C960,160,1056,160,1152,170.7C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
-                <animate attributeName="d" dur="8s" repeatCount="indefinite" values="
+                <animate attributeName="d" dur="10s" repeatCount="indefinite" values="
                   M0,192L48,181.3C96,171,192,149,288,154.7C384,160,480,192,576,197.3C672,203,768,181,864,170.7C960,160,1056,160,1152,170.7C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
                   M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,154.7C672,149,768,171,864,181.3C960,192,1056,192,1152,181.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
+                  M0,224L48,213.3C96,203,192,181,288,176C384,171,480,181,576,192C672,203,768,213,864,208C960,203,1056,181,1152,170.7C1248,160,1344,160,1392,160L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
                   M0,192L48,181.3C96,171,192,149,288,154.7C384,160,480,192,576,197.3C672,203,768,181,864,170.7C960,160,1056,160,1152,170.7C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" />
               </path>
             </svg>
+          </div>
+          
+          {/* Additional Floating Bubbles Effect */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-20 left-10 w-3 h-3 bg-white/30 rounded-full animate-bounce" style={{ animationDuration: '3s', animationDelay: '0s' }}></div>
+            <div className="absolute top-32 right-20 w-2 h-2 bg-white/40 rounded-full animate-bounce" style={{ animationDuration: '4s', animationDelay: '1s' }}></div>
+            <div className="absolute bottom-40 left-1/4 w-4 h-4 bg-white/20 rounded-full animate-bounce" style={{ animationDuration: '5s', animationDelay: '2s' }}></div>
+            <div className="absolute bottom-20 right-1/3 w-3 h-3 bg-white/35 rounded-full animate-bounce" style={{ animationDuration: '3.5s', animationDelay: '0.5s' }}></div>
           </div>
           
           <div className="absolute inset-0">
@@ -362,11 +374,11 @@ export const TermsPage: React.FC = () => {
                   >
                     <button
                       onClick={() => toggleSection(index)}
-                      className="w-full px-3 sm:px-4 md:px-6 lg:px-8 py-3 sm:py-4 md:py-5 lg:py-6 flex items-center justify-between hover:bg-neutral-50 transition-colors duration-300 group"
+                      className="w-full px-4 sm:px-5 md:px-6 lg:px-8 py-4 sm:py-5 md:py-6 flex items-center justify-between hover:bg-neutral-50 transition-colors duration-300 group"
                     >
-                      <div className="flex items-center space-x-2 sm:space-x-3 md:space-x-4 flex-1">
-                        <div className="w-9 h-9 xs:w-10 xs:h-10 sm:w-11 sm:h-11 md:w-12 md:h-12 lg:w-14 lg:h-14 bg-sky-100 rounded-lg md:rounded-xl flex items-center justify-center shadow-md transform group-hover:scale-110 transition-all duration-300 flex-shrink-0">
-                          <Icon className="w-4 h-4 xs:w-5 xs:h-5 sm:w-5.5 sm:h-5.5 md:w-6 md:h-6 lg:w-7 lg:h-7 text-sky-600" />
+                      <div className="flex items-center space-x-3 sm:space-x-4 md:space-x-5 flex-1">
+                        <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-16 lg:h-16 bg-gradient-to-br from-sky-100 to-sky-200 rounded-xl md:rounded-2xl flex items-center justify-center shadow-lg transform group-hover:scale-110 group-hover:rotate-3 transition-all duration-300 flex-shrink-0">
+                          <Icon className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-8 lg:h-8 text-sky-600" />
                         </div>
                         <h3 className="text-sm xs:text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-neutral-900 text-left group-hover:text-sky-600 transition-colors">
                           {section.title}
@@ -401,14 +413,14 @@ export const TermsPage: React.FC = () => {
         </section>
 
         {/* Contact Section */}
-        <section className="py-20 bg-white">
+        <section className="py-16 sm:py-20 bg-gradient-to-b from-white to-sky-50">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="relative bg-gradient-to-br from-sky-500 via-sky-600 to-sky-700 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 lg:p-12 text-white overflow-hidden shadow-2xl">
-              {/* Water Wave Effect */}
-              <div className="absolute bottom-0 left-0 right-0 h-20 sm:h-24 md:h-32 opacity-20">
+            <div className="relative bg-gradient-to-br from-sky-500 via-cyan-500 to-sky-600 rounded-3xl p-8 sm:p-10 md:p-12 lg:p-16 text-white overflow-hidden shadow-2xl">
+              {/* Enhanced Water Wave Effect */}
+              <div className="absolute bottom-0 left-0 right-0 h-24 sm:h-32 md:h-40 opacity-20">
                 <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
                   <path fill="#ffffff" fillOpacity="1" d="M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,154.7C672,149,768,171,864,181.3C960,192,1056,192,1152,181.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
-                    <animate attributeName="d" dur="7s" repeatCount="indefinite" values="
+                    <animate attributeName="d" dur="8s" repeatCount="indefinite" values="
                       M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,154.7C672,149,768,171,864,181.3C960,192,1056,192,1152,181.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
                       M0,192L48,181.3C96,171,192,149,288,154.7C384,160,480,192,576,197.3C672,203,768,181,864,170.7C960,160,1056,160,1152,170.7C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
                       M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,154.7C672,149,768,171,864,181.3C960,192,1056,192,1152,181.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" />
@@ -416,35 +428,37 @@ export const TermsPage: React.FC = () => {
                 </svg>
               </div>
               
-              <div className="absolute inset-0">
-                <div className="absolute top-0 right-0 w-48 sm:w-56 md:w-64 h-48 sm:h-56 md:h-64 bg-white/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }} />
-                <div className="absolute bottom-0 left-0 w-48 sm:w-56 md:w-64 h-48 sm:h-56 md:h-64 bg-white/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '5s', animationDelay: '1s' }} />
+              {/* Animated Background Orbs */}
+              <div className="absolute inset-0 overflow-hidden">
+                <div className="absolute top-0 right-0 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-white/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }} />
+                <div className="absolute bottom-0 left-0 w-56 sm:w-72 md:w-80 h-56 sm:h-72 md:h-80 bg-cyan-300/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '6s', animationDelay: '1s' }} />
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 sm:w-64 h-48 sm:h-64 bg-sky-200/10 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '5s', animationDelay: '2s' }} />
               </div>
 
               <div className="relative z-10 text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 bg-white/20 backdrop-blur-sm rounded-xl md:rounded-2xl mb-4 sm:mb-5 md:mb-6">
-                  <Shield className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 text-white" />
+                <div className="inline-flex items-center justify-center w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 bg-white/20 backdrop-blur-md rounded-2xl md:rounded-3xl mb-6 sm:mb-8 shadow-lg transform hover:scale-110 hover:rotate-6 transition-all duration-300">
+                  <Shield className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 text-white" />
                 </div>
-                <h3 className="text-3xl md:text-4xl font-black mb-6">Questions About Our Terms?</h3>
-                <p className="text-xl text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
+                <h3 className="text-3xl sm:text-4xl md:text-5xl font-black mb-4 sm:mb-6 leading-tight">Questions About Our Terms?</h3>
+                <p className="text-lg sm:text-xl md:text-2xl text-white/95 mb-8 sm:mb-10 md:mb-12 max-w-2xl mx-auto leading-relaxed">
                   If you have any questions or concerns about our Terms & Conditions, please contact our support team.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center max-w-2xl mx-auto">
                   <a
                     href="mailto:legal@ombaro.com"
-                    className="group bg-white text-sky-600 px-4 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 rounded-xl md:rounded-2xl font-bold hover:bg-neutral-100 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 flex items-center justify-center space-x-2 sm:space-x-3 text-sm sm:text-base"
+                    className="group bg-white text-sky-600 px-6 sm:px-8 md:px-10 py-4 sm:py-5 rounded-2xl font-bold hover:bg-sky-50 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 flex items-center justify-center space-x-3 text-base sm:text-lg"
                   >
-                    <Mail className="w-4 h-4 sm:w-5 sm:h-5" />
-                    <span className="hidden xs:inline">legal@ombaro.com</span>
-                    <span className="xs:hidden">Email</span>
+                    <Mail className="w-5 h-5 sm:w-6 sm:h-6 group-hover:rotate-12 transition-transform duration-300" />
+                    <span className="hidden sm:inline">legal@ombaro.com</span>
+                    <span className="sm:hidden">Email Us</span>
                   </a>
                   <a
                     href="tel:+911234567890"
-                    className="group bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-4 sm:px-6 md:px-8 py-3 sm:py-3.5 md:py-4 rounded-xl md:rounded-2xl font-bold hover:bg-white/20 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 flex items-center justify-center space-x-2 sm:space-x-3 text-sm sm:text-base"
+                    className="group bg-white/10 backdrop-blur-md border-2 border-white/40 text-white px-6 sm:px-8 md:px-10 py-4 sm:py-5 rounded-2xl font-bold hover:bg-white/20 hover:border-white/60 transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:scale-105 flex items-center justify-center space-x-3 text-base sm:text-lg"
                   >
-                    <Phone className="w-4 h-4 sm:w-5 sm:h-5" />
-                    <span className="hidden xs:inline">+91 123 456 7890</span>
-                    <span className="xs:hidden">Call</span>
+                    <Phone className="w-5 h-5 sm:w-6 sm:h-6 group-hover:rotate-12 transition-transform duration-300" />
+                    <span className="hidden sm:inline">+91 123 456 7890</span>
+                    <span className="sm:hidden">Call Us</span>
                   </a>
                 </div>
               </div>
