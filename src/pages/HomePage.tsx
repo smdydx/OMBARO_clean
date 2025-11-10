@@ -67,12 +67,18 @@ const ServiceImageSlider: React.FC<{ images: string[] }> = ({ images }) => {
         onMouseUp={handleMouseUp}
         onMouseLeave={handleMouseUp}
       >
-        {images.map((image, index) => (
+        {images.map((image, index) => {
+          const offset = index - currentImage;
+          const isActive = offset === 0;
+          
+          return (
           <div
             key={index}
-            className="absolute inset-0 transition-transform duration-500 ease-out"
+            className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+              isActive ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-95 z-0'
+            }`}
             style={{
-              transform: `translateX(${(index - currentImage) * 100}%)`,
+              transform: `translateX(${offset * 100}%) scale(${isActive ? 1 : 0.9})`,
             }}
           >
             <img 
@@ -83,7 +89,8 @@ const ServiceImageSlider: React.FC<{ images: string[] }> = ({ images }) => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
           </div>
-        ))}
+        );
+        })}
         
         {/* Slide Indicators */}
         <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
@@ -381,12 +388,20 @@ export const HomePage: React.FC = () => {
                       'https://images.unsplash.com/photo-1596178065887-1198b6148b2b?w=800&q=90',
                       'https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?w=800&q=90',
                       'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&q=90'
-                    ].map((image, index) => (
+                    ].map((image, index) => {
+                      const offset = index - currentSlide;
+                      const isActive = offset === 0;
+                      const isPrev = offset === -1;
+                      const isNext = offset === 1;
+                      
+                      return (
                       <div
                         key={index}
-                        className="absolute inset-0 transition-transform duration-500 ease-out"
+                        className={`absolute inset-0 transition-all duration-700 ease-in-out ${
+                          isActive ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-95 z-0'
+                        }`}
                         style={{
-                          transform: `translateX(${(index - currentSlide) * 100}%)`,
+                          transform: `translateX(${offset * 100}%) scale(${isActive ? 1 : 0.9})`,
                         }}
                       >
                         <img 
@@ -397,7 +412,8 @@ export const HomePage: React.FC = () => {
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/20 to-transparent"></div>
                       </div>
-                    ))}
+                    );
+                    })}
                     
                     {/* Slide Indicators */}
                     <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
