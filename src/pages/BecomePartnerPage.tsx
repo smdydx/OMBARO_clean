@@ -118,9 +118,8 @@ export const BecomePartnerPage: React.FC = () => {
   const partnershipModels = [
     {
       type: 'Franchise Partner',
-      commission: '15%',
-      investment: '₹5,00,000',
       best: 'New business ventures',
+      image: 'https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&q=90',
       features: [
         'Full OMBARO branding rights',
         'Complete business setup support',
@@ -133,9 +132,8 @@ export const BecomePartnerPage: React.FC = () => {
     },
     {
       type: 'Association Partner',
-      commission: '20%',
-      investment: 'No upfront fee',
       best: 'Established businesses',
+      image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=90',
       features: [
         'Keep your existing brand',
         'Additional revenue stream',
@@ -148,9 +146,8 @@ export const BecomePartnerPage: React.FC = () => {
     },
     {
       type: 'Aggregator',
-      commission: '25%',
-      investment: 'No upfront fee',
       best: 'Multi-vendor platforms',
+      image: 'https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=90',
       features: [
         'Manage multiple vendors',
         'Centralized dashboard',
@@ -163,9 +160,8 @@ export const BecomePartnerPage: React.FC = () => {
     },
     {
       type: 'Independent Vendor',
-      commission: '30%',
-      investment: 'No upfront fee',
       best: 'Individual professionals',
+      image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=90',
       features: [
         'Quick signup process',
         'Flexible working hours',
@@ -551,57 +547,60 @@ export const BecomePartnerPage: React.FC = () => {
               {partnershipModels.map((model, index) => (
                 <div
                   key={index}
-                  className={`relative bg-white rounded-2xl p-6 border-2 transition-all duration-300 hover:-translate-y-2 ${
+                  className={`relative bg-white rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-2 ${
                     model.recommended
-                      ? 'border-rose-500 shadow-strong'
-                      : 'border-neutral-200 hover:border-neutral-300 shadow-soft hover:shadow-strong'
+                      ? 'border-2 border-rose-500 shadow-strong'
+                      : 'border border-neutral-200 hover:border-neutral-300 shadow-soft hover:shadow-strong'
                   }`}
                 >
                   {model.recommended && (
-                    <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                      <div className="bg-gradient-to-r from-rose-600 to-orange-500 text-white px-4 py-1 rounded-full text-xs font-semibold">
+                    <div className="absolute top-4 right-4 z-10">
+                      <div className="bg-gradient-to-r from-rose-600 to-orange-500 text-white px-4 py-2 rounded-full text-xs font-semibold shadow-lg">
                         RECOMMENDED
                       </div>
                     </div>
                   )}
 
-                  <div className="text-center mb-6">
-                    <h3 className="text-xl font-bold text-neutral-900 mb-2">{model.type}</h3>
-                    <div className="text-3xl font-bold bg-gradient-to-r from-rose-600 to-orange-500 bg-clip-text text-transparent mb-1">
-                      {model.commission}
+                  {/* Image Section */}
+                  <div className="relative h-48 overflow-hidden">
+                    <img
+                      src={model.image}
+                      alt={model.type}
+                      className="w-full h-full object-cover transform hover:scale-110 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+                    <div className="absolute bottom-4 left-4 right-4">
+                      <h3 className="text-xl font-bold text-white mb-1">{model.type}</h3>
+                      <p className="text-sm text-white/90">
+                        <span className="font-semibold">Best for:</span> {model.best}
+                      </p>
                     </div>
-                    <p className="text-sm text-neutral-600 mb-2">Commission</p>
-                    <div className="text-sm font-semibold text-neutral-900">{model.investment}</div>
-                    <p className="text-xs text-neutral-500 mt-1">Investment</p>
                   </div>
 
-                  <div className="bg-neutral-50 rounded-xl p-3 mb-4">
-                    <p className="text-xs text-neutral-600 text-center">
-                      <span className="font-semibold">Best for:</span> {model.best}
-                    </p>
-                  </div>
+                  {/* Content Section */}
+                  <div className="p-6">
+                    <div className="space-y-2 mb-6">
+                      {model.features.map((feature, idx) => (
+                        <div key={idx} className="flex items-start space-x-2">
+                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                          <span className="text-sm text-neutral-700">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
 
-                  <div className="space-y-2 mb-6">
-                    {model.features.map((feature, idx) => (
-                      <div key={idx} className="flex items-start space-x-2">
-                        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-neutral-700">{feature}</span>
-                      </div>
-                    ))}
+                    <Link to="/app">
+                      <Button
+                        className={`w-full ${
+                          model.recommended
+                            ? 'bg-gradient-to-r from-rose-600 to-orange-500 hover:from-rose-700 hover:to-orange-600'
+                            : ''
+                        }`}
+                        variant={model.recommended ? 'default' : 'outline'}
+                      >
+                        Select Plan
+                      </Button>
+                    </Link>
                   </div>
-
-                  <Link to="/app">
-                    <Button
-                      className={`w-full ${
-                        model.recommended
-                          ? 'bg-gradient-to-r from-rose-600 to-orange-500 hover:from-rose-700 hover:to-orange-600'
-                          : ''
-                      }`}
-                      variant={model.recommended ? 'default' : 'outline'}
-                    >
-                      Select Plan
-                    </Button>
-                  </Link>
                 </div>
               ))}
             </div>

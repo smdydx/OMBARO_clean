@@ -181,29 +181,29 @@ export const HomePage: React.FC = () => {
       <main>
         <HeroSlider />
 
-        <section className="py-12 sm:py-20 bg-gradient-to-br from-white via-primary-50/30 to-white relative overflow-hidden">
+        <section className="py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-br from-white via-primary-50/30 to-white relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1920&q=80')] bg-cover bg-center opacity-5" />
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary-200/20 rounded-full blur-3xl animate-float" />
-          <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent-200/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
+          <div className="absolute top-0 left-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-primary-200/20 rounded-full blur-3xl animate-float" />
+          <div className="absolute bottom-0 right-1/4 w-64 sm:w-96 h-64 sm:h-96 bg-accent-200/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
 
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
+          <div className="relative z-10 max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8">
               {stats.map((stat, index) => (
                 <div 
                   key={index} 
                   className="group relative animate-fade-in-up"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary-100/50 to-accent-100/50 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                  <div className="relative bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 hover:scale-105 border border-primary-100 hover:border-primary-400 text-center overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary-100/50 to-accent-100/50 rounded-2xl sm:rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="relative bg-white rounded-xl sm:rounded-2xl md:rounded-3xl p-3 sm:p-4 md:p-6 lg:p-8 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 sm:hover:-translate-y-4 hover:scale-105 border border-primary-100 hover:border-primary-400 text-center overflow-hidden">
                     <div className="absolute inset-0 bg-gradient-to-br from-primary-50/50 to-accent-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                     <div className="relative z-10">
-                      <div className="text-2xl sm:text-4xl md:text-5xl font-display font-bold bg-gradient-to-br from-primary-600 via-accent-500 to-primary-700 bg-clip-text text-transparent mb-2 sm:mb-3 group-hover:scale-110 transition-transform duration-500">
+                      <div className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-display font-bold bg-gradient-to-br from-primary-600 via-accent-500 to-primary-700 bg-clip-text text-transparent mb-1 sm:mb-2 md:mb-3 group-hover:scale-110 transition-transform duration-500 leading-tight">
                         {stat.number}
                       </div>
-                      <div className="text-xs sm:text-sm md:text-base text-gray-900 font-semibold tracking-wide">{stat.label}</div>
+                      <div className="text-xs sm:text-sm md:text-base text-gray-900 font-semibold tracking-wide leading-tight">{stat.label}</div>
                     </div>
-                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary-400 via-accent-400 to-primary-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+                    <div className="absolute bottom-0 left-0 right-0 h-0.5 sm:h-1 bg-gradient-to-r from-primary-400 via-accent-400 to-primary-400 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
                   </div>
                 </div>
               ))}
@@ -402,36 +402,36 @@ export const HomePage: React.FC = () => {
               })}
             </div>
 
-            <div className="relative bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-2 border-primary-100">
+            <div className="relative bg-white rounded-xl sm:rounded-2xl md:rounded-3xl overflow-hidden shadow-xl md:shadow-2xl border border-primary-100 md:border-2">
               <div className="absolute inset-0 bg-white" />
-              <div className="relative z-10 grid md:grid-cols-2 gap-6 sm:gap-8 items-center p-6 sm:p-8 md:p-12">
+              <div className="relative z-10 grid md:grid-cols-2 gap-4 sm:gap-6 md:gap-8 items-center p-4 sm:p-6 md:p-8 lg:p-12">
                 <div className="text-neutral-900">
-                  <h3 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 md:mb-6 bg-gradient-to-r from-primary-600 via-accent-500 to-primary-700 bg-clip-text text-transparent">
+                  <h3 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-2 sm:mb-3 md:mb-4 lg:mb-6 bg-gradient-to-r from-primary-600 via-accent-500 to-primary-700 bg-clip-text text-transparent leading-tight">
                     Ready to Transform Your Business?
                   </h3>
-                  <p className="text-sm sm:text-base md:text-lg lg:text-xl text-neutral-700 mb-4 sm:mb-6 md:mb-8 leading-relaxed">
+                  <p className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl text-neutral-700 mb-3 sm:mb-4 md:mb-6 lg:mb-8 leading-relaxed">
                     Join thousands of successful beauty professionals who have already grown their business with OMBARO. Start your journey today.
                   </p>
-                  <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
+                  <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 md:gap-4">
                     <Link to="/app" className="w-full sm:w-auto">
-                      <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-primary-600 to-accent-600 text-white hover:from-primary-700 hover:to-accent-700 shadow-xl hover:shadow-2xl transition-all transform hover:scale-105 text-sm sm:text-base px-6 sm:px-8 py-3 sm:py-4">
+                      <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-primary-600 to-accent-600 text-white hover:from-primary-700 hover:to-accent-700 shadow-lg md:shadow-xl hover:shadow-xl md:hover:shadow-2xl transition-all transform hover:scale-105 text-xs sm:text-sm md:text-base px-4 sm:px-6 md:px-8 py-2.5 sm:py-3 md:py-4">
                         Become a Partner
-                        <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
+                        <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 ml-1 sm:ml-2" />
                       </Button>
                     </Link>
                   </div>
                 </div>
-                <div className="relative hidden md:block">
+                <div className="relative mt-4 md:mt-0">
                   <img
                     src="https://images.unsplash.com/photo-1522337360788-8b13dee7045427?w=1200&q=90"
                     alt="Beauty professional at work"
-                    className="rounded-2xl shadow-2xl transform hover:scale-105 transition-transform duration-300"
+                    className="rounded-xl md:rounded-2xl shadow-lg md:shadow-2xl transform hover:scale-105 transition-transform duration-300 w-full"
                   />
-                  <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-xl">
-                    <div className="text-3xl font-bold bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent mb-1">
+                  <div className="absolute -bottom-3 sm:-bottom-4 md:-bottom-6 -left-3 sm:-left-4 md:-left-6 bg-white rounded-xl md:rounded-2xl p-3 sm:p-4 md:p-6 shadow-lg md:shadow-xl">
+                    <div className="text-xl sm:text-2xl md:text-3xl font-bold bg-gradient-to-r from-primary-600 to-accent-600 bg-clip-text text-transparent mb-0.5 sm:mb-1">
                       500+
                     </div>
-                    <div className="text-sm text-neutral-600 font-semibold">Partner Vendors</div>
+                    <div className="text-xs sm:text-sm text-neutral-600 font-semibold">Partner Vendors</div>
                   </div>
                 </div>
               </div>
