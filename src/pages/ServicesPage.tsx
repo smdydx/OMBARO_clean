@@ -248,10 +248,10 @@ export const ServicesPage: React.FC = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-gradient-to-br from-primary-700 via-accent-600 to-secondary-700 text-white relative overflow-hidden">
+        <section className="py-20 bg-gradient-to-br from-primary-700 via-accent-600 to-secondary-700 text-white relative overflow-hidden rounded-tl-[50px] rounded-tr-[50px]">
           {/* Animated Background Pattern */}
-          <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/3865676/pexels-photo-3865676.jpeg?auto=compress&cs=tinysrgb&w=1200')] bg-cover bg-center opacity-10" />
-          <div className="absolute inset-0 bg-gradient-to-br from-primary-600/20 via-transparent to-accent-600/20" />
+          <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/3865676/pexels-photo-3865676.jpeg?auto=compress&cs=tinysrgb&w=1200')] bg-cover bg-center opacity-10 rounded-tl-[50px] rounded-tr-[50px]" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary-600/20 via-transparent to-accent-600/20 rounded-tl-[50px] rounded-tr-[50px]" />
 
           {/* Decorative Elements */}
           <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2" />

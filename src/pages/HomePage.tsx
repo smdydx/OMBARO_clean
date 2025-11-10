@@ -183,25 +183,25 @@ export const HomePage: React.FC = () => {
       </div>
 
       <main>
-        {/* Hero Section with Transparent Theme */}
-        <section className="relative bg-gradient-to-b from-cyan-50/30 via-white to-white overflow-hidden">
+        {/* Hero Section with Images */}
+        <section className="relative bg-gradient-to-b from-cyan-50/30 via-white to-white overflow-hidden pt-20">
           <div className="absolute inset-0 bg-[url('/attached_assets/stock_images/luxury_spa_massage_t_48a88152.jpg')] bg-cover bg-center opacity-5"></div>
           
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
+            <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
               {/* Left Content */}
               <div className="text-center lg:text-left">
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-gray-800 mb-6 leading-tight">
+                <h1 className="text-4xl md:text-5xl lg:text-7xl font-light text-gray-800 mb-6 leading-tight">
                   RELAX
                   <br />
                   <span className="font-normal text-cyan-600">& ENJOY</span>
                 </h1>
-                <p className="text-lg text-gray-600 mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
+                <p className="text-base md:text-lg text-gray-600 mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
                   Experience ultimate relaxation with our premium spa and wellness services. 
                   Book your perfect moment of tranquility today.
                 </p>
                 <Link to="/app">
-                  <button className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center">
+                  <button className="bg-cyan-500 hover:bg-cyan-600 text-white px-6 md:px-8 py-2.5 md:py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center">
                     Book Now
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </button>
@@ -214,20 +214,20 @@ export const HomePage: React.FC = () => {
                   <img 
                     src="/attached_assets/stock_images/spa_treatment_room_i_609c3288.jpg"
                     alt="Spa Experience"
-                    className="w-full h-[500px] object-cover"
+                    className="w-full h-[350px] md:h-[500px] object-cover"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/20 to-transparent"></div>
                 </div>
                 
                 {/* Floating Card */}
-                <div className="absolute -bottom-6 -left-6 bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-xl max-w-xs">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-cyan-100 rounded-full flex items-center justify-center">
-                      <Star className="w-6 h-6 text-cyan-600" />
+                <div className="absolute -bottom-4 md:-bottom-6 -left-4 md:-left-6 bg-white/90 backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-xl max-w-[200px] md:max-w-xs">
+                  <div className="flex items-center space-x-3 md:space-x-4">
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-cyan-100 rounded-full flex items-center justify-center">
+                      <Star className="w-5 h-5 md:w-6 md:h-6 text-cyan-600" />
                     </div>
                     <div>
-                      <p className="text-2xl font-bold text-gray-800">50,000+</p>
-                      <p className="text-sm text-gray-600">Happy Customers</p>
+                      <p className="text-xl md:text-2xl font-bold text-gray-800">50,000+</p>
+                      <p className="text-xs md:text-sm text-gray-600">Happy Customers</p>
                     </div>
                   </div>
                 </div>
@@ -237,7 +237,7 @@ export const HomePage: React.FC = () => {
           
           {/* Wave Divider */}
           <div className="absolute bottom-0 left-0 right-0">
-            <svg viewBox="0 0 1200 120" className="w-full h-16" preserveAspectRatio="none">
+            <svg viewBox="0 0 1200 120" className="w-full h-12 md:h-16" preserveAspectRatio="none">
               <path d="M0,0 Q300,60 600,30 T1200,0 L1200,120 L0,120 Z" fill="#ffffff" />
             </svg>
           </div>

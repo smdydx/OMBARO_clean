@@ -226,7 +226,7 @@ export const HowItWorksPage: React.FC = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-gradient-to-br from-primary-600 to-secondary-600 text-white">
+        <section className="py-20 bg-gradient-to-br from-primary-600 to-secondary-600 text-white rounded-tl-[50px] rounded-tr-[50px]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>

@@ -276,12 +276,12 @@ export const BecomePartnerPage: React.FC = () => {
 
       <main className="pt-16">
         {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 text-white overflow-hidden">
+        <section className="relative py-16 md:py-20 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 text-white overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/3865676/pexels-photo-3865676.jpeg?auto=compress&cs=tinysrgb&w=1600')] bg-cover bg-center opacity-10" />
           <div className="absolute inset-0 bg-gradient-to-br from-black/30 to-transparent" />
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
               <div>
                 <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
                   <Sparkles className="w-4 h-4 text-white" />
@@ -297,32 +297,32 @@ export const BecomePartnerPage: React.FC = () => {
                   and scale your spa, salon, or beauty business to new heights.
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-6 md:mb-8">
                   <Link to="/app">
-                    <Button size="lg" className="w-full sm:w-auto bg-white text-navy-700 hover:bg-neutral-100 shadow-xl hover:shadow-2xl transition-all transform hover:scale-105">
+                    <Button size="lg" className="w-full sm:w-auto bg-white text-navy-700 hover:bg-neutral-100 shadow-xl hover:shadow-2xl transition-all transform hover:scale-105 text-sm md:text-base">
                       Register Now
-                      <ArrowRight className="w-5 h-5 ml-2" />
+                      <ArrowRight className="w-4 h-4 md:w-5 md:h-5 ml-2" />
                     </Button>
                   </Link>
                   <a href="#how-it-works">
-                    <Button size="lg" variant="outline" className="w-full sm:w-auto border-2 border-white text-white hover:bg-white/10">
+                    <Button size="lg" variant="outline" className="w-full sm:w-auto border-2 border-white text-white hover:bg-white/10 text-sm md:text-base">
                       Learn How It Works
                     </Button>
                   </a>
                 </div>
 
-                <div className="flex items-center space-x-8">
+                <div className="flex flex-wrap items-center gap-4 md:gap-8">
                   <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-5 h-5 text-green-300" />
-                    <span className="text-sm">No setup fees</span>
+                    <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-green-300" />
+                    <span className="text-xs md:text-sm">No setup fees</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-5 h-5 text-green-300" />
-                    <span className="text-sm">Quick approval</span>
+                    <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-green-300" />
+                    <span className="text-xs md:text-sm">Quick approval</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-5 h-5 text-green-300" />
-                    <span className="text-sm">Instant payouts</span>
+                    <CheckCircle className="w-4 h-4 md:w-5 md:h-5 text-green-300" />
+                    <span className="text-xs md:text-sm">Instant payouts</span>
                   </div>
                 </div>
               </div>
@@ -345,9 +345,9 @@ export const BecomePartnerPage: React.FC = () => {
         </section>
 
         {/* Stats Section */}
-        <section className="py-16 bg-white">
+        <section className="py-12 md:py-16 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center group">
                   <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-navy-600 to-navy-700 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
