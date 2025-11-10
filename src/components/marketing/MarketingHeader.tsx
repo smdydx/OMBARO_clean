@@ -28,8 +28,11 @@ export const MarketingHeader: React.FC = () => {
             <img 
               src="/ombaro-logo.png" 
               alt="OMBARO" 
-              className="h-12 sm:h-13 md:h-14 lg:h-16 w-auto max-w-[120px] sm:max-w-[140px] md:max-w-[160px] lg:max-w-[180px] object-contain transition-all duration-300 group-hover:scale-105 mix-blend-multiply"
-              style={{ backgroundColor: 'transparent' }}
+              className="h-12 sm:h-13 md:h-14 lg:h-16 w-auto max-w-[120px] sm:max-w-[140px] md:max-w-[160px] lg:max-w-[180px] object-contain transition-all duration-300 group-hover:scale-105 drop-shadow-sm"
+              style={{ 
+                filter: 'drop-shadow(0 1px 2px rgba(0,0,0,0.05))',
+                mixBlendMode: 'darken'
+              }}
             />
           </Link>
 
