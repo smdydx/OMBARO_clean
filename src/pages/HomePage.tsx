@@ -11,6 +11,53 @@ import { HeroSlider } from '../components/common/HeroSlider';
 // For the purpose of this edit, I will define a placeholder `categories` array.
 // If this `categories` array is defined elsewhere or should be derived from existing data,
 // that part of the original code would need to be present.
+// Service Image Slider Component
+const ServiceImageSlider: React.FC<{ images: string[] }> = ({ images }) => {
+  const [currentImage, setCurrentImage] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  return (
+    <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[400px]">
+      <div className="relative w-full h-full">
+        {images.map((image, index) => (
+          <div
+            key={index}
+            className="absolute inset-0 transition-transform duration-700 ease-in-out"
+            style={{
+              transform: `translateX(${(index - currentImage) * 100}%)`,
+            }}
+          >
+            <img 
+              src={image}
+              alt={`Service ${index + 1}`}
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+          </div>
+        ))}
+        
+        {/* Slide Indicators */}
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+          {images.map((_, idx) => (
+            <div
+              key={idx}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                currentImage === idx ? 'bg-white w-6' : 'bg-white/50'
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const categories = [
   {
     title: 'Luxury Spa',
@@ -324,17 +371,17 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Services Sections - Alternating Layout */}
+        {/* Services Sections - Alternating Layout with Swipeable Images */}
         <section className="relative py-12 md:py-20 overflow-hidden bg-gradient-to-b from-white via-sky-50 to-white mt-4 md:mt-0">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className={`grid lg:grid-cols-2 gap-12 items-center ${services[0].reverse ? 'lg:grid-flow-dense' : ''}`}>
-              {/* Image */}
+              {/* Swipeable Image Slider */}
               <div className={services[0].reverse ? 'lg:col-start-2' : ''}>
-                <img
-                  src={services[0].image}
-                  alt={services[0].title}
-                  className="rounded-3xl shadow-2xl w-full object-cover h-[400px]"
-                />
+                <ServiceImageSlider images={[
+                  'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=90',
+                  'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=90',
+                  'https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=800&q=90'
+                ]} />
               </div>
 
               {/* Content */}
@@ -367,17 +414,36 @@ export const HomePage: React.FC = () => {
           )}
         </section>
 
-        {services.slice(1).map((service, index) => (
+        {services.slice(1).map((service, index) => {
+          // Unique image sets for each service
+          const serviceImageSets = [
+            // Massage & Therapy
+            [
+              'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=90',
+              'https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?w=800&q=90',
+              'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=90'
+            ],
+            // Hot tub
+            [
+              'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=90',
+              'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=90',
+              'https://images.unsplash.com/photo-1596178065887-1198b6148b2b?w=800&q=90'
+            ],
+            // Beauty & Wellness
+            [
+              'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=90',
+              'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&q=90',
+              'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=90'
+            ]
+          ];
+          
+          return (
           <section key={index} className="relative py-20 overflow-hidden bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className={`grid lg:grid-cols-2 gap-12 items-center ${service.reverse ? 'lg:grid-flow-dense' : ''}`}>
-                {/* Image */}
+                {/* Swipeable Image Slider */}
                 <div className={service.reverse ? 'lg:col-start-2' : ''}>
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="rounded-3xl shadow-2xl w-full object-cover h-[400px]"
-                  />
+                  <ServiceImageSlider images={serviceImageSets[index]} />
                 </div>
 
                 {/* Content */}
@@ -409,7 +475,8 @@ export const HomePage: React.FC = () => {
               </div>
             )}
           </section>
-        ))}
+        );
+        })}
 
         {/* All Services Section */}
         <section className="py-20 bg-white">
