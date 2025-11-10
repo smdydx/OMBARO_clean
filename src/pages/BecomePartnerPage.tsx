@@ -242,8 +242,8 @@ export const BecomePartnerPage: React.FC = () => {
       answer: 'We provide comprehensive support including onboarding assistance, training materials, technical support, marketing guidance, and a dedicated account manager for franchise partners. Our support team is available via phone, email, and in-app chat.'
     },
     {
-      question: 'Can I set my own service prices?',
-      answer: 'Yes, you have complete control over your service pricing. While we provide market insights and pricing recommendations, you decide the final prices for all your services. You can update prices anytime through your dashboard.'
+      question: 'Can I offer special promotions and discounts?',
+      answer: 'Yes, you can create and manage your own promotional offers, discounts, and loyalty programs through the vendor dashboard. We also run platform-wide campaigns where you can participate to increase visibility.'
     },
     {
       question: 'How do I handle cancellations?',
@@ -276,7 +276,7 @@ export const BecomePartnerPage: React.FC = () => {
 
       <main className="pt-16">
         {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900 text-white overflow-hidden">
+        <section className="relative py-20 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 text-white overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/3865676/pexels-photo-3865676.jpeg?auto=compress&cs=tinysrgb&w=1600')] bg-cover bg-center opacity-10" />
           <div className="absolute inset-0 bg-gradient-to-br from-black/30 to-transparent" />
 
@@ -288,18 +288,18 @@ export const BecomePartnerPage: React.FC = () => {
                   <span className="text-white text-sm font-medium">Join India's Leading Beauty Platform</span>
                 </div>
 
-                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+                <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
                   Grow Your Beauty Business with OMBARO
                 </h1>
 
-                <p className="text-xl mb-8 text-white/90 leading-relaxed">
+                <p className="text-xl mb-8 text-white/90 leading-relaxed" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
                   Partner with us to reach thousands of customers, manage bookings effortlessly,
                   and scale your spa, salon, or beauty business to new heights.
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-4 mb-8">
                   <Link to="/app">
-                    <Button size="lg" className="w-full sm:w-auto bg-white text-primary-700 hover:bg-neutral-100 shadow-xl hover:shadow-2xl transition-all transform hover:scale-105">
+                    <Button size="lg" className="w-full sm:w-auto bg-white text-navy-700 hover:bg-neutral-100 shadow-xl hover:shadow-2xl transition-all transform hover:scale-105">
                       Register Now
                       <ArrowRight className="w-5 h-5 ml-2" />
                     </Button>
@@ -336,8 +336,8 @@ export const BecomePartnerPage: React.FC = () => {
                   />
                 </div>
                 <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-6 shadow-xl">
-                  <div className="text-3xl font-bold text-rose-600 mb-1">40%</div>
-                  <div className="text-sm text-neutral-600">Average Revenue Increase</div>
+                  <div className="text-3xl font-bold text-rose-600 mb-1" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>40%</div>
+                  <div className="text-sm text-neutral-600" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>Average Revenue Increase</div>
                 </div>
               </div>
             </div>
@@ -350,11 +350,11 @@ export const BecomePartnerPage: React.FC = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {stats.map((stat, index) => (
                 <div key={index} className="text-center group">
-                  <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary-600 to-primary-700 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300">
+                  <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-navy-600 to-navy-700 bg-clip-text text-transparent mb-2 group-hover:scale-110 transition-transform duration-300" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
                     {stat.number}
                   </div>
-                  <div className="text-neutral-900 font-semibold mb-1">{stat.label}</div>
-                  <div className="text-sm text-neutral-500">{stat.sublabel}</div>
+                  <div className="text-neutral-900 font-semibold mb-1" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>{stat.label}</div>
+                  <div className="text-sm text-neutral-500" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>{stat.sublabel}</div>
                 </div>
               ))}
             </div>
@@ -365,14 +365,14 @@ export const BecomePartnerPage: React.FC = () => {
         <section className="py-20 bg-neutral-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <div className="inline-flex items-center space-x-2 bg-primary-100 rounded-full px-4 py-2 mb-4">
-                <Briefcase className="w-4 h-4 text-primary-700" />
-                <span className="text-primary-700 text-sm font-medium">Perfect For All Business Types</span>
+              <div className="inline-flex items-center space-x-2 bg-navy-100 rounded-full px-4 py-2 mb-4">
+                <Briefcase className="w-4 h-4 text-navy-700" />
+                <span className="text-navy-700 text-sm font-medium">Perfect For All Business Types</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
                 Built for Every Beauty Professional
               </h2>
-              <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+              <p className="text-lg text-neutral-600 max-w-3xl mx-auto" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
                 Whether you run a spa center, beauty salon, bridal makeup studio, or wellness center,
                 OMBARO has the perfect solution for your business growth.
               </p>
@@ -397,16 +397,16 @@ export const BecomePartnerPage: React.FC = () => {
                         <div className="w-12 h-12 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center">
                           <Icon className="w-6 h-6 text-white" />
                         </div>
-                        <h3 className="text-xl font-bold text-white">{type.title}</h3>
+                        <h3 className="text-xl font-bold text-white" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>{type.title}</h3>
                       </div>
                     </div>
                     <div className="p-6">
-                      <p className="text-neutral-600 mb-4">{type.description}</p>
+                      <p className="text-neutral-600 mb-4" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>{type.description}</p>
                       <div className="grid grid-cols-2 gap-2">
                         {type.features.map((feature, idx) => (
                           <div key={idx} className="flex items-center space-x-2">
                             <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                            <span className="text-sm text-neutral-700">{feature}</span>
+                            <span className="text-sm text-neutral-700" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>{feature}</span>
                           </div>
                         ))}
                       </div>
@@ -431,14 +431,14 @@ export const BecomePartnerPage: React.FC = () => {
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <div className="inline-flex items-center space-x-2 bg-primary-100 rounded-full px-4 py-2 mb-4">
-                <Target className="w-4 h-4 text-primary-700" />
-                <span className="text-primary-700 text-sm font-medium">Platform Benefits</span>
+              <div className="inline-flex items-center space-x-2 bg-navy-100 rounded-full px-4 py-2 mb-4">
+                <Target className="w-4 h-4 text-navy-700" />
+                <span className="text-navy-700 text-sm font-medium">Platform Benefits</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
                 Everything You Need to Succeed
               </h2>
-              <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+              <p className="text-lg text-neutral-600 max-w-3xl mx-auto" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
                 Our comprehensive platform provides all the tools and support you need to manage
                 and grow your beauty business successfully.
               </p>
@@ -450,15 +450,15 @@ export const BecomePartnerPage: React.FC = () => {
                 return (
                   <div
                     key={index}
-                    className="bg-gradient-to-br from-neutral-50 to-white rounded-2xl p-6 border border-neutral-200 hover:border-primary-500 hover:shadow-lg transition-all duration-300"
+                    className="bg-gradient-to-br from-neutral-50 to-white rounded-2xl p-6 border border-neutral-200 hover:border-navy-500 hover:shadow-lg transition-all duration-300"
                   >
-                    <div className="w-12 h-12 bg-gradient-to-br from-primary-100 to-primary-200 rounded-xl flex items-center justify-center mb-4">
-                      <Icon className="w-6 h-6 text-primary-700" />
+                    <div className="w-12 h-12 bg-gradient-to-br from-navy-100 to-navy-200 rounded-xl flex items-center justify-center mb-4">
+                      <Icon className="w-6 h-6 text-navy-700" />
                     </div>
-                    <h3 className="text-lg font-semibold text-neutral-900 mb-2">
+                    <h3 className="text-lg font-semibold text-neutral-900 mb-2" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
                       {benefit.title}
                     </h3>
-                    <p className="text-neutral-600 text-sm leading-relaxed">{benefit.description}</p>
+                    <p className="text-neutral-600 text-sm leading-relaxed" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>{benefit.description}</p>
                   </div>
                 );
               })}
@@ -467,17 +467,17 @@ export const BecomePartnerPage: React.FC = () => {
         </section>
 
         {/* How It Works Section */}
-        <section id="how-it-works" className="py-20 bg-gradient-to-br from-neutral-50 to-rose-50">
+        <section id="how-it-works" className="py-20 bg-gradient-to-br from-neutral-50 to-navy-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <div className="inline-flex items-center space-x-2 bg-rose-100 rounded-full px-4 py-2 mb-4">
-                <Clock className="w-4 h-4 text-rose-600" />
-                <span className="text-rose-600 text-sm font-medium">Simple 4-Step Process</span>
+              <div className="inline-flex items-center space-x-2 bg-navy-100 rounded-full px-4 py-2 mb-4">
+                <Clock className="w-4 h-4 text-navy-600" />
+                <span className="text-navy-600 text-sm font-medium">Simple 4-Step Process</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
                 How to Get Started
               </h2>
-              <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+              <p className="text-lg text-neutral-600 max-w-3xl mx-auto" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
                 Join OMBARO in just 4 simple steps and start growing your business today.
                 The entire process takes less than 48 hours from registration to going live.
               </p>
@@ -485,25 +485,25 @@ export const BecomePartnerPage: React.FC = () => {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 relative">
               {/* Connection Line */}
-              <div className="hidden lg:block absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-rose-200 via-pink-200 to-orange-200" style={{ top: '6rem' }} />
+              <div className="hidden lg:block absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-navy-200 via-navy-100 to-navy-200" style={{ top: '6rem' }} />
 
               {howItWorks.map((step, index) => (
                 <div key={index} className="relative">
                   <div className="bg-white rounded-2xl p-6 shadow-soft hover:shadow-strong transition-all duration-300 hover:-translate-y-2">
-                    <div className="w-16 h-16 bg-gradient-to-br from-rose-600 to-orange-500 rounded-2xl flex items-center justify-center mb-4 text-white text-2xl font-bold shadow-lg mx-auto">
+                    <div className="w-16 h-16 bg-gradient-to-br from-navy-600 to-navy-500 rounded-2xl flex items-center justify-center mb-4 text-white text-2xl font-bold shadow-lg mx-auto" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
                       {step.step}
                     </div>
-                    <h3 className="text-xl font-semibold text-neutral-900 mb-3 text-center">
+                    <h3 className="text-xl font-semibold text-neutral-900 mb-3 text-center" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
                       {step.title}
                     </h3>
-                    <p className="text-neutral-600 text-sm mb-4 text-center leading-relaxed">
+                    <p className="text-neutral-600 text-sm mb-4 text-center leading-relaxed" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
                       {step.description}
                     </p>
                     <div className="space-y-2">
                       {step.details.map((detail, idx) => (
                         <div key={idx} className="flex items-center space-x-2">
                           <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                          <span className="text-xs text-neutral-700">{detail}</span>
+                          <span className="text-xs text-neutral-700" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>{detail}</span>
                         </div>
                       ))}
                     </div>
@@ -519,7 +519,7 @@ export const BecomePartnerPage: React.FC = () => {
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </Link>
-              <p className="text-sm text-neutral-600 mt-4">
+              <p className="text-sm text-neutral-600 mt-4" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
                 Get approved in 24-48 hours • No hidden fees • Free to join
               </p>
             </div>
@@ -530,32 +530,32 @@ export const BecomePartnerPage: React.FC = () => {
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <div className="inline-flex items-center space-x-2 bg-green-100 rounded-full px-4 py-2 mb-4">
-                <Award className="w-4 h-4 text-green-600" />
-                <span className="text-green-600 text-sm font-medium">Flexible Partnership Options</span>
+              <div className="inline-flex items-center space-x-2 bg-navy-100 rounded-full px-4 py-2 mb-4">
+                <Award className="w-4 h-4 text-navy-600" />
+                <span className="text-navy-600 text-sm font-medium">Flexible Partnership Options</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
                 Choose Your Partnership Model
               </h2>
-              <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+              <p className="text-lg text-neutral-600 max-w-3xl mx-auto" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
                 We offer multiple partnership models to suit your business needs and goals.
                 Pick the one that works best for you.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-16 px-4 sm:px-0">
               {partnershipModels.map((model, index) => (
                 <div
                   key={index}
                   className={`relative bg-white rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-2 ${
                     model.recommended
-                      ? 'border-2 border-rose-500 shadow-strong'
+                      ? 'border-2 border-navy-500 shadow-strong'
                       : 'border border-neutral-200 hover:border-neutral-300 shadow-soft hover:shadow-strong'
                   }`}
                 >
                   {model.recommended && (
                     <div className="absolute top-4 right-4 z-10">
-                      <div className="bg-gradient-to-r from-rose-600 to-orange-500 text-white px-4 py-2 rounded-full text-xs font-semibold shadow-lg">
+                      <div className="bg-gradient-to-r from-navy-600 to-navy-500 text-white px-4 py-2 rounded-full text-xs font-semibold shadow-lg uppercase tracking-wider" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
                         RECOMMENDED
                       </div>
                     </div>
@@ -570,8 +570,8 @@ export const BecomePartnerPage: React.FC = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                     <div className="absolute bottom-4 left-4 right-4">
-                      <h3 className="text-xl font-bold text-white mb-1">{model.type}</h3>
-                      <p className="text-sm text-white/90">
+                      <h3 className="text-xl font-bold text-white mb-1" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>{model.type}</h3>
+                      <p className="text-sm text-white/90" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
                         <span className="font-semibold">Best for:</span> {model.best}
                       </p>
                     </div>
@@ -583,7 +583,7 @@ export const BecomePartnerPage: React.FC = () => {
                       {model.features.map((feature, idx) => (
                         <div key={idx} className="flex items-start space-x-2">
                           <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
-                          <span className="text-sm text-neutral-700">{feature}</span>
+                          <span className="text-sm text-neutral-700" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>{feature}</span>
                         </div>
                       ))}
                     </div>
@@ -592,7 +592,7 @@ export const BecomePartnerPage: React.FC = () => {
                       <Button
                         className={`w-full ${
                           model.recommended
-                            ? 'bg-gradient-to-r from-rose-600 to-orange-500 hover:from-rose-700 hover:to-orange-600'
+                            ? 'bg-gradient-to-r from-navy-600 to-navy-500 hover:from-navy-700 hover:to-navy-600'
                             : ''
                         }`}
                         variant={model.recommended ? 'default' : 'outline'}
@@ -615,10 +615,10 @@ export const BecomePartnerPage: React.FC = () => {
                 <Star className="w-4 h-4 text-yellow-600" />
                 <span className="text-yellow-600 text-sm font-medium">Success Stories</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
                 Real Results from Real Partners
               </h2>
-              <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+              <p className="text-lg text-neutral-600 max-w-3xl mx-auto" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
                 See how OMBARO has helped beauty businesses grow their revenue, increase bookings,
                 and achieve their business goals.
               </p>
@@ -636,22 +636,22 @@ export const BecomePartnerPage: React.FC = () => {
                     ))}
                   </div>
 
-                  <p className="text-neutral-700 mb-6 italic leading-relaxed">
+                  <p className="text-neutral-700 mb-6 italic leading-relaxed" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
                     "{testimonial.comment}"
                   </p>
 
                   <div className="grid grid-cols-3 gap-2 mb-6 pb-6 border-b border-neutral-200">
                     <div className="text-center">
-                      <div className="text-lg font-bold text-green-600">{testimonial.metrics.bookings}</div>
-                      <div className="text-xs text-neutral-600">Bookings</div>
+                      <div className="text-lg font-bold text-green-600" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>{testimonial.metrics.bookings}</div>
+                      <div className="text-xs text-neutral-600" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>Bookings</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-lg font-bold text-blue-600">{testimonial.metrics.revenue}</div>
-                      <div className="text-xs text-neutral-600">Revenue</div>
+                      <div className="text-lg font-bold text-blue-600" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>{testimonial.metrics.revenue}</div>
+                      <div className="text-xs text-neutral-600" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>Revenue</div>
                     </div>
                     <div className="text-center">
-                      <div className="text-lg font-bold text-amber-600">{testimonial.metrics.rating}</div>
-                      <div className="text-xs text-neutral-600">Rating</div>
+                      <div className="text-lg font-bold text-amber-600" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>{testimonial.metrics.rating}</div>
+                      <div className="text-xs text-neutral-600" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>Rating</div>
                     </div>
                   </div>
 
@@ -662,8 +662,8 @@ export const BecomePartnerPage: React.FC = () => {
                       className="w-12 h-12 rounded-full object-cover border-2 border-rose-200"
                     />
                     <div>
-                      <p className="font-semibold text-neutral-900">{testimonial.name}</p>
-                      <p className="text-sm text-neutral-600">{testimonial.business}</p>
+                      <p className="font-semibold text-neutral-900" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>{testimonial.name}</p>
+                      <p className="text-sm text-neutral-600" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>{testimonial.business}</p>
                     </div>
                   </div>
                 </div>
@@ -685,14 +685,14 @@ export const BecomePartnerPage: React.FC = () => {
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <div className="inline-flex items-center space-x-2 bg-blue-100 rounded-full px-4 py-2 mb-4">
-                <Shield className="w-4 h-4 text-blue-600" />
-                <span className="text-blue-600 text-sm font-medium">Requirements & Eligibility</span>
+              <div className="inline-flex items-center space-x-2 bg-navy-100 rounded-full px-4 py-2 mb-4">
+                <Shield className="w-4 h-4 text-navy-600" />
+                <span className="text-navy-600 text-sm font-medium">Requirements & Eligibility</span>
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
                 What You Need to Get Started
               </h2>
-              <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
+              <p className="text-lg text-neutral-600 max-w-3xl mx-auto" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
                 Simple requirements to ensure quality and trust for all our customers.
               </p>
             </div>
@@ -701,14 +701,14 @@ export const BecomePartnerPage: React.FC = () => {
               {requirements.map((req, index) => (
                 <div
                   key={index}
-                  className="bg-gradient-to-br from-neutral-50 to-white rounded-2xl p-6 border border-neutral-200 hover:border-blue-300 hover:shadow-lg transition-all duration-300"
+                  className="bg-gradient-to-br from-neutral-50 to-white rounded-2xl p-6 border border-neutral-200 hover:border-navy-300 hover:shadow-lg transition-all duration-300"
                 >
-                  <h3 className="text-lg font-semibold text-neutral-900 mb-4">{req.title}</h3>
+                  <h3 className="text-lg font-semibold text-neutral-900 mb-4" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>{req.title}</h3>
                   <ul className="space-y-2">
                     {req.items.map((item, idx) => (
                       <li key={idx} className="flex items-start space-x-2">
-                        <CheckCircle className="w-4 h-4 text-blue-600 flex-shrink-0 mt-0.5" />
-                        <span className="text-sm text-neutral-700">{item}</span>
+                        <CheckCircle className="w-4 h-4 text-navy-600 flex-shrink-0 mt-0.5" />
+                        <span className="text-sm text-neutral-700" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>{item}</span>
                       </li>
                     ))}
                   </ul>
@@ -722,10 +722,10 @@ export const BecomePartnerPage: React.FC = () => {
         <section className="py-20 bg-neutral-50">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
                 Frequently Asked Questions
               </h2>
-              <p className="text-lg text-neutral-600">
+              <p className="text-lg text-neutral-600" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
                 Everything you need to know about partnering with OMBARO
               </p>
             </div>
@@ -740,16 +740,16 @@ export const BecomePartnerPage: React.FC = () => {
                     onClick={() => setOpenFaq(openFaq === index ? null : index)}
                     className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-neutral-50 transition-colors"
                   >
-                    <span className="font-semibold text-neutral-900 pr-4">{faq.question}</span>
+                    <span className="font-semibold text-neutral-900 pr-4" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>{faq.question}</span>
                     {openFaq === index ? (
-                      <ChevronUp className="w-5 h-5 text-rose-600 flex-shrink-0" />
+                      <ChevronUp className="w-5 h-5 text-navy-600 flex-shrink-0" />
                     ) : (
                       <ChevronDown className="w-5 h-5 text-neutral-400 flex-shrink-0" />
                     )}
                   </button>
                   {openFaq === index && (
                     <div className="px-6 pb-4">
-                      <p className="text-neutral-600 leading-relaxed">{faq.answer}</p>
+                      <p className="text-neutral-600 leading-relaxed" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>{faq.answer}</p>
                     </div>
                   )}
                 </div>
@@ -759,21 +759,21 @@ export const BecomePartnerPage: React.FC = () => {
         </section>
 
         {/* Final CTA Section */}
-        <section className="py-20 bg-gradient-to-br from-primary-900 via-primary-800 to-primary-900 text-white relative overflow-hidden">
+        <section className="py-20 bg-gradient-to-br from-navy-900 via-navy-800 to-navy-900 text-white relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://images.pexels.com/photos/3865676/pexels-photo-3865676.jpeg?auto=compress&cs=tinysrgb&w=1600')] bg-cover bg-center opacity-10" />
           <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <Sparkles className="w-16 h-16 text-white mx-auto mb-6" />
-            <h2 className="text-3xl md:text-5xl font-bold mb-6">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
               Ready to Transform Your Business?
             </h2>
-            <p className="text-xl mb-8 text-white/90 leading-relaxed max-w-2xl mx-auto">
+            <p className="text-xl mb-8 text-white/90 leading-relaxed max-w-2xl mx-auto" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
               Join thousands of successful beauty professionals who have already grown their business with OMBARO.
               Start your journey today and unlock unlimited potential.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
               <Link to="/app">
-                <Button size="lg" className="w-full sm:w-auto bg-white text-primary-700 hover:bg-neutral-100 shadow-xl hover:shadow-2xl transition-all transform hover:scale-105">
+                <Button size="lg" className="w-full sm:w-auto bg-white text-navy-700 hover:bg-neutral-100 shadow-xl hover:shadow-2xl transition-all transform hover:scale-105">
                   Register Your Business Now
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
@@ -783,11 +783,11 @@ export const BecomePartnerPage: React.FC = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-8 text-white/90">
               <div className="flex items-center space-x-2">
                 <Phone className="w-5 h-5" />
-                <span>+91 123 456 7890</span>
+                <span style={{ fontFamily: "'Tenor Sans', sans-serif" }}>+91 123 456 7890</span>
               </div>
               <div className="flex items-center space-x-2">
                 <Mail className="w-5 h-5" />
-                <span>partners@ombaro.com</span>
+                <span style={{ fontFamily: "'Tenor Sans', sans-serif" }}>partners@ombaro.com</span>
               </div>
             </div>
           </div>

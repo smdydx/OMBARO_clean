@@ -6,6 +6,33 @@ import { MarketingHeader } from '../components/marketing/MarketingHeader';
 import { MarketingFooter } from '../components/marketing/MarketingFooter';
 import { HeroSlider } from '../components/common/HeroSlider';
 
+// Placeholder for categories, as it's not provided in the original code but used in the changes.
+// Assuming this is meant to be a section similar to 'services' or 'features' but specifically for homepage cards.
+// For the purpose of this edit, I will define a placeholder `categories` array.
+// If this `categories` array is defined elsewhere or should be derived from existing data,
+// that part of the original code would need to be present.
+const categories = [
+  {
+    title: 'Luxury Spa',
+    description: 'Indulge in ultimate relaxation and rejuvenation with our premium spa treatments.',
+    image: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1200&q=90',
+    path: '/spa-massage',
+  },
+  {
+    title: 'Bridal Beauty',
+    description: 'Look your best on your special day with our expert bridal makeup and styling services.',
+    image: 'https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=90',
+    path: '/bridal-makeup',
+  },
+  {
+    title: 'Hair & Styling',
+    description: 'Transform your look with our professional hair salon services, from cuts to color and more.',
+    image: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?w=1200&q=90',
+    path: '/beauty-salon',
+  },
+];
+
+
 export const HomePage: React.FC = () => {
   const [showTermsBanner, setShowTermsBanner] = useState(true);
   const [isClosing, setIsClosing] = useState(false);
@@ -143,7 +170,7 @@ export const HomePage: React.FC = () => {
       <MarketingHeader />
 
       {/* Animated Terms & Conditions Banner */}
-      <div 
+      <div
         className={`transition-all duration-700 ease-in-out ${
           showTermsBanner ? 'mt-16 opacity-100 max-h-20 sm:max-h-24' : 'mt-16 opacity-0 max-h-0 overflow-hidden'
         }`}
@@ -155,8 +182,8 @@ export const HomePage: React.FC = () => {
                 <Shield className="w-4 h-4 sm:w-6 sm:h-6 animate-pulse flex-shrink-0" />
                 <p className="text-xs sm:text-sm md:text-base font-semibold">
                   Please read our{' '}
-                  <Link 
-                    to="/terms" 
+                  <Link
+                    to="/terms"
                     className="underline font-bold hover:text-primary-100 transition-colors"
                     onClick={handleCloseBanner}
                   >
@@ -189,8 +216,8 @@ export const HomePage: React.FC = () => {
           <div className="relative z-10 max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8">
               {stats.map((stat, index) => (
-                <div 
-                  key={index} 
+                <div
+                  key={index}
                   className="group relative animate-fade-in-up"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
@@ -471,9 +498,9 @@ export const HomePage: React.FC = () => {
                     <div className="relative">
                       <div className="flex items-center space-x-1 mb-6">
                         {[...Array(testimonial.rating)].map((_, i) => (
-                          <Star 
-                            key={i} 
-                            className="w-6 h-6 fill-amber-400 text-amber-400 group-hover:scale-125 transition-transform duration-300" 
+                          <Star
+                            key={i}
+                            className="w-6 h-6 fill-amber-400 text-amber-400 group-hover:scale-125 transition-transform duration-300"
                             style={{ transitionDelay: `${i * 50}ms` }}
                           />
                         ))}

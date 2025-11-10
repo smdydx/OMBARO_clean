@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&family=Lora:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600;700;800;900&family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700;800;900&family=Lora:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&family=Gilda+Display&family=Tenor+Sans&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -11,14 +11,15 @@
   }
 
   body {
-    font-family: 'Poppins', 'Lora', 'Montserrat', sans-serif;
+    font-family: 'Tenor Sans', 'Montserrat', sans-serif;
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
     @apply antialiased;
-    background: linear-gradient(135deg, #fffbf5 0%, #fff8ed 50%, #fffbf5 100%);
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
     background-attachment: fixed;
     position: relative;
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #e2e8f0;
   }
 
   body::before {
@@ -29,38 +30,42 @@
     right: 0;
     bottom: 0;
     background: 
-      radial-gradient(circle at 20% 30%, rgba(255, 215, 0, 0.08) 0%, transparent 50%),
-      radial-gradient(circle at 80% 70%, rgba(138, 43, 226, 0.08) 0%, transparent 50%),
-      radial-gradient(circle at 50% 50%, rgba(26, 45, 155, 0.15) 0%, transparent 70%);
+      radial-gradient(circle at 20% 30%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(147, 197, 253, 0.08) 0%, transparent 50%),
+      radial-gradient(circle at 50% 50%, rgba(30, 58, 138, 0.12) 0%, transparent 70%);
     pointer-events: none;
     z-index: 0;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', 'Lora', Georgia, serif;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    color: #78350f;
-    line-height: 1.3;
+    font-family: 'Gilda Display', 'Playfair Display', Georgia, serif;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    color: #f1f5f9;
+    line-height: 1.2;
   }
   
   h1 {
-    font-size: clamp(2rem, 5vw, 3.5rem);
-    font-weight: 700;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 400;
+    letter-spacing: 0.05em;
   }
   
   h2 {
-    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: 0.04em;
   }
   
   h3 {
     font-size: clamp(1.5rem, 3vw, 2rem);
+    letter-spacing: 0.03em;
   }
   
   p, span, div {
-    font-family: 'Poppins', sans-serif;
-    font-size: clamp(0.9rem, 2vw, 1rem);
-    line-height: 1.7;
+    font-family: 'Tenor Sans', 'Montserrat', sans-serif;
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+    line-height: 1.8;
+    color: #cbd5e1;
   }
 
   html {
@@ -145,19 +150,20 @@
   }
 
   .btn-primary {
-    @apply text-white font-semibold rounded-xl px-6 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 shadow-lg;
+    @apply text-white font-medium rounded-sm px-8 sm:px-10 md:px-12 py-3 sm:py-3.5 md:py-4 shadow-lg;
     @apply transition-all duration-500 hover:scale-105;
-    @apply focus:ring-4 focus:ring-amber-400/50 focus:outline-none;
-    background: linear-gradient(135deg, #f59e0b 0%, #ea580c 50%, #f59e0b 100%);
+    @apply focus:ring-4 focus:ring-blue-400/50 focus:outline-none;
+    background: linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #1e40af 100%);
     background-size: 200% 200%;
     animation: gradientShift 3s ease infinite;
     font-size: clamp(0.875rem, 2vw, 1rem);
-    letter-spacing: 0.05em;
-    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.15em;
+    font-family: 'Tenor Sans', sans-serif;
+    text-transform: uppercase;
     position: relative;
     overflow: hidden;
-    border: none;
-    box-shadow: 0 4px 20px rgba(245, 158, 11, 0.4);
+    border: 1px solid rgba(59, 130, 246, 0.3);
+    box-shadow: 0 4px 20px rgba(30, 64, 175, 0.4);
   }
   
   @media (min-width: 640px) {
