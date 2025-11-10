@@ -237,30 +237,40 @@ export const HowItWorksPage: React.FC = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-gradient-to-br from-primary-600 to-secondary-600 text-white rounded-tl-[50px] rounded-tr-[50px]">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative overflow-hidden py-20 bg-gradient-to-b from-sky-50 via-cyan-50 to-white rounded-tl-[50px] rounded-tr-[50px]">
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-0 left-0 w-full h-full">
+              <div className="animate-pulse">
+                <svg className="w-full h-full" viewBox="0 0 1440 320" preserveAspectRatio="none">
+                  <path fill="currentColor" fillOpacity="0.3" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,106.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" className="text-sky-400"></path>
+                </svg>
+              </div>
+            </div>
+          </div>
+          
+          <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 text-gray-800">
                   Download Our Mobile App
                 </h2>
-                <p className="text-lg text-white/90 mb-8">
+                <p className="text-lg text-gray-600 mb-8">
                   Get the full OMBARO experience on your mobile device. Book services on the go,
                   track your appointments, and enjoy exclusive app-only offers.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="bg-white text-neutral-900 px-6 py-3 rounded-lg font-semibold hover:bg-neutral-100 transition-colors">
+                  <button className="bg-gradient-to-r from-sky-500 to-cyan-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-xl transition-all duration-300 shadow-lg">
                     Download for iOS
                   </button>
-                  <button className="bg-white text-neutral-900 px-6 py-3 rounded-lg font-semibold hover:bg-neutral-100 transition-colors">
+                  <button className="bg-gradient-to-r from-sky-500 to-cyan-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-xl transition-all duration-300 shadow-lg">
                     Download for Android
                   </button>
                 </div>
               </div>
               <div className="flex justify-center">
                 <div className="relative">
-                  <div className="w-64 h-64 bg-white/10 rounded-3xl backdrop-blur-sm flex items-center justify-center">
-                    <Smartphone className="w-32 h-32 text-white/50" />
+                  <div className="w-64 h-64 bg-white/30 rounded-3xl backdrop-blur-sm flex items-center justify-center shadow-lg">
+                    <Smartphone className="w-32 h-32 text-sky-600/50" />
                   </div>
                 </div>
               </div>
