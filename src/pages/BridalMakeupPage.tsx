@@ -275,12 +275,14 @@ export const BridalMakeupPage: React.FC = () => {
               Discover thousands of professional bridal makeup artists near you. View portfolios, compare services, read reviews from real brides, and book your perfect bridal look today.
               Make your wedding day truly unforgettable with OMBARO.
             </p>
-            <Link to="/app">
-              <Button size="lg" className="bg-white text-pink-600 hover:bg-neutral-100">
-                Explore Bridal Artists
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/app">
+                <button className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center">
+                  Book Bridal Package
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </button>
+              </Link>
+            </div>
           </div>
         </section>
       </main>

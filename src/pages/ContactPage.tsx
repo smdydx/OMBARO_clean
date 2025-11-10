@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
+import { Mail, Phone, MapPin, Clock, Send, ArrowRight } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { Input } from '../components/ui/Input';
 import { MarketingHeader } from '../components/marketing/MarketingHeader';
@@ -163,10 +163,10 @@ export const ContactPage: React.FC = () => {
                       />
                     </div>
 
-                    <Button type="submit" size="lg" className="w-full md:w-auto">
+                    <button type="submit" className="w-full bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center justify-center">
                       Send Message
-                      <Send className="w-5 h-5 ml-2" />
-                    </Button>
+                      <ArrowRight className="w-5 h-5 ml-2" />
+                    </button>
                   </form>
                 </div>
               </div>

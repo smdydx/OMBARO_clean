@@ -251,9 +251,10 @@ export const ServicesPage: React.FC = () => {
                 Experience premium beauty and wellness services at your doorstep
               </p>
               <Link to="/app">
-                <Button size="lg">
+                <button className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center">
                   Book Now
-                </Button>
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </button>
               </Link>
             </div>
           </div>

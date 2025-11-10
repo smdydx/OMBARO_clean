@@ -276,12 +276,14 @@ export const BeautySalonPage: React.FC = () => {
               Discover thousands of professional beauty salons near you. Compare services, read reviews from real customers, and book your perfect beauty treatment today.
               Experience the convenience of India's largest beauty salon network.
             </p>
-            <Link to="/app">
-              <Button size="lg" className="bg-white text-rose-600 hover:bg-neutral-100">
-                Explore Beauty Salons
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link to="/app">
+                <button className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center">
+                  Book Salon Service
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </button>
+              </Link>
+            </div>
           </div>
         </section>
       </main>

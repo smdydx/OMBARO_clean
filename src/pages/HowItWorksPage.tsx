@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Search, Calendar, CreditCard, Star, Smartphone, MapPin, CheckCircle, TrendingUp } from 'lucide-react';
+import { Search, Calendar, CreditCard, Star, Smartphone, MapPin, CheckCircle, TrendingUp, ArrowRight } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { MarketingHeader } from '../components/marketing/MarketingHeader';
 import { MarketingFooter } from '../components/marketing/MarketingFooter';
@@ -282,10 +282,11 @@ export const HowItWorksPage: React.FC = () => {
                   Book Your First Service
                 </Button>
               </Link>
-              <Link to="/contact">
-                <Button size="lg" className="border-2 border-primary-600 hover:border-primary-700 hover:shadow-lg" style={{ backgroundColor: '#b17d52', color: '#ffffff' }}>
-                  Contact Us
-                </Button>
+              <Link to="/app">
+                <button className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center">
+                  Get Started Now
+                  <ArrowRight className="w-5 h-5 ml-2" />
+                </button>
               </Link>
             </div>
           </div>

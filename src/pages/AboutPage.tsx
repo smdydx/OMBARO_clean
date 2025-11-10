@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Target, Users, Award, Heart, TrendingUp, Shield } from 'lucide-react';
+import { Target, Users, Award, Heart, TrendingUp, Shield, ArrowRight } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { MarketingHeader } from '../components/marketing/MarketingHeader';
 import { MarketingFooter } from '../components/marketing/MarketingFooter';
@@ -192,7 +192,7 @@ export const AboutPage: React.FC = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-gradient-to-br from-primary-600 to-secondary-600 text-white rounded-tl-[50px] rounded-tr-[50px]">
+        <section className="py-20 bg-gradient-to-br from-primary-600 to-secondary-600 rounded-tl-[50px] rounded-tr-[50px]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Join Our Growing Community
@@ -201,9 +201,10 @@ export const AboutPage: React.FC = () => {
               Experience the future of beauty and wellness services
             </p>
             <Link to="/app">
-              <Button size="lg" className="bg-primary-400 hover:bg-primary-500 border-2 border-primary-300" style={{ color: 'rgba(255, 255, 255, 0.98)' }}>
-                Get Started Today
-              </Button>
+              <button className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center">
+                Get Started
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </button>
             </Link>
           </div>
         </section>

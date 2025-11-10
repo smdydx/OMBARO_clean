@@ -772,11 +772,11 @@ export const BecomePartnerPage: React.FC = () => {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-              <Link to="/app">
-                <Button size="lg" className="w-full sm:w-auto bg-white text-navy-700 hover:bg-neutral-100 shadow-xl hover:shadow-2xl transition-all transform hover:scale-105">
-                  Register Your Business Now
+              <Link to="/vendor-signup">
+                <button className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center">
+                  Apply Now
                   <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
+                </button>
               </Link>
             </div>
 
