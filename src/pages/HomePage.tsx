@@ -83,7 +83,7 @@ export const HomePage: React.FC = () => {
       title: 'Relax & Enjoy a Unique Experience',
       subtitle: 'SPA TREATMENTS',
       description: 'Indulge in our premium spa treatments designed to rejuvenate your body and mind. Experience tranquility like never before.',
-      image: '/attached_assets/stock_images/spa_treatment_room_i_79626365.jpg',
+      image: '/images/spa_treatment_room_i_79626365.jpg',
       link: '/spa-massage',
       reverse: false
     },
@@ -91,7 +91,7 @@ export const HomePage: React.FC = () => {
       title: 'Massage & Therapy',
       subtitle: 'HEALING TOUCH',
       description: 'Expert therapeutic massages that relieve stress, ease muscle tension, and promote overall wellness and relaxation.',
-      image: '/attached_assets/stock_images/luxury_spa_massage_t_3fdc8d75.jpg',
+      image: '/images/luxury_spa_massage_t_3fdc8d75.jpg',
       link: '/spa-massage',
       reverse: true
     },
@@ -99,7 +99,7 @@ export const HomePage: React.FC = () => {
       title: 'Relax at the Hot tub',
       subtitle: 'HOTTUB THERAPY',
       description: 'Immerse yourself in our luxurious hot tub facilities, perfect for unwinding and soothing tired muscles.',
-      image: '/attached_assets/stock_images/spa_treatment_room_i_f52c1c96.jpg',
+      image: '/images/spa_treatment_room_i_f52c1c96.jpg',
       link: '/spa-massage',
       reverse: false
     },
@@ -107,7 +107,7 @@ export const HomePage: React.FC = () => {
       title: 'Beauty & Wellness',
       subtitle: 'COMPLETE CARE',
       description: 'Comprehensive beauty and wellness services tailored to enhance your natural beauty and boost your confidence.',
-      image: '/attached_assets/stock_images/beauty_salon_facial__65176adc.jpg',
+      image: '/images/beauty_salon_facial__65176adc.jpg',
       link: '/beauty-salon',
       reverse: true
     }
@@ -212,7 +212,7 @@ export const HomePage: React.FC = () => {
               <div className="lg:col-span-2 relative">
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                   <img 
-                    src="/attached_assets/stock_images/beauty_salon_facial__338eb5d5.jpg"
+                    src="/images/beauty_salon_facial__338eb5d5.jpg"
                     alt="Spa Experience"
                     className="w-full h-[350px] md:h-[500px] object-cover"
                   />
