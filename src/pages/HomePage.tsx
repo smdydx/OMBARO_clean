@@ -11,6 +11,98 @@ import { HeroSlider } from '../components/common/HeroSlider';
 // For the purpose of this edit, I will define a placeholder `categories` array.
 // If this `categories` array is defined elsewhere or should be derived from existing data,
 // that part of the original code would need to be present.
+// Service Image Slider Component with Swipe
+const ServiceImageSlider: React.FC<{ images: string[] }> = ({ images }) => {
+  const [currentImage, setCurrentImage] = useState(0);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStart - touchEnd > 75) {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }
+    if (touchStart - touchEnd < -75) {
+      setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
+    }
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setTouchStart(e.clientX);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (touchStart !== 0) {
+      setTouchEnd(e.clientX);
+    }
+  };
+
+  const handleMouseUp = () => {
+    if (touchStart - touchEnd > 75) {
+      setCurrentImage((prev) => (prev + 1) % images.length);
+    }
+    if (touchStart - touchEnd < -75) {
+      setCurrentImage((prev) => (prev - 1 + images.length) % images.length);
+    }
+    setTouchStart(0);
+    setTouchEnd(0);
+  };
+
+  return (
+    <div className="relative rounded-3xl overflow-hidden shadow-2xl h-[400px]">
+      <div 
+        className="relative w-full h-full cursor-grab active:cursor-grabbing select-none"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
+        onMouseLeave={handleMouseUp}
+      >
+        {images.map((image, index) => (
+          <div
+            key={index}
+            className="absolute inset-0 transition-transform duration-500 ease-out"
+            style={{
+              transform: `translateX(${(index - currentImage) * 100}%)`,
+            }}
+          >
+            <img 
+              src={image}
+              alt={`Service ${index + 1}`}
+              className="w-full h-full object-cover pointer-events-none"
+              draggable="false"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+          </div>
+        ))}
+        
+        {/* Slide Indicators */}
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
+          {images.map((_, idx) => (
+            <button
+              key={idx}
+              onClick={() => setCurrentImage(idx)}
+              className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                currentImage === idx ? 'bg-white w-6' : 'bg-white/50'
+              }`}
+              aria-label={`Go to slide ${idx + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const categories = [
   {
     title: 'Luxury Spa',
@@ -55,6 +147,8 @@ export const HomePage: React.FC = () => {
   const [showTermsBanner, setShowTermsBanner] = useState(true);
   const [isClosing, setIsClosing] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [touchStart, setTouchStart] = useState(0);
+  const [touchEnd, setTouchEnd] = useState(0);
 
   useEffect(() => {
     // Auto-close after 5 seconds
@@ -65,14 +159,46 @@ export const HomePage: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
 
-  useEffect(() => {
-    // Auto-slide for hero images
-    const slideInterval = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % 4);
-    }, 4000);
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.targetTouches[0].clientX);
+  };
 
-    return () => clearInterval(slideInterval);
-  }, []);
+  const handleTouchMove = (e: React.TouchEvent) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (touchStart - touchEnd > 75) {
+      // Swiped left - next image
+      setCurrentSlide((prev) => (prev + 1) % 4);
+    }
+
+    if (touchStart - touchEnd < -75) {
+      // Swiped right - previous image
+      setCurrentSlide((prev) => (prev - 1 + 4) % 4);
+    }
+  };
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setTouchStart(e.clientX);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (touchStart !== 0) {
+      setTouchEnd(e.clientX);
+    }
+  };
+
+  const handleMouseUp = () => {
+    if (touchStart - touchEnd > 75) {
+      setCurrentSlide((prev) => (prev + 1) % 4);
+    }
+    if (touchStart - touchEnd < -75) {
+      setCurrentSlide((prev) => (prev - 1 + 4) % 4);
+    }
+    setTouchStart(0);
+    setTouchEnd(0);
+  };
 
   const handleCloseBanner = () => {
     setIsClosing(true);
@@ -240,7 +366,16 @@ export const HomePage: React.FC = () => {
               <div className="lg:col-span-2 relative">
                 <div className="relative rounded-3xl overflow-hidden shadow-2xl">
                   {/* Swiper Container */}
-                  <div className="relative w-full h-[350px] md:h-[500px] overflow-hidden group">
+                  <div 
+                    className="relative w-full h-[350px] md:h-[500px] overflow-hidden group cursor-grab active:cursor-grabbing select-none"
+                    onTouchStart={handleTouchStart}
+                    onTouchMove={handleTouchMove}
+                    onTouchEnd={handleTouchEnd}
+                    onMouseDown={handleMouseDown}
+                    onMouseMove={handleMouseMove}
+                    onMouseUp={handleMouseUp}
+                    onMouseLeave={handleMouseUp}
+                  >
                     {[
                       'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=90',
                       'https://images.unsplash.com/photo-1596178065887-1198b6148b2b?w=800&q=90',
@@ -249,7 +384,7 @@ export const HomePage: React.FC = () => {
                     ].map((image, index) => (
                       <div
                         key={index}
-                        className="absolute inset-0 transition-transform duration-700 ease-in-out"
+                        className="absolute inset-0 transition-transform duration-500 ease-out"
                         style={{
                           transform: `translateX(${(index - currentSlide) * 100}%)`,
                         }}
@@ -257,7 +392,8 @@ export const HomePage: React.FC = () => {
                         <img 
                           src={image}
                           alt={`Spa Experience ${index + 1}`}
-                          className="w-full h-full object-cover"
+                          className="w-full h-full object-cover pointer-events-none"
+                          draggable="false"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/20 to-transparent"></div>
                       </div>
@@ -266,13 +402,22 @@ export const HomePage: React.FC = () => {
                     {/* Slide Indicators */}
                     <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2 z-10">
                       {[0, 1, 2, 3].map((idx) => (
-                        <div
+                        <button
                           key={idx}
+                          onClick={() => setCurrentSlide(idx)}
                           className={`w-2 h-2 rounded-full transition-all duration-300 ${
                             currentSlide === idx ? 'bg-white w-6' : 'bg-white/50'
                           }`}
+                          aria-label={`Go to slide ${idx + 1}`}
                         />
                       ))}
+                    </div>
+
+                    {/* Swipe Hint - Shows on first load */}
+                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+                      <div className="bg-black/30 backdrop-blur-sm text-white px-4 py-2 rounded-full text-sm font-medium animate-pulse">
+                        👆 Swipe karo
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -324,17 +469,17 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Services Sections - Alternating Layout */}
+        {/* Services Sections - Alternating Layout with Swipeable Images */}
         <section className="relative py-12 md:py-20 overflow-hidden bg-gradient-to-b from-white via-sky-50 to-white mt-4 md:mt-0">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className={`grid lg:grid-cols-2 gap-12 items-center ${services[0].reverse ? 'lg:grid-flow-dense' : ''}`}>
-              {/* Image */}
+              {/* Swipeable Image Slider */}
               <div className={services[0].reverse ? 'lg:col-start-2' : ''}>
-                <img
-                  src={services[0].image}
-                  alt={services[0].title}
-                  className="rounded-3xl shadow-2xl w-full object-cover h-[400px]"
-                />
+                <ServiceImageSlider images={[
+                  'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=90',
+                  'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=90',
+                  'https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=800&q=90'
+                ]} />
               </div>
 
               {/* Content */}
@@ -367,17 +512,36 @@ export const HomePage: React.FC = () => {
           )}
         </section>
 
-        {services.slice(1).map((service, index) => (
+        {services.slice(1).map((service, index) => {
+          // Unique image sets for each service
+          const serviceImageSets = [
+            // Massage & Therapy
+            [
+              'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=90',
+              'https://images.unsplash.com/photo-1519415510236-718bdfcd89c8?w=800&q=90',
+              'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=90'
+            ],
+            // Hot tub
+            [
+              'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&q=90',
+              'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=90',
+              'https://images.unsplash.com/photo-1596178065887-1198b6148b2b?w=800&q=90'
+            ],
+            // Beauty & Wellness
+            [
+              'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=90',
+              'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&q=90',
+              'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=90'
+            ]
+          ];
+          
+          return (
           <section key={index} className="relative py-20 overflow-hidden bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className={`grid lg:grid-cols-2 gap-12 items-center ${service.reverse ? 'lg:grid-flow-dense' : ''}`}>
-                {/* Image */}
+                {/* Swipeable Image Slider */}
                 <div className={service.reverse ? 'lg:col-start-2' : ''}>
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="rounded-3xl shadow-2xl w-full object-cover h-[400px]"
-                  />
+                  <ServiceImageSlider images={serviceImageSets[index]} />
                 </div>
 
                 {/* Content */}
@@ -409,7 +573,8 @@ export const HomePage: React.FC = () => {
               </div>
             )}
           </section>
-        ))}
+        );
+        })}
 
         {/* All Services Section */}
         <section className="py-20 bg-white">
