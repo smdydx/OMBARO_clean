@@ -32,15 +32,15 @@ export const FixedHeader: React.FC<FixedHeaderProps> = ({
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 bg-black shadow-lg">
-      <div className="py-3 sm:py-4 md:py-5 px-4 sm:px-6 md:px-8">
+      <div className="py-2 sm:py-3 md:py-4 px-4 sm:px-6 md:px-8">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-3 sm:space-x-4 min-w-0 flex-1">
+          <div className="flex items-center min-w-0 flex-1">
             <div className="flex items-center">
-              {/* Main Logo - Larger Size */}
+              {/* Main Logo */}
               <img
                 src="/ombaro-logo-new.png"
                 alt="OMBARO"
-                className="h-16 sm:h-20 md:h-24 lg:h-28 w-auto object-contain transition-transform duration-300 hover:scale-105"
+                className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto object-contain transition-transform duration-300 hover:scale-105"
               />
             </div>
           </div>

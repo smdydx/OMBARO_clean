@@ -17,9 +17,9 @@ export const BecomePartnerPage: React.FC = () => {
     <div className="min-h-screen bg-white">
       <MarketingHeader />
 
-      <main className="pt-20 sm:pt-24 md:pt-28 lg:pt-32">
+      <main className="pt-0">
         {/* Premium Hero Section */}
-        <section className="relative min-h-[600px] sm:min-h-[700px] md:min-h-[800px] lg:min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black pt-20 sm:pt-24 md:pt-28">
+        <section className="relative min-h-[600px] sm:min-h-[700px] md:min-h-[800px] lg:min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black pt-16 sm:pt-20 md:pt-24">
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-0 left-0 w-64 h-64 sm:w-96 sm:h-96 bg-green-400 rounded-full blur-3xl animate-pulse"></div>
             <div className="absolute bottom-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-green-600 rounded-full blur-3xl animate-pulse"></div>
@@ -97,16 +97,40 @@ export const BecomePartnerPage: React.FC = () => {
               </div>
 
               <div className="relative">
-                <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-green-600 rounded-3xl transform rotate-6 opacity-20"></div>
-                <img
-                  src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=90"
-                  alt="Luxury Spa Success"
-                  className="relative rounded-3xl shadow-2xl w-full h-[400px] md:h-[600px] object-cover border-4 border-green-500/30"
-                />
-                <div className="absolute -bottom-6 -right-6 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl p-6 shadow-2xl max-w-xs">
+                {/* Unique Collage Design */}
+                <div className="grid grid-cols-2 gap-3 sm:gap-4">
+                  {/* Large Image Top Left */}
+                  <div className="col-span-2 relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl transform rotate-3 opacity-20"></div>
+                    <img
+                      src="/images/luxury_spa_massage_t_2767ba26.jpg"
+                      alt="Thai Massage"
+                      className="relative rounded-2xl shadow-2xl w-full h-48 sm:h-64 md:h-80 object-cover border-2 border-green-500/30"
+                    />
+                  </div>
+                  
+                  {/* Two Small Images Bottom */}
+                  <div className="relative">
+                    <img
+                      src="/images/luxury_spa_massage_t_3fdc8d75.jpg"
+                      alt="Aroma Massage"
+                      className="rounded-2xl shadow-xl w-full h-32 sm:h-40 md:h-48 object-cover border-2 border-green-500/20"
+                    />
+                  </div>
+                  <div className="relative">
+                    <img
+                      src="/images/luxury_spa_massage_t_48a88152.jpg"
+                      alt="Swedish Massage"
+                      className="rounded-2xl shadow-xl w-full h-32 sm:h-40 md:h-48 object-cover border-2 border-green-500/20"
+                    />
+                  </div>
+                </div>
+                
+                {/* Stats Badge */}
+                <div className="absolute -bottom-4 -right-4 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl p-4 sm:p-6 shadow-2xl max-w-xs z-10">
                   <div className="text-white">
-                    <div className="text-4xl font-bold mb-2">500+</div>
-                    <p className="text-sm opacity-90">Active Partners</p>
+                    <div className="text-3xl sm:text-4xl font-bold mb-2">500+</div>
+                    <p className="text-xs sm:text-sm opacity-90">Active Partners</p>
                     <p className="text-xs mt-2 opacity-75">Growing Network</p>
                   </div>
                 </div>
