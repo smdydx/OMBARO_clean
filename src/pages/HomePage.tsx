@@ -186,8 +186,8 @@ export const HomePage: React.FC = () => {
 
       <main>
         {/* Hero Section - Relax & Enjoy with Water Flow */}
-        <section className="relative overflow-hidden pt-16 sm:pt-20 bg-gradient-to-b from-sky-100 via-cyan-50 to-white">
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-16 md:py-24">
+        <section className="relative overflow-hidden pt-20 sm:pt-24 md:pt-28 bg-gradient-to-b from-sky-100 via-cyan-50 to-white">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 md:py-16">
             <div className="grid lg:grid-cols-5 gap-6 sm:gap-8 md:gap-12 items-center">
               {/* Left Content */}
               <div className="lg:col-span-3 text-center lg:text-left relative z-10">

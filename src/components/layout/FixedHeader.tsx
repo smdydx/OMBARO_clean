@@ -32,19 +32,18 @@ export const FixedHeader: React.FC<FixedHeaderProps> = ({
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-primary-600 to-secondary-600 shadow-strong">
-      <div className="pt-3 pb-3 px-3 sm:px-4 md:px-6 backdrop-blur-sm relative">
+      <div className="py-2 sm:py-2.5 md:py-3 px-3 sm:px-4 md:px-6 backdrop-blur-sm relative">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2 sm:space-x-3 min-w-0 flex-1">
             <div className="relative flex items-center">
-              {/* Main Logo - Larger Size with Zoom */}
+              {/* Main Logo - Optimized Size */}
               <img
                 src="/ombaro-logo.png"
                 alt="OMBARO"
-                className="h-14 sm:h-16 md:h-20 lg:h-24 w-auto object-contain transition-transform duration-300 hover:scale-110 filter drop-shadow-[0_2px_8px_rgba(255,255,255,0.3)]"
+                className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain transition-transform duration-300 hover:scale-105 filter drop-shadow-[0_2px_8px_rgba(255,255,255,0.3)]"
                 style={{ 
                   mixBlendMode: 'normal',
-                  opacity: 0.95,
-                  transform: 'scale(1.1)'
+                  opacity: 0.95
                 }}
               />
               

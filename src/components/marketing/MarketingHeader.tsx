@@ -17,7 +17,7 @@ export const MarketingHeader: React.FC = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-sky-50 via-white to-sky-50 backdrop-blur-xl border-b border-sky-100 shadow-sm">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-18 md:h-20">
-          <Link to="/" className="flex items-center group">
+          <Link to="/" className="flex items-center group z-50">
             <div className="relative py-2">
               <img
                 src="/ombaro-logo.png"
@@ -61,15 +61,51 @@ export const MarketingHeader: React.FC = () => {
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-1.5 sm:p-2 rounded-lg hover:bg-gray-50 transition-all duration-200"
+            className="md:hidden p-2 sm:p-2.5 rounded-lg hover:bg-sky-100 active:bg-sky-200 transition-all duration-200 z-50 relative"
             aria-label="Toggle menu"
+            type="button"
           >
             {isMobileMenuOpen ? (
-              <X className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700" />
+              <X className="w-6 h-6 sm:w-7 sm:h-7 text-gray-700" />
             ) : (
-              <Menu className="w-5 h-5 sm:w-6 sm:h-6 text-gray-700" />
+              <Menu className="w-6 h-6 sm:w-7 sm:h-7 text-gray-700" />
             )}
           </button>
+        </div>
+
+        {/* Mobile Menu Overlay */}
+        {isMobileMenuOpen && (
+          <div 
+            className="fixed inset-0 bg-black/50 z-40 md:hidden transition-opacity duration-300"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+        )}
+
+        {/* Mobile Menu */}
+        <div
+          className={`fixed top-16 right-0 left-0 bg-white shadow-xl z-40 md:hidden transform transition-all duration-300 ease-in-out ${
+            isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'
+          }`}
+        >
+          <nav className="flex flex-col p-4 space-y-2">
+            {navLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="px-4 py-3 text-gray-700 hover:bg-sky-50 hover:text-sky-600 rounded-lg transition-colors font-medium"
+              >
+                {link.name}
+              </Link>
+            ))}
+            <Link
+              to="/app"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="px-4 py-3 bg-gradient-to-r from-sky-500 to-cyan-500 text-white rounded-lg hover:from-sky-600 hover:to-cyan-600 transition-all shadow-md text-center font-semibold"
+            >
+              Get Started
+            </Link>
+          </nav>
         </div>
 
         {/* Bottom Water Wave Effect */}
