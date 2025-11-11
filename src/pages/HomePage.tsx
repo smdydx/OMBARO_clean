@@ -186,7 +186,7 @@ export const HomePage: React.FC = () => {
 
       <main>
         {/* Hero Section - Relax & Enjoy with Water Flow */}
-        <section className="relative overflow-hidden pt-20 sm:pt-24 md:pt-28 bg-gradient-to-b from-green-100 via-emerald-50 to-white">
+        <section className="relative overflow-hidden pt-20 sm:pt-24 md:pt-28 bg-gradient-to-b from-primary-50 via-white to-white">
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 md:py-16">
             <div className="grid lg:grid-cols-5 gap-6 sm:gap-8 md:gap-12 items-center">
               {/* Left Content */}
@@ -247,8 +247,8 @@ export const HomePage: React.FC = () => {
             <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
               <defs>
                 <linearGradient id="waterGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" style={{ stopColor: '#00FF87', stopOpacity: 0.8 }} />
-                  <stop offset="100%" style={{ stopColor: '#016B3A', stopOpacity: 0.3 }} />
+                  <stop offset="0%" style={{ stopColor: 'rgb(0, 255, 135)', stopOpacity: 0.8 }} />
+                  <stop offset="100%" style={{ stopColor: 'rgb(1, 107, 58)', stopOpacity: 0.3 }} />
                 </linearGradient>
               </defs>
               <path fill="url(#waterGradient)" fillOpacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
@@ -274,7 +274,7 @@ export const HomePage: React.FC = () => {
         </section>
 
         {/* Services Sections - Alternating Layout */}
-        <section className="relative py-12 md:py-20 overflow-hidden bg-gradient-to-b from-white via-emerald-50 to-white mt-4 md:mt-0">
+        <section className="relative py-12 md:py-20 overflow-hidden bg-gradient-to-b from-white via-primary-50 to-white mt-4 md:mt-0">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className={`grid lg:grid-cols-2 gap-12 items-center ${services[0].reverse ? 'lg:grid-flow-dense' : ''}`}>
               {/* Image with Painted Frame */}
@@ -418,7 +418,7 @@ export const HomePage: React.FC = () => {
         </section>
 
         {/* Why Choose Us Section */}
-        <section className="relative py-20 bg-gradient-to-b from-emerald-100 via-green-50 to-white overflow-hidden">
+        <section className="relative py-20 bg-gradient-to-b from-primary-50 via-white to-white overflow-hidden">
           {/* Top Wave */}
           <div className="absolute top-0 left-0 right-0 h-24">
             <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
@@ -461,7 +461,7 @@ export const HomePage: React.FC = () => {
         </section>
 
         {/* Testimonials Section */}
-        <section className="py-20 bg-gradient-to-b from-emerald-50 to-white">
+        <section className="py-20 bg-gradient-to-b from-primary-50 to-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-light text-gray-800 mb-4">
@@ -513,7 +513,7 @@ export const HomePage: React.FC = () => {
         {/* CTA Section */}
         <section className="py-20 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="bg-gradient-to-br from-emerald-50 to-white rounded-3xl p-12 shadow-xl">
+            <div className="bg-gradient-to-br from-primary-50 to-white rounded-3xl p-12 shadow-xl">
               <h2 className="text-3xl md:text-4xl font-light text-gray-800 mb-4">
                 Ready to Get Started?
               </h2>
