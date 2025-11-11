@@ -128,68 +128,95 @@ export const BecomePartnerPage: React.FC = () => {
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white rounded-2xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100">
-                <div className="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mb-6">
-                  <TrendingUp className="w-8 h-8 text-sky-600" />
+              <div className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100">
+                <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
+                  <img 
+                    src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=90"
+                    alt="Business Growth"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
-                  Grow Revenue
-                </h3>
-                <p className="text-gray-600 leading-relaxed mb-6">
-                  Partners see an average 40% increase in bookings within the first 3 months of joining our platform.
-                </p>
-                <div className="space-y-2 text-sm text-gray-600">
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-sky-600" />
-                    <span>Automated booking system</span>
+                <div className="relative z-10 p-10">
+                  <div className="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mb-6">
+                    <TrendingUp className="w-8 h-8 text-sky-600" />
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-sky-600" />
-                    <span>24/7 customer support</span>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-2xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100">
-                <div className="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mb-6">
-                  <Calendar className="w-8 h-8 text-sky-600" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
-                  Smart Management
-                </h3>
-                <p className="text-gray-600 leading-relaxed mb-6">
-                  Save 15+ hours weekly with our automated scheduling and customer management system.
-                </p>
-                <div className="space-y-2 text-sm text-gray-600">
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-sky-600" />
-                    <span>Real-time scheduling</span>
-                  </div>
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-sky-600" />
-                    <span>CRM integration</span>
+                  <h3 className="text-2xl font-bold mb-4 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                    Grow Revenue
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed mb-6">
+                    Partners see an average 40% increase in bookings within the first 3 months of joining our platform.
+                  </p>
+                  <div className="space-y-2 text-sm text-gray-600">
+                    <div className="flex items-center space-x-2">
+                      <CheckCircle className="w-4 h-4 text-sky-600" />
+                      <span>Automated booking system</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <CheckCircle className="w-4 h-4 text-sky-600" />
+                      <span>24/7 customer support</span>
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <div className="bg-white rounded-2xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100">
-                <div className="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mb-6">
-                  <Wallet className="w-8 h-8 text-sky-600" />
+              <div className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100">
+                <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
+                  <img 
+                    src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=90"
+                    alt="Smart Management"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <h3 className="text-2xl font-bold mb-4 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
-                  Instant Payments
-                </h3>
-                <p className="text-gray-600 leading-relaxed mb-6">
-                  Get paid within 24 hours directly to your bank account - secure, fast, and reliable.
-                </p>
-                <div className="space-y-2 text-sm text-gray-600">
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-sky-600" />
-                    <span>Secure payments</span>
+                <div className="relative z-10 p-10">
+                  <div className="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mb-6">
+                    <Calendar className="w-8 h-8 text-sky-600" />
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 text-sky-600" />
-                    <span>Transparent reports</span>
+                  <h3 className="text-2xl font-bold mb-4 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                    Smart Management
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed mb-6">
+                    Save 15+ hours weekly with our automated scheduling and customer management system.
+                  </p>
+                  <div className="space-y-2 text-sm text-gray-600">
+                    <div className="flex items-center space-x-2">
+                      <CheckCircle className="w-4 h-4 text-sky-600" />
+                      <span>Real-time scheduling</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <CheckCircle className="w-4 h-4 text-sky-600" />
+                      <span>CRM integration</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100">
+                <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
+                  <img 
+                    src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=90"
+                    alt="Instant Payments"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="relative z-10 p-10">
+                  <div className="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mb-6">
+                    <Wallet className="w-8 h-8 text-sky-600" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                    Instant Payments
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed mb-6">
+                    Get paid within 24 hours directly to your bank account - secure, fast, and reliable.
+                  </p>
+                  <div className="space-y-2 text-sm text-gray-600">
+                    <div className="flex items-center space-x-2">
+                      <CheckCircle className="w-4 h-4 text-sky-600" />
+                      <span>Secure payments</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <CheckCircle className="w-4 h-4 text-sky-600" />
+                      <span>Transparent reports</span>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -208,78 +235,102 @@ export const BecomePartnerPage: React.FC = () => {
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-sky-50 to-cyan-50 p-12 hover:shadow-2xl transition-all duration-500">
-                <div className="relative z-10">
-                  <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-lg">
-                    <Sparkles className="w-10 h-10 text-sky-600" />
+              <div className="group relative overflow-hidden rounded-3xl hover:shadow-2xl transition-all duration-500">
+                <img 
+                  src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=90"
+                  alt="Spa & Wellness Centers"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-sky-900/80 to-cyan-900/80"></div>
+                <div className="relative z-10 p-12">
+                  <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-8 shadow-lg">
+                    <Sparkles className="w-10 h-10 text-white" />
                   </div>
-                  <h3 className="text-3xl font-bold mb-4 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                  <h3 className="text-3xl font-bold mb-4 text-white" style={{ fontFamily: "'Tenor Sans', serif" }}>
                     Spa & Wellness Centers
                   </h3>
-                  <p className="text-gray-700 text-lg mb-6 leading-relaxed">
+                  <p className="text-white/90 text-lg mb-6 leading-relaxed">
                     Professional booking management for spas and wellness centers
                   </p>
                   <div className="flex flex-wrap gap-3">
-                    <span className="px-4 py-2 bg-white/80 rounded-full text-sm text-gray-700 shadow-sm">Therapist Scheduling</span>
-                    <span className="px-4 py-2 bg-white/80 rounded-full text-sm text-gray-700 shadow-sm">Service Packages</span>
-                    <span className="px-4 py-2 bg-white/80 rounded-full text-sm text-gray-700 shadow-sm">Memberships</span>
+                    <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm text-white shadow-sm">Therapist Scheduling</span>
+                    <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm text-white shadow-sm">Service Packages</span>
+                    <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm text-white shadow-sm">Memberships</span>
                   </div>
                 </div>
               </div>
 
-              <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-sky-50 to-cyan-50 p-12 hover:shadow-2xl transition-all duration-500">
-                <div className="relative z-10">
-                  <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-lg">
-                    <Crown className="w-10 h-10 text-sky-600" />
+              <div className="group relative overflow-hidden rounded-3xl hover:shadow-2xl transition-all duration-500">
+                <img 
+                  src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&q=90"
+                  alt="Beauty Salons"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-sky-900/80 to-cyan-900/80"></div>
+                <div className="relative z-10 p-12">
+                  <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-8 shadow-lg">
+                    <Crown className="w-10 h-10 text-white" />
                   </div>
-                  <h3 className="text-3xl font-bold mb-4 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                  <h3 className="text-3xl font-bold mb-4 text-white" style={{ fontFamily: "'Tenor Sans', serif" }}>
                     Beauty Salons
                   </h3>
-                  <p className="text-gray-700 text-lg mb-6 leading-relaxed">
+                  <p className="text-white/90 text-lg mb-6 leading-relaxed">
                     Complete salon management with stylist tracking and inventory
                   </p>
                   <div className="flex flex-wrap gap-3">
-                    <span className="px-4 py-2 bg-white/80 rounded-full text-sm text-gray-700 shadow-sm">Stylist Management</span>
-                    <span className="px-4 py-2 bg-white/80 rounded-full text-sm text-gray-700 shadow-sm">Product Sales</span>
-                    <span className="px-4 py-2 bg-white/80 rounded-full text-sm text-gray-700 shadow-sm">Customer Loyalty</span>
+                    <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm text-white shadow-sm">Stylist Management</span>
+                    <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm text-white shadow-sm">Product Sales</span>
+                    <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm text-white shadow-sm">Customer Loyalty</span>
                   </div>
                 </div>
               </div>
 
-              <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-sky-50 to-cyan-50 p-12 hover:shadow-2xl transition-all duration-500">
-                <div className="relative z-10">
-                  <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-lg">
-                    <Award className="w-10 h-10 text-sky-600" />
+              <div className="group relative overflow-hidden rounded-3xl hover:shadow-2xl transition-all duration-500">
+                <img 
+                  src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&q=90"
+                  alt="Bridal Makeup Artists"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-sky-900/80 to-cyan-900/80"></div>
+                <div className="relative z-10 p-12">
+                  <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-8 shadow-lg">
+                    <Award className="w-10 h-10 text-white" />
                   </div>
-                  <h3 className="text-3xl font-bold mb-4 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                  <h3 className="text-3xl font-bold mb-4 text-white" style={{ fontFamily: "'Tenor Sans', serif" }}>
                     Bridal Makeup Artists
                   </h3>
-                  <p className="text-gray-700 text-lg mb-6 leading-relaxed">
+                  <p className="text-white/90 text-lg mb-6 leading-relaxed">
                     Showcase your portfolio and manage wedding bookings effortlessly
                   </p>
                   <div className="flex flex-wrap gap-3">
-                    <span className="px-4 py-2 bg-white/80 rounded-full text-sm text-gray-700 shadow-sm">Portfolio Gallery</span>
-                    <span className="px-4 py-2 bg-white/80 rounded-full text-sm text-gray-700 shadow-sm">Package Bookings</span>
-                    <span className="px-4 py-2 bg-white/80 rounded-full text-sm text-gray-700 shadow-sm">Trial Sessions</span>
+                    <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm text-white shadow-sm">Portfolio Gallery</span>
+                    <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm text-white shadow-sm">Package Bookings</span>
+                    <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm text-white shadow-sm">Trial Sessions</span>
                   </div>
                 </div>
               </div>
 
-              <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-sky-50 to-cyan-50 p-12 hover:shadow-2xl transition-all duration-500">
-                <div className="relative z-10">
-                  <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-lg">
-                    <Heart className="w-10 h-10 text-sky-600" />
+              <div className="group relative overflow-hidden rounded-3xl hover:shadow-2xl transition-all duration-500">
+                <img 
+                  src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=800&q=90"
+                  alt="Wellness Centers"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-sky-900/80 to-cyan-900/80"></div>
+                <div className="relative z-10 p-12">
+                  <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-8 shadow-lg">
+                    <Heart className="w-10 h-10 text-white" />
                   </div>
-                  <h3 className="text-3xl font-bold mb-4 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                  <h3 className="text-3xl font-bold mb-4 text-white" style={{ fontFamily: "'Tenor Sans', serif" }}>
                     Wellness Centers
                   </h3>
-                  <p className="text-gray-700 text-lg mb-6 leading-relaxed">
+                  <p className="text-white/90 text-lg mb-6 leading-relaxed">
                     Holistic wellness programs, yoga classes, and therapy services
                   </p>
                   <div className="flex flex-wrap gap-3">
-                    <span className="px-4 py-2 bg-white/80 rounded-full text-sm text-gray-700 shadow-sm">Class Scheduling</span>
-                    <span className="px-4 py-2 bg-white/80 rounded-full text-sm text-gray-700 shadow-sm">Memberships</span>
-                    <span className="px-4 py-2 bg-white/80 rounded-full text-sm text-gray-700 shadow-sm">Programs</span>
+                    <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm text-white shadow-sm">Class Scheduling</span>
+                    <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm text-white shadow-sm">Memberships</span>
+                    <span className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm text-white shadow-sm">Programs</span>
                   </div>
                 </div>
               </div>
