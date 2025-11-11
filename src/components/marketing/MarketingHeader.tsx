@@ -19,7 +19,7 @@ export const MarketingHeader: React.FC = () => {
         <div className="flex items-center justify-between h-20 sm:h-24 md:h-28">
           <div className="flex items-center justify-between flex-1">
             <Link to="/" className="flex items-center group z-50">
-              <div className="relative">
+              <div className="relative rounded-full p-3 bg-gradient-to-br from-green-500 via-green-600 to-black shadow-lg">
                 <img
                   src="/ombaro-logo-new.png"
                   alt="OMBARO"
@@ -27,12 +27,6 @@ export const MarketingHeader: React.FC = () => {
                 />
               </div>
             </Link>
-
-            <div className="hidden lg:flex items-center">
-              <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-green-400 via-green-500 to-green-600 bg-clip-text text-transparent" style={{ fontFamily: "'Tenor Sans', serif" }}>
-                RELAX & ENJOY
-              </h2>
-            </div>
           </div>
 
           <nav className="hidden md:flex items-center space-x-1 absolute left-1/2 transform -translate-x-1/2">
