@@ -154,7 +154,7 @@ export const HomePage: React.FC = () => {
           showTermsBanner ? 'mt-16 opacity-100 max-h-20 sm:max-h-24' : 'mt-16 opacity-0 max-h-0 overflow-hidden'
         }`}
       >
-        <div className="bg-gradient-to-r from-cyan-600 to-cyan-700 border-b-2 sm:border-b-4 border-cyan-800">
+        <div className="bg-gradient-to-r from-primary-600 to-primary-700 border-b-2 sm:border-b-4 border-primary-800">
           <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2 sm:py-4">
             <div className="flex items-center justify-between gap-2">
               <div className="flex items-center space-x-2 text-white flex-1">
@@ -163,7 +163,7 @@ export const HomePage: React.FC = () => {
                   Please read our{' '}
                   <Link
                     to="/terms"
-                    className="underline font-bold hover:text-cyan-100 transition-colors"
+                    className="underline font-bold hover:text-green-100 transition-colors"
                     onClick={handleCloseBanner}
                   >
                     Terms & Conditions
@@ -186,7 +186,7 @@ export const HomePage: React.FC = () => {
 
       <main>
         {/* Hero Section - Relax & Enjoy with Water Flow */}
-        <section className="relative overflow-hidden pt-20 sm:pt-24 md:pt-28 bg-gradient-to-b from-sky-100 via-cyan-50 to-white">
+        <section className="relative overflow-hidden pt-20 sm:pt-24 md:pt-28 bg-gradient-to-b from-green-100 via-emerald-50 to-white">
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 md:py-16">
             <div className="grid lg:grid-cols-5 gap-6 sm:gap-8 md:gap-12 items-center">
               {/* Left Content */}
@@ -194,14 +194,14 @@ export const HomePage: React.FC = () => {
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-light text-gray-800 mb-4 sm:mb-6 leading-tight">
                   RELAX
                   <br />
-                  <span className="font-normal text-cyan-600">& ENJOY</span>
+                  <span className="font-normal text-primary-600">& ENJOY</span>
                 </h1>
                 <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-6 sm:mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
                   Experience ultimate relaxation with our premium spa and wellness services. 
                   Book your perfect moment of tranquility today.
                 </p>
                 <Link to="/app">
-                  <button className="bg-cyan-500 hover:bg-cyan-600 text-white px-6 md:px-8 py-2.5 md:py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center">
+                  <button className="bg-primary-500 hover:bg-primary-600 text-white px-6 md:px-8 py-2.5 md:py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center">
                     Book Now
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </button>
@@ -229,8 +229,8 @@ export const HomePage: React.FC = () => {
                 {/* Floating Card */}
                 <div className="absolute -bottom-4 md:-bottom-6 -left-4 md:-left-6 bg-white/90 backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-xl max-w-[200px] md:max-w-xs">
                   <div className="flex items-center space-x-3 md:space-x-4">
-                    <div className="w-10 h-10 md:w-12 md:h-12 bg-cyan-100 rounded-full flex items-center justify-center">
-                      <Star className="w-5 h-5 md:w-6 md:h-6 text-cyan-600" />
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                      <Star className="w-5 h-5 md:w-6 md:h-6 text-primary-600" />
                     </div>
                     <div>
                       <p className="text-xl md:text-2xl font-bold text-gray-800">50,000+</p>
@@ -247,8 +247,8 @@ export const HomePage: React.FC = () => {
             <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
               <defs>
                 <linearGradient id="waterGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" style={{ stopColor: '#67e8f9', stopOpacity: 0.8 }} />
-                  <stop offset="100%" style={{ stopColor: '#0891b2', stopOpacity: 0.3 }} />
+                  <stop offset="0%" style={{ stopColor: '#00FF87', stopOpacity: 0.8 }} />
+                  <stop offset="100%" style={{ stopColor: '#016B3A', stopOpacity: 0.3 }} />
                 </linearGradient>
               </defs>
               <path fill="url(#waterGradient)" fillOpacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
@@ -263,7 +263,7 @@ export const HomePage: React.FC = () => {
           {/* Additional Wave Layer */}
           <div className="absolute bottom-0 left-0 right-0 h-24 md:h-32 opacity-60">
             <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
-              <path fill="#e0f2fe" fillOpacity="1" d="M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,154.7C672,149,768,171,864,181.3C960,192,1056,192,1152,181.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+              <path fill="#d1fae5" fillOpacity="1" d="M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,154.7C672,149,768,171,864,181.3C960,192,1056,192,1152,181.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
                 <animate attributeName="d" dur="6s" repeatCount="indefinite" values="
                   M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,154.7C672,149,768,171,864,181.3C960,192,1056,192,1152,181.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
                   M0,192L48,181.3C96,171,192,149,288,154.7C384,160,480,192,576,197.3C672,203,768,181,864,170.7C960,160,1056,160,1152,170.7C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
@@ -274,7 +274,7 @@ export const HomePage: React.FC = () => {
         </section>
 
         {/* Services Sections - Alternating Layout */}
-        <section className="relative py-12 md:py-20 overflow-hidden bg-gradient-to-b from-white via-sky-50 to-white mt-4 md:mt-0">
+        <section className="relative py-12 md:py-20 overflow-hidden bg-gradient-to-b from-white via-emerald-50 to-white mt-4 md:mt-0">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className={`grid lg:grid-cols-2 gap-12 items-center ${services[0].reverse ? 'lg:grid-flow-dense' : ''}`}>
               {/* Image with Painted Frame */}
@@ -294,7 +294,7 @@ export const HomePage: React.FC = () => {
 
               {/* Content */}
               <div className={`${services[0].reverse ? 'lg:col-start-1 lg:row-start-1' : ''} text-center lg:text-left`}>
-                <div className="text-sm font-semibold text-cyan-600 tracking-wider mb-3">
+                <div className="text-sm font-semibold text-primary-600 tracking-wider mb-3">
                   {services[0].subtitle}
                 </div>
                 <h2 className="text-4xl md:text-5xl font-light text-gray-800 mb-6 leading-tight">
@@ -304,7 +304,7 @@ export const HomePage: React.FC = () => {
                   {services[0].description}
                 </p>
                 <Link to={services[0].link}>
-                  <button className="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl">
+                  <button className="bg-primary-500 hover:bg-primary-600 text-white px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl">
                     Learn More
                   </button>
                 </Link>
@@ -343,7 +343,7 @@ export const HomePage: React.FC = () => {
 
                 {/* Content */}
                 <div className={`${service.reverse ? 'lg:col-start-1 lg:row-start-1' : ''} text-center lg:text-left`}>
-                  <div className="text-sm font-semibold text-cyan-600 tracking-wider mb-3">
+                  <div className="text-sm font-semibold text-primary-600 tracking-wider mb-3">
                     {service.subtitle}
                   </div>
                   <h2 className="text-4xl md:text-5xl font-light text-gray-800 mb-6 leading-tight">
@@ -353,7 +353,7 @@ export const HomePage: React.FC = () => {
                     {service.description}
                   </p>
                   <Link to={service.link}>
-                    <button className="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl">
+                    <button className="bg-primary-500 hover:bg-primary-600 text-white px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl">
                       Learn More
                     </button>
                   </Link>
@@ -377,7 +377,7 @@ export const HomePage: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-light text-gray-800 mb-4">
-                Explore Our <span className="font-normal text-cyan-600">Services</span>
+                Explore Our <span className="font-normal text-primary-600">Services</span>
               </h2>
               <p className="text-gray-600 text-lg max-w-2xl mx-auto">
                 Discover a wide range of premium beauty and wellness services
@@ -405,7 +405,7 @@ export const HomePage: React.FC = () => {
                     <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
                       <h3 className="text-2xl font-bold mb-2">{category.title}</h3>
                       <p className="text-sm text-gray-200 mb-4">{category.description}</p>
-                      <button className="bg-cyan-500 hover:bg-cyan-600 text-white px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 inline-flex items-center">
+                      <button className="bg-primary-500 hover:bg-primary-600 text-white px-6 py-2 rounded-full text-sm font-medium transition-all duration-300 inline-flex items-center">
                         Explore Services
                         <ArrowRight className="w-4 h-4 ml-2" />
                       </button>
@@ -418,7 +418,7 @@ export const HomePage: React.FC = () => {
         </section>
 
         {/* Why Choose Us Section */}
-        <section className="relative py-20 bg-gradient-to-b from-sky-100 via-cyan-50 to-white overflow-hidden">
+        <section className="relative py-20 bg-gradient-to-b from-emerald-100 via-green-50 to-white overflow-hidden">
           {/* Top Wave */}
           <div className="absolute top-0 left-0 right-0 h-24">
             <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
@@ -429,7 +429,7 @@ export const HomePage: React.FC = () => {
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-light text-gray-800 mb-4">
-                Why Choose <span className="font-normal text-cyan-600">OMBARO</span>
+                Why Choose <span className="font-normal text-primary-600">OMBARO</span>
               </h2>
               <p className="text-gray-600 text-lg max-w-2xl mx-auto">
                 Your trusted partner for premium beauty and wellness services across India
@@ -442,8 +442,8 @@ export const HomePage: React.FC = () => {
                   key={index}
                   className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 text-center"
                 >
-                  <div className="w-16 h-16 rounded-full bg-cyan-100 flex items-center justify-center mb-4 mx-auto">
-                    <feature.icon className="w-8 h-8 text-cyan-600" />
+                  <div className="w-16 h-16 rounded-full bg-primary-100 flex items-center justify-center mb-4 mx-auto">
+                    <feature.icon className="w-8 h-8 text-primary-600" />
                   </div>
                   <h3 className="text-xl font-bold text-gray-800 mb-2">{feature.title}</h3>
                   <p className="text-gray-600 leading-relaxed text-sm">{feature.description}</p>
@@ -461,7 +461,7 @@ export const HomePage: React.FC = () => {
         </section>
 
         {/* Testimonials Section */}
-        <section className="py-20 bg-gradient-to-b from-cyan-50 to-white">
+        <section className="py-20 bg-gradient-to-b from-emerald-50 to-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-light text-gray-800 mb-4">
@@ -501,7 +501,7 @@ export const HomePage: React.FC = () => {
 
             <div className="text-center">
               <Link to="/app">
-                <button className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center">
+                <button className="bg-primary-500 hover:bg-primary-600 text-white px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center">
                   Book Your Experience
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </button>
@@ -513,7 +513,7 @@ export const HomePage: React.FC = () => {
         {/* CTA Section */}
         <section className="py-20 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="bg-gradient-to-br from-cyan-50 to-white rounded-3xl p-12 shadow-xl">
+            <div className="bg-gradient-to-br from-emerald-50 to-white rounded-3xl p-12 shadow-xl">
               <h2 className="text-3xl md:text-4xl font-light text-gray-800 mb-4">
                 Ready to Get Started?
               </h2>
