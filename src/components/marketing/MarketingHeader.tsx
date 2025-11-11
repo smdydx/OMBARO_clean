@@ -18,47 +18,12 @@ export const MarketingHeader: React.FC = () => {
       <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-18 md:h-20">
           <Link to="/" className="flex items-center group">
-            <div className="relative">
+            <div className="relative py-2">
               <img
                 src="/ombaro-logo.png"
                 alt="OMBARO"
-                className="h-12 sm:h-13 md:h-14 lg:h-16 w-auto max-w-[160px] sm:max-w-[180px] md:max-w-[200px] lg:max-w-[240px] object-contain transition-all duration-300 group-hover:scale-105 relative z-10"
+                className="h-8 sm:h-9 md:h-10 lg:h-12 w-auto max-w-[120px] sm:max-w-[140px] md:max-w-[160px] lg:max-w-[180px] object-contain transition-all duration-300 group-hover:scale-105"
               />
-              {/* Water Wave Effect */}
-              <div className="absolute -bottom-1 left-0 right-0 h-3 overflow-hidden opacity-50">
-                <svg viewBox="0 0 200 15" className="w-full h-full" preserveAspectRatio="none">
-                  <path
-                    fill="rgba(14, 165, 233, 0.3)"
-                    d="M0,7 Q25,3 50,7 T100,7 T150,7 T200,7 L200,15 L0,15 Z"
-                  >
-                    <animate
-                      attributeName="d"
-                      dur="3s"
-                      repeatCount="indefinite"
-                      values="
-                        M0,7 Q25,3 50,7 T100,7 T150,7 T200,7 L200,15 L0,15 Z;
-                        M0,7 Q25,10 50,7 T100,7 T150,7 T200,7 L200,15 L0,15 Z;
-                        M0,7 Q25,3 50,7 T100,7 T150,7 T200,7 L200,15 L0,15 Z
-                      "
-                    />
-                  </path>
-                  <path
-                    fill="rgba(6, 182, 212, 0.2)"
-                    d="M0,9 Q30,5 60,9 T120,9 T180,9 T200,9 L200,15 L0,15 Z"
-                  >
-                    <animate
-                      attributeName="d"
-                      dur="2.5s"
-                      repeatCount="indefinite"
-                      values="
-                        M0,9 Q30,5 60,9 T120,9 T180,9 T200,9 L200,15 L0,15 Z;
-                        M0,9 Q30,12 60,9 T120,9 T180,9 T200,9 L200,15 L0,15 Z;
-                        M0,9 Q30,5 60,9 T120,9 T180,9 T200,9 L200,15 L0,15 Z
-                      "
-                    />
-                  </path>
-                </svg>
-              </div>
             </div>
           </Link>
 
