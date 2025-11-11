@@ -14,16 +14,16 @@ export const MarketingHeader: React.FC = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-gray-800 shadow-xl">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-black via-green-900/20 to-black border-b border-green-800/30 shadow-xl">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20 sm:h-24 md:h-28">
           <div className="flex items-center justify-between flex-1">
             <Link to="/" className="flex items-center group z-50">
-              <div className="relative rounded-full p-3 bg-gradient-to-br from-green-500 via-green-600 to-black shadow-lg">
+              <div className="relative rounded-full p-2 bg-black shadow-lg border border-green-700/20">
                 <img
                   src="/ombaro-logo-new.png"
                   alt="OMBARO"
-                  className="h-14 sm:h-16 md:h-20 w-auto object-contain transition-all duration-300 group-hover:scale-105"
+                  className="h-12 sm:h-14 md:h-16 w-auto object-contain transition-all duration-300 group-hover:scale-105"
                 />
               </div>
             </Link>
