@@ -122,6 +122,52 @@ export const BecomePartnerPage: React.FC = () => {
           </div>
         </section>
 
+        {/* Services Showcase Slider */}
+        <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-sky-50 to-cyan-50 overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+            <div className="text-center">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                Services We Offer
+              </h2>
+              <div className="w-16 sm:w-24 h-1 bg-sky-600 mx-auto mb-4"></div>
+              <p className="text-lg sm:text-xl text-gray-600">Premium beauty and wellness services through our platform</p>
+            </div>
+          </div>
+
+          {/* Sliding Images */}
+          <div className="relative">
+            <div className="flex animate-slide-infinite gap-6">
+              {[
+                { img: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=90', title: 'Spa Treatments' },
+                { img: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=90', title: 'Facial Care' },
+                { img: 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=90', title: 'Bridal Makeup' },
+                { img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=90', title: 'Hair Styling' },
+                { img: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=90', title: 'Massage Therapy' },
+                { img: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&q=90', title: 'Beauty Salon' },
+                { img: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=90', title: 'Spa Treatments' },
+                { img: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=90', title: 'Facial Care' },
+                { img: 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=90', title: 'Bridal Makeup' },
+                { img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=90', title: 'Hair Styling' },
+              ].map((service, idx) => (
+                <div key={idx} className="relative flex-shrink-0 w-80 h-96 rounded-2xl overflow-hidden shadow-xl group">
+                  <img
+                    src={service.img}
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 className="text-2xl font-bold text-white mb-2" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                      {service.title}
+                    </h3>
+                    <div className="w-12 h-1 bg-sky-400"></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Elegant Stats */}
         <section className="py-12 sm:py-16 lg:py-20 bg-white border-y border-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
