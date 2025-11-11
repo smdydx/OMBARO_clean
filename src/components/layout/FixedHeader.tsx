@@ -32,16 +32,32 @@ export const FixedHeader: React.FC<FixedHeaderProps> = ({
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-primary-600 to-secondary-600 shadow-strong">
-      <div className="pt-3 pb-3 px-3 sm:px-4 md:px-6 backdrop-blur-sm">
+      <div className="pt-3 pb-3 px-3 sm:px-4 md:px-6 backdrop-blur-sm relative">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2 sm:space-x-3 min-w-0 flex-1">
-            <div className="relative">
+            <div className="relative flex items-center">
+              {/* Left Transparent Logo */}
+              <img
+                src="/ombaro-logo.png"
+                alt=""
+                className="absolute -left-16 sm:-left-20 h-8 sm:h-9 md:h-10 lg:h-11 w-auto object-contain opacity-20 blur-[1px]"
+              />
+              
+              {/* Main Logo */}
               <img
                 src="/ombaro-logo.png"
                 alt="OMBARO"
                 className="h-9 sm:h-10 md:h-11 lg:h-12 w-auto object-contain transition-transform duration-300 hover:scale-105 relative z-10"
               />
-              {/* Water Wave Effect */}
+              
+              {/* Right Transparent Logo */}
+              <img
+                src="/ombaro-logo.png"
+                alt=""
+                className="absolute -right-16 sm:-right-20 h-8 sm:h-9 md:h-10 lg:h-11 w-auto object-contain opacity-20 blur-[1px]"
+              />
+              
+              {/* Water Wave Effect Under Logo */}
               <div className="absolute -bottom-1 left-0 right-0 h-2 overflow-hidden opacity-60">
                 <svg viewBox="0 0 120 10" className="w-full h-full" preserveAspectRatio="none">
                   <path
@@ -111,6 +127,42 @@ export const FixedHeader: React.FC<FixedHeaderProps> = ({
             </button>
           </div>
         </div>
+      </div>
+
+      {/* Bottom Water Wave Effect */}
+      <div className="absolute bottom-0 left-0 right-0 h-6 overflow-hidden">
+        <svg viewBox="0 0 1440 60" className="w-full h-full" preserveAspectRatio="none">
+          <path
+            fill="rgba(255, 255, 255, 0.15)"
+            d="M0,30 Q180,15 360,30 T720,30 T1080,30 T1440,30 L1440,60 L0,60 Z"
+          >
+            <animate
+              attributeName="d"
+              dur="4s"
+              repeatCount="indefinite"
+              values="
+                M0,30 Q180,15 360,30 T720,30 T1080,30 T1440,30 L1440,60 L0,60 Z;
+                M0,30 Q180,40 360,30 T720,30 T1080,30 T1440,30 L1440,60 L0,60 Z;
+                M0,30 Q180,15 360,30 T720,30 T1080,30 T1440,30 L1440,60 L0,60 Z
+              "
+            />
+          </path>
+          <path
+            fill="rgba(255, 255, 255, 0.1)"
+            d="M0,35 Q240,20 480,35 T960,35 T1440,35 L1440,60 L0,60 Z"
+          >
+            <animate
+              attributeName="d"
+              dur="3.5s"
+              repeatCount="indefinite"
+              values="
+                M0,35 Q240,20 480,35 T960,35 T1440,35 L1440,60 L0,60 Z;
+                M0,35 Q240,45 480,35 T960,35 T1440,35 L1440,60 L0,60 Z;
+                M0,35 Q240,20 480,35 T960,35 T1440,35 L1440,60 L0,60 Z
+              "
+            />
+          </path>
+        </svg>
       </div>
 
       {/* Search Bar - Toggleable */}

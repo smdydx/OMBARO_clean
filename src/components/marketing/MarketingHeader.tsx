@@ -106,6 +106,42 @@ export const MarketingHeader: React.FC = () => {
             )}
           </button>
         </div>
+
+        {/* Bottom Water Wave Effect */}
+        <div className="absolute bottom-0 left-0 right-0 h-8 overflow-hidden">
+          <svg viewBox="0 0 1440 80" className="w-full h-full" preserveAspectRatio="none">
+            <path
+              fill="rgba(14, 165, 233, 0.15)"
+              d="M0,40 Q180,20 360,40 T720,40 T1080,40 T1440,40 L1440,80 L0,80 Z"
+            >
+              <animate
+                attributeName="d"
+                dur="4s"
+                repeatCount="indefinite"
+                values="
+                  M0,40 Q180,20 360,40 T720,40 T1080,40 T1440,40 L1440,80 L0,80 Z;
+                  M0,40 Q180,55 360,40 T720,40 T1080,40 T1440,40 L1440,80 L0,80 Z;
+                  M0,40 Q180,20 360,40 T720,40 T1080,40 T1440,40 L1440,80 L0,80 Z
+                "
+              />
+            </path>
+            <path
+              fill="rgba(6, 182, 212, 0.1)"
+              d="M0,45 Q240,25 480,45 T960,45 T1440,45 L1440,80 L0,80 Z"
+            >
+              <animate
+                attributeName="d"
+                dur="3.5s"
+                repeatCount="indefinite"
+                values="
+                  M0,45 Q240,25 480,45 T960,45 T1440,45 L1440,80 L0,80 Z;
+                  M0,45 Q240,60 480,45 T960,45 T1440,45 L1440,80 L0,80 Z;
+                  M0,45 Q240,25 480,45 T960,45 T1440,45 L1440,80 L0,80 Z
+                "
+              />
+            </path>
+          </svg>
+        </div>
       </div>
 
       {isMobileMenuOpen && (
