@@ -149,7 +149,7 @@ export const VendorApprovalDashboard: React.FC<VendorApprovalDashboardProps> = (
   function getStatusBadge(status: string) {
     const badges: Record<string, { bg: string; text: string; icon: any }> = {
       pending: { bg: 'bg-yellow-100', text: 'text-yellow-800', icon: Clock },
-      fo_review: { bg: 'bg-blue-100', text: 'text-blue-800', icon: Eye },
+      fo_review: { bg: 'bg-green-100', text: 'text-green-800', icon: Eye },
       manager_review: { bg: 'bg-purple-100', text: 'text-purple-800', icon: Eye },
       director_review: { bg: 'bg-indigo-100', text: 'text-indigo-800', icon: Eye },
       admin_review: { bg: 'bg-pink-100', text: 'text-pink-800', icon: Eye },
@@ -194,7 +194,7 @@ export const VendorApprovalDashboard: React.FC<VendorApprovalDashboardProps> = (
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600 mx-auto mb-4"></div>
           <p className="text-gray-600">Loading applications...</p>
         </div>
       </div>
@@ -250,9 +250,9 @@ export const VendorApprovalDashboard: React.FC<VendorApprovalDashboardProps> = (
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600">In Review</p>
-                <p className="text-2xl font-bold text-blue-600">{stats.underReview}</p>
+                <p className="text-2xl font-bold text-green-600">{stats.underReview}</p>
               </div>
-              <Eye className="w-8 h-8 text-blue-600" />
+              <Eye className="w-8 h-8 text-green-600" />
             </div>
           </div>
 
@@ -287,7 +287,7 @@ export const VendorApprovalDashboard: React.FC<VendorApprovalDashboardProps> = (
                 placeholder="Search by business name, contact, email, or application number..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
               />
             </div>
 
@@ -296,7 +296,7 @@ export const VendorApprovalDashboard: React.FC<VendorApprovalDashboardProps> = (
               <select
                 value={statusFilter}
                 onChange={(e) => setStatusFilter(e.target.value)}
-                className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
               >
                 <option value="all">All Status</option>
                 <option value="pending">Pending</option>
@@ -360,7 +360,7 @@ export const VendorApprovalDashboard: React.FC<VendorApprovalDashboardProps> = (
                         </div>
                       </td>
                       <td className="px-6 py-4">
-                        <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded-lg text-xs font-medium">
+                        <span className="px-2 py-1 bg-green-100 text-green-800 rounded-lg text-xs font-medium">
                           {app.partner_type}
                         </span>
                       </td>
@@ -424,7 +424,7 @@ export const VendorApprovalDashboard: React.FC<VendorApprovalDashboardProps> = (
               {/* Current Status */}
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-3 flex items-center gap-2">
-                  <TrendingUp className="w-5 h-5 text-blue-600" />
+                  <TrendingUp className="w-5 h-5 text-green-600" />
                   Current Status
                 </h3>
                 <div className="bg-gray-50 p-4 rounded-lg">
@@ -444,7 +444,7 @@ export const VendorApprovalDashboard: React.FC<VendorApprovalDashboardProps> = (
               {/* Business Info */}
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                  <Building className="w-5 h-5 text-blue-600" />
+                  <Building className="w-5 h-5 text-green-600" />
                   Business Information
                 </h3>
                 <div className="grid grid-cols-2 gap-4 bg-gray-50 p-4 rounded-lg">
@@ -630,7 +630,7 @@ export const VendorApprovalDashboard: React.FC<VendorApprovalDashboardProps> = (
                       value={actionNote}
                       onChange={(e) => setActionNote(e.target.value)}
                       rows={4}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                       placeholder={
                         actionType === 'approve' ? 'Add any notes or observations...' :
                         actionType === 'reject' ? 'Please provide a clear reason for rejection...' :
@@ -667,8 +667,8 @@ export const VendorApprovalDashboard: React.FC<VendorApprovalDashboardProps> = (
                   </div>
                 </div>
               ) : !canApprove(selectedApplication) ? (
-                <div className="bg-blue-50 border border-blue-200 p-4 rounded-lg">
-                  <p className="text-sm text-blue-800">
+                <div className="bg-green-50 border border-green-200 p-4 rounded-lg">
+                  <p className="text-sm text-green-800">
                     This application is not at your approval level. Current status: {selectedApplication.status.replace('_', ' ')}
                   </p>
                 </div>

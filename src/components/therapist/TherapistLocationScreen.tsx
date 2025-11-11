@@ -226,12 +226,12 @@ export const TherapistLocationScreen: React.FC<TherapistLocationScreenProps> = (
         </div>
 
         {/* Info Card */}
-        <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+        <div className="bg-green-50 border border-green-200 rounded-xl p-4">
           <div className="flex items-start space-x-3">
-            <AlertCircle className="w-5 h-5 text-blue-600 mt-0.5" />
+            <AlertCircle className="w-5 h-5 text-green-600 mt-0.5" />
             <div>
-              <h3 className="font-semibold text-blue-900">Why track location?</h3>
-              <ul className="text-sm text-blue-700 mt-2 space-y-1">
+              <h3 className="font-semibold text-green-900">Why track location?</h3>
+              <ul className="text-sm text-green-700 mt-2 space-y-1">
                 <li>• Helps us assign nearby service requests</li>
                 <li>• Improves customer experience with accurate ETAs</li>
                 <li>• Ensures safety and accountability</li>

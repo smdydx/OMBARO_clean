@@ -564,8 +564,8 @@ export default function VendorSignupScreen({
                 placeholder="https://yourwebsite.com"
               />
 
-              <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                <p className="text-sm text-blue-800">
+              <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+                <p className="text-sm text-green-800">
                   <strong>Note:</strong> Your application will be reviewed by our team within 24-48 hours.
                   You will receive an email notification once approved.
                 </p>

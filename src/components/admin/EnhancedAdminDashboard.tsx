@@ -67,7 +67,7 @@ export const EnhancedAdminDashboard: React.FC<EnhancedAdminDashboardProps> = ({ 
   };
 
   const platformStats = [
-    { label: 'Total Users', value: metrics?.totalUsers.toLocaleString() || '0', icon: Users, color: 'bg-blue-500', change: '+12% this month' },
+    { label: 'Total Users', value: metrics?.totalUsers.toLocaleString() || '0', icon: Users, color: 'bg-green-500', change: '+12% this month' },
     { label: 'Active Vendors', value: metrics?.activeVendors.toString() || '0', icon: Building, color: 'bg-green-500', change: '+5 this week' },
     { label: 'Active Therapists', value: metrics?.activeTherapists.toString() || '0', icon: UserCheck, color: 'bg-orange-500', change: '+8 this month' },
     { label: 'Platform Health', value: '98.5%', icon: Shield, color: 'bg-emerald-500', change: 'All systems operational' }
@@ -80,9 +80,9 @@ export const EnhancedAdminDashboard: React.FC<EnhancedAdminDashboardProps> = ({ 
       departments: [
         { id: 'accounts', title: 'Accounts Department', description: 'Financial accounting and bookkeeping', icon: Calculator, color: 'bg-gradient-to-br from-green-500 to-emerald-500', stats: [{ label: 'Revenue', value: '₹8.4L' }, { label: 'Pending', value: '23' }] },
         { id: 'marketing', title: 'Marketing Department', description: 'Brand promotion and customer acquisition', icon: Heart, color: 'bg-gradient-to-br from-pink-500 to-rose-500', stats: [{ label: 'Campaigns', value: '12' }, { label: 'ROI', value: '3.2x' }] },
-        { id: 'finance', title: 'Finance Department', description: 'Financial planning and analysis', icon: DollarSign, color: 'bg-gradient-to-br from-blue-500 to-cyan-500', stats: [{ label: 'Budget', value: '₹25L' }, { label: 'Utilization', value: '78%' }] },
+        { id: 'finance', title: 'Finance Department', description: 'Financial planning and analysis', icon: DollarSign, color: 'bg-gradient-to-br from-green-500 to-green-500', stats: [{ label: 'Budget', value: '₹25L' }, { label: 'Utilization', value: '78%' }] },
         { id: 'hr', title: 'HR Department', description: 'Human resources and employee management', icon: UserCog, color: 'bg-gradient-to-br from-violet-500 to-purple-500', stats: [{ label: 'Employees', value: '145' }, { label: 'Open Positions', value: '7' }] },
-        { id: 'it', title: 'IT Department', description: 'Technology infrastructure and support', icon: Monitor, color: 'bg-gradient-to-br from-indigo-500 to-blue-500', stats: [{ label: 'Uptime', value: '99.9%' }, { label: 'Tickets', value: '3' }] }
+        { id: 'it', title: 'IT Department', description: 'Technology infrastructure and support', icon: Monitor, color: 'bg-gradient-to-br from-indigo-500 to-green-500', stats: [{ label: 'Uptime', value: '99.9%' }, { label: 'Tickets', value: '3' }] }
       ]
     },
     {
@@ -98,8 +98,8 @@ export const EnhancedAdminDashboard: React.FC<EnhancedAdminDashboardProps> = ({ 
       id: 'data',
       name: 'Data Management',
       departments: [
-        { id: 'vendorList', title: 'Vendor List', description: 'Vendor database management', icon: List, color: 'bg-gradient-to-br from-teal-500 to-cyan-500', stats: [{ label: 'Total Vendors', value: metrics?.activeVendors.toString() || '0' }, { label: 'Pending', value: '8' }], badge: { text: 'New', color: 'bg-green-100 text-green-700' } },
-        { id: 'customerData', title: 'Customer Data', description: 'Customer information management', icon: Database, color: 'bg-gradient-to-br from-cyan-500 to-blue-500', stats: [{ label: 'Total Customers', value: metrics?.totalUsers.toLocaleString() || '0' }, { label: 'Active', value: '2.1K' }] }
+        { id: 'vendorList', title: 'Vendor List', description: 'Vendor database management', icon: List, color: 'bg-gradient-to-br from-teal-500 to-green-500', stats: [{ label: 'Total Vendors', value: metrics?.activeVendors.toString() || '0' }, { label: 'Pending', value: '8' }], badge: { text: 'New', color: 'bg-green-100 text-green-700' } },
+        { id: 'customerData', title: 'Customer Data', description: 'Customer information management', icon: Database, color: 'bg-gradient-to-br from-green-500 to-green-500', stats: [{ label: 'Total Customers', value: metrics?.totalUsers.toLocaleString() || '0' }, { label: 'Active', value: '2.1K' }] }
       ]
     },
     {
@@ -130,7 +130,7 @@ export const EnhancedAdminDashboard: React.FC<EnhancedAdminDashboardProps> = ({ 
       id: 'system',
       name: 'System Management',
       departments: [
-        { id: 'userManagement', title: 'User & Role Management', description: 'Create users and assign roles', icon: UserCog, color: 'bg-gradient-to-br from-blue-600 to-indigo-600', stats: [{ label: 'Users', value: metrics?.totalUsers.toLocaleString() || '0' }, { label: 'Roles', value: '15' }] },
+        { id: 'userManagement', title: 'User & Role Management', description: 'Create users and assign roles', icon: UserCog, color: 'bg-gradient-to-br from-green-600 to-indigo-600', stats: [{ label: 'Users', value: metrics?.totalUsers.toLocaleString() || '0' }, { label: 'Roles', value: '15' }] },
         { id: 'roleManagement', title: 'Role Management', description: 'Manage system roles', icon: Shield, color: 'bg-gradient-to-br from-purple-600 to-pink-600', stats: [{ label: 'Roles', value: '15' }, { label: 'Permissions', value: '48' }] },
         { id: 'locationTracking', title: 'Location Tracking', description: 'Track employee locations', icon: MapPin, color: 'bg-gradient-to-br from-green-600 to-emerald-600', stats: [{ label: 'Active', value: metrics?.activeTherapists.toString() || '0' }, { label: 'On Duty', value: '45' }] },
         { id: 'vendorApproval', title: 'Vendor Approvals', description: 'Review vendor applications', icon: Building, color: 'bg-gradient-to-br from-amber-600 to-orange-600', stats: [{ label: 'Pending', value: '8' }, { label: 'Approved', value: '156' }], badge: { text: '8 Pending', color: 'bg-amber-100 text-amber-700' } }
@@ -176,7 +176,7 @@ export const EnhancedAdminDashboard: React.FC<EnhancedAdminDashboardProps> = ({ 
     <div className="min-h-screen bg-gray-50">
       {sidebarOpen && <div className="fixed inset-0 bg-black/50 z-40 lg:hidden" onClick={() => setSidebarOpen(false)} />}
 
-      <div className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 pt-12 pb-6 px-4 sm:px-6 sticky top-0 z-30">
+      <div className="bg-gradient-to-r from-green-600 via-indigo-600 to-purple-600 pt-12 pb-6 px-4 sm:px-6 sticky top-0 z-30">
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center space-x-3">
             <button onClick={() => setSidebarOpen(!sidebarOpen)} className="lg:hidden w-10 h-10 bg-white/20 backdrop-blur-sm rounded-xl flex items-center justify-center hover:bg-white/30 transition-colors">
@@ -222,11 +222,11 @@ export const EnhancedAdminDashboard: React.FC<EnhancedAdminDashboardProps> = ({ 
         </div>
 
         <div className="flex items-center space-x-2 overflow-x-auto pb-2">
-          <button onClick={() => setActiveCategory('all')} className={`flex-shrink-0 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${activeCategory === 'all' ? 'bg-blue-600 text-white' : 'bg-white text-gray-700 hover:bg-gray-50'}`}>
+          <button onClick={() => setActiveCategory('all')} className={`flex-shrink-0 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${activeCategory === 'all' ? 'bg-green-600 text-white' : 'bg-white text-gray-700 hover:bg-gray-50'}`}>
             All Departments
           </button>
           {departmentCategories.map((category) => (
-            <button key={category.id} onClick={() => setActiveCategory(category.id)} className={`flex-shrink-0 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${activeCategory === category.id ? 'bg-blue-600 text-white' : 'bg-white text-gray-700 hover:bg-gray-50'}`}>
+            <button key={category.id} onClick={() => setActiveCategory(category.id)} className={`flex-shrink-0 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${activeCategory === category.id ? 'bg-green-600 text-white' : 'bg-white text-gray-700 hover:bg-gray-50'}`}>
               {category.name}
             </button>
           ))}

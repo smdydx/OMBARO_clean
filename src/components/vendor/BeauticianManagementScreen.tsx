@@ -154,9 +154,9 @@ export const BeauticianManagementScreen: React.FC<BeauticianManagementScreenProp
                   <div className="flex items-center gap-2">
                     <button
                       onClick={() => onNavigate('beauticianDetail', beautician)}
-                      className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center hover:bg-blue-200 transition-colors"
+                      className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center hover:bg-green-200 transition-colors"
                     >
-                      <Eye className="w-4 h-4 text-blue-600" />
+                      <Eye className="w-4 h-4 text-green-600" />
                     </button>
                     <button
                       onClick={() => onNavigate('editBeautician', beautician)}

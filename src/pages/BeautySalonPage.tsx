@@ -278,7 +278,7 @@ export const BeautySalonPage: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/app">
-                <button className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center">
+                <button className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center">
                   Book Salon Service
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </button>

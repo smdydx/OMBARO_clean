@@ -12,7 +12,7 @@ export const CustomerCareDepartment: React.FC<CustomerCareDepartmentProps> = ({ 
 
   const stats = [
     { label: 'Open Tickets', value: '45', icon: MessageSquare, color: 'bg-yellow-100 text-yellow-600', change: '12 urgent' },
-    { label: 'Avg Response', value: '2m', icon: Clock, color: 'bg-blue-100 text-blue-600', change: '-30s this week' },
+    { label: 'Avg Response', value: '2m', icon: Clock, color: 'bg-green-100 text-green-600', change: '-30s this week' },
     { label: 'Resolved Today', value: '89', icon: CheckCircle, color: 'bg-green-100 text-green-600', change: '+12 vs yesterday' },
     { label: 'Satisfaction', value: '4.8/5', icon: HeadphonesIcon, color: 'bg-emerald-100 text-emerald-600', change: '98% positive' }
   ];

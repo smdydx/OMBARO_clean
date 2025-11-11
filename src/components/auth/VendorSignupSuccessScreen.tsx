@@ -34,15 +34,15 @@ export default function VendorSignupSuccessScreen({ onNavigate, data }: VendorSi
           </p>
 
           {/* What's Next Section */}
-          <div className="bg-blue-50 rounded-xl p-6 mb-8 text-left">
+          <div className="bg-green-50 rounded-xl p-6 mb-8 text-left">
             <h2 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-              <Clock className="w-6 h-6 text-blue-600" />
+              <Clock className="w-6 h-6 text-green-600" />
               What Happens Next?
             </h2>
 
             <div className="space-y-4">
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">
+                <div className="flex-shrink-0 w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold">
                   1
                 </div>
                 <div>
@@ -54,7 +54,7 @@ export default function VendorSignupSuccessScreen({ onNavigate, data }: VendorSi
               </div>
 
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">
+                <div className="flex-shrink-0 w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold">
                   2
                 </div>
                 <div>
@@ -66,7 +66,7 @@ export default function VendorSignupSuccessScreen({ onNavigate, data }: VendorSi
               </div>
 
               <div className="flex gap-4">
-                <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold">
+                <div className="flex-shrink-0 w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center font-bold">
                   3
                 </div>
                 <div>
@@ -105,8 +105,8 @@ export default function VendorSignupSuccessScreen({ onNavigate, data }: VendorSi
               </div>
             )}
             {data?.mobile && (
-              <div className="bg-blue-50 rounded-lg p-4 mb-4">
-                <p className="text-sm text-blue-800">
+              <div className="bg-green-50 rounded-lg p-4 mb-4">
+                <p className="text-sm text-green-800">
                   <strong>Login Credentials:</strong> Use your mobile number ({data.mobile}) and password to login and track your application status.
                 </p>
               </div>

@@ -12,7 +12,7 @@ export const DirectorsDepartment: React.FC<DirectorsDepartmentProps> = ({ onBack
 
   const stats = [
     { label: 'Board Members', value: '5', icon: Users, color: 'bg-slate-100 text-slate-600', change: 'Active directors' },
-    { label: 'Meetings/Month', value: '2', icon: Calendar, color: 'bg-blue-100 text-blue-600', change: 'Regular schedule' },
+    { label: 'Meetings/Month', value: '2', icon: Calendar, color: 'bg-green-100 text-green-600', change: 'Regular schedule' },
     { label: 'Resolutions', value: '18', icon: FileText, color: 'bg-green-100 text-green-600', change: 'This quarter' },
     { label: 'Growth', value: '+24%', icon: TrendingUp, color: 'bg-orange-100 text-orange-600', change: 'YoY revenue' }
   ];

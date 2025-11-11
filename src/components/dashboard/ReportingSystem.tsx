@@ -141,7 +141,7 @@ export const ReportingSystem: React.FC<ReportingSystemProps> = ({
   const getReportTypeColor = (type: string) => {
     switch (type) {
       case 'financial': return 'bg-green-100 text-green-700';
-      case 'operational': return 'bg-blue-100 text-blue-700';
+      case 'operational': return 'bg-green-100 text-green-700';
       case 'hr': return 'bg-purple-100 text-purple-700';
       case 'marketing': return 'bg-pink-100 text-pink-700';
       case 'legal': return 'bg-red-100 text-red-700';
@@ -191,13 +191,13 @@ export const ReportingSystem: React.FC<ReportingSystemProps> = ({
 
         {/* Reporting Hierarchy Info */}
         {reportingHierarchy && (
-          <div className="bg-blue-50 rounded-xl p-4 border border-blue-200">
-            <h4 className="font-semibold text-blue-900 mb-2">Your Reporting Structure</h4>
+          <div className="bg-green-50 rounded-xl p-4 border border-green-200">
+            <h4 className="font-semibold text-green-900 mb-2">Your Reporting Structure</h4>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-sm">
               {reportingHierarchy.reportsTo.length > 0 && (
                 <div>
-                  <p className="text-blue-700 font-medium">Reports To:</p>
-                  <ul className="text-blue-600">
+                  <p className="text-green-700 font-medium">Reports To:</p>
+                  <ul className="text-green-600">
                     {reportingHierarchy.reportsTo.map(role => (
                       <li key={role}>• {ROLE_DEFINITIONS.find(r => r.id === role)?.name}</li>
                     ))}
@@ -206,8 +206,8 @@ export const ReportingSystem: React.FC<ReportingSystemProps> = ({
               )}
               {reportingHierarchy.manages.length > 0 && (
                 <div>
-                  <p className="text-blue-700 font-medium">Manages:</p>
-                  <ul className="text-blue-600">
+                  <p className="text-green-700 font-medium">Manages:</p>
+                  <ul className="text-green-600">
                     {reportingHierarchy.manages.map(role => (
                       <li key={role}>• {ROLE_DEFINITIONS.find(r => r.id === role)?.name}</li>
                     ))}
@@ -216,8 +216,8 @@ export const ReportingSystem: React.FC<ReportingSystemProps> = ({
               )}
               {reportingHierarchy.canApprove.length > 0 && (
                 <div>
-                  <p className="text-blue-700 font-medium">Can Approve:</p>
-                  <ul className="text-blue-600">
+                  <p className="text-green-700 font-medium">Can Approve:</p>
+                  <ul className="text-green-600">
                     {reportingHierarchy.canApprove.map(item => (
                       <li key={item}>• {item.replace('_', ' ')}</li>
                     ))}

@@ -34,7 +34,7 @@ export const ServiceSelector: React.FC<ServiceSelectorProps> = ({
       'massage': 'bg-purple-100 text-purple-700',
       'spa': 'bg-pink-100 text-pink-700',
       'facial': 'bg-green-100 text-green-700',
-      'body-treatment': 'bg-blue-100 text-blue-700'
+      'body-treatment': 'bg-green-100 text-green-700'
     };
     return colors[category as keyof typeof colors] || 'bg-gray-100 text-gray-700';
   };

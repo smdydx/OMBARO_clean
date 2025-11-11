@@ -125,7 +125,7 @@ export const DatabaseSchema: React.FC = () => {
 
   const getColorClasses = (color: string) => {
     const colors: Record<string, { bg: string; text: string; border: string }> = {
-      blue: { bg: 'bg-blue-50', text: 'text-blue-600', border: 'border-blue-200' },
+      blue: { bg: 'bg-green-50', text: 'text-green-600', border: 'border-green-200' },
       purple: { bg: 'bg-purple-50', text: 'text-purple-600', border: 'border-purple-200' },
       green: { bg: 'bg-green-50', text: 'text-green-600', border: 'border-green-200' },
       orange: { bg: 'bg-orange-50', text: 'text-orange-600', border: 'border-orange-200' },
@@ -133,7 +133,7 @@ export const DatabaseSchema: React.FC = () => {
       pink: { bg: 'bg-pink-50', text: 'text-pink-600', border: 'border-pink-200' },
       indigo: { bg: 'bg-indigo-50', text: 'text-indigo-600', border: 'border-indigo-200' },
       emerald: { bg: 'bg-emerald-50', text: 'text-emerald-600', border: 'border-emerald-200' },
-      cyan: { bg: 'bg-cyan-50', text: 'text-cyan-600', border: 'border-cyan-200' },
+      cyan: { bg: 'bg-green-50', text: 'text-green-600', border: 'border-green-200' },
       rose: { bg: 'bg-rose-50', text: 'text-rose-600', border: 'border-rose-200' },
       yellow: { bg: 'bg-yellow-50', text: 'text-yellow-600', border: 'border-yellow-200' },
       violet: { bg: 'bg-violet-50', text: 'text-violet-600', border: 'border-violet-200' },
@@ -166,7 +166,7 @@ export const DatabaseSchema: React.FC = () => {
         <div className="card p-6">
           <div className="flex items-center justify-between mb-2">
             <span className="text-sm font-medium text-neutral-600">Total Tables</span>
-            <Database className="w-5 h-5 text-blue-600" />
+            <Database className="w-5 h-5 text-green-600" />
           </div>
           <p className="text-3xl font-bold text-neutral-900">{tables.length}</p>
         </div>
@@ -296,7 +296,7 @@ export const DatabaseSchema: React.FC = () => {
                             <td className="py-3 px-4 font-mono text-xs font-medium text-neutral-900">
                               {column.name}
                             </td>
-                            <td className="py-3 px-4 font-mono text-xs text-blue-600">
+                            <td className="py-3 px-4 font-mono text-xs text-green-600">
                               {column.type}
                             </td>
                             <td className="py-3 px-4 text-xs text-neutral-600">
@@ -330,8 +330,8 @@ export const DatabaseSchema: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="flex items-start space-x-4">
-            <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
-              <Shield className="w-5 h-5 text-blue-600" />
+            <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center flex-shrink-0">
+              <Shield className="w-5 h-5 text-green-600" />
             </div>
             <div>
               <h3 className="font-semibold text-neutral-900 mb-2">Row Level Security (RLS)</h3>
@@ -392,9 +392,9 @@ export const DatabaseSchema: React.FC = () => {
             <span className="px-3 py-1 bg-green-100 text-green-700 text-xs font-medium rounded">Applied</span>
           </div>
 
-          <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
-            <h4 className="text-sm font-semibold text-blue-900 mb-2">Schema Highlights</h4>
-            <ul className="text-sm text-blue-800 space-y-1">
+          <div className="mt-4 p-4 bg-green-50 rounded-lg border border-green-200">
+            <h4 className="text-sm font-semibold text-green-900 mb-2">Schema Highlights</h4>
+            <ul className="text-sm text-green-800 space-y-1">
               <li>• System & Configuration (6 tables) - Settings, feature flags, audit logs</li>
               <li>• Location & Geography (5 tables) - Country, state, city, zones, pincodes</li>
               <li>• Departments & Roles (5 tables) - RBAC with granular permissions</li>

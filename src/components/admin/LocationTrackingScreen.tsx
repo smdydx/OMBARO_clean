@@ -151,7 +151,7 @@ export const LocationTrackingScreen: React.FC<LocationTrackingScreenProps> = ({
   const getActivityColor = (activity: string) => {
     switch (activity) {
       case 'check_in': return 'bg-green-100 text-green-700';
-      case 'check_out': return 'bg-blue-100 text-blue-700';
+      case 'check_out': return 'bg-green-100 text-green-700';
       case 'break': return 'bg-yellow-100 text-yellow-700';
       case 'field_work': return 'bg-purple-100 text-purple-700';
       case 'client_visit': return 'bg-indigo-100 text-indigo-700';
@@ -191,7 +191,7 @@ export const LocationTrackingScreen: React.FC<LocationTrackingScreenProps> = ({
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 to-indigo-600 pt-12 pb-6 px-6">
+      <div className="bg-gradient-to-r from-green-600 to-indigo-600 pt-12 pb-6 px-6">
         <div className="flex items-center justify-between mb-6">
           <button
             onClick={onBack}
@@ -256,7 +256,7 @@ export const LocationTrackingScreen: React.FC<LocationTrackingScreenProps> = ({
                   onClick={() => setSelectedEmployee(employee)}
                   className={`w-full text-left p-4 rounded-xl border-2 transition-all duration-200 ${
                     isSelected
-                      ? 'border-blue-500 bg-blue-50'
+                      ? 'border-green-500 bg-green-50'
                       : 'border-gray-100 hover:border-gray-200 bg-white'
                   }`}
                 >
@@ -292,8 +292,8 @@ export const LocationTrackingScreen: React.FC<LocationTrackingScreenProps> = ({
                     </div>
                     
                     <div className="flex flex-col space-y-1">
-                      <button className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center hover:bg-blue-200 transition-colors">
-                        <Phone className="w-4 h-4 text-blue-600" />
+                      <button className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center hover:bg-green-200 transition-colors">
+                        <Phone className="w-4 h-4 text-green-600" />
                       </button>
                       <button className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center hover:bg-green-200 transition-colors">
                         <MessageCircle className="w-4 h-4 text-green-600" />

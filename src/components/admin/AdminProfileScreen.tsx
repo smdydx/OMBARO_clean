@@ -33,16 +33,16 @@ export const AdminProfileScreen: React.FC<AdminProfileScreenProps> = ({ onBack }
             <h1 className="text-xl font-bold text-gray-900">Admin Profile</h1>
             <button
               onClick={() => setIsEditing(!isEditing)}
-              className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center hover:bg-blue-200 transition-colors"
+              className="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center hover:bg-green-200 transition-colors"
             >
-              <Edit2 className="w-5 h-5 text-blue-600" />
+              <Edit2 className="w-5 h-5 text-green-600" />
             </button>
           </div>
         </div>
       </div>
 
       <div className="max-w-4xl mx-auto px-4 py-6 space-y-6">
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-6 text-white shadow-lg text-center">
+        <div className="bg-gradient-to-r from-green-600 to-purple-600 rounded-2xl p-6 text-white shadow-lg text-center">
           <div className="w-24 h-24 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center mx-auto mb-4">
             <Shield className="w-12 h-12 text-white" />
           </div>

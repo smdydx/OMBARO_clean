@@ -12,10 +12,10 @@ interface FinanceDepartmentProps {
 
 export const FinanceDepartment: React.FC<FinanceDepartmentProps> = ({ onBack, user, onLogout }) => {
   const stats: StatCard[] = [
-    { label: 'Total Budget', value: '₹25L', icon: DollarSign, color: 'bg-blue-500', change: 'FY 2024-25', trend: 'up', changeValue: '+12%' },
+    { label: 'Total Budget', value: '₹25L', icon: DollarSign, color: 'bg-green-500', change: 'FY 2024-25', trend: 'up', changeValue: '+12%' },
     { label: 'Utilized', value: '78%', icon: PieChart, color: 'bg-green-500', change: '₹19.5L spent', trend: 'up', changeValue: '+5%' },
     { label: 'Projected Revenue', value: '₹45L', icon: TrendingUp, color: 'bg-orange-500', change: '+15% YoY', trend: 'up', changeValue: '+15%' },
-    { label: 'Cash Flow', value: '₹12L', icon: BarChart3, color: 'bg-cyan-500', change: 'Positive', trend: 'up', changeValue: '+8%' }
+    { label: 'Cash Flow', value: '₹12L', icon: BarChart3, color: 'bg-green-500', change: 'Positive', trend: 'up', changeValue: '+8%' }
   ];
 
   const quickActions: QuickAction[] = [
@@ -78,7 +78,7 @@ export const FinanceDepartment: React.FC<FinanceDepartmentProps> = ({ onBack, us
         <div className="space-y-6">
           <div className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100">
             <h3 className="text-lg font-bold text-gray-900 mb-4">Revenue Projections</h3>
-            <div className="h-64 flex items-center justify-center bg-gradient-to-br from-blue-50 to-cyan-50 rounded-xl">
+            <div className="h-64 flex items-center justify-center bg-gradient-to-br from-green-50 to-green-50 rounded-xl">
               <p className="text-gray-500">Chart visualization would display here</p>
             </div>
           </div>
@@ -96,10 +96,10 @@ export const FinanceDepartment: React.FC<FinanceDepartmentProps> = ({ onBack, us
               {['Monthly P&L Statement', 'Cash Flow Report', 'Balance Sheet', 'Budget vs Actual'].map((report, idx) => (
                 <div key={idx} className="flex items-center justify-between p-4 bg-gray-50 rounded-xl hover:bg-gray-100 cursor-pointer transition-colors">
                   <div className="flex items-center space-x-3">
-                    <FileText className="w-5 h-5 text-blue-600" />
+                    <FileText className="w-5 h-5 text-green-600" />
                     <span className="font-medium text-gray-900">{report}</span>
                   </div>
-                  <Download className="w-5 h-5 text-gray-400 hover:text-blue-600 transition-colors" />
+                  <Download className="w-5 h-5 text-gray-400 hover:text-green-600 transition-colors" />
                 </div>
               ))}
             </div>
@@ -136,7 +136,7 @@ export const FinanceDepartment: React.FC<FinanceDepartmentProps> = ({ onBack, us
       user={user}
       onBack={onBack}
       onLogout={onLogout}
-      headerGradient="from-blue-600 to-cyan-600"
+      headerGradient="from-green-600 to-green-600"
     />
   );
 };

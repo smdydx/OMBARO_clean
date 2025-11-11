@@ -14,7 +14,7 @@ export const AccountsDepartment: React.FC<AccountsDepartmentProps> = ({ onBack, 
   const stats: StatCard[] = [
     { label: 'Monthly Revenue', value: '₹8.4L', icon: TrendingUp, color: 'bg-green-500', change: 'This month', trend: 'up', changeValue: '+12%' },
     { label: 'Pending Invoices', value: '23', icon: FileText, color: 'bg-yellow-500', change: '5 overdue', trend: 'neutral' },
-    { label: 'Processed Payments', value: '156', icon: CreditCard, color: 'bg-blue-500', change: '+8 today', trend: 'up', changeValue: '+5%' },
+    { label: 'Processed Payments', value: '156', icon: CreditCard, color: 'bg-green-500', change: '+8 today', trend: 'up', changeValue: '+5%' },
     { label: 'Account Balance', value: '₹2.1L', icon: Calculator, color: 'bg-emerald-500', change: '+5% growth', trend: 'up', changeValue: '+5%' }
   ];
 

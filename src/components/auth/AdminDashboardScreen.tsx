@@ -26,7 +26,7 @@ export const AdminDashboardScreen: React.FC<AdminDashboardScreenProps> = ({
   const [screenData, setScreenData] = useState<any>(null);
 
   const stats = [
-    { label: 'Total Users', value: '2,847', icon: Users, color: 'bg-blue-100 text-blue-600', change: '+234 this month' },
+    { label: 'Total Users', value: '2,847', icon: Users, color: 'bg-green-100 text-green-600', change: '+234 this month' },
     { label: 'Active Spas', value: '156', icon: MapPin, color: 'bg-green-100 text-green-600', change: '+12 this week' },
     { label: 'Platform Revenue', value: '₹8.4L', icon: DollarSign, color: 'bg-purple-100 text-purple-600', change: '+24% growth' },
     { label: 'Pending Reviews', value: '23', icon: AlertTriangle, color: 'bg-yellow-100 text-yellow-600', change: '8 urgent' },
@@ -65,7 +65,7 @@ export const AdminDashboardScreen: React.FC<AdminDashboardScreenProps> = ({
       case 'Active': return 'bg-green-100 text-green-700';
       case 'Pending': return 'bg-yellow-100 text-yellow-700';
       case 'Suspended': return 'bg-red-100 text-red-700';
-      case 'Review': return 'bg-blue-100 text-blue-700';
+      case 'Review': return 'bg-green-100 text-green-700';
       default: return 'bg-gray-100 text-gray-700';
     }
   };
@@ -83,7 +83,7 @@ export const AdminDashboardScreen: React.FC<AdminDashboardScreenProps> = ({
     switch (type) {
       case 'Security': return 'bg-red-100 text-red-700';
       case 'Revenue': return 'bg-green-100 text-green-700';
-      case 'System': return 'bg-blue-100 text-blue-700';
+      case 'System': return 'bg-green-100 text-green-700';
       case 'User': return 'bg-purple-100 text-purple-700';
       default: return 'bg-gray-100 text-gray-700';
     }
@@ -431,8 +431,8 @@ export const AdminDashboardScreen: React.FC<AdminDashboardScreenProps> = ({
                   {users.map((user) => (
                     <div key={user.id} className="flex items-center justify-between p-4 bg-gray-50 rounded-xl">
                       <div className="flex items-center space-x-4">
-                        <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                          <Users className="w-6 h-6 text-blue-600" />
+                        <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
+                          <Users className="w-6 h-6 text-green-600" />
                         </div>
                         <div>
                           <h4 className="font-semibold text-gray-900">{user.name}</h4>
@@ -449,8 +449,8 @@ export const AdminDashboardScreen: React.FC<AdminDashboardScreenProps> = ({
                         </div>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <button className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center hover:bg-blue-200 transition-colors">
-                          <Eye className="w-4 h-4 text-blue-600" />
+                        <button className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center hover:bg-green-200 transition-colors">
+                          <Eye className="w-4 h-4 text-green-600" />
                         </button>
                         <button className="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-gray-200 transition-colors">
                           <Edit className="w-4 h-4 text-gray-600" />
@@ -498,8 +498,8 @@ export const AdminDashboardScreen: React.FC<AdminDashboardScreenProps> = ({
                         </div>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <button className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center hover:bg-blue-200 transition-colors">
-                          <Eye className="w-4 h-4 text-blue-600" />
+                        <button className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center hover:bg-green-200 transition-colors">
+                          <Eye className="w-4 h-4 text-green-600" />
                         </button>
                         <button className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center hover:bg-green-200 transition-colors">
                           <CheckCircle className="w-4 h-4 text-green-600" />
@@ -564,7 +564,7 @@ export const AdminDashboardScreen: React.FC<AdminDashboardScreenProps> = ({
                 <h3 className="text-lg font-semibold text-gray-900">Platform Analytics</h3>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6">
+                  <div className="bg-gradient-to-r from-green-50 to-indigo-50 rounded-xl p-6">
                     <h4 className="font-semibold text-gray-900 mb-4">User Growth</h4>
                     <div className="space-y-3">
                       <div className="flex justify-between">
@@ -727,7 +727,7 @@ export const AdminDashboardScreen: React.FC<AdminDashboardScreenProps> = ({
                     </div>
                   </div>
 
-                  <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6">
+                  <div className="bg-gradient-to-r from-green-50 to-indigo-50 rounded-xl p-6">
                     <h4 className="font-semibold text-gray-900 mb-4">Data Protection</h4>
                     <div className="space-y-3">
                       <div className="flex justify-between">

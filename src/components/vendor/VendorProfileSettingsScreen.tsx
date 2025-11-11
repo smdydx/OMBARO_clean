@@ -57,7 +57,7 @@ export const VendorProfileSettingsScreen: React.FC<VendorProfileSettingsScreenPr
   if (loading) {
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
       </div>
     );
   }
@@ -101,7 +101,7 @@ export const VendorProfileSettingsScreen: React.FC<VendorProfileSettingsScreenPr
                   onClick={() => setActiveTab(tab.id)}
                   className={`flex items-center gap-2 py-4 px-6 text-sm font-medium transition-colors whitespace-nowrap ${
                     activeTab === tab.id
-                      ? 'text-blue-600 border-b-2 border-blue-600'
+                      ? 'text-green-600 border-b-2 border-green-600'
                       : 'text-gray-600 hover:text-gray-900'
                   }`}
                 >
@@ -138,7 +138,7 @@ export const VendorProfileSettingsScreen: React.FC<VendorProfileSettingsScreenPr
                   <select
                     value={vendorData?.business_type || ''}
                     onChange={(e) => setVendorData({ ...vendorData, business_type: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500"
                   >
                     <option value="">Select type</option>
                     <option value="spa">Spa & Massage</option>
@@ -153,7 +153,7 @@ export const VendorProfileSettingsScreen: React.FC<VendorProfileSettingsScreenPr
                   <select
                     value={vendorData?.partner_type || ''}
                     onChange={(e) => setVendorData({ ...vendorData, partner_type: e.target.value })}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500"
                   >
                     <option value="franchise">Franchise</option>
                     <option value="independent">Independent</option>
@@ -167,7 +167,7 @@ export const VendorProfileSettingsScreen: React.FC<VendorProfileSettingsScreenPr
                     value={vendorData?.description || ''}
                     onChange={(e) => setVendorData({ ...vendorData, description: e.target.value })}
                     rows={4}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500"
                     placeholder="Describe your business..."
                   />
                 </div>
@@ -261,8 +261,8 @@ export const VendorProfileSettingsScreen: React.FC<VendorProfileSettingsScreenPr
                   />
                 </div>
 
-                <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-                  <p className="text-sm text-blue-800">
+                <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+                  <p className="text-sm text-green-800">
                     <strong>Note:</strong> Accurate location information helps customers find your business easily.
                   </p>
                 </div>
@@ -281,12 +281,12 @@ export const VendorProfileSettingsScreen: React.FC<VendorProfileSettingsScreenPr
                     <div className="flex items-center gap-2 flex-1">
                       <input
                         type="time"
-                        className="px-3 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="px-3 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500"
                       />
                       <span className="text-gray-500">to</span>
                       <input
                         type="time"
-                        className="px-3 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        className="px-3 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500"
                       />
                     </div>
                     <label className="flex items-center gap-2">

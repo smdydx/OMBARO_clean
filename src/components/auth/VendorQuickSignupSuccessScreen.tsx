@@ -104,11 +104,11 @@ export default function VendorQuickSignupSuccessScreen({
           </div>
 
           <div className="space-y-3">
-            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
-              <h3 className="font-semibold text-blue-900 mb-2 text-sm">
+            <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+              <h3 className="font-semibold text-green-900 mb-2 text-sm">
                 Complete Your Profile for Better Results
               </h3>
-              <ul className="text-xs text-blue-800 space-y-1">
+              <ul className="text-xs text-green-800 space-y-1">
                 <li>• Add business details for faster approvals</li>
                 <li>• Upload GST and PAN for verified badge</li>
                 <li>• Get priority in search results</li>

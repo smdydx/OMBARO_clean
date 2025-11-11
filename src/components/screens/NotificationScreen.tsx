@@ -39,7 +39,7 @@ export const NotificationScreen: React.FC<NotificationScreenProps> = ({
       message: 'Your appointment is tomorrow at 2:30 PM. Therapist Priya will arrive 15 minutes early.',
       timestamp: '1 day ago',
       isRead: false,
-      icon: <Clock className="w-5 h-5 text-blue-600" />
+      icon: <Clock className="w-5 h-5 text-green-600" />
     },
     {
       id: '3',
@@ -131,7 +131,7 @@ export const NotificationScreen: React.FC<NotificationScreenProps> = ({
     switch (type) {
       case 'booking': return 'bg-green-100';
       case 'offer': return 'bg-purple-100';
-      case 'reminder': return 'bg-blue-100';
+      case 'reminder': return 'bg-green-100';
       case 'review': return 'bg-yellow-100';
       case 'system': return 'bg-indigo-100';
       default: return 'bg-gray-100';

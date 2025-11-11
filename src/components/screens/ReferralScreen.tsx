@@ -196,9 +196,9 @@ export const ReferralScreen: React.FC<ReferralScreenProps> = ({
         </div>
 
         {/* Terms */}
-        <div className="bg-blue-50 rounded-2xl p-4 border border-blue-200">
-          <h4 className="font-semibold text-blue-900 mb-2">Referral Terms</h4>
-          <ul className="text-blue-800 text-sm space-y-1">
+        <div className="bg-green-50 rounded-2xl p-4 border border-green-200">
+          <h4 className="font-semibold text-green-900 mb-2">Referral Terms</h4>
+          <ul className="text-green-800 text-sm space-y-1">
             <li>• Both you and your friend get 10% off your next booking</li>
             <li>• Discount is valid for 30 days from registration</li>
             <li>• Maximum discount amount is ₹500 per referral</li>

@@ -93,15 +93,15 @@ export const RescheduleBookingScreen: React.FC<RescheduleBookingScreenProps> = (
             </div>
           </div>
 
-          <div className="bg-blue-50 rounded-xl p-4 border border-blue-200">
+          <div className="bg-green-50 rounded-xl p-4 border border-green-200">
             <div className="flex items-center space-x-2 mb-2">
-              <Calendar className="w-4 h-4 text-blue-600" />
-              <span className="font-medium text-blue-900">Current Schedule</span>
+              <Calendar className="w-4 h-4 text-green-600" />
+              <span className="font-medium text-green-900">Current Schedule</span>
             </div>
-            <p className="text-blue-800">
+            <p className="text-green-800">
               <strong>{formatDate(bookingData.date)}</strong> at <strong>{bookingData.time}</strong>
             </p>
-            <p className="text-sm text-blue-700 mt-1">
+            <p className="text-sm text-green-700 mt-1">
               Duration: {formatDuration(bookingData.duration)} • Amount: ₹{bookingData.price}
             </p>
           </div>

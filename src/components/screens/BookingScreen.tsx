@@ -201,9 +201,9 @@ export const BookingScreen: React.FC<BookingScreenProps> = ({
             
             {serviceType === 'at_home' && (
               <>
-                <div className="bg-blue-50 border border-blue-200 rounded-xl p-3 mb-4">
-                  <p className="text-sm text-blue-800 font-medium">Service Location: Your Home</p>
-                  <p className="text-xs text-blue-700 mt-1">Professional will visit your address</p>
+                <div className="bg-green-50 border border-green-200 rounded-xl p-3 mb-4">
+                  <p className="text-sm text-green-800 font-medium">Service Location: Your Home</p>
+                  <p className="text-xs text-green-700 mt-1">Professional will visit your address</p>
                 </div>
 
                 <Input
@@ -299,27 +299,27 @@ export const BookingScreen: React.FC<BookingScreenProps> = ({
             <div className={`border-2 rounded-xl p-4 ${
               aadhaarVerified 
                 ? 'border-green-200 bg-green-50' 
-                : 'border-blue-200 bg-blue-50'
+                : 'border-green-200 bg-green-50'
             }`}>
               <div className="flex items-center justify-between">
                 <div className="flex items-center space-x-3">
                   <div className={`w-8 h-8 rounded-lg flex items-center justify-center ${
-                    aadhaarVerified ? 'bg-green-100' : 'bg-blue-100'
+                    aadhaarVerified ? 'bg-green-100' : 'bg-green-100'
                   }`}>
                     {aadhaarVerified ? (
                       <CheckCircle className="w-5 h-5 text-green-600" />
                     ) : (
-                      <Shield className="w-5 h-5 text-blue-600" />
+                      <Shield className="w-5 h-5 text-green-600" />
                     )}
                   </div>
                   <div>
                     <p className={`font-medium ${
-                      aadhaarVerified ? 'text-green-900' : 'text-blue-900'
+                      aadhaarVerified ? 'text-green-900' : 'text-green-900'
                     }`}>
                       {aadhaarVerified ? 'Identity Verified' : 'Identity Verification Required'}
                     </p>
                     <p className={`text-sm ${
-                      aadhaarVerified ? 'text-green-700' : 'text-blue-700'
+                      aadhaarVerified ? 'text-green-700' : 'text-green-700'
                     }`}>
                       {aadhaarVerified 
                         ? 'Your identity has been verified with Aadhaar'
@@ -384,7 +384,7 @@ export const BookingScreen: React.FC<BookingScreenProps> = ({
           <div className="bg-white rounded-2xl w-full max-w-md">
             <div className="p-6">
               <div className="text-center mb-6">
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gradient-to-r from-green-600 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <Shield className="w-8 h-8 text-white" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">Identity Verification</h3>
@@ -421,8 +421,8 @@ export const BookingScreen: React.FC<BookingScreenProps> = ({
                 </Button>
               </div>
 
-              <div className="mt-4 p-3 bg-blue-50 rounded-xl border border-blue-200">
-                <p className="text-blue-800 text-sm text-center">
+              <div className="mt-4 p-3 bg-green-50 rounded-xl border border-green-200">
+                <p className="text-green-800 text-sm text-center">
                   <strong>Demo Mode:</strong> Verification will be simulated for testing
                 </p>
               </div>

@@ -82,8 +82,8 @@ export const RoleManagementScreen: React.FC<RoleManagementScreenProps> = ({
                 <p className="text-2xl font-bold text-gray-900">{stats.totalRoles}</p>
                 <p className="text-sm text-gray-600">Total Roles</p>
               </div>
-              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                <Shield className="w-6 h-6 text-blue-600" />
+              <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
+                <Shield className="w-6 h-6 text-green-600" />
               </div>
             </div>
           </div>
@@ -156,7 +156,7 @@ export const RoleManagementScreen: React.FC<RoleManagementScreenProps> = ({
                         <span className="text-xs text-purple-600 bg-purple-50 px-2 py-1 rounded">
                           {role.modules.length} modules
                         </span>
-                        <span className="text-xs text-blue-600 bg-blue-50 px-2 py-1 rounded">
+                        <span className="text-xs text-green-600 bg-green-50 px-2 py-1 rounded">
                           {role.permissions.length} permissions
                         </span>
                       </div>
@@ -198,15 +198,15 @@ export const RoleManagementScreen: React.FC<RoleManagementScreenProps> = ({
                     {selectedRole.modules.map(moduleId => {
                       const module = MODULES.find(m => m.id === moduleId);
                       return (
-                        <div key={moduleId} className="bg-blue-50 rounded-lg p-3 border border-blue-200">
-                          <h4 className="font-medium text-blue-900">{getModuleName(moduleId)}</h4>
-                          <p className="text-sm text-blue-700">{module?.description}</p>
+                        <div key={moduleId} className="bg-green-50 rounded-lg p-3 border border-green-200">
+                          <h4 className="font-medium text-green-900">{getModuleName(moduleId)}</h4>
+                          <p className="text-sm text-green-700">{module?.description}</p>
                           {module?.subModules && module.subModules.length > 0 && (
                             <div className="mt-2">
-                              <p className="text-xs text-blue-600 font-medium">Sub-modules:</p>
+                              <p className="text-xs text-green-600 font-medium">Sub-modules:</p>
                               <div className="flex flex-wrap gap-1 mt-1">
                                 {module.subModules.map(subModule => (
-                                  <span key={subModule.id} className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded">
+                                  <span key={subModule.id} className="text-xs bg-green-100 text-green-700 px-2 py-1 rounded">
                                     {subModule.name}
                                   </span>
                                 ))}

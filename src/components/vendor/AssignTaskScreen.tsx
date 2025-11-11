@@ -101,20 +101,20 @@ export const AssignTaskScreen: React.FC<AssignTaskScreenProps> = ({
               onClick={() => setServiceType('at_home')}
               className={`p-4 rounded-xl border-2 transition-all ${
                 serviceType === 'at_home'
-                  ? 'border-blue-500 bg-blue-50'
-                  : 'border-gray-200 hover:border-blue-300'
+                  ? 'border-green-500 bg-green-50'
+                  : 'border-gray-200 hover:border-green-300'
               }`}
             >
               <div className="flex flex-col items-center space-y-2">
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
-                  serviceType === 'at_home' ? 'bg-blue-500' : 'bg-blue-100'
+                  serviceType === 'at_home' ? 'bg-green-500' : 'bg-green-100'
                 }`}>
                   <Home className={`w-6 h-6 ${
-                    serviceType === 'at_home' ? 'text-white' : 'text-blue-600'
+                    serviceType === 'at_home' ? 'text-white' : 'text-green-600'
                   }`} />
                 </div>
                 <span className={`text-sm font-medium ${
-                  serviceType === 'at_home' ? 'text-blue-700' : 'text-gray-700'
+                  serviceType === 'at_home' ? 'text-green-700' : 'text-gray-700'
                 }`}>
                   At Home Service
                 </span>

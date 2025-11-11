@@ -13,7 +13,7 @@ export const StaffDepartment: React.FC<StaffDepartmentProps> = ({ onBack }) => {
   const stats = [
     { label: 'Active Staff', value: '89', icon: Users, color: 'bg-orange-100 text-orange-600', change: '+5 this month' },
     { label: 'On Duty', value: '67', icon: MapPin, color: 'bg-green-100 text-green-600', change: '75% attendance' },
-    { label: 'On Leave', value: '5', icon: Calendar, color: 'bg-blue-100 text-blue-600', change: '2 approved today' },
+    { label: 'On Leave', value: '5', icon: Calendar, color: 'bg-green-100 text-green-600', change: '2 approved today' },
     { label: 'Performance', value: '4.6/5', icon: UserCheck, color: 'bg-amber-100 text-amber-600', change: 'Avg rating' }
   ];
 

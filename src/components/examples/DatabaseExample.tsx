@@ -43,7 +43,7 @@ export const DatabaseExample: React.FC = () => {
 
           {loading && (
             <div className="flex items-center justify-center py-8">
-              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+              <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600"></div>
             </div>
           )}
 
@@ -66,9 +66,9 @@ export const DatabaseExample: React.FC = () => {
                   Database Statistics
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                  <div className="bg-blue-50 p-4 rounded-lg">
-                    <p className="text-sm text-blue-600 font-medium">Total Tables</p>
-                    <p className="text-3xl font-bold text-blue-700">143</p>
+                  <div className="bg-green-50 p-4 rounded-lg">
+                    <p className="text-sm text-green-600 font-medium">Total Tables</p>
+                    <p className="text-3xl font-bold text-green-700">143</p>
                   </div>
                   <div className="bg-green-50 p-4 rounded-lg">
                     <p className="text-sm text-green-600 font-medium">Categories</p>

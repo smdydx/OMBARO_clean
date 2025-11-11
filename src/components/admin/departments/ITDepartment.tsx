@@ -12,14 +12,14 @@ export const ITDepartment: React.FC<ITDepartmentProps> = ({ onBack }) => {
 
   const stats = [
     { label: 'System Uptime', value: '99.9%', icon: Monitor, color: 'bg-green-100 text-green-600', change: 'Last 30 days' },
-    { label: 'Active Users', value: '2,847', icon: Shield, color: 'bg-blue-100 text-blue-600', change: 'Online now: 234' },
+    { label: 'Active Users', value: '2,847', icon: Shield, color: 'bg-green-100 text-green-600', change: 'Online now: 234' },
     { label: 'Open Tickets', value: '3', icon: Settings, color: 'bg-yellow-100 text-yellow-600', change: '1 critical' },
     { label: 'DB Health', value: '98%', icon: Database, color: 'bg-indigo-100 text-indigo-600', change: 'Optimal' }
   ];
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="bg-gradient-to-r from-indigo-600 to-blue-600 pt-12 pb-6 px-4 sm:px-6">
+      <div className="bg-gradient-to-r from-indigo-600 to-green-600 pt-12 pb-6 px-4 sm:px-6">
         <button onClick={onBack} className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center mb-6"><ArrowLeft className="w-5 h-5 text-white" /></button>
         <div className="flex items-center space-x-3 mb-6">
           <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center"><Monitor className="w-6 h-6 text-white" /></div>

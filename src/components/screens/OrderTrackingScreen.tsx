@@ -64,8 +64,8 @@ export const OrderTrackingScreen: React.FC<OrderTrackingScreenProps> = ({
           description: isAtHome
             ? 'We are assigning a professional for your at-home appointment'
             : 'Your spa appointment has been confirmed',
-          color: 'text-blue-600',
-          bgColor: 'bg-blue-100'
+          color: 'text-green-600',
+          bgColor: 'bg-green-100'
         };
       case 'therapist-assigned':
         return {
@@ -145,10 +145,10 @@ export const OrderTrackingScreen: React.FC<OrderTrackingScreenProps> = ({
 
       <div className="p-4 space-y-6">
         {/* Service Type Badge */}
-        <div className={`rounded-xl p-4 ${isAtHome ? 'bg-blue-50 border border-blue-200' : 'bg-pink-50 border border-pink-200'}`}>
+        <div className={`rounded-xl p-4 ${isAtHome ? 'bg-green-50 border border-green-200' : 'bg-pink-50 border border-pink-200'}`}>
           <div className="flex items-center space-x-2">
             {isAtHome ? (
-              <><Home className="w-5 h-5 text-blue-600" /><span className="font-medium text-blue-900">At Home Service</span></>
+              <><Home className="w-5 h-5 text-green-600" /><span className="font-medium text-green-900">At Home Service</span></>
             ) : (
               <><Building2 className="w-5 h-5 text-pink-600" /><span className="font-medium text-pink-900">Spa Visit Service</span></>
             )}

@@ -33,8 +33,8 @@ export const BecomePartnerPage: React.FC = () => {
                 'Spa Services', 'Beauty Treatments', 'Massage Therapy', 'Facial Care'
               ].map((service, idx) => (
                 <div key={idx} className="inline-flex items-center mx-8">
-                  <Sparkles className="w-6 h-6 text-sky-600 mr-3" />
-                  <span className="text-3xl md:text-4xl font-bold text-sky-600" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                  <Sparkles className="w-6 h-6 text-green-600 mr-3" />
+                  <span className="text-3xl md:text-4xl font-bold text-green-600" style={{ fontFamily: "'Tenor Sans', serif" }}>
                     {service}
                   </span>
                 </div>
@@ -47,8 +47,8 @@ export const BecomePartnerPage: React.FC = () => {
                 'Nail Art', 'Body Treatments', 'Aromatherapy', 'Yoga Classes'
               ].map((service, idx) => (
                 <div key={idx} className="inline-flex items-center mx-8">
-                  <Crown className="w-6 h-6 text-cyan-600 mr-3" />
-                  <span className="text-3xl md:text-4xl font-bold text-cyan-600" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                  <Crown className="w-6 h-6 text-green-600 mr-3" />
+                  <span className="text-3xl md:text-4xl font-bold text-green-600" style={{ fontFamily: "'Tenor Sans', serif" }}>
                     {service}
                   </span>
                 </div>
@@ -59,14 +59,14 @@ export const BecomePartnerPage: React.FC = () => {
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12 sm:py-16 lg:py-20">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
               <div className="order-2 md:order-1">
-                <div className="inline-flex items-center space-x-2 bg-sky-100 rounded-full px-4 sm:px-6 py-2 sm:py-3 mb-6 sm:mb-8">
-                  <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-sky-600" />
-                  <span className="text-sky-800 text-xs sm:text-sm font-semibold tracking-wider uppercase">Premium Partner Program</span>
+                <div className="inline-flex items-center space-x-2 bg-green-100 rounded-full px-4 sm:px-6 py-2 sm:py-3 mb-6 sm:mb-8">
+                  <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-green-600" />
+                  <span className="text-green-800 text-xs sm:text-sm font-semibold tracking-wider uppercase">Premium Partner Program</span>
                 </div>
 
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
                   Grow Your<br />
-                  <span className="text-sky-600">Beauty Empire</span>
+                  <span className="text-green-600">Beauty Empire</span>
                 </h1>
 
                 <p className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-10 text-gray-600 leading-relaxed">
@@ -75,13 +75,13 @@ export const BecomePartnerPage: React.FC = () => {
 
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12">
                   <Link to="/app" className="w-full sm:w-auto">
-                    <Button size="lg" className="w-full sm:w-auto bg-sky-600 hover:bg-sky-700 text-white shadow-xl text-base sm:text-lg px-6 sm:px-10 py-4 sm:py-6 rounded-full">
+                    <Button size="lg" className="w-full sm:w-auto bg-green-600 hover:bg-green-700 text-white shadow-xl text-base sm:text-lg px-6 sm:px-10 py-4 sm:py-6 rounded-full">
                       Start Your Journey
                       <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
                     </Button>
                   </Link>
                   <a href="tel:+911234567890" className="w-full sm:w-auto">
-                    <Button size="lg" variant="outline" className="w-full sm:w-auto border-2 border-sky-600 text-sky-600 hover:bg-sky-50 text-base sm:text-lg px-6 sm:px-10 py-4 sm:py-6 rounded-full">
+                    <Button size="lg" variant="outline" className="w-full sm:w-auto border-2 border-green-600 text-green-600 hover:bg-green-50 text-base sm:text-lg px-6 sm:px-10 py-4 sm:py-6 rounded-full">
                       <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                       Call Us Now
                     </Button>
@@ -90,22 +90,22 @@ export const BecomePartnerPage: React.FC = () => {
 
                 <div className="flex flex-wrap gap-3 sm:gap-6 text-gray-700 text-sm sm:text-base">
                   <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-sky-600 flex-shrink-0" />
+                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
                     <span className="font-medium">Zero Setup Cost</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-sky-600 flex-shrink-0" />
+                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
                     <span className="font-medium">24hr Approval</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-sky-600 flex-shrink-0" />
+                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
                     <span className="font-medium">Instant Payouts</span>
                   </div>
                 </div>
               </div>
 
               <div className="relative order-1 md:order-2">
-                <div className="absolute inset-0 bg-gradient-to-br from-sky-200 to-cyan-200 rounded-2xl sm:rounded-3xl transform rotate-3 sm:rotate-6"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-green-200 to-green-200 rounded-2xl sm:rounded-3xl transform rotate-3 sm:rotate-6"></div>
                 <img
                   src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=90"
                   alt="Partner Success"
@@ -141,7 +141,7 @@ export const BecomePartnerPage: React.FC = () => {
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6" style={{ fontFamily: "'Tenor Sans', serif" }}>
                 Why Partner With Us
               </h2>
-              <div className="w-16 sm:w-24 h-1 bg-sky-600 mx-auto mb-4 sm:mb-6"></div>
+              <div className="w-16 sm:w-24 h-1 bg-green-600 mx-auto mb-4 sm:mb-6"></div>
               <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto px-4">
                 Everything you need to build a successful spa & beauty business
               </p>
@@ -157,8 +157,8 @@ export const BecomePartnerPage: React.FC = () => {
                   />
                 </div>
                 <div className="relative z-10 p-6 sm:p-8 lg:p-10">
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-sky-100 rounded-full flex items-center justify-center mb-4 sm:mb-6">
-                    <TrendingUp className="w-6 h-6 sm:w-8 sm:h-8 text-sky-600" />
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-green-100 rounded-full flex items-center justify-center mb-4 sm:mb-6">
+                    <TrendingUp className="w-6 h-6 sm:w-8 sm:h-8 text-green-600" />
                   </div>
                   <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
                     Grow Revenue
@@ -168,11 +168,11 @@ export const BecomePartnerPage: React.FC = () => {
                   </p>
                   <div className="space-y-2 text-xs sm:text-sm text-gray-600">
                     <div className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 text-sky-600 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
                       <span>Automated booking system</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 text-sky-600 flex-shrink-0" />
+                      <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
                       <span>24/7 customer support</span>
                     </div>
                   </div>
@@ -188,8 +188,8 @@ export const BecomePartnerPage: React.FC = () => {
                   />
                 </div>
                 <div className="relative z-10 p-10">
-                  <div className="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mb-6">
-                    <Calendar className="w-8 h-8 text-sky-600" />
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                    <Calendar className="w-8 h-8 text-green-600" />
                   </div>
                   <h3 className="text-2xl font-bold mb-4 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
                     Smart Management
@@ -199,11 +199,11 @@ export const BecomePartnerPage: React.FC = () => {
                   </p>
                   <div className="space-y-2 text-sm text-gray-600">
                     <div className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 text-sky-600" />
+                      <CheckCircle className="w-4 h-4 text-green-600" />
                       <span>Real-time scheduling</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 text-sky-600" />
+                      <CheckCircle className="w-4 h-4 text-green-600" />
                       <span>CRM integration</span>
                     </div>
                   </div>
@@ -219,8 +219,8 @@ export const BecomePartnerPage: React.FC = () => {
                   />
                 </div>
                 <div className="relative z-10 p-10">
-                  <div className="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mb-6">
-                    <Wallet className="w-8 h-8 text-sky-600" />
+                  <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-6">
+                    <Wallet className="w-8 h-8 text-green-600" />
                   </div>
                   <h3 className="text-2xl font-bold mb-4 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
                     Instant Payments
@@ -230,11 +230,11 @@ export const BecomePartnerPage: React.FC = () => {
                   </p>
                   <div className="space-y-2 text-sm text-gray-600">
                     <div className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 text-sky-600" />
+                      <CheckCircle className="w-4 h-4 text-green-600" />
                       <span>Secure payments</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 text-sky-600" />
+                      <CheckCircle className="w-4 h-4 text-green-600" />
                       <span>Transparent reports</span>
                     </div>
                   </div>
@@ -243,7 +243,7 @@ export const BecomePartnerPage: React.FC = () => {
             </div>
 
             {/* Requirements for Spa Business */}
-            <div className="bg-gradient-to-br from-sky-50 to-cyan-50 rounded-3xl p-8 sm:p-12 border border-sky-200 shadow-xl">
+            <div className="bg-gradient-to-br from-green-50 to-green-50 rounded-3xl p-8 sm:p-12 border border-green-200 shadow-xl">
               <div className="text-center mb-8">
                 <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3" style={{ fontFamily: "'Tenor Sans', serif" }}>
                   What You Need to Start Your Spa Business
@@ -254,24 +254,24 @@ export const BecomePartnerPage: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="bg-white rounded-xl p-6 shadow-md">
                   <h4 className="font-bold text-lg text-gray-900 mb-4 flex items-center">
-                    <Shield className="w-5 h-5 text-sky-600 mr-2" />
+                    <Shield className="w-5 h-5 text-green-600 mr-2" />
                     Legal Requirements
                   </h4>
                   <div className="space-y-2 text-sm text-gray-600">
                     <div className="flex items-start space-x-2">
-                      <CheckCircle className="w-4 h-4 text-sky-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-1" />
                       <span>Valid business license/registration</span>
                     </div>
                     <div className="flex items-start space-x-2">
-                      <CheckCircle className="w-4 h-4 text-sky-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-1" />
                       <span>GST registration (if applicable)</span>
                     </div>
                     <div className="flex items-start space-x-2">
-                      <CheckCircle className="w-4 h-4 text-sky-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-1" />
                       <span>Trade license from local authority</span>
                     </div>
                     <div className="flex items-start space-x-2">
-                      <CheckCircle className="w-4 h-4 text-sky-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-1" />
                       <span>Fire safety certificate</span>
                     </div>
                   </div>
@@ -279,24 +279,24 @@ export const BecomePartnerPage: React.FC = () => {
 
                 <div className="bg-white rounded-xl p-6 shadow-md">
                   <h4 className="font-bold text-lg text-gray-900 mb-4 flex items-center">
-                    <Users className="w-5 h-5 text-sky-600 mr-2" />
+                    <Users className="w-5 h-5 text-green-600 mr-2" />
                     Staffing Requirements
                   </h4>
                   <div className="space-y-2 text-sm text-gray-600">
                     <div className="flex items-start space-x-2">
-                      <CheckCircle className="w-4 h-4 text-sky-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-1" />
                       <span>Certified therapists/beauticians</span>
                     </div>
                     <div className="flex items-start space-x-2">
-                      <CheckCircle className="w-4 h-4 text-sky-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-1" />
                       <span>Minimum 2-3 trained professionals</span>
                     </div>
                     <div className="flex items-start space-x-2">
-                      <CheckCircle className="w-4 h-4 text-sky-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-1" />
                       <span>Professional training certificates</span>
                     </div>
                     <div className="flex items-start space-x-2">
-                      <CheckCircle className="w-4 h-4 text-sky-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-1" />
                       <span>Health & hygiene training</span>
                     </div>
                   </div>
@@ -304,24 +304,24 @@ export const BecomePartnerPage: React.FC = () => {
 
                 <div className="bg-white rounded-xl p-6 shadow-md">
                   <h4 className="font-bold text-lg text-gray-900 mb-4 flex items-center">
-                    <Coffee className="w-5 h-5 text-sky-600 mr-2" />
+                    <Coffee className="w-5 h-5 text-green-600 mr-2" />
                     Infrastructure
                   </h4>
                   <div className="space-y-2 text-sm text-gray-600">
                     <div className="flex items-start space-x-2">
-                      <CheckCircle className="w-4 h-4 text-sky-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-1" />
                       <span>Minimum 500 sq ft space</span>
                     </div>
                     <div className="flex items-start space-x-2">
-                      <CheckCircle className="w-4 h-4 text-sky-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-1" />
                       <span>Proper ventilation & lighting</span>
                     </div>
                     <div className="flex items-start space-x-2">
-                      <CheckCircle className="w-4 h-4 text-sky-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-1" />
                       <span>Separate treatment rooms</span>
                     </div>
                     <div className="flex items-start space-x-2">
-                      <CheckCircle className="w-4 h-4 text-sky-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-1" />
                       <span>Clean washroom facilities</span>
                     </div>
                   </div>
@@ -329,24 +329,24 @@ export const BecomePartnerPage: React.FC = () => {
 
                 <div className="bg-white rounded-xl p-6 shadow-md">
                   <h4 className="font-bold text-lg text-gray-900 mb-4 flex items-center">
-                    <Star className="w-5 h-5 text-sky-600 mr-2" />
+                    <Star className="w-5 h-5 text-green-600 mr-2" />
                     Equipment & Products
                   </h4>
                   <div className="space-y-2 text-sm text-gray-600">
                     <div className="flex items-start space-x-2">
-                      <CheckCircle className="w-4 h-4 text-sky-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-1" />
                       <span>Professional spa equipment</span>
                     </div>
                     <div className="flex items-start space-x-2">
-                      <CheckCircle className="w-4 h-4 text-sky-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-1" />
                       <span>Quality beauty products</span>
                     </div>
                     <div className="flex items-start space-x-2">
-                      <CheckCircle className="w-4 h-4 text-sky-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-1" />
                       <span>Sterilization equipment</span>
                     </div>
                     <div className="flex items-start space-x-2">
-                      <CheckCircle className="w-4 h-4 text-sky-600 flex-shrink-0 mt-1" />
+                      <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-1" />
                       <span>Safety & hygiene supplies</span>
                     </div>
                   </div>
@@ -357,13 +357,13 @@ export const BecomePartnerPage: React.FC = () => {
         </section>
 
         {/* Services Showcase Slider */}
-        <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-sky-50 to-cyan-50 overflow-hidden">
+        <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-green-50 to-green-50 overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
             <div className="text-center">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4" style={{ fontFamily: "'Tenor Sans', serif" }}>
                 Services We Offer
               </h2>
-              <div className="w-16 sm:w-24 h-1 bg-sky-600 mx-auto mb-4"></div>
+              <div className="w-16 sm:w-24 h-1 bg-green-600 mx-auto mb-4"></div>
               <p className="text-lg sm:text-xl text-gray-600">Premium beauty and wellness services through our platform</p>
             </div>
           </div>
@@ -394,7 +394,7 @@ export const BecomePartnerPage: React.FC = () => {
                     <h3 className="text-2xl font-bold text-white mb-2" style={{ fontFamily: "'Tenor Sans', serif" }}>
                       {service.title}
                     </h3>
-                    <div className="w-12 h-1 bg-sky-400"></div>
+                    <div className="w-12 h-1 bg-green-400"></div>
                   </div>
                 </div>
               ))}
@@ -407,19 +407,19 @@ export const BecomePartnerPage: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
               <div className="text-center">
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 text-sky-600" style={{ fontFamily: "'Tenor Sans', serif" }}>500+</div>
+                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 text-green-600" style={{ fontFamily: "'Tenor Sans', serif" }}>500+</div>
                 <div className="text-sm sm:text-base text-gray-600 font-medium">Partner Businesses</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 text-sky-600" style={{ fontFamily: "'Tenor Sans', serif" }}>50K+</div>
+                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 text-green-600" style={{ fontFamily: "'Tenor Sans', serif" }}>50K+</div>
                 <div className="text-sm sm:text-base text-gray-600 font-medium">Monthly Customers</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 text-sky-600" style={{ fontFamily: "'Tenor Sans', serif" }}>40%</div>
+                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 text-green-600" style={{ fontFamily: "'Tenor Sans', serif" }}>40%</div>
                 <div className="text-sm sm:text-base text-gray-600 font-medium">Revenue Increase</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 text-sky-600" style={{ fontFamily: "'Tenor Sans', serif" }}>4.8★</div>
+                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 text-green-600" style={{ fontFamily: "'Tenor Sans', serif" }}>4.8★</div>
                 <div className="text-sm sm:text-base text-gray-600 font-medium">Partner Rating</div>
               </div>
             </div>
@@ -433,7 +433,7 @@ export const BecomePartnerPage: React.FC = () => {
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6" style={{ fontFamily: "'Tenor Sans', serif" }}>
                 Perfect For Every Business
               </h2>
-              <div className="w-16 sm:w-24 h-1 bg-sky-600 mx-auto"></div>
+              <div className="w-16 sm:w-24 h-1 bg-green-600 mx-auto"></div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
@@ -443,7 +443,7 @@ export const BecomePartnerPage: React.FC = () => {
                   alt="Spa & Wellness Centers"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-sky-900/80 to-cyan-900/80"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-green-900/80 to-green-900/80"></div>
                 <div className="relative z-10 p-6 sm:p-8 lg:p-12 flex flex-col justify-end h-full">
                   <div className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-white/20 backdrop-blur-sm rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 lg:mb-8 shadow-lg">
                     <Sparkles className="w-7 h-7 sm:w-8 sm:h-8 lg:w-10 lg:h-10 text-white" />
@@ -468,7 +468,7 @@ export const BecomePartnerPage: React.FC = () => {
                   alt="Beauty Salons"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-sky-900/80 to-cyan-900/80"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-green-900/80 to-green-900/80"></div>
                 <div className="relative z-10 p-12">
                   <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-8 shadow-lg">
                     <Crown className="w-10 h-10 text-white" />
@@ -493,7 +493,7 @@ export const BecomePartnerPage: React.FC = () => {
                   alt="Bridal Makeup Artists"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-sky-900/80 to-cyan-900/80"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-green-900/80 to-green-900/80"></div>
                 <div className="relative z-10 p-12">
                   <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-8 shadow-lg">
                     <Award className="w-10 h-10 text-white" />
@@ -518,7 +518,7 @@ export const BecomePartnerPage: React.FC = () => {
                   alt="Wellness Centers"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-gradient-to-br from-sky-900/80 to-cyan-900/80"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-green-900/80 to-green-900/80"></div>
                 <div className="relative z-10 p-12">
                   <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-8 shadow-lg">
                     <Heart className="w-10 h-10 text-white" />
@@ -547,7 +547,7 @@ export const BecomePartnerPage: React.FC = () => {
               <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6" style={{ fontFamily: "'Tenor Sans', serif" }}>
                 Success Stories
               </h2>
-              <div className="w-24 h-1 bg-sky-600 mx-auto mb-6"></div>
+              <div className="w-24 h-1 bg-green-600 mx-auto mb-6"></div>
               <p className="text-xl text-gray-600">
                 Real businesses, real growth, real success
               </p>
@@ -567,7 +567,7 @@ export const BecomePartnerPage: React.FC = () => {
                   <div className="font-bold text-gray-900 text-lg">Meera Kapoor</div>
                   <div className="text-sm text-gray-500">Serenity Spa, Mumbai</div>
                 </div>
-                <div className="mt-4 inline-block px-4 py-2 bg-sky-100 text-sky-700 rounded-full text-sm font-semibold">
+                <div className="mt-4 inline-block px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-semibold">
                   +45% Revenue
                 </div>
               </div>
@@ -585,7 +585,7 @@ export const BecomePartnerPage: React.FC = () => {
                   <div className="font-bold text-gray-900 text-lg">Rajesh Sharma</div>
                   <div className="text-sm text-gray-500">Glamour Salon, Delhi</div>
                 </div>
-                <div className="mt-4 inline-block px-4 py-2 bg-sky-100 text-sky-700 rounded-full text-sm font-semibold">
+                <div className="mt-4 inline-block px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-semibold">
                   +60% Bookings
                 </div>
               </div>
@@ -603,7 +603,7 @@ export const BecomePartnerPage: React.FC = () => {
                   <div className="font-bold text-gray-900 text-lg">Priya Deshmukh</div>
                   <div className="text-sm text-gray-500">Bridal Makeup Artist, Pune</div>
                 </div>
-                <div className="mt-4 inline-block px-4 py-2 bg-sky-100 text-sky-700 rounded-full text-sm font-semibold">
+                <div className="mt-4 inline-block px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-semibold">
                   +80% Growth
                 </div>
               </div>
@@ -618,7 +618,7 @@ export const BecomePartnerPage: React.FC = () => {
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6" style={{ fontFamily: "'Tenor Sans', serif" }}>
                 Get Started in 4 Steps
               </h2>
-              <div className="w-16 sm:w-24 h-1 bg-sky-600 mx-auto mb-4 sm:mb-6"></div>
+              <div className="w-16 sm:w-24 h-1 bg-green-600 mx-auto mb-4 sm:mb-6"></div>
               <p className="text-lg sm:text-xl text-gray-600 px-4">
                 Your business online in less than 48 hours
               </p>
@@ -627,7 +627,7 @@ export const BecomePartnerPage: React.FC = () => {
             <div className="space-y-8 sm:space-y-12 lg:space-y-16">
               <div className="flex items-start space-x-4 sm:space-x-6 lg:space-x-8">
                 <div className="flex-shrink-0">
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-sky-600 text-white rounded-full flex items-center justify-center shadow-lg">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-green-600 text-white rounded-full flex items-center justify-center shadow-lg">
                     <span className="text-2xl sm:text-2xl lg:text-3xl font-bold">1</span>
                   </div>
                 </div>
@@ -643,7 +643,7 @@ export const BecomePartnerPage: React.FC = () => {
 
               <div className="flex items-start space-x-8">
                 <div className="flex-shrink-0">
-                  <div className="w-20 h-20 bg-sky-600 text-white rounded-full flex items-center justify-center shadow-lg">
+                  <div className="w-20 h-20 bg-green-600 text-white rounded-full flex items-center justify-center shadow-lg">
                     <span className="text-3xl font-bold">2</span>
                   </div>
                 </div>
@@ -659,7 +659,7 @@ export const BecomePartnerPage: React.FC = () => {
 
               <div className="flex items-start space-x-8">
                 <div className="flex-shrink-0">
-                  <div className="w-20 h-20 bg-sky-600 text-white rounded-full flex items-center justify-center shadow-lg">
+                  <div className="w-20 h-20 bg-green-600 text-white rounded-full flex items-center justify-center shadow-lg">
                     <span className="text-3xl font-bold">3</span>
                   </div>
                 </div>
@@ -675,7 +675,7 @@ export const BecomePartnerPage: React.FC = () => {
 
               <div className="flex items-start space-x-8">
                 <div className="flex-shrink-0">
-                  <div className="w-20 h-20 bg-sky-600 text-white rounded-full flex items-center justify-center shadow-lg">
+                  <div className="w-20 h-20 bg-green-600 text-white rounded-full flex items-center justify-center shadow-lg">
                     <span className="text-3xl font-bold">4</span>
                   </div>
                 </div>
@@ -692,7 +692,7 @@ export const BecomePartnerPage: React.FC = () => {
 
             <div className="text-center mt-16">
               <Link to="/app">
-                <Button size="lg" className="bg-sky-600 hover:bg-sky-700 text-white text-lg px-12 py-6 rounded-full shadow-xl">
+                <Button size="lg" className="bg-green-600 hover:bg-green-700 text-white text-lg px-12 py-6 rounded-full shadow-xl">
                   Start Your Free Registration
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
@@ -708,7 +708,7 @@ export const BecomePartnerPage: React.FC = () => {
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6" style={{ fontFamily: "'Tenor Sans', serif" }}>
                 Platform Features
               </h2>
-              <div className="w-16 sm:w-24 h-1 bg-sky-600 mx-auto"></div>
+              <div className="w-16 sm:w-24 h-1 bg-green-600 mx-auto"></div>
             </div>
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6">
@@ -723,8 +723,8 @@ export const BecomePartnerPage: React.FC = () => {
                 { icon: Target, title: 'Multi-Location', desc: 'Manage branches' },
               ].map((feature, idx) => (
                 <div key={idx} className="bg-white p-4 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 text-center">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                    <feature.icon className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-sky-600" />
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                    <feature.icon className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 text-green-600" />
                   </div>
                   <h3 className="text-base sm:text-lg font-bold mb-1 sm:mb-2 text-gray-900">{feature.title}</h3>
                   <p className="text-gray-600 text-xs sm:text-sm">{feature.desc}</p>
@@ -741,7 +741,7 @@ export const BecomePartnerPage: React.FC = () => {
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6" style={{ fontFamily: "'Tenor Sans', serif" }}>
                 Common Questions
               </h2>
-              <div className="w-16 sm:w-24 h-1 bg-sky-600 mx-auto"></div>
+              <div className="w-16 sm:w-24 h-1 bg-green-600 mx-auto"></div>
             </div>
 
             <div className="space-y-4">
@@ -774,9 +774,9 @@ export const BecomePartnerPage: React.FC = () => {
                   >
                     <span className="font-semibold text-gray-900 text-sm sm:text-base lg:text-lg pr-3 sm:pr-4">{faq.q}</span>
                     {openFaq === idx ? (
-                      <ChevronUp className="w-5 h-5 sm:w-6 sm:h-6 text-sky-600 flex-shrink-0" />
+                      <ChevronUp className="w-5 h-5 sm:w-6 sm:h-6 text-green-600 flex-shrink-0" />
                     ) : (
-                      <ChevronDown className="w-5 h-5 sm:w-6 sm:h-6 text-sky-600 flex-shrink-0" />
+                      <ChevronDown className="w-5 h-5 sm:w-6 sm:h-6 text-green-600 flex-shrink-0" />
                     )}
                   </button>
                   {openFaq === idx && (
@@ -807,7 +807,7 @@ export const BecomePartnerPage: React.FC = () => {
 
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center mb-8 sm:mb-10 lg:mb-12">
               <Link to="/app" className="w-full sm:w-auto">
-                <Button size="lg" className="w-full sm:w-auto bg-white text-sky-600 hover:bg-gray-100 text-base sm:text-lg px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 rounded-full shadow-2xl font-semibold">
+                <Button size="lg" className="w-full sm:w-auto bg-white text-green-600 hover:bg-gray-100 text-base sm:text-lg px-8 sm:px-10 lg:px-12 py-4 sm:py-5 lg:py-6 rounded-full shadow-2xl font-semibold">
                   Start Free Registration
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
                 </Button>

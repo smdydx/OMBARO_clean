@@ -229,9 +229,9 @@ export const BeauticianLocationScreen: React.FC<BeauticianLocationScreenProps> =
           </div>
         </div>
 
-        <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
-          <h4 className="font-medium text-blue-900 mb-2">Location Privacy</h4>
-          <p className="text-sm text-blue-800">
+        <div className="bg-green-50 border border-green-200 rounded-xl p-4">
+          <h4 className="font-medium text-green-900 mb-2">Location Privacy</h4>
+          <p className="text-sm text-green-800">
             Your location is only shared with customers during active appointments.
             We respect your privacy and never share your location outside of service hours.
           </p>

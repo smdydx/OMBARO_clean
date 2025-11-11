@@ -39,7 +39,7 @@ export const RoleSelectionScreen: React.FC<RoleSelectionScreenProps> = ({
           name: 'Finance Department', 
           description: 'Financial planning and analysis',
           icon: DollarSign,
-          color: 'bg-blue-100 text-blue-600'
+          color: 'bg-green-100 text-green-600'
         },
         { 
           id: 'hr_department' as UserRole, 
@@ -98,7 +98,7 @@ export const RoleSelectionScreen: React.FC<RoleSelectionScreenProps> = ({
           name: 'Customer Data', 
           description: 'Customer information management',
           icon: Database,
-          color: 'bg-cyan-100 text-cyan-600'
+          color: 'bg-green-100 text-green-600'
         }
       ]
     },
@@ -169,7 +169,7 @@ export const RoleSelectionScreen: React.FC<RoleSelectionScreenProps> = ({
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex flex-col">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-indigo-50 to-purple-50 flex flex-col">
       {/* Header */}
       <div className="flex items-center justify-between p-6">
         <button
@@ -234,8 +234,8 @@ export const RoleSelectionScreen: React.FC<RoleSelectionScreenProps> = ({
           </Button>
           
           {selectedRole && (
-            <div className="mt-4 p-3 bg-blue-50 rounded-xl border border-blue-200">
-              <p className="text-blue-800 text-sm text-center">
+            <div className="mt-4 p-3 bg-green-50 rounded-xl border border-green-200">
+              <p className="text-green-800 text-sm text-center">
                 <strong>Demo Mode:</strong> Password: 1234 for all roles
               </p>
             </div>

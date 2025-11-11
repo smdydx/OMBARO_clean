@@ -12,7 +12,7 @@ export const FODepartment: React.FC<FODepartmentProps> = ({ onBack }) => {
 
   const stats = [
     { label: 'Walk-ins Today', value: '23', icon: Users, color: 'bg-yellow-100 text-yellow-600', change: '+8 vs yesterday' },
-    { label: 'Appointments', value: '56', icon: Calendar, color: 'bg-blue-100 text-blue-600', change: '12 pending' },
+    { label: 'Appointments', value: '56', icon: Calendar, color: 'bg-green-100 text-green-600', change: '12 pending' },
     { label: 'Daily Revenue', value: '₹45K', icon: TrendingUp, color: 'bg-green-100 text-green-600', change: '+15%' },
     { label: 'Desk Staff', value: '8', icon: Briefcase, color: 'bg-orange-100 text-orange-600', change: 'All active' }
   ];

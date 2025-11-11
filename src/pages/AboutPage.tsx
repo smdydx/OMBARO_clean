@@ -57,10 +57,10 @@ export const AboutPage: React.FC = () => {
       <MarketingHeader />
 
       <main className="pt-16">
-        <section className="relative bg-gradient-to-br from-cyan-50 via-white to-cyan-50/30 py-20 overflow-hidden">
+        <section className="relative bg-gradient-to-br from-green-50 via-white to-green-50/30 py-20 overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <h1 className="text-4xl md:text-5xl font-light text-gray-800 mb-6">
-              About <span className="font-normal text-cyan-600">OMBARO</span>
+              About <span className="font-normal text-green-600">OMBARO</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Revolutionizing the beauty and wellness industry by connecting customers with verified professionals
@@ -70,12 +70,12 @@ export const AboutPage: React.FC = () => {
           {/* Split Background with Rounded Edges */}
           <div className="absolute inset-0 -z-10 flex">
             <div className="w-4/5 bg-white"></div>
-            <div className="w-1/5 bg-gradient-to-br from-cyan-100 to-sky-200 rounded-l-[100px]"></div>
+            <div className="w-1/5 bg-gradient-to-br from-green-100 to-green-200 rounded-l-[100px]"></div>
           </div>
 
           {/* Decorative Circle */}
           <div className="absolute left-0 top-1/2 -translate-y-1/2 -z-5">
-            <div className="w-48 h-96 bg-gradient-to-r from-sky-200 to-cyan-200 rounded-r-full opacity-40"></div>
+            <div className="w-48 h-96 bg-gradient-to-r from-green-200 to-green-200 rounded-r-full opacity-40"></div>
           </div>
         </section>
 
@@ -192,7 +192,7 @@ export const AboutPage: React.FC = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-gradient-to-br from-sky-500 via-cyan-500 to-sky-600 text-white rounded-tl-[50px] rounded-tr-[50px]">
+        <section className="py-20 bg-gradient-to-br from-green-500 via-green-500 to-green-600 text-white rounded-tl-[50px] rounded-tr-[50px]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Join Our Growing Community
@@ -201,7 +201,7 @@ export const AboutPage: React.FC = () => {
               Experience the future of beauty and wellness services
             </p>
             <Link to="/app">
-              <button className="bg-white text-sky-600 hover:bg-sky-50 px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center">
+              <button className="bg-white text-green-600 hover:bg-green-50 px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center">
                 Get Started
                 <ArrowRight className="w-5 h-5 ml-2" />
               </button>

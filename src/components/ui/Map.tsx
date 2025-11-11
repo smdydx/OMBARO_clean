@@ -26,11 +26,11 @@ export const Map: React.FC<MapProps> = ({
   }, [userLocation]);
 
   return (
-    <div className={`relative bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl overflow-hidden ${className}`}>
+    <div className={`relative bg-gradient-to-br from-green-50 to-purple-50 rounded-2xl overflow-hidden ${className}`}>
       {/* Map Container */}
       <div className="h-full min-h-[300px] relative">
         {/* Simulated Map Background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-green-100 via-blue-100 to-purple-100">
+        <div className="absolute inset-0 bg-gradient-to-br from-green-100 via-green-100 to-purple-100">
           {/* Grid Pattern */}
           <div className="absolute inset-0 opacity-20">
             <div className="grid grid-cols-8 grid-rows-8 h-full">
@@ -45,8 +45,8 @@ export const Map: React.FC<MapProps> = ({
         {userLocation && (
           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20">
             <div className="relative">
-              <div className="w-4 h-4 bg-blue-600 rounded-full border-2 border-white shadow-lg animate-pulse"></div>
-              <div className="absolute inset-0 w-4 h-4 bg-blue-400 rounded-full animate-ping"></div>
+              <div className="w-4 h-4 bg-green-600 rounded-full border-2 border-white shadow-lg animate-pulse"></div>
+              <div className="absolute inset-0 w-4 h-4 bg-green-400 rounded-full animate-ping"></div>
             </div>
             <div className="absolute top-6 left-1/2 transform -translate-x-1/2 bg-white px-2 py-1 rounded-lg shadow-md text-xs font-medium text-gray-700 whitespace-nowrap">
               You are here

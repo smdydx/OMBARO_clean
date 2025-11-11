@@ -85,7 +85,7 @@ export const VendorPortal: React.FC<VendorPortalProps> = ({ vendorId, onLogout }
     return (
       <div className="flex items-center justify-center min-h-screen">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600 mx-auto mb-4"></div>
           <p className="text-gray-600">Loading your portal...</p>
         </div>
       </div>
@@ -99,7 +99,7 @@ export const VendorPortal: React.FC<VendorPortalProps> = ({ vendorId, onLogout }
         <div className="max-w-7xl mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <Building className="w-8 h-8 text-blue-600" />
+              <Building className="w-8 h-8 text-green-600" />
               <div>
                 <h1 className="text-xl font-bold text-gray-900">{vendor?.business_name}</h1>
                 <p className="text-sm text-gray-600">{vendor?.partner_type} Partner</p>
@@ -127,7 +127,7 @@ export const VendorPortal: React.FC<VendorPortalProps> = ({ vendorId, onLogout }
                 onClick={() => setActiveTab(tab)}
                 className={`py-4 px-2 border-b-2 font-medium capitalize ${
                   activeTab === tab
-                    ? 'border-blue-600 text-blue-600'
+                    ? 'border-green-600 text-green-600'
                     : 'border-transparent text-gray-600 hover:text-gray-900'
                 }`}
               >
@@ -147,7 +147,7 @@ export const VendorPortal: React.FC<VendorPortalProps> = ({ vendorId, onLogout }
               <div className="bg-white p-6 rounded-xl shadow-sm">
                 <div className="flex items-center justify-between mb-2">
                   <p className="text-sm text-gray-600">Total Bookings</p>
-                  <Calendar className="w-5 h-5 text-blue-600" />
+                  <Calendar className="w-5 h-5 text-green-600" />
                 </div>
                 <p className="text-3xl font-bold text-gray-900">{stats.totalBookings}</p>
                 <p className="text-xs text-gray-500 mt-1">All time</p>
@@ -226,7 +226,7 @@ export const VendorPortal: React.FC<VendorPortalProps> = ({ vendorId, onLogout }
                 </div>
                 <div>
                   <p className="text-sm text-gray-600 mb-1">Partner Type</p>
-                  <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+                  <span className="inline-block px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm font-medium">
                     {vendor?.partner_type}
                   </span>
                 </div>

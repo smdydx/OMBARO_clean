@@ -105,7 +105,7 @@ export const ApprovalDashboard: React.FC = () => {
   const getStatusBadge = (status: string) => {
     const badges: Record<string, { bg: string; text: string; icon: any }> = {
       pending: { bg: 'bg-yellow-100', text: 'text-yellow-800', icon: Clock },
-      fo_review: { bg: 'bg-blue-100', text: 'text-blue-800', icon: Eye },
+      fo_review: { bg: 'bg-green-100', text: 'text-green-800', icon: Eye },
       manager_review: { bg: 'bg-purple-100', text: 'text-purple-800', icon: Eye },
       director_review: { bg: 'bg-indigo-100', text: 'text-indigo-800', icon: Eye },
       admin_review: { bg: 'bg-pink-100', text: 'text-pink-800', icon: Eye },
@@ -141,9 +141,9 @@ export const ApprovalDashboard: React.FC = () => {
               {applications.filter(a => a.status === 'pending').length}
             </p>
           </div>
-          <div className="bg-blue-50 p-4 rounded-xl">
+          <div className="bg-green-50 p-4 rounded-xl">
             <p className="text-sm text-gray-600">In Review</p>
-            <p className="text-2xl font-bold text-blue-600">
+            <p className="text-2xl font-bold text-green-600">
               {applications.filter(a => a.status.includes('review')).length}
             </p>
           </div>

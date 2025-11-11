@@ -121,7 +121,7 @@ export const BookingHistoryScreen: React.FC<BookingHistoryScreenProps> = ({
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'upcoming': return 'bg-blue-100 text-blue-700';
+      case 'upcoming': return 'bg-green-100 text-green-700';
       case 'completed': return 'bg-green-100 text-green-700';
       case 'cancelled': return 'bg-red-100 text-red-700';
       case 'in-progress': return 'bg-purple-100 text-purple-700';
@@ -338,13 +338,13 @@ export const BookingHistoryScreen: React.FC<BookingHistoryScreenProps> = ({
                 </div>
                 <div className="flex space-x-2">
                   <button 
-                    className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center hover:bg-blue-200 transition-colors"
+                    className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center hover:bg-green-200 transition-colors"
                     onClick={(e) => {
                       e.stopPropagation();
                       console.log('Call therapist');
                     }}
                   >
-                    <Phone className="w-4 h-4 text-blue-600" />
+                    <Phone className="w-4 h-4 text-green-600" />
                   </button>
                   <button 
                     className="w-8 h-8 bg-white rounded-lg flex items-center justify-center shadow-sm"

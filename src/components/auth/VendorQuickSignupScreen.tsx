@@ -132,13 +132,13 @@ export default function VendorQuickSignupScreen({
               variant="outline"
               fullWidth
               size="lg"
-              className="border-2 hover:bg-blue-50 hover:border-blue-300"
+              className="border-2 hover:bg-green-50 hover:border-green-300"
             >
               {loading ? (
                 <Loader className="w-5 h-5 animate-spin" />
               ) : (
                 <>
-                  <Facebook className="w-5 h-5 text-blue-600" />
+                  <Facebook className="w-5 h-5 text-green-600" />
                   <span className="flex-1 text-center font-semibold">Continue with Facebook</span>
                 </>
               )}
@@ -208,8 +208,8 @@ export default function VendorQuickSignupScreen({
             </div>
           </div>
 
-          <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-            <p className="text-xs text-blue-800">
+          <div className="mt-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+            <p className="text-xs text-green-800">
               <strong>Privacy Note:</strong> We only access your name and email.
               Your social media credentials are never stored by us.
             </p>

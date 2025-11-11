@@ -12,7 +12,7 @@ export const CACSDepartment: React.FC<CACSDepartmentProps> = ({ onBack }) => {
 
   const stats = [
     { label: 'Active Audits', value: '2', icon: Shield, color: 'bg-amber-100 text-amber-600', change: '1 in progress' },
-    { label: 'Filings Due', value: '5', icon: FileText, color: 'bg-blue-100 text-blue-600', change: 'This month' },
+    { label: 'Filings Due', value: '5', icon: FileText, color: 'bg-green-100 text-green-600', change: 'This month' },
     { label: 'Compliance', value: '100%', icon: CheckCircle, color: 'bg-green-100 text-green-600', change: 'All up to date' },
     { label: 'Reports', value: '24', icon: Calculator, color: 'bg-yellow-100 text-yellow-600', change: 'This year' }
   ];

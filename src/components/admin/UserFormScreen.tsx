@@ -47,7 +47,7 @@ export const UserFormScreen: React.FC<UserFormScreenProps> = ({
   ];
 
   const genderOptions = [
-    { value: 'male', label: 'Male', icon: <User className="w-5 h-5 text-blue-600" /> },
+    { value: 'male', label: 'Male', icon: <User className="w-5 h-5 text-green-600" /> },
     { value: 'female', label: 'Female', icon: <User className="w-5 h-5 text-pink-600" /> },
     { value: 'other', label: 'Other', icon: <User className="w-5 h-5 text-purple-600" /> }
   ];
@@ -336,7 +336,7 @@ export const UserFormScreen: React.FC<UserFormScreenProps> = ({
                               {selectedRole.reportsTo.map(roleId => {
                                 const reportingRole = ROLE_DEFINITIONS.find(r => r.id === roleId);
                                 return (
-                                  <span key={roleId} className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-lg">
+                                  <span key={roleId} className="px-2 py-1 bg-green-100 text-green-700 text-xs rounded-lg">
                                     {reportingRole?.name || roleId}
                                   </span>
                                 );

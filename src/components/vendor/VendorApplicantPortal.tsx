@@ -77,7 +77,7 @@ export const VendorApplicantPortal: React.FC<VendorApplicantPortalProps> = ({ on
       },
       fo_review: {
         label: 'Field Officer Review',
-        color: 'bg-blue-100 text-blue-800 border-blue-200',
+        color: 'bg-green-100 text-green-800 border-green-200',
         icon: FileText,
         description: 'Your application is being reviewed by our Field Officer.'
       },
@@ -95,7 +95,7 @@ export const VendorApplicantPortal: React.FC<VendorApplicantPortalProps> = ({ on
       },
       admin_review: {
         label: 'Final Review',
-        color: 'bg-cyan-100 text-cyan-800 border-cyan-200',
+        color: 'bg-green-100 text-green-800 border-green-200',
         icon: FileText,
         description: 'Your application is in final review stage with our Admin team.'
       },
@@ -138,7 +138,7 @@ export const VendorApplicantPortal: React.FC<VendorApplicantPortalProps> = ({ on
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600 mx-auto mb-4"></div>
           <p className="text-gray-600">Loading your applications...</p>
         </div>
       </div>
@@ -168,7 +168,7 @@ export const VendorApplicantPortal: React.FC<VendorApplicantPortalProps> = ({ on
   if (applications.length === 0) {
     return (
       <div className="min-h-screen bg-gray-50">
-        <div className="bg-gradient-to-r from-blue-600 to-purple-600 pt-12 pb-6 px-6">
+        <div className="bg-gradient-to-r from-green-600 to-purple-600 pt-12 pb-6 px-6">
           <div className="flex items-center justify-between mb-6">
             <h1 className="text-2xl font-bold text-white">Vendor Application Portal</h1>
             <button
@@ -202,7 +202,7 @@ export const VendorApplicantPortal: React.FC<VendorApplicantPortalProps> = ({ on
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-600 pt-12 pb-6 px-6">
+      <div className="bg-gradient-to-r from-green-600 to-purple-600 pt-12 pb-6 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="flex items-center justify-between mb-6">
             <div>
@@ -276,7 +276,7 @@ export const VendorApplicantPortal: React.FC<VendorApplicantPortalProps> = ({ on
               {/* Progress Bar */}
               <div className="absolute left-8 top-8 bottom-8 w-0.5 bg-gray-200"></div>
               <div
-                className="absolute left-8 top-8 w-0.5 bg-blue-600 transition-all duration-500"
+                className="absolute left-8 top-8 w-0.5 bg-green-600 transition-all duration-500"
                 style={{ height: `${getProgressPercentage(selectedApplication.current_approval_stage)}%` }}
               ></div>
 
@@ -292,7 +292,7 @@ export const VendorApplicantPortal: React.FC<VendorApplicantPortalProps> = ({ on
                       <div
                         className={`relative z-10 w-16 h-16 rounded-full flex items-center justify-center flex-shrink-0 ${
                           isCompleted ? 'bg-green-500' :
-                          isCurrent ? 'bg-blue-600' :
+                          isCurrent ? 'bg-green-600' :
                           'bg-gray-200'
                         }`}
                       >
@@ -305,7 +305,7 @@ export const VendorApplicantPortal: React.FC<VendorApplicantPortalProps> = ({ on
                         )}
                       </div>
                       <div className="flex-1 pt-3">
-                        <h4 className={`font-semibold ${isCurrent ? 'text-blue-600' : 'text-gray-900'}`}>
+                        <h4 className={`font-semibold ${isCurrent ? 'text-green-600' : 'text-gray-900'}`}>
                           {stage.label}
                         </h4>
                         <p className="text-sm text-gray-600">
@@ -358,7 +358,7 @@ export const VendorApplicantPortal: React.FC<VendorApplicantPortalProps> = ({ on
               <h3 className="text-lg font-bold text-gray-900 mb-4">Approval History</h3>
               <div className="space-y-4">
                 {approvalHistory.map((record) => (
-                  <div key={record.id} className="border-l-4 border-blue-600 pl-4 py-2">
+                  <div key={record.id} className="border-l-4 border-green-600 pl-4 py-2">
                     <div className="flex items-start justify-between">
                       <div>
                         <p className="font-semibold text-gray-900">

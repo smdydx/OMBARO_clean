@@ -45,7 +45,7 @@ export const AdminSettingsScreen: React.FC<AdminSettingsScreenProps> = ({ onBack
                   onClick={() => setActiveTab(tab.id)}
                   className={`flex items-center gap-2 py-4 px-6 text-sm font-medium transition-colors whitespace-nowrap ${
                     activeTab === tab.id
-                      ? 'text-blue-600 border-b-2 border-blue-600'
+                      ? 'text-green-600 border-b-2 border-green-600'
                       : 'text-gray-600 hover:text-gray-900'
                   }`}
                 >
@@ -67,7 +67,7 @@ export const AdminSettingsScreen: React.FC<AdminSettingsScreenProps> = ({ onBack
                     <input
                       type="text"
                       defaultValue="OMBARO"
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500"
                     />
                   </div>
 
@@ -76,7 +76,7 @@ export const AdminSettingsScreen: React.FC<AdminSettingsScreenProps> = ({ onBack
                     <input
                       type="number"
                       defaultValue="15"
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500"
                     />
                   </div>
 
@@ -85,7 +85,7 @@ export const AdminSettingsScreen: React.FC<AdminSettingsScreenProps> = ({ onBack
                     <input
                       type="number"
                       defaultValue="30"
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500"
                     />
                   </div>
 
@@ -106,13 +106,13 @@ export const AdminSettingsScreen: React.FC<AdminSettingsScreenProps> = ({ onBack
                     </div>
                     <label className="relative inline-flex items-center cursor-pointer">
                       <input type="checkbox" className="sr-only peer" />
-                      <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                      <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-green-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-600"></div>
                     </label>
                   </div>
 
                   <div className="p-4 bg-gray-50 rounded-xl">
                     <p className="font-medium text-gray-900 mb-2">Session Timeout (minutes)</p>
-                    <select className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <select className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500">
                       <option value="15">15 minutes</option>
                       <option value="30">30 minutes</option>
                       <option value="60">1 hour</option>
@@ -127,7 +127,7 @@ export const AdminSettingsScreen: React.FC<AdminSettingsScreenProps> = ({ onBack
                     <input
                       type="number"
                       defaultValue="5"
-                      className="w-24 px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      className="w-24 px-4 py-2 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-green-500"
                     />
                   </div>
                 </div>
@@ -139,9 +139,9 @@ export const AdminSettingsScreen: React.FC<AdminSettingsScreenProps> = ({ onBack
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Database Management</h3>
 
                 <div className="space-y-4">
-                  <div className="p-4 bg-blue-50 border border-blue-200 rounded-xl">
-                    <p className="font-medium text-blue-900 mb-1">Database Status</p>
-                    <p className="text-sm text-blue-700">Connected - Supabase PostgreSQL</p>
+                  <div className="p-4 bg-green-50 border border-green-200 rounded-xl">
+                    <p className="font-medium text-green-900 mb-1">Database Status</p>
+                    <p className="text-sm text-green-700">Connected - Supabase PostgreSQL</p>
                   </div>
 
                   <div className="grid grid-cols-2 gap-4">
@@ -166,7 +166,7 @@ export const AdminSettingsScreen: React.FC<AdminSettingsScreenProps> = ({ onBack
                     </div>
                     <label className="relative inline-flex items-center cursor-pointer">
                       <input type="checkbox" className="sr-only peer" />
-                      <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                      <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-green-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-600"></div>
                     </label>
                   </div>
 
@@ -177,7 +177,7 @@ export const AdminSettingsScreen: React.FC<AdminSettingsScreenProps> = ({ onBack
                     </div>
                     <label className="relative inline-flex items-center cursor-pointer">
                       <input type="checkbox" defaultChecked className="sr-only peer" />
-                      <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                      <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-green-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-600"></div>
                     </label>
                   </div>
                 </div>
@@ -202,7 +202,7 @@ export const AdminSettingsScreen: React.FC<AdminSettingsScreenProps> = ({ onBack
                       </div>
                       <label className="relative inline-flex items-center cursor-pointer">
                         <input type="checkbox" defaultChecked className="sr-only peer" />
-                        <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+                        <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-green-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-green-600"></div>
                       </label>
                     </div>
                   ))}

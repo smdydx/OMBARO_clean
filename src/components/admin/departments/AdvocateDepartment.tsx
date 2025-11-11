@@ -12,7 +12,7 @@ export const AdvocateDepartment: React.FC<AdvocateDepartmentProps> = ({ onBack }
 
   const stats = [
     { label: 'Active Cases', value: '12', icon: Briefcase, color: 'bg-rose-100 text-rose-600', change: '3 in trial' },
-    { label: 'Upcoming Hearings', value: '3', icon: Calendar, color: 'bg-blue-100 text-blue-600', change: 'Next 7 days' },
+    { label: 'Upcoming Hearings', value: '3', icon: Calendar, color: 'bg-green-100 text-green-600', change: 'Next 7 days' },
     { label: 'Won Cases', value: '89%', icon: Gavel, color: 'bg-green-100 text-green-600', change: 'Success rate' },
     { label: 'Documents', value: '156', icon: FileText, color: 'bg-amber-100 text-amber-600', change: 'Filed this year' }
   ];

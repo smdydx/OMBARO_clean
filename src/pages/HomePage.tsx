@@ -222,7 +222,7 @@ export const HomePage: React.FC = () => {
                       alt="Spa Experience"
                       className="w-full h-[350px] md:h-[500px] object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/20 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-green-900/20 to-transparent"></div>
                   </div>
                 </div>
 

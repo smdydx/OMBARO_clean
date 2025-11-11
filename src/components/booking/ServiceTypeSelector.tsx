@@ -26,13 +26,13 @@ export const ServiceTypeSelector: React.FC<ServiceTypeSelectorProps> = ({
           onClick={() => onSelect('at_home')}
           className={`relative p-6 rounded-2xl border-2 transition-all ${
             selectedType === 'at_home'
-              ? 'border-blue-500 bg-blue-50 shadow-md'
-              : 'border-gray-200 bg-white hover:border-blue-300 hover:shadow-sm'
+              ? 'border-green-500 bg-green-50 shadow-md'
+              : 'border-gray-200 bg-white hover:border-green-300 hover:shadow-sm'
           }`}
         >
           {selectedType === 'at_home' && (
             <div className="absolute top-3 right-3">
-              <div className="w-6 h-6 bg-blue-500 rounded-full flex items-center justify-center">
+              <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
                 <CheckCircle className="w-4 h-4 text-white" />
               </div>
             </div>
@@ -40,10 +40,10 @@ export const ServiceTypeSelector: React.FC<ServiceTypeSelectorProps> = ({
 
           <div className="flex flex-col items-center text-center space-y-3">
             <div className={`w-16 h-16 rounded-2xl flex items-center justify-center ${
-              selectedType === 'at_home' ? 'bg-blue-500' : 'bg-blue-100'
+              selectedType === 'at_home' ? 'bg-green-500' : 'bg-green-100'
             }`}>
               <Home className={`w-8 h-8 ${
-                selectedType === 'at_home' ? 'text-white' : 'text-blue-600'
+                selectedType === 'at_home' ? 'text-white' : 'text-green-600'
               }`} />
             </div>
 
@@ -123,7 +123,7 @@ export const ServiceTypeSelector: React.FC<ServiceTypeSelectorProps> = ({
 
       {selectedType && (
         <div className={`mt-4 p-4 rounded-xl ${
-          selectedType === 'at_home' ? 'bg-blue-50 border border-blue-200' : 'bg-pink-50 border border-pink-200'
+          selectedType === 'at_home' ? 'bg-green-50 border border-green-200' : 'bg-pink-50 border border-pink-200'
         }`}>
           <p className="text-sm text-gray-700">
             {selectedType === 'at_home'

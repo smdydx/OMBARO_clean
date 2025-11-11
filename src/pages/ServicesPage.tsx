@@ -144,10 +144,10 @@ export const ServicesPage: React.FC = () => {
       <MarketingHeader />
 
       <main className="pt-16">
-        <section className="relative bg-gradient-to-br from-cyan-50 via-white to-cyan-50/30 py-20 overflow-hidden">
+        <section className="relative bg-gradient-to-br from-green-50 via-white to-green-50/30 py-20 overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <h1 className="text-4xl md:text-5xl font-light text-gray-800 mb-6">
-              Our <span className="font-normal text-cyan-600">Services</span>
+              Our <span className="font-normal text-green-600">Services</span>
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Explore our comprehensive range of beauty and wellness services designed to make you look and feel your best
@@ -157,12 +157,12 @@ export const ServicesPage: React.FC = () => {
           {/* Split Background with Rounded Edges */}
           <div className="absolute inset-0 -z-10 flex">
             <div className="w-4/5 bg-white"></div>
-            <div className="w-1/5 bg-gradient-to-br from-cyan-100 to-sky-200 rounded-l-[100px]"></div>
+            <div className="w-1/5 bg-gradient-to-br from-green-100 to-green-200 rounded-l-[100px]"></div>
           </div>
 
           {/* Decorative Circle */}
           <div className="absolute left-0 top-1/2 -translate-y-1/2 -z-5">
-            <div className="w-48 h-96 bg-gradient-to-r from-sky-200 to-cyan-200 rounded-r-full opacity-40"></div>
+            <div className="w-48 h-96 bg-gradient-to-r from-green-200 to-green-200 rounded-r-full opacity-40"></div>
           </div>
         </section>
 
@@ -251,7 +251,7 @@ export const ServicesPage: React.FC = () => {
                 Experience premium beauty and wellness services at your doorstep
               </p>
               <Link to="/app">
-                <button className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center">
+                <button className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center">
                   Book Now
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </button>
@@ -280,15 +280,15 @@ export const ServicesPage: React.FC = () => {
             <div className="grid md:grid-cols-2 gap-12 items-center">
               {/* Left Content */}
               <div className="space-y-8">
-                <div className="inline-flex items-center space-x-2 bg-sky-100/80 backdrop-blur-md border border-sky-200 rounded-full px-5 py-2.5 shadow-lg">
-                  <Sparkles className="w-5 h-5 text-sky-600 animate-pulse" />
-                  <span className="text-sky-700 text-sm font-semibold tracking-wide">Join Our Professional Network</span>
+                <div className="inline-flex items-center space-x-2 bg-green-100/80 backdrop-blur-md border border-green-200 rounded-full px-5 py-2.5 shadow-lg">
+                  <Sparkles className="w-5 h-5 text-green-600 animate-pulse" />
+                  <span className="text-green-700 text-sm font-semibold tracking-wide">Join Our Professional Network</span>
                 </div>
 
                 <div>
                   <h2 className="text-4xl md:text-5xl font-bold mb-4 leading-tight text-gray-800">
                     Are You a Beauty
-                    <span className="block bg-gradient-to-r from-sky-500 via-cyan-500 to-sky-600 bg-clip-text text-transparent">
+                    <span className="block bg-gradient-to-r from-green-500 via-green-500 to-green-600 bg-clip-text text-transparent">
                       Professional?
                     </span>
                   </h2>
@@ -301,26 +301,26 @@ export const ServicesPage: React.FC = () => {
                 {/* Benefits List */}
                 <div className="space-y-4">
                   {[
-                    { icon: TrendingUp, text: 'Get more bookings and increase revenue', color: 'from-sky-400 to-sky-500' },
-                    { icon: Clock, text: 'Manage your schedule efficiently', color: 'from-cyan-400 to-cyan-500' },
-                    { icon: Star, text: 'Build your professional reputation', color: 'from-sky-500 to-cyan-500' },
-                    { icon: BarChart3, text: 'Access to business analytics and insights', color: 'from-cyan-500 to-sky-600' }
+                    { icon: TrendingUp, text: 'Get more bookings and increase revenue', color: 'from-green-400 to-green-500' },
+                    { icon: Clock, text: 'Manage your schedule efficiently', color: 'from-green-400 to-green-500' },
+                    { icon: Star, text: 'Build your professional reputation', color: 'from-green-500 to-green-500' },
+                    { icon: BarChart3, text: 'Access to business analytics and insights', color: 'from-green-500 to-green-600' }
                   ].map((benefit, index) => (
                     <div
                       key={index}
-                      className="flex items-center space-x-4 bg-white/70 backdrop-blur-md border border-sky-200 rounded-2xl p-4 hover:bg-white/90 transition-all duration-300 group shadow-md"
+                      className="flex items-center space-x-4 bg-white/70 backdrop-blur-md border border-green-200 rounded-2xl p-4 hover:bg-white/90 transition-all duration-300 group shadow-md"
                     >
                       <div className={`w-12 h-12 rounded-xl bg-gradient-to-br ${benefit.color} flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform duration-300`}>
                         <benefit.icon className="w-6 h-6 text-white" />
                       </div>
                       <span className="text-gray-700 font-medium flex-1">{benefit.text}</span>
-                      <CheckCircle className="w-5 h-5 text-sky-500 flex-shrink-0" />
+                      <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
                     </div>
                   ))}
                 </div>
 
                 <Link to="/become-partner">
-                  <button className="bg-gradient-to-r from-sky-500 to-cyan-500 hover:from-sky-600 hover:to-cyan-600 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 inline-flex items-center">
+                  <button className="bg-gradient-to-r from-green-500 to-green-500 hover:from-green-600 hover:to-green-600 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-300 inline-flex items-center">
                     Become a Partner Today
                     <ArrowRight className="w-6 h-6 ml-2" />
                   </button>
@@ -329,7 +329,7 @@ export const ServicesPage: React.FC = () => {
 
               {/* Right Content - Stats Cards */}
               <div className="relative">
-                <div className="bg-white/70 backdrop-blur-xl border border-sky-200 rounded-3xl p-4 sm:p-6 md:p-8 shadow-2xl">
+                <div className="bg-white/70 backdrop-blur-xl border border-green-200 rounded-3xl p-4 sm:p-6 md:p-8 shadow-2xl">
                   <div className="mb-4 sm:mb-6">
                     <h3 className="text-xl sm:text-2xl font-bold text-gray-800 mb-2">Partner Success Stats</h3>
                     <p className="text-sm sm:text-base text-gray-600">Real results from our professionals</p>
@@ -341,34 +341,34 @@ export const ServicesPage: React.FC = () => {
                         icon: TrendingUp,
                         label: 'Revenue Growth',
                         value: '40%+',
-                        gradient: 'from-sky-400 to-sky-600',
-                        bgGradient: 'from-sky-50 to-sky-100'
+                        gradient: 'from-green-400 to-green-600',
+                        bgGradient: 'from-green-50 to-green-100'
                       },
                       {
                         icon: Users,
                         label: 'Active Customers',
                         value: '50,000+',
-                        gradient: 'from-cyan-400 to-cyan-600',
-                        bgGradient: 'from-cyan-50 to-cyan-100'
+                        gradient: 'from-green-400 to-green-600',
+                        bgGradient: 'from-green-50 to-green-100'
                       },
                       {
                         icon: Star,
                         label: 'Average Rating',
                         value: '4.8/5',
-                        gradient: 'from-sky-500 to-cyan-500',
-                        bgGradient: 'from-sky-50 to-cyan-100'
+                        gradient: 'from-green-500 to-green-500',
+                        bgGradient: 'from-green-50 to-green-100'
                       },
                       {
                         icon: Clock,
                         label: 'Booking Rate',
                         value: '85%+',
-                        gradient: 'from-cyan-500 to-sky-600',
-                        bgGradient: 'from-cyan-50 to-sky-100'
+                        gradient: 'from-green-500 to-green-600',
+                        bgGradient: 'from-green-50 to-green-100'
                       }
                     ].map((stat, index) => (
                       <div
                         key={index}
-                        className={`bg-gradient-to-br ${stat.bgGradient} backdrop-blur-sm border border-sky-200 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 text-center hover:scale-105 transition-all duration-300 group shadow-lg`}
+                        className={`bg-gradient-to-br ${stat.bgGradient} backdrop-blur-sm border border-green-200 rounded-xl sm:rounded-2xl p-3 sm:p-4 md:p-6 text-center hover:scale-105 transition-all duration-300 group shadow-lg`}
                       >
                         <div className={`w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br ${stat.gradient} mx-auto mb-2 sm:mb-3 md:mb-4 flex items-center justify-center shadow-lg group-hover:rotate-12 transition-transform duration-300`}>
                           <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 text-white" />
@@ -380,13 +380,13 @@ export const ServicesPage: React.FC = () => {
                   </div>
 
                   {/* Additional Info */}
-                  <div className="mt-6 pt-6 border-t border-sky-200">
+                  <div className="mt-6 pt-6 border-t border-green-200">
                     <div className="flex items-center justify-center space-x-2 text-gray-700">
                       <div className="flex -space-x-2">
                         {[1, 2, 3, 4].map((i) => (
                           <div
                             key={i}
-                            className="w-10 h-10 rounded-full border-2 border-white bg-gradient-to-br from-sky-400 to-cyan-500"
+                            className="w-10 h-10 rounded-full border-2 border-white bg-gradient-to-br from-green-400 to-green-500"
                           />
                         ))}
                       </div>
@@ -398,7 +398,7 @@ export const ServicesPage: React.FC = () => {
                 </div>
 
                 {/* Floating Badge */}
-                <div className="absolute -top-4 -right-4 bg-gradient-to-br from-sky-400 to-cyan-600 rounded-2xl p-4 shadow-2xl transform rotate-3 hover:rotate-6 transition-transform duration-300">
+                <div className="absolute -top-4 -right-4 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl p-4 shadow-2xl transform rotate-3 hover:rotate-6 transition-transform duration-300">
                   <div className="text-center">
                     <p className="text-2xl font-bold text-white">🎉</p>
                     <p className="text-xs font-bold text-white">Limited Slots</p>

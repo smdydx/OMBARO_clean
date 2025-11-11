@@ -261,9 +261,9 @@ export const BeauticianEarningsScreen: React.FC<BeauticianEarningsScreenProps> =
           </div>
         </div>
 
-        <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
-          <h4 className="font-medium text-blue-900 mb-2">Payment Schedule</h4>
-          <p className="text-sm text-blue-800">
+        <div className="bg-green-50 border border-green-200 rounded-xl p-4">
+          <h4 className="font-medium text-green-900 mb-2">Payment Schedule</h4>
+          <p className="text-sm text-green-800">
             Earnings are processed twice a week (Tuesday & Friday). Payments are directly credited to your registered bank account within 1-2 business days.
           </p>
         </div>

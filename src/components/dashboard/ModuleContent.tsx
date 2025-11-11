@@ -23,17 +23,17 @@ export const ModuleContent: React.FC<ModuleContentProps> = ({
         accounts_department: [
           { label: 'Monthly Revenue', value: '₹8.4L', icon: DollarSign, color: 'bg-green-100 text-green-600', change: '+12% this month' },
           { label: 'Pending Invoices', value: '23', icon: FileText, color: 'bg-yellow-100 text-yellow-600', change: '5 overdue' },
-          { label: 'Processed Payments', value: '156', icon: CheckCircle, color: 'bg-blue-100 text-blue-600', change: '+8 today' },
+          { label: 'Processed Payments', value: '156', icon: CheckCircle, color: 'bg-green-100 text-green-600', change: '+8 today' },
           { label: 'Account Balance', value: '₹2.1L', icon: TrendingUp, color: 'bg-purple-100 text-purple-600', change: '+5% growth' }
         ],
         finance_department: [
-          { label: 'Budget Allocated', value: '₹15L', icon: DollarSign, color: 'bg-blue-100 text-blue-600', change: '85% utilized' },
+          { label: 'Budget Allocated', value: '₹15L', icon: DollarSign, color: 'bg-green-100 text-green-600', change: '85% utilized' },
           { label: 'ROI Analysis', value: '24%', icon: TrendingUp, color: 'bg-green-100 text-green-600', change: '+3% this quarter' },
           { label: 'Cost Centers', value: '8', icon: BarChart3, color: 'bg-purple-100 text-purple-600', change: '2 new added' },
           { label: 'Financial Reports', value: '45', icon: FileText, color: 'bg-yellow-100 text-yellow-600', change: '12 pending review' }
         ],
         ca_cs: [
-          { label: 'Audit Reports', value: '12', icon: FileText, color: 'bg-blue-100 text-blue-600', change: '3 pending' },
+          { label: 'Audit Reports', value: '12', icon: FileText, color: 'bg-green-100 text-green-600', change: '3 pending' },
           { label: 'Compliance Score', value: '98%', icon: Shield, color: 'bg-green-100 text-green-600', change: '+2% improvement' },
           { label: 'Tax Filings', value: '24', icon: Calendar, color: 'bg-yellow-100 text-yellow-600', change: '2 due this month' },
           { label: 'Financial Health', value: 'A+', icon: TrendingUp, color: 'bg-purple-100 text-purple-600', change: 'Excellent rating' }
@@ -42,12 +42,12 @@ export const ModuleContent: React.FC<ModuleContentProps> = ({
       marketing: {
         marketing_department: [
           { label: 'Active Campaigns', value: '12', icon: TrendingUp, color: 'bg-pink-100 text-pink-600', change: '3 new this week' },
-          { label: 'Lead Generation', value: '234', icon: Users, color: 'bg-blue-100 text-blue-600', change: '+18% this month' },
+          { label: 'Lead Generation', value: '234', icon: Users, color: 'bg-green-100 text-green-600', change: '+18% this month' },
           { label: 'Conversion Rate', value: '12.5%', icon: BarChart3, color: 'bg-green-100 text-green-600', change: '+2.3% improvement' },
           { label: 'Social Reach', value: '45K', icon: Star, color: 'bg-purple-100 text-purple-600', change: '+5K followers' }
         ],
         customer_data: [
-          { label: 'Total Customers', value: '2,847', icon: Users, color: 'bg-blue-100 text-blue-600', change: '+234 this month' },
+          { label: 'Total Customers', value: '2,847', icon: Users, color: 'bg-green-100 text-green-600', change: '+234 this month' },
           { label: 'Active Users', value: '1,456', icon: CheckCircle, color: 'bg-green-100 text-green-600', change: '89% retention' },
           { label: 'Customer Segments', value: '8', icon: Database, color: 'bg-purple-100 text-purple-600', change: '2 new segments' },
           { label: 'Data Quality', value: '94%', icon: Star, color: 'bg-yellow-100 text-yellow-600', change: '+3% improvement' }
@@ -57,7 +57,7 @@ export const ModuleContent: React.FC<ModuleContentProps> = ({
         customer_care: [
           { label: 'Active Tickets', value: '34', icon: MessageSquare, color: 'bg-emerald-100 text-emerald-600', change: '8 urgent' },
           { label: 'Resolved Today', value: '28', icon: CheckCircle, color: 'bg-green-100 text-green-600', change: '95% satisfaction' },
-          { label: 'Avg Response Time', value: '2.3h', icon: Clock, color: 'bg-blue-100 text-blue-600', change: '-30min improvement' },
+          { label: 'Avg Response Time', value: '2.3h', icon: Clock, color: 'bg-green-100 text-green-600', change: '-30min improvement' },
           { label: 'Customer Rating', value: '4.8', icon: Star, color: 'bg-yellow-100 text-yellow-600', change: '+0.2 this month' }
         ]
       },
@@ -66,11 +66,11 @@ export const ModuleContent: React.FC<ModuleContentProps> = ({
           { label: 'Total Employees', value: '156', icon: Users, color: 'bg-purple-100 text-purple-600', change: '+12 this month' },
           { label: 'Attendance Rate', value: '94%', icon: CheckCircle, color: 'bg-green-100 text-green-600', change: '+2% improvement' },
           { label: 'Open Positions', value: '8', icon: AlertTriangle, color: 'bg-yellow-100 text-yellow-600', change: '3 urgent' },
-          { label: 'Employee Satisfaction', value: '4.6', icon: Star, color: 'bg-blue-100 text-blue-600', change: '+0.3 this quarter' }
+          { label: 'Employee Satisfaction', value: '4.6', icon: Star, color: 'bg-green-100 text-green-600', change: '+0.3 this quarter' }
         ],
         staff_department: [
           { label: 'Active Staff', value: '89', icon: Users, color: 'bg-orange-100 text-orange-600', change: '+5 this week' },
-          { label: 'Scheduled Shifts', value: '234', icon: Calendar, color: 'bg-blue-100 text-blue-600', change: '12 pending' },
+          { label: 'Scheduled Shifts', value: '234', icon: Calendar, color: 'bg-green-100 text-green-600', change: '12 pending' },
           { label: 'Overtime Hours', value: '45', icon: Clock, color: 'bg-yellow-100 text-yellow-600', change: '-8 hours' },
           { label: 'Staff Efficiency', value: '92%', icon: TrendingUp, color: 'bg-green-100 text-green-600', change: '+3% improvement' }
         ]
@@ -78,21 +78,21 @@ export const ModuleContent: React.FC<ModuleContentProps> = ({
       operations: {
         fo_department: [
           { label: 'Daily Visitors', value: '145', icon: Users, color: 'bg-yellow-100 text-yellow-600', change: '+23 today' },
-          { label: 'Active Bookings', value: '67', icon: Calendar, color: 'bg-blue-100 text-blue-600', change: '12 pending' },
+          { label: 'Active Bookings', value: '67', icon: Calendar, color: 'bg-green-100 text-green-600', change: '12 pending' },
           { label: 'Customer Satisfaction', value: '4.7', icon: Star, color: 'bg-green-100 text-green-600', change: '+0.2 this week' },
           { label: 'Front Desk Efficiency', value: '96%', icon: TrendingUp, color: 'bg-purple-100 text-purple-600', change: '+4% improvement' }
         ]
       },
       system_admin: {
         super_admin: [
-          { label: 'Total Users', value: '2,847', icon: Users, color: 'bg-blue-100 text-blue-600', change: '+234 this month' },
+          { label: 'Total Users', value: '2,847', icon: Users, color: 'bg-green-100 text-green-600', change: '+234 this month' },
           { label: 'System Health', value: '99.9%', icon: Shield, color: 'bg-green-100 text-green-600', change: 'Excellent uptime' },
           { label: 'Active Sessions', value: '456', icon: Clock, color: 'bg-purple-100 text-purple-600', change: 'Peak: 678' },
           { label: 'Security Score', value: 'A+', icon: CheckCircle, color: 'bg-yellow-100 text-yellow-600', change: 'No threats detected' }
         ],
         it_department: [
           { label: 'System Uptime', value: '99.8%', icon: Shield, color: 'bg-green-100 text-green-600', change: '24/7 monitoring' },
-          { label: 'Active Servers', value: '12', icon: Database, color: 'bg-blue-100 text-blue-600', change: 'All operational' },
+          { label: 'Active Servers', value: '12', icon: Database, color: 'bg-green-100 text-green-600', change: 'All operational' },
           { label: 'Support Tickets', value: '18', icon: MessageSquare, color: 'bg-yellow-100 text-yellow-600', change: '5 critical' },
           { label: 'Security Patches', value: '8', icon: CheckCircle, color: 'bg-purple-100 text-purple-600', change: 'Up to date' }
         ]
@@ -206,7 +206,7 @@ export const ModuleContent: React.FC<ModuleContentProps> = ({
       case 'success': return 'bg-green-100 text-green-700';
       case 'warning': return 'bg-yellow-100 text-yellow-700';
       case 'error': return 'bg-red-100 text-red-700';
-      case 'info': return 'bg-blue-100 text-blue-700';
+      case 'info': return 'bg-green-100 text-green-700';
       default: return 'bg-gray-100 text-gray-700';
     }
   };

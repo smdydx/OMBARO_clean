@@ -37,7 +37,7 @@ export const ProfileSetupScreen: React.FC<ProfileSetupScreenProps> = ({
     {
       value: 'male',
       label: 'Male',
-      icon: <Users className="w-5 h-5 text-blue-600" />
+      icon: <Users className="w-5 h-5 text-green-600" />
     },
     {
       value: 'female',

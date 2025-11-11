@@ -154,9 +154,9 @@ export const AuthLoginScreen: React.FC<AuthLoginScreenProps> = ({
           </div>
 
           {/* Login Info */}
-          <div className="mt-8 p-4 bg-blue-50 rounded-2xl border border-blue-200">
-            <h3 className="font-semibold text-blue-900 mb-2">Login Information</h3>
-            <p className="text-sm text-blue-700">
+          <div className="mt-8 p-4 bg-green-50 rounded-2xl border border-green-200">
+            <h3 className="font-semibold text-green-900 mb-2">Login Information</h3>
+            <p className="text-sm text-green-700">
               Use your registered mobile number or username to login.<br />
               For system users: username format is <strong>{userType.toLowerCase()}321</strong>
             </p>

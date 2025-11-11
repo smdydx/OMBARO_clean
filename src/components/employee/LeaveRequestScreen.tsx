@@ -243,8 +243,8 @@ export const LeaveRequestScreen: React.FC<LeaveRequestScreenProps> = ({
                 </div>
 
                 {formData.fromDate && formData.toDate && (
-                  <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
-                    <p className="text-blue-800 font-medium">
+                  <div className="bg-green-50 border border-green-200 rounded-xl p-4">
+                    <p className="text-green-800 font-medium">
                       Total Days: {calculateDays()} days
                     </p>
                   </div>

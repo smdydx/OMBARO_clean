@@ -245,7 +245,7 @@ export const SelfAttendanceScreen: React.FC<SelfAttendanceScreenProps> = ({
       case 'present': return 'bg-green-100 text-green-700 border-green-200';
       case 'late': return 'bg-yellow-100 text-yellow-700 border-yellow-200';
       case 'absent': return 'bg-red-100 text-red-700 border-red-200';
-      case 'half_day': return 'bg-blue-100 text-blue-700 border-blue-200';
+      case 'half_day': return 'bg-green-100 text-green-700 border-green-200';
       case 'leave': return 'bg-purple-100 text-purple-700 border-purple-200';
       case 'work_from_home': return 'bg-indigo-100 text-indigo-700 border-indigo-200';
       default: return 'bg-gray-100 text-gray-700 border-gray-200';
@@ -267,7 +267,7 @@ export const SelfAttendanceScreen: React.FC<SelfAttendanceScreenProps> = ({
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-600 pt-12 pb-6 px-6">
+      <div className="bg-gradient-to-r from-green-600 to-purple-600 pt-12 pb-6 px-6">
         <div className="flex items-center justify-between mb-6">
           <button
             onClick={onBack}
@@ -315,7 +315,7 @@ export const SelfAttendanceScreen: React.FC<SelfAttendanceScreenProps> = ({
             <button
               onClick={getCurrentLocation}
               disabled={locationLoading}
-              className="flex items-center space-x-2 text-blue-600 hover:text-blue-700 font-medium"
+              className="flex items-center space-x-2 text-green-600 hover:text-green-700 font-medium"
             >
               {locationLoading ? (
                 <Loader2 className="w-4 h-4 animate-spin" />
@@ -474,7 +474,7 @@ export const SelfAttendanceScreen: React.FC<SelfAttendanceScreenProps> = ({
           </div>
           <div className="bg-white rounded-2xl p-4 shadow-sm">
             <div className="text-center">
-              <p className="text-2xl font-bold text-blue-600">8.5</p>
+              <p className="text-2xl font-bold text-green-600">8.5</p>
               <p className="text-sm text-gray-600">Avg Hours</p>
             </div>
           </div>

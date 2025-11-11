@@ -66,7 +66,7 @@ export const TherapistProfileScreen: React.FC<TherapistProfileScreenProps> = ({ 
           <h2 className="text-lg font-semibold text-gray-900 mb-4">Languages</h2>
           <div className="flex flex-wrap gap-2">
             {profile.languages.map((lang, index) => (
-              <span key={index} className="px-3 py-1 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">{lang}</span>
+              <span key={index} className="px-3 py-1 bg-green-100 text-green-700 rounded-full text-sm font-medium">{lang}</span>
             ))}
           </div>
         </div>

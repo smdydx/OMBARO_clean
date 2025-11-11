@@ -39,7 +39,7 @@ export const TherapistTrackingScreen: React.FC<TherapistTrackingScreenProps> = (
       case 'on_way':
         return {
           icon: Navigation,
-          color: 'bg-blue-100 text-blue-700',
+          color: 'bg-green-100 text-green-700',
           label: 'On the way',
           message: 'Your therapist is heading to your location'
         };
@@ -101,19 +101,19 @@ export const TherapistTrackingScreen: React.FC<TherapistTrackingScreenProps> = (
           </div>
 
           {status === 'on_way' && (
-            <div className="bg-blue-50 rounded-xl p-4 flex items-center justify-between">
+            <div className="bg-green-50 rounded-xl p-4 flex items-center justify-between">
               <div className="flex items-center space-x-3">
-                <Clock className="w-5 h-5 text-blue-600" />
-                <span className="text-blue-900 font-medium">Estimated arrival</span>
+                <Clock className="w-5 h-5 text-green-600" />
+                <span className="text-green-900 font-medium">Estimated arrival</span>
               </div>
-              <span className="text-blue-900 font-bold text-lg">{estimatedArrival}</span>
+              <span className="text-green-900 font-bold text-lg">{estimatedArrival}</span>
             </div>
           )}
         </div>
 
         {/* Map Placeholder */}
         <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
-          <div className="relative h-64 bg-gradient-to-br from-blue-100 to-purple-100 flex items-center justify-center">
+          <div className="relative h-64 bg-gradient-to-br from-green-100 to-purple-100 flex items-center justify-center">
             <div className="text-center">
               <MapPin className="w-16 h-16 text-purple-600 mx-auto mb-3" />
               <p className="text-gray-700 font-medium">Live Map View</p>
@@ -213,8 +213,8 @@ export const TherapistTrackingScreen: React.FC<TherapistTrackingScreenProps> = (
         </div>
 
         {/* Demo Status Change Buttons */}
-        <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
-          <h4 className="text-sm font-semibold text-blue-900 mb-3">Demo Controls (For Testing)</h4>
+        <div className="bg-green-50 border border-green-200 rounded-xl p-4">
+          <h4 className="text-sm font-semibold text-green-900 mb-3">Demo Controls (For Testing)</h4>
           <div className="grid grid-cols-2 gap-2">
             <Button
               size="sm"

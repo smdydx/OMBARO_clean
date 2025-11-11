@@ -42,7 +42,7 @@ export const QuickActionsPanel: React.FC<QuickActionsPanelProps> = ({
               onClick={action.onClick}
               className={`group relative overflow-hidden rounded-xl p-4 text-left transition-all duration-200 ${
                 isPrimary
-                  ? 'bg-gradient-to-br from-blue-500 to-blue-600 text-white shadow-md hover:shadow-lg'
+                  ? 'bg-gradient-to-br from-green-500 to-green-600 text-white shadow-md hover:shadow-lg'
                   : 'bg-gray-50 hover:bg-gray-100 border border-gray-200'
               }`}
             >
@@ -51,12 +51,12 @@ export const QuickActionsPanel: React.FC<QuickActionsPanelProps> = ({
                   className={`flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center ${
                     isPrimary
                       ? 'bg-white/20'
-                      : action.color || 'bg-blue-100'
+                      : action.color || 'bg-green-100'
                   }`}
                 >
                   <Icon
                     className={`w-6 h-6 ${
-                      isPrimary ? 'text-white' : 'text-blue-600'
+                      isPrimary ? 'text-white' : 'text-green-600'
                     }`}
                   />
                 </div>
@@ -79,7 +79,7 @@ export const QuickActionsPanel: React.FC<QuickActionsPanelProps> = ({
               </div>
               <div
                 className={`absolute bottom-0 left-0 h-1 w-0 group-hover:w-full transition-all duration-300 ${
-                  isPrimary ? 'bg-white/30' : 'bg-blue-500'
+                  isPrimary ? 'bg-white/30' : 'bg-green-500'
                 }`}
               />
             </button>

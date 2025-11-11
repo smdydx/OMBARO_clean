@@ -153,7 +153,7 @@ export const VendorApplicationTracking: React.FC<VendorApplicationTrackingProps>
     const StatusIcon = statusInfo.icon;
 
     return (
-      <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
+      <div className="min-h-screen bg-gradient-to-br from-green-50 via-purple-50 to-pink-50">
         {/* Header */}
         <div className="bg-white/80 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-10">
           <div className="max-w-4xl mx-auto px-4 py-4">
@@ -225,7 +225,7 @@ export const VendorApplicationTracking: React.FC<VendorApplicationTrackingProps>
                     <div className="flex flex-col items-center">
                       <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
                         completed ? 'bg-green-500 text-white' :
-                        active ? 'bg-blue-500 text-white' :
+                        active ? 'bg-green-500 text-white' :
                         'bg-gray-200 text-gray-500'
                       }`}>
                         {completed ? <CheckCircle className="w-6 h-6" /> : stage.level}
@@ -236,7 +236,7 @@ export const VendorApplicationTracking: React.FC<VendorApplicationTrackingProps>
                     </div>
                     <div className="flex-1 pt-2">
                       <h4 className={`font-semibold ${
-                        active ? 'text-blue-600' :
+                        active ? 'text-green-600' :
                         completed ? 'text-green-600' :
                         'text-gray-600'
                       }`}>
@@ -303,7 +303,7 @@ export const VendorApplicationTracking: React.FC<VendorApplicationTrackingProps>
           )}
 
           {/* Help Section */}
-          <div className="bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl shadow-lg p-6 text-white">
+          <div className="bg-gradient-to-r from-green-500 to-purple-600 rounded-2xl shadow-lg p-6 text-white">
             <h3 className="text-lg font-semibold mb-2">Need Help?</h3>
             <p className="text-white/90 text-sm mb-4">
               If you have any questions about your application status, please contact our support team.
@@ -311,7 +311,7 @@ export const VendorApplicationTracking: React.FC<VendorApplicationTrackingProps>
             <div className="flex flex-wrap gap-3">
               <a
                 href="tel:+911234567890"
-                className="px-4 py-2 bg-white text-blue-600 rounded-lg font-medium text-sm hover:bg-blue-50 transition-colors"
+                className="px-4 py-2 bg-white text-green-600 rounded-lg font-medium text-sm hover:bg-green-50 transition-colors"
               >
                 Call Support
               </a>
@@ -329,7 +329,7 @@ export const VendorApplicationTracking: React.FC<VendorApplicationTrackingProps>
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 flex flex-col">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-purple-50 to-pink-50 flex flex-col">
       {/* Header */}
       <div className="bg-white/80 backdrop-blur-sm border-b border-gray-200">
         <div className="max-w-md mx-auto px-4 py-4">
@@ -348,7 +348,7 @@ export const VendorApplicationTracking: React.FC<VendorApplicationTrackingProps>
         <div className="w-full max-w-md">
           {/* Icon */}
           <div className="text-center mb-8">
-            <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+            <div className="w-16 h-16 bg-gradient-to-r from-green-600 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
               <Shield className="w-8 h-8 text-white" />
             </div>
             <h1 className="text-3xl font-bold text-gray-900 mb-2">
@@ -414,12 +414,12 @@ export const VendorApplicationTracking: React.FC<VendorApplicationTrackingProps>
           </form>
 
           {/* Info Card */}
-          <div className="mt-6 bg-blue-50 border border-blue-200 rounded-2xl p-4">
+          <div className="mt-6 bg-green-50 border border-green-200 rounded-2xl p-4">
             <div className="flex items-start gap-3">
-              <AlertCircle className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
+              <AlertCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
               <div>
-                <h3 className="font-semibold text-blue-900 mb-1">Important Note</h3>
-                <p className="text-sm text-blue-700">
+                <h3 className="font-semibold text-green-900 mb-1">Important Note</h3>
+                <p className="text-sm text-green-700">
                   Use the same mobile number and password that you provided during the application submission.
                   If you've forgotten your password, please contact our support team.
                 </p>

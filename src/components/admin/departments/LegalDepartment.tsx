@@ -12,7 +12,7 @@ export const LegalDepartment: React.FC<LegalDepartmentProps> = ({ onBack }) => {
 
   const stats = [
     { label: 'Active Cases', value: '4', icon: AlertCircle, color: 'bg-red-100 text-red-600', change: '1 urgent' },
-    { label: 'Contracts', value: '28', icon: FileText, color: 'bg-blue-100 text-blue-600', change: '5 pending review' },
+    { label: 'Contracts', value: '28', icon: FileText, color: 'bg-green-100 text-green-600', change: '5 pending review' },
     { label: 'Compliance', value: '98%', icon: Shield, color: 'bg-green-100 text-green-600', change: 'Up to date' },
     { label: 'Filings', value: '12', icon: Scale, color: 'bg-pink-100 text-pink-600', change: 'This quarter' }
   ];

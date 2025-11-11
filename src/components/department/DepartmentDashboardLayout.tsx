@@ -43,7 +43,7 @@ export const DepartmentDashboardLayout: React.FC<DepartmentDashboardLayoutProps>
   onLogout,
   activeModule = 'overview',
   onModuleChange,
-  headerColor = 'from-blue-600 to-indigo-600',
+  headerColor = 'from-green-600 to-indigo-600',
   headerGradient
 }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -176,12 +176,12 @@ export const DepartmentDashboardLayout: React.FC<DepartmentDashboardLayoutProps>
                     onClick={() => handleModuleClick(module.module_key, hasSubModules)}
                     className={`w-full flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-200 ${
                       isActive
-                        ? 'bg-blue-50 text-blue-600 shadow-sm'
+                        ? 'bg-green-50 text-green-600 shadow-sm'
                         : 'text-gray-700 hover:bg-gray-50'
                     }`}
                   >
                     <div className="flex items-center space-x-3">
-                      <div className={`${isActive ? 'text-blue-600' : 'text-gray-500'}`}>
+                      <div className={`${isActive ? 'text-green-600' : 'text-gray-500'}`}>
                         {getIconComponent(module.icon)}
                       </div>
                       <div className="text-left">
@@ -213,11 +213,11 @@ export const DepartmentDashboardLayout: React.FC<DepartmentDashboardLayoutProps>
                           }}
                           className={`w-full flex items-center space-x-3 px-3 py-2 rounded-lg transition-colors text-left ${
                             activeModule === subModule.module_key
-                              ? 'bg-blue-50 text-blue-600'
+                              ? 'bg-green-50 text-green-600'
                               : 'text-gray-600 hover:bg-gray-50'
                           }`}
                         >
-                          <div className={activeModule === subModule.module_key ? 'text-blue-600' : 'text-gray-400'}>
+                          <div className={activeModule === subModule.module_key ? 'text-green-600' : 'text-gray-400'}>
                             {getIconComponent(subModule.icon)}
                           </div>
                           <span className="text-sm font-medium">{subModule.module_name}</span>
@@ -233,8 +233,8 @@ export const DepartmentDashboardLayout: React.FC<DepartmentDashboardLayoutProps>
 
         <div className="border-t border-gray-200 p-4">
           <div className="flex items-center space-x-3 mb-3 px-3 py-2 bg-gray-50 rounded-lg">
-            <div className="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center">
-              <span className="text-blue-600 font-semibold text-sm">
+            <div className="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center">
+              <span className="text-green-600 font-semibold text-sm">
                 {user?.name?.[0]?.toUpperCase() || 'U'}
               </span>
             </div>

@@ -60,7 +60,7 @@ export const ContactPage: React.FC = () => {
       <MarketingHeader />
 
       <main className="pt-16">
-        <section className="relative bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 py-20 overflow-hidden">
+        <section className="relative bg-gradient-to-br from-green-50 via-purple-50 to-pink-50 py-20 overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-6">
               Contact Us
@@ -73,12 +73,12 @@ export const ContactPage: React.FC = () => {
           {/* Split Background with Rounded Edges */}
           <div className="absolute inset-0 -z-10 flex">
             <div className="w-4/5 bg-white"></div>
-            <div className="w-1/5 bg-gradient-to-br from-cyan-100 to-sky-200 rounded-l-[100px]"></div>
+            <div className="w-1/5 bg-gradient-to-br from-green-100 to-green-200 rounded-l-[100px]"></div>
           </div>
 
           {/* Decorative Circle */}
           <div className="absolute left-0 top-1/2 -translate-y-1/2 -z-5">
-            <div className="w-48 h-96 bg-gradient-to-r from-sky-200 to-cyan-200 rounded-r-full opacity-40"></div>
+            <div className="w-48 h-96 bg-gradient-to-r from-green-200 to-green-200 rounded-r-full opacity-40"></div>
           </div>
         </section>
 
@@ -163,7 +163,7 @@ export const ContactPage: React.FC = () => {
                       />
                     </div>
 
-                    <button type="submit" className="w-full bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center justify-center">
+                    <button type="submit" className="w-full bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center justify-center">
                       Send Message
                       <ArrowRight className="w-5 h-5 ml-2" />
                     </button>

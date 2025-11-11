@@ -121,7 +121,7 @@ export const SpaMassagePage: React.FC = () => {
       <MarketingHeader />
 
       <main className="pt-16">
-        <section className="relative py-20 bg-gradient-to-br from-emerald-600 via-teal-600 to-cyan-600 overflow-hidden">
+        <section className="relative py-20 bg-gradient-to-br from-emerald-600 via-teal-600 to-green-600 overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1920&q=90')] bg-cover bg-center opacity-30" />
           <div className="absolute inset-0 bg-gradient-to-b from-emerald-900/60 via-transparent to-teal-900/60" />
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -210,7 +210,7 @@ export const SpaMassagePage: React.FC = () => {
         <section className="py-24 bg-gradient-to-br from-white via-emerald-50/30 to-white relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1920&q=80')] bg-cover bg-center opacity-5" />
           <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-emerald-200/20 to-teal-200/20 rounded-full blur-3xl animate-float" />
-          <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tr from-teal-200/20 to-cyan-200/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '1.5s' }} />
+          <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-tr from-teal-200/20 to-green-200/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '1.5s' }} />
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16 animate-fade-in-up">
@@ -218,7 +218,7 @@ export const SpaMassagePage: React.FC = () => {
                 <Sparkles className="w-5 h-5 text-emerald-600" />
                 <span className="text-emerald-700 font-bold text-sm tracking-wider uppercase">Premium Facilities</span>
               </div>
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold bg-gradient-to-r from-emerald-600 via-teal-500 to-cyan-600 bg-clip-text text-transparent mb-6">
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold bg-gradient-to-r from-emerald-600 via-teal-500 to-green-600 bg-clip-text text-transparent mb-6">
                 Types of Spa Centers on Our Platform
               </h2>
               <p className="text-xl text-neutral-600 max-w-3xl mx-auto leading-relaxed">
@@ -296,7 +296,7 @@ export const SpaMassagePage: React.FC = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-gradient-to-br from-cyan-600 to-teal-600 text-white">
+        <section className="py-20 bg-gradient-to-br from-green-600 to-teal-600 text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Ready to Experience Ultimate Relaxation?
@@ -307,7 +307,7 @@ export const SpaMassagePage: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/app">
-                <button className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center">
+                <button className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center">
                   Book Spa Service
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </button>

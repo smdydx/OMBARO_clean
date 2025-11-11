@@ -58,7 +58,7 @@ export const AttendanceTracker: React.FC<AttendanceTrackerProps> = ({
       case ATTENDANCE_STATUS.ABSENT:
         return <XCircle className="w-5 h-5 text-red-600" />;
       case ATTENDANCE_STATUS.HALF_DAY:
-        return <Coffee className="w-5 h-5 text-blue-600" />;
+        return <Coffee className="w-5 h-5 text-green-600" />;
       case ATTENDANCE_STATUS.LEAVE:
         return <AlertCircle className="w-5 h-5 text-purple-600" />;
       default:
@@ -75,7 +75,7 @@ export const AttendanceTracker: React.FC<AttendanceTrackerProps> = ({
       case ATTENDANCE_STATUS.ABSENT:
         return 'bg-red-100 text-red-700';
       case ATTENDANCE_STATUS.HALF_DAY:
-        return 'bg-blue-100 text-blue-700';
+        return 'bg-green-100 text-green-700';
       case ATTENDANCE_STATUS.LEAVE:
         return 'bg-purple-100 text-purple-700';
       default:
@@ -235,10 +235,10 @@ export const AttendanceTracker: React.FC<AttendanceTrackerProps> = ({
                         </button>
                         <button
                           onClick={() => handleMarkAttendance(employee.id, ATTENDANCE_STATUS.HALF_DAY)}
-                          className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center hover:bg-blue-200 transition-colors"
+                          className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center hover:bg-green-200 transition-colors"
                           title="Half Day"
                         >
-                          <Coffee className="w-4 h-4 text-blue-600" />
+                          <Coffee className="w-4 h-4 text-green-600" />
                         </button>
                         <button
                           onClick={() => handleMarkAttendance(employee.id, ATTENDANCE_STATUS.LEAVE)}

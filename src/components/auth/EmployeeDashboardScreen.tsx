@@ -29,7 +29,7 @@ export const EmployeeDashboardScreen: React.FC<EmployeeDashboardScreenProps> = (
     { label: 'Total Spas', value: '47', icon: MapPin, color: 'bg-purple-100 text-purple-600', change: '+5 this month' },
     { label: 'Active Vendors', value: '32', icon: Users, color: 'bg-green-100 text-green-600', change: '+3 this week' },
     { label: 'Pending Approvals', value: '8', icon: AlertCircle, color: 'bg-orange-100 text-orange-600', change: '2 urgent' },
-    { label: 'Monthly Revenue', value: '₹2.4L', icon: TrendingUp, color: 'bg-blue-100 text-blue-600', change: '+12% growth' },
+    { label: 'Monthly Revenue', value: '₹2.4L', icon: TrendingUp, color: 'bg-green-100 text-green-600', change: '+12% growth' },
   ];
 
   const recentSpas = [
@@ -49,7 +49,7 @@ export const EmployeeDashboardScreen: React.FC<EmployeeDashboardScreenProps> = (
     switch (status) {
       case 'Active': return 'bg-green-100 text-green-700';
       case 'Pending': return 'bg-yellow-100 text-yellow-700';
-      case 'Review': return 'bg-blue-100 text-blue-700';
+      case 'Review': return 'bg-green-100 text-green-700';
       default: return 'bg-gray-100 text-gray-700';
     }
   };
@@ -339,8 +339,8 @@ export const EmployeeDashboardScreen: React.FC<EmployeeDashboardScreenProps> = (
                     </div>
                     
                     <div className="flex items-center space-x-3 sm:space-x-4 p-3 bg-gray-50 rounded-xl">
-                      <div className="w-8 sm:w-10 h-8 sm:h-10 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <Edit className="w-5 h-5 text-blue-600" />
+                      <div className="w-8 sm:w-10 h-8 sm:h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <Edit className="w-5 h-5 text-green-600" />
                       </div>
                       <div className="flex-1">
                         <p className="text-sm sm:text-base font-medium text-gray-900">Bliss Spa details updated</p>
@@ -398,8 +398,8 @@ export const EmployeeDashboardScreen: React.FC<EmployeeDashboardScreenProps> = (
                         </div>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <button className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center hover:bg-blue-200 transition-colors">
-                          <Eye className="w-4 h-4 text-blue-600" />
+                        <button className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center hover:bg-green-200 transition-colors">
+                          <Eye className="w-4 h-4 text-green-600" />
                         </button>
                         <button className="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-gray-200 transition-colors">
                           <Edit className="w-4 h-4 text-gray-600" />
@@ -473,7 +473,7 @@ export const EmployeeDashboardScreen: React.FC<EmployeeDashboardScreenProps> = (
                     </div>
                   </div>
 
-                  <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-6">
+                  <div className="bg-gradient-to-r from-green-50 to-indigo-50 rounded-xl p-6">
                     <h4 className="font-semibold text-gray-900 mb-4">Team Performance</h4>
                     <div className="space-y-3">
                       <div className="flex justify-between">

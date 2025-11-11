@@ -155,7 +155,7 @@ export const UserManagementScreen: React.FC<UserManagementScreenProps> = ({
   };
 
   const stats = [
-    { label: 'Total Users', value: users.length.toString(), icon: Users, color: 'bg-blue-100 text-blue-600' },
+    { label: 'Total Users', value: users.length.toString(), icon: Users, color: 'bg-green-100 text-green-600' },
     { label: 'Active Users', value: users.filter(u => u.status === 'active').length.toString(), icon: UserCheck, color: 'bg-green-100 text-green-600' },
     { label: 'Departments', value: new Set(users.map(u => u.role)).size.toString(), icon: Shield, color: 'bg-purple-100 text-purple-600' },
     { label: 'New This Month', value: '12', icon: Calendar, color: 'bg-orange-100 text-orange-600' },
@@ -295,7 +295,7 @@ export const UserManagementScreen: React.FC<UserManagementScreenProps> = ({
                       </div>
                     </td>
                     <td className="py-4 px-6">
-                      <span className="px-3 py-1 bg-blue-100 text-blue-700 rounded-lg text-sm font-medium">
+                      <span className="px-3 py-1 bg-green-100 text-green-700 rounded-lg text-sm font-medium">
                         {getRoleDisplayName(user.role)}
                       </span>
                     </td>
@@ -319,10 +319,10 @@ export const UserManagementScreen: React.FC<UserManagementScreenProps> = ({
                       <div className="flex items-center justify-center space-x-2">
                         <button
                           onClick={() => onNavigate('userForm', { mode: 'view', user })}
-                          className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center hover:bg-blue-200 transition-colors"
+                          className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center hover:bg-green-200 transition-colors"
                           title="View Details"
                         >
-                          <Eye className="w-4 h-4 text-blue-600" />
+                          <Eye className="w-4 h-4 text-green-600" />
                         </button>
                         <button
                           onClick={() => onNavigate('userForm', { mode: 'edit', user })}

@@ -16,7 +16,7 @@ export const VendorDashboardScreen: React.FC<VendorDashboardScreenProps> = ({
   const [activeTab, setActiveTab] = useState('overview');
 
   const stats = [
-    { label: 'Active Services', value: '24', icon: Package, color: 'bg-blue-100 text-blue-600', change: '+3 this month' },
+    { label: 'Active Services', value: '24', icon: Package, color: 'bg-green-100 text-green-600', change: '+3 this month' },
     { label: 'Monthly Revenue', value: '₹45,280', icon: DollarSign, color: 'bg-green-100 text-green-600', change: '+18% growth' },
     { label: 'Total Bookings', value: '156', icon: Calendar, color: 'bg-purple-100 text-purple-600', change: '+12 this week' },
     { label: 'Customer Rating', value: '4.8', icon: Star, color: 'bg-yellow-100 text-yellow-600', change: '98% positive' },
@@ -64,7 +64,7 @@ export const VendorDashboardScreen: React.FC<VendorDashboardScreenProps> = ({
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-gradient-to-r from-blue-600 to-purple-600 pt-12 pb-6 px-6">
+      <div className="bg-gradient-to-r from-green-600 to-purple-600 pt-12 pb-6 px-6">
         <div className="flex items-center justify-between mb-6">
           <div>
             <h1 className="text-2xl font-bold text-white">Vendor Portal</h1>
@@ -116,7 +116,7 @@ export const VendorDashboardScreen: React.FC<VendorDashboardScreenProps> = ({
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex-shrink-0 py-4 px-6 text-sm font-medium transition-colors ${
                   activeTab === tab.id
-                    ? 'text-blue-600 border-b-2 border-blue-600'
+                    ? 'text-green-600 border-b-2 border-green-600'
                     : 'text-gray-600 hover:text-gray-900'
                 }`}
               >
@@ -229,13 +229,13 @@ export const VendorDashboardScreen: React.FC<VendorDashboardScreenProps> = ({
                   <h3 className="text-lg font-semibold text-gray-900 mb-4">Today's Schedule</h3>
                   <div className="space-y-3">
                     {upcomingBookings.filter(booking => booking.date === 'Today').map((booking) => (
-                      <div key={booking.id} className="flex items-center justify-between p-4 bg-gray-50 rounded-xl border-l-4 border-l-transparent hover:border-l-blue-500 transition-all">
+                      <div key={booking.id} className="flex items-center justify-between p-4 bg-gray-50 rounded-xl border-l-4 border-l-transparent hover:border-l-green-500 transition-all">
                         <div className="flex items-center space-x-4 flex-1">
                           <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
-                            booking.type === 'at_home' ? 'bg-blue-100' : 'bg-pink-100'
+                            booking.type === 'at_home' ? 'bg-green-100' : 'bg-pink-100'
                           }`}>
                             {booking.type === 'at_home' ? (
-                              <Home className="w-6 h-6 text-blue-600" />
+                              <Home className="w-6 h-6 text-green-600" />
                             ) : (
                               <Building2 className="w-6 h-6 text-pink-600" />
                             )}
@@ -245,7 +245,7 @@ export const VendorDashboardScreen: React.FC<VendorDashboardScreenProps> = ({
                               <h4 className="font-semibold text-gray-900">{booking.service}</h4>
                               <span className={`px-2 py-0.5 rounded-md text-xs font-medium ${
                                 booking.type === 'at_home'
-                                  ? 'bg-blue-100 text-blue-700'
+                                  ? 'bg-green-100 text-green-700'
                                   : 'bg-pink-100 text-pink-700'
                               }`}>
                                 {booking.type === 'at_home' ? 'At Home' : 'Spa Visit'}
@@ -306,8 +306,8 @@ export const VendorDashboardScreen: React.FC<VendorDashboardScreenProps> = ({
                         </div>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <button className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center hover:bg-blue-200 transition-colors">
-                          <Eye className="w-4 h-4 text-blue-600" />
+                        <button className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center hover:bg-green-200 transition-colors">
+                          <Eye className="w-4 h-4 text-green-600" />
                         </button>
                         <button className="w-8 h-8 bg-gray-100 rounded-lg flex items-center justify-center hover:bg-gray-200 transition-colors">
                           <Edit className="w-4 h-4 text-gray-600" />
@@ -351,8 +351,8 @@ export const VendorDashboardScreen: React.FC<VendorDashboardScreenProps> = ({
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div className="bg-white border border-gray-200 rounded-xl p-4">
                     <div className="text-center">
-                      <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                        <Users className="w-6 h-6 text-blue-600" />
+                      <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                        <Users className="w-6 h-6 text-green-600" />
                       </div>
                       <p className="text-2xl font-bold text-gray-900">5</p>
                       <p className="text-sm text-gray-600">Active Therapists</p>
@@ -468,7 +468,7 @@ export const VendorDashboardScreen: React.FC<VendorDashboardScreenProps> = ({
                 <h3 className="text-lg font-semibold text-gray-900">Performance Analytics</h3>
                 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-6">
+                  <div className="bg-gradient-to-r from-green-50 to-purple-50 rounded-xl p-6">
                     <h4 className="font-semibold text-gray-900 mb-4">Revenue Trends</h4>
                     <div className="space-y-3">
                       <div className="flex justify-between">
@@ -486,7 +486,7 @@ export const VendorDashboardScreen: React.FC<VendorDashboardScreenProps> = ({
                     </div>
                   </div>
 
-                  <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-xl p-6">
+                  <div className="bg-gradient-to-r from-green-50 to-green-50 rounded-xl p-6">
                     <h4 className="font-semibold text-gray-900 mb-4">Service Performance</h4>
                     <div className="space-y-3">
                       <div className="flex justify-between">

@@ -86,7 +86,7 @@ export const MyAssignmentsScreen: React.FC<MyAssignmentsScreenProps> = ({
 
   const getStatusColor = (status: string) => {
     switch (status) {
-      case 'assigned': return 'bg-blue-100 text-blue-700';
+      case 'assigned': return 'bg-green-100 text-green-700';
       case 'in_progress': return 'bg-yellow-100 text-yellow-700';
       case 'completed': return 'bg-green-100 text-green-700';
       case 'cancelled': return 'bg-red-100 text-red-700';
@@ -190,7 +190,7 @@ export const MyAssignmentsScreen: React.FC<MyAssignmentsScreenProps> = ({
                       <StatusIcon className="w-4 h-4" />
                       <span className="capitalize">{assignment.status?.replace('_', ' ')}</span>
                     </span>
-                    <span className={`inline-flex items-center space-x-1 px-2 py-1 rounded-md text-xs font-medium ${(assignment as any).service_type === 'at_home' ? 'bg-blue-100 text-blue-700' : 'bg-pink-100 text-pink-700'}`}>
+                    <span className={`inline-flex items-center space-x-1 px-2 py-1 rounded-md text-xs font-medium ${(assignment as any).service_type === 'at_home' ? 'bg-green-100 text-green-700' : 'bg-pink-100 text-pink-700'}`}>
                       {(assignment as any).service_type === 'at_home' ? (
                         <><Home className="w-3 h-3" /><span>At Home</span></>
                       ) : (

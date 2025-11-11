@@ -144,7 +144,7 @@ export const HRDocumentsScreen: React.FC<HRDocumentsScreenProps> = ({
     switch (type) {
       case 'offer_letter':
       case 'appointment_letter':
-        return <FileText className="w-5 h-5 text-blue-600" />;
+        return <FileText className="w-5 h-5 text-green-600" />;
       case 'contract':
         return <FileText className="w-5 h-5 text-purple-600" />;
       case 'increment_letter':
@@ -249,8 +249,8 @@ export const HRDocumentsScreen: React.FC<HRDocumentsScreenProps> = ({
                         </div>
                       </div>
                       <div className="flex items-center space-x-2">
-                        <button className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center hover:bg-blue-200 transition-colors">
-                          <Eye className="w-4 h-4 text-blue-600" />
+                        <button className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center hover:bg-green-200 transition-colors">
+                          <Eye className="w-4 h-4 text-green-600" />
                         </button>
                         <button className="w-8 h-8 bg-green-100 rounded-lg flex items-center justify-center hover:bg-green-200 transition-colors">
                           <Download className="w-4 h-4 text-green-600" />
@@ -341,8 +341,8 @@ export const HRDocumentsScreen: React.FC<HRDocumentsScreenProps> = ({
               
               {/* Performance Summary */}
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                <div className="text-center p-4 bg-blue-50 rounded-xl">
-                  <p className="text-3xl font-bold text-blue-600">4.2</p>
+                <div className="text-center p-4 bg-green-50 rounded-xl">
+                  <p className="text-3xl font-bold text-green-600">4.2</p>
                   <p className="text-sm text-gray-600">Overall Rating</p>
                 </div>
                 <div className="text-center p-4 bg-green-50 rounded-xl">

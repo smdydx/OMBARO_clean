@@ -66,7 +66,7 @@ export default function VendorApprovalScreen({ onNavigate }: VendorApprovalScree
   function getStatusBadge(status: string) {
     const badges = {
       pending: { bg: 'bg-yellow-100', text: 'text-yellow-800', icon: Clock },
-      under_review: { bg: 'bg-blue-100', text: 'text-blue-800', icon: Eye },
+      under_review: { bg: 'bg-green-100', text: 'text-green-800', icon: Eye },
       approved: { bg: 'bg-green-100', text: 'text-green-800', icon: CheckCircle },
       rejected: { bg: 'bg-red-100', text: 'text-red-800', icon: XCircle },
       additional_info_required: { bg: 'bg-orange-100', text: 'text-orange-800', icon: AlertCircle }
@@ -159,7 +159,7 @@ export default function VendorApprovalScreen({ onNavigate }: VendorApprovalScree
         {/* Loading State */}
         {fetchLoading && (
           <div className="bg-white rounded-lg shadow p-8 text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600 mx-auto mb-4"></div>
             <p className="text-gray-600">Loading applications...</p>
           </div>
         )}
@@ -201,9 +201,9 @@ export default function VendorApprovalScreen({ onNavigate }: VendorApprovalScree
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm text-gray-600">Under Review</p>
-                <p className="text-2xl font-bold text-blue-600">{stats.underReview}</p>
+                <p className="text-2xl font-bold text-green-600">{stats.underReview}</p>
               </div>
-              <Eye className="w-8 h-8 text-blue-600" />
+              <Eye className="w-8 h-8 text-green-600" />
             </div>
           </div>
 
@@ -238,7 +238,7 @@ export default function VendorApprovalScreen({ onNavigate }: VendorApprovalScree
                 placeholder="Search by business name, contact person, or email..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
               />
             </div>
 
@@ -247,7 +247,7 @@ export default function VendorApprovalScreen({ onNavigate }: VendorApprovalScree
               <select
                 value={statusFilter}
                 onChange={(e) => setStatusFilter(e.target.value)}
-                className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
               >
                 <option value="all">All Status</option>
                 <option value="pending">Pending</option>
@@ -350,7 +350,7 @@ export default function VendorApprovalScreen({ onNavigate }: VendorApprovalScree
               {/* Business Info */}
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2">
-                  <Building className="w-5 h-5 text-blue-600" />
+                  <Building className="w-5 h-5 text-green-600" />
                   Business Information
                 </h3>
                 <div className="grid grid-cols-2 gap-4 bg-gray-50 p-4 rounded-lg">
@@ -481,7 +481,7 @@ export default function VendorApprovalScreen({ onNavigate }: VendorApprovalScree
                       value={actionNote}
                       onChange={(e) => setActionNote(e.target.value)}
                       rows={4}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
                       placeholder={
                         actionType === 'approve' ? 'Add any notes for approval...' :
                         actionType === 'reject' ? 'Please provide a reason for rejection...' :

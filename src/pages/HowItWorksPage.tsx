@@ -90,10 +90,10 @@ export const HowItWorksPage: React.FC = () => {
       <MarketingHeader />
 
       <main className="pt-16">
-        <section className="relative bg-gradient-to-br from-cyan-50 via-white to-cyan-50/30 py-20 overflow-hidden">
+        <section className="relative bg-gradient-to-br from-green-50 via-white to-green-50/30 py-20 overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-light text-gray-800 mb-6 leading-tight">
-              How It <span className="font-normal text-cyan-600 whitespace-nowrap">Works</span>
+              How It <span className="font-normal text-green-600 whitespace-nowrap">Works</span>
             </h1>
             <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
               Simple, fast, and convenient. Book your beauty and wellness services in just a few steps.
@@ -103,12 +103,12 @@ export const HowItWorksPage: React.FC = () => {
           {/* Split Background with Rounded Edges */}
           <div className="absolute inset-0 -z-10 flex">
             <div className="w-4/5 bg-white"></div>
-            <div className="w-1/5 bg-gradient-to-br from-cyan-100 to-sky-200 rounded-l-[100px]"></div>
+            <div className="w-1/5 bg-gradient-to-br from-green-100 to-green-200 rounded-l-[100px]"></div>
           </div>
 
           {/* Decorative Circle */}
           <div className="absolute left-0 top-1/2 -translate-y-1/2 -z-5">
-            <div className="w-48 h-96 bg-gradient-to-r from-sky-200 to-cyan-200 rounded-r-full opacity-40"></div>
+            <div className="w-48 h-96 bg-gradient-to-r from-green-200 to-green-200 rounded-r-full opacity-40"></div>
           </div>
         </section>
 
@@ -237,12 +237,12 @@ export const HowItWorksPage: React.FC = () => {
           </div>
         </section>
 
-        <section className="relative overflow-hidden py-20 bg-gradient-to-b from-sky-50 via-cyan-50 to-white rounded-tl-[50px] rounded-tr-[50px]">
+        <section className="relative overflow-hidden py-20 bg-gradient-to-b from-green-50 via-green-50 to-white rounded-tl-[50px] rounded-tr-[50px]">
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-0 left-0 w-full h-full">
               <div className="animate-pulse">
                 <svg className="w-full h-full" viewBox="0 0 1440 320" preserveAspectRatio="none">
-                  <path fill="currentColor" fillOpacity="0.3" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,106.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" className="text-sky-400"></path>
+                  <path fill="currentColor" fillOpacity="0.3" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,106.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" className="text-green-400"></path>
                 </svg>
               </div>
             </div>
@@ -259,10 +259,10 @@ export const HowItWorksPage: React.FC = () => {
                   track your appointments, and enjoy exclusive app-only offers.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button className="bg-gradient-to-r from-sky-500 to-cyan-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-xl transition-all duration-300 shadow-lg">
+                  <button className="bg-gradient-to-r from-green-500 to-green-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-xl transition-all duration-300 shadow-lg">
                     Download for iOS
                   </button>
-                  <button className="bg-gradient-to-r from-sky-500 to-cyan-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-xl transition-all duration-300 shadow-lg">
+                  <button className="bg-gradient-to-r from-green-500 to-green-500 text-white px-6 py-3 rounded-full font-semibold hover:shadow-xl transition-all duration-300 shadow-lg">
                     Download for Android
                   </button>
                 </div>
@@ -270,7 +270,7 @@ export const HowItWorksPage: React.FC = () => {
               <div className="flex justify-center">
                 <div className="relative">
                   <div className="w-64 h-64 bg-white/30 rounded-3xl backdrop-blur-sm flex items-center justify-center shadow-lg">
-                    <Smartphone className="w-32 h-32 text-sky-600/50" />
+                    <Smartphone className="w-32 h-32 text-green-600/50" />
                   </div>
                 </div>
               </div>
@@ -293,7 +293,7 @@ export const HowItWorksPage: React.FC = () => {
                 </Button>
               </Link>
               <Link to="/app">
-                <button className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center">
+                <button className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center">
                   Get Started Now
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </button>

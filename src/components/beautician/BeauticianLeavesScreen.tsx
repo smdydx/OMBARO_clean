@@ -116,13 +116,13 @@ export const BeauticianLeavesScreen: React.FC<BeauticianLeavesScreenProps> = ({
           <h2 className="text-base font-semibold text-gray-900 mb-4">Leave Balance</h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <div className="bg-blue-50 border border-blue-200 rounded-xl p-3">
-              <p className="text-sm text-blue-700 font-medium mb-2">Casual Leave</p>
+            <div className="bg-green-50 border border-green-200 rounded-xl p-3">
+              <p className="text-sm text-green-700 font-medium mb-2">Casual Leave</p>
               <div className="flex items-baseline space-x-1">
-                <span className="text-2xl font-bold text-blue-900">{leaveBalance.casual.remaining}</span>
-                <span className="text-sm text-blue-600">/ {leaveBalance.casual.total} days</span>
+                <span className="text-2xl font-bold text-green-900">{leaveBalance.casual.remaining}</span>
+                <span className="text-sm text-green-600">/ {leaveBalance.casual.total} days</span>
               </div>
-              <p className="text-xs text-blue-600 mt-1">{leaveBalance.casual.used} used</p>
+              <p className="text-xs text-green-600 mt-1">{leaveBalance.casual.used} used</p>
             </div>
 
             <div className="bg-green-50 border border-green-200 rounded-xl p-3">

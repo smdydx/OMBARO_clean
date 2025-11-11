@@ -78,7 +78,7 @@ export const BeauticianDashboardScreen: React.FC<BeauticianDashboardScreenProps>
       label: 'Today\'s Appointments',
       value: todayAssignments.length.toString(),
       icon: Calendar,
-      color: 'bg-blue-100 text-blue-600',
+      color: 'bg-green-100 text-green-600',
       change: '3 pending'
     },
     {
@@ -163,8 +163,8 @@ export const BeauticianDashboardScreen: React.FC<BeauticianDashboardScreenProps>
               onClick={() => onNavigate('beauticianAssignments')}
               className="flex flex-col items-center space-y-2 p-4 rounded-xl border-2 border-gray-200 hover:border-pink-300 hover:bg-pink-50 transition-all"
             >
-              <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center">
-                <Calendar className="w-6 h-6 text-blue-600" />
+              <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center">
+                <Calendar className="w-6 h-6 text-green-600" />
               </div>
               <span className="text-sm font-medium text-gray-900">Appointments</span>
             </button>
@@ -261,7 +261,7 @@ export const BeauticianDashboardScreen: React.FC<BeauticianDashboardScreenProps>
                         <h3 className="font-semibold text-gray-900">{assignment.customer_name || 'Customer Name'}</h3>
                         <span className={`px-2 py-0.5 rounded-md text-xs font-medium flex items-center space-x-1 ${
                           assignment.service_type === 'at_home'
-                            ? 'bg-blue-100 text-blue-700'
+                            ? 'bg-green-100 text-green-700'
                             : 'bg-pink-100 text-pink-700'
                         }`}>
                           {assignment.service_type === 'at_home' ? (
@@ -278,7 +278,7 @@ export const BeauticianDashboardScreen: React.FC<BeauticianDashboardScreenProps>
                       </p>
                     </div>
                     <span className={`text-xs px-3 py-1 rounded-full font-medium whitespace-nowrap ${
-                      assignment.status === 'assigned' ? 'bg-blue-100 text-blue-700' :
+                      assignment.status === 'assigned' ? 'bg-green-100 text-green-700' :
                       assignment.status === 'in_progress' ? 'bg-yellow-100 text-yellow-700' :
                       assignment.status === 'completed' ? 'bg-green-100 text-green-700' :
                       'bg-red-100 text-red-700'

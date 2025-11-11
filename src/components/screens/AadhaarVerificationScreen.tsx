@@ -119,7 +119,7 @@ export const AadhaarVerificationScreen: React.FC<AadhaarVerificationScreenProps>
   const maskedAadhaar = aadhaarNumber.replace(/(\d{4})(\d{4})(\d{4})/, 'XXXX XXXX $3');
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 flex flex-col">
+    <div className="min-h-screen bg-gradient-to-br from-green-50 via-indigo-50 to-purple-50 flex flex-col">
       {/* Header */}
       <div className="flex items-center justify-between p-6">
         <button
@@ -140,7 +140,7 @@ export const AadhaarVerificationScreen: React.FC<AadhaarVerificationScreenProps>
         <div className="max-w-md mx-auto w-full">
           {/* Icon */}
           <div className="text-center mb-8">
-            <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+            <div className="w-16 h-16 bg-gradient-to-r from-green-600 to-indigo-600 rounded-2xl flex items-center justify-center mx-auto mb-4 shadow-lg">
               <Shield className="w-8 h-8 text-white" />
             </div>
             <h2 className="text-2xl font-bold text-gray-900 mb-2">
@@ -216,9 +216,9 @@ export const AadhaarVerificationScreen: React.FC<AadhaarVerificationScreenProps>
                     }}
                     className={`
                       w-12 h-12 text-center text-xl font-bold border-2 rounded-xl transition-all duration-200
-                      ${digit ? 'border-blue-500 bg-blue-50' : 'border-gray-300'}
+                      ${digit ? 'border-green-500 bg-green-50' : 'border-gray-300'}
                       ${error ? 'border-red-500' : ''}
-                      focus:border-blue-500 focus:ring-2 focus:ring-blue-200 focus:outline-none
+                      focus:border-green-500 focus:ring-2 focus:ring-green-200 focus:outline-none
                     `}
                   />
                 ))}
@@ -233,14 +233,14 @@ export const AadhaarVerificationScreen: React.FC<AadhaarVerificationScreenProps>
                 {canResend ? (
                   <button
                     onClick={handleResendOtp}
-                    className="inline-flex items-center space-x-2 text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200"
+                    className="inline-flex items-center space-x-2 text-green-600 hover:text-green-700 font-medium transition-colors duration-200"
                   >
                     <RotateCcw className="w-4 h-4" />
                     <span>Resend OTP</span>
                   </button>
                 ) : (
                   <p className="text-gray-500">
-                    Resend OTP in <span className="font-semibold text-blue-600">{timer}s</span>
+                    Resend OTP in <span className="font-semibold text-green-600">{timer}s</span>
                   </p>
                 )}
               </div>

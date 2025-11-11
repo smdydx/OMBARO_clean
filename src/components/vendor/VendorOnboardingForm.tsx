@@ -195,10 +195,10 @@ export const VendorOnboardingForm: React.FC<VendorOnboardingFormProps> = ({ onSu
           <div className="flex items-center justify-between">
             {[1, 2, 3].map((s) => (
               <div key={s} className="flex items-center">
-                <div className={`w-10 h-10 rounded-full flex items-center justify-center ${step >= s ? 'bg-blue-600 text-white' : 'bg-gray-200 text-gray-600'}`}>
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center ${step >= s ? 'bg-green-600 text-white' : 'bg-gray-200 text-gray-600'}`}>
                   {s}
                 </div>
-                {s < 3 && <div className={`w-32 h-1 ${step > s ? 'bg-blue-600' : 'bg-gray-200'}`} />}
+                {s < 3 && <div className={`w-32 h-1 ${step > s ? 'bg-green-600' : 'bg-gray-200'}`} />}
               </div>
             ))}
           </div>
@@ -216,7 +216,7 @@ export const VendorOnboardingForm: React.FC<VendorOnboardingFormProps> = ({ onSu
               <div
                 key={type.value}
                 onClick={() => setFormData({ ...formData, partnerType: type.value })}
-                className={`p-6 border-2 rounded-xl cursor-pointer transition-all ${formData.partnerType === type.value ? 'border-blue-600 bg-blue-50' : 'border-gray-200 hover:border-gray-300'}`}
+                className={`p-6 border-2 rounded-xl cursor-pointer transition-all ${formData.partnerType === type.value ? 'border-green-600 bg-green-50' : 'border-gray-200 hover:border-gray-300'}`}
               >
                 <div className="flex items-start justify-between">
                   <div>
@@ -224,7 +224,7 @@ export const VendorOnboardingForm: React.FC<VendorOnboardingFormProps> = ({ onSu
                     <p className="text-sm text-gray-600 mt-1">{type.desc}</p>
                   </div>
                   {formData.partnerType === type.value && (
-                    <CheckCircle className="w-6 h-6 text-blue-600" />
+                    <CheckCircle className="w-6 h-6 text-green-600" />
                   )}
                 </div>
               </div>
@@ -251,7 +251,7 @@ export const VendorOnboardingForm: React.FC<VendorOnboardingFormProps> = ({ onSu
                 <select
                   value={formData.businessType}
                   onChange={(e) => setFormData({ ...formData, businessType: e.target.value })}
-                  className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500"
+                  className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500"
                 >
                   <option value="spa">Spa</option>
                   <option value="salon">Salon</option>
@@ -284,12 +284,12 @@ export const VendorOnboardingForm: React.FC<VendorOnboardingFormProps> = ({ onSu
               required
             />
 
-            <div className="col-span-2 bg-blue-50 border border-blue-200 rounded-xl p-4">
-              <h3 className="font-semibold text-blue-900 mb-2 flex items-center gap-2">
+            <div className="col-span-2 bg-green-50 border border-green-200 rounded-xl p-4">
+              <h3 className="font-semibold text-green-900 mb-2 flex items-center gap-2">
                 <Lock className="w-5 h-5" />
                 Set Your Login Password
               </h3>
-              <p className="text-sm text-blue-700 mb-4">
+              <p className="text-sm text-green-700 mb-4">
                 You'll use your mobile number and this password to login and track your application status.
               </p>
 
@@ -436,7 +436,7 @@ export const VendorOnboardingForm: React.FC<VendorOnboardingFormProps> = ({ onSu
               <textarea
                 value={formData.description}
                 onChange={(e) => setFormData({ ...formData, description: e.target.value })}
-                className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-blue-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-xl focus:ring-2 focus:ring-green-500"
                 rows={4}
               />
             </div>
@@ -498,9 +498,9 @@ export const VendorOnboardingForm: React.FC<VendorOnboardingFormProps> = ({ onSu
               </div>
             </div>
 
-            <div className="bg-blue-50 p-4 rounded-xl">
-              <h3 className="font-semibold text-blue-900 mb-2">What Happens Next?</h3>
-              <ul className="text-sm text-blue-800 space-y-2">
+            <div className="bg-green-50 p-4 rounded-xl">
+              <h3 className="font-semibold text-green-900 mb-2">What Happens Next?</h3>
+              <ul className="text-sm text-green-800 space-y-2">
                 <li>• You can login with your mobile number ({formData.contactMobile}) and password to track application status</li>
                 <li>• Field Officer will review your application within 24-48 hours</li>
                 <li>• Application will go through Manager and Director approval</li>

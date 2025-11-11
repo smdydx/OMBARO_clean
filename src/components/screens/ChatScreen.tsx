@@ -173,9 +173,9 @@ export const ChatScreen: React.FC<ChatScreenProps> = ({
               <button
                 onClick={onVideoCall}
                 aria-label="Start video call"
-                className="w-10 h-10 bg-blue-100 rounded-xl flex items-center justify-center hover:bg-blue-200 transition-colors"
+                className="w-10 h-10 bg-green-100 rounded-xl flex items-center justify-center hover:bg-green-200 transition-colors"
               >
-                <Video className="w-5 h-5 text-blue-600" />
+                <Video className="w-5 h-5 text-green-600" />
               </button>
             )}
             

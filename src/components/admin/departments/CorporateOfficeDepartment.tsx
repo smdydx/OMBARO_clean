@@ -12,7 +12,7 @@ export const CorporateOfficeDepartment: React.FC<CorporateOfficeDepartmentProps>
 
   const stats = [
     { label: 'Office Locations', value: '3', icon: MapPin, color: 'bg-stone-100 text-stone-600', change: 'Active locations' },
-    { label: 'Total Staff', value: '120', icon: Users, color: 'bg-blue-100 text-blue-600', change: 'All branches' },
+    { label: 'Total Staff', value: '120', icon: Users, color: 'bg-green-100 text-green-600', change: 'All branches' },
     { label: 'Coordination', value: '98%', icon: TrendingUp, color: 'bg-green-100 text-green-600', change: 'Efficiency rate' },
     { label: 'Branches', value: '3', icon: Building2, color: 'bg-gray-100 text-gray-600', change: 'Operating' }
   ];

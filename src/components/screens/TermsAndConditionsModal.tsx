@@ -47,8 +47,8 @@ export const TermsAndConditionsModal: React.FC<TermsAndConditionsModalProps> = (
             {/* Section 1: Scope of Service */}
             <div className="space-y-3">
               <div className="flex items-center space-x-2">
-                <div className="w-6 h-6 bg-blue-100 rounded-full flex items-center justify-center">
-                  <span className="text-blue-600 font-bold text-sm">1</span>
+                <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
+                  <span className="text-green-600 font-bold text-sm">1</span>
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900">Scope of Service</h3>
               </div>

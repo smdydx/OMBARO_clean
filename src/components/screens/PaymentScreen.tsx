@@ -21,7 +21,7 @@ export const PaymentScreen: React.FC<PaymentScreenProps> = ({
     {
       value: 'card',
       label: 'Credit/Debit Card',
-      icon: <CreditCard className="w-5 h-5 text-blue-600" />
+      icon: <CreditCard className="w-5 h-5 text-green-600" />
     },
     {
       value: 'upi',

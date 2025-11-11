@@ -7,7 +7,7 @@ interface TherapistPerformanceScreenProps {
 
 export const TherapistPerformanceScreen: React.FC<TherapistPerformanceScreenProps> = ({ onBack }) => {
   const metrics = [
-    { label: 'Total Bookings', value: '145', icon: Users, color: 'bg-blue-100 text-blue-600' },
+    { label: 'Total Bookings', value: '145', icon: Users, color: 'bg-green-100 text-green-600' },
     { label: 'Completed', value: '142', icon: CheckCircle, color: 'bg-green-100 text-green-600' },
     { label: 'Average Rating', value: '4.8', icon: Star, color: 'bg-yellow-100 text-yellow-600' },
     { label: 'Customer Satisfaction', value: '96%', icon: Award, color: 'bg-purple-100 text-purple-600' },

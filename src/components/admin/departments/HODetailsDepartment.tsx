@@ -13,7 +13,7 @@ export const HODetailsDepartment: React.FC<HODetailsDepartmentProps> = ({ onBack
   const stats = [
     { label: 'Staff Count', value: '45', icon: Users, color: 'bg-gray-100 text-gray-600', change: 'HO employees' },
     { label: 'Asset Value', value: '₹2.5Cr', icon: DollarSign, color: 'bg-green-100 text-green-600', change: 'Total assets' },
-    { label: 'Facilities', value: '8', icon: Building, color: 'bg-blue-100 text-blue-600', change: 'Amenities' },
+    { label: 'Facilities', value: '8', icon: Building, color: 'bg-green-100 text-green-600', change: 'Amenities' },
     { label: 'Inventory', value: '156', icon: Package, color: 'bg-orange-100 text-orange-600', change: 'Items tracked' }
   ];
 

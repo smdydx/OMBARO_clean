@@ -136,7 +136,7 @@ export const VendorApplicationStatus: React.FC<VendorApplicationStatusProps> = (
     return (
       <div className="min-h-screen bg-gray-50 flex items-center justify-center">
         <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-green-600 mx-auto mb-4"></div>
           <p className="text-gray-600">Loading your applications...</p>
         </div>
       </div>
@@ -201,7 +201,7 @@ export const VendorApplicationStatus: React.FC<VendorApplicationStatusProps> = (
                   loadApprovalHistory(app.id);
                 }
               }}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
             >
               {applications.map((app) => (
                 <option key={app.id} value={app.id}>
@@ -264,7 +264,7 @@ export const VendorApplicationStatus: React.FC<VendorApplicationStatusProps> = (
                       <div className="flex flex-col items-center">
                         <div className={`w-10 h-10 rounded-full flex items-center justify-center ${
                           completed ? 'bg-green-500 text-white' :
-                          active ? 'bg-blue-500 text-white' :
+                          active ? 'bg-green-500 text-white' :
                           'bg-gray-200 text-gray-500'
                         }`}>
                           {completed ? <CheckCircle className="w-6 h-6" /> : stage.level}
@@ -274,7 +274,7 @@ export const VendorApplicationStatus: React.FC<VendorApplicationStatusProps> = (
                         )}
                       </div>
                       <div className="flex-1 pt-1">
-                        <h4 className={`font-semibold ${active ? 'text-blue-600' : completed ? 'text-green-600' : 'text-gray-600'}`}>
+                        <h4 className={`font-semibold ${active ? 'text-green-600' : completed ? 'text-green-600' : 'text-gray-600'}`}>
                           {stage.title}
                         </h4>
                         <p className="text-sm text-gray-500">

@@ -11,15 +11,15 @@ export const CustomerDataDepartment: React.FC<CustomerDataDepartmentProps> = ({ 
   const [searchQuery, setSearchQuery] = useState('');
 
   const stats = [
-    { label: 'Total Customers', value: '2,847', icon: Users, color: 'bg-cyan-100 text-cyan-600', change: '+234 this month' },
+    { label: 'Total Customers', value: '2,847', icon: Users, color: 'bg-green-100 text-green-600', change: '+234 this month' },
     { label: 'Active Users', value: '2,156', icon: TrendingUp, color: 'bg-green-100 text-green-600', change: '76% active rate' },
-    { label: 'Avg LTV', value: '₹8,450', icon: Target, color: 'bg-blue-100 text-blue-600', change: '+12% growth' },
+    { label: 'Avg LTV', value: '₹8,450', icon: Target, color: 'bg-green-100 text-green-600', change: '+12% growth' },
     { label: 'Retention', value: '84%', icon: Database, color: 'bg-orange-100 text-orange-600', change: '+3% this quarter' }
   ];
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <div className="bg-gradient-to-r from-cyan-600 to-blue-600 pt-12 pb-6 px-4 sm:px-6">
+      <div className="bg-gradient-to-r from-green-600 to-green-600 pt-12 pb-6 px-4 sm:px-6">
         <button onClick={onBack} className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center mb-6"><ArrowLeft className="w-5 h-5 text-white" /></button>
         <div className="flex items-center space-x-3 mb-6">
           <div className="w-12 h-12 bg-white/20 rounded-xl flex items-center justify-center"><Database className="w-6 h-6 text-white" /></div>

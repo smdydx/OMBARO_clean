@@ -4,7 +4,7 @@ import { ArrowRight, Sparkles } from 'lucide-react';
 
 export const HeroSlider: React.FC = () => {
   return (
-    <section className="relative bg-gradient-to-b from-cyan-50 to-white overflow-hidden">
+    <section className="relative bg-gradient-to-b from-green-50 to-white overflow-hidden">
       {/* Hero Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-24">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -13,14 +13,14 @@ export const HeroSlider: React.FC = () => {
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-light text-gray-800 mb-6 leading-tight">
               RELAX
               <br />
-              <span className="font-normal text-cyan-600">& ENJOY</span>
+              <span className="font-normal text-green-600">& ENJOY</span>
             </h1>
             <p className="text-lg text-gray-600 mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
               Experience ultimate relaxation with our premium spa and wellness services. 
               Book your perfect moment of tranquility today.
             </p>
             <Link to="/app">
-              <button className="bg-cyan-500 hover:bg-cyan-600 text-white px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center">
+              <button className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center">
                 Book Now
                 <ArrowRight className="w-4 h-4 ml-2" />
               </button>

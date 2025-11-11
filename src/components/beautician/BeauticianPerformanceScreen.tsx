@@ -74,7 +74,7 @@ export const BeauticianPerformanceScreen: React.FC<BeauticianPerformanceScreenPr
 
   const [achievements] = useState([
     { id: '1', title: 'Top Performer', icon: Award, color: 'text-yellow-600', bgColor: 'bg-yellow-100', description: 'Top 10% beautician this month' },
-    { id: '2', title: '100 Happy Customers', icon: Users, color: 'text-blue-600', bgColor: 'bg-blue-100', description: 'Served 100+ satisfied customers' },
+    { id: '2', title: '100 Happy Customers', icon: Users, color: 'text-green-600', bgColor: 'bg-green-100', description: 'Served 100+ satisfied customers' },
     { id: '3', title: '5 Star Expert', icon: Star, color: 'text-pink-600', bgColor: 'bg-pink-100', description: 'Maintained 4.8+ rating' },
     { id: '4', title: 'Punctual Pro', icon: Clock, color: 'text-green-600', bgColor: 'bg-green-100', description: '95%+ on-time arrival' }
   ]);
@@ -82,7 +82,7 @@ export const BeauticianPerformanceScreen: React.FC<BeauticianPerformanceScreenPr
   const stats = [
     { label: 'Average Rating', value: performance.averageRating.toFixed(1), icon: Star, color: 'bg-yellow-100 text-yellow-600', change: '+0.2 this month' },
     { label: 'Completion Rate', value: `${performance.completionRate}%`, icon: CheckCircle, color: 'bg-green-100 text-green-600', change: '+2.5% this month' },
-    { label: 'Customer Satisfaction', value: `${performance.customerSatisfaction}%`, icon: ThumbsUp, color: 'bg-blue-100 text-blue-600', change: '+4% this month' },
+    { label: 'Customer Satisfaction', value: `${performance.customerSatisfaction}%`, icon: ThumbsUp, color: 'bg-green-100 text-green-600', change: '+4% this month' },
     { label: 'On-Time Rate', value: `${performance.onTimePercentage}%`, icon: Clock, color: 'bg-purple-100 text-purple-600', change: 'Excellent' }
   ];
 
@@ -230,12 +230,12 @@ export const BeauticianPerformanceScreen: React.FC<BeauticianPerformanceScreenPr
         </div>
 
         <div className="grid grid-cols-2 gap-4">
-          <div className="bg-gradient-to-br from-blue-50 to-blue-100 border border-blue-200 rounded-xl p-4">
+          <div className="bg-gradient-to-br from-green-50 to-green-100 border border-green-200 rounded-xl p-4">
             <div className="flex items-center justify-center mb-2">
-              <Target className="w-8 h-8 text-blue-600" />
+              <Target className="w-8 h-8 text-green-600" />
             </div>
-            <p className="text-center text-2xl font-bold text-blue-900">{performance.repeatCustomers}</p>
-            <p className="text-center text-xs text-blue-700 mt-1">Repeat Customers</p>
+            <p className="text-center text-2xl font-bold text-green-900">{performance.repeatCustomers}</p>
+            <p className="text-center text-xs text-green-700 mt-1">Repeat Customers</p>
           </div>
 
           <div className="bg-gradient-to-br from-green-50 to-green-100 border border-green-200 rounded-xl p-4">

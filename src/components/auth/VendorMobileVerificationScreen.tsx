@@ -271,8 +271,8 @@ export default function VendorMobileVerificationScreen({
                 )}
               </Button>
 
-              <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
-                <p className="text-xs text-blue-800">
+              <div className="mt-6 p-4 bg-green-50 border border-green-200 rounded-lg">
+                <p className="text-xs text-green-800">
                   <strong>Test Mode:</strong> For testing purposes, the OTP code is <strong>1234</strong>.
                   In production, you will receive a real OTP via SMS.
                 </p>
@@ -281,7 +281,7 @@ export default function VendorMobileVerificationScreen({
           ) : (
             <>
               <div className="text-center mb-8">
-                <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-indigo-500 rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <Shield className="w-8 h-8 text-white" />
                 </div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-2">Enter OTP</h2>
