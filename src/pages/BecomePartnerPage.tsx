@@ -120,79 +120,21 @@ export const BecomePartnerPage: React.FC = () => {
               </div>
             </div>
           </div>
-        </section>
 
-        {/* Services Showcase Slider */}
-        <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-sky-50 to-cyan-50 overflow-hidden">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-            <div className="text-center">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4" style={{ fontFamily: "'Tenor Sans', serif" }}>
-                Services We Offer
-              </h2>
-              <div className="w-16 sm:w-24 h-1 bg-sky-600 mx-auto mb-4"></div>
-              <p className="text-lg sm:text-xl text-gray-600">Premium beauty and wellness services through our platform</p>
-            </div>
-          </div>
-
-          {/* Sliding Images */}
-          <div className="relative">
-            <div className="flex animate-slide-infinite gap-6">
-              {[
-                { img: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=90', title: 'Spa Treatments' },
-                { img: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=90', title: 'Facial Care' },
-                { img: 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=90', title: 'Bridal Makeup' },
-                { img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=90', title: 'Hair Styling' },
-                { img: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=90', title: 'Massage Therapy' },
-                { img: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&q=90', title: 'Beauty Salon' },
-                { img: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=90', title: 'Spa Treatments' },
-                { img: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=90', title: 'Facial Care' },
-                { img: 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=90', title: 'Bridal Makeup' },
-                { img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=90', title: 'Hair Styling' },
-              ].map((service, idx) => (
-                <div key={idx} className="relative flex-shrink-0 w-80 h-96 rounded-2xl overflow-hidden shadow-xl group">
-                  <img
-                    src={service.img}
-                    alt={service.title}
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <h3 className="text-2xl font-bold text-white mb-2" style={{ fontFamily: "'Tenor Sans', serif" }}>
-                      {service.title}
-                    </h3>
-                    <div className="w-12 h-1 bg-sky-400"></div>
-                  </div>
-                </div>
-              ))}
-            </div>
+          {/* Water Wave Animation */}
+          <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-[0]">
+            <svg className="relative block w-full h-[80px] sm:h-[120px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+              <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
+                    className="fill-sky-100 opacity-50 animate-wave-slow"></path>
+              <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
+                    className="fill-sky-200 opacity-40 animate-wave-medium"></path>
+              <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" 
+                    className="fill-sky-300 opacity-30 animate-wave-fast"></path>
+            </svg>
           </div>
         </section>
 
-        {/* Elegant Stats */}
-        <section className="py-12 sm:py-16 lg:py-20 bg-white border-y border-gray-100">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
-              <div className="text-center">
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 text-sky-600" style={{ fontFamily: "'Tenor Sans', serif" }}>500+</div>
-                <div className="text-sm sm:text-base text-gray-600 font-medium">Partner Businesses</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 text-sky-600" style={{ fontFamily: "'Tenor Sans', serif" }}>50K+</div>
-                <div className="text-sm sm:text-base text-gray-600 font-medium">Monthly Customers</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 text-sky-600" style={{ fontFamily: "'Tenor Sans', serif" }}>40%</div>
-                <div className="text-sm sm:text-base text-gray-600 font-medium">Revenue Increase</div>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 text-sky-600" style={{ fontFamily: "'Tenor Sans', serif" }}>4.8★</div>
-                <div className="text-sm sm:text-base text-gray-600 font-medium">Partner Rating</div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Benefits Section - Clean & Minimal */}
+        {/* Why Partner Section */}
         <section className="py-16 sm:py-24 lg:py-32 bg-gradient-to-br from-gray-50 to-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 sm:mb-16 lg:mb-20">
@@ -215,7 +157,7 @@ export const BecomePartnerPage: React.FC = () => {
                   />
                 </div>
                 <div className="relative z-10 p-6 sm:p-8 lg:p-10">
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-sky-100 rounded-full flex items-center justify-center mb-4 sm:mb-6">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 lg:w-20 lg:h-20 bg-sky-100 rounded-full flex items-center justify-center mb-4 sm:mb-6">
                     <TrendingUp className="w-6 h-6 sm:w-8 sm:h-8 text-sky-600" />
                   </div>
                   <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
@@ -297,6 +239,76 @@ export const BecomePartnerPage: React.FC = () => {
                     </div>
                   </div>
                 </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Services Showcase Slider */}
+        <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-sky-50 to-cyan-50 overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+            <div className="text-center">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                Services We Offer
+              </h2>
+              <div className="w-16 sm:w-24 h-1 bg-sky-600 mx-auto mb-4"></div>
+              <p className="text-lg sm:text-xl text-gray-600">Premium beauty and wellness services through our platform</p>
+            </div>
+          </div>
+
+          {/* Sliding Images */}
+          <div className="relative">
+            <div className="flex animate-slide-infinite gap-6">
+              {[
+                { img: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=90', title: 'Spa Treatments' },
+                { img: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=90', title: 'Facial Care' },
+                { img: 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=90', title: 'Bridal Makeup' },
+                { img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=90', title: 'Hair Styling' },
+                { img: 'https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=90', title: 'Massage Therapy' },
+                { img: 'https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&q=90', title: 'Beauty Salon' },
+                { img: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=90', title: 'Spa Treatments' },
+                { img: 'https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=90', title: 'Facial Care' },
+                { img: 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=90', title: 'Bridal Makeup' },
+                { img: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=90', title: 'Hair Styling' },
+              ].map((service, idx) => (
+                <div key={idx} className="relative flex-shrink-0 w-80 h-96 rounded-2xl overflow-hidden shadow-xl group">
+                  <img
+                    src={service.img}
+                    alt={service.title}
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 className="text-2xl font-bold text-white mb-2" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                      {service.title}
+                    </h3>
+                    <div className="w-12 h-1 bg-sky-400"></div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Elegant Stats */}
+        <section className="py-12 sm:py-16 lg:py-20 bg-white border-y border-gray-100">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
+              <div className="text-center">
+                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 text-sky-600" style={{ fontFamily: "'Tenor Sans', serif" }}>500+</div>
+                <div className="text-sm sm:text-base text-gray-600 font-medium">Partner Businesses</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 text-sky-600" style={{ fontFamily: "'Tenor Sans', serif" }}>50K+</div>
+                <div className="text-sm sm:text-base text-gray-600 font-medium">Monthly Customers</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 text-sky-600" style={{ fontFamily: "'Tenor Sans', serif" }}>40%</div>
+                <div className="text-sm sm:text-base text-gray-600 font-medium">Revenue Increase</div>
+              </div>
+              <div className="text-center">
+                <div className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-2 sm:mb-3 text-sky-600" style={{ fontFamily: "'Tenor Sans', serif" }}>4.8★</div>
+                <div className="text-sm sm:text-base text-gray-600 font-medium">Partner Rating</div>
               </div>
             </div>
           </div>
