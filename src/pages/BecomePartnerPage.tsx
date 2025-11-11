@@ -122,20 +122,20 @@ export const BecomePartnerPage: React.FC = () => {
           </div>
 
           {/* Water Wave Animation */}
-          <div className="absolute bottom-0 left-0 right-0 overflow-hidden leading-[0]">
-            <svg className="relative block w-full h-[80px] sm:h-[120px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+          <div className="absolute bottom-[-2px] left-0 right-0 overflow-hidden leading-[0] pointer-events-none">
+            <svg className="relative block w-full h-[60px] sm:h-[80px] md:h-[100px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
               <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
-                    className="fill-primary-200 opacity-50 animate-wave-slow"></path>
+                    className="fill-green-200 opacity-40 animate-wave-slow"></path>
               <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
-                    className="fill-primary-300 opacity-40 animate-wave-medium"></path>
+                    className="fill-green-300 opacity-30 animate-wave-medium"></path>
               <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" 
-                    className="fill-primary-400 opacity-30 animate-wave-fast"></path>
+                    className="fill-green-400 opacity-20 animate-wave-fast"></path>
             </svg>
           </div>
         </section>
 
         {/* Why Partner Section */}
-        <section className="py-16 sm:py-24 lg:py-32 bg-gradient-to-br from-gray-50 to-white">
+        <section className="py-16 sm:py-24 lg:py-32 bg-gradient-to-br from-gray-50 to-white relative z-10">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12 sm:mb-16 lg:mb-20">
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4 sm:mb-6" style={{ fontFamily: "'Tenor Sans', serif" }}>
