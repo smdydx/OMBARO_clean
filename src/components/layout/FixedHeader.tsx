@@ -36,11 +36,11 @@ export const FixedHeader: React.FC<FixedHeaderProps> = ({
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2 sm:space-x-3 min-w-0 flex-1">
             <div className="relative flex items-center">
-              {/* Main Logo - Larger, Transparent and Professional */}
+              {/* Main Logo - Professional Size */}
               <img
                 src="/ombaro-logo.png"
                 alt="OMBARO"
-                className="h-16 sm:h-20 md:h-24 lg:h-28 w-auto object-contain transition-transform duration-300 hover:scale-105 filter drop-shadow-[0_2px_8px_rgba(255,255,255,0.3)]"
+                className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain transition-transform duration-300 hover:scale-105 filter drop-shadow-[0_2px_8px_rgba(255,255,255,0.3)]"
                 style={{ 
                   mixBlendMode: 'normal',
                   opacity: 0.95
