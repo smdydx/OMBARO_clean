@@ -14,11 +14,11 @@ export const MarketingHeader: React.FC = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-black via-gray-900 to-black backdrop-blur-xl border-b border-primary-900 shadow-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-green-900 via-black to-green-800 backdrop-blur-xl border-b border-green-700/30 shadow-sm">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-18 md:h-20">
           <Link to="/" className="flex items-center group z-50">
-            <div className="relative py-2 px-3 bg-gradient-to-r from-primary-600 to-primary-700 rounded-lg">
+            <div className="relative py-2 px-3 bg-gradient-to-r from-green-600 to-green-700 rounded-lg">
               <img
                 src="/ombaro-logo.png"
                 alt="OMBARO"
@@ -32,7 +32,7 @@ export const MarketingHeader: React.FC = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className="px-5 py-2.5 text-gray-300 hover:text-white font-medium transition-all duration-200 hover:bg-primary-900/50 rounded-lg text-sm"
+                className="px-5 py-2.5 text-gray-300 hover:text-white font-medium transition-all duration-200 hover:bg-green-700/30 rounded-lg text-sm"
                 style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}
               >
                 {link.name}
@@ -43,7 +43,7 @@ export const MarketingHeader: React.FC = () => {
           <div className="hidden md:flex items-center space-x-6">
             <Link to="/app">
               <button
-                className="px-6 py-2.5 text-gray-300 hover:text-white font-medium transition-all duration-200 hover:bg-primary-900/50 rounded-full text-sm"
+                className="px-6 py-2.5 text-gray-300 hover:text-white font-medium transition-all duration-200 hover:bg-green-700/30 rounded-full text-sm"
                 style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}
               >
                 Login
@@ -51,7 +51,7 @@ export const MarketingHeader: React.FC = () => {
             </Link>
             <Link to="/app">
               <button
-                className="px-7 py-2.5 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 text-sm"
+                className="px-7 py-2.5 bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 text-sm"
                 style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600 }}
               >
                 Get Started
@@ -61,7 +61,7 @@ export const MarketingHeader: React.FC = () => {
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 sm:p-2.5 rounded-lg hover:bg-primary-900/50 active:bg-primary-800/50 transition-all duration-200 z-50 relative"
+            className="md:hidden p-2 sm:p-2.5 rounded-lg hover:bg-green-700/30 active:bg-green-800/50 transition-all duration-200 z-50 relative"
             aria-label="Toggle menu"
             type="button"
           >
