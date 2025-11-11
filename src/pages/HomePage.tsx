@@ -247,8 +247,9 @@ export const HomePage: React.FC = () => {
             <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
               <defs>
                 <linearGradient id="waterGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" style={{ stopColor: 'rgb(0, 255, 135)', stopOpacity: 0.8 }} />
-                  <stop offset="100%" style={{ stopColor: 'rgb(1, 107, 58)', stopOpacity: 0.3 }} />
+                  <stop offset="0%" style={{ stopColor: '#00FF87', stopOpacity: 0.9 }} />
+                  <stop offset="50%" style={{ stopColor: '#016B3A', stopOpacity: 0.6 }} />
+                  <stop offset="100%" style={{ stopColor: '#000000', stopOpacity: 0.8 }} />
                 </linearGradient>
               </defs>
               <path fill="url(#waterGradient)" fillOpacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
@@ -263,7 +264,7 @@ export const HomePage: React.FC = () => {
           {/* Additional Wave Layer */}
           <div className="absolute bottom-0 left-0 right-0 h-24 md:h-32 opacity-60">
             <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
-              <path fill="#d1fae5" fillOpacity="1" d="M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,154.7C672,149,768,171,864,181.3C960,192,1056,192,1152,181.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+              <path fill="#016B3A" fillOpacity="0.5" d="M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,154.7C672,149,768,171,864,181.3C960,192,1056,192,1152,181.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
                 <animate attributeName="d" dur="6s" repeatCount="indefinite" values="
                   M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,154.7C672,149,768,171,864,181.3C960,192,1056,192,1152,181.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
                   M0,192L48,181.3C96,171,192,149,288,154.7C384,160,480,192,576,197.3C672,203,768,181,864,170.7C960,160,1056,160,1152,170.7C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
@@ -316,7 +317,14 @@ export const HomePage: React.FC = () => {
           {services.length === 1 && (
             <div className="absolute bottom-0 left-0 right-0">
               <svg viewBox="0 0 1200 120" className="w-full h-24" preserveAspectRatio="none">
-                <path d="M0,0 Q300,60 600,30 T1200,0 L1200,120 L0,120 Z" fill="#f0fdfa" />
+                <defs>
+                  <linearGradient id="waveGreen1" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" style={{ stopColor: '#00FF87', stopOpacity: 0.3 }} />
+                    <stop offset="50%" style={{ stopColor: '#016B3A', stopOpacity: 0.4 }} />
+                    <stop offset="100%" style={{ stopColor: '#000000', stopOpacity: 0.5 }} />
+                  </linearGradient>
+                </defs>
+                <path d="M0,0 Q300,60 600,30 T1200,0 L1200,120 L0,120 Z" fill="url(#waveGreen1)" />
               </svg>
             </div>
           )}
@@ -365,7 +373,14 @@ export const HomePage: React.FC = () => {
             {index === services.length - 2 && ( // Adjusted index for slice
               <div className="absolute bottom-0 left-0 right-0">
                 <svg viewBox="0 0 1200 120" className="w-full h-24" preserveAspectRatio="none">
-                  <path d="M0,0 Q300,60 600,30 T1200,0 L1200,120 L0,120 Z" fill="#f0fdfa" />
+                  <defs>
+                    <linearGradient id="waveGreen2" x1="0%" y1="0%" x2="100%" y2="0%">
+                      <stop offset="0%" style={{ stopColor: '#00FF87', stopOpacity: 0.3 }} />
+                      <stop offset="50%" style={{ stopColor: '#016B3A', stopOpacity: 0.4 }} />
+                      <stop offset="100%" style={{ stopColor: '#000000', stopOpacity: 0.5 }} />
+                    </linearGradient>
+                  </defs>
+                  <path d="M0,0 Q300,60 600,30 T1200,0 L1200,120 L0,120 Z" fill="url(#waveGreen2)" />
                 </svg>
               </div>
             )}
@@ -422,7 +437,14 @@ export const HomePage: React.FC = () => {
           {/* Top Wave */}
           <div className="absolute top-0 left-0 right-0 h-24">
             <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
-              <path fill="#ffffff" fillOpacity="1" d="M0,64L48,85.3C96,107,192,149,288,154.7C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,176C1248,171,1344,149,1392,138.7L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+              <defs>
+                <linearGradient id="waveGreenTop" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" style={{ stopColor: '#00FF87', stopOpacity: 0.2 }} />
+                  <stop offset="50%" style={{ stopColor: '#016B3A', stopOpacity: 0.3 }} />
+                  <stop offset="100%" style={{ stopColor: '#000000', stopOpacity: 0.4 }} />
+                </linearGradient>
+              </defs>
+              <path fill="url(#waveGreenTop)" fillOpacity="1" d="M0,64L48,85.3C96,107,192,149,288,154.7C384,160,480,128,576,122.7C672,117,768,139,864,154.7C960,171,1056,181,1152,176C1248,171,1344,149,1392,138.7L1440,128L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
             </svg>
           </div>
 
@@ -455,7 +477,14 @@ export const HomePage: React.FC = () => {
           {/* Bottom Wave */}
           <div className="absolute bottom-0 left-0 right-0 h-24">
             <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
-              <path fill="#ffffff" fillOpacity="1" d="M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,154.7C672,149,768,171,864,181.3C960,192,1056,192,1152,181.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+              <defs>
+                <linearGradient id="waveGreenBottom" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" style={{ stopColor: '#00FF87', stopOpacity: 0.2 }} />
+                  <stop offset="50%" style={{ stopColor: '#016B3A', stopOpacity: 0.3 }} />
+                  <stop offset="100%" style={{ stopColor: '#000000', stopOpacity: 0.4 }} />
+                </linearGradient>
+              </defs>
+              <path fill="url(#waveGreenBottom)" fillOpacity="1" d="M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,154.7C672,149,768,171,864,181.3C960,192,1056,192,1152,181.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
             </svg>
           </div>
         </section>

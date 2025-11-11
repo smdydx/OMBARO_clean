@@ -123,7 +123,7 @@ export const FixedHeader: React.FC<FixedHeaderProps> = ({
       <div className="absolute bottom-0 left-0 right-0 h-6 overflow-hidden">
         <svg viewBox="0 0 1440 60" className="w-full h-full" preserveAspectRatio="none">
           <path
-            fill="rgba(255, 255, 255, 0.15)"
+            fill="rgba(0, 255, 135, 0.15)"
             d="M0,30 Q180,15 360,30 T720,30 T1080,30 T1440,30 L1440,60 L0,60 Z"
           >
             <animate
@@ -138,7 +138,7 @@ export const FixedHeader: React.FC<FixedHeaderProps> = ({
             />
           </path>
           <path
-            fill="rgba(255, 255, 255, 0.1)"
+            fill="rgba(1, 107, 58, 0.1)"
             d="M0,35 Q240,20 480,35 T960,35 T1440,35 L1440,60 L0,60 Z"
           >
             <animate

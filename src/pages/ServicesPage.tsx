@@ -260,21 +260,21 @@ export const ServicesPage: React.FC = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-gradient-to-b from-sky-50 via-cyan-50 to-white relative overflow-hidden rounded-tl-[50px] rounded-tr-[50px]">
+        <section className="py-20 bg-gradient-to-b from-primary-50 via-white to-white relative overflow-hidden rounded-tl-[50px] rounded-tr-[50px]">
           {/* Water Flow Effect */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-0 left-0 w-full h-full">
               <div className="animate-pulse">
                 <svg className="w-full h-full" viewBox="0 0 1440 320" preserveAspectRatio="none">
-                  <path fill="currentColor" fillOpacity="0.3" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,106.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" className="text-sky-400"></path>
+                  <path fill="currentColor" fillOpacity="0.3" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,122.7C672,117,768,139,864,138.7C960,139,1056,117,1152,106.7C1248,96,1344,96,1392,96L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" className="text-primary-500"></path>
                 </svg>
               </div>
             </div>
           </div>
 
           {/* Decorative Elements */}
-          <div className="absolute top-0 right-0 w-96 h-96 bg-sky-200/30 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2" />
-          <div className="absolute bottom-0 left-0 w-96 h-96 bg-cyan-200/30 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-primary-200/30 rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2" />
+          <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary-300/30 rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2" />
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-2 gap-12 items-center">

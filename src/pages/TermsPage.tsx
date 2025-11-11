@@ -264,15 +264,15 @@ export const TermsPage: React.FC = () => {
         
 
         {/* Hero Section */}
-        <section className="relative py-16 sm:py-20 md:py-24 bg-gradient-to-br from-sky-400 via-sky-500 to-sky-600 text-white overflow-hidden">
+        <section className="relative py-16 sm:py-20 md:py-24 bg-gradient-to-br from-primary-600 via-primary-700 to-black text-white overflow-hidden">
           {/* Animated Water Wave - Top with Enhanced Gradient */}
           <div className="absolute top-0 left-0 right-0 h-32 sm:h-40 md:h-48 opacity-40 rotate-180">
             <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
               <defs>
                 <linearGradient id="waveGradientTop" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" style={{ stopColor: '#0ea5e9', stopOpacity: 0.6 }} />
-                  <stop offset="50%" style={{ stopColor: '#38bdf8', stopOpacity: 0.4 }} />
-                  <stop offset="100%" style={{ stopColor: '#7dd3fc', stopOpacity: 0.3 }} />
+                  <stop offset="0%" style={{ stopColor: '#00FF87', stopOpacity: 0.6 }} />
+                  <stop offset="50%" style={{ stopColor: '#016B3A', stopOpacity: 0.4 }} />
+                  <stop offset="100%" style={{ stopColor: '#000000', stopOpacity: 0.5 }} />
                 </linearGradient>
               </defs>
               <path fill="url(#waveGradientTop)" fillOpacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
@@ -290,9 +290,9 @@ export const TermsPage: React.FC = () => {
             <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
               <defs>
                 <linearGradient id="waveGradientBottom" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" style={{ stopColor: '#bae6fd', stopOpacity: 0.5 }} />
-                  <stop offset="50%" style={{ stopColor: '#7dd3fc', stopOpacity: 0.4 }} />
-                  <stop offset="100%" style={{ stopColor: '#38bdf8', stopOpacity: 0.6 }} />
+                  <stop offset="0%" style={{ stopColor: '#00FF87', stopOpacity: 0.5 }} />
+                  <stop offset="50%" style={{ stopColor: '#016B3A', stopOpacity: 0.4 }} />
+                  <stop offset="100%" style={{ stopColor: '#000000', stopOpacity: 0.6 }} />
                 </linearGradient>
               </defs>
               <path fill="url(#waveGradientBottom)" fillOpacity="1" d="M0,192L48,181.3C96,171,192,149,288,154.7C384,160,480,192,576,197.3C672,203,768,181,864,170.7C960,160,1056,160,1152,170.7C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
@@ -413,9 +413,9 @@ export const TermsPage: React.FC = () => {
         </section>
 
         {/* Contact Section */}
-        <section className="py-16 sm:py-20 bg-gradient-to-b from-white to-sky-50">
+        <section className="py-16 sm:py-20 bg-gradient-to-b from-white to-primary-50">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="relative bg-gradient-to-br from-sky-500 via-cyan-500 to-sky-600 rounded-3xl p-8 sm:p-10 md:p-12 lg:p-16 text-white overflow-hidden shadow-2xl">
+            <div className="relative bg-gradient-to-br from-primary-600 via-primary-700 to-black rounded-3xl p-8 sm:p-10 md:p-12 lg:p-16 text-white overflow-hidden shadow-2xl">
               {/* Enhanced Water Wave Effect */}
               <div className="absolute bottom-0 left-0 right-0 h-24 sm:h-32 md:h-40 opacity-20">
                 <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
