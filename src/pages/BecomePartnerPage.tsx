@@ -143,11 +143,11 @@ export const BecomePartnerPage: React.FC = () => {
               </h2>
               <div className="w-16 sm:w-24 h-1 bg-sky-600 mx-auto mb-4 sm:mb-6"></div>
               <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto px-4">
-                Everything you need to build a successful beauty business
+                Everything you need to build a successful spa & beauty business
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mb-12">
               <div className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100">
                 <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
                   <img
@@ -236,6 +236,118 @@ export const BecomePartnerPage: React.FC = () => {
                     <div className="flex items-center space-x-2">
                       <CheckCircle className="w-4 h-4 text-sky-600" />
                       <span>Transparent reports</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Requirements for Spa Business */}
+            <div className="bg-gradient-to-br from-sky-50 to-cyan-50 rounded-3xl p-8 sm:p-12 border border-sky-200 shadow-xl">
+              <div className="text-center mb-8">
+                <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                  What You Need to Start Your Spa Business
+                </h3>
+                <p className="text-gray-600">Essential requirements for becoming our partner</p>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="bg-white rounded-xl p-6 shadow-md">
+                  <h4 className="font-bold text-lg text-gray-900 mb-4 flex items-center">
+                    <Shield className="w-5 h-5 text-sky-600 mr-2" />
+                    Legal Requirements
+                  </h4>
+                  <div className="space-y-2 text-sm text-gray-600">
+                    <div className="flex items-start space-x-2">
+                      <CheckCircle className="w-4 h-4 text-sky-600 flex-shrink-0 mt-1" />
+                      <span>Valid business license/registration</span>
+                    </div>
+                    <div className="flex items-start space-x-2">
+                      <CheckCircle className="w-4 h-4 text-sky-600 flex-shrink-0 mt-1" />
+                      <span>GST registration (if applicable)</span>
+                    </div>
+                    <div className="flex items-start space-x-2">
+                      <CheckCircle className="w-4 h-4 text-sky-600 flex-shrink-0 mt-1" />
+                      <span>Trade license from local authority</span>
+                    </div>
+                    <div className="flex items-start space-x-2">
+                      <CheckCircle className="w-4 h-4 text-sky-600 flex-shrink-0 mt-1" />
+                      <span>Fire safety certificate</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl p-6 shadow-md">
+                  <h4 className="font-bold text-lg text-gray-900 mb-4 flex items-center">
+                    <Users className="w-5 h-5 text-sky-600 mr-2" />
+                    Staffing Requirements
+                  </h4>
+                  <div className="space-y-2 text-sm text-gray-600">
+                    <div className="flex items-start space-x-2">
+                      <CheckCircle className="w-4 h-4 text-sky-600 flex-shrink-0 mt-1" />
+                      <span>Certified therapists/beauticians</span>
+                    </div>
+                    <div className="flex items-start space-x-2">
+                      <CheckCircle className="w-4 h-4 text-sky-600 flex-shrink-0 mt-1" />
+                      <span>Minimum 2-3 trained professionals</span>
+                    </div>
+                    <div className="flex items-start space-x-2">
+                      <CheckCircle className="w-4 h-4 text-sky-600 flex-shrink-0 mt-1" />
+                      <span>Professional training certificates</span>
+                    </div>
+                    <div className="flex items-start space-x-2">
+                      <CheckCircle className="w-4 h-4 text-sky-600 flex-shrink-0 mt-1" />
+                      <span>Health & hygiene training</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl p-6 shadow-md">
+                  <h4 className="font-bold text-lg text-gray-900 mb-4 flex items-center">
+                    <Coffee className="w-5 h-5 text-sky-600 mr-2" />
+                    Infrastructure
+                  </h4>
+                  <div className="space-y-2 text-sm text-gray-600">
+                    <div className="flex items-start space-x-2">
+                      <CheckCircle className="w-4 h-4 text-sky-600 flex-shrink-0 mt-1" />
+                      <span>Minimum 500 sq ft space</span>
+                    </div>
+                    <div className="flex items-start space-x-2">
+                      <CheckCircle className="w-4 h-4 text-sky-600 flex-shrink-0 mt-1" />
+                      <span>Proper ventilation & lighting</span>
+                    </div>
+                    <div className="flex items-start space-x-2">
+                      <CheckCircle className="w-4 h-4 text-sky-600 flex-shrink-0 mt-1" />
+                      <span>Separate treatment rooms</span>
+                    </div>
+                    <div className="flex items-start space-x-2">
+                      <CheckCircle className="w-4 h-4 text-sky-600 flex-shrink-0 mt-1" />
+                      <span>Clean washroom facilities</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-xl p-6 shadow-md">
+                  <h4 className="font-bold text-lg text-gray-900 mb-4 flex items-center">
+                    <Star className="w-5 h-5 text-sky-600 mr-2" />
+                    Equipment & Products
+                  </h4>
+                  <div className="space-y-2 text-sm text-gray-600">
+                    <div className="flex items-start space-x-2">
+                      <CheckCircle className="w-4 h-4 text-sky-600 flex-shrink-0 mt-1" />
+                      <span>Professional spa equipment</span>
+                    </div>
+                    <div className="flex items-start space-x-2">
+                      <CheckCircle className="w-4 h-4 text-sky-600 flex-shrink-0 mt-1" />
+                      <span>Quality beauty products</span>
+                    </div>
+                    <div className="flex items-start space-x-2">
+                      <CheckCircle className="w-4 h-4 text-sky-600 flex-shrink-0 mt-1" />
+                      <span>Sterilization equipment</span>
+                    </div>
+                    <div className="flex items-start space-x-2">
+                      <CheckCircle className="w-4 h-4 text-sky-600 flex-shrink-0 mt-1" />
+                      <span>Safety & hygiene supplies</span>
                     </div>
                   </div>
                 </div>
