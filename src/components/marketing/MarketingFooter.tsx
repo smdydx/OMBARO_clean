@@ -9,9 +9,9 @@ export const MarketingFooter: React.FC = () => {
         {/* Logo and Social Media */}
         <div className="mb-6 sm:mb-8">
           <div className="flex items-center mb-3">
-            <img 
-              src="/ombaro-logo.png" 
-              alt="OMBARO" 
+            <img
+              src="/ombaro-logo-new.png"
+              alt="OMBARO"
               className="h-10 sm:h-12 w-auto object-contain"
             />
           </div>

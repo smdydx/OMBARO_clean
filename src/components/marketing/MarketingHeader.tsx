@@ -20,7 +20,7 @@ export const MarketingHeader: React.FC = () => {
           <Link to="/" className="flex items-center group z-50">
             <div className="relative">
               <img
-                src="/ombaro-logo.png"
+                src="/ombaro-logo-new.png"
                 alt="OMBARO"
                 className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto object-contain transition-all duration-300 group-hover:scale-105"
               />

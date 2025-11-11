@@ -38,11 +38,11 @@ export const FixedHeader: React.FC<FixedHeaderProps> = ({
             <div className="relative flex items-center">
               {/* Main Logo - Optimized Size */}
               <img
-                src="/ombaro-logo.png"
+                src="/ombaro-logo-new.png"
                 alt="OMBARO"
                 className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto object-contain transition-transform duration-300 hover:scale-105"
               />
-              
+
               {/* Water Wave Effect Under Logo */}
               <div className="absolute -bottom-1 left-0 right-0 h-2 overflow-hidden opacity-60">
                 <svg viewBox="0 0 120 10" className="w-full h-full" preserveAspectRatio="none">
