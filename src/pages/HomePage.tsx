@@ -208,16 +208,23 @@ export const HomePage: React.FC = () => {
                 </Link>
               </div>
 
-              {/* Right Content - Image */}
+              {/* Right Content - Image with Painted Frame */}
               <div className="lg:col-span-2 relative">
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                  <img 
-                    src="/images/beauty_salon_facial__338eb5d5.jpg"
-                    alt="Spa Experience"
-                    className="w-full h-[350px] md:h-[500px] object-cover"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/20 to-transparent"></div>
-                </div>
+                <div className="relative p-4 bg-gradient-to-br from-white via-gray-50 to-gray-100 rounded-3xl shadow-2xl">
+                  {/* Painted Frame Border */}
+                  <div className="absolute inset-0 rounded-3xl border-8 border-white shadow-inner"></div>
+                  <div className="absolute inset-2 rounded-2xl border-4 border-amber-100/50"></div>
+                  
+                  {/* Image Container */}
+                  <div className="relative rounded-2xl overflow-hidden shadow-xl">
+                    <img 
+                      src="/images/beauty_salon_facial__338eb5d5.jpg"
+                      alt="Spa Experience"
+                      className="w-full h-[350px] md:h-[500px] object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/20 to-transparent"></div>
+                  </div>
+                </div></div>
 
                 {/* Floating Card */}
                 <div className="absolute -bottom-4 md:-bottom-6 -left-4 md:-left-6 bg-white/90 backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-xl max-w-[200px] md:max-w-xs">
@@ -270,13 +277,19 @@ export const HomePage: React.FC = () => {
         <section className="relative py-12 md:py-20 overflow-hidden bg-gradient-to-b from-white via-sky-50 to-white mt-4 md:mt-0">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className={`grid lg:grid-cols-2 gap-12 items-center ${services[0].reverse ? 'lg:grid-flow-dense' : ''}`}>
-              {/* Image */}
+              {/* Image with Painted Frame */}
               <div className={services[0].reverse ? 'lg:col-start-2' : ''}>
-                <img
-                  src={services[0].image}
-                  alt={services[0].title}
-                  className="rounded-3xl shadow-2xl w-full object-cover h-[400px]"
-                />
+                <div className="relative p-4 bg-gradient-to-br from-white via-gray-50 to-gray-100 rounded-3xl shadow-2xl">
+                  {/* Painted Frame Border */}
+                  <div className="absolute inset-0 rounded-3xl border-8 border-white shadow-inner"></div>
+                  <div className="absolute inset-2 rounded-2xl border-4 border-amber-100/50"></div>
+                  
+                  <img
+                    src={services[0].image}
+                    alt={services[0].title}
+                    className="relative rounded-2xl shadow-xl w-full object-cover h-[400px]"
+                  />
+                </div>
               </div>
 
               {/* Content */}
@@ -313,13 +326,19 @@ export const HomePage: React.FC = () => {
           <section key={index} className="relative py-20 overflow-hidden bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <div className={`grid lg:grid-cols-2 gap-12 items-center ${service.reverse ? 'lg:grid-flow-dense' : ''}`}>
-                {/* Image */}
+                {/* Image with Painted Frame */}
                 <div className={service.reverse ? 'lg:col-start-2' : ''}>
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="rounded-3xl shadow-2xl w-full object-cover h-[400px]"
-                  />
+                  <div className="relative p-4 bg-gradient-to-br from-white via-gray-50 to-gray-100 rounded-3xl shadow-2xl">
+                    {/* Painted Frame Border */}
+                    <div className="absolute inset-0 rounded-3xl border-8 border-white shadow-inner"></div>
+                    <div className="absolute inset-2 rounded-2xl border-4 border-amber-100/50"></div>
+                    
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="relative rounded-2xl shadow-xl w-full object-cover h-[400px]"
+                    />
+                  </div>
                 </div>
 
                 {/* Content */}
@@ -369,7 +388,13 @@ export const HomePage: React.FC = () => {
               {categories.map((category, index) => (
                 <Link key={index} to={category.path}>
                   <div className="group relative overflow-hidden rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer">
-                    <div className="relative h-80">
+                    {/* Painted Frame Effect */}
+                    <div className="absolute inset-0 p-3 bg-gradient-to-br from-white via-gray-50 to-gray-100 rounded-3xl">
+                      <div className="absolute inset-0 rounded-3xl border-6 border-white shadow-inner"></div>
+                      <div className="absolute inset-2 rounded-2xl border-3 border-amber-100/40"></div>
+                    </div>
+                    
+                    <div className="relative h-80 m-3 rounded-2xl overflow-hidden">
                       <img
                         src={category.image}
                         alt={category.title}
