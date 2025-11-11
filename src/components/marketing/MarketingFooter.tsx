@@ -4,7 +4,7 @@ import { Sparkles, Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, 
 
 export const MarketingFooter: React.FC = () => {
   return (
-    <footer className="bg-gradient-to-br from-green-900 via-black to-green-800 text-white border-t border-green-700/30">
+    <footer className="bg-black text-white border-t border-gray-700/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 md:py-10">
         {/* Logo and Social Media */}
         <div className="mb-6 sm:mb-8">
@@ -23,7 +23,7 @@ export const MarketingFooter: React.FC = () => {
               href="https://facebook.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 sm:w-9 sm:h-9 bg-green-700/30 rounded-lg flex items-center justify-center hover:bg-green-600 hover:text-white transition-colors"
+              className="w-8 h-8 sm:w-9 sm:h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 hover:text-white transition-colors"
               aria-label="Facebook"
             >
               <Facebook className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
@@ -32,7 +32,7 @@ export const MarketingFooter: React.FC = () => {
               href="https://twitter.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 sm:w-9 sm:h-9 bg-green-700/30 rounded-lg flex items-center justify-center hover:bg-green-600 hover:text-white transition-colors"
+              className="w-8 h-8 sm:w-9 sm:h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 hover:text-white transition-colors"
               aria-label="Twitter"
             >
               <Twitter className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
@@ -41,7 +41,7 @@ export const MarketingFooter: React.FC = () => {
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 sm:w-9 sm:h-9 bg-green-700/30 rounded-lg flex items-center justify-center hover:bg-green-600 hover:text-white transition-colors"
+              className="w-8 h-8 sm:w-9 sm:h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 hover:text-white transition-colors"
               aria-label="Instagram"
             >
               <Instagram className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
@@ -50,7 +50,7 @@ export const MarketingFooter: React.FC = () => {
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 sm:w-9 sm:h-9 bg-green-700/30 rounded-lg flex items-center justify-center hover:bg-green-600 hover:text-white transition-colors"
+              className="w-8 h-8 sm:w-9 sm:h-9 bg-gray-800 rounded-lg flex items-center justify-center hover:bg-gray-700 hover:text-white transition-colors"
               aria-label="LinkedIn"
             >
               <Linkedin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
@@ -150,7 +150,7 @@ export const MarketingFooter: React.FC = () => {
           </div>
         </div>
 
-        <div className="border-t border-green-700/30 mt-6 sm:mt-8">
+        <div className="border-t border-gray-700/30 mt-6 sm:mt-8">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
             <div className="flex flex-col sm:flex-row justify-between items-center space-y-2 sm:space-y-0">
               <p className="text-xs text-white/70 text-center sm:text-left">
