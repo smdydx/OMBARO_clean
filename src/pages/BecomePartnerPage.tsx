@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   ArrowRight, CheckCircle, TrendingUp, Users, Calendar, Wallet,
@@ -108,7 +108,7 @@ export const BecomePartnerPage: React.FC = () => {
                       className="relative rounded-2xl shadow-2xl w-full h-48 sm:h-64 md:h-80 object-cover border-2 border-green-500/30"
                     />
                   </div>
-                  
+
                   {/* Two Small Images Bottom */}
                   <div className="relative">
                     <img
@@ -125,7 +125,7 @@ export const BecomePartnerPage: React.FC = () => {
                     />
                   </div>
                 </div>
-                
+
                 {/* Stats Badge */}
                 <div className="absolute -bottom-4 -right-4 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl p-4 sm:p-6 shadow-2xl max-w-xs z-10">
                   <div className="text-white">

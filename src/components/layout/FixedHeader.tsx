@@ -1,99 +1,159 @@
-import React, { useState } from 'react';
-import { Bell, LogOut, MapPin, Search, Filter } from 'lucide-react';
-import { User } from '../../types/auth';
 
-interface FixedHeaderProps {
-  user: Partial<User>;
-  onLogout: () => void;
-  onSearch?: (query: string) => void;
-}
+import { Link } from 'react-router-dom';
+import { Menu, X, User, LogOut } from 'lucide-react';
+import { useState } from 'react';
+import { useAuth } from '../../hooks/useAuth';
 
-export const FixedHeader: React.FC<FixedHeaderProps> = ({
-  user,
-  onLogout,
-  onSearch
-}) => {
-  const [showSearch, setShowSearch] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
-
-  const handleSearch = () => {
-    if (onSearch) {
-      onSearch(searchQuery);
-    }
-    console.log('Search query:', searchQuery);
-  };
-
-  const handleSearchToggle = () => {
-    setShowSearch(!showSearch);
-    if (showSearch) {
-      setSearchQuery('');
-    }
-  };
+export default function FixedHeader() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user, signOut } = useAuth();
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-black shadow-lg">
-      <div className="py-2 sm:py-3 md:py-4 px-4 sm:px-6 md:px-8">
+    <header className="fixed top-0 left-0 right-0 bg-black shadow-lg z-50">
+      <nav className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
-          <div className="flex items-center min-w-0 flex-1">
-            <div className="flex items-center">
-              {/* Main Logo */}
-              <img
-                src="/ombaro-logo-new.png"
-                alt="OMBARO"
-                className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto object-contain transition-transform duration-300 hover:scale-105"
-              />
-            </div>
-          </div>
-          <div className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0">
-            <button
-              onClick={handleSearchToggle}
-              aria-label="Toggle search"
-              className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-800 hover:bg-gray-700 rounded-lg flex items-center justify-center transition-colors"
-            >
-              <Search className="w-5 h-5 text-white" />
-            </button>
-            <button
-              aria-label="View notifications"
-              className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-800 hover:bg-gray-700 rounded-lg flex items-center justify-center transition-colors"
-            >
-              <Bell className="w-5 h-5 text-white" />
-            </button>
-            <button
-              onClick={onLogout}
-              aria-label="Logout from account"
-              className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-800 hover:bg-gray-700 rounded-lg flex items-center justify-center transition-colors"
-            >
-              <LogOut className="w-5 h-5 text-white" />
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Search Bar - Toggleable */}
-      {showSearch && (
-        <div className="px-4 sm:px-6 md:px-8 pb-4 border-t border-gray-800">
-          <div className="relative mt-3">
-            <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <Search className="w-5 h-5 text-gray-400" />
-            </div>
-            <input
-              placeholder="Search salons, services..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
-              className="w-full pl-10 pr-16 py-3 bg-gray-900 text-white border border-gray-700 rounded-xl focus:ring-2 focus:ring-green-500 focus:outline-none transition-all duration-200"
-              autoFocus
+          {/* Logo */}
+          <Link to="/" className="flex items-center">
+            <img 
+              src="/ombaro-logo-new.png" 
+              alt="Ombaro" 
+              className="h-12 w-auto object-contain"
             />
-            <button
-              onClick={handleSearch}
-              aria-label="Search and filter salons"
-              className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 w-7 h-7 bg-green-600 hover:bg-green-700 rounded-lg flex items-center justify-center transition-colors"
-            >
-              <Filter className="w-4 h-4 text-white" />
-            </button>
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex items-center space-x-8">
+            <Link to="/" className="text-white hover:text-emerald-400 transition-colors font-medium">
+              Home
+            </Link>
+            <Link to="/services" className="text-white hover:text-emerald-400 transition-colors font-medium">
+              Services
+            </Link>
+            <Link to="/how-it-works" className="text-white hover:text-emerald-400 transition-colors font-medium">
+              How It Works
+            </Link>
+            <Link to="/become-partner" className="text-white hover:text-emerald-400 transition-colors font-medium">
+              Become Partner
+            </Link>
+            <Link to="/about" className="text-white hover:text-emerald-400 transition-colors font-medium">
+              About
+            </Link>
+            <Link to="/contact" className="text-white hover:text-emerald-400 transition-colors font-medium">
+              Contact
+            </Link>
+            
+            {user ? (
+              <div className="flex items-center space-x-4">
+                <Link 
+                  to="/profile" 
+                  className="flex items-center space-x-2 text-white hover:text-emerald-400 transition-colors"
+                >
+                  <User className="w-5 h-5" />
+                  <span>Profile</span>
+                </Link>
+                <button
+                  onClick={signOut}
+                  className="flex items-center space-x-2 text-white hover:text-emerald-400 transition-colors"
+                >
+                  <LogOut className="w-5 h-5" />
+                  <span>Logout</span>
+                </button>
+              </div>
+            ) : (
+              <Link
+                to="/login"
+                className="bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-6 py-2 rounded-full hover:from-emerald-600 hover:to-teal-700 transition-all shadow-lg"
+              >
+                Login
+              </Link>
+            )}
           </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden text-white hover:text-emerald-400 transition-colors"
+          >
+            {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
         </div>
-      )}
-    </div>
+
+        {/* Mobile Menu */}
+        {isMenuOpen && (
+          <div className="md:hidden mt-4 pb-4 space-y-3">
+            <Link 
+              to="/" 
+              className="block text-white hover:text-emerald-400 transition-colors py-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Home
+            </Link>
+            <Link 
+              to="/services" 
+              className="block text-white hover:text-emerald-400 transition-colors py-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Services
+            </Link>
+            <Link 
+              to="/how-it-works" 
+              className="block text-white hover:text-emerald-400 transition-colors py-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              How It Works
+            </Link>
+            <Link 
+              to="/become-partner" 
+              className="block text-white hover:text-emerald-400 transition-colors py-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Become Partner
+            </Link>
+            <Link 
+              to="/about" 
+              className="block text-white hover:text-emerald-400 transition-colors py-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              About
+            </Link>
+            <Link 
+              to="/contact" 
+              className="block text-white hover:text-emerald-400 transition-colors py-2"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Contact
+            </Link>
+            {user ? (
+              <>
+                <Link 
+                  to="/profile" 
+                  className="block text-white hover:text-emerald-400 transition-colors py-2"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Profile
+                </Link>
+                <button
+                  onClick={() => {
+                    signOut();
+                    setIsMenuOpen(false);
+                  }}
+                  className="block w-full text-left text-white hover:text-emerald-400 transition-colors py-2"
+                >
+                  Logout
+                </button>
+              </>
+            ) : (
+              <Link
+                to="/login"
+                className="block bg-gradient-to-r from-emerald-500 to-teal-600 text-white px-6 py-2 rounded-full text-center hover:from-emerald-600 hover:to-teal-700 transition-all shadow-lg"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Login
+              </Link>
+            )}
+          </div>
+        )}
+      </nav>
+    </header>
   );
-};
+}
