@@ -36,25 +36,11 @@ export const FixedHeader: React.FC<FixedHeaderProps> = ({
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2 sm:space-x-3 min-w-0 flex-1">
             <div className="relative flex items-center">
-              {/* Left Transparent Logo */}
-              <img
-                src="/ombaro-logo.png"
-                alt=""
-                className="absolute -left-16 sm:-left-20 h-8 sm:h-9 md:h-10 lg:h-11 w-auto object-contain opacity-20 blur-[1px]"
-              />
-              
-              {/* Main Logo */}
+              {/* Main Logo - Transparent and Larger */}
               <img
                 src="/ombaro-logo.png"
                 alt="OMBARO"
-                className="h-9 sm:h-10 md:h-11 lg:h-12 w-auto object-contain transition-transform duration-300 hover:scale-105 relative z-10"
-              />
-              
-              {/* Right Transparent Logo */}
-              <img
-                src="/ombaro-logo.png"
-                alt=""
-                className="absolute -right-16 sm:-right-20 h-8 sm:h-9 md:h-10 lg:h-11 w-auto object-contain opacity-20 blur-[1px]"
+                className="h-11 sm:h-12 md:h-14 lg:h-16 w-auto object-contain transition-transform duration-300 hover:scale-105 relative z-10 opacity-90"
               />
               
               {/* Water Wave Effect Under Logo */}
