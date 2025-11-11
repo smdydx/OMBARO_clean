@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
@@ -24,7 +23,7 @@ export const BecomePartnerPage: React.FC = () => {
             <div className="absolute top-0 left-0 w-96 h-96 bg-sky-400 rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-400 rounded-full blur-3xl"></div>
           </div>
-          
+
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20">
             <div className="grid md:grid-cols-2 gap-16 items-center">
               <div>
@@ -80,15 +79,10 @@ export const BecomePartnerPage: React.FC = () => {
                   alt="Partner Success"
                   className="relative rounded-3xl shadow-2xl w-full h-[600px] object-cover"
                 />
-                <div className="absolute -bottom-8 -left-8 bg-white rounded-2xl shadow-2xl p-6 max-w-xs">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center">
-                      <TrendingUp className="w-8 h-8 text-sky-600" />
-                    </div>
-                    <div>
-                      <div className="text-3xl font-bold text-gray-900">40%</div>
-                      <div className="text-sm text-gray-600">Revenue Growth</div>
-                    </div>
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/50 to-transparent rounded-b-3xl p-8">
+                  <div className="text-white">
+                    <p className="text-lg font-semibold mb-2">Join Our Success Story</p>
+                    <p className="text-sm opacity-90">500+ Partners Already Growing</p>
                   </div>
                 </div>
               </div>
@@ -549,7 +543,7 @@ export const BecomePartnerPage: React.FC = () => {
             <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
           </div>
-          
+
           <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h2 className="text-5xl md:text-6xl font-bold mb-6" style={{ fontFamily: "'Tenor Sans', serif" }}>
               Ready to Transform Your Business?
