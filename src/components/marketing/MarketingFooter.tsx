@@ -12,7 +12,7 @@ export const MarketingFooter: React.FC = () => {
             <img 
               src="/ombaro-logo.png" 
               alt="OMBARO" 
-              className="h-10 sm:h-12 w-auto object-contain brightness-200"
+              className="h-10 sm:h-12 w-auto object-contain"
             />
           </div>
           <p className="text-xs sm:text-sm text-white/80 mb-3 max-w-md">

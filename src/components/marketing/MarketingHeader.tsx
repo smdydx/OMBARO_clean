@@ -18,11 +18,11 @@ export const MarketingHeader: React.FC = () => {
       <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-18 md:h-20">
           <Link to="/" className="flex items-center group z-50">
-            <div className="relative py-2 px-3 bg-gradient-to-r from-green-600 to-green-700 rounded-lg">
+            <div className="relative">
               <img
                 src="/ombaro-logo.png"
                 alt="OMBARO"
-                className="h-8 sm:h-9 md:h-10 lg:h-12 w-auto max-w-[120px] sm:max-w-[140px] md:max-w-[160px] lg:max-w-[180px] object-contain transition-all duration-300 group-hover:scale-105"
+                className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto object-contain transition-all duration-300 group-hover:scale-105"
               />
             </div>
           </Link>

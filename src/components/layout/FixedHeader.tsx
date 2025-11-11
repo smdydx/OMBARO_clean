@@ -40,11 +40,7 @@ export const FixedHeader: React.FC<FixedHeaderProps> = ({
               <img
                 src="/ombaro-logo.png"
                 alt="OMBARO"
-                className="h-10 sm:h-12 md:h-14 lg:h-16 w-auto object-contain transition-transform duration-300 hover:scale-105 filter drop-shadow-[0_2px_8px_rgba(255,255,255,0.3)]"
-                style={{ 
-                  mixBlendMode: 'normal',
-                  opacity: 0.95
-                }}
+                className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto object-contain transition-transform duration-300 hover:scale-105"
               />
               
               {/* Water Wave Effect Under Logo */}
