@@ -1,9 +1,10 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
   ArrowRight, CheckCircle, TrendingUp, Users, Calendar, Wallet,
   BarChart3, Shield, Star, Phone, Mail, Award, Target, Zap,
-  ChevronDown, ChevronUp, Sparkles, Crown
+  ChevronDown, ChevronUp, Sparkles, Crown, Heart, Coffee
 } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { MarketingHeader } from '../components/marketing/MarketingHeader';
@@ -17,56 +18,77 @@ export const BecomePartnerPage: React.FC = () => {
       <MarketingHeader />
 
       <main className="pt-16">
-        {/* Hero Section with Large Background Image */}
-        <section className="relative h-[600px] md:h-[700px] overflow-hidden">
-          <div 
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage: "url('https://images.unsplash.com/photo-1560066984-138dadb4c035?w=1600&q=90')",
-            }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-transparent" />
+        {/* Elegant Hero Section */}
+        <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-sky-50 via-white to-sky-50">
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute top-0 left-0 w-96 h-96 bg-sky-400 rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-cyan-400 rounded-full blur-3xl"></div>
           </div>
           
-          <div className="relative z-10 h-full flex items-center">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-              <div className="max-w-2xl">
-                <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full px-5 py-2.5 mb-6">
-                  <Sparkles className="w-5 h-5 text-white" />
-                  <span className="text-white text-sm font-semibold tracking-wide">INDIA'S #1 BEAUTY PLATFORM</span>
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-20">
+            <div className="grid md:grid-cols-2 gap-16 items-center">
+              <div>
+                <div className="inline-flex items-center space-x-2 bg-sky-100 rounded-full px-6 py-3 mb-8">
+                  <Sparkles className="w-5 h-5 text-sky-600" />
+                  <span className="text-sky-800 text-sm font-semibold tracking-wider uppercase">Premium Partner Program</span>
                 </div>
 
-                <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight text-white" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
-                  Partner with<br />OMBARO
+                <h1 className="text-6xl md:text-7xl font-bold mb-8 leading-tight text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                  Grow Your<br />
+                  <span className="text-sky-600">Beauty Empire</span>
                 </h1>
 
-                <p className="text-xl md:text-2xl mb-8 text-white/95 leading-relaxed" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
-                  Join 500+ successful businesses growing with India's leading beauty and wellness platform
+                <p className="text-xl md:text-2xl mb-10 text-gray-600 leading-relaxed">
+                  Join 500+ successful businesses thriving on India's most trusted beauty platform
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-4 mb-8">
+                <div className="flex flex-col sm:flex-row gap-4 mb-12">
                   <Link to="/app">
-                    <Button size="lg" className="w-full sm:w-auto bg-white text-gray-900 hover:bg-gray-100 shadow-2xl text-base md:text-lg px-8 py-6">
+                    <Button size="lg" className="w-full sm:w-auto bg-sky-600 hover:bg-sky-700 text-white shadow-xl text-lg px-10 py-6 rounded-full">
                       Start Your Journey
                       <ArrowRight className="w-5 h-5 ml-2" />
                     </Button>
                   </Link>
                   <a href="tel:+911234567890">
-                    <Button size="lg" variant="outline" className="w-full sm:w-auto border-2 border-white text-white hover:bg-white/10 text-base md:text-lg px-8 py-6">
+                    <Button size="lg" variant="outline" className="w-full sm:w-auto border-2 border-sky-600 text-sky-600 hover:bg-sky-50 text-lg px-10 py-6 rounded-full">
                       <Phone className="w-5 h-5 mr-2" />
                       Call Us Now
                     </Button>
                   </a>
                 </div>
 
-                <div className="flex items-center gap-6">
+                <div className="flex flex-wrap gap-6 text-gray-700">
                   <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-5 h-5 text-green-400" />
-                    <span className="text-white font-medium">No Setup Fees</span>
+                    <CheckCircle className="w-5 h-5 text-sky-600" />
+                    <span className="font-medium">Zero Setup Cost</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-5 h-5 text-green-400" />
-                    <span className="text-white font-medium">24hr Approval</span>
+                    <CheckCircle className="w-5 h-5 text-sky-600" />
+                    <span className="font-medium">24hr Approval</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <CheckCircle className="w-5 h-5 text-sky-600" />
+                    <span className="font-medium">Instant Payouts</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-sky-200 to-cyan-200 rounded-3xl transform rotate-6"></div>
+                <img 
+                  src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=90"
+                  alt="Partner Success"
+                  className="relative rounded-3xl shadow-2xl w-full h-[600px] object-cover"
+                />
+                <div className="absolute -bottom-8 -left-8 bg-white rounded-2xl shadow-2xl p-6 max-w-xs">
+                  <div className="flex items-center space-x-4">
+                    <div className="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center">
+                      <TrendingUp className="w-8 h-8 text-sky-600" />
+                    </div>
+                    <div>
+                      <div className="text-3xl font-bold text-gray-900">40%</div>
+                      <div className="text-sm text-gray-600">Revenue Growth</div>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -74,102 +96,106 @@ export const BecomePartnerPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Stats Section with Background */}
-        <section className="py-16 bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white">
+        {/* Elegant Stats */}
+        <section className="py-20 bg-white border-y border-gray-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
               <div className="text-center">
-                <div className="text-5xl font-bold mb-2" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>500+</div>
-                <div className="text-white/80 font-medium">Partner Businesses</div>
+                <div className="text-5xl font-bold mb-3 text-sky-600" style={{ fontFamily: "'Tenor Sans', serif" }}>500+</div>
+                <div className="text-gray-600 font-medium">Partner Businesses</div>
               </div>
               <div className="text-center">
-                <div className="text-5xl font-bold mb-2" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>50K+</div>
-                <div className="text-white/80 font-medium">Monthly Customers</div>
+                <div className="text-5xl font-bold mb-3 text-sky-600" style={{ fontFamily: "'Tenor Sans', serif" }}>50K+</div>
+                <div className="text-gray-600 font-medium">Monthly Customers</div>
               </div>
               <div className="text-center">
-                <div className="text-5xl font-bold mb-2" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>40%</div>
-                <div className="text-white/80 font-medium">Revenue Increase</div>
+                <div className="text-5xl font-bold mb-3 text-sky-600" style={{ fontFamily: "'Tenor Sans', serif" }}>40%</div>
+                <div className="text-gray-600 font-medium">Revenue Increase</div>
               </div>
               <div className="text-center">
-                <div className="text-5xl font-bold mb-2" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>4.8★</div>
-                <div className="text-white/80 font-medium">Partner Rating</div>
+                <div className="text-5xl font-bold mb-3 text-sky-600" style={{ fontFamily: "'Tenor Sans', serif" }}>4.8★</div>
+                <div className="text-gray-600 font-medium">Partner Rating</div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Why Partner - Image Grid Section */}
-        <section className="py-20 bg-white">
+        {/* Benefits Section - Clean & Minimal */}
+        <section className="py-32 bg-gradient-to-br from-gray-50 to-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
-                Why Top Businesses Choose OMBARO
+            <div className="text-center mb-20">
+              <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                Why Partner With Us
               </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                Join successful spa owners, salon professionals, and wellness experts who are growing their revenue
+              <div className="w-24 h-1 bg-sky-600 mx-auto mb-6"></div>
+              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                Everything you need to build a successful beauty business
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6">
-              {/* Benefit 1 with Image */}
-              <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
-                <div className="relative h-80">
-                  <img 
-                    src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&q=90"
-                    alt="Revenue Growth"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                    <TrendingUp className="w-10 h-10 mb-3 text-green-400" />
-                    <h3 className="text-2xl font-bold mb-2" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
-                      Grow Your Revenue
-                    </h3>
-                    <p className="text-white/90">
-                      Partners see 40% average increase in bookings within the first 3 months
-                    </p>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="bg-white rounded-2xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100">
+                <div className="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mb-6">
+                  <TrendingUp className="w-8 h-8 text-sky-600" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                  Grow Revenue
+                </h3>
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  Partners see an average 40% increase in bookings within the first 3 months of joining our platform.
+                </p>
+                <div className="space-y-2 text-sm text-gray-600">
+                  <div className="flex items-center space-x-2">
+                    <CheckCircle className="w-4 h-4 text-sky-600" />
+                    <span>Automated booking system</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <CheckCircle className="w-4 h-4 text-sky-600" />
+                    <span>24/7 customer support</span>
                   </div>
                 </div>
               </div>
 
-              {/* Benefit 2 with Image */}
-              <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
-                <div className="relative h-80">
-                  <img 
-                    src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=90"
-                    alt="Smart Management"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                    <Calendar className="w-10 h-10 mb-3 text-blue-400" />
-                    <h3 className="text-2xl font-bold mb-2" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
-                      Smart Management
-                    </h3>
-                    <p className="text-white/90">
-                      Automated booking system that saves 15+ hours weekly on scheduling
-                    </p>
+              <div className="bg-white rounded-2xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100">
+                <div className="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mb-6">
+                  <Calendar className="w-8 h-8 text-sky-600" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                  Smart Management
+                </h3>
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  Save 15+ hours weekly with our automated scheduling and customer management system.
+                </p>
+                <div className="space-y-2 text-sm text-gray-600">
+                  <div className="flex items-center space-x-2">
+                    <CheckCircle className="w-4 h-4 text-sky-600" />
+                    <span>Real-time scheduling</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <CheckCircle className="w-4 h-4 text-sky-600" />
+                    <span>CRM integration</span>
                   </div>
                 </div>
               </div>
 
-              {/* Benefit 3 with Image */}
-              <div className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
-                <div className="relative h-80">
-                  <img 
-                    src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&q=90"
-                    alt="Instant Payments"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                    <Wallet className="w-10 h-10 mb-3 text-yellow-400" />
-                    <h3 className="text-2xl font-bold mb-2" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
-                      Instant Payments
-                    </h3>
-                    <p className="text-white/90">
-                      Get paid within 24 hours directly to your bank account - secure & reliable
-                    </p>
+              <div className="bg-white rounded-2xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100">
+                <div className="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mb-6">
+                  <Wallet className="w-8 h-8 text-sky-600" />
+                </div>
+                <h3 className="text-2xl font-bold mb-4 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                  Instant Payments
+                </h3>
+                <p className="text-gray-600 leading-relaxed mb-6">
+                  Get paid within 24 hours directly to your bank account - secure, fast, and reliable.
+                </p>
+                <div className="space-y-2 text-sm text-gray-600">
+                  <div className="flex items-center space-x-2">
+                    <CheckCircle className="w-4 h-4 text-sky-600" />
+                    <span>Secure payments</span>
+                  </div>
+                  <div className="flex items-center space-x-2">
+                    <CheckCircle className="w-4 h-4 text-sky-600" />
+                    <span>Transparent reports</span>
                   </div>
                 </div>
               </div>
@@ -177,124 +203,89 @@ export const BecomePartnerPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Perfect For Section - Large Image Cards */}
-        <section className="py-20 bg-gray-50">
+        {/* Perfect For - Elegant Grid */}
+        <section className="py-32 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
-                Perfect For Every Beauty Business
+            <div className="text-center mb-20">
+              <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                Perfect For Every Business
               </h2>
+              <div className="w-24 h-1 bg-sky-600 mx-auto"></div>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8">
-              {/* Spa & Massage */}
-              <div className="group relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300">
-                <div className="relative h-96">
-                  <img 
-                    src="https://images.pexels.com/photos/3997392/pexels-photo-3997392.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                    alt="Spa & Massage Centers"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                    <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-4">
-                      <Sparkles className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-3xl font-bold mb-3" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
-                      Spa & Massage Centers
-                    </h3>
-                    <p className="text-white/90 text-lg mb-4">
-                      Professional booking management for spas and wellness centers
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm">Therapist Scheduling</span>
-                      <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm">Service Packages</span>
-                      <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm">Membership Plans</span>
-                    </div>
+              <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-sky-50 to-cyan-50 p-12 hover:shadow-2xl transition-all duration-500">
+                <div className="relative z-10">
+                  <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-lg">
+                    <Sparkles className="w-10 h-10 text-sky-600" />
+                  </div>
+                  <h3 className="text-3xl font-bold mb-4 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                    Spa & Wellness Centers
+                  </h3>
+                  <p className="text-gray-700 text-lg mb-6 leading-relaxed">
+                    Professional booking management for spas and wellness centers
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    <span className="px-4 py-2 bg-white/80 rounded-full text-sm text-gray-700 shadow-sm">Therapist Scheduling</span>
+                    <span className="px-4 py-2 bg-white/80 rounded-full text-sm text-gray-700 shadow-sm">Service Packages</span>
+                    <span className="px-4 py-2 bg-white/80 rounded-full text-sm text-gray-700 shadow-sm">Memberships</span>
                   </div>
                 </div>
               </div>
 
-              {/* Beauty Salons */}
-              <div className="group relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300">
-                <div className="relative h-96">
-                  <img 
-                    src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                    alt="Beauty Salons"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                    <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-4">
-                      <Crown className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-3xl font-bold mb-3" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
-                      Beauty Salons
-                    </h3>
-                    <p className="text-white/90 text-lg mb-4">
-                      Complete salon management with stylist tracking and inventory
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm">Stylist Management</span>
-                      <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm">Product Sales</span>
-                      <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm">Customer Loyalty</span>
-                    </div>
+              <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-sky-50 to-cyan-50 p-12 hover:shadow-2xl transition-all duration-500">
+                <div className="relative z-10">
+                  <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-lg">
+                    <Crown className="w-10 h-10 text-sky-600" />
+                  </div>
+                  <h3 className="text-3xl font-bold mb-4 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                    Beauty Salons
+                  </h3>
+                  <p className="text-gray-700 text-lg mb-6 leading-relaxed">
+                    Complete salon management with stylist tracking and inventory
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    <span className="px-4 py-2 bg-white/80 rounded-full text-sm text-gray-700 shadow-sm">Stylist Management</span>
+                    <span className="px-4 py-2 bg-white/80 rounded-full text-sm text-gray-700 shadow-sm">Product Sales</span>
+                    <span className="px-4 py-2 bg-white/80 rounded-full text-sm text-gray-700 shadow-sm">Customer Loyalty</span>
                   </div>
                 </div>
               </div>
 
-              {/* Bridal Makeup */}
-              <div className="group relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300">
-                <div className="relative h-96">
-                  <img 
-                    src="https://images.pexels.com/photos/1585325/pexels-photo-1585325.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                    alt="Bridal Makeup"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                    <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-4">
-                      <Award className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-3xl font-bold mb-3" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
-                      Bridal Makeup Artists
-                    </h3>
-                    <p className="text-white/90 text-lg mb-4">
-                      Showcase your portfolio and manage wedding bookings effortlessly
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm">Portfolio Gallery</span>
-                      <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm">Package Bookings</span>
-                      <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm">Trial Sessions</span>
-                    </div>
+              <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-sky-50 to-cyan-50 p-12 hover:shadow-2xl transition-all duration-500">
+                <div className="relative z-10">
+                  <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-lg">
+                    <Award className="w-10 h-10 text-sky-600" />
+                  </div>
+                  <h3 className="text-3xl font-bold mb-4 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                    Bridal Makeup Artists
+                  </h3>
+                  <p className="text-gray-700 text-lg mb-6 leading-relaxed">
+                    Showcase your portfolio and manage wedding bookings effortlessly
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    <span className="px-4 py-2 bg-white/80 rounded-full text-sm text-gray-700 shadow-sm">Portfolio Gallery</span>
+                    <span className="px-4 py-2 bg-white/80 rounded-full text-sm text-gray-700 shadow-sm">Package Bookings</span>
+                    <span className="px-4 py-2 bg-white/80 rounded-full text-sm text-gray-700 shadow-sm">Trial Sessions</span>
                   </div>
                 </div>
               </div>
 
-              {/* Wellness Centers */}
-              <div className="group relative overflow-hidden rounded-3xl shadow-xl hover:shadow-2xl transition-all duration-300">
-                <div className="relative h-96">
-                  <img 
-                    src="https://images.pexels.com/photos/3822621/pexels-photo-3822621.jpeg?auto=compress&cs=tinysrgb&w=1200"
-                    alt="Wellness Centers"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
-                  <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                    <div className="w-14 h-14 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-4">
-                      <Target className="w-8 h-8 text-white" />
-                    </div>
-                    <h3 className="text-3xl font-bold mb-3" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
-                      Wellness Centers
-                    </h3>
-                    <p className="text-white/90 text-lg mb-4">
-                      Holistic wellness programs, yoga classes, and therapy services
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm">Class Scheduling</span>
-                      <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm">Memberships</span>
-                      <span className="px-3 py-1 bg-white/20 backdrop-blur-sm rounded-full text-sm">Health Programs</span>
-                    </div>
+              <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-sky-50 to-cyan-50 p-12 hover:shadow-2xl transition-all duration-500">
+                <div className="relative z-10">
+                  <div className="w-20 h-20 bg-white rounded-2xl flex items-center justify-center mb-8 shadow-lg">
+                    <Heart className="w-10 h-10 text-sky-600" />
+                  </div>
+                  <h3 className="text-3xl font-bold mb-4 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                    Wellness Centers
+                  </h3>
+                  <p className="text-gray-700 text-lg mb-6 leading-relaxed">
+                    Holistic wellness programs, yoga classes, and therapy services
+                  </p>
+                  <div className="flex flex-wrap gap-3">
+                    <span className="px-4 py-2 bg-white/80 rounded-full text-sm text-gray-700 shadow-sm">Class Scheduling</span>
+                    <span className="px-4 py-2 bg-white/80 rounded-full text-sm text-gray-700 shadow-sm">Memberships</span>
+                    <span className="px-4 py-2 bg-white/80 rounded-full text-sm text-gray-700 shadow-sm">Programs</span>
                   </div>
                 </div>
               </div>
@@ -302,169 +293,159 @@ export const BecomePartnerPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Success Stories - Photo Testimonials */}
-        <section className="py-20 bg-white">
+        {/* Testimonials - Clean Minimal */}
+        <section className="py-32 bg-gradient-to-br from-gray-50 to-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
-                Success Stories from Our Partners
+            <div className="text-center mb-20">
+              <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                Success Stories
               </h2>
+              <div className="w-24 h-1 bg-sky-600 mx-auto mb-6"></div>
               <p className="text-xl text-gray-600">
                 Real businesses, real growth, real success
               </p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              {/* Testimonial 1 */}
-              <div className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
-                <div className="relative h-64">
-                  <img 
-                    src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=90"
-                    alt="Spa Owner"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-full font-bold">
-                    +45% Revenue
-                  </div>
+              <div className="bg-white rounded-2xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500">
+                <div className="flex items-center mb-6">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                  ))}
                 </div>
-                <div className="p-6">
-                  <div className="flex items-center mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-gray-700 mb-4 italic">
-                    "OMBARO transformed our spa business completely. Revenue doubled in 6 months!"
-                  </p>
-                  <div className="flex items-center">
-                    <div>
-                      <div className="font-bold text-gray-900">Meera Kapoor</div>
-                      <div className="text-sm text-gray-500">Serenity Spa, Mumbai</div>
-                    </div>
-                  </div>
+                <p className="text-gray-700 mb-6 italic leading-relaxed text-lg">
+                  "OMBARO transformed our spa business completely. Revenue doubled in 6 months!"
+                </p>
+                <div className="pt-6 border-t border-gray-100">
+                  <div className="font-bold text-gray-900 text-lg">Meera Kapoor</div>
+                  <div className="text-sm text-gray-500">Serenity Spa, Mumbai</div>
+                </div>
+                <div className="mt-4 inline-block px-4 py-2 bg-sky-100 text-sky-700 rounded-full text-sm font-semibold">
+                  +45% Revenue
                 </div>
               </div>
 
-              {/* Testimonial 2 */}
-              <div className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
-                <div className="relative h-64">
-                  <img 
-                    src="https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=800&q=90"
-                    alt="Salon Owner"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-full font-bold">
-                    +60% Bookings
-                  </div>
+              <div className="bg-white rounded-2xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500">
+                <div className="flex items-center mb-6">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                  ))}
                 </div>
-                <div className="p-6">
-                  <div className="flex items-center mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-gray-700 mb-4 italic">
-                    "Managing appointments was always a headache. OMBARO made everything so simple!"
-                  </p>
-                  <div className="flex items-center">
-                    <div>
-                      <div className="font-bold text-gray-900">Rajesh Sharma</div>
-                      <div className="text-sm text-gray-500">Glamour Salon, Delhi</div>
-                    </div>
-                  </div>
+                <p className="text-gray-700 mb-6 italic leading-relaxed text-lg">
+                  "Managing appointments was always a headache. OMBARO made everything so simple!"
+                </p>
+                <div className="pt-6 border-t border-gray-100">
+                  <div className="font-bold text-gray-900 text-lg">Rajesh Sharma</div>
+                  <div className="text-sm text-gray-500">Glamour Salon, Delhi</div>
+                </div>
+                <div className="mt-4 inline-block px-4 py-2 bg-sky-100 text-sky-700 rounded-full text-sm font-semibold">
+                  +60% Bookings
                 </div>
               </div>
 
-              {/* Testimonial 3 */}
-              <div className="bg-white rounded-2xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300">
-                <div className="relative h-64">
-                  <img 
-                    src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=800&q=90"
-                    alt="Makeup Artist"
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute top-4 right-4 bg-green-500 text-white px-4 py-2 rounded-full font-bold">
-                    +80% Growth
-                  </div>
+              <div className="bg-white rounded-2xl p-10 shadow-lg hover:shadow-2xl transition-all duration-500">
+                <div className="flex items-center mb-6">
+                  {[...Array(5)].map((_, i) => (
+                    <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
+                  ))}
                 </div>
-                <div className="p-6">
-                  <div className="flex items-center mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
-                    ))}
-                  </div>
-                  <p className="text-gray-700 mb-4 italic">
-                    "As a freelance artist, OMBARO gave me access to hundreds of brides. Calendar fully booked!"
-                  </p>
-                  <div className="flex items-center">
-                    <div>
-                      <div className="font-bold text-gray-900">Priya Deshmukh</div>
-                      <div className="text-sm text-gray-500">Bridal Makeup Artist, Pune</div>
-                    </div>
-                  </div>
+                <p className="text-gray-700 mb-6 italic leading-relaxed text-lg">
+                  "As a freelance artist, OMBARO gave me access to hundreds of brides. Calendar fully booked!"
+                </p>
+                <div className="pt-6 border-t border-gray-100">
+                  <div className="font-bold text-gray-900 text-lg">Priya Deshmukh</div>
+                  <div className="text-sm text-gray-500">Bridal Makeup Artist, Pune</div>
+                </div>
+                <div className="mt-4 inline-block px-4 py-2 bg-sky-100 text-sky-700 rounded-full text-sm font-semibold">
+                  +80% Growth
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* How It Works - Visual Timeline */}
-        <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
-                Start in 4 Simple Steps
+        {/* How It Works - Minimal Timeline */}
+        <section className="py-32 bg-white">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-20">
+              <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                Get Started in 4 Steps
               </h2>
+              <div className="w-24 h-1 bg-sky-600 mx-auto mb-6"></div>
               <p className="text-xl text-gray-600">
-                Get your business online in less than 48 hours
+                Your business online in less than 48 hours
               </p>
             </div>
 
-            <div className="grid md:grid-cols-4 gap-8">
-              <div className="text-center group">
-                <div className="relative mb-6">
-                  <div className="w-32 h-32 mx-auto bg-gradient-to-br from-blue-500 to-blue-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-xl">
-                    <span className="text-5xl font-bold text-white">1</span>
+            <div className="space-y-16">
+              <div className="flex items-start space-x-8">
+                <div className="flex-shrink-0">
+                  <div className="w-20 h-20 bg-sky-600 text-white rounded-full flex items-center justify-center shadow-lg">
+                    <span className="text-3xl font-bold">1</span>
                   </div>
                 </div>
-                <h3 className="text-xl font-bold mb-2" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>Register</h3>
-                <p className="text-gray-600">Fill simple form with your business details</p>
+                <div className="flex-1 pt-2">
+                  <h3 className="text-2xl font-bold mb-3 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                    Register
+                  </h3>
+                  <p className="text-gray-600 text-lg leading-relaxed">
+                    Fill simple form with your business details. Takes less than 5 minutes.
+                  </p>
+                </div>
               </div>
 
-              <div className="text-center group">
-                <div className="relative mb-6">
-                  <div className="w-32 h-32 mx-auto bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-xl">
-                    <span className="text-5xl font-bold text-white">2</span>
+              <div className="flex items-start space-x-8">
+                <div className="flex-shrink-0">
+                  <div className="w-20 h-20 bg-sky-600 text-white rounded-full flex items-center justify-center shadow-lg">
+                    <span className="text-3xl font-bold">2</span>
                   </div>
                 </div>
-                <h3 className="text-xl font-bold mb-2" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>Get Verified</h3>
-                <p className="text-gray-600">We verify your documents within 24-48 hours</p>
+                <div className="flex-1 pt-2">
+                  <h3 className="text-2xl font-bold mb-3 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                    Get Verified
+                  </h3>
+                  <p className="text-gray-600 text-lg leading-relaxed">
+                    We verify your documents within 24-48 hours. Quick and hassle-free.
+                  </p>
+                </div>
               </div>
 
-              <div className="text-center group">
-                <div className="relative mb-6">
-                  <div className="w-32 h-32 mx-auto bg-gradient-to-br from-purple-500 to-purple-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-xl">
-                    <span className="text-5xl font-bold text-white">3</span>
+              <div className="flex items-start space-x-8">
+                <div className="flex-shrink-0">
+                  <div className="w-20 h-20 bg-sky-600 text-white rounded-full flex items-center justify-center shadow-lg">
+                    <span className="text-3xl font-bold">3</span>
                   </div>
                 </div>
-                <h3 className="text-xl font-bold mb-2" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>Setup Profile</h3>
-                <p className="text-gray-600">Add photos, services, pricing & availability</p>
+                <div className="flex-1 pt-2">
+                  <h3 className="text-2xl font-bold mb-3 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                    Setup Profile
+                  </h3>
+                  <p className="text-gray-600 text-lg leading-relaxed">
+                    Add photos, services, pricing & availability. Make your profile shine.
+                  </p>
+                </div>
               </div>
 
-              <div className="text-center group">
-                <div className="relative mb-6">
-                  <div className="w-32 h-32 mx-auto bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-full flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-xl">
-                    <span className="text-5xl font-bold text-white">4</span>
+              <div className="flex items-start space-x-8">
+                <div className="flex-shrink-0">
+                  <div className="w-20 h-20 bg-sky-600 text-white rounded-full flex items-center justify-center shadow-lg">
+                    <span className="text-3xl font-bold">4</span>
                   </div>
                 </div>
-                <h3 className="text-xl font-bold mb-2" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>Go Live!</h3>
-                <p className="text-gray-600">Start receiving bookings immediately</p>
+                <div className="flex-1 pt-2">
+                  <h3 className="text-2xl font-bold mb-3 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                    Go Live!
+                  </h3>
+                  <p className="text-gray-600 text-lg leading-relaxed">
+                    Start receiving bookings immediately and watch your business grow.
+                  </p>
+                </div>
               </div>
             </div>
 
-            <div className="text-center mt-12">
+            <div className="text-center mt-16">
               <Link to="/app">
-                <Button size="lg" className="text-lg px-10 py-6 shadow-xl">
+                <Button size="lg" className="bg-sky-600 hover:bg-sky-700 text-white text-lg px-12 py-6 rounded-full shadow-xl">
                   Start Your Free Registration
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
@@ -473,90 +454,47 @@ export const BecomePartnerPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Platform Features - Icon Grid */}
-        <section className="py-20 bg-white">
+        {/* Platform Features */}
+        <section className="py-32 bg-gradient-to-br from-gray-50 to-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
-                Everything You Need to Succeed
+            <div className="text-center mb-20">
+              <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                Platform Features
               </h2>
+              <div className="w-24 h-1 bg-sky-600 mx-auto"></div>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="bg-gradient-to-br from-blue-50 to-white p-6 rounded-2xl border-2 border-blue-100 hover:border-blue-500 transition-all duration-300 hover:shadow-lg">
-                <div className="w-14 h-14 bg-blue-500 rounded-xl flex items-center justify-center mb-4">
-                  <Calendar className="w-8 h-8 text-white" />
+            <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {[
+                { icon: Calendar, title: 'Smart Booking', desc: 'Automated appointments' },
+                { icon: Wallet, title: 'Instant Payouts', desc: 'Get paid in 24 hours' },
+                { icon: BarChart3, title: 'Analytics', desc: 'Track performance' },
+                { icon: Users, title: 'CRM Tools', desc: 'Manage customers' },
+                { icon: Shield, title: 'Trust & Safety', desc: 'Verified reviews' },
+                { icon: Zap, title: 'Marketing', desc: 'Promotional campaigns' },
+                { icon: Phone, title: '24/7 Support', desc: 'Dedicated manager' },
+                { icon: Target, title: 'Multi-Location', desc: 'Manage branches' },
+              ].map((feature, idx) => (
+                <div key={idx} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 text-center">
+                  <div className="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <feature.icon className="w-8 h-8 text-sky-600" />
+                  </div>
+                  <h3 className="text-lg font-bold mb-2 text-gray-900">{feature.title}</h3>
+                  <p className="text-gray-600 text-sm">{feature.desc}</p>
                 </div>
-                <h3 className="text-lg font-bold mb-2">Smart Booking</h3>
-                <p className="text-gray-600 text-sm">Automated appointment management</p>
-              </div>
-
-              <div className="bg-gradient-to-br from-green-50 to-white p-6 rounded-2xl border-2 border-green-100 hover:border-green-500 transition-all duration-300 hover:shadow-lg">
-                <div className="w-14 h-14 bg-green-500 rounded-xl flex items-center justify-center mb-4">
-                  <Wallet className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-lg font-bold mb-2">Instant Payouts</h3>
-                <p className="text-gray-600 text-sm">Get paid within 24 hours</p>
-              </div>
-
-              <div className="bg-gradient-to-br from-purple-50 to-white p-6 rounded-2xl border-2 border-purple-100 hover:border-purple-500 transition-all duration-300 hover:shadow-lg">
-                <div className="w-14 h-14 bg-purple-500 rounded-xl flex items-center justify-center mb-4">
-                  <BarChart3 className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-lg font-bold mb-2">Analytics</h3>
-                <p className="text-gray-600 text-sm">Track revenue & performance</p>
-              </div>
-
-              <div className="bg-gradient-to-br from-yellow-50 to-white p-6 rounded-2xl border-2 border-yellow-100 hover:border-yellow-500 transition-all duration-300 hover:shadow-lg">
-                <div className="w-14 h-14 bg-yellow-500 rounded-xl flex items-center justify-center mb-4">
-                  <Users className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-lg font-bold mb-2">CRM Tools</h3>
-                <p className="text-gray-600 text-sm">Build customer relationships</p>
-              </div>
-
-              <div className="bg-gradient-to-br from-red-50 to-white p-6 rounded-2xl border-2 border-red-100 hover:border-red-500 transition-all duration-300 hover:shadow-lg">
-                <div className="w-14 h-14 bg-red-500 rounded-xl flex items-center justify-center mb-4">
-                  <Shield className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-lg font-bold mb-2">Trust & Safety</h3>
-                <p className="text-gray-600 text-sm">Verified reviews & secure payments</p>
-              </div>
-
-              <div className="bg-gradient-to-br from-indigo-50 to-white p-6 rounded-2xl border-2 border-indigo-100 hover:border-indigo-500 transition-all duration-300 hover:shadow-lg">
-                <div className="w-14 h-14 bg-indigo-500 rounded-xl flex items-center justify-center mb-4">
-                  <Zap className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-lg font-bold mb-2">Marketing</h3>
-                <p className="text-gray-600 text-sm">Promotional campaigns & visibility</p>
-              </div>
-
-              <div className="bg-gradient-to-br from-pink-50 to-white p-6 rounded-2xl border-2 border-pink-100 hover:border-pink-500 transition-all duration-300 hover:shadow-lg">
-                <div className="w-14 h-14 bg-pink-500 rounded-xl flex items-center justify-center mb-4">
-                  <Phone className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-lg font-bold mb-2">24/7 Support</h3>
-                <p className="text-gray-600 text-sm">Dedicated account manager</p>
-              </div>
-
-              <div className="bg-gradient-to-br from-teal-50 to-white p-6 rounded-2xl border-2 border-teal-100 hover:border-teal-500 transition-all duration-300 hover:shadow-lg">
-                <div className="w-14 h-14 bg-teal-500 rounded-xl flex items-center justify-center mb-4">
-                  <Target className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-lg font-bold mb-2">Multi-Location</h3>
-                <p className="text-gray-600 text-sm">Manage multiple branches</p>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* FAQ Section */}
-        <section className="py-20 bg-gray-50">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
-                Frequently Asked Questions
+        <section className="py-32 bg-white">
+          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                Common Questions
               </h2>
+              <div className="w-24 h-1 bg-sky-600 mx-auto"></div>
             </div>
 
             <div className="space-y-4">
@@ -582,20 +520,20 @@ export const BecomePartnerPage: React.FC = () => {
                   a: "No setup fees, no hidden charges. Join for free and start growing your business immediately."
                 }
               ].map((faq, idx) => (
-                <div key={idx} className="bg-white rounded-xl shadow-md overflow-hidden">
+                <div key={idx} className="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-md overflow-hidden border border-gray-100">
                   <button
                     onClick={() => setOpenFaq(openFaq === idx ? null : idx)}
-                    className="w-full px-6 py-5 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
+                    className="w-full px-8 py-6 text-left flex items-center justify-between hover:bg-gray-50 transition-colors"
                   >
-                    <span className="font-semibold text-gray-900 text-lg">{faq.q}</span>
+                    <span className="font-semibold text-gray-900 text-lg pr-4">{faq.q}</span>
                     {openFaq === idx ? (
-                      <ChevronUp className="w-5 h-5 text-gray-500" />
+                      <ChevronUp className="w-6 h-6 text-sky-600 flex-shrink-0" />
                     ) : (
-                      <ChevronDown className="w-5 h-5 text-gray-500" />
+                      <ChevronDown className="w-6 h-6 text-sky-600 flex-shrink-0" />
                     )}
                   </button>
                   {openFaq === idx && (
-                    <div className="px-6 pb-5 text-gray-600">
+                    <div className="px-8 pb-6 text-gray-600 leading-relaxed">
                       {faq.a}
                     </div>
                   )}
@@ -605,55 +543,51 @@ export const BecomePartnerPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Final CTA Section with Background Image */}
-        <section className="relative py-24 overflow-hidden">
-          <div 
-            className="absolute inset-0 bg-cover bg-center"
-            style={{
-              backgroundImage: "url('https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=1600&q=90')",
-            }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-900/95 to-blue-800/95" />
+        {/* Final CTA - Elegant */}
+        <section className="py-32 bg-gradient-to-br from-sky-600 to-cyan-600 text-white relative overflow-hidden">
+          <div className="absolute inset-0 opacity-10">
+            <div className="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
           </div>
           
-          <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6" style={{ fontFamily: "'Tenor Sans', sans-serif" }}>
-              Ready to Grow Your Business?
+          <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6" style={{ fontFamily: "'Tenor Sans', serif" }}>
+              Ready to Transform Your Business?
             </h2>
-            <p className="text-xl md:text-2xl mb-10 text-white/90">
+            <p className="text-2xl mb-12 text-white/90">
               Join 500+ successful beauty businesses on OMBARO today
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
               <Link to="/app">
-                <Button size="lg" className="w-full sm:w-auto bg-white text-gray-900 hover:bg-gray-100 text-lg px-10 py-6 shadow-2xl">
-                  Register Now - It's Free
+                <Button size="lg" className="w-full sm:w-auto bg-white text-sky-600 hover:bg-gray-100 text-lg px-12 py-6 rounded-full shadow-2xl font-semibold">
+                  Start Free Registration
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </Link>
               <a href="mailto:partners@ombaro.com">
-                <Button size="lg" variant="outline" className="w-full sm:w-auto border-2 border-white text-white hover:bg-white/10 text-lg px-10 py-6">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto border-2 border-white text-white hover:bg-white/10 text-lg px-12 py-6 rounded-full">
                   <Mail className="w-5 h-5 mr-2" />
                   Email Us
                 </Button>
               </a>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-8 text-sm">
+            <div className="flex flex-wrap justify-center gap-8">
               <div className="flex items-center space-x-2">
-                <CheckCircle className="w-5 h-5 text-green-400" />
-                <span>No Setup Fees</span>
+                <CheckCircle className="w-5 h-5" />
+                <span>Zero Setup Cost</span>
               </div>
               <div className="flex items-center space-x-2">
-                <CheckCircle className="w-5 h-5 text-green-400" />
+                <CheckCircle className="w-5 h-5" />
                 <span>24hr Approval</span>
               </div>
               <div className="flex items-center space-x-2">
-                <CheckCircle className="w-5 h-5 text-green-400" />
+                <CheckCircle className="w-5 h-5" />
                 <span>Instant Payouts</span>
               </div>
               <div className="flex items-center space-x-2">
-                <CheckCircle className="w-5 h-5 text-green-400" />
+                <CheckCircle className="w-5 h-5" />
                 <span>Free Support</span>
               </div>
             </div>
