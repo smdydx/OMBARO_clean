@@ -18,7 +18,7 @@ export const BecomePartnerPage: React.FC = () => {
 
       <main className="pt-16">
         {/* Elegant Hero Section */}
-        <section className="relative min-h-[600px] md:min-h-[700px] lg:min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black">
+        <section className="relative min-h-[600px] md:min-h-[700px] lg:min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black pt-20 sm:pt-24 md:pt-28">
           <div className="absolute inset-0 opacity-5">
             <div className="absolute top-0 left-0 w-48 h-48 md:w-96 md:h-96 bg-primary-400 rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 right-0 w-48 h-48 md:w-96 md:h-96 bg-primary-600 rounded-full blur-3xl"></div>
@@ -64,12 +64,12 @@ export const BecomePartnerPage: React.FC = () => {
                   <span className="text-green-800 text-xs sm:text-sm font-semibold tracking-wider uppercase">Premium Partner Program</span>
                 </div>
 
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 sm:mb-8 leading-tight text-white" style={{ fontFamily: "'Tenor Sans', serif" }}>
                   Grow Your<br />
-                  <span className="text-green-600">Beauty Empire</span>
+                  <span className="text-green-500">Beauty Empire</span>
                 </h1>
 
-                <p className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-10 text-gray-600 leading-relaxed">
+                <p className="text-lg sm:text-xl md:text-2xl mb-8 sm:mb-10 text-white/90 leading-relaxed">
                   Join 500+ successful businesses thriving on India's most trusted beauty platform
                 </p>
 
@@ -88,17 +88,17 @@ export const BecomePartnerPage: React.FC = () => {
                   </a>
                 </div>
 
-                <div className="flex flex-wrap gap-3 sm:gap-6 text-gray-700 text-sm sm:text-base">
+                <div className="flex flex-wrap gap-3 sm:gap-6 text-white text-sm sm:text-base">
                   <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
+                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0" />
                     <span className="font-medium">Zero Setup Cost</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
+                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0" />
                     <span className="font-medium">24hr Approval</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 flex-shrink-0" />
+                    <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0" />
                     <span className="font-medium">Instant Payouts</span>
                   </div>
                 </div>
@@ -121,17 +121,7 @@ export const BecomePartnerPage: React.FC = () => {
             </div>
           </div>
 
-          {/* Water Wave Animation */}
-          <div className="absolute bottom-[-2px] left-0 right-0 overflow-hidden leading-[0] pointer-events-none">
-            <svg className="relative block w-full h-[60px] sm:h-[80px] md:h-[100px]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-              <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
-                    className="fill-green-200 opacity-40 animate-wave-slow"></path>
-              <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" 
-                    className="fill-green-300 opacity-30 animate-wave-medium"></path>
-              <path d="M0,0V5.63C149.93,59,314.09,71.32,475.83,42.57c43-7.64,84.23-20.12,127.61-26.46,59-8.63,112.48,12.24,165.56,35.4C827.93,77.22,886,95.24,951.2,90c86.53-7,172.46-45.71,248.8-84.81V0Z" 
-                    className="fill-green-400 opacity-20 animate-wave-fast"></path>
-            </svg>
-          </div>
+          
         </section>
 
         {/* Why Partner Section */}

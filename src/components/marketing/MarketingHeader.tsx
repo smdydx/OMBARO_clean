@@ -14,15 +14,15 @@ export const MarketingHeader: React.FC = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-green-900 via-black to-green-800 backdrop-blur-xl border-b border-green-700/30 shadow-sm">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-gray-800 shadow-xl">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-18 md:h-20">
+        <div className="flex items-center justify-between h-20 sm:h-24 md:h-28">
           <Link to="/" className="flex items-center group z-50">
             <div className="relative">
               <img
                 src="/ombaro-logo-new.png"
                 alt="OMBARO"
-                className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto object-contain transition-all duration-300 group-hover:scale-105"
+                className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300 group-hover:scale-105"
               />
             </div>
           </Link>
@@ -83,103 +83,40 @@ export const MarketingHeader: React.FC = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`fixed top-16 right-0 left-0 bg-white shadow-xl z-40 md:hidden transform transition-all duration-300 ease-in-out ${
+          className={`fixed top-20 sm:top-24 md:top-28 right-0 left-0 bg-black border-b border-gray-800 shadow-2xl z-40 md:hidden transform transition-all duration-300 ease-in-out ${
             isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'
           }`}
         >
-          <nav className="flex flex-col p-4 space-y-2">
+          <nav className="flex flex-col p-6 space-y-3">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="px-4 py-3 text-gray-700 hover:bg-green-50 hover:text-green-600 rounded-lg transition-colors font-medium"
+                className="px-5 py-3.5 text-white hover:bg-green-600/20 hover:text-green-400 rounded-xl transition-all font-medium border border-transparent hover:border-green-600/30"
               >
                 {link.name}
               </Link>
             ))}
+            <div className="border-t border-gray-800 my-3"></div>
             <Link
               to="/app"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="px-4 py-3 bg-gradient-to-r from-green-600 to-black text-white rounded-lg hover:from-green-700 hover:to-gray-900 transition-all shadow-md text-center font-semibold"
+              className="px-5 py-3.5 text-white hover:bg-green-600/20 hover:text-green-400 rounded-xl transition-all font-medium border border-transparent hover:border-green-600/30"
+            >
+              Login
+            </Link>
+            <Link
+              to="/app"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="px-5 py-3.5 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl hover:from-green-600 hover:to-green-700 transition-all shadow-lg text-center font-semibold"
             >
               Get Started
             </Link>
           </nav>
         </div>
 
-        {/* Bottom Water Wave Effect */}
-        <div className="absolute bottom-0 left-0 right-0 h-8 overflow-hidden">
-          <svg viewBox="0 0 1440 80" className="w-full h-full" preserveAspectRatio="none">
-            <path
-              fill="rgba(0, 255, 135, 0.15)"
-              d="M0,40 Q180,20 360,40 T720,40 T1080,40 T1440,40 L1440,80 L0,80 Z"
-            >
-              <animate
-                attributeName="d"
-                dur="4s"
-                repeatCount="indefinite"
-                values="
-                  M0,40 Q180,20 360,40 T720,40 T1080,40 T1440,40 L1440,80 L0,80 Z;
-                  M0,40 Q180,55 360,40 T720,40 T1080,40 T1440,40 L1440,80 L0,80 Z;
-                  M0,40 Q180,20 360,40 T720,40 T1080,40 T1440,40 L1440,80 L0,80 Z
-                "
-              />
-            </path>
-            <path
-              fill="rgba(1, 107, 58, 0.1)"
-              d="M0,45 Q240,25 480,45 T960,45 T1440,45 L1440,80 L0,80 Z"
-            >
-              <animate
-                attributeName="d"
-                dur="3.5s"
-                repeatCount="indefinite"
-                values="
-                  M0,45 Q240,25 480,45 T960,45 T1440,45 L1440,80 L0,80 Z;
-                  M0,45 Q240,60 480,45 T960,45 T1440,45 L1440,80 L0,80 Z;
-                  M0,45 Q240,25 480,45 T960,45 T1440,45 L1440,80 L0,80 Z
-                "
-              />
-            </path>
-          </svg>
         </div>
-      </div>
-
-      {isMobileMenuOpen && (
-        <div className="md:hidden bg-gradient-to-br from-black via-gray-900 to-black border-t border-primary-900 shadow-xl">
-          <nav className="px-4 py-6 space-y-2">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="block py-3 px-4 text-gray-300 hover:text-white font-medium transition-all duration-200 hover:bg-primary-900/50 rounded-lg text-sm"
-                style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}
-              >
-                {link.name}
-              </Link>
-            ))}
-            <div className="pt-6 space-y-4 border-t border-primary-900 mt-4">
-              <Link to="/app" onClick={() => setIsMobileMenuOpen(false)}>
-                <button
-                  className="w-full py-3 text-gray-300 hover:text-white font-medium transition-all duration-200 hover:bg-primary-900/50 rounded-full border border-primary-800 text-sm"
-                  style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}
-                >
-                  Login
-                </button>
-              </Link>
-              <Link to="/app" onClick={() => setIsMobileMenuOpen(false)}>
-                <button
-                  className="w-full py-3 bg-gradient-to-r from-primary-500 to-primary-600 text-white font-semibold rounded-full shadow-md text-sm"
-                  style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600 }}
-                >
-                  Get Started
-                </button>
-              </Link>
-            </div>
-          </nav>
-        </div>
-      )}
     </header>
   );
 };
