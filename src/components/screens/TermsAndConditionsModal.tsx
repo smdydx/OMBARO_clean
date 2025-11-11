@@ -71,9 +71,9 @@ export const TermsAndConditionsModal: React.FC<TermsAndConditionsModalProps> = (
                 </h3>
               </div>
               <div className="ml-8 space-y-2">
-                <div className="bg-red-50 border border-red-200 rounded-lg p-3">
-                  <p className="text-red-800 font-medium mb-2">OMBARO <strong>does not engage in, promote, or support</strong> any form of:</p>
-                  <ul className="text-red-700 space-y-1 ml-4">
+                <div className="bg-gradient-to-br from-primary-600 to-primary-700 border border-primary-800 rounded-lg p-3">
+                  <p className="text-white font-medium mb-2">OMBARO <strong>does not engage in, promote, or support</strong> any form of:</p>
+                  <ul className="text-white space-y-1 ml-4">
                     <li>• Human trafficking, forced labor, or exploitation</li>
                     <li>• Sexual activity, sexual services, or any illegal conduct</li>
                   </ul>
@@ -85,23 +85,23 @@ export const TermsAndConditionsModal: React.FC<TermsAndConditionsModalProps> = (
             {/* Section 3: Customer Conduct */}
             <div className="space-y-3">
               <div className="flex items-center space-x-2">
-                <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                  <span className="text-green-600 font-bold text-sm">3</span>
+                <div className="w-6 h-6 bg-primary-100 rounded-full flex items-center justify-center">
+                  <span className="text-primary-600 font-bold text-sm">3</span>
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 flex items-center space-x-2">
                   <span>Customer Conduct</span>
-                  <Users className="w-5 h-5 text-green-500" />
+                  <Users className="w-5 h-5 text-primary-500" />
                 </h3>
               </div>
               <div className="ml-8 space-y-2 text-gray-700">
                 <p>• Customers must treat Vendors with respect and professionalism at all times.</p>
-                <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3">
-                  <p className="text-yellow-800 font-medium mb-2">Any attempt to:</p>
-                  <ul className="text-yellow-700 space-y-1 ml-4">
+                <div className="bg-gradient-to-br from-primary-600 to-primary-700 border border-primary-800 rounded-lg p-3">
+                  <p className="text-white font-medium mb-2">Any attempt to:</p>
+                  <ul className="text-white space-y-1 ml-4">
                     <li>• Force, coerce, harass, or exploit a Vendor, or</li>
                     <li>• Engage in inappropriate or unlawful behavior</li>
                   </ul>
-                  <p className="text-yellow-800 font-semibold mt-2">
+                  <p className="text-white font-semibold mt-2">
                     will result in <strong>immediate service termination, account suspension, and possible legal action</strong>.
                   </p>
                 </div>
