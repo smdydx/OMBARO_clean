@@ -224,7 +224,7 @@ export const HomePage: React.FC = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/20 to-transparent"></div>
                   </div>
-                </div></div>
+                </div>
 
                 {/* Floating Card */}
                 <div className="absolute -bottom-4 md:-bottom-6 -left-4 md:-left-6 bg-white/90 backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-xl max-w-[200px] md:max-w-xs">
