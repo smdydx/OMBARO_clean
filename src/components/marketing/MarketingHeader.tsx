@@ -17,17 +17,25 @@ export const MarketingHeader: React.FC = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-black border-b border-gray-800 shadow-xl">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20 sm:h-24 md:h-28">
-          <Link to="/" className="flex items-center group z-50">
-            <div className="relative">
-              <img
-                src="/ombaro-logo-new.png"
-                alt="OMBARO"
-                className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300 group-hover:scale-105"
-              />
-            </div>
-          </Link>
+          <div className="flex items-center justify-between flex-1">
+            <Link to="/" className="flex items-center group z-50">
+              <div className="relative">
+                <img
+                  src="/ombaro-logo-new.png"
+                  alt="OMBARO"
+                  className="h-14 sm:h-16 md:h-20 w-auto object-contain transition-all duration-300 group-hover:scale-105"
+                />
+              </div>
+            </Link>
 
-          <nav className="hidden md:flex items-center space-x-1">
+            <div className="hidden lg:flex items-center">
+              <h2 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-green-400 via-green-500 to-green-600 bg-clip-text text-transparent" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                RELAX & ENJOY
+              </h2>
+            </div>
+          </div>
+
+          <nav className="hidden md:flex items-center space-x-1 absolute left-1/2 transform -translate-x-1/2">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
@@ -40,7 +48,7 @@ export const MarketingHeader: React.FC = () => {
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center space-x-6">
+          <div className="hidden md:flex items-center space-x-6 ml-auto">
             <Link to="/app">
               <button
                 className="px-6 py-2.5 text-gray-300 hover:text-white font-medium transition-all duration-200 hover:bg-green-700/30 rounded-full text-sm"

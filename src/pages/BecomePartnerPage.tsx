@@ -16,9 +16,9 @@ export const BecomePartnerPage: React.FC = () => {
     <div className="min-h-screen bg-white">
       <MarketingHeader />
 
-      <main className="pt-16">
+      <main className="pt-20 sm:pt-24 md:pt-28 lg:pt-32">
         {/* Elegant Hero Section */}
-        <section className="relative min-h-[600px] md:min-h-[700px] lg:min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black pt-20 sm:pt-24 md:pt-28">
+        <section className="relative min-h-[600px] md:min-h-[700px] lg:min-h-screen flex items-start overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black pt-8 sm:pt-12 md:pt-16 lg:pt-20">
           <div className="absolute inset-0 opacity-5">
             <div className="absolute top-0 left-0 w-48 h-48 md:w-96 md:h-96 bg-primary-400 rounded-full blur-3xl"></div>
             <div className="absolute bottom-0 right-0 w-48 h-48 md:w-96 md:h-96 bg-primary-600 rounded-full blur-3xl"></div>
