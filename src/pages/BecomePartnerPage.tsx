@@ -34,33 +34,33 @@ export const BecomePartnerPage: React.FC = () => {
                 </div>
 
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight text-white" style={{ fontFamily: "'Tenor Sans', serif" }}>
-                  India's Most<br />
+                  Join OMBARO's<br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-600">
-                    Profitable Platform
+                    Partner Network
                   </span>
                 </h1>
 
                 <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 text-white/90 leading-relaxed">
-                  Transform your spa into a <span className="text-green-400 font-semibold">money-making empire</span>. Join 500+ successful partners earning <span className="text-green-400 font-bold">₹5L+ monthly</span>
+                  Grow your spa business with OMBARO's trusted platform. Join our network of professional partners and reach more customers.
                 </p>
 
                 <div className="bg-white/10 backdrop-blur-md border border-green-500/30 rounded-2xl p-6 mb-8">
                   <h3 className="text-white font-bold text-lg mb-4 flex items-center">
                     <Gift className="w-5 h-5 text-green-400 mr-2" />
-                    Exclusive Launch Offer - Limited Time!
+                    Partnership Benefits
                   </h3>
                   <div className="space-y-3">
                     <div className="flex items-center text-white">
                       <CheckCircle className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                      <span className="text-sm sm:text-base"><strong>ZERO</strong> Setup Cost (Worth ₹50,000)</span>
+                      <span className="text-sm sm:text-base">Easy onboarding process</span>
                     </div>
                     <div className="flex items-center text-white">
                       <CheckCircle className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                      <span className="text-sm sm:text-base"><strong>FREE</strong> Marketing for 6 Months (Worth ₹2L)</span>
+                      <span className="text-sm sm:text-base">Access to verified customer base</span>
                     </div>
                     <div className="flex items-center text-white">
                       <CheckCircle className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
-                      <span className="text-sm sm:text-base"><strong>INSTANT</strong> ₹25,000 Bonus on First 10 Bookings</span>
+                      <span className="text-sm sm:text-base">Platform support and tools</span>
                     </div>
                   </div>
                 </div>
@@ -105,9 +105,9 @@ export const BecomePartnerPage: React.FC = () => {
                 />
                 <div className="absolute -bottom-6 -right-6 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl p-6 shadow-2xl max-w-xs">
                   <div className="text-white">
-                    <div className="text-4xl font-bold mb-2">₹8.5L+</div>
-                    <p className="text-sm opacity-90">Average Monthly Revenue</p>
-                    <p className="text-xs mt-2 opacity-75">Top Partners Earning</p>
+                    <div className="text-4xl font-bold mb-2">500+</div>
+                    <p className="text-sm opacity-90">Active Partners</p>
+                    <p className="text-xs mt-2 opacity-75">Growing Network</p>
                   </div>
                 </div>
               </div>
@@ -124,7 +124,7 @@ export const BecomePartnerPage: React.FC = () => {
               </h2>
               <div className="w-24 h-1 bg-green-600 mx-auto mb-6"></div>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                We don't just bring customers - we bring <span className="font-bold text-green-600">premium clients willing to pay premium prices</span>
+                We connect you with customers looking for quality wellness services
               </p>
             </div>
 
@@ -170,14 +170,14 @@ export const BecomePartnerPage: React.FC = () => {
                     Explosive Growth
                   </h3>
                   <p className="text-gray-600 leading-relaxed mb-6">
-                    Partners see <strong className="text-green-600">3X revenue increase</strong> within 3 months. Our algorithm promotes your <strong>exclusive packages</strong> to right clients
+                    Our platform helps you grow your business by connecting you with customers actively looking for wellness services in your area
                   </p>
                   <div className="bg-green-100 rounded-xl p-4 mb-4">
-                    <div className="text-3xl font-bold text-green-600 mb-1">₹5-15L/month</div>
-                    <div className="text-sm text-gray-600">Average Partner Earnings</div>
+                    <div className="text-3xl font-bold text-green-600 mb-1">Real Growth</div>
+                    <div className="text-sm text-gray-600">Steady Customer Flow</div>
                   </div>
                   <div className="text-xs text-gray-500 italic">
-                    *Including premium service packages
+                    *Results vary by location and services
                   </div>
                 </div>
               </div>
@@ -600,35 +600,31 @@ export const BecomePartnerPage: React.FC = () => {
           </div>
 
           <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="inline-block bg-white/20 backdrop-blur-sm px-6 py-3 rounded-full mb-6">
-              <span className="font-bold text-sm uppercase tracking-wider">⚡ Limited Time Offer - Only 50 Spots Left</span>
-            </div>
-
             <h2 className="text-5xl md:text-6xl font-bold mb-6" style={{ fontFamily: "'Tenor Sans', serif" }}>
-              Ready to 3X Your Revenue?
+              Ready to Grow Your Business?
             </h2>
             <p className="text-2xl mb-8 text-white/95">
-              Join India's fastest-growing premium wellness platform today
+              Join OMBARO's trusted wellness platform today
             </p>
 
             <div className="bg-white/10 backdrop-blur-md border-2 border-white/30 rounded-3xl p-8 mb-10 max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold mb-6">What You Get When You Join NOW:</h3>
+              <h3 className="text-2xl font-bold mb-6">Partnership Benefits:</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-left">
                 <div className="flex items-start space-x-3">
-                  <Gift className="w-6 h-6 text-yellow-300 flex-shrink-0 mt-1" />
-                  <span>₹50,000 worth free setup</span>
+                  <CheckCircle className="w-6 h-6 text-green-300 flex-shrink-0 mt-1" />
+                  <span>Simple onboarding process</span>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <Gift className="w-6 h-6 text-yellow-300 flex-shrink-0 mt-1" />
-                  <span>6 months free marketing</span>
+                  <CheckCircle className="w-6 h-6 text-green-300 flex-shrink-0 mt-1" />
+                  <span>Verified customer base</span>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <Gift className="w-6 h-6 text-yellow-300 flex-shrink-0 mt-1" />
-                  <span>₹25K instant bonus</span>
+                  <CheckCircle className="w-6 h-6 text-green-300 flex-shrink-0 mt-1" />
+                  <span>Secure payment system</span>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <Gift className="w-6 h-6 text-yellow-300 flex-shrink-0 mt-1" />
-                  <span>VIP client network access</span>
+                  <CheckCircle className="w-6 h-6 text-green-300 flex-shrink-0 mt-1" />
+                  <span>Platform support</span>
                 </div>
               </div>
             </div>
@@ -664,7 +660,7 @@ export const BecomePartnerPage: React.FC = () => {
             </div>
 
             <p className="text-white/80 text-sm mt-8 italic">
-              *Limited offer valid for first 50 premium spa partners only
+              Join our growing network of wellness professionals
             </p>
           </div>
         </section>

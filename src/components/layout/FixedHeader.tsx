@@ -31,137 +31,65 @@ export const FixedHeader: React.FC<FixedHeaderProps> = ({
   };
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-green-500 via-green-600 to-black shadow-strong">
-      <div className="py-2 sm:py-2.5 md:py-3 px-3 sm:px-4 md:px-6 backdrop-blur-sm relative">
+    <div className="fixed top-0 left-0 right-0 z-50 bg-black shadow-lg">
+      <div className="py-3 sm:py-4 md:py-5 px-4 sm:px-6 md:px-8">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-2 sm:space-x-3 min-w-0 flex-1">
-            <div className="relative flex items-center">
-              {/* Main Logo - Optimized Size */}
+          <div className="flex items-center space-x-3 sm:space-x-4 min-w-0 flex-1">
+            <div className="flex items-center">
+              {/* Main Logo - Larger Size */}
               <img
                 src="/ombaro-logo-new.png"
                 alt="OMBARO"
-                className="h-12 sm:h-14 md:h-16 lg:h-20 w-auto object-contain transition-transform duration-300 hover:scale-105"
+                className="h-16 sm:h-20 md:h-24 lg:h-28 w-auto object-contain transition-transform duration-300 hover:scale-105"
               />
-
-              {/* Water Wave Effect Under Logo */}
-              <div className="absolute -bottom-1 left-0 right-0 h-2 overflow-hidden opacity-60">
-                <svg viewBox="0 0 120 10" className="w-full h-full" preserveAspectRatio="none">
-                  <path
-                    fill="rgba(255, 255, 255, 0.4)"
-                    d="M0,5 Q15,2 30,5 T60,5 T90,5 T120,5 L120,10 L0,10 Z"
-                  >
-                    <animate
-                      attributeName="d"
-                      dur="3s"
-                      repeatCount="indefinite"
-                      values="
-                        M0,5 Q15,2 30,5 T60,5 T90,5 T120,5 L120,10 L0,10 Z;
-                        M0,5 Q15,7 30,5 T60,5 T90,5 T120,5 L120,10 L0,10 Z;
-                        M0,5 Q15,2 30,5 T60,5 T90,5 T120,5 L120,10 L0,10 Z
-                      "
-                    />
-                  </path>
-                  <path
-                    fill="rgba(255, 255, 255, 0.2)"
-                    d="M0,6 Q20,3 40,6 T80,6 T120,6 L120,10 L0,10 Z"
-                  >
-                    <animate
-                      attributeName="d"
-                      dur="2.5s"
-                      repeatCount="indefinite"
-                      values="
-                        M0,6 Q20,3 40,6 T80,6 T120,6 L120,10 L0,10 Z;
-                        M0,6 Q20,8 40,6 T80,6 T120,6 L120,10 L0,10 Z;
-                        M0,6 Q20,3 40,6 T80,6 T120,6 L120,10 L0,10 Z
-                      "
-                    />
-                  </path>
-                </svg>
-              </div>
             </div>
           </div>
-          <div className="flex items-center space-x-1.5 sm:space-x-2 flex-shrink-0">
+          <div className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0">
             <button
               onClick={handleSearchToggle}
               aria-label="Toggle search"
-              className="w-8 h-8 sm:w-9 sm:h-9 glass rounded-lg flex items-center justify-center hover:bg-white/30 transition-colors"
+              className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-800 hover:bg-gray-700 rounded-lg flex items-center justify-center transition-colors"
             >
-              <Search className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white" />
+              <Search className="w-5 h-5 text-white" />
             </button>
             <button
               aria-label="View notifications"
-              className="w-8 h-8 sm:w-9 sm:h-9 glass rounded-lg flex items-center justify-center hover:bg-white/30 transition-colors"
+              className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-800 hover:bg-gray-700 rounded-lg flex items-center justify-center transition-colors"
             >
-              <Bell className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white" />
+              <Bell className="w-5 h-5 text-white" />
             </button>
             <button
               onClick={onLogout}
               aria-label="Logout from account"
-              className="w-8 h-8 sm:w-9 sm:h-9 glass rounded-lg flex items-center justify-center hover:bg-white/30 transition-colors"
+              className="w-9 h-9 sm:w-10 sm:h-10 bg-gray-800 hover:bg-gray-700 rounded-lg flex items-center justify-center transition-colors"
             >
-              <LogOut className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white" />
+              <LogOut className="w-5 h-5 text-white" />
             </button>
           </div>
         </div>
       </div>
 
-      {/* Bottom Water Wave Effect */}
-      <div className="absolute bottom-0 left-0 right-0 h-6 overflow-hidden">
-        <svg viewBox="0 0 1440 60" className="w-full h-full" preserveAspectRatio="none">
-          <path
-            fill="rgba(0, 255, 135, 0.15)"
-            d="M0,30 Q180,15 360,30 T720,30 T1080,30 T1440,30 L1440,60 L0,60 Z"
-          >
-            <animate
-              attributeName="d"
-              dur="4s"
-              repeatCount="indefinite"
-              values="
-                M0,30 Q180,15 360,30 T720,30 T1080,30 T1440,30 L1440,60 L0,60 Z;
-                M0,30 Q180,40 360,30 T720,30 T1080,30 T1440,30 L1440,60 L0,60 Z;
-                M0,30 Q180,15 360,30 T720,30 T1080,30 T1440,30 L1440,60 L0,60 Z
-              "
-            />
-          </path>
-          <path
-            fill="rgba(1, 107, 58, 0.1)"
-            d="M0,35 Q240,20 480,35 T960,35 T1440,35 L1440,60 L0,60 Z"
-          >
-            <animate
-              attributeName="d"
-              dur="3.5s"
-              repeatCount="indefinite"
-              values="
-                M0,35 Q240,20 480,35 T960,35 T1440,35 L1440,60 L0,60 Z;
-                M0,35 Q240,45 480,35 T960,35 T1440,35 L1440,60 L0,60 Z;
-                M0,35 Q240,20 480,35 T960,35 T1440,35 L1440,60 L0,60 Z
-              "
-            />
-          </path>
-        </svg>
-      </div>
-
       {/* Search Bar - Toggleable */}
       {showSearch && (
-        <div className="px-3 sm:px-4 md:px-6 pb-4 border-t border-white/20">
+        <div className="px-4 sm:px-6 md:px-8 pb-4 border-t border-gray-800">
           <div className="relative mt-3">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-              <Search className="w-5 h-5 text-neutral-400" />
+              <Search className="w-5 h-5 text-gray-400" />
             </div>
             <input
               placeholder="Search salons, services..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               onKeyPress={(e) => e.key === 'Enter' && handleSearch()}
-              className="w-full pl-10 pr-16 py-3 glass border-0 rounded-xl shadow-medium focus:ring-2 focus:ring-white/50 focus:outline-none transition-all duration-200"
+              className="w-full pl-10 pr-16 py-3 bg-gray-900 text-white border border-gray-700 rounded-xl focus:ring-2 focus:ring-green-500 focus:outline-none transition-all duration-200"
               autoFocus
             />
             <button
               onClick={handleSearch}
               aria-label="Search and filter salons"
-              className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 w-6 sm:w-7 h-6 sm:h-7 bg-primary-600 rounded-lg flex items-center justify-center hover:bg-primary-700 transition-colors"
+              className="absolute right-2 sm:right-3 top-1/2 -translate-y-1/2 w-7 h-7 bg-green-600 hover:bg-green-700 rounded-lg flex items-center justify-center transition-colors"
             >
-              <Filter className="w-3 h-3 text-white" />
+              <Filter className="w-4 h-4 text-white" />
             </button>
           </div>
         </div>
