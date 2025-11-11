@@ -35,11 +35,48 @@ export const FixedHeader: React.FC<FixedHeaderProps> = ({
       <div className="pt-3 pb-3 px-3 sm:px-4 md:px-6 backdrop-blur-sm">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2 sm:space-x-3 min-w-0 flex-1">
-            <img
-              src="/ombaro-logo.png"
-              alt="OMBARO"
-              className="h-9 sm:h-10 md:h-11 lg:h-12 w-auto object-contain transition-transform duration-300 hover:scale-105"
-            />
+            <div className="relative">
+              <img
+                src="/ombaro-logo.png"
+                alt="OMBARO"
+                className="h-9 sm:h-10 md:h-11 lg:h-12 w-auto object-contain transition-transform duration-300 hover:scale-105 relative z-10"
+              />
+              {/* Water Wave Effect */}
+              <div className="absolute -bottom-1 left-0 right-0 h-2 overflow-hidden opacity-60">
+                <svg viewBox="0 0 120 10" className="w-full h-full" preserveAspectRatio="none">
+                  <path
+                    fill="rgba(255, 255, 255, 0.4)"
+                    d="M0,5 Q15,2 30,5 T60,5 T90,5 T120,5 L120,10 L0,10 Z"
+                  >
+                    <animate
+                      attributeName="d"
+                      dur="3s"
+                      repeatCount="indefinite"
+                      values="
+                        M0,5 Q15,2 30,5 T60,5 T90,5 T120,5 L120,10 L0,10 Z;
+                        M0,5 Q15,7 30,5 T60,5 T90,5 T120,5 L120,10 L0,10 Z;
+                        M0,5 Q15,2 30,5 T60,5 T90,5 T120,5 L120,10 L0,10 Z
+                      "
+                    />
+                  </path>
+                  <path
+                    fill="rgba(255, 255, 255, 0.2)"
+                    d="M0,6 Q20,3 40,6 T80,6 T120,6 L120,10 L0,10 Z"
+                  >
+                    <animate
+                      attributeName="d"
+                      dur="2.5s"
+                      repeatCount="indefinite"
+                      values="
+                        M0,6 Q20,3 40,6 T80,6 T120,6 L120,10 L0,10 Z;
+                        M0,6 Q20,8 40,6 T80,6 T120,6 L120,10 L0,10 Z;
+                        M0,6 Q20,3 40,6 T80,6 T120,6 L120,10 L0,10 Z
+                      "
+                    />
+                  </path>
+                </svg>
+              </div>
+            </div>
             <div className="hidden md:block w-px h-8 bg-white/30 flex-shrink-0"></div>
             <div className="hidden md:flex items-center space-x-2 min-w-0 flex-1 max-w-xs lg:max-w-sm">
               <div className="w-7 h-7 glass rounded-lg flex items-center justify-center flex-shrink-0">
