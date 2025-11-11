@@ -24,6 +24,38 @@ export const BecomePartnerPage: React.FC = () => {
             <div className="absolute bottom-0 right-0 w-48 h-48 md:w-96 md:h-96 bg-cyan-400 rounded-full blur-3xl"></div>
           </div>
 
+          {/* Animated Services Slider Background */}
+          <div className="absolute inset-0 opacity-10 overflow-hidden">
+            <div className="animate-slide-infinite flex whitespace-nowrap py-8">
+              {[
+                'Spa Services', 'Beauty Treatments', 'Massage Therapy', 'Facial Care',
+                'Hair Styling', 'Bridal Makeup', 'Wellness Programs', 'Skin Care',
+                'Spa Services', 'Beauty Treatments', 'Massage Therapy', 'Facial Care'
+              ].map((service, idx) => (
+                <div key={idx} className="inline-flex items-center mx-8">
+                  <Sparkles className="w-6 h-6 text-sky-600 mr-3" />
+                  <span className="text-3xl md:text-4xl font-bold text-sky-600" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                    {service}
+                  </span>
+                </div>
+              ))}
+            </div>
+            <div className="animate-slide-infinite-reverse flex whitespace-nowrap py-8" style={{ animationDelay: '0.5s' }}>
+              {[
+                'Nail Art', 'Body Treatments', 'Aromatherapy', 'Yoga Classes',
+                'Meditation', 'Beauty Packages', 'Grooming', 'Skincare',
+                'Nail Art', 'Body Treatments', 'Aromatherapy', 'Yoga Classes'
+              ].map((service, idx) => (
+                <div key={idx} className="inline-flex items-center mx-8">
+                  <Crown className="w-6 h-6 text-cyan-600 mr-3" />
+                  <span className="text-3xl md:text-4xl font-bold text-cyan-600" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                    {service}
+                  </span>
+                </div>
+              ))}
+            </div>
+          </div>
+
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12 sm:py-16 lg:py-20">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
               <div className="order-2 md:order-1">
@@ -74,7 +106,7 @@ export const BecomePartnerPage: React.FC = () => {
 
               <div className="relative order-1 md:order-2">
                 <div className="absolute inset-0 bg-gradient-to-br from-sky-200 to-cyan-200 rounded-2xl sm:rounded-3xl transform rotate-3 sm:rotate-6"></div>
-                <img 
+                <img
                   src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=90"
                   alt="Partner Success"
                   className="relative rounded-2xl sm:rounded-3xl shadow-2xl w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover"
@@ -130,7 +162,7 @@ export const BecomePartnerPage: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
               <div className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100">
                 <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
-                  <img 
+                  <img
                     src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&q=90"
                     alt="Business Growth"
                     className="w-full h-full object-cover"
@@ -161,7 +193,7 @@ export const BecomePartnerPage: React.FC = () => {
 
               <div className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100">
                 <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
-                  <img 
+                  <img
                     src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&q=90"
                     alt="Smart Management"
                     className="w-full h-full object-cover"
@@ -192,7 +224,7 @@ export const BecomePartnerPage: React.FC = () => {
 
               <div className="group relative bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100">
                 <div className="absolute inset-0 opacity-10 group-hover:opacity-20 transition-opacity duration-500">
-                  <img 
+                  <img
                     src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&q=90"
                     alt="Instant Payments"
                     className="w-full h-full object-cover"
@@ -236,7 +268,7 @@ export const BecomePartnerPage: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
               <div className="group relative overflow-hidden rounded-2xl sm:rounded-3xl hover:shadow-2xl transition-all duration-500 min-h-[400px] sm:min-h-[450px]">
-                <img 
+                <img
                   src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=90"
                   alt="Spa & Wellness Centers"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -261,7 +293,7 @@ export const BecomePartnerPage: React.FC = () => {
               </div>
 
               <div className="group relative overflow-hidden rounded-3xl hover:shadow-2xl transition-all duration-500">
-                <img 
+                <img
                   src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&q=90"
                   alt="Beauty Salons"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -286,7 +318,7 @@ export const BecomePartnerPage: React.FC = () => {
               </div>
 
               <div className="group relative overflow-hidden rounded-3xl hover:shadow-2xl transition-all duration-500">
-                <img 
+                <img
                   src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&q=90"
                   alt="Bridal Makeup Artists"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -311,7 +343,7 @@ export const BecomePartnerPage: React.FC = () => {
               </div>
 
               <div className="group relative overflow-hidden rounded-3xl hover:shadow-2xl transition-all duration-500">
-                <img 
+                <img
                   src="https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=800&q=90"
                   alt="Wellness Centers"
                   className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
