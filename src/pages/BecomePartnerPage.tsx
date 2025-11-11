@@ -19,28 +19,28 @@ export const BecomePartnerPage: React.FC = () => {
 
       <main className="pt-20 sm:pt-24 md:pt-28 lg:pt-32">
         {/* Premium Hero Section */}
-        <section className="relative min-h-[700px] md:min-h-[800px] lg:min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black pt-8 sm:pt-12 md:pt-16">
+        <section className="relative min-h-[600px] sm:min-h-[700px] md:min-h-[800px] lg:min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black pt-20 sm:pt-24 md:pt-28">
           <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-0 left-0 w-96 h-96 bg-green-400 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-0 right-0 w-96 h-96 bg-green-600 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute top-0 left-0 w-64 h-64 sm:w-96 sm:h-96 bg-green-400 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-green-600 rounded-full blur-3xl animate-pulse"></div>
           </div>
 
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-8 sm:py-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-12 items-center">
               <div>
-                <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-green-500 to-green-600 rounded-full px-6 py-3 mb-8 shadow-lg">
-                  <Crown className="w-5 h-5 text-white" />
-                  <span className="text-white text-sm font-bold tracking-wider uppercase">Elite Partner Program</span>
+                <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-green-500 to-green-600 rounded-full px-4 sm:px-6 py-2 sm:py-3 mb-6 sm:mb-8 shadow-lg">
+                  <Crown className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                  <span className="text-white text-xs sm:text-sm font-bold tracking-wider uppercase">Elite Partner Program</span>
                 </div>
 
-                <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 leading-tight text-white" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight text-white" style={{ fontFamily: "'Tenor Sans', serif" }}>
                   India's Most<br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-600">
                     Profitable Platform
                   </span>
                 </h1>
 
-                <p className="text-xl sm:text-2xl mb-8 text-white/90 leading-relaxed">
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 text-white/90 leading-relaxed">
                   Transform your spa into a <span className="text-green-400 font-semibold">money-making empire</span>. Join 500+ successful partners earning <span className="text-green-400 font-bold">₹5L+ monthly</span>
                 </p>
 
@@ -329,20 +329,124 @@ export const BecomePartnerPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Service Types We Support */}
-        <section className="py-20 bg-white">
+        {/* Massage Services Gallery */}
+        <section className="py-12 sm:py-16 md:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-5xl font-bold text-gray-900 mb-6" style={{ fontFamily: "'Tenor Sans', serif" }}>
+            <div className="text-center mb-12 sm:mb-16">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                Premium Massage Services
+              </h2>
+              <div className="w-24 h-1 bg-green-600 mx-auto mb-4 sm:mb-6"></div>
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+                Professional massage therapies for ultimate relaxation and wellness
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+              {/* Thai Massage */}
+              <div className="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 border-2 border-green-100 hover:border-green-400">
+                <div className="aspect-w-16 aspect-h-12 bg-gray-200">
+                  <img src="/images/luxury_spa_massage_t_2767ba26.jpg" alt="Thai Massage" className="w-full h-64 object-cover" />
+                </div>
+                <div className="p-6 sm:p-8">
+                  <h3 className="text-xl sm:text-2xl font-bold mb-3 text-gray-900">Thai Massage</h3>
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                    Traditional Thai massage with stretching and acupressure techniques for deep relaxation and improved flexibility.
+                  </p>
+                </div>
+              </div>
+
+              {/* Aroma Massage */}
+              <div className="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 border-2 border-green-100 hover:border-green-400">
+                <div className="aspect-w-16 aspect-h-12 bg-gray-200">
+                  <img src="/images/luxury_spa_massage_t_3fdc8d75.jpg" alt="Aroma Massage" className="w-full h-64 object-cover" />
+                </div>
+                <div className="p-6 sm:p-8">
+                  <h3 className="text-xl sm:text-2xl font-bold mb-3 text-gray-900">Aroma Massage</h3>
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                    Aromatherapy massage using essential oils to promote relaxation and reduce stress through soothing scents.
+                  </p>
+                </div>
+              </div>
+
+              {/* Swedish Massage */}
+              <div className="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 border-2 border-green-100 hover:border-green-400">
+                <div className="aspect-w-16 aspect-h-12 bg-gray-200">
+                  <img src="/images/luxury_spa_massage_t_48a88152.jpg" alt="Swedish Massage" className="w-full h-64 object-cover" />
+                </div>
+                <div className="p-6 sm:p-8">
+                  <h3 className="text-xl sm:text-2xl font-bold mb-3 text-gray-900">Swedish Massage</h3>
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                    Classic Swedish massage therapy using gentle, flowing strokes to improve circulation and overall well-being.
+                  </p>
+                </div>
+              </div>
+
+              {/* Hot Oil Massage */}
+              <div className="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 border-2 border-green-100 hover:border-green-400">
+                <div className="aspect-w-16 aspect-h-12 bg-gray-200">
+                  <img src="/images/luxury_spa_massage_t_690db67f.jpg" alt="Hot Oil Massage" className="w-full h-64 object-cover" />
+                </div>
+                <div className="p-6 sm:p-8">
+                  <h3 className="text-xl sm:text-2xl font-bold mb-3 text-gray-900">Hot Oil Massage</h3>
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                    Warm oil massage to promote wellness, stress relief, and healthy skin while deeply relaxing muscles.
+                  </p>
+                </div>
+              </div>
+
+              {/* Hot Stone Massage */}
+              <div className="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 border-2 border-green-100 hover:border-green-400">
+                <div className="aspect-w-16 aspect-h-12 bg-gray-200">
+                  <img src="/images/luxury_spa_massage_t_6f866171.jpg" alt="Hot Stone Massage" className="w-full h-64 object-cover" />
+                </div>
+                <div className="p-6 sm:p-8">
+                  <h3 className="text-xl sm:text-2xl font-bold mb-3 text-gray-900">Hot Stone Massage</h3>
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                    Heated volcanic stones and massage oils to release tension, promote circulation, and create positive energy.
+                  </p>
+                </div>
+              </div>
+
+              {/* Deep Tissue Massage */}
+              <div className="bg-white rounded-3xl shadow-xl overflow-hidden hover:shadow-2xl transition-all duration-300 border-2 border-green-100 hover:border-green-400">
+                <div className="aspect-w-16 aspect-h-12 bg-gray-200">
+                  <img src="/images/spa_treatment_room_i_609c3288.jpg" alt="Deep Tissue Massage" className="w-full h-64 object-cover" />
+                </div>
+                <div className="p-6 sm:p-8">
+                  <h3 className="text-xl sm:text-2xl font-bold mb-3 text-gray-900">Deep Tissue Massage</h3>
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+                    Focused deep pressure massage targeting chronic tension, muscle soreness, and specific problem areas.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-12 bg-gradient-to-r from-green-500 to-green-600 rounded-3xl p-6 sm:p-8 text-white text-center">
+              <Lock className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-4" />
+              <h3 className="text-xl sm:text-2xl font-bold mb-3">Complete Privacy & Discretion Guaranteed</h3>
+              <p className="text-base sm:text-lg text-white/90 max-w-3xl mx-auto px-4">
+                Our platform is designed to support <strong>all types of wellness services</strong> with complete confidentiality.
+                VIP clients, private bookings, exclusive memberships - everything handled with utmost discretion.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Service Types We Support */}
+        <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-green-50 to-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12 sm:mb-16">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6" style={{ fontFamily: "'Tenor Sans', serif" }}>
                 We Support <span className="text-green-600">All</span> Your Services
               </h2>
-              <div className="w-24 h-1 bg-green-600 mx-auto mb-6"></div>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <div className="w-24 h-1 bg-green-600 mx-auto mb-4 sm:mb-6"></div>
+              <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
                 From basic spa treatments to <strong>exclusive VIP experiences</strong> - we've got you covered
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
               {[
                 { name: 'Spa & Massage', icon: Sparkles, premium: 'Private Sessions' },
                 { name: 'Beauty Treatments', icon: Heart, premium: 'VIP Packages' },
@@ -353,23 +457,14 @@ export const BecomePartnerPage: React.FC = () => {
                 { name: 'Aromatherapy', icon: Crown, premium: 'Custom Blends' },
                 { name: 'Special Services', icon: Lock, premium: 'VIP Only' },
               ].map((service, idx) => (
-                <div key={idx} className="group bg-gradient-to-br from-green-50 to-white rounded-2xl p-6 text-center hover:shadow-xl transition-all duration-300 border-2 border-green-100 hover:border-green-400">
-                  <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                    <service.icon className="w-8 h-8 text-white" />
+                <div key={idx} className="group bg-gradient-to-br from-green-50 to-white rounded-2xl p-4 sm:p-6 text-center hover:shadow-xl transition-all duration-300 border-2 border-green-100 hover:border-green-400">
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
+                    <service.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                   </div>
-                  <h3 className="text-lg font-bold mb-2 text-gray-900">{service.name}</h3>
-                  <p className="text-sm text-green-600 font-semibold">{service.premium}</p>
+                  <h3 className="text-sm sm:text-base md:text-lg font-bold mb-1 sm:mb-2 text-gray-900">{service.name}</h3>
+                  <p className="text-xs sm:text-sm text-green-600 font-semibold">{service.premium}</p>
                 </div>
               ))}
-            </div>
-
-            <div className="mt-12 bg-gradient-to-r from-green-500 to-green-600 rounded-3xl p-8 text-white text-center">
-              <Lock className="w-12 h-12 mx-auto mb-4" />
-              <h3 className="text-2xl font-bold mb-3">Complete Privacy & Discretion Guaranteed</h3>
-              <p className="text-lg text-white/90 max-w-3xl mx-auto">
-                Our platform is designed to support <strong>all types of wellness services</strong> with complete confidentiality.
-                VIP clients, private bookings, exclusive memberships - everything handled with utmost discretion.
-              </p>
             </div>
           </div>
         </section>

@@ -31,7 +31,7 @@ export const FixedHeader: React.FC<FixedHeaderProps> = ({
   };
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-primary-600 to-secondary-600 shadow-strong">
+    <div className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-green-500 via-green-600 to-black shadow-strong">
       <div className="py-2 sm:py-2.5 md:py-3 px-3 sm:px-4 md:px-6 backdrop-blur-sm relative">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-2 sm:space-x-3 min-w-0 flex-1">
@@ -77,16 +77,6 @@ export const FixedHeader: React.FC<FixedHeaderProps> = ({
                     />
                   </path>
                 </svg>
-              </div>
-            </div>
-            <div className="hidden md:block w-px h-8 bg-white/30 flex-shrink-0"></div>
-            <div className="hidden md:flex items-center space-x-2 min-w-0 flex-1 max-w-xs lg:max-w-sm">
-              <div className="w-7 h-7 glass rounded-lg flex items-center justify-center flex-shrink-0">
-                <MapPin className="w-4 h-4 text-white" />
-              </div>
-              <div className="min-w-0 flex-1">
-                <p className="text-white/80 text-xs">Current Location</p>
-                <p className="text-white font-medium text-sm truncate">Bangalore, Karnataka</p>
               </div>
             </div>
           </div>
