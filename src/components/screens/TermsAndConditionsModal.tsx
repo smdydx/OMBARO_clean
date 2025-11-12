@@ -14,7 +14,7 @@ export const TermsAndConditionsModal: React.FC<TermsAndConditionsModalProps> = (
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[9999] p-2 sm:p-4 md:p-6 mt-16 sm:mt-20 md:mt-24">
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-[100] p-2 sm:p-4 md:p-6 mt-16 sm:mt-20 md:mt-24">
       <div className="bg-gradient-to-br from-green-600 to-green-800 rounded-2xl w-full max-w-xs sm:max-w-md md:max-w-2xl max-h-[calc(95vh-4rem)] sm:max-h-[calc(90vh-5rem)] overflow-hidden shadow-2xl flex flex-col">
         {/* Header */}
         <div className="flex-shrink-0 bg-gradient-to-r from-green-700 to-green-900 border-b border-green-500/30 p-3 sm:p-4 md:p-6">
@@ -41,7 +41,7 @@ export const TermsAndConditionsModal: React.FC<TermsAndConditionsModalProps> = (
             {/* Introduction */}
             <div className="bg-white/10 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 border border-white/20">
               <p className="text-white font-medium text-xs sm:text-sm md:text-base leading-relaxed">
-                By proceeding with a booking on the <strong className="text-white">OMBARO App</strong>, you (the "Customer") acknowledge, 
+                By proceeding with a booking on the <strong className="text-white font-bold">OMBARO App</strong>, you (the "Customer") acknowledge, 
                 confirm, and agree to the following terms and conditions:
               </p>
             </div>

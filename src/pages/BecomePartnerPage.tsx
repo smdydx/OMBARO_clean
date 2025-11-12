@@ -414,7 +414,7 @@ export const BecomePartnerPage: React.FC = () => {
                 <div className="bg-white rounded-3xl overflow-hidden shadow-2xl border-2 border-green-100 hover:border-green-400 transition-all duration-500 hover:shadow-green-500/30 hover:-translate-y-2">
                   <div className="relative overflow-hidden h-72">
                     <img 
-                      src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80" 
+                      src="/images/luxury_spa_massage_t_2767ba26.jpg" 
                       alt="Thai Massage"
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
@@ -434,7 +434,7 @@ export const BecomePartnerPage: React.FC = () => {
                 <div className="bg-white rounded-3xl overflow-hidden shadow-2xl border-2 border-green-100 hover:border-green-400 transition-all duration-500 hover:shadow-green-500/30 hover:-translate-y-2">
                   <div className="relative overflow-hidden h-72">
                     <img 
-                      src="https://images.unsplash.com/photo-1596178060810-4ffa5d864b2b?w=800&q=80" 
+                      src="/images/luxury_spa_massage_t_3fdc8d75.jpg" 
                       alt="Aroma Massage"
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
@@ -454,7 +454,7 @@ export const BecomePartnerPage: React.FC = () => {
                 <div className="bg-white rounded-3xl overflow-hidden shadow-2xl border-2 border-green-100 hover:border-green-400 transition-all duration-500 hover:shadow-green-500/30 hover:-translate-y-2">
                   <div className="relative overflow-hidden h-72">
                     <img 
-                      src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=800&q=80" 
+                      src="/images/luxury_spa_massage_t_48a88152.jpg" 
                       alt="Swedish Massage"
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
@@ -474,7 +474,7 @@ export const BecomePartnerPage: React.FC = () => {
                 <div className="bg-white rounded-3xl overflow-hidden shadow-2xl border-2 border-green-100 hover:border-green-400 transition-all duration-500 hover:shadow-green-500/30 hover:-translate-y-2">
                   <div className="relative overflow-hidden h-72">
                     <img 
-                      src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80" 
+                      src="/images/luxury_spa_massage_t_690db67f.jpg" 
                       alt="Hot Stone Massage"
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
@@ -494,7 +494,7 @@ export const BecomePartnerPage: React.FC = () => {
                 <div className="bg-white rounded-3xl overflow-hidden shadow-2xl border-2 border-green-100 hover:border-green-400 transition-all duration-500 hover:shadow-green-500/30 hover:-translate-y-2">
                   <div className="relative overflow-hidden h-72">
                     <img 
-                      src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&q=80" 
+                      src="/images/luxury_spa_massage_t_6f866171.jpg" 
                       alt="Deep Tissue Massage"
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
@@ -509,21 +509,21 @@ export const BecomePartnerPage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Shiatsu Massage */}
+              {/* Spa Treatment */}
               <div className="flex-shrink-0 w-80 sm:w-96 group">
                 <div className="bg-white rounded-3xl overflow-hidden shadow-2xl border-2 border-green-100 hover:border-green-400 transition-all duration-500 hover:shadow-green-500/30 hover:-translate-y-2">
                   <div className="relative overflow-hidden h-72">
                     <img 
-                      src="https://images.unsplash.com/photo-1600334129128-685c5582fd35?w=800&q=80" 
-                      alt="Shiatsu Massage"
+                      src="/images/spa_treatment_room_i_609c3288.jpg" 
+                      alt="Spa Treatment"
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
                   </div>
                   <div className="p-6">
-                    <h3 className="text-2xl font-bold mb-3 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>Shiatsu Massage</h3>
+                    <h3 className="text-2xl font-bold mb-3 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>Spa Treatment</h3>
                     <p className="text-gray-600 leading-relaxed">
-                      Japanese technique using finger pressure on energy points to restore balance and wellness.
+                      Luxurious spa treatments for complete rejuvenation and wellness in serene environment.
                     </p>
                   </div>
                 </div>
