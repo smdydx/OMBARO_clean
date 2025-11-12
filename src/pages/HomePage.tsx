@@ -149,35 +149,37 @@ export const HomePage: React.FC = () => {
       <MarketingHeader />
 
       <main>
-        {/* Animated Terms & Conditions Banner - Moved above hero section */}
-        <div className="bg-gradient-to-r from-primary-600 to-primary-700 border-b-2 sm:border-b-4 border-primary-800">
-          <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2 sm:py-4">
-            <div className="flex items-center justify-between gap-2">
-              <div className="flex items-center space-x-2 text-white flex-1">
-                <Shield className="w-4 h-4 sm:w-6 sm:h-6 animate-pulse flex-shrink-0" />
-                <p className="text-xs sm:text-sm md:text-base font-semibold">
-                  Please read our{' '}
-                  <Link
-                    to="/terms"
-                    className="underline font-bold hover:text-green-100 transition-colors"
-                    onClick={handleCloseBanner}
-                  >
-                    Terms & Conditions
-                  </Link>
-                  {' '}before booking
-                </p>
-                <Shield className="w-4 h-4 sm:w-6 sm:h-6 animate-pulse flex-shrink-0 hidden sm:block" />
+        {/* Animated Terms & Conditions Banner - Above hero section */}
+        {showTermsBanner && (
+          <div className={`bg-gradient-to-r from-primary-600 to-primary-700 border-b-2 sm:border-b-4 border-primary-800 transition-all duration-300 ${isClosing ? 'opacity-0 -translate-y-full' : 'opacity-100 translate-y-0'}`}>
+            <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2 sm:py-4">
+              <div className="flex items-center justify-between gap-2">
+                <div className="flex items-center space-x-2 text-white flex-1">
+                  <Shield className="w-4 h-4 sm:w-6 sm:h-6 animate-pulse flex-shrink-0" />
+                  <p className="text-xs sm:text-sm md:text-base font-semibold">
+                    Please read our{' '}
+                    <Link
+                      to="/terms"
+                      className="underline font-bold hover:text-green-100 transition-colors"
+                      onClick={handleCloseBanner}
+                    >
+                      Terms & Conditions
+                    </Link>
+                    {' '}before booking
+                  </p>
+                  <Shield className="w-4 h-4 sm:w-6 sm:h-6 animate-pulse flex-shrink-0 hidden sm:block" />
+                </div>
+                <button
+                  onClick={handleCloseBanner}
+                  className="p-1.5 sm:p-2 hover:bg-white/20 rounded-lg transition-colors flex-shrink-0"
+                  aria-label="Close banner"
+                >
+                  <X className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                </button>
               </div>
-              <button
-                onClick={handleCloseBanner}
-                className="p-1.5 sm:p-2 hover:bg-white/20 rounded-lg transition-colors flex-shrink-0"
-                aria-label="Close banner"
-              >
-                <X className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-              </button>
             </div>
           </div>
-        </div>
+        )}
 
         {/* Hero Section - Relax & Enjoy with Water Flow */}
         <section className="relative overflow-hidden bg-gradient-to-b from-primary-50 via-white to-white">
