@@ -185,9 +185,25 @@ export const BecomePartnerPage: React.FC = () => {
                 Why Top Spas Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-emerald-600">OMBARO</span>
               </h2>
               <div className="w-24 h-1 bg-gradient-to-r from-green-500 to-emerald-600 mx-auto mb-6"></div>
-              <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+              <p className="text-xl text-gray-700 max-w-3xl mx-auto mb-8">
                 We connect you with customers looking for quality wellness services
               </p>
+              
+              {/* Sexy Spa Massage Image */}
+              <div className="max-w-4xl mx-auto mb-12">
+                <div className="relative group overflow-hidden rounded-3xl shadow-2xl">
+                  <img 
+                    src="/images/luxury_spa_massage_t_6f866171.jpg" 
+                    alt="Premium Spa Massage Services"
+                    className="w-full h-[400px] md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+                  <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+                    <h3 className="text-3xl font-bold mb-2">Premium Wellness Experiences</h3>
+                    <p className="text-lg text-green-200">Professional spa services for ultimate relaxation</p>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
