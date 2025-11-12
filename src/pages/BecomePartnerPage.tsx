@@ -1,10 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import {
-  ArrowRight, CheckCircle, TrendingUp, Users, Calendar, Wallet,
-  BarChart3, Shield, Star, Phone, Mail, Award, Target, Zap,
-  ChevronDown, ChevronUp, Sparkles, Crown, Heart, Coffee, Lock,
-  Eye, Gem, DollarSign, UserCheck, Gift, Briefcase, Clock
+  ArrowRight, CheckCircle, TrendingUp, Wallet, Shield, Star, Phone,
+  ChevronDown, ChevronUp, Crown, Lock, Eye, Gem, DollarSign, UserCheck, Gift, Briefcase
 } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { MarketingHeader } from '../components/marketing/MarketingHeader';
@@ -14,15 +12,15 @@ export const BecomePartnerPage: React.FC = () => {
   const [openFaq, setOpenFaq] = React.useState<number | null>(null);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-black">
       <MarketingHeader />
 
       <main className="pt-0">
         {/* Premium Hero Section */}
-        <section className="relative min-h-[600px] sm:min-h-[700px] md:min-h-[800px] lg:min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-white via-green-50 to-green-100 pt-16 sm:pt-20 md:pt-24">
-          <div className="absolute inset-0 opacity-20">
+        <section className="relative min-h-[600px] sm:min-h-[700px] md:min-h-[800px] lg:min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black pt-16 sm:pt-20 md:pt-24">
+          <div className="absolute inset-0 opacity-10">
             <div className="absolute top-0 left-0 w-64 h-64 sm:w-96 sm:h-96 bg-green-400 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-green-500 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-green-600 rounded-full blur-3xl animate-pulse"></div>
           </div>
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-8 sm:py-12">
@@ -33,33 +31,33 @@ export const BecomePartnerPage: React.FC = () => {
                   <span className="text-white text-xs sm:text-sm font-bold tracking-wider uppercase">Elite Partner Program</span>
                 </div>
 
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight text-white" style={{ fontFamily: "'Tenor Sans', serif" }}>
                   Join OMBARO's<br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-green-700">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-600">
                     Partner Network
                   </span>
                 </h1>
 
-                <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 text-gray-700 leading-relaxed">
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 text-white/90 leading-relaxed">
                   Grow your spa business with OMBARO's trusted platform. Join our network of professional partners and reach more customers.
                 </p>
 
-                <div className="bg-white/90 backdrop-blur-md border-2 border-green-500/50 rounded-2xl p-6 mb-8 shadow-lg">
-                  <h3 className="text-gray-900 font-bold text-lg mb-4 flex items-center">
-                    <Gift className="w-5 h-5 text-green-600 mr-2" />
+                <div className="bg-white/10 backdrop-blur-md border border-green-500/30 rounded-2xl p-6 mb-8">
+                  <h3 className="text-white font-bold text-lg mb-4 flex items-center">
+                    <Gift className="w-5 h-5 text-green-400 mr-2" />
                     Partnership Benefits
                   </h3>
                   <div className="space-y-3">
-                    <div className="flex items-center text-gray-700">
-                      <CheckCircle className="w-5 h-5 text-green-600 mr-3 flex-shrink-0" />
+                    <div className="flex items-center text-white">
+                      <CheckCircle className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
                       <span className="text-sm sm:text-base">Easy onboarding process</span>
                     </div>
-                    <div className="flex items-center text-gray-700">
-                      <CheckCircle className="w-5 h-5 text-green-600 mr-3 flex-shrink-0" />
+                    <div className="flex items-center text-white">
+                      <CheckCircle className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
                       <span className="text-sm sm:text-base">Access to verified customer base</span>
                     </div>
-                    <div className="flex items-center text-gray-700">
-                      <CheckCircle className="w-5 h-5 text-green-600 mr-3 flex-shrink-0" />
+                    <div className="flex items-center text-white">
+                      <CheckCircle className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
                       <span className="text-sm sm:text-base">Platform support and tools</span>
                     </div>
                   </div>
@@ -73,39 +71,39 @@ export const BecomePartnerPage: React.FC = () => {
                     </Button>
                   </Link>
                   <a href="tel:+919876543210" className="w-full sm:w-auto">
-                    <Button size="lg" variant="outline" className="w-full sm:w-auto border-2 border-green-500 text-green-400 hover:bg-green-500/10 text-lg px-10 py-6 rounded-full">
+                    <Button size="lg" variant="outline" className="w-full sm:w-auto border-2 border-green-500 text-white hover:bg-green-500/10 text-lg px-10 py-6 rounded-full">
                       <Phone className="w-5 h-5 mr-2" />
                       Talk to Expert
                     </Button>
                   </a>
                 </div>
 
-                <div className="flex flex-wrap gap-6 text-gray-700 text-sm">
+                <div className="flex flex-wrap gap-6 text-white/80 text-sm">
                   <div className="flex items-center space-x-2">
-                    <UserCheck className="w-5 h-5 text-green-600" />
+                    <UserCheck className="w-5 h-5 text-green-400" />
                     <span>24hr Approval</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <DollarSign className="w-5 h-5 text-green-600" />
+                    <DollarSign className="w-5 h-5 text-green-400" />
                     <span>Daily Payouts</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Shield className="w-5 h-5 text-green-600" />
+                    <Shield className="w-5 h-5 text-green-400" />
                     <span>100% Secure</span>
                   </div>
                 </div>
               </div>
 
               <div className="relative">
-                {/* Enhanced Collage Design with Hover Effects */}
+                {/* Enhanced Collage Design with Different Photos & Hover Effects */}
                 <div className="grid grid-cols-12 gap-3 sm:gap-4">
-                  {/* Large Image Top Left - Prominent */}
+                  {/* Large Image Top Left - Spa Treatment Room */}
                   <div className="col-span-7 relative group">
                     <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-green-600 rounded-3xl transform rotate-2 opacity-20 group-hover:rotate-3 group-hover:scale-105 transition-all duration-500"></div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <img
-                      src="/images/luxury_spa_massage_t_2767ba26.jpg"
-                      alt="Premium Thai Massage"
+                      src="/images/spa_treatment_room_i_69fbabb0.jpg"
+                      alt="Luxury Spa Treatment Room"
                       className="relative rounded-3xl shadow-2xl w-full h-56 sm:h-72 md:h-96 object-cover border-2 border-green-500/30 group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -114,34 +112,34 @@ export const BecomePartnerPage: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Top Right Small Image */}
+                  {/* Top Right Small Image - Beauty Salon Facial */}
                   <div className="col-span-5 relative group">
                     <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-green-700 rounded-3xl transform -rotate-1 opacity-15 group-hover:rotate-1 group-hover:scale-105 transition-all duration-500"></div>
                     <img
-                      src="/images/luxury_spa_massage_t_3fdc8d75.jpg"
-                      alt="Aromatherapy"
+                      src="/images/beauty_salon_facial__338eb5d5.jpg"
+                      alt="Beauty Facial Treatment"
                       className="rounded-3xl shadow-xl w-full h-40 sm:h-52 md:h-64 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-3xl"></div>
                   </div>
 
-                  {/* Bottom Left Image */}
+                  {/* Bottom Left Image - Massage Therapy */}
                   <div className="col-span-5 relative group">
                     <div className="absolute inset-0 bg-gradient-to-br from-green-600 to-green-400 rounded-3xl transform rotate-1 opacity-15 group-hover:-rotate-1 group-hover:scale-105 transition-all duration-500"></div>
                     <img
-                      src="/images/luxury_spa_massage_t_48a88152.jpg"
-                      alt="Swedish Massage"
+                      src="/images/luxury_spa_massage_t_6f866171.jpg"
+                      alt="Professional Massage Therapy"
                       className="rounded-3xl shadow-xl w-full h-40 sm:h-52 md:h-64 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-3xl"></div>
                   </div>
 
-                  {/* Bottom Right Image */}
+                  {/* Bottom Right Image - Spa Interior */}
                   <div className="col-span-7 relative group">
                     <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-green-600 rounded-3xl transform -rotate-2 opacity-20 group-hover:rotate-2 group-hover:scale-105 transition-all duration-500"></div>
                     <img
-                      src="/images/luxury_spa_massage_t_690db67f.jpg"
-                      alt="Hot Oil Therapy"
+                      src="/images/spa_treatment_room_i_a3b5e6e7.jpg"
+                      alt="Elegant Spa Interior"
                       className="rounded-3xl shadow-xl w-full h-40 sm:h-52 md:h-64 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-3xl"></div>
@@ -176,44 +174,44 @@ export const BecomePartnerPage: React.FC = () => {
         </section>
 
         {/* Exclusive Benefits Section */}
-        <section className="py-20 bg-white relative">
+        <section className="py-20 bg-gradient-to-b from-black to-gray-900 relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-5xl font-light text-gray-800 mb-6" style={{ fontFamily: "'Inter', sans-serif" }}>
-                Why Top Spas Choose <span className="font-normal text-green-600">OMBARO</span>
+              <h2 className="text-5xl font-bold text-white mb-6" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                Why Top Spas Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-600">OMBARO</span>
               </h2>
-              <div className="w-24 h-1 bg-green-600 mx-auto mb-6"></div>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              <div className="w-24 h-1 bg-green-500 mx-auto mb-6"></div>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
                 We connect you with customers looking for quality wellness services
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
               {/* High-Value Clients */}
-              <div className="group relative bg-gradient-to-br from-green-500 via-green-600 to-green-700 rounded-[40px] overflow-hidden shadow-2xl hover:shadow-green-500/50 transition-all duration-500 border-2 border-green-400 hover:border-green-300 transform hover:-translate-y-2">
-                <div className="absolute top-0 right-0 w-40 h-40 bg-white rounded-bl-full opacity-10 group-hover:opacity-20 transition-opacity"></div>
-                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="group relative bg-gradient-to-br from-black via-gray-900 to-black rounded-[40px] overflow-hidden shadow-2xl hover:shadow-green-500/50 transition-all duration-500 border-2 border-green-500 hover:border-green-400 transform hover:-translate-y-2">
+                <div className="absolute top-0 right-0 w-40 h-40 bg-green-500 rounded-bl-full opacity-10 group-hover:opacity-20 transition-opacity"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div className="relative z-10 p-10">
-                  <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                  <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-green-500/50 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                     <Gem className="w-10 h-10 text-white" />
                   </div>
-                  <h3 className="text-2xl font-light mb-4 text-white" style={{ fontFamily: "'Inter', sans-serif" }}>
-                    <span className="font-normal">Premium Clientele</span>
+                  <h3 className="text-2xl font-bold mb-4 text-white" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-300 to-green-500">Premium Clientele</span>
                   </h3>
-                  <p className="text-white/90 leading-relaxed mb-6">
-                    Access to <strong className="text-white">verified high-net-worth individuals</strong> seeking exclusive wellness experiences and <strong className="text-white">personalized private services</strong>
+                  <p className="text-gray-300 leading-relaxed mb-6">
+                    Access to <strong className="text-green-400">verified high-net-worth individuals</strong> seeking exclusive wellness experiences and <strong className="text-green-400">personalized private services</strong>
                   </p>
-                  <div className="space-y-2 text-sm text-white/90">
+                  <div className="space-y-2 text-sm text-gray-300">
                     <div className="flex items-center space-x-2">
-                      <Star className="w-4 h-4 text-white" />
+                      <Star className="w-4 h-4 text-green-400" />
                       <span>Corporate executives & celebrities</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <Lock className="w-4 h-4 text-white" />
+                      <Lock className="w-4 h-4 text-green-400" />
                       <span>VIP membership programs</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <Eye className="w-4 h-4 text-white" />
+                      <Eye className="w-4 h-4 text-green-400" />
                       <span>Discreet premium services</span>
                     </div>
                   </div>
@@ -221,54 +219,54 @@ export const BecomePartnerPage: React.FC = () => {
               </div>
 
               {/* Maximum Revenue */}
-              <div className="group relative bg-gradient-to-br from-green-500 via-green-600 to-green-700 rounded-[40px] overflow-hidden shadow-2xl hover:shadow-green-500/50 transition-all duration-500 border-2 border-green-400 hover:border-green-300 transform hover:-translate-y-2">
-                <div className="absolute top-0 right-0 w-40 h-40 bg-white rounded-bl-full opacity-10 group-hover:opacity-20 transition-opacity"></div>
-                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="group relative bg-gradient-to-br from-black via-gray-900 to-black rounded-[40px] overflow-hidden shadow-2xl hover:shadow-green-500/50 transition-all duration-500 border-2 border-green-500 hover:border-green-400 transform hover:-translate-y-2">
+                <div className="absolute top-0 right-0 w-40 h-40 bg-green-500 rounded-bl-full opacity-10 group-hover:opacity-20 transition-opacity"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div className="relative z-10 p-10">
-                  <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                  <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-green-500/50 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                     <TrendingUp className="w-10 h-10 text-white" />
                   </div>
-                  <h3 className="text-2xl font-light mb-4 text-white" style={{ fontFamily: "'Inter', sans-serif" }}>
-                    <span className="font-normal">Explosive Growth</span>
+                  <h3 className="text-2xl font-bold mb-4 text-white" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-300 to-green-500">Explosive Growth</span>
                   </h3>
-                  <p className="text-white/90 leading-relaxed mb-6">
+                  <p className="text-gray-300 leading-relaxed mb-6">
                     Our platform helps you grow your business by connecting you with customers actively looking for wellness services in your area
                   </p>
-                  <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 mb-4 shadow-lg">
+                  <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-xl p-4 mb-4 shadow-lg">
                     <div className="text-3xl font-bold text-white mb-1">Real Growth</div>
-                    <div className="text-sm text-white/80">Steady Customer Flow</div>
+                    <div className="text-sm text-green-100">Steady Customer Flow</div>
                   </div>
-                  <div className="text-xs text-white/70 italic">
+                  <div className="text-xs text-gray-400 italic">
                     *Results vary by location and services
                   </div>
                 </div>
               </div>
 
               {/* Complete Freedom */}
-              <div className="group relative bg-gradient-to-br from-green-500 via-green-600 to-green-700 rounded-[40px] overflow-hidden shadow-2xl hover:shadow-green-500/50 transition-all duration-500 border-2 border-green-400 hover:border-green-300 transform hover:-translate-y-2">
-                <div className="absolute top-0 right-0 w-40 h-40 bg-white rounded-bl-full opacity-10 group-hover:opacity-20 transition-opacity"></div>
-                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="group relative bg-gradient-to-br from-black via-gray-900 to-black rounded-[40px] overflow-hidden shadow-2xl hover:shadow-green-500/50 transition-all duration-500 border-2 border-green-500 hover:border-green-400 transform hover:-translate-y-2">
+                <div className="absolute top-0 right-0 w-40 h-40 bg-green-500 rounded-bl-full opacity-10 group-hover:opacity-20 transition-opacity"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div className="relative z-10 p-10">
-                  <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                  <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-green-500/50 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                     <Briefcase className="w-10 h-10 text-white" />
                   </div>
-                  <h3 className="text-2xl font-light mb-4 text-white" style={{ fontFamily: "'Inter', sans-serif" }}>
-                    <span className="font-normal">Your Business, Your Rules</span>
+                  <h3 className="text-2xl font-bold mb-4 text-white" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-300 to-green-500">Your Business, Your Rules</span>
                   </h3>
-                  <p className="text-white/90 leading-relaxed mb-6">
-                    <strong className="text-white">Complete control</strong> over your services, pricing, and special offerings. We support <strong className="text-white">all types of wellness services</strong>
+                  <p className="text-gray-300 leading-relaxed mb-6">
+                    <strong className="text-green-400">Complete control</strong> over your services, pricing, and special offerings. We support <strong className="text-green-400">all types of wellness services</strong>
                   </p>
-                  <div className="space-y-2 text-sm text-white/90">
+                  <div className="space-y-2 text-sm text-gray-300">
                     <div className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 text-white" />
+                      <CheckCircle className="w-4 h-4 text-green-400" />
                       <span>Set your own prices & packages</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 text-white" />
+                      <CheckCircle className="w-4 h-4 text-green-400" />
                       <span>Offer exclusive memberships</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 text-white" />
+                      <CheckCircle className="w-4 h-4 text-green-400" />
                       <span>Private session bookings</span>
                     </div>
                   </div>
@@ -277,37 +275,37 @@ export const BecomePartnerPage: React.FC = () => {
             </div>
 
             {/* Premium Features Grid */}
-            <div className="bg-gradient-to-br from-white via-green-50 to-white rounded-3xl p-12 border-2 border-green-500 shadow-2xl">
+            <div className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-12 text-white">
               <div className="text-center mb-12">
-                <h3 className="text-3xl font-bold mb-4 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                <h3 className="text-3xl font-bold mb-4" style={{ fontFamily: "'Tenor Sans', serif" }}>
                   What Makes Us Different
                 </h3>
-                <p className="text-gray-700 text-lg">Features that actually make you money</p>
+                <p className="text-white/80 text-lg">Features that actually make you money</p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div className="bg-white backdrop-blur-sm rounded-2xl p-6 border-2 border-green-500/30 shadow-lg">
-                  <Lock className="w-8 h-8 text-green-600 mb-4" />
-                  <h4 className="font-bold mb-2 text-gray-900">VIP Client Network</h4>
-                  <p className="text-sm text-gray-700">Exclusive access to high-paying clients seeking premium experiences</p>
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                  <Lock className="w-8 h-8 text-green-400 mb-4" />
+                  <h4 className="font-bold mb-2">VIP Client Network</h4>
+                  <p className="text-sm text-white/70">Exclusive access to high-paying clients seeking premium experiences</p>
                 </div>
 
-                <div className="bg-white backdrop-blur-sm rounded-2xl p-6 border-2 border-green-500/30 shadow-lg">
-                  <DollarSign className="w-8 h-8 text-green-600 mb-4" />
-                  <h4 className="font-bold mb-2 text-gray-900">Premium Pricing Support</h4>
-                  <p className="text-sm text-gray-700">Charge 2-3X more for exclusive services with our platform backing</p>
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                  <DollarSign className="w-8 h-8 text-green-400 mb-4" />
+                  <h4 className="font-bold mb-2">Premium Pricing Support</h4>
+                  <p className="text-sm text-white/70">Charge 2-3X more for exclusive services with our platform backing</p>
                 </div>
 
-                <div className="bg-white backdrop-blur-sm rounded-2xl p-6 border-2 border-green-500/30 shadow-lg">
-                  <Eye className="w-8 h-8 text-green-600 mb-4" />
-                  <h4 className="font-bold mb-2 text-gray-900">Privacy & Discretion</h4>
-                  <p className="text-sm text-gray-700">Private booking system for VIP clients - complete confidentiality</p>
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                  <Eye className="w-8 h-8 text-green-400 mb-4" />
+                  <h4 className="font-bold mb-2">Privacy & Discretion</h4>
+                  <p className="text-sm text-white/70">Private booking system for VIP clients - complete confidentiality</p>
                 </div>
 
-                <div className="bg-white backdrop-blur-sm rounded-2xl p-6 border-2 border-green-500/30 shadow-lg">
-                  <Wallet className="w-8 h-8 text-green-600 mb-4" />
-                  <h4 className="font-bold mb-2 text-gray-900">Instant Payments</h4>
-                  <p className="text-sm text-gray-700">Get paid within hours directly to your account - no delays</p>
+                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
+                  <Wallet className="w-8 h-8 text-green-400 mb-4" />
+                  <h4 className="font-bold mb-2">Instant Payments</h4>
+                  <p className="text-sm text-white/70">Get paid within hours directly to your account - no delays</p>
                 </div>
               </div>
             </div>
@@ -315,77 +313,77 @@ export const BecomePartnerPage: React.FC = () => {
         </section>
 
         {/* Success Stories with Real Numbers */}
-        <section className="py-20 bg-gradient-to-br from-green-50 to-white">
+        <section className="py-20 bg-gradient-to-br from-gray-900 to-black">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-5xl font-bold text-gray-900 mb-6" style={{ fontFamily: "'Tenor Sans', serif" }}>
+              <h2 className="text-5xl font-bold text-white mb-6" style={{ fontFamily: "'Tenor Sans', serif" }}>
                 Real Partners, Real Success
               </h2>
-              <div className="w-24 h-1 bg-green-600 mx-auto mb-6"></div>
-              <p className="text-xl text-gray-600">These numbers speak louder than promises</p>
+              <div className="w-24 h-1 bg-green-500 mx-auto mb-6"></div>
+              <p className="text-xl text-gray-300">These numbers speak louder than promises</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white p-8 shadow-xl border-2 border-green-100" style={{ borderRadius: '40px' }}>
+              <div className="bg-gradient-to-br from-black to-gray-900 p-8 shadow-xl border-2 border-green-500 hover:border-green-400 transition-colors" style={{ borderRadius: '40px' }}>
                 <div className="flex items-center mb-6">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <p className="text-gray-700 mb-6 italic leading-relaxed text-lg">
-                  "Started earning <strong className="text-green-600">₹12L/month</strong> within 4 months. The VIP client network alone is worth it. My exclusive packages are always booked!"
+                <p className="text-gray-300 mb-6 italic leading-relaxed text-lg">
+                  "Started earning <strong className="text-green-400">₹12L/month</strong> within 4 months. The VIP client network alone is worth it. My exclusive packages are always booked!"
                 </p>
-                <div className="pt-6 border-t border-gray-100">
-                  <div className="font-bold text-gray-900 text-lg">Priya Malhotra</div>
-                  <div className="text-sm text-gray-500">Luxury Spa, South Delhi</div>
+                <div className="pt-6 border-t border-green-500/30">
+                  <div className="font-bold text-white text-lg">Priya Malhotra</div>
+                  <div className="text-sm text-gray-400">Luxury Spa, South Delhi</div>
                 </div>
                 <div className="mt-4 flex items-center justify-between">
-                  <span className="inline-block px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-bold">
+                  <span className="inline-block px-4 py-2 bg-green-500 text-white rounded-full text-sm font-bold">
                     +340% Revenue
                   </span>
-                  <span className="text-xs text-gray-500">6 months</span>
+                  <span className="text-xs text-gray-400">6 months</span>
                 </div>
               </div>
 
-              <div className="bg-white p-8 shadow-xl border-2 border-green-100" style={{ borderRadius: '40px' }}>
+              <div className="bg-gradient-to-br from-black to-gray-900 p-8 shadow-xl border-2 border-green-500 hover:border-green-400 transition-colors" style={{ borderRadius: '40px' }}>
                 <div className="flex items-center mb-6">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <p className="text-gray-700 mb-6 italic leading-relaxed text-lg">
-                  "The platform understands premium business. My private consultation bookings increased <strong className="text-green-600">5X</strong>. Clients appreciate the discretion."
+                <p className="text-gray-300 mb-6 italic leading-relaxed text-lg">
+                  "The platform understands premium business. My private consultation bookings increased <strong className="text-green-400">5X</strong>. Clients appreciate the discretion."
                 </p>
-                <div className="pt-6 border-t border-gray-100">
-                  <div className="font-bold text-gray-900 text-lg">Rajesh Khanna</div>
-                  <div className="text-sm text-gray-500">Elite Wellness Center, Mumbai</div>
+                <div className="pt-6 border-t border-green-500/30">
+                  <div className="font-bold text-white text-lg">Rajesh Khanna</div>
+                  <div className="text-sm text-gray-400">Elite Wellness Center, Mumbai</div>
                 </div>
                 <div className="mt-4 flex items-center justify-between">
-                  <span className="inline-block px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-bold">
+                  <span className="inline-block px-4 py-2 bg-green-500 text-white rounded-full text-sm font-bold">
                     +500% Bookings
                   </span>
-                  <span className="text-xs text-gray-500">3 months</span>
+                  <span className="text-xs text-gray-400">3 months</span>
                 </div>
               </div>
 
-              <div className="bg-white p-8 shadow-xl border-2 border-green-100" style={{ borderRadius: '40px' }}>
+              <div className="bg-gradient-to-br from-black to-gray-900 p-8 shadow-xl border-2 border-green-500 hover:border-green-400 transition-colors" style={{ borderRadius: '40px' }}>
                 <div className="flex items-center mb-6">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
                   ))}
                 </div>
-                <p className="text-gray-700 mb-6 italic leading-relaxed text-lg">
-                  "Finally a platform that supports <strong className="text-green-600">all our services</strong>. VIP memberships are fully booked. Earning ₹8L+ consistently!"
+                <p className="text-gray-300 mb-6 italic leading-relaxed text-lg">
+                  "Finally a platform that supports <strong className="text-green-400">all our services</strong>. VIP memberships are fully booked. Earning ₹8L+ consistently!"
                 </p>
-                <div className="pt-6 border-t border-gray-100">
-                  <div className="font-bold text-gray-900 text-lg">Sanya Kapoor</div>
-                  <div className="text-sm text-gray-500">Premium Spa & Wellness, Bangalore</div>
+                <div className="pt-6 border-t border-green-500/30">
+                  <div className="font-bold text-white text-lg">Sanya Kapoor</div>
+                  <div className="text-sm text-gray-400">Premium Spa & Wellness, Bangalore</div>
                 </div>
                 <div className="mt-4 flex items-center justify-between">
-                  <span className="inline-block px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-bold">
+                  <span className="inline-block px-4 py-2 bg-green-500 text-white rounded-full text-sm font-bold">
                     +280% Growth
                   </span>
-                  <span className="text-xs text-gray-500">5 months</span>
+                  <span className="text-xs text-gray-400">5 months</span>
                 </div>
               </div>
             </div>
