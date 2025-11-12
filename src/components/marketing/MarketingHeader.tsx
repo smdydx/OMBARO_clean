@@ -14,7 +14,7 @@ export const MarketingHeader: React.FC = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-r from-black via-green-900/20 to-black border-b border-green-800/30 shadow-xl">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20 sm:h-24 md:h-28">
           <div className="flex items-center justify-between flex-1">
@@ -34,7 +34,7 @@ export const MarketingHeader: React.FC = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className="px-5 py-2.5 text-gray-300 hover:text-white font-medium transition-all duration-200 hover:bg-green-700/30 rounded-lg text-sm"
+                className="px-5 py-2.5 text-gray-700 hover:text-gray-900 font-medium transition-all duration-200 hover:bg-emerald-50 rounded-lg text-sm"
                 style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}
               >
                 {link.name}
@@ -45,7 +45,7 @@ export const MarketingHeader: React.FC = () => {
           <div className="hidden md:flex items-center space-x-6 ml-auto">
             <Link to="/app">
               <button
-                className="px-6 py-2.5 text-gray-300 hover:text-white font-medium transition-all duration-200 hover:bg-green-700/30 rounded-full text-sm"
+                className="px-6 py-2.5 text-gray-700 hover:text-gray-900 font-medium transition-all duration-200 hover:bg-emerald-50 rounded-full text-sm"
                 style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}
               >
                 Login
@@ -63,14 +63,14 @@ export const MarketingHeader: React.FC = () => {
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 sm:p-2.5 rounded-lg hover:bg-green-700/30 active:bg-green-800/50 transition-all duration-200 z-50 relative"
+            className="md:hidden p-2 sm:p-2.5 rounded-lg hover:bg-gray-100 active:bg-gray-200 transition-all duration-200 z-50 relative"
             aria-label="Toggle menu"
             type="button"
           >
             {isMobileMenuOpen ? (
-              <X className="w-6 h-6 sm:w-7 sm:h-7 text-gray-300" />
+              <X className="w-6 h-6 sm:w-7 sm:h-7 text-gray-700" />
             ) : (
-              <Menu className="w-6 h-6 sm:w-7 sm:h-7 text-gray-300" />
+              <Menu className="w-6 h-6 sm:w-7 sm:h-7 text-gray-700" />
             )}
           </button>
         </div>
@@ -85,7 +85,7 @@ export const MarketingHeader: React.FC = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`fixed top-20 sm:top-24 md:top-28 right-0 left-0 bg-black border-b border-gray-800 shadow-2xl z-40 md:hidden transform transition-all duration-300 ease-in-out ${
+          className={`fixed top-20 sm:top-24 md:top-28 right-0 left-0 bg-white border-b border-gray-200 shadow-2xl z-40 md:hidden transform transition-all duration-300 ease-in-out ${
             isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'
           }`}
         >
@@ -95,16 +95,16 @@ export const MarketingHeader: React.FC = () => {
                 key={link.path}
                 to={link.path}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="px-5 py-3.5 text-white hover:bg-green-600/20 hover:text-green-400 rounded-xl transition-all font-medium border border-transparent hover:border-green-600/30"
+                className="px-5 py-3.5 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-xl transition-all font-medium border border-transparent hover:border-emerald-200"
               >
                 {link.name}
               </Link>
             ))}
-            <div className="border-t border-gray-800 my-3"></div>
+            <div className="border-t border-gray-200 my-3"></div>
             <Link
               to="/app"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="px-5 py-3.5 text-white hover:bg-green-600/20 hover:text-green-400 rounded-xl transition-all font-medium border border-transparent hover:border-green-600/30"
+              className="px-5 py-3.5 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-xl transition-all font-medium border border-transparent hover:border-emerald-200"
             >
               Login
             </Link>
