@@ -392,38 +392,219 @@ export const BecomePartnerPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Service Types We Support */}
-        <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-green-50 to-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Premium Massage Services - Horizontal Scroll */}
+        <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-green-50 to-white overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
             <div className="text-center mb-12 sm:mb-16">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4 sm:mb-6" style={{ fontFamily: "'Tenor Sans', serif" }}>
-                We Support <span className="text-green-600">All</span> Your Services
+                Premium Massage Services
               </h2>
               <div className="w-24 h-1 bg-green-600 mx-auto mb-4 sm:mb-6"></div>
               <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4">
-                From basic spa treatments to <strong>exclusive VIP experiences</strong> - we've got you covered
+                Professional massage therapies for ultimate relaxation and wellness
               </p>
             </div>
+          </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
-              {[
-                { name: 'Spa & Massage', icon: Sparkles, premium: 'Private Sessions' },
-                { name: 'Beauty Treatments', icon: Heart, premium: 'VIP Packages' },
-                { name: 'Wellness Programs', icon: Target, premium: 'Exclusive Memberships' },
-                { name: 'Therapeutic Services', icon: Award, premium: 'Personalized Care' },
-                { name: 'Body Treatments', icon: Coffee, premium: 'Luxury Experiences' },
-                { name: 'Facial Care', icon: Star, premium: 'Premium Treatments' },
-                { name: 'Aromatherapy', icon: Crown, premium: 'Custom Blends' },
-                { name: 'Special Services', icon: Lock, premium: 'VIP Only' },
-              ].map((service, idx) => (
-                <div key={idx} className="group bg-gradient-to-br from-green-50 to-white rounded-2xl p-4 sm:p-6 text-center hover:shadow-xl transition-all duration-300 border-2 border-green-100 hover:border-green-400">
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-full flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform">
-                    <service.icon className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
+          {/* Horizontal Scrolling Container */}
+          <div className="relative">
+            <div className="flex gap-6 overflow-x-auto scrollbar-hide px-4 sm:px-6 lg:px-8 pb-8 snap-x snap-mandatory" style={{ scrollBehavior: 'smooth' }}>
+              {/* Thai Massage */}
+              <div className="flex-shrink-0 w-80 sm:w-96 snap-center group">
+                <div className="bg-white rounded-3xl overflow-hidden shadow-2xl border-2 border-green-100 hover:border-green-400 transition-all duration-500 hover:shadow-green-500/30 hover:-translate-y-2">
+                  <div className="relative overflow-hidden h-72">
+                    <img 
+                      src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80" 
+                      alt="Thai Massage"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                      <div className="flex items-center space-x-2 mb-2">
+                        <Star className="w-5 h-5 text-yellow-400 fill-current" />
+                        <span className="text-sm font-semibold">Most Popular</span>
+                      </div>
+                    </div>
                   </div>
-                  <h3 className="text-sm sm:text-base md:text-lg font-bold mb-1 sm:mb-2 text-gray-900">{service.name}</h3>
-                  <p className="text-xs sm:text-sm text-green-600 font-semibold">{service.premium}</p>
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold mb-3 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>Thai Massage</h3>
+                    <p className="text-gray-600 leading-relaxed mb-4">
+                      Traditional Thai massage combining stretching and acupressure for deep relaxation and flexibility.
+                    </p>
+                    <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                      <span className="text-green-600 font-bold text-lg">₹1,500 - ₹3,000</span>
+                      <div className="flex items-center text-sm text-gray-500">
+                        <Clock className="w-4 h-4 mr-1" />
+                        60-90 min
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              ))}
+              </div>
+
+              {/* Aroma Massage */}
+              <div className="flex-shrink-0 w-80 sm:w-96 snap-center group">
+                <div className="bg-white rounded-3xl overflow-hidden shadow-2xl border-2 border-green-100 hover:border-green-400 transition-all duration-500 hover:shadow-green-500/30 hover:-translate-y-2">
+                  <div className="relative overflow-hidden h-72">
+                    <img 
+                      src="https://images.unsplash.com/photo-1596178060810-4ffa5d864b2b?w=800&q=80" 
+                      alt="Aroma Massage"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute top-4 right-4 bg-green-500 text-white px-3 py-1 rounded-full text-xs font-bold">
+                      Premium
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold mb-3 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>Aroma Massage</h3>
+                    <p className="text-gray-600 leading-relaxed mb-4">
+                      Aromatherapy with essential oils to promote relaxation and reduce stress through soothing scents.
+                    </p>
+                    <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                      <span className="text-green-600 font-bold text-lg">₹2,000 - ₹4,000</span>
+                      <div className="flex items-center text-sm text-gray-500">
+                        <Clock className="w-4 h-4 mr-1" />
+                        75-120 min
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Swedish Massage */}
+              <div className="flex-shrink-0 w-80 sm:w-96 snap-center group">
+                <div className="bg-white rounded-3xl overflow-hidden shadow-2xl border-2 border-green-100 hover:border-green-400 transition-all duration-500 hover:shadow-green-500/30 hover:-translate-y-2">
+                  <div className="relative overflow-hidden h-72">
+                    <img 
+                      src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=800&q=80" 
+                      alt="Swedish Massage"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold mb-3 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>Swedish Massage</h3>
+                    <p className="text-gray-600 leading-relaxed mb-4">
+                      Classic therapy using gentle strokes to improve circulation and overall well-being.
+                    </p>
+                    <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                      <span className="text-green-600 font-bold text-lg">₹1,800 - ₹3,500</span>
+                      <div className="flex items-center text-sm text-gray-500">
+                        <Clock className="w-4 h-4 mr-1" />
+                        60-90 min
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Hot Stone Massage */}
+              <div className="flex-shrink-0 w-80 sm:w-96 snap-center group">
+                <div className="bg-white rounded-3xl overflow-hidden shadow-2xl border-2 border-green-100 hover:border-green-400 transition-all duration-500 hover:shadow-green-500/30 hover:-translate-y-2">
+                  <div className="relative overflow-hidden h-72">
+                    <img 
+                      src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80" 
+                      alt="Hot Stone Massage"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute top-4 right-4 bg-amber-500 text-white px-3 py-1 rounded-full text-xs font-bold">
+                      Luxury
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold mb-3 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>Hot Stone Massage</h3>
+                    <p className="text-gray-600 leading-relaxed mb-4">
+                      Heated volcanic stones to release tension and promote circulation with positive energy.
+                    </p>
+                    <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                      <span className="text-green-600 font-bold text-lg">₹2,500 - ₹5,000</span>
+                      <div className="flex items-center text-sm text-gray-500">
+                        <Clock className="w-4 h-4 mr-1" />
+                        90-120 min
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Deep Tissue Massage */}
+              <div className="flex-shrink-0 w-80 sm:w-96 snap-center group">
+                <div className="bg-white rounded-3xl overflow-hidden shadow-2xl border-2 border-green-100 hover:border-green-400 transition-all duration-500 hover:shadow-green-500/30 hover:-translate-y-2">
+                  <div className="relative overflow-hidden h-72">
+                    <img 
+                      src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?w=800&q=80" 
+                      alt="Deep Tissue Massage"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold mb-3 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>Deep Tissue Massage</h3>
+                    <p className="text-gray-600 leading-relaxed mb-4">
+                      Focused pressure targeting chronic tension, muscle soreness, and specific problem areas.
+                    </p>
+                    <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                      <span className="text-green-600 font-bold text-lg">₹2,200 - ₹4,500</span>
+                      <div className="flex items-center text-sm text-gray-500">
+                        <Clock className="w-4 h-4 mr-1" />
+                        75-90 min
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Balinese Massage */}
+              <div className="flex-shrink-0 w-80 sm:w-96 snap-center group">
+                <div className="bg-white rounded-3xl overflow-hidden shadow-2xl border-2 border-green-100 hover:border-green-400 transition-all duration-500 hover:shadow-green-500/30 hover:-translate-y-2">
+                  <div className="relative overflow-hidden h-72">
+                    <img 
+                      src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=800&q=80" 
+                      alt="Balinese Massage"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute top-4 right-4 bg-purple-500 text-white px-3 py-1 rounded-full text-xs font-bold">
+                      Exotic
+                    </div>
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold mb-3 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>Balinese Massage</h3>
+                    <p className="text-gray-600 leading-relaxed mb-4">
+                      Traditional Indonesian technique combining gentle stretches, acupressure, and aromatherapy oils.
+                    </p>
+                    <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                      <span className="text-green-600 font-bold text-lg">₹2,800 - ₹5,500</span>
+                      <div className="flex items-center text-sm text-gray-500">
+                        <Clock className="w-4 h-4 mr-1" />
+                        90-120 min
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Scroll Indicator */}
+            <div className="text-center mt-6">
+              <p className="text-sm text-gray-500 flex items-center justify-center">
+                <ArrowRight className="w-4 h-4 mr-2 animate-pulse" />
+                Scroll to explore more services
+              </p>
+            </div>
+          </div>
+
+          {/* Privacy Badge */}
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+            <div className="bg-gradient-to-r from-green-500 to-green-600 rounded-3xl p-6 sm:p-8 text-white text-center">
+              <Lock className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-4" />
+              <h3 className="text-xl sm:text-2xl font-bold mb-3">Complete Privacy & Discretion Guaranteed</h3>
+              <p className="text-base sm:text-lg text-white/90 max-w-3xl mx-auto px-4">
+                Our platform supports <strong>all types of wellness services</strong> with complete confidentiality.
+                VIP clients, private bookings, exclusive memberships - everything handled with utmost discretion.
+              </p>
             </div>
           </div>
         </section>
