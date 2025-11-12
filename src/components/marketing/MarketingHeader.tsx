@@ -23,7 +23,7 @@ export const MarketingHeader: React.FC = () => {
                 <img
                   src="/ombaro-logo-new.png"
                   alt="OMBARO"
-                  className="h-12 sm:h-14 md:h-16 w-auto object-contain transition-all duration-300 group-hover:scale-105"
+                  className="h-14 sm:h-14 md:h-16 w-auto object-contain transition-all duration-300 group-hover:scale-105"
                 />
               </div>
             </Link>
