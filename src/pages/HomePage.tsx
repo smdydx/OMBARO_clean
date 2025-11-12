@@ -43,7 +43,15 @@ export const HomePage: React.FC = () => {
     setIsClosing(true);
     setTimeout(() => {
       setShowTermsBanner(false);
-    }, 300); // Animation duration
+    }, 300);
+  };
+
+  const handleOpenTermsModal = () => {
+    setShowTermsModal(true);
+  };
+
+  const handleCloseTermsModal = () => {
+    setShowTermsModal(false);
   };
   const features = [
     {
@@ -152,7 +160,7 @@ export const HomePage: React.FC = () => {
                   <p className="text-xs sm:text-sm md:text-base font-semibold">
                     Please read our{' '}
                     <button
-                      onClick={() => setShowTermsModal(true)}
+                      onClick={handleOpenTermsModal}
                       className="underline font-bold hover:text-white/90 transition-colors cursor-pointer"
                       type="button"
                     >
@@ -539,10 +547,10 @@ export const HomePage: React.FC = () => {
         </section>
       </main>
 
-      {/* Terms & Conditions Modal */}
+      {/* Terms & Conditions Modal - Independent from hero section */}
       <TermsAndConditionsModal 
         isOpen={showTermsModal} 
-        onClose={() => setShowTermsModal(false)} 
+        onClose={handleCloseTermsModal} 
       />
 
       <MarketingFooter />
