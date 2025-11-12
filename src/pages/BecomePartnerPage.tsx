@@ -190,18 +190,59 @@ export const BecomePartnerPage: React.FC = () => {
                 We connect you with customers looking for quality wellness services
               </p>
 
-              {/* Featured Spa Image */}
-              <div className="max-w-4xl mx-auto mb-8 sm:mb-10 md:mb-12">
-                <div className="relative group overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl">
-                  <img 
-                    src="/images/luxury_spa_massage_t_3fdc8d75.jpg" 
-                    alt="Premium Spa Massage Services"
-                    className="w-full h-[250px] sm:h-[350px] md:h-[450px] lg:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
-                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 md:p-8 text-white">
-                    <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-1 sm:mb-2">Premium Wellness Experiences</h3>
-                    <p className="text-sm sm:text-base md:text-lg text-green-200">Professional spa services for ultimate relaxation</p>
+              {/* Collage-Style Image Grid */}
+              <div className="max-w-6xl mx-auto mb-8 sm:mb-10 md:mb-12">
+                <div className="grid grid-cols-12 gap-3 sm:gap-4">
+                  {/* Large Featured Image - Left */}
+                  <div className="col-span-12 md:col-span-7 relative group">
+                    <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-emerald-600 rounded-2xl sm:rounded-3xl transform rotate-1 opacity-20 group-hover:rotate-2 group-hover:scale-105 transition-all duration-500"></div>
+                    <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl">
+                      <img 
+                        src="/images/luxury_spa_massage_t_3fdc8d75.jpg" 
+                        alt="Premium Spa Massage Services"
+                        className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
+                      <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-6 text-white">
+                        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-1 sm:mb-2">Premium Wellness Experiences</h3>
+                        <p className="text-sm sm:text-base text-green-200">Professional spa services for ultimate relaxation</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right Column - 2 Stacked Images */}
+                  <div className="col-span-12 md:col-span-5 space-y-3 sm:space-y-4">
+                    {/* Top Right Image */}
+                    <div className="relative group">
+                      <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-teal-500 rounded-2xl transform -rotate-1 opacity-15 group-hover:rotate-1 group-hover:scale-105 transition-all duration-500"></div>
+                      <div className="relative overflow-hidden rounded-2xl shadow-xl">
+                        <img 
+                          src="/images/spa_treatment_room_i_69fbabb0.jpg" 
+                          alt="Luxury Spa Treatment Room"
+                          className="w-full h-[140px] sm:h-[190px] md:h-[240px] object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 text-white">
+                          <p className="text-xs sm:text-sm font-semibold">Luxury Facilities</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Bottom Right Image */}
+                    <div className="relative group">
+                      <div className="absolute inset-0 bg-gradient-to-br from-emerald-500 to-green-500 rounded-2xl transform rotate-1 opacity-15 group-hover:-rotate-1 group-hover:scale-105 transition-all duration-500"></div>
+                      <div className="relative overflow-hidden rounded-2xl shadow-xl">
+                        <img 
+                          src="/images/beauty_salon_facial__65176adc.jpg" 
+                          alt="Professional Beauty Services"
+                          className="w-full h-[140px] sm:h-[190px] md:h-[240px] object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div className="absolute bottom-0 left-0 right-0 p-3 sm:p-4 text-white">
+                          <p className="text-xs sm:text-sm font-semibold">Expert Treatments</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
