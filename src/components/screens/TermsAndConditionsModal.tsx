@@ -14,28 +14,30 @@ export const TermsAndConditionsModal: React.FC<TermsAndConditionsModalProps> = (
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-3 sm:p-4">
-      <div className="bg-gradient-to-br from-green-600 to-green-800 rounded-xl sm:rounded-2xl w-full max-w-xs sm:max-w-md md:max-w-2xl max-h-[90vh] overflow-hidden shadow-2xl">
+    <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-2 sm:p-4 md:p-6">
+      <div className="bg-gradient-to-br from-green-600 to-green-800 rounded-2xl w-full max-w-xs sm:max-w-md md:max-w-2xl max-h-[95vh] sm:max-h-[90vh] overflow-hidden shadow-2xl flex flex-col">
         {/* Header */}
-        <div className="sticky top-0 bg-gradient-to-r from-green-700 to-green-900 border-b border-green-500/30 p-4 sm:p-6 flex items-center justify-between">
-          <div className="flex items-center space-x-2 sm:space-x-3">
-            <div className="w-8 h-8 sm:w-10 sm:h-10 bg-white/20 backdrop-blur-sm rounded-lg sm:rounded-xl flex items-center justify-center">
-              <Scale className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+        <div className="flex-shrink-0 bg-gradient-to-r from-green-700 to-green-900 border-b border-green-500/30 p-3 sm:p-4 md:p-6">
+          <div className="flex items-center justify-between gap-2">
+            <div className="flex items-center space-x-2 sm:space-x-3 min-w-0 flex-1">
+              <div className="w-7 h-7 sm:w-9 sm:h-9 md:w-10 md:h-10 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center flex-shrink-0">
+                <Scale className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 text-white" />
+              </div>
+              <h2 className="text-sm sm:text-base md:text-xl font-bold text-white truncate">Terms & Conditions</h2>
             </div>
-            <h2 className="text-base sm:text-xl font-bold text-white">Terms & Conditions</h2>
+            <button
+              onClick={onClose}
+              aria-label="Close terms and conditions"
+              className="w-7 h-7 sm:w-8 sm:h-8 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-white/30 transition-colors flex-shrink-0"
+            >
+              <X className="w-4 h-4 sm:w-4.5 sm:h-4.5 text-white" />
+            </button>
           </div>
-          <button
-            onClick={onClose}
-            aria-label="Close terms and conditions"
-            className="w-7 h-7 sm:w-8 sm:h-8 bg-white/20 backdrop-blur-sm rounded-lg flex items-center justify-center hover:bg-white/30 transition-colors"
-          >
-            <X className="w-4 h-4 text-white" />
-          </button>
         </div>
 
         {/* Content */}
-        <div className="p-4 sm:p-6 overflow-y-auto max-h-[calc(90vh-100px)] sm:max-h-[calc(90vh-140px)]">
-          <div className="space-y-4 sm:space-y-6">
+        <div className="flex-1 overflow-y-auto p-3 sm:p-4 md:p-6">
+          <div className="space-y-3 sm:space-y-4 md:space-y-6">
             {/* Introduction */}
             <div className="bg-white/10 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 border border-white/20">
               <p className="text-white font-medium text-xs sm:text-sm md:text-base leading-relaxed">
@@ -142,11 +144,10 @@ export const TermsAndConditionsModal: React.FC<TermsAndConditionsModalProps> = (
         </div>
 
         {/* Footer */}
-        <div className="sticky bottom-0 bg-gradient-to-r from-green-700 to-green-900 border-t border-green-500/30 p-4 sm:p-6">
+        <div className="flex-shrink-0 bg-gradient-to-r from-green-700 to-green-900 border-t border-green-500/30 p-3 sm:p-4 md:p-6">
           <Button
             onClick={onClose}
-            size="lg"
-            className="w-full bg-white text-green-600 hover:bg-gray-100 font-semibold text-sm sm:text-base"
+            className="w-full bg-white text-green-600 hover:bg-gray-100 font-semibold text-xs sm:text-sm md:text-base py-2.5 sm:py-3"
           >
             I Understand These Terms
           </Button>

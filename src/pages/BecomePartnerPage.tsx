@@ -179,8 +179,8 @@ export const BecomePartnerPage: React.FC = () => {
         <section className="py-20 bg-white relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-5xl font-bold text-gray-900 mb-6" style={{ fontFamily: "'Tenor Sans', serif" }}>
-                Why Top Spas Choose <span className="text-green-600">OMBARO</span>
+              <h2 className="text-5xl font-light text-gray-800 mb-6" style={{ fontFamily: "'Inter', sans-serif" }}>
+                Why Top Spas Choose <span className="font-normal text-green-600">OMBARO</span>
               </h2>
               <div className="w-24 h-1 bg-green-600 mx-auto mb-6"></div>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -190,30 +190,30 @@ export const BecomePartnerPage: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
               {/* High-Value Clients */}
-              <div className="group relative bg-gradient-to-br from-white via-green-50 to-white rounded-3xl overflow-hidden shadow-2xl hover:shadow-green-500/50 transition-all duration-500 border-2 border-green-500 hover:border-green-600 transform hover:-translate-y-2">
-                <div className="absolute top-0 right-0 w-40 h-40 bg-green-500 rounded-bl-full opacity-10 group-hover:opacity-20 transition-opacity"></div>
-                <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="group relative bg-gradient-to-br from-green-500 via-green-600 to-green-700 rounded-[40px] overflow-hidden shadow-2xl hover:shadow-green-500/50 transition-all duration-500 border-2 border-green-400 hover:border-green-300 transform hover:-translate-y-2">
+                <div className="absolute top-0 right-0 w-40 h-40 bg-white rounded-bl-full opacity-10 group-hover:opacity-20 transition-opacity"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div className="relative z-10 p-10">
-                  <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-green-500/50 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                  <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                     <Gem className="w-10 h-10 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-700">Premium Clientele</span>
+                  <h3 className="text-2xl font-light mb-4 text-white" style={{ fontFamily: "'Inter', sans-serif" }}>
+                    <span className="font-normal">Premium Clientele</span>
                   </h3>
-                  <p className="text-gray-700 leading-relaxed mb-6">
-                    Access to <strong className="text-green-600">verified high-net-worth individuals</strong> seeking exclusive wellness experiences and <strong className="text-green-600">personalized private services</strong>
+                  <p className="text-white/90 leading-relaxed mb-6">
+                    Access to <strong className="text-white">verified high-net-worth individuals</strong> seeking exclusive wellness experiences and <strong className="text-white">personalized private services</strong>
                   </p>
-                  <div className="space-y-2 text-sm text-gray-700">
+                  <div className="space-y-2 text-sm text-white/90">
                     <div className="flex items-center space-x-2">
-                      <Star className="w-4 h-4 text-green-600" />
+                      <Star className="w-4 h-4 text-white" />
                       <span>Corporate executives & celebrities</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <Lock className="w-4 h-4 text-green-600" />
+                      <Lock className="w-4 h-4 text-white" />
                       <span>VIP membership programs</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <Eye className="w-4 h-4 text-green-600" />
+                      <Eye className="w-4 h-4 text-white" />
                       <span>Discreet premium services</span>
                     </div>
                   </div>
@@ -221,54 +221,54 @@ export const BecomePartnerPage: React.FC = () => {
               </div>
 
               {/* Maximum Revenue */}
-              <div className="group relative bg-gradient-to-br from-white via-green-50 to-white rounded-3xl overflow-hidden shadow-2xl hover:shadow-green-500/50 transition-all duration-500 border-2 border-green-500 hover:border-green-600 transform hover:-translate-y-2">
-                <div className="absolute top-0 right-0 w-40 h-40 bg-green-500 rounded-bl-full opacity-10 group-hover:opacity-20 transition-opacity"></div>
-                <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="group relative bg-gradient-to-br from-green-500 via-green-600 to-green-700 rounded-[40px] overflow-hidden shadow-2xl hover:shadow-green-500/50 transition-all duration-500 border-2 border-green-400 hover:border-green-300 transform hover:-translate-y-2">
+                <div className="absolute top-0 right-0 w-40 h-40 bg-white rounded-bl-full opacity-10 group-hover:opacity-20 transition-opacity"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div className="relative z-10 p-10">
-                  <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-green-500/50 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                  <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                     <TrendingUp className="w-10 h-10 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-700">Explosive Growth</span>
+                  <h3 className="text-2xl font-light mb-4 text-white" style={{ fontFamily: "'Inter', sans-serif" }}>
+                    <span className="font-normal">Explosive Growth</span>
                   </h3>
-                  <p className="text-gray-700 leading-relaxed mb-6">
+                  <p className="text-white/90 leading-relaxed mb-6">
                     Our platform helps you grow your business by connecting you with customers actively looking for wellness services in your area
                   </p>
-                  <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-xl p-4 mb-4 shadow-lg">
+                  <div className="bg-white/20 backdrop-blur-sm rounded-xl p-4 mb-4 shadow-lg">
                     <div className="text-3xl font-bold text-white mb-1">Real Growth</div>
-                    <div className="text-sm text-green-100">Steady Customer Flow</div>
+                    <div className="text-sm text-white/80">Steady Customer Flow</div>
                   </div>
-                  <div className="text-xs text-gray-600 italic">
+                  <div className="text-xs text-white/70 italic">
                     *Results vary by location and services
                   </div>
                 </div>
               </div>
 
               {/* Complete Freedom */}
-              <div className="group relative bg-gradient-to-br from-white via-green-50 to-white rounded-3xl overflow-hidden shadow-2xl hover:shadow-green-500/50 transition-all duration-500 border-2 border-green-500 hover:border-green-600 transform hover:-translate-y-2">
-                <div className="absolute top-0 right-0 w-40 h-40 bg-green-500 rounded-bl-full opacity-10 group-hover:opacity-20 transition-opacity"></div>
-                <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+              <div className="group relative bg-gradient-to-br from-green-500 via-green-600 to-green-700 rounded-[40px] overflow-hidden shadow-2xl hover:shadow-green-500/50 transition-all duration-500 border-2 border-green-400 hover:border-green-300 transform hover:-translate-y-2">
+                <div className="absolute top-0 right-0 w-40 h-40 bg-white rounded-bl-full opacity-10 group-hover:opacity-20 transition-opacity"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div className="relative z-10 p-10">
-                  <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-green-500/50 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                  <div className="w-20 h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                     <Briefcase className="w-10 h-10 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-700">Your Business, Your Rules</span>
+                  <h3 className="text-2xl font-light mb-4 text-white" style={{ fontFamily: "'Inter', sans-serif" }}>
+                    <span className="font-normal">Your Business, Your Rules</span>
                   </h3>
-                  <p className="text-gray-700 leading-relaxed mb-6">
-                    <strong className="text-green-600">Complete control</strong> over your services, pricing, and special offerings. We support <strong className="text-green-600">all types of wellness services</strong>
+                  <p className="text-white/90 leading-relaxed mb-6">
+                    <strong className="text-white">Complete control</strong> over your services, pricing, and special offerings. We support <strong className="text-white">all types of wellness services</strong>
                   </p>
-                  <div className="space-y-2 text-sm text-gray-700">
+                  <div className="space-y-2 text-sm text-white/90">
                     <div className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 text-green-600" />
+                      <CheckCircle className="w-4 h-4 text-white" />
                       <span>Set your own prices & packages</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 text-green-600" />
+                      <CheckCircle className="w-4 h-4 text-white" />
                       <span>Offer exclusive memberships</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 text-green-600" />
+                      <CheckCircle className="w-4 h-4 text-white" />
                       <span>Private session bookings</span>
                     </div>
                   </div>
