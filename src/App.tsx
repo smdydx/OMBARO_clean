@@ -58,6 +58,7 @@ import { ReviewScreen } from './components/screens/ReviewScreen';
 import { ReferralScreen } from './components/screens/ReferralScreen';
 import { NotificationScreen } from './components/screens/NotificationScreen';
 import { DocPortalScreen } from './components/screens/DocPortalScreen';
+import { BecomePartnerScreen } from './components/screens/BecomePartnerScreen';
 import VendorCategorySelectionScreen from './components/auth/VendorCategorySelectionScreen';
 import VendorSignupOptionsScreen from './components/auth/VendorSignupOptionsScreen';
 import VendorQuickSignupScreen from './components/auth/VendorQuickSignupScreen';
@@ -105,6 +106,8 @@ function App() {
       setCurrentStep('roleSelection');
     } else if (userType === 'docPortal') {
       setCurrentStep('docPortal');
+    } else if (userType === 'becomePartner') {
+      setCurrentStep('becomePartner');
     } else {
       setCurrentStep('mobile');
     }
@@ -940,6 +943,13 @@ function App() {
         return (
           <DocPortalScreen
             onBack={() => setCurrentStep('welcome')}
+          />
+        );
+
+      case 'becomePartner':
+        return (
+          <BecomePartnerScreen
+            onNavigate={(screen) => setCurrentStep(screen as any)}
           />
         );
 
