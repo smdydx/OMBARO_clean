@@ -13,6 +13,7 @@ const HowItWorksPage = lazy(() => import('./pages/HowItWorksPage').then(m => ({ 
 const ContactPage = lazy(() => import('./pages/ContactPage').then(m => ({ default: m.ContactPage })));
 const PrivacyPage = lazy(() => import('./pages/PrivacyPage').then(m => ({ default: m.PrivacyPage })));
 const TermsPage = lazy(() => import('./pages/TermsPage').then(m => ({ default: m.TermsPage })));
+const RefundPolicyPage = lazy(() => import('./pages/RefundPolicyPage').then(m => ({ default: m.RefundPolicyPage })));
 const BecomePartnerPage = lazy(() => import('./pages/BecomePartnerPage').then(m => ({ default: m.BecomePartnerPage })));
 const SpaMassagePage = lazy(() => import('./pages/SpaMassagePage').then(m => ({ default: m.SpaMassagePage })));
 const BridalMakeupPage = lazy(() => import('./pages/BridalMakeupPage').then(m => ({ default: m.BridalMakeupPage })));
@@ -43,6 +44,7 @@ export const AppRouter: React.FC = () => {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/privacy" element={<PrivacyPage />} />
           <Route path="/terms" element={<TermsPage />} />
+          <Route path="/refund-policy" element={<RefundPolicyPage />} />
           <Route path="/become-a-partner" element={<BecomePartnerPage />} />
           <Route path="/spa-massage" element={<SpaMassagePage />} />
           <Route path="/bridal-makeup" element={<BridalMakeupPage />} />

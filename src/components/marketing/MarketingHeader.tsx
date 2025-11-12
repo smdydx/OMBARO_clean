@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, FileText } from 'lucide-react';
 
 export const MarketingHeader: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -43,6 +43,14 @@ export const MarketingHeader: React.FC = () => {
           </nav>
 
           <div className="hidden md:flex items-center space-x-6 ml-auto">
+            <Link to="/terms" className="group flex items-center space-x-2 px-4 py-2 text-gray-700 hover:text-green-600 font-medium transition-all duration-200 hover:bg-emerald-50 rounded-lg">
+              <FileText className="w-4 h-4 group-hover:scale-110 transition-transform" />
+              <span className="text-sm">Terms</span>
+            </Link>
+            <Link to="/refund-policy" className="group flex items-center space-x-2 px-4 py-2 text-gray-700 hover:text-green-600 font-medium transition-all duration-200 hover:bg-emerald-50 rounded-lg">
+              <FileText className="w-4 h-4 group-hover:scale-110 transition-transform" />
+              <span className="text-sm">Refund</span>
+            </Link>
             <Link to="/app">
               <button
                 className="px-6 py-2.5 text-gray-700 hover:text-gray-900 font-medium transition-all duration-200 hover:bg-emerald-50 rounded-full text-sm"
@@ -101,6 +109,22 @@ export const MarketingHeader: React.FC = () => {
               </Link>
             ))}
             <div className="border-t border-gray-200 my-3"></div>
+            <Link
+              to="/terms"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="flex items-center space-x-2 px-5 py-3.5 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-xl transition-all font-medium border border-transparent hover:border-emerald-200"
+            >
+              <FileText className="w-4 h-4" />
+              <span>Terms & Conditions</span>
+            </Link>
+            <Link
+              to="/refund-policy"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="flex items-center space-x-2 px-5 py-3.5 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-xl transition-all font-medium border border-transparent hover:border-emerald-200"
+            >
+              <FileText className="w-4 h-4" />
+              <span>Refund Policy</span>
+            </Link>
             <Link
               to="/app"
               onClick={() => setIsMobileMenuOpen(false)}
