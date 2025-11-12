@@ -220,6 +220,8 @@ export const HomePage: React.FC = () => {
                     <img 
                       src="/images/beauty_salon_facial__338eb5d5.jpg"
                       alt="Spa Experience"
+                      loading="eager"
+                      decoding="async"
                       className="w-full h-[350px] md:h-[500px] object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-green-900/20 to-transparent"></div>

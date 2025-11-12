@@ -4,6 +4,26 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Performance optimizations */
+img {
+  content-visibility: auto;
+  loading: lazy;
+}
+
+/* Reduce layout shifts */
+* {
+  box-sizing: border-box;
+}
+
+/* Optimize font loading */
+@layer base {
+  body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+}
+
 :root {
   --primary-50: 230 255 244;
   --primary-100: 204 255 230;
