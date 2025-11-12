@@ -29,12 +29,12 @@ export const MarketingHeader: React.FC = () => {
             </Link>
           </div>
 
-          <nav className="hidden md:flex items-center space-x-1 absolute left-1/2 transform -translate-x-1/2">
+          <nav className="hidden lg:flex items-center space-x-1 flex-1 justify-center max-w-4xl mx-auto">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
-                className="px-5 py-2.5 text-gray-700 hover:text-gray-900 font-medium transition-all duration-200 hover:bg-emerald-50 rounded-lg text-sm"
+                className="px-3 xl:px-4 py-2.5 text-gray-700 hover:text-gray-900 font-medium transition-all duration-200 hover:bg-emerald-50 rounded-lg text-sm whitespace-nowrap"
                 style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}
               >
                 {link.name}
@@ -42,27 +42,27 @@ export const MarketingHeader: React.FC = () => {
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center space-x-3 lg:space-x-4 ml-auto">
+          <div className="hidden lg:flex items-center space-x-2 xl:space-x-3 flex-shrink-0">
             <Link 
               to="/terms" 
-              className="group flex items-center space-x-1.5 px-3 py-2 text-gray-700 hover:text-green-600 font-medium transition-all duration-200 hover:bg-emerald-50 rounded-lg"
+              className="group flex items-center space-x-1.5 px-2 xl:px-3 py-2 text-gray-700 hover:text-green-600 font-medium transition-all duration-200 hover:bg-emerald-50 rounded-lg"
               title="Terms & Conditions"
             >
               <FileText className="w-4 h-4 group-hover:scale-110 transition-transform flex-shrink-0" />
-              <span className="text-sm whitespace-nowrap">Terms</span>
+              <span className="text-xs xl:text-sm whitespace-nowrap hidden xl:inline">Terms</span>
             </Link>
             <Link 
               to="/refund-policy" 
-              className="group flex items-center space-x-1.5 px-3 py-2 text-gray-700 hover:text-green-600 font-medium transition-all duration-200 hover:bg-emerald-50 rounded-lg"
+              className="group flex items-center space-x-1.5 px-2 xl:px-3 py-2 text-gray-700 hover:text-green-600 font-medium transition-all duration-200 hover:bg-emerald-50 rounded-lg"
               title="Refund Policy"
             >
               <FileText className="w-4 h-4 group-hover:scale-110 transition-transform flex-shrink-0" />
-              <span className="text-sm whitespace-nowrap">Refund</span>
+              <span className="text-xs xl:text-sm whitespace-nowrap hidden xl:inline">Refund</span>
             </Link>
-            <div className="h-6 w-px bg-gray-300 mx-2"></div>
+            <div className="h-6 w-px bg-gray-300 mx-1"></div>
             <Link to="/app">
               <button
-                className="px-5 py-2.5 text-gray-700 hover:text-gray-900 font-medium transition-all duration-200 hover:bg-emerald-50 rounded-full text-sm whitespace-nowrap"
+                className="px-3 xl:px-4 py-2 text-gray-700 hover:text-gray-900 font-medium transition-all duration-200 hover:bg-emerald-50 rounded-full text-xs xl:text-sm whitespace-nowrap"
                 style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}
               >
                 Login
@@ -70,7 +70,7 @@ export const MarketingHeader: React.FC = () => {
             </Link>
             <Link to="/app">
               <button
-                className="px-6 py-2.5 bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 text-sm whitespace-nowrap"
+                className="px-4 xl:px-6 py-2 xl:py-2.5 bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 text-xs xl:text-sm whitespace-nowrap"
                 style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600 }}
               >
                 Get Started
@@ -80,7 +80,7 @@ export const MarketingHeader: React.FC = () => {
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 sm:p-2.5 rounded-lg hover:bg-gray-100 active:bg-gray-200 transition-all duration-200 z-50 relative"
+            className="lg:hidden p-2 sm:p-2.5 rounded-lg hover:bg-gray-100 active:bg-gray-200 transition-all duration-200 z-50 relative"
             aria-label="Toggle menu"
             type="button"
           >
@@ -95,14 +95,14 @@ export const MarketingHeader: React.FC = () => {
         {/* Mobile Menu Overlay */}
         {isMobileMenuOpen && (
           <div 
-            className="fixed inset-0 bg-black/50 z-40 md:hidden transition-opacity duration-300"
+            className="fixed inset-0 bg-black/50 z-40 lg:hidden transition-opacity duration-300"
             onClick={() => setIsMobileMenuOpen(false)}
           />
         )}
 
         {/* Mobile Menu */}
         <div
-          className={`fixed top-20 sm:top-24 md:top-28 right-0 left-0 bg-white border-b border-gray-200 shadow-2xl z-40 md:hidden transform transition-all duration-300 ease-in-out overflow-y-auto max-h-[calc(100vh-5rem)] ${
+          className={`fixed top-20 sm:top-24 md:top-28 right-0 left-0 bg-white border-b border-gray-200 shadow-2xl z-40 lg:hidden transform transition-all duration-300 ease-in-out overflow-y-auto max-h-[calc(100vh-5rem)] ${
             isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'
           }`}
         >
