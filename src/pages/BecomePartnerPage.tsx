@@ -39,26 +39,30 @@ export const BecomePartnerPage: React.FC = () => {
                 </h1>
 
                 <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 text-gray-700 leading-relaxed">
-                  Grow your spa business with OMBARO's trusted platform. Join our network of professional wellness partners and reach more customers.
+                  Grow your wellness business with OMBARO's trusted platform. Offer premium spa treatments, couples therapy packages, luxury travel wellness experiences, hotel partnerships, and exclusive private sessions. Join our network of professional wellness partners.
                 </p>
 
                 <div className="bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-200 rounded-2xl p-6 mb-8 shadow-lg">
                   <h3 className="text-gray-900 font-bold text-lg mb-4 flex items-center">
                     <Gift className="w-5 h-5 text-green-600 mr-2" />
-                    Partnership Benefits
+                    Premium Partnership Benefits
                   </h3>
                   <div className="space-y-3">
                     <div className="flex items-center text-gray-700">
                       <CheckCircle className="w-5 h-5 text-green-600 mr-3 flex-shrink-0" />
-                      <span className="text-sm sm:text-base">Easy onboarding process</span>
+                      <span className="text-sm sm:text-base">Exclusive couples & private therapy packages</span>
                     </div>
                     <div className="flex items-center text-gray-700">
                       <CheckCircle className="w-5 h-5 text-green-600 mr-3 flex-shrink-0" />
-                      <span className="text-sm sm:text-base">Access to verified customer base</span>
+                      <span className="text-sm sm:text-base">Travel wellness vouchers & hotel tie-ups</span>
                     </div>
                     <div className="flex items-center text-gray-700">
                       <CheckCircle className="w-5 h-5 text-green-600 mr-3 flex-shrink-0" />
-                      <span className="text-sm sm:text-base">Platform support and tools</span>
+                      <span className="text-sm sm:text-base">VIP dating & companionship wellness services</span>
+                    </div>
+                    <div className="flex items-center text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-green-600 mr-3 flex-shrink-0" />
+                      <span className="text-sm sm:text-base">Complete discretion & privacy guaranteed</span>
                     </div>
                   </div>
                 </div>
@@ -199,20 +203,24 @@ export const BecomePartnerPage: React.FC = () => {
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-600">Premium Clientele</span>
                   </h3>
                   <p className="text-gray-700 leading-relaxed mb-6">
-                    Access to <strong className="text-green-600">verified high-net-worth individuals</strong> seeking exclusive wellness experiences and <strong className="text-green-600">personalized private services</strong>
+                    Access to <strong className="text-green-600">verified high-net-worth individuals</strong> seeking exclusive wellness experiences, <strong className="text-green-600">couples therapy</strong>, <strong className="text-green-600">luxury travel packages</strong>, and <strong className="text-green-600">personalized private companionship services</strong>
                   </p>
                   <div className="space-y-2 text-sm text-gray-700">
                     <div className="flex items-center space-x-2">
                       <Star className="w-4 h-4 text-green-600" />
-                      <span>Corporate executives & celebrities</span>
+                      <span>Corporate executives, celebrities & VIP clients</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <Lock className="w-4 h-4 text-green-600" />
-                      <span>VIP membership programs</span>
+                      <span>Exclusive dating & companion wellness programs</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <Eye className="w-4 h-4 text-green-600" />
-                      <span>Discreet premium services</span>
+                      <span>Hotel partnerships & travel vouchers included</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <Shield className="w-4 h-4 text-green-600" />
+                      <span>100% discreet premium intimate wellness services</span>
                     </div>
                   </div>
                 </div>
@@ -254,20 +262,24 @@ export const BecomePartnerPage: React.FC = () => {
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-600">Your Business, Your Rules</span>
                   </h3>
                   <p className="text-gray-700 leading-relaxed mb-6">
-                    <strong className="text-green-600">Complete control</strong> over your services, pricing, and special offerings. We support <strong className="text-green-600">all types of wellness services</strong>
+                    <strong className="text-green-600">Complete control</strong> over your services, pricing, and special offerings. We support <strong className="text-green-600">all types of wellness services</strong> including couples therapy, intimate wellness, travel packages, hotel dating experiences, and exclusive companionship services
                   </p>
                   <div className="space-y-2 text-sm text-gray-700">
                     <div className="flex items-center space-x-2">
                       <CheckCircle className="w-4 h-4 text-green-600" />
-                      <span>Set your own prices & packages</span>
+                      <span>Premium couples & intimate wellness packages</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <CheckCircle className="w-4 h-4 text-green-600" />
-                      <span>Offer exclusive memberships</span>
+                      <span>Travel vouchers & luxury hotel partnerships</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <CheckCircle className="w-4 h-4 text-green-600" />
-                      <span>Private session bookings</span>
+                      <span>VIP dating & companionship wellness services</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <CheckCircle className="w-4 h-4 text-green-600" />
+                      <span>All adult wellness services fully supported</span>
                     </div>
                   </div>
                 </div>
@@ -535,8 +547,8 @@ export const BecomePartnerPage: React.FC = () => {
               <Lock className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-4" />
               <h3 className="text-xl sm:text-2xl font-bold mb-3">Complete Privacy & Discretion Guaranteed</h3>
               <p className="text-base sm:text-lg text-white/90 max-w-3xl mx-auto px-4">
-                Our platform supports <strong>all types of wellness services</strong> with complete confidentiality.
-                VIP clients, private bookings, exclusive memberships - everything handled with utmost discretion.
+                Our platform supports <strong>all types of wellness & intimate therapy services</strong> with complete confidentiality.
+                VIP couples packages, private companionship sessions, dating wellness experiences, hotel partnerships, travel vouchers, and exclusive adult wellness services - everything handled with utmost discretion and privacy.
               </p>
             </div>
           </div>
@@ -623,7 +635,7 @@ export const BecomePartnerPage: React.FC = () => {
               {[
                 {
                   q: "What types of services can I offer on the platform?",
-                  a: "ALL types of wellness and spa services are supported - from basic massages to exclusive VIP packages, private consultations, therapeutic treatments, and premium memberships. We believe in complete business freedom."
+                  a: "ALL types of wellness and intimate therapy services are supported - from basic massages to exclusive VIP packages, couples therapy, private companionship sessions, hotel dating experiences, travel wellness vouchers, adult wellness services, and premium memberships. We believe in complete business freedom and support all legal wellness offerings."
                 },
                 {
                   q: "How much can I really earn?",
@@ -631,7 +643,7 @@ export const BecomePartnerPage: React.FC = () => {
                 },
                 {
                   q: "Is client privacy maintained for special services?",
-                  a: "Absolutely. We have a dedicated VIP booking system with complete discretion. Private sessions, exclusive memberships, and special services are handled with utmost confidentiality. No client information is shared."
+                  a: "Absolutely. We have a dedicated VIP booking system with complete discretion. Private intimate sessions, couples therapy, dating wellness experiences, hotel partnerships, travel packages, companionship services, and all adult wellness offerings are handled with utmost confidentiality. No client information is ever shared. 100% anonymous bookings available."
                 },
                 {
                   q: "What are the fees?",
