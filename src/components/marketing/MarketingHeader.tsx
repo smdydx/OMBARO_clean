@@ -19,11 +19,11 @@ export const MarketingHeader: React.FC = () => {
         <div className="flex items-center justify-between h-20 sm:h-24 md:h-28">
           <div className="flex items-center justify-between flex-1">
             <Link to="/" className="flex items-center group z-50">
-              <div className="relative rounded-full p-3 bg-white shadow-lg border-2 border-green-500/30">
+              <div className="relative rounded-full p-2 bg-white shadow-lg border-2 border-green-500/30">
                 <img
                   src="/ombaro-logo-new.png"
                   alt="OMBARO"
-                  className="h-16 sm:h-20 md:h-24 w-auto object-contain transition-all duration-300 group-hover:scale-105"
+                  className="h-12 sm:h-14 md:h-16 w-auto object-contain transition-all duration-300 group-hover:scale-105"
                 />
               </div>
             </Link>

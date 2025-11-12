@@ -326,7 +326,7 @@ export const BecomePartnerPage: React.FC = () => {
             </div>
 
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="bg-white rounded-3xl p-8 shadow-xl border-2 border-green-100">
+              <div className="bg-white p-8 shadow-xl border-2 border-green-100" style={{ borderRadius: '40px' }}>
                 <div className="flex items-center mb-6">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
@@ -347,7 +347,7 @@ export const BecomePartnerPage: React.FC = () => {
                 </div>
               </div>
 
-              <div className="bg-white rounded-3xl p-8 shadow-xl border-2 border-green-100">
+              <div className="bg-white p-8 shadow-xl border-2 border-green-100" style={{ borderRadius: '40px' }}>
                 <div className="flex items-center mb-6">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
@@ -368,7 +368,7 @@ export const BecomePartnerPage: React.FC = () => {
                 </div>
               </div>
 
-              <div className="bg-white rounded-3xl p-8 shadow-xl border-2 border-green-100">
+              <div className="bg-white p-8 shadow-xl border-2 border-green-100" style={{ borderRadius: '40px' }}>
                 <div className="flex items-center mb-6">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-5 h-5 text-yellow-400 fill-current" />
@@ -544,7 +544,7 @@ export const BecomePartnerPage: React.FC = () => {
             </div>
 
             <div className="space-y-12">
-              <div className="flex items-start space-x-8 bg-white rounded-2xl p-6 shadow-lg border-2 border-green-500/30">
+              <div className="flex items-start space-x-8 bg-white p-6 shadow-lg border-2 border-green-500/30" style={{ borderRadius: '30px' }}>
                 <div className="flex-shrink-0">
                   <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 text-white rounded-full flex items-center justify-center shadow-2xl">
                     <span className="text-3xl font-bold">1</span>
@@ -558,7 +558,7 @@ export const BecomePartnerPage: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex items-start space-x-8 bg-white rounded-2xl p-6 shadow-lg border-2 border-green-500/30">
+              <div className="flex items-start space-x-8 bg-white p-6 shadow-lg border-2 border-green-500/30" style={{ borderRadius: '30px' }}>
                 <div className="flex-shrink-0">
                   <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 text-white rounded-full flex items-center justify-center shadow-2xl">
                     <span className="text-3xl font-bold">2</span>
@@ -572,7 +572,7 @@ export const BecomePartnerPage: React.FC = () => {
                 </div>
               </div>
 
-              <div className="flex items-start space-x-8 bg-white rounded-2xl p-6 shadow-lg border-2 border-green-500/30">
+              <div className="flex items-start space-x-8 bg-white p-6 shadow-lg border-2 border-green-500/30" style={{ borderRadius: '30px' }}>
                 <div className="flex-shrink-0">
                   <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 text-white rounded-full flex items-center justify-center shadow-2xl">
                     <span className="text-3xl font-bold">3</span>
