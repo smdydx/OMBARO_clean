@@ -19,10 +19,10 @@ export const BecomePartnerPage: React.FC = () => {
 
       <main className="pt-0">
         {/* Premium Hero Section */}
-        <section className="relative min-h-[600px] sm:min-h-[700px] md:min-h-[800px] lg:min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-black via-gray-900 to-black pt-16 sm:pt-20 md:pt-24">
-          <div className="absolute inset-0 opacity-10">
+        <section className="relative min-h-[600px] sm:min-h-[700px] md:min-h-[800px] lg:min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-white via-green-50 to-green-100 pt-16 sm:pt-20 md:pt-24">
+          <div className="absolute inset-0 opacity-20">
             <div className="absolute top-0 left-0 w-64 h-64 sm:w-96 sm:h-96 bg-green-400 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-green-600 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-0 right-0 w-64 h-64 sm:w-96 sm:h-96 bg-green-500 rounded-full blur-3xl animate-pulse"></div>
           </div>
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-8 sm:py-12">
@@ -33,33 +33,33 @@ export const BecomePartnerPage: React.FC = () => {
                   <span className="text-white text-xs sm:text-sm font-bold tracking-wider uppercase">Elite Partner Program</span>
                 </div>
 
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight text-white" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
                   Join OMBARO's<br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-green-600">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-green-700">
                     Partner Network
                   </span>
                 </h1>
 
-                <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 text-white/90 leading-relaxed">
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 text-gray-700 leading-relaxed">
                   Grow your spa business with OMBARO's trusted platform. Join our network of professional partners and reach more customers.
                 </p>
 
-                <div className="bg-white/10 backdrop-blur-md border border-green-500/30 rounded-2xl p-6 mb-8">
-                  <h3 className="text-white font-bold text-lg mb-4 flex items-center">
-                    <Gift className="w-5 h-5 text-green-400 mr-2" />
+                <div className="bg-white/90 backdrop-blur-md border-2 border-green-500/50 rounded-2xl p-6 mb-8 shadow-lg">
+                  <h3 className="text-gray-900 font-bold text-lg mb-4 flex items-center">
+                    <Gift className="w-5 h-5 text-green-600 mr-2" />
                     Partnership Benefits
                   </h3>
                   <div className="space-y-3">
-                    <div className="flex items-center text-white">
-                      <CheckCircle className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    <div className="flex items-center text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-green-600 mr-3 flex-shrink-0" />
                       <span className="text-sm sm:text-base">Easy onboarding process</span>
                     </div>
-                    <div className="flex items-center text-white">
-                      <CheckCircle className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    <div className="flex items-center text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-green-600 mr-3 flex-shrink-0" />
                       <span className="text-sm sm:text-base">Access to verified customer base</span>
                     </div>
-                    <div className="flex items-center text-white">
-                      <CheckCircle className="w-5 h-5 text-green-400 mr-3 flex-shrink-0" />
+                    <div className="flex items-center text-gray-700">
+                      <CheckCircle className="w-5 h-5 text-green-600 mr-3 flex-shrink-0" />
                       <span className="text-sm sm:text-base">Platform support and tools</span>
                     </div>
                   </div>
@@ -80,17 +80,17 @@ export const BecomePartnerPage: React.FC = () => {
                   </a>
                 </div>
 
-                <div className="flex flex-wrap gap-6 text-white/80 text-sm">
+                <div className="flex flex-wrap gap-6 text-gray-700 text-sm">
                   <div className="flex items-center space-x-2">
-                    <UserCheck className="w-5 h-5 text-green-400" />
+                    <UserCheck className="w-5 h-5 text-green-600" />
                     <span>24hr Approval</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <DollarSign className="w-5 h-5 text-green-400" />
+                    <DollarSign className="w-5 h-5 text-green-600" />
                     <span>Daily Payouts</span>
                   </div>
                   <div className="flex items-center space-x-2">
-                    <Shield className="w-5 h-5 text-green-400" />
+                    <Shield className="w-5 h-5 text-green-600" />
                     <span>100% Secure</span>
                   </div>
                 </div>
@@ -190,30 +190,30 @@ export const BecomePartnerPage: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
               {/* High-Value Clients */}
-              <div className="group relative bg-gradient-to-br from-black via-gray-900 to-black rounded-3xl overflow-hidden shadow-2xl hover:shadow-green-500/50 transition-all duration-500 border-2 border-green-500 hover:border-green-400 transform hover:-translate-y-2">
+              <div className="group relative bg-gradient-to-br from-white via-green-50 to-white rounded-3xl overflow-hidden shadow-2xl hover:shadow-green-500/50 transition-all duration-500 border-2 border-green-500 hover:border-green-600 transform hover:-translate-y-2">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-green-500 rounded-bl-full opacity-10 group-hover:opacity-20 transition-opacity"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div className="relative z-10 p-10">
                   <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-green-500/50 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                     <Gem className="w-10 h-10 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 text-white" style={{ fontFamily: "'Tenor Sans', serif" }}>
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-300 to-green-500">Premium Clientele</span>
+                  <h3 className="text-2xl font-bold mb-4 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-700">Premium Clientele</span>
                   </h3>
-                  <p className="text-gray-300 leading-relaxed mb-6">
-                    Access to <strong className="text-green-400">verified high-net-worth individuals</strong> seeking exclusive wellness experiences and <strong className="text-green-400">personalized private services</strong>
+                  <p className="text-gray-700 leading-relaxed mb-6">
+                    Access to <strong className="text-green-600">verified high-net-worth individuals</strong> seeking exclusive wellness experiences and <strong className="text-green-600">personalized private services</strong>
                   </p>
-                  <div className="space-y-2 text-sm text-gray-300">
+                  <div className="space-y-2 text-sm text-gray-700">
                     <div className="flex items-center space-x-2">
-                      <Star className="w-4 h-4 text-green-400" />
+                      <Star className="w-4 h-4 text-green-600" />
                       <span>Corporate executives & celebrities</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <Lock className="w-4 h-4 text-green-400" />
+                      <Lock className="w-4 h-4 text-green-600" />
                       <span>VIP membership programs</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <Eye className="w-4 h-4 text-green-400" />
+                      <Eye className="w-4 h-4 text-green-600" />
                       <span>Discreet premium services</span>
                     </div>
                   </div>
@@ -221,54 +221,54 @@ export const BecomePartnerPage: React.FC = () => {
               </div>
 
               {/* Maximum Revenue */}
-              <div className="group relative bg-gradient-to-br from-black via-gray-900 to-black rounded-3xl overflow-hidden shadow-2xl hover:shadow-green-500/50 transition-all duration-500 border-2 border-green-500 hover:border-green-400 transform hover:-translate-y-2">
+              <div className="group relative bg-gradient-to-br from-white via-green-50 to-white rounded-3xl overflow-hidden shadow-2xl hover:shadow-green-500/50 transition-all duration-500 border-2 border-green-500 hover:border-green-600 transform hover:-translate-y-2">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-green-500 rounded-bl-full opacity-10 group-hover:opacity-20 transition-opacity"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div className="relative z-10 p-10">
                   <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-green-500/50 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                     <TrendingUp className="w-10 h-10 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 text-white" style={{ fontFamily: "'Tenor Sans', serif" }}>
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-300 to-green-500">Explosive Growth</span>
+                  <h3 className="text-2xl font-bold mb-4 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-700">Explosive Growth</span>
                   </h3>
-                  <p className="text-gray-300 leading-relaxed mb-6">
+                  <p className="text-gray-700 leading-relaxed mb-6">
                     Our platform helps you grow your business by connecting you with customers actively looking for wellness services in your area
                   </p>
                   <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-xl p-4 mb-4 shadow-lg">
                     <div className="text-3xl font-bold text-white mb-1">Real Growth</div>
                     <div className="text-sm text-green-100">Steady Customer Flow</div>
                   </div>
-                  <div className="text-xs text-gray-400 italic">
+                  <div className="text-xs text-gray-600 italic">
                     *Results vary by location and services
                   </div>
                 </div>
               </div>
 
               {/* Complete Freedom */}
-              <div className="group relative bg-gradient-to-br from-black via-gray-900 to-black rounded-3xl overflow-hidden shadow-2xl hover:shadow-green-500/50 transition-all duration-500 border-2 border-green-500 hover:border-green-400 transform hover:-translate-y-2">
+              <div className="group relative bg-gradient-to-br from-white via-green-50 to-white rounded-3xl overflow-hidden shadow-2xl hover:shadow-green-500/50 transition-all duration-500 border-2 border-green-500 hover:border-green-600 transform hover:-translate-y-2">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-green-500 rounded-bl-full opacity-10 group-hover:opacity-20 transition-opacity"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div className="relative z-10 p-10">
                   <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-green-500/50 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                     <Briefcase className="w-10 h-10 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 text-white" style={{ fontFamily: "'Tenor Sans', serif" }}>
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-300 to-green-500">Your Business, Your Rules</span>
+                  <h3 className="text-2xl font-bold mb-4 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-green-700">Your Business, Your Rules</span>
                   </h3>
-                  <p className="text-gray-300 leading-relaxed mb-6">
-                    <strong className="text-green-400">Complete control</strong> over your services, pricing, and special offerings. We support <strong className="text-green-400">all types of wellness services</strong>
+                  <p className="text-gray-700 leading-relaxed mb-6">
+                    <strong className="text-green-600">Complete control</strong> over your services, pricing, and special offerings. We support <strong className="text-green-600">all types of wellness services</strong>
                   </p>
-                  <div className="space-y-2 text-sm text-gray-300">
+                  <div className="space-y-2 text-sm text-gray-700">
                     <div className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 text-green-400" />
+                      <CheckCircle className="w-4 h-4 text-green-600" />
                       <span>Set your own prices & packages</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 text-green-400" />
+                      <CheckCircle className="w-4 h-4 text-green-600" />
                       <span>Offer exclusive memberships</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 text-green-400" />
+                      <CheckCircle className="w-4 h-4 text-green-600" />
                       <span>Private session bookings</span>
                     </div>
                   </div>
@@ -277,37 +277,37 @@ export const BecomePartnerPage: React.FC = () => {
             </div>
 
             {/* Premium Features Grid */}
-            <div className="bg-gradient-to-br from-gray-900 to-black rounded-3xl p-12 text-white">
+            <div className="bg-gradient-to-br from-white via-green-50 to-white rounded-3xl p-12 border-2 border-green-500 shadow-2xl">
               <div className="text-center mb-12">
-                <h3 className="text-3xl font-bold mb-4" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                <h3 className="text-3xl font-bold mb-4 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
                   What Makes Us Different
                 </h3>
-                <p className="text-white/80 text-lg">Features that actually make you money</p>
+                <p className="text-gray-700 text-lg">Features that actually make you money</p>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                  <Lock className="w-8 h-8 text-green-400 mb-4" />
-                  <h4 className="font-bold mb-2">VIP Client Network</h4>
-                  <p className="text-sm text-white/70">Exclusive access to high-paying clients seeking premium experiences</p>
+                <div className="bg-white backdrop-blur-sm rounded-2xl p-6 border-2 border-green-500/30 shadow-lg">
+                  <Lock className="w-8 h-8 text-green-600 mb-4" />
+                  <h4 className="font-bold mb-2 text-gray-900">VIP Client Network</h4>
+                  <p className="text-sm text-gray-700">Exclusive access to high-paying clients seeking premium experiences</p>
                 </div>
 
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                  <DollarSign className="w-8 h-8 text-green-400 mb-4" />
-                  <h4 className="font-bold mb-2">Premium Pricing Support</h4>
-                  <p className="text-sm text-white/70">Charge 2-3X more for exclusive services with our platform backing</p>
+                <div className="bg-white backdrop-blur-sm rounded-2xl p-6 border-2 border-green-500/30 shadow-lg">
+                  <DollarSign className="w-8 h-8 text-green-600 mb-4" />
+                  <h4 className="font-bold mb-2 text-gray-900">Premium Pricing Support</h4>
+                  <p className="text-sm text-gray-700">Charge 2-3X more for exclusive services with our platform backing</p>
                 </div>
 
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                  <Eye className="w-8 h-8 text-green-400 mb-4" />
-                  <h4 className="font-bold mb-2">Privacy & Discretion</h4>
-                  <p className="text-sm text-white/70">Private booking system for VIP clients - complete confidentiality</p>
+                <div className="bg-white backdrop-blur-sm rounded-2xl p-6 border-2 border-green-500/30 shadow-lg">
+                  <Eye className="w-8 h-8 text-green-600 mb-4" />
+                  <h4 className="font-bold mb-2 text-gray-900">Privacy & Discretion</h4>
+                  <p className="text-sm text-gray-700">Private booking system for VIP clients - complete confidentiality</p>
                 </div>
 
-                <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
-                  <Wallet className="w-8 h-8 text-green-400 mb-4" />
-                  <h4 className="font-bold mb-2">Instant Payments</h4>
-                  <p className="text-sm text-white/70">Get paid within hours directly to your account - no delays</p>
+                <div className="bg-white backdrop-blur-sm rounded-2xl p-6 border-2 border-green-500/30 shadow-lg">
+                  <Wallet className="w-8 h-8 text-green-600 mb-4" />
+                  <h4 className="font-bold mb-2 text-gray-900">Instant Payments</h4>
+                  <p className="text-sm text-gray-700">Get paid within hours directly to your account - no delays</p>
                 </div>
               </div>
             </div>
@@ -533,54 +533,54 @@ export const BecomePartnerPage: React.FC = () => {
         </section>
 
         {/* Simple 3-Step Process */}
-        <section className="py-20 bg-gradient-to-br from-gray-900 to-black text-white">
+        <section className="py-20 bg-gradient-to-br from-white via-green-50 to-green-100">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-5xl font-bold mb-6" style={{ fontFamily: "'Tenor Sans', serif" }}>
+              <h2 className="text-5xl font-bold mb-6 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
                 Start Earning in 3 Simple Steps
               </h2>
-              <div className="w-24 h-1 bg-green-500 mx-auto mb-6"></div>
-              <p className="text-xl text-white/80">Launch your premium business in less than 24 hours</p>
+              <div className="w-24 h-1 bg-green-600 mx-auto mb-6"></div>
+              <p className="text-xl text-gray-700">Launch your premium business in less than 24 hours</p>
             </div>
 
             <div className="space-y-12">
-              <div className="flex items-start space-x-8">
+              <div className="flex items-start space-x-8 bg-white rounded-2xl p-6 shadow-lg border-2 border-green-500/30">
                 <div className="flex-shrink-0">
                   <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 text-white rounded-full flex items-center justify-center shadow-2xl">
                     <span className="text-3xl font-bold">1</span>
                   </div>
                 </div>
                 <div className="flex-1 pt-2">
-                  <h3 className="text-2xl font-bold mb-3">Quick Registration</h3>
-                  <p className="text-white/80 text-lg leading-relaxed">
+                  <h3 className="text-2xl font-bold mb-3 text-gray-900">Quick Registration</h3>
+                  <p className="text-gray-700 text-lg leading-relaxed">
                     Fill basic details in 5 minutes. No paperwork, no hassle. Just simple online form.
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-start space-x-8">
+              <div className="flex items-start space-x-8 bg-white rounded-2xl p-6 shadow-lg border-2 border-green-500/30">
                 <div className="flex-shrink-0">
                   <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 text-white rounded-full flex items-center justify-center shadow-2xl">
                     <span className="text-3xl font-bold">2</span>
                   </div>
                 </div>
                 <div className="flex-1 pt-2">
-                  <h3 className="text-2xl font-bold mb-3">24hr Approval</h3>
-                  <p className="text-white/80 text-lg leading-relaxed">
+                  <h3 className="text-2xl font-bold mb-3 text-gray-900">24hr Approval</h3>
+                  <p className="text-gray-700 text-lg leading-relaxed">
                     Our team verifies and approves within 24 hours. Get instant access to dashboard & VIP client network.
                   </p>
                 </div>
               </div>
 
-              <div className="flex items-start space-x-8">
+              <div className="flex items-start space-x-8 bg-white rounded-2xl p-6 shadow-lg border-2 border-green-500/30">
                 <div className="flex-shrink-0">
                   <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 text-white rounded-full flex items-center justify-center shadow-2xl">
                     <span className="text-3xl font-bold">3</span>
                   </div>
                 </div>
                 <div className="flex-1 pt-2">
-                  <h3 className="text-2xl font-bold mb-3">Start Earning!</h3>
-                  <p className="text-white/80 text-lg leading-relaxed">
+                  <h3 className="text-2xl font-bold mb-3 text-gray-900">Start Earning!</h3>
+                  <p className="text-gray-700 text-lg leading-relaxed">
                     List your services, set premium prices, and watch bookings roll in. Get paid daily!
                   </p>
                 </div>
@@ -589,12 +589,12 @@ export const BecomePartnerPage: React.FC = () => {
 
             <div className="text-center mt-16">
               <Link to="/app">
-                <Button size="lg" className="bg-white text-green-600 hover:bg-gray-100 text-lg px-16 py-6 rounded-full shadow-2xl font-bold transform hover:scale-105 transition-all">
+                <Button size="lg" className="bg-gradient-to-r from-green-500 to-green-600 text-white hover:from-green-600 hover:to-green-700 text-lg px-16 py-6 rounded-full shadow-2xl font-bold transform hover:scale-105 transition-all">
                   Start Your Journey Now
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </Link>
-              <p className="text-white/60 text-sm mt-4">No credit card required • Free to join</p>
+              <p className="text-gray-600 text-sm mt-4">No credit card required • Free to join</p>
             </div>
           </div>
         </section>
