@@ -211,7 +211,18 @@ export const BecomePartnerPage: React.FC = () => {
               <div className="group relative bg-white rounded-[40px] overflow-hidden shadow-2xl hover:shadow-green-500/30 transition-all duration-500 border-2 border-green-200 hover:border-green-400 transform hover:-translate-y-2">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-green-100 rounded-bl-full opacity-50 group-hover:opacity-70 transition-opacity"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-green-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div className="relative z-10 p-10">
+                
+                {/* Premium Clientele Image */}
+                <div className="relative h-56 overflow-hidden">
+                  <img 
+                    src="/images/luxury_spa_massage_t_3fdc8d75.jpg" 
+                    alt="Premium VIP Clients"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent"></div>
+                </div>
+                
+                <div className="relative z-10 p-10 -mt-8">
                   <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-green-500/30 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                     <Gem className="w-10 h-10 text-white" />
                   </div>
@@ -246,7 +257,18 @@ export const BecomePartnerPage: React.FC = () => {
               <div className="group relative bg-white rounded-[40px] overflow-hidden shadow-2xl hover:shadow-green-500/30 transition-all duration-500 border-2 border-green-200 hover:border-green-400 transform hover:-translate-y-2">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-green-100 rounded-bl-full opacity-50 group-hover:opacity-70 transition-opacity"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-green-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div className="relative z-10 p-10">
+                
+                {/* Business Growth Image */}
+                <div className="relative h-56 overflow-hidden">
+                  <img 
+                    src="/images/spa_treatment_room_i_69fbabb0.jpg" 
+                    alt="Business Growth"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent"></div>
+                </div>
+                
+                <div className="relative z-10 p-10 -mt-8">
                   <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-green-500/30 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                     <TrendingUp className="w-10 h-10 text-white" />
                   </div>
@@ -270,7 +292,18 @@ export const BecomePartnerPage: React.FC = () => {
               <div className="group relative bg-white rounded-[40px] overflow-hidden shadow-2xl hover:shadow-green-500/30 transition-all duration-500 border-2 border-green-200 hover:border-green-400 transform hover:-translate-y-2">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-green-100 rounded-bl-full opacity-50 group-hover:opacity-70 transition-opacity"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-green-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                <div className="relative z-10 p-10">
+                
+                {/* Business Freedom Image */}
+                <div className="relative h-56 overflow-hidden">
+                  <img 
+                    src="/images/beauty_salon_facial__338eb5d5.jpg" 
+                    alt="Business Freedom"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent"></div>
+                </div>
+                
+                <div className="relative z-10 p-10 -mt-8">
                   <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-green-500/30 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                     <Briefcase className="w-10 h-10 text-white" />
                   </div>
