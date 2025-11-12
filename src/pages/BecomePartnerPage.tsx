@@ -107,7 +107,7 @@ export const BecomePartnerPage: React.FC = () => {
                     <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl sm:rounded-3xl transform rotate-2 opacity-20 group-hover:rotate-3 group-hover:scale-105 transition-all duration-500"></div>
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <img
-                      src="/images/spa_treatment_room_i_69fbabb0.jpg"
+                      src="/attached_assets/stock_images/luxury_spa_treatment_ef5ecb59.jpg"
                       alt="Luxury Spa Treatment Room"
                       className="relative rounded-2xl sm:rounded-3xl shadow-2xl w-full h-40 sm:h-56 md:h-72 lg:h-96 object-cover border-2 border-green-500/30 group-hover:scale-105 transition-transform duration-500"
                     />
@@ -121,7 +121,7 @@ export const BecomePartnerPage: React.FC = () => {
                   <div className="col-span-5 relative group">
                     <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-green-700 rounded-2xl sm:rounded-3xl transform -rotate-1 opacity-15 group-hover:rotate-1 group-hover:scale-105 transition-all duration-500"></div>
                     <img
-                      src="/images/beauty_salon_facial__65176adc.jpg"
+                      src="/attached_assets/stock_images/professional_beauty__6992f974.jpg"
                       alt="Beauty Facial Treatment"
                       className="rounded-2xl sm:rounded-3xl shadow-xl w-full h-32 sm:h-40 md:h-52 lg:h-64 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-transform duration-500"
                     />
@@ -132,7 +132,7 @@ export const BecomePartnerPage: React.FC = () => {
                   <div className="col-span-5 relative group">
                     <div className="absolute inset-0 bg-gradient-to-br from-green-600 to-green-400 rounded-2xl sm:rounded-3xl transform rotate-1 opacity-15 group-hover:-rotate-1 group-hover:scale-105 transition-all duration-500"></div>
                     <img
-                      src="/images/luxury_spa_massage_t_690db67f.jpg"
+                      src="/attached_assets/stock_images/spa_massage_therapy__22ac4be9.jpg"
                       alt="Professional Massage Therapy"
                       className="rounded-2xl sm:rounded-3xl shadow-xl w-full h-32 sm:h-40 md:h-52 lg:h-64 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-transform duration-500"
                     />
@@ -143,7 +143,7 @@ export const BecomePartnerPage: React.FC = () => {
                   <div className="col-span-7 relative group">
                     <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl sm:rounded-3xl transform -rotate-2 opacity-20 group-hover:rotate-2 group-hover:scale-105 transition-all duration-500"></div>
                     <img
-                      src="/images/spa_treatment_room_i_f52c1c96.jpg"
+                      src="/attached_assets/stock_images/elegant_spa_interior_b93a48aa.jpg"
                       alt="Elegant Spa Interior"
                       className="rounded-2xl sm:rounded-3xl shadow-xl w-full h-32 sm:h-40 md:h-52 lg:h-64 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-transform duration-500"
                     />
@@ -198,7 +198,7 @@ export const BecomePartnerPage: React.FC = () => {
                     <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-emerald-600 rounded-2xl sm:rounded-3xl transform rotate-1 opacity-20 group-hover:rotate-2 group-hover:scale-105 transition-all duration-500"></div>
                     <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl shadow-2xl">
                       <img 
-                        src="/images/luxury_spa_massage_t_3fdc8d75.jpg" 
+                        src="/attached_assets/stock_images/premium_wellness_spa_05199f74.jpg" 
                         alt="Premium Spa Massage Services"
                         className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover group-hover:scale-105 transition-transform duration-700"
                       />
@@ -217,7 +217,7 @@ export const BecomePartnerPage: React.FC = () => {
                       <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-teal-500 rounded-2xl transform -rotate-1 opacity-15 group-hover:rotate-1 group-hover:scale-105 transition-all duration-500"></div>
                       <div className="relative overflow-hidden rounded-2xl shadow-xl">
                         <img 
-                          src="/images/spa_treatment_room_i_69fbabb0.jpg" 
+                          src="/attached_assets/stock_images/luxury_spa_reception_05371daf.jpg" 
                           alt="Luxury Spa Treatment Room"
                           className="w-full h-[140px] sm:h-[190px] md:h-[240px] object-cover group-hover:scale-110 transition-transform duration-700"
                         />
@@ -233,7 +233,7 @@ export const BecomePartnerPage: React.FC = () => {
                       <div className="absolute inset-0 bg-gradient-to-br from-emerald-500 to-green-500 rounded-2xl transform rotate-1 opacity-15 group-hover:-rotate-1 group-hover:scale-105 transition-all duration-500"></div>
                       <div className="relative overflow-hidden rounded-2xl shadow-xl">
                         <img 
-                          src="/images/beauty_salon_facial__65176adc.jpg" 
+                          src="/attached_assets/stock_images/beauty_treatment_sal_bed4837c.jpg" 
                           alt="Professional Beauty Services"
                           className="w-full h-[140px] sm:h-[190px] md:h-[240px] object-cover group-hover:scale-110 transition-transform duration-700"
                         />
@@ -256,7 +256,7 @@ export const BecomePartnerPage: React.FC = () => {
 
                 <div className="relative h-40 sm:h-48 md:h-56 overflow-hidden">
                   <img 
-                    src="/images/spa_treatment_room_i_79626365.jpg" 
+                    src="/attached_assets/stock_images/luxury_spa_treatment_ef5ecb59.jpg" 
                     alt="Premium VIP Clients"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
@@ -301,7 +301,7 @@ export const BecomePartnerPage: React.FC = () => {
 
                 <div className="relative h-40 sm:h-48 md:h-56 overflow-hidden">
                   <img 
-                    src="/images/luxury_spa_massage_t_48a88152.jpg" 
+                    src="/attached_assets/stock_images/spa_business_growth__be25d321.jpg" 
                     alt="Business Growth"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
@@ -335,7 +335,7 @@ export const BecomePartnerPage: React.FC = () => {
 
                 <div className="relative h-40 sm:h-48 md:h-56 overflow-hidden">
                   <img 
-                    src="/images/beauty_salon_facial__29de6e5b.jpg" 
+                    src="/attached_assets/stock_images/professional_beauty__6992f974.jpg" 
                     alt="Business Freedom"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
