@@ -45,24 +45,24 @@ export const MarketingHeader: React.FC = () => {
           <div className="hidden lg:flex items-center space-x-2 xl:space-x-3 flex-shrink-0">
             <Link 
               to="/terms" 
-              className="group flex items-center space-x-1.5 px-2 xl:px-3 py-2 text-gray-700 hover:text-green-600 font-medium transition-all duration-200 hover:bg-emerald-50 rounded-lg"
+              className="group flex items-center space-x-1.5 px-3 py-2 text-gray-700 hover:text-green-600 font-medium transition-all duration-200 hover:bg-emerald-50 rounded-lg"
               title="Terms & Conditions"
             >
               <FileText className="w-4 h-4 group-hover:scale-110 transition-transform flex-shrink-0" />
-              <span className="text-xs xl:text-sm whitespace-nowrap hidden xl:inline">Terms</span>
+              <span className="text-sm whitespace-nowrap">Terms & Conditions</span>
             </Link>
             <Link 
               to="/refund-policy" 
-              className="group flex items-center space-x-1.5 px-2 xl:px-3 py-2 text-gray-700 hover:text-green-600 font-medium transition-all duration-200 hover:bg-emerald-50 rounded-lg"
+              className="group flex items-center space-x-1.5 px-3 py-2 text-gray-700 hover:text-green-600 font-medium transition-all duration-200 hover:bg-emerald-50 rounded-lg"
               title="Refund Policy"
             >
               <FileText className="w-4 h-4 group-hover:scale-110 transition-transform flex-shrink-0" />
-              <span className="text-xs xl:text-sm whitespace-nowrap hidden xl:inline">Refund</span>
+              <span className="text-sm whitespace-nowrap">Refund Policy</span>
             </Link>
             <div className="h-6 w-px bg-gray-300 mx-1"></div>
             <Link to="/app">
               <button
-                className="px-3 xl:px-4 py-2 text-gray-700 hover:text-gray-900 font-medium transition-all duration-200 hover:bg-emerald-50 rounded-full text-xs xl:text-sm whitespace-nowrap"
+                className="px-4 py-2 text-gray-700 hover:text-gray-900 font-medium transition-all duration-200 hover:bg-emerald-50 rounded-full text-sm whitespace-nowrap"
                 style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}
               >
                 Login
@@ -70,7 +70,7 @@ export const MarketingHeader: React.FC = () => {
             </Link>
             <Link to="/app">
               <button
-                className="px-4 xl:px-6 py-2 xl:py-2.5 bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 text-xs xl:text-sm whitespace-nowrap"
+                className="px-6 py-2.5 bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 text-sm whitespace-nowrap"
                 style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600 }}
               >
                 Get Started
@@ -125,7 +125,7 @@ export const MarketingHeader: React.FC = () => {
                 className="flex flex-col items-center justify-center space-y-1.5 px-3 py-3 sm:py-3.5 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-xl transition-all font-medium border border-gray-200 hover:border-emerald-200"
               >
                 <FileText className="w-5 h-5 sm:w-6 sm:h-6" />
-                <span className="text-xs sm:text-sm text-center">Terms</span>
+                <span className="text-xs sm:text-sm text-center">Terms & Conditions</span>
               </Link>
               <Link
                 to="/refund-policy"
@@ -133,7 +133,7 @@ export const MarketingHeader: React.FC = () => {
                 className="flex flex-col items-center justify-center space-y-1.5 px-3 py-3 sm:py-3.5 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-xl transition-all font-medium border border-gray-200 hover:border-emerald-200"
               >
                 <FileText className="w-5 h-5 sm:w-6 sm:h-6" />
-                <span className="text-xs sm:text-sm text-center">Refund</span>
+                <span className="text-xs sm:text-sm text-center">Refund Policy</span>
               </Link>
             </div>
             <div className="border-t border-gray-200 my-2 sm:my-3"></div>
