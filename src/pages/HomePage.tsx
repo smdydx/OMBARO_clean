@@ -39,20 +39,11 @@ export const HomePage: React.FC = () => {
   const [isClosing, setIsClosing] = useState(false);
   const [showTermsModal, setShowTermsModal] = useState(false);
 
-  useEffect(() => {
-    // Auto-close after 5 seconds
-    const timer = setTimeout(() => {
-      handleCloseBanner();
-    }, 5000);
-
-    return () => clearTimeout(timer);
-  }, []);
-
   const handleCloseBanner = () => {
     setIsClosing(true);
     setTimeout(() => {
       setShowTermsBanner(false);
-    }, 800); // Animation duration
+    }, 300); // Animation duration
   };
   const features = [
     {
@@ -154,41 +145,40 @@ export const HomePage: React.FC = () => {
         {/* Animated Terms & Conditions Banner - Above hero section */}
         {showTermsBanner && (
           <div className={`bg-gradient-to-r from-primary-600 to-primary-700 border-b-2 sm:border-b-4 border-primary-800 transition-all duration-300 ${isClosing ? 'opacity-0 -translate-y-full' : 'opacity-100 translate-y-0'}`}>
-            <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2 sm:py-4">
+            <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-3 sm:py-4">
               <div className="flex items-center justify-between gap-2">
                 <div className="flex items-center space-x-2 text-white flex-1">
-                  <Shield className="w-4 h-4 sm:w-6 sm:h-6 animate-pulse flex-shrink-0" />
+                  <Shield className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" />
                   <p className="text-xs sm:text-sm md:text-base font-semibold">
                     Please read our{' '}
                     <button
-                      onClick={(e) => {
-                        e.preventDefault();
-                        setShowTermsModal(true);
-                      }}
-                      className="underline font-bold hover:text-green-100 transition-colors"
+                      onClick={() => setShowTermsModal(true)}
+                      className="underline font-bold hover:text-white/90 transition-colors cursor-pointer"
+                      type="button"
                     >
                       Terms & Conditions
                     </button>
                     {' '}before booking
                   </p>
-                  <Shield className="w-4 h-4 sm:w-6 sm:h-6 animate-pulse flex-shrink-0 hidden sm:block" />
+                  <Shield className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 hidden sm:block" />
                 </div>
                 <button
                   onClick={handleCloseBanner}
-                  className="p-1.5 sm:p-2 hover:bg-white/20 rounded-lg transition-colors flex-shrink-0"
+                  className="p-2 hover:bg-white/20 rounded-lg transition-colors flex-shrink-0"
                   aria-label="Close banner"
+                  type="button"
                 >
-                  <X className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                  <X className="w-5 h-5 text-white" />
                 </button>
               </div>
             </div>
           </div>
         )}
 
-        {/* Hero Section - Relax & Enjoy with Water Flow */}
-        <section className="relative overflow-hidden bg-gradient-to-b from-primary-50 via-white to-white">
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 md:py-16">
-            <div className="grid lg:grid-cols-5 gap-6 sm:gap-8 md:gap-12 items-center">
+        {/* Hero Section - Relax & Enjoy */}
+        <section className="relative overflow-hidden bg-gradient-to-b from-primary-50 via-white to-white pt-8 pb-20">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16">
+            <div className="grid lg:grid-cols-5 gap-8 sm:gap-10 md:gap-12 items-center">
               {/* Left Content */}
               <div className="lg:col-span-3 text-center lg:text-left relative z-10">
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-light text-gray-800 mb-4 sm:mb-6 leading-tight">
@@ -241,33 +231,17 @@ export const HomePage: React.FC = () => {
             </div>
           </div>
 
-          {/* Animated Water Flow Wave - Bottom */}
-          <div className="absolute bottom-0 left-0 right-0 h-32 md:h-40">
+          {/* Static Wave Divider - Bottom */}
+          <div className="absolute bottom-0 left-0 right-0 h-24 md:h-32">
             <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
               <defs>
                 <linearGradient id="waterGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" style={{ stopColor: '#00FF87', stopOpacity: 0.9 }} />
-                  <stop offset="50%" style={{ stopColor: '#016B3A', stopOpacity: 0.6 }} />
-                  <stop offset="100%" style={{ stopColor: '#000000', stopOpacity: 0.8 }} />
+                  <stop offset="0%" style={{ stopColor: '#00FF87', stopOpacity: 0.2 }} />
+                  <stop offset="50%" style={{ stopColor: '#016B3A', stopOpacity: 0.3 }} />
+                  <stop offset="100%" style={{ stopColor: '#000000', stopOpacity: 0.1 }} />
                 </linearGradient>
               </defs>
-              <path fill="url(#waterGradient)" fillOpacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
-                <animate attributeName="d" dur="8s" repeatCount="indefinite" values="
-                  M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
-                  M0,128L48,144C96,160,192,192,288,186.7C384,181,480,139,576,128C672,117,768,139,864,154.7C960,171,1056,181,1152,176C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
-                  M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" />
-              </path>
-            </svg>
-          </div>
-
-          <div className="absolute bottom-0 left-0 right-0 h-24 md:h-32 opacity-60">
-            <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
-              <path fill="#016B3A" fillOpacity="0.5" d="M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,154.7C672,149,768,171,864,181.3C960,192,1056,192,1152,181.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
-                <animate attributeName="d" dur="6s" repeatCount="indefinite" values="
-                  M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,154.7C672,149,768,171,864,181.3C960,192,1056,192,1152,181.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
-                  M0,192L48,181.3C96,171,192,149,288,154.7C384,160,480,192,576,197.3C672,203,768,181,864,170.7C960,160,1056,160,1152,170.7C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
-                  M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,154.7C672,149,768,171,864,181.3C960,192,1056,192,1152,181.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" />
-              </path>
+              <path fill="url(#waterGradient)" fillOpacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
             </svg>
           </div>
         </section>
@@ -566,9 +540,10 @@ export const HomePage: React.FC = () => {
       </main>
 
       {/* Terms & Conditions Modal */}
-      {showTermsModal && (
-        <TermsAndConditionsModal onClose={() => setShowTermsModal(false)} />
-      )}
+      <TermsAndConditionsModal 
+        isOpen={showTermsModal} 
+        onClose={() => setShowTermsModal(false)} 
+      />
 
       <MarketingFooter />
     </div>
