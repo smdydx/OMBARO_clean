@@ -4,7 +4,7 @@ import {
   ArrowRight, CheckCircle, TrendingUp, Users, Calendar, Wallet,
   BarChart3, Shield, Star, Phone, Mail, Award, Target, Zap,
   ChevronDown, ChevronUp, Sparkles, Crown, Heart, Coffee, Lock,
-  Eye, Gem, DollarSign, UserCheck, Gift, Briefcase
+  Eye, Gem, DollarSign, UserCheck, Gift, Briefcase, Clock
 } from 'lucide-react';
 import { Button } from '../components/ui/Button';
 import { MarketingHeader } from '../components/marketing/MarketingHeader';
