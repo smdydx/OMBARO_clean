@@ -592,10 +592,10 @@ export const BecomePartnerPage: React.FC = () => {
 
           {/* Privacy Badge */}
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
-            <div className="bg-gradient-to-r from-green-500 to-green-600 rounded-3xl p-6 sm:p-8 text-white text-center">
-              <Lock className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-4" />
-              <h3 className="text-xl sm:text-2xl font-bold mb-3">Complete Privacy & Discretion Guaranteed</h3>
-              <p className="text-base sm:text-lg text-white/90 max-w-3xl mx-auto px-4">
+            <div className="bg-gradient-to-r from-green-500 to-green-600 rounded-3xl p-6 sm:p-8 text-white text-center shadow-2xl hover:shadow-3xl transition-shadow duration-300">
+              <Lock className="w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-4 drop-shadow-lg" />
+              <h3 className="text-xl sm:text-2xl font-bold mb-3 drop-shadow-md">Complete Privacy & Discretion Guaranteed</h3>
+              <p className="text-base sm:text-lg text-white/90 max-w-3xl mx-auto px-4 drop-shadow-sm">
                 Our platform supports <strong>all types of wellness & intimate therapy services</strong> with complete confidentiality.
                 VIP couples packages, private companionship sessions, dating wellness experiences, hotel partnerships, travel vouchers, and exclusive adult wellness services - everything handled with utmost discretion and privacy.
               </p>

@@ -5,6 +5,7 @@ import { Button } from '../components/ui/Button';
 import { MarketingHeader } from '../components/marketing/MarketingHeader';
 import { MarketingFooter } from '../components/marketing/MarketingFooter';
 import { HeroSlider } from '../components/common/HeroSlider';
+import { TermsAndConditionsModal } from '../components/screens/TermsAndConditionsModal';
 
 // Placeholder for categories, as it's not provided in the original code but used in the changes.
 // Assuming this is meant to be a section similar to 'services' or 'features' but specifically for homepage cards.
@@ -36,6 +37,7 @@ const categories = [
 export const HomePage: React.FC = () => {
   const [showTermsBanner, setShowTermsBanner] = useState(true);
   const [isClosing, setIsClosing] = useState(false);
+  const [showTermsModal, setShowTermsModal] = useState(false);
 
   useEffect(() => {
     // Auto-close after 5 seconds
@@ -158,13 +160,15 @@ export const HomePage: React.FC = () => {
                   <Shield className="w-4 h-4 sm:w-6 sm:h-6 animate-pulse flex-shrink-0" />
                   <p className="text-xs sm:text-sm md:text-base font-semibold">
                     Please read our{' '}
-                    <Link
-                      to="/terms"
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setShowTermsModal(true);
+                      }}
                       className="underline font-bold hover:text-green-100 transition-colors"
-                      onClick={handleCloseBanner}
                     >
                       Terms & Conditions
-                    </Link>
+                    </button>
                     {' '}before booking
                   </p>
                   <Shield className="w-4 h-4 sm:w-6 sm:h-6 animate-pulse flex-shrink-0 hidden sm:block" />
@@ -560,6 +564,11 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
       </main>
+
+      {/* Terms & Conditions Modal */}
+      {showTermsModal && (
+        <TermsAndConditionsModal onClose={() => setShowTermsModal(false)} />
+      )}
 
       <MarketingFooter />
     </div>
