@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { Menu, X, User, LogOut } from 'lucide-react';
 import { useState } from 'react';
@@ -41,7 +40,7 @@ export default function FixedHeader() {
             <Link to="/contact" className="text-white hover:text-emerald-400 transition-colors font-medium">
               Contact
             </Link>
-            
+
             {user ? (
               <div className="flex items-center space-x-4">
                 <Link 
@@ -156,4 +155,6 @@ export default function FixedHeader() {
       </nav>
     </header>
   );
-}
+};
+
+export default FixedHeader;
