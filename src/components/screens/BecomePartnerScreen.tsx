@@ -286,39 +286,39 @@ export function BecomePartnerScreen({ onNavigate }: BecomePartnerScreenProps) {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+      <section className="py-20 bg-gradient-to-br from-purple-900 to-rose-900 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Ready to Transform Your Business?
           </h2>
-          <p className="text-xl text-gray-300 mb-10 leading-relaxed">
+          <p className="text-xl text-purple-100 mb-10 leading-relaxed">
             Join hundreds of successful wellness partners and start growing your business today. 
             Our team is ready to help you get started.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
             <Button
               onClick={() => onNavigate('vendorCategorySelection')}
-              className="bg-gradient-to-r from-rose-600 to-purple-600 text-white px-10 py-4 text-lg rounded-full hover:shadow-2xl transition-all duration-300 transform hover:scale-105"
+              className="bg-white text-rose-600 px-10 py-4 text-lg rounded-full hover:shadow-2xl transition-all duration-300 transform hover:scale-105 font-semibold"
             >
               Start Your Journey
               <ArrowRight className="ml-2 w-5 h-5" />
             </Button>
             <Button
               variant="outline"
-              className="border-2 border-white text-white px-10 py-4 text-lg rounded-full hover:bg-white hover:text-gray-900 transition-all duration-300"
+              className="border-2 border-white text-white px-10 py-4 text-lg rounded-full hover:bg-white hover:text-rose-600 transition-all duration-300"
             >
               Contact Support
             </Button>
           </div>
           
-          <div className="mt-12 pt-8 border-t border-gray-700">
-            <p className="text-gray-400">
+          <div className="mt-12 pt-8 border-t border-purple-700">
+            <p className="text-purple-200">
               Have questions? Email us at{' '}
-              <a href="mailto:partners@ombaro.com" className="text-rose-400 hover:text-rose-300">
+              <a href="mailto:partners@ombaro.com" className="text-rose-300 hover:text-rose-200 font-medium">
                 partners@ombaro.com
               </a>
               {' '}or call{' '}
-              <a href="tel:+918001234567" className="text-rose-400 hover:text-rose-300">
+              <a href="tel:+918001234567" className="text-rose-300 hover:text-rose-200 font-medium">
                 +91 800-123-4567
               </a>
             </p>
