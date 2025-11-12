@@ -97,41 +97,77 @@ export const BecomePartnerPage: React.FC = () => {
               </div>
 
               <div className="relative">
-                {/* Unique Collage Design */}
-                <div className="grid grid-cols-2 gap-3 sm:gap-4">
-                  {/* Large Image Top Left */}
-                  <div className="col-span-2 relative">
-                    <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl transform rotate-3 opacity-20"></div>
+                {/* Enhanced Collage Design with Hover Effects */}
+                <div className="grid grid-cols-12 gap-3 sm:gap-4">
+                  {/* Large Image Top Left - Prominent */}
+                  <div className="col-span-7 relative group">
+                    <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-green-600 rounded-3xl transform rotate-2 opacity-20 group-hover:rotate-3 group-hover:scale-105 transition-all duration-500"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     <img
                       src="/images/luxury_spa_massage_t_2767ba26.jpg"
-                      alt="Thai Massage"
-                      className="relative rounded-2xl shadow-2xl w-full h-48 sm:h-64 md:h-80 object-cover border-2 border-green-500/30"
+                      alt="Premium Thai Massage"
+                      className="relative rounded-3xl shadow-2xl w-full h-56 sm:h-72 md:h-96 object-cover border-2 border-green-500/30 group-hover:scale-105 transition-transform duration-500"
                     />
+                    <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <div className="text-lg font-bold">Premium Services</div>
+                      <div className="text-sm text-green-300">Luxury Experiences</div>
+                    </div>
                   </div>
 
-                  {/* Two Small Images Bottom */}
-                  <div className="relative">
+                  {/* Top Right Small Image */}
+                  <div className="col-span-5 relative group">
+                    <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-green-700 rounded-3xl transform -rotate-1 opacity-15 group-hover:rotate-1 group-hover:scale-105 transition-all duration-500"></div>
                     <img
                       src="/images/luxury_spa_massage_t_3fdc8d75.jpg"
-                      alt="Aroma Massage"
-                      className="rounded-2xl shadow-xl w-full h-32 sm:h-40 md:h-48 object-cover border-2 border-green-500/20"
+                      alt="Aromatherapy"
+                      className="rounded-3xl shadow-xl w-full h-40 sm:h-52 md:h-64 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-transform duration-500"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-3xl"></div>
                   </div>
-                  <div className="relative">
+
+                  {/* Bottom Left Image */}
+                  <div className="col-span-5 relative group">
+                    <div className="absolute inset-0 bg-gradient-to-br from-green-600 to-green-400 rounded-3xl transform rotate-1 opacity-15 group-hover:-rotate-1 group-hover:scale-105 transition-all duration-500"></div>
                     <img
                       src="/images/luxury_spa_massage_t_48a88152.jpg"
                       alt="Swedish Massage"
-                      className="rounded-2xl shadow-xl w-full h-32 sm:h-40 md:h-48 object-cover border-2 border-green-500/20"
+                      className="rounded-3xl shadow-xl w-full h-40 sm:h-52 md:h-64 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-transform duration-500"
                     />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-3xl"></div>
+                  </div>
+
+                  {/* Bottom Right Image */}
+                  <div className="col-span-7 relative group">
+                    <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-green-600 rounded-3xl transform -rotate-2 opacity-20 group-hover:rotate-2 group-hover:scale-105 transition-all duration-500"></div>
+                    <img
+                      src="/images/luxury_spa_massage_t_690db67f.jpg"
+                      alt="Hot Oil Therapy"
+                      className="rounded-3xl shadow-xl w-full h-40 sm:h-52 md:h-64 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent rounded-3xl"></div>
                   </div>
                 </div>
 
-                {/* Stats Badge */}
-                <div className="absolute -bottom-4 -right-4 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl p-4 sm:p-6 shadow-2xl max-w-xs z-10">
-                  <div className="text-white">
-                    <div className="text-3xl sm:text-4xl font-bold mb-2">500+</div>
-                    <p className="text-xs sm:text-sm opacity-90">Active Partners</p>
-                    <p className="text-xs mt-2 opacity-75">Growing Network</p>
+                {/* Animated Stats Badge */}
+                <div className="absolute -bottom-6 -right-6 bg-gradient-to-br from-green-500 via-green-600 to-green-700 rounded-3xl p-6 sm:p-8 shadow-2xl max-w-xs z-20 border-4 border-white transform hover:scale-110 transition-transform duration-300">
+                  <div className="text-white relative">
+                    <div className="absolute -top-2 -right-2 w-4 h-4 bg-green-400 rounded-full animate-ping"></div>
+                    <div className="text-4xl sm:text-5xl font-bold mb-2 bg-clip-text text-transparent bg-gradient-to-r from-white to-green-200">
+                      500+
+                    </div>
+                    <p className="text-sm sm:text-base font-semibold opacity-90">Active Partners</p>
+                    <p className="text-xs mt-2 opacity-75 flex items-center">
+                      <TrendingUp className="w-3 h-3 mr-1" />
+                      Growing Network
+                    </p>
+                  </div>
+                </div>
+
+                {/* Floating Trust Badge */}
+                <div className="absolute -top-4 -left-4 bg-white rounded-2xl p-3 shadow-xl z-20 border-2 border-green-500 transform hover:scale-110 transition-transform duration-300">
+                  <div className="flex items-center space-x-2">
+                    <Shield className="w-6 h-6 text-green-600" />
+                    <div className="text-xs font-bold text-gray-900">Verified<br/>Partner</div>
                   </div>
                 </div>
               </div>
@@ -154,29 +190,30 @@ export const BecomePartnerPage: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
               {/* High-Value Clients */}
-              <div className="group relative bg-gradient-to-br from-green-50 to-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-green-100 hover:border-green-400">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-green-400 rounded-bl-full opacity-10"></div>
+              <div className="group relative bg-gradient-to-br from-black via-gray-900 to-black rounded-3xl overflow-hidden shadow-2xl hover:shadow-green-500/50 transition-all duration-500 border-2 border-green-500 hover:border-green-400 transform hover:-translate-y-2">
+                <div className="absolute top-0 right-0 w-40 h-40 bg-green-500 rounded-bl-full opacity-10 group-hover:opacity-20 transition-opacity"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div className="relative z-10 p-10">
-                  <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                  <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-green-500/50 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                     <Gem className="w-10 h-10 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
-                    Premium Clientele
+                  <h3 className="text-2xl font-bold mb-4 text-white" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-300 to-green-500">Premium Clientele</span>
                   </h3>
-                  <p className="text-gray-600 leading-relaxed mb-6">
-                    Access to <strong>verified high-net-worth individuals</strong> seeking exclusive wellness experiences and <strong>personalized private services</strong>
+                  <p className="text-gray-300 leading-relaxed mb-6">
+                    Access to <strong className="text-green-400">verified high-net-worth individuals</strong> seeking exclusive wellness experiences and <strong className="text-green-400">personalized private services</strong>
                   </p>
-                  <div className="space-y-2 text-sm text-gray-600">
+                  <div className="space-y-2 text-sm text-gray-300">
                     <div className="flex items-center space-x-2">
-                      <Star className="w-4 h-4 text-green-600" />
+                      <Star className="w-4 h-4 text-green-400" />
                       <span>Corporate executives & celebrities</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <Lock className="w-4 h-4 text-green-600" />
+                      <Lock className="w-4 h-4 text-green-400" />
                       <span>VIP membership programs</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <Eye className="w-4 h-4 text-green-600" />
+                      <Eye className="w-4 h-4 text-green-400" />
                       <span>Discreet premium services</span>
                     </div>
                   </div>
@@ -184,52 +221,54 @@ export const BecomePartnerPage: React.FC = () => {
               </div>
 
               {/* Maximum Revenue */}
-              <div className="group relative bg-gradient-to-br from-green-50 to-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-green-100 hover:border-green-400">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-green-400 rounded-bl-full opacity-10"></div>
+              <div className="group relative bg-gradient-to-br from-black via-gray-900 to-black rounded-3xl overflow-hidden shadow-2xl hover:shadow-green-500/50 transition-all duration-500 border-2 border-green-500 hover:border-green-400 transform hover:-translate-y-2">
+                <div className="absolute top-0 right-0 w-40 h-40 bg-green-500 rounded-bl-full opacity-10 group-hover:opacity-20 transition-opacity"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div className="relative z-10 p-10">
-                  <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                  <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-green-500/50 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                     <TrendingUp className="w-10 h-10 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
-                    Explosive Growth
+                  <h3 className="text-2xl font-bold mb-4 text-white" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-300 to-green-500">Explosive Growth</span>
                   </h3>
-                  <p className="text-gray-600 leading-relaxed mb-6">
+                  <p className="text-gray-300 leading-relaxed mb-6">
                     Our platform helps you grow your business by connecting you with customers actively looking for wellness services in your area
                   </p>
-                  <div className="bg-green-100 rounded-xl p-4 mb-4">
-                    <div className="text-3xl font-bold text-green-600 mb-1">Real Growth</div>
-                    <div className="text-sm text-gray-600">Steady Customer Flow</div>
+                  <div className="bg-gradient-to-br from-green-500 to-green-600 rounded-xl p-4 mb-4 shadow-lg">
+                    <div className="text-3xl font-bold text-white mb-1">Real Growth</div>
+                    <div className="text-sm text-green-100">Steady Customer Flow</div>
                   </div>
-                  <div className="text-xs text-gray-500 italic">
+                  <div className="text-xs text-gray-400 italic">
                     *Results vary by location and services
                   </div>
                 </div>
               </div>
 
               {/* Complete Freedom */}
-              <div className="group relative bg-gradient-to-br from-green-50 to-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-green-100 hover:border-green-400">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-green-400 rounded-bl-full opacity-10"></div>
+              <div className="group relative bg-gradient-to-br from-black via-gray-900 to-black rounded-3xl overflow-hidden shadow-2xl hover:shadow-green-500/50 transition-all duration-500 border-2 border-green-500 hover:border-green-400 transform hover:-translate-y-2">
+                <div className="absolute top-0 right-0 w-40 h-40 bg-green-500 rounded-bl-full opacity-10 group-hover:opacity-20 transition-opacity"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-green-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 <div className="relative z-10 p-10">
-                  <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 transition-transform">
+                  <div className="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-green-500/50 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
                     <Briefcase className="w-10 h-10 text-white" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
-                    Your Business, Your Rules
+                  <h3 className="text-2xl font-bold mb-4 text-white" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-300 to-green-500">Your Business, Your Rules</span>
                   </h3>
-                  <p className="text-gray-600 leading-relaxed mb-6">
-                    <strong>Complete control</strong> over your services, pricing, and special offerings. We support <strong>all types of wellness services</strong>
+                  <p className="text-gray-300 leading-relaxed mb-6">
+                    <strong className="text-green-400">Complete control</strong> over your services, pricing, and special offerings. We support <strong className="text-green-400">all types of wellness services</strong>
                   </p>
-                  <div className="space-y-2 text-sm text-gray-600">
+                  <div className="space-y-2 text-sm text-gray-300">
                     <div className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 text-green-600" />
+                      <CheckCircle className="w-4 h-4 text-green-400" />
                       <span>Set your own prices & packages</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 text-green-600" />
+                      <CheckCircle className="w-4 h-4 text-green-400" />
                       <span>Offer exclusive memberships</span>
                     </div>
                     <div className="flex items-center space-x-2">
-                      <CheckCircle className="w-4 h-4 text-green-600" />
+                      <CheckCircle className="w-4 h-4 text-green-400" />
                       <span>Private session bookings</span>
                     </div>
                   </div>
