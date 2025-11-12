@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowLeft } from 'lucide-react';
 import { useAuth } from './hooks/useAuth';
-import { FixedHeader } from './components/layout/FixedHeader';
+import FixedHeader from './components/layout/FixedHeader';
 import { FixedFooter } from './components/layout/FixedFooter';
 import { WelcomeScreen } from './components/auth/WelcomeScreen';
 import { AuthLoginScreen } from './components/auth/AuthLoginScreen';

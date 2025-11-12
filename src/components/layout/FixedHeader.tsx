@@ -5,10 +5,11 @@ import { useAuth } from '../../hooks/useAuth';
 
 export default function FixedHeader() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { user, signOut } = useAuth();
+  const { authState, logout } = useAuth();
+  const user = authState.user;
 
   return (
-    <header className="fixed top-0 left-0 right-0 bg-black shadow-lg z-50">
+    <header className="fixed top-0 left-0 right-0 bg-gradient-to-r from-[#00FF87] via-[#016B3A] via-[#013B1F] to-[#012B17] shadow-lg z-50">
       <nav className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
           {/* Logo */}
@@ -51,7 +52,7 @@ export default function FixedHeader() {
                   <span>Profile</span>
                 </Link>
                 <button
-                  onClick={signOut}
+                  onClick={logout}
                   className="flex items-center space-x-2 text-white hover:text-emerald-400 transition-colors"
                 >
                   <LogOut className="w-5 h-5" />
@@ -133,7 +134,7 @@ export default function FixedHeader() {
                 </Link>
                 <button
                   onClick={() => {
-                    signOut();
+                    logout();
                     setIsMenuOpen(false);
                   }}
                   className="block w-full text-left text-white hover:text-emerald-400 transition-colors py-2"
@@ -155,6 +156,4 @@ export default function FixedHeader() {
       </nav>
     </header>
   );
-};
-
-export default FixedHeader;
+}
