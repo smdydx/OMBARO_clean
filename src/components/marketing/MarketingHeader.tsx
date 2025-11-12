@@ -42,18 +42,27 @@ export const MarketingHeader: React.FC = () => {
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center space-x-6 ml-auto">
-            <Link to="/terms" className="group flex items-center space-x-2 px-4 py-2 text-gray-700 hover:text-green-600 font-medium transition-all duration-200 hover:bg-emerald-50 rounded-lg">
-              <FileText className="w-4 h-4 group-hover:scale-110 transition-transform" />
-              <span className="text-sm">Terms</span>
+          <div className="hidden md:flex items-center space-x-3 lg:space-x-4 ml-auto">
+            <Link 
+              to="/terms" 
+              className="group flex items-center space-x-1.5 px-3 py-2 text-gray-700 hover:text-green-600 font-medium transition-all duration-200 hover:bg-emerald-50 rounded-lg"
+              title="Terms & Conditions"
+            >
+              <FileText className="w-4 h-4 group-hover:scale-110 transition-transform flex-shrink-0" />
+              <span className="text-sm whitespace-nowrap">Terms</span>
             </Link>
-            <Link to="/refund-policy" className="group flex items-center space-x-2 px-4 py-2 text-gray-700 hover:text-green-600 font-medium transition-all duration-200 hover:bg-emerald-50 rounded-lg">
-              <FileText className="w-4 h-4 group-hover:scale-110 transition-transform" />
-              <span className="text-sm">Refund</span>
+            <Link 
+              to="/refund-policy" 
+              className="group flex items-center space-x-1.5 px-3 py-2 text-gray-700 hover:text-green-600 font-medium transition-all duration-200 hover:bg-emerald-50 rounded-lg"
+              title="Refund Policy"
+            >
+              <FileText className="w-4 h-4 group-hover:scale-110 transition-transform flex-shrink-0" />
+              <span className="text-sm whitespace-nowrap">Refund</span>
             </Link>
+            <div className="h-6 w-px bg-gray-300 mx-2"></div>
             <Link to="/app">
               <button
-                className="px-6 py-2.5 text-gray-700 hover:text-gray-900 font-medium transition-all duration-200 hover:bg-emerald-50 rounded-full text-sm"
+                className="px-5 py-2.5 text-gray-700 hover:text-gray-900 font-medium transition-all duration-200 hover:bg-emerald-50 rounded-full text-sm whitespace-nowrap"
                 style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}
               >
                 Login
@@ -61,7 +70,7 @@ export const MarketingHeader: React.FC = () => {
             </Link>
             <Link to="/app">
               <button
-                className="px-7 py-2.5 bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 text-sm"
+                className="px-6 py-2.5 bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 text-sm whitespace-nowrap"
                 style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600 }}
               >
                 Get Started
@@ -93,49 +102,52 @@ export const MarketingHeader: React.FC = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`fixed top-20 sm:top-24 md:top-28 right-0 left-0 bg-white border-b border-gray-200 shadow-2xl z-40 md:hidden transform transition-all duration-300 ease-in-out ${
+          className={`fixed top-20 sm:top-24 md:top-28 right-0 left-0 bg-white border-b border-gray-200 shadow-2xl z-40 md:hidden transform transition-all duration-300 ease-in-out overflow-y-auto max-h-[calc(100vh-5rem)] ${
             isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'
           }`}
         >
-          <nav className="flex flex-col p-6 space-y-3">
+          <nav className="flex flex-col p-4 sm:p-6 space-y-2 sm:space-y-3">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="px-5 py-3.5 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-xl transition-all font-medium border border-transparent hover:border-emerald-200"
+                className="px-4 sm:px-5 py-3 sm:py-3.5 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-xl transition-all font-medium border border-transparent hover:border-emerald-200"
               >
                 {link.name}
               </Link>
             ))}
-            <div className="border-t border-gray-200 my-3"></div>
-            <Link
-              to="/terms"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="flex items-center space-x-2 px-5 py-3.5 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-xl transition-all font-medium border border-transparent hover:border-emerald-200"
-            >
-              <FileText className="w-4 h-4" />
-              <span>Terms & Conditions</span>
-            </Link>
-            <Link
-              to="/refund-policy"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="flex items-center space-x-2 px-5 py-3.5 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-xl transition-all font-medium border border-transparent hover:border-emerald-200"
-            >
-              <FileText className="w-4 h-4" />
-              <span>Refund Policy</span>
-            </Link>
+            <div className="border-t border-gray-200 my-2 sm:my-3"></div>
+            <div className="grid grid-cols-2 gap-2 sm:gap-3">
+              <Link
+                to="/terms"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="flex flex-col items-center justify-center space-y-1.5 px-3 py-3 sm:py-3.5 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-xl transition-all font-medium border border-gray-200 hover:border-emerald-200"
+              >
+                <FileText className="w-5 h-5 sm:w-6 sm:h-6" />
+                <span className="text-xs sm:text-sm text-center">Terms</span>
+              </Link>
+              <Link
+                to="/refund-policy"
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="flex flex-col items-center justify-center space-y-1.5 px-3 py-3 sm:py-3.5 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-xl transition-all font-medium border border-gray-200 hover:border-emerald-200"
+              >
+                <FileText className="w-5 h-5 sm:w-6 sm:h-6" />
+                <span className="text-xs sm:text-sm text-center">Refund</span>
+              </Link>
+            </div>
+            <div className="border-t border-gray-200 my-2 sm:my-3"></div>
             <Link
               to="/app"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="px-5 py-3.5 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-xl transition-all font-medium border border-transparent hover:border-emerald-200"
+              className="px-4 sm:px-5 py-3 sm:py-3.5 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-xl transition-all font-medium border border-transparent hover:border-emerald-200 text-center"
             >
               Login
             </Link>
             <Link
               to="/app"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="px-5 py-3.5 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl hover:from-green-600 hover:to-green-700 transition-all shadow-lg text-center font-semibold"
+              className="px-4 sm:px-5 py-3 sm:py-3.5 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl hover:from-green-600 hover:to-green-700 transition-all shadow-lg text-center font-semibold"
             >
               Get Started
             </Link>
