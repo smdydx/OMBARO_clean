@@ -148,6 +148,94 @@ export const HomePage: React.FC = () => {
     <div className="min-h-screen bg-white">
       <MarketingHeader />
 
+      <main>
+        {/* Hero Section - Relax & Enjoy with Water Flow */}
+        <section className="relative overflow-hidden pt-20 sm:pt-24 md:pt-28 bg-gradient-to-b from-primary-50 via-white to-white">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 md:py-16">
+            <div className="grid lg:grid-cols-5 gap-6 sm:gap-8 md:gap-12 items-center">
+              {/* Left Content */}
+              <div className="lg:col-span-3 text-center lg:text-left relative z-10">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-light text-gray-800 mb-4 sm:mb-6 leading-tight">
+                  RELAX
+                  <br />
+                  <span className="font-normal text-primary-600">& ENJOY</span>
+                </h1>
+                <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-6 sm:mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
+                  Experience ultimate relaxation with our premium spa and wellness services. 
+                  Book your perfect moment of tranquility today.
+                </p>
+                <Link to="/app">
+                  <button className="bg-primary-500 hover:bg-primary-600 text-white px-6 md:px-8 py-2.5 md:py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center">
+                    Book Now
+                    <ArrowRight className="w-4 h-4 ml-2" />
+                  </button>
+                </Link>
+              </div>
+
+              {/* Right Content - Image with Painted Frame */}
+              <div className="lg:col-span-2 relative">
+                <div className="relative p-4 bg-gradient-to-br from-white via-gray-50 to-gray-100 rounded-3xl shadow-2xl">
+                  <div className="absolute inset-0 rounded-3xl border-8 border-white shadow-inner"></div>
+                  <div className="absolute inset-2 rounded-2xl border-4 border-amber-100/50"></div>
+                  
+                  <div className="relative rounded-2xl overflow-hidden shadow-xl">
+                    <img 
+                      src="/images/beauty_salon_facial__338eb5d5.jpg"
+                      alt="Spa Experience"
+                      loading="eager"
+                      decoding="async"
+                      className="w-full h-[350px] md:h-[500px] object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-green-900/20 to-transparent"></div>
+                  </div>
+                </div>
+
+                <div className="absolute -bottom-4 md:-bottom-6 -left-4 md:-left-6 bg-white/90 backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-xl max-w-[200px] md:max-w-xs">
+                  <div className="flex items-center space-x-3 md:space-x-4">
+                    <div className="w-10 h-10 md:w-12 md:h-12 bg-primary-100 rounded-full flex items-center justify-center">
+                      <Star className="w-5 h-5 md:w-6 md:h-6 text-primary-600" />
+                    </div>
+                    <div>
+                      <p className="text-xl md:text-2xl font-bold text-gray-800">50,000+</p>
+                      <p className="text-xs md:text-sm text-gray-600">Happy Customers</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Animated Water Flow Wave - Bottom */}
+          <div className="absolute bottom-0 left-0 right-0 h-32 md:h-40">
+            <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
+              <defs>
+                <linearGradient id="waterGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" style={{ stopColor: '#00FF87', stopOpacity: 0.9 }} />
+                  <stop offset="50%" style={{ stopColor: '#016B3A', stopOpacity: 0.6 }} />
+                  <stop offset="100%" style={{ stopColor: '#000000', stopOpacity: 0.8 }} />
+                </linearGradient>
+              </defs>
+              <path fill="url(#waterGradient)" fillOpacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+                <animate attributeName="d" dur="8s" repeatCount="indefinite" values="
+                  M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
+                  M0,128L48,144C96,160,192,192,288,186.7C384,181,480,139,576,128C672,117,768,139,864,154.7C960,171,1056,181,1152,176C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
+                  M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" />
+              </path>
+            </svg>
+          </div>
+
+          <div className="absolute bottom-0 left-0 right-0 h-24 md:h-32 opacity-60">
+            <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
+              <path fill="#016B3A" fillOpacity="0.5" d="M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,154.7C672,149,768,171,864,181.3C960,192,1056,192,1152,181.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
+                <animate attributeName="d" dur="6s" repeatCount="indefinite" values="
+                  M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,154.7C672,149,768,171,864,181.3C960,192,1056,192,1152,181.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
+                  M0,192L48,181.3C96,171,192,149,288,154.7C384,160,480,192,576,197.3C672,203,768,181,864,170.7C960,160,1056,160,1152,170.7C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
+                  M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,154.7C672,149,768,171,864,181.3C960,192,1056,192,1152,181.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" />
+              </path>
+            </svg>
+          </div>
+        </section>
+
       {/* Animated Terms & Conditions Banner */}
       <div
         className={`transition-all duration-700 ease-in-out ${
@@ -184,99 +272,7 @@ export const HomePage: React.FC = () => {
         </div>
       </div>
 
-      <main>
-        {/* Hero Section - Relax & Enjoy with Water Flow */}
-        <section className="relative overflow-hidden pt-20 sm:pt-24 md:pt-28 bg-gradient-to-b from-primary-50 via-white to-white">
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-10 md:py-16">
-            <div className="grid lg:grid-cols-5 gap-6 sm:gap-8 md:gap-12 items-center">
-              {/* Left Content */}
-              <div className="lg:col-span-3 text-center lg:text-left relative z-10">
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-light text-gray-800 mb-4 sm:mb-6 leading-tight">
-                  RELAX
-                  <br />
-                  <span className="font-normal text-primary-600">& ENJOY</span>
-                </h1>
-                <p className="text-sm sm:text-base md:text-lg text-gray-600 mb-6 sm:mb-8 max-w-lg mx-auto lg:mx-0 leading-relaxed">
-                  Experience ultimate relaxation with our premium spa and wellness services. 
-                  Book your perfect moment of tranquility today.
-                </p>
-                <Link to="/app">
-                  <button className="bg-primary-500 hover:bg-primary-600 text-white px-6 md:px-8 py-2.5 md:py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center">
-                    Book Now
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </button>
-                </Link>
-              </div>
-
-              {/* Right Content - Image with Painted Frame */}
-              <div className="lg:col-span-2 relative">
-                <div className="relative p-4 bg-gradient-to-br from-white via-gray-50 to-gray-100 rounded-3xl shadow-2xl">
-                  {/* Painted Frame Border */}
-                  <div className="absolute inset-0 rounded-3xl border-8 border-white shadow-inner"></div>
-                  <div className="absolute inset-2 rounded-2xl border-4 border-amber-100/50"></div>
-                  
-                  {/* Image Container */}
-                  <div className="relative rounded-2xl overflow-hidden shadow-xl">
-                    <img 
-                      src="/images/beauty_salon_facial__338eb5d5.jpg"
-                      alt="Spa Experience"
-                      loading="eager"
-                      decoding="async"
-                      className="w-full h-[350px] md:h-[500px] object-cover"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-green-900/20 to-transparent"></div>
-                  </div>
-                </div>
-
-                {/* Floating Card */}
-                <div className="absolute -bottom-4 md:-bottom-6 -left-4 md:-left-6 bg-white/90 backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-xl max-w-[200px] md:max-w-xs">
-                  <div className="flex items-center space-x-3 md:space-x-4">
-                    <div className="w-10 h-10 md:w-12 md:h-12 bg-primary-100 rounded-full flex items-center justify-center">
-                      <Star className="w-5 h-5 md:w-6 md:h-6 text-primary-600" />
-                    </div>
-                    <div>
-                      <p className="text-xl md:text-2xl font-bold text-gray-800">50,000+</p>
-                      <p className="text-xs md:text-sm text-gray-600">Happy Customers</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Animated Water Flow Wave - Bottom */}
-          <div className="absolute bottom-0 left-0 right-0 h-32 md:h-40">
-            <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
-              <defs>
-                <linearGradient id="waterGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" style={{ stopColor: '#00FF87', stopOpacity: 0.9 }} />
-                  <stop offset="50%" style={{ stopColor: '#016B3A', stopOpacity: 0.6 }} />
-                  <stop offset="100%" style={{ stopColor: '#000000', stopOpacity: 0.8 }} />
-                </linearGradient>
-              </defs>
-              <path fill="url(#waterGradient)" fillOpacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
-                <animate attributeName="d" dur="8s" repeatCount="indefinite" values="
-                  M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
-                  M0,128L48,144C96,160,192,192,288,186.7C384,181,480,139,576,128C672,117,768,139,864,154.7C960,171,1056,181,1152,176C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
-                  M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" />
-              </path>
-            </svg>
-          </div>
-
-          {/* Additional Wave Layer */}
-          <div className="absolute bottom-0 left-0 right-0 h-24 md:h-32 opacity-60">
-            <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
-              <path fill="#016B3A" fillOpacity="0.5" d="M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,154.7C672,149,768,171,864,181.3C960,192,1056,192,1152,181.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z">
-                <animate attributeName="d" dur="6s" repeatCount="indefinite" values="
-                  M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,154.7C672,149,768,171,864,181.3C960,192,1056,192,1152,181.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
-                  M0,192L48,181.3C96,171,192,149,288,154.7C384,160,480,192,576,197.3C672,203,768,181,864,170.7C960,160,1056,160,1152,170.7C1248,181,1344,203,1392,213.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z;
-                  M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,154.7C672,149,768,171,864,181.3C960,192,1056,192,1152,181.3C1248,171,1344,149,1392,138.7L1440,128L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z" />
-              </path>
-            </svg>
-          </div>
-        </section>
-
-        {/* Services Sections - Alternating Layout */}
+      {/* Services Sections - Alternating Layout */}
         <section className="relative py-12 md:py-20 overflow-hidden bg-gradient-to-b from-white via-primary-50 to-white mt-4 md:mt-0">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className={`grid lg:grid-cols-2 gap-12 items-center ${services[0].reverse ? 'lg:grid-flow-dense' : ''}`}>
