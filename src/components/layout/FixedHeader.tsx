@@ -17,7 +17,7 @@ export default function FixedHeader() {
             <img 
               src="/ombaro-logo-new.png" 
               alt="Ombaro" 
-              className="h-12 w-auto object-contain"
+              className="h-8 sm:h-10 md:h-12 w-auto object-contain"
             />
           </Link>
 
