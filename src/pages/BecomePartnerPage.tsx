@@ -16,69 +16,109 @@ export const BecomePartnerPage: React.FC = () => {
       <MarketingHeader />
 
       <main className="pt-0">
-        {/* Premium Hero Section - Improved Responsive */}
-        <section className="relative min-h-[500px] sm:min-h-[600px] md:min-h-[700px] lg:min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-green-50 via-white to-green-50 pt-20 sm:pt-24 md:pt-28">
-          <div className="absolute inset-0 opacity-20">
-            <div className="absolute top-0 left-0 w-48 h-48 sm:w-64 sm:h-64 md:w-96 md:h-96 bg-green-200 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-0 right-0 w-48 h-48 sm:w-64 sm:h-64 md:w-96 md:h-96 bg-emerald-200 rounded-full blur-3xl animate-pulse"></div>
+        {/* Premium Hero Section - Enhanced Attractive Design */}
+        <section className="relative min-h-[500px] sm:min-h-[600px] md:min-h-[700px] lg:min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 pt-20 sm:pt-24 md:pt-28">
+          {/* Animated Background Elements */}
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute top-0 left-0 w-48 h-48 sm:w-64 sm:h-64 md:w-96 md:h-96 bg-gradient-to-br from-green-300 to-emerald-400 rounded-full blur-3xl opacity-30 animate-pulse"></div>
+            <div className="absolute bottom-0 right-0 w-48 h-48 sm:w-64 sm:h-64 md:w-96 md:h-96 bg-gradient-to-br from-teal-300 to-green-400 rounded-full blur-3xl opacity-30 animate-pulse" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-32 sm:w-48 md:w-64 h-32 sm:h-48 md:h-64 bg-gradient-to-br from-emerald-200 to-green-300 rounded-full blur-3xl opacity-20 animate-pulse" style={{ animationDelay: '2s' }}></div>
+            {/* Decorative Grid Pattern */}
+            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSA2MCAwIEwgMCAwIDAgNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgxNiwgMTg1LCAxMjksIDAuMDUpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-40"></div>
           </div>
 
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-6 sm:py-8 md:py-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center">
               {/* Left Content */}
               <div className="order-2 lg:order-1">
-                <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-green-500 to-green-600 rounded-full px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-3 mb-4 sm:mb-6 md:mb-8 shadow-lg">
-                  <Crown className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-white" />
-                  <span className="text-white text-xs sm:text-sm font-bold tracking-wider uppercase">Elite Partner Program</span>
+                {/* Animated Badge with Pulsing Effect */}
+                <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 rounded-full px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-3 mb-4 sm:mb-6 md:mb-8 shadow-2xl shadow-green-500/50 animate-pulse">
+                  <Crown className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-white animate-bounce" />
+                  <span className="text-white text-xs sm:text-sm font-bold tracking-wider uppercase">🌟 Elite Partner Program 2024</span>
+                </div>
+
+                {/* Success Metrics Strip */}
+                <div className="flex flex-wrap gap-3 sm:gap-4 mb-4 sm:mb-6">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-xl px-3 sm:px-4 py-2 shadow-lg border-2 border-green-200">
+                    <div className="text-green-600 font-bold text-xs sm:text-sm">500+ Active Partners</div>
+                  </div>
+                  <div className="bg-white/90 backdrop-blur-sm rounded-xl px-3 sm:px-4 py-2 shadow-lg border-2 border-green-200">
+                    <div className="text-green-600 font-bold text-xs sm:text-sm">₹15L+ Monthly Earnings</div>
+                  </div>
+                  <div className="bg-white/90 backdrop-blur-sm rounded-xl px-3 sm:px-4 py-2 shadow-lg border-2 border-green-200">
+                    <div className="text-green-600 font-bold text-xs sm:text-sm">24hr Approval</div>
+                  </div>
                 </div>
 
                 <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
-                  Join OMBARO's<br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-emerald-600">
-                    Wellness Partner Network
+                  India's #1 Platform to<br />
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 animate-gradient">
+                    Grow Your Wellness Empire
                   </span>
                 </h1>
 
-                <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-4 sm:mb-6 md:mb-8 text-gray-700 leading-relaxed">
-                  Grow your wellness business with OMBARO's trusted platform. Offer premium spa treatments, couples therapy packages, luxury travel wellness experiences, hotel partnerships, and exclusive private sessions.
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-3 sm:mb-4 text-gray-800 leading-relaxed font-semibold">
+                  🚀 Join 500+ Successful Partners Earning <span className="text-green-600 font-bold">₹5-15 Lakhs Monthly</span>
+                </p>
+                
+                <p className="text-sm sm:text-base md:text-lg mb-4 sm:mb-6 md:mb-8 text-gray-700 leading-relaxed">
+                  Whether you own a <strong className="text-green-600">luxury spa chain, beauty salon network, wellness center</strong>, or manage <strong className="text-green-600">multiple locations</strong> - OMBARO's aggregator platform helps you scale faster, earn more, and reach millions of customers across India.
                 </p>
 
-                <div className="bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-200 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 mb-6 sm:mb-8 shadow-lg">
-                  <h3 className="text-gray-900 font-bold text-base sm:text-lg mb-3 sm:mb-4 flex items-center">
-                    <Gift className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2" />
-                    Premium Partnership Benefits
-                  </h3>
-                  <div className="space-y-2 sm:space-y-3">
-                    <div className="flex items-center text-gray-700">
-                      <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 sm:mr-3 flex-shrink-0" />
-                      <span className="text-xs sm:text-sm md:text-base">Exclusive couples & private therapy packages</span>
-                    </div>
-                    <div className="flex items-center text-gray-700">
-                      <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 sm:mr-3 flex-shrink-0" />
-                      <span className="text-xs sm:text-sm md:text-base">Travel wellness vouchers & hotel tie-ups</span>
-                    </div>
-                    <div className="flex items-center text-gray-700">
-                      <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 sm:mr-3 flex-shrink-0" />
-                      <span className="text-xs sm:text-sm md:text-base">VIP dating & companionship wellness services</span>
-                    </div>
-                    <div className="flex items-center text-gray-700">
-                      <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 sm:mr-3 flex-shrink-0" />
-                      <span className="text-xs sm:text-sm md:text-base">Complete discretion & privacy guaranteed</span>
+                {/* Premium Benefits with Gradient Background */}
+                <div className="relative bg-gradient-to-br from-white via-green-50 to-emerald-50 border-2 border-green-300 rounded-xl sm:rounded-2xl p-4 sm:p-5 md:p-6 mb-6 sm:mb-8 shadow-2xl shadow-green-500/20 overflow-hidden">
+                  {/* Decorative Corner Element */}
+                  <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-green-400 to-emerald-500 opacity-10 rounded-bl-full"></div>
+                  
+                  <div className="relative z-10">
+                    <h3 className="text-gray-900 font-bold text-base sm:text-lg mb-3 sm:mb-4 flex items-center">
+                      <Gift className="w-5 h-5 sm:w-6 sm:h-6 text-green-600 mr-2 animate-bounce" />
+                      <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">Why Top Businesses Choose OMBARO</span>
+                    </h3>
+                    <div className="grid sm:grid-cols-2 gap-2 sm:gap-3">
+                      <div className="flex items-center text-gray-800 bg-white/70 rounded-lg p-2">
+                        <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0" />
+                        <span className="text-xs sm:text-sm font-medium">🎯 50,000+ Active Customers</span>
+                      </div>
+                      <div className="flex items-center text-gray-800 bg-white/70 rounded-lg p-2">
+                        <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0" />
+                        <span className="text-xs sm:text-sm font-medium">💰 3X Revenue Growth Guaranteed</span>
+                      </div>
+                      <div className="flex items-center text-gray-800 bg-white/70 rounded-lg p-2">
+                        <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0" />
+                        <span className="text-xs sm:text-sm font-medium">⚡ Zero Setup Cost</span>
+                      </div>
+                      <div className="flex items-center text-gray-800 bg-white/70 rounded-lg p-2">
+                        <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0" />
+                        <span className="text-xs sm:text-sm font-medium">🔒 100% Payment Security</span>
+                      </div>
+                      <div className="flex items-center text-gray-800 bg-white/70 rounded-lg p-2">
+                        <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0" />
+                        <span className="text-xs sm:text-sm font-medium">📱 Advanced Tech Dashboard</span>
+                      </div>
+                      <div className="flex items-center text-gray-800 bg-white/70 rounded-lg p-2">
+                        <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0" />
+                        <span className="text-xs sm:text-sm font-medium">🌟 Premium Brand Association</span>
+                      </div>
                     </div>
                   </div>
                 </div>
 
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
-                  <Link to="/app" className="w-full sm:w-auto">
-                    <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white shadow-2xl text-sm sm:text-base md:text-lg px-8 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 rounded-full transform hover:scale-105 transition-all">
-                      Claim Your Spot Now
-                      <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2" />
+                  <Link to="/app" className="w-full sm:w-auto group">
+                    <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 hover:from-green-600 hover:via-emerald-600 hover:to-teal-600 text-white shadow-2xl shadow-green-500/50 text-sm sm:text-base md:text-lg px-8 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 rounded-full transform hover:scale-110 transition-all duration-300 font-bold relative overflow-hidden">
+                      <span className="relative z-10 flex items-center justify-center">
+                        🚀 Start Earning Today - FREE
+                        <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+                      </span>
+                      {/* Animated shine effect */}
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
                     </Button>
                   </Link>
                   <a href="tel:+919876543210" className="w-full sm:w-auto">
-                    <Button size="lg" variant="outline" className="w-full sm:w-auto border-2 border-green-600 text-green-700 hover:bg-green-50 text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 rounded-full">
+                    <Button size="lg" variant="outline" className="w-full sm:w-auto border-3 border-green-600 text-green-700 bg-white hover:bg-green-600 hover:text-white text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 rounded-full font-bold shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
                       <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                      Talk to Expert
+                      📞 Call: +91 98765 43210
                     </Button>
                   </a>
                 </div>
