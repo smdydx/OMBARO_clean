@@ -44,11 +44,6 @@ export const HomePage: React.FC = () => {
     setTimeout(() => {
       setShowTermsBanner(false);
       setIsClosing(false);
-      // Smooth scroll to hero section after banner closes
-      const heroSection = document.querySelector('section.relative.overflow-hidden.bg-gradient-to-b');
-      if (heroSection) {
-        heroSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
     }, 500);
   };
 
@@ -166,7 +161,7 @@ export const HomePage: React.FC = () => {
     <div className="min-h-screen bg-white">
       <MarketingHeader />
 
-      <main className="transition-all duration-500 ease-in-out">
+      <main>
         {/* Animated Terms & Conditions Banner - Above hero section */}
         {showTermsBanner && (
           <div className={`bg-gradient-to-r from-primary-600 to-primary-700 border-b-2 sm:border-b-4 border-primary-800 transition-all duration-500 ease-in-out transform ${isClosing ? 'opacity-0 -translate-y-full scale-95' : 'opacity-100 translate-y-0 scale-100'}`}>
