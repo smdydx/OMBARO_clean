@@ -33,6 +33,7 @@ export default defineConfig({
           'ui-vendor': ['lucide-react', 'react-slick', 'slick-carousel'],
         },
         assetFileNames: (assetInfo) => {
+          if (!assetInfo.name) return `assets/[name]-[hash][extname]`;
           const info = assetInfo.name.split('.');
           const ext = info[info.length - 1];
           if (/png|jpe?g|svg|gif|tiff|bmp|ico|webp/i.test(ext)) {

@@ -14,11 +14,13 @@ export default function FixedHeader() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img 
-              src="/ombaro-logo-new.png" 
-              alt="Ombaro" 
-              className="h-8 sm:h-10 md:h-12 w-auto object-contain"
-            />
+            <div className="p-2 bg-white rounded-full shadow-lg shadow-emerald-500/50 border border-emerald-100">
+              <img 
+                src="/ombaro-logo-new.png" 
+                alt="Ombaro" 
+                className="h-8 sm:h-10 md:h-12 w-auto object-contain"
+              />
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
