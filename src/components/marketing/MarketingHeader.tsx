@@ -103,26 +103,26 @@ export const MarketingHeader: React.FC = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`fixed top-20 sm:top-24 md:top-28 right-0 left-0 bg-gradient-to-br from-white via-green-50/30 to-white border-b border-green-200 shadow-2xl z-40 lg:hidden transform transition-all duration-300 ease-in-out overflow-y-auto max-h-[calc(100vh-5rem)] ${
+          className={`fixed top-20 sm:top-24 md:top-28 right-0 left-0 bg-white border-b border-emerald-200 shadow-2xl z-40 lg:hidden transform transition-all duration-300 ease-in-out overflow-y-auto max-h-[calc(100vh-5rem)] ${
             isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'
           }`}
         >
-          <nav className="flex flex-col p-4 sm:p-6 space-y-2 sm:space-y-3">
+          <nav className="flex flex-col p-4 sm:p-6 space-y-2 sm:space-y-3 bg-white">
             {navLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="px-4 sm:px-5 py-3 sm:py-3.5 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-xl transition-all font-medium border border-transparent hover:border-emerald-200"
+                className="px-4 sm:px-5 py-3 sm:py-3.5 text-gray-800 hover:bg-emerald-50 hover:text-emerald-700 rounded-xl transition-all font-medium border border-gray-100 hover:border-emerald-300"
               >
                 {link.name}
               </Link>
             ))}
-            <div className="border-t border-gray-200 my-2 sm:my-3"></div>
+            <div className="border-t border-emerald-200 my-2 sm:my-3"></div>
             <Link
               to="/app"
               onClick={() => setIsMobileMenuOpen(false)}
-              className="px-4 sm:px-5 py-3 sm:py-3.5 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-xl transition-all font-medium border border-transparent hover:border-emerald-200 text-center"
+              className="px-4 sm:px-5 py-3 sm:py-3.5 text-gray-800 hover:bg-emerald-50 hover:text-emerald-700 rounded-xl transition-all font-medium border border-gray-100 hover:border-emerald-300 text-center"
             >
               Login
             </Link>
