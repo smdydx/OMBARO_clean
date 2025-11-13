@@ -20,6 +20,14 @@ OMBARO is a comprehensive beauty & wellness platform with multi-portal authentic
 - **API**: RESTful API with JSON responses
 
 ## Recent Changes
+- **2025-11-13**: Optimized Vercel deployment configuration
+  - Created comprehensive `vercel.json` with build optimization
+  - Added `.vercelignore` to exclude backend/database files from frontend deployment
+  - Enhanced Vite build config with asset organization and minification
+  - Added `build:frontend` script for frontend-only builds
+  - Created `DEPLOYMENT.md` guide for Vercel deployment
+  - Fixed JSX syntax errors in BecomePartnerPage.tsx carousel sections
+
 - **2025-11-10**: Migrated from Supabase to Neon Postgres
   - Removed @supabase/supabase-js dependency
   - Implemented Express API server (port 3001) with authentication endpoints
@@ -133,6 +141,30 @@ Demo credentials for all user types:
 - Password: `1234`
 
 ## Deployment
+
+### Vercel (Frontend Only) - RECOMMENDED
+Optimized for frontend-only deployment to Vercel:
+- Build command: `npm run build` (with TypeScript compilation)
+- Output directory: `dist`
+- Framework: Vite
+- Configuration: See `vercel.json` and `DEPLOYMENT.md`
+- Excludes: Backend server, database files (via `.vercelignore`)
+
+**Features:**
+- Asset caching (1 year for immutable files)
+- Security headers (X-Frame-Options, CSP, etc.)
+- SPA routing (all routes → index.html)
+- Optimized chunk splitting
+- Organized asset structure (js/, images/, fonts/)
+
+**Quick Deploy:**
+1. Connect Git repository to Vercel
+2. Auto-detects configuration from `vercel.json`
+3. Deploy with one click
+
+See `DEPLOYMENT.md` for detailed instructions.
+
+### Replit (Full Stack)
 Configured for Replit autoscale deployment:
 - Build command: `npm run build`
 - Run command: `npm run preview`

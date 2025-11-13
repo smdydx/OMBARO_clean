@@ -1,0 +1,15 @@
+server/
+supabase/
+drizzle/
+*.sql
+drizzle.config.ts
+.env*
+!.env.example
+node_modules/
+.git/
+*.log
+*.md
+!README.md
+.replit
+replit.nix
+.local/
