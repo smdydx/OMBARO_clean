@@ -174,44 +174,46 @@ export const HomePage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white transition-all duration-700 ease-in-out">
       <MarketingHeader />
 
-      <main>
+      <main className="transition-all duration-700 ease-in-out">
         {/* Animated Terms & Conditions Banner - Above hero section */}
-        {showTermsBanner && (
-          <div
-            className={`bg-gradient-to-r from-primary-600 to-primary-700 border-b-2 sm:border-b-4 border-primary-800 transition-all duration-500 ease-in-out transform ${isClosing ? "opacity-0 -translate-y-full scale-95" : "opacity-100 translate-y-0 scale-100"}`}
-          >
-            <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-3 sm:py-4">
-              <div className="flex items-center justify-between gap-2">
-                <div className="flex items-center space-x-2 flex-1">
-                  <Shield className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 text-white" />
-                  <p className="text-xs sm:text-sm md:text-base font-semibold text-white">
-                    Please read our{" "}
-                    <button
-                      onClick={handleOpenTermsModal}
-                      className="underline font-bold hover:text-white/90 transition-colors cursor-pointer text-white"
-                      type="button"
-                    >
-                      Terms & Conditions
-                    </button>{" "}
-                    before booking
-                  </p>
-                  <Shield className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 hidden sm:block text-white" />
-                </div>
-                <button
-                  onClick={handleCloseBanner}
-                  className="p-2 hover:bg-white/20 rounded-lg transition-colors flex-shrink-0"
-                  aria-label="Close banner"
-                  type="button"
-                >
-                  <X className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
-                </button>
+        <div
+          className={`bg-gradient-to-r from-primary-600 to-primary-700 border-b-2 sm:border-b-4 border-primary-800 transition-all duration-700 ease-in-out overflow-hidden ${
+            showTermsBanner && !isClosing
+              ? "max-h-32 opacity-100"
+              : "max-h-0 opacity-0 border-0"
+          }`}
+        >
+          <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-3 sm:py-4">
+            <div className="flex items-center justify-between gap-2">
+              <div className="flex items-center space-x-2 flex-1">
+                <Shield className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 text-white" />
+                <p className="text-xs sm:text-sm md:text-base font-semibold text-white">
+                  Please read our{" "}
+                  <button
+                    onClick={handleOpenTermsModal}
+                    className="underline font-bold hover:text-white/90 transition-colors cursor-pointer text-white"
+                    type="button"
+                  >
+                    Terms & Conditions
+                  </button>{" "}
+                  before booking
+                </p>
+                <Shield className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 hidden sm:block text-white" />
               </div>
+              <button
+                onClick={handleCloseBanner}
+                className="p-2 hover:bg-white/20 rounded-lg transition-colors flex-shrink-0"
+                aria-label="Close banner"
+                type="button"
+              >
+                <X className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+              </button>
             </div>
           </div>
-        )}
+        </div>
 
         {/* Hero Section - Relax & Enjoy */}
         <section className="relative overflow-hidden bg-gradient-to-b from-primary-50 via-white to-white pb-20">
