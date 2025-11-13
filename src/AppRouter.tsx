@@ -18,6 +18,7 @@ const BecomePartnerPage = lazy(() => import('./pages/BecomePartnerPage').then(m 
 const SpaMassagePage = lazy(() => import('./pages/SpaMassagePage').then(m => ({ default: m.SpaMassagePage })));
 const BridalMakeupPage = lazy(() => import('./pages/BridalMakeupPage').then(m => ({ default: m.BridalMakeupPage })));
 const BeautySalonPage = lazy(() => import('./pages/BeautySalonPage').then(m => ({ default: m.BeautySalonPage })));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage').then(m => ({ default: m.NotFoundPage })));
 const App = lazy(() => import('./App'));
 
 // Loading component
@@ -51,6 +52,7 @@ export const AppRouter: React.FC = () => {
           <Route path="/beauty-salon" element={<BeautySalonPage />} />
           <Route path="/auth/callback" element={<AuthCallback />} />
           <Route path="/app/*" element={<App />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
     </Router>

@@ -30,7 +30,7 @@ export const HeroSlider: React.FC = () => {
           {/* Right Image */}
           <div className="relative">
             <img
-              src="/attached_assets/stock_images/luxury_spa_massage_t_690db67f.jpg"
+              src="/images/luxury_spa_massage_t_690db67f.jpg"
               alt="Spa Relaxation"
               className="rounded-3xl shadow-2xl w-full object-cover h-[400px] md:h-[500px]"
             />
