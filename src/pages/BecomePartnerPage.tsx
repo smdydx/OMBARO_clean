@@ -17,7 +17,7 @@ export const BecomePartnerPage: React.FC = () => {
 
       <main className="pt-0">
         {/* Premium Hero Section - Enhanced Attractive Design */}
-        <section className="relative min-h-[500px] sm:min-h-[600px] md:min-h-[700px] lg:min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 pt-20 sm:pt-20 md:pt-24 lg:pt-28"></section>
+        <section className="relative min-h-[500px] sm:min-h-[600px] md:min-h-[700px] lg:min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 pt-20 sm:pt-20 md:pt-24 lg:pt-28">
           {/* Animated Background Elements */}
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute top-0 left-0 w-48 h-48 sm:w-64 sm:h-64 md:w-96 md:h-96 bg-gradient-to-br from-green-300 to-emerald-400 rounded-full blur-3xl opacity-30 animate-pulse"></div>
