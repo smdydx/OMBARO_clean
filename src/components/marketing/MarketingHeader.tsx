@@ -34,10 +34,10 @@ export const MarketingHeader: React.FC = () => {
         </div>
       </div>
       <div className="relative z-10 max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20 xl:h-24">
+        <div className="flex items-center justify-between h-20 lg:h-24 xl:h-28">
           <div className="flex items-center lg:flex-1">
             <Link to="/" className="flex items-center group z-50">
-              <div className="relative rounded-full p-1 sm:p-1.5 lg:p-2 xl:p-3 bg-white shadow-lg lg:shadow-2xl border-2 lg:border-3 xl:border-4 border-green-500/40">
+              <div className="relative rounded-full p-2 sm:p-2.5 lg:p-3 xl:p-4 bg-white shadow-lg lg:shadow-2xl border-3 sm:border-4 lg:border-4 xl:border-5 border-green-500/40">
                 <img
                   src="/ombaro-logo-new.png"
                   alt="OMBARO"
@@ -103,7 +103,7 @@ export const MarketingHeader: React.FC = () => {
 
         {/* Mobile Menu - Professional Clean Design */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 top-16 z-40 bg-white">
+        <div className="lg:hidden fixed inset-0 top-20 z-40 bg-white">
           {/* Menu Content */}
           <div className="h-full overflow-y-auto bg-white">
             {/* Navigation Section */}
