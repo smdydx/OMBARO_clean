@@ -218,7 +218,7 @@ export const BecomePartnerPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Horizontal Scrolling Image Carousel - Similar to Webflow Design */}
+        {/* Horizontal Scrolling Image Carousel - Webflow Style Enhanced */}
         <section className="py-8 sm:py-12 md:py-16 bg-white overflow-hidden">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 sm:mb-8">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 text-center" style={{ fontFamily: "'Tenor Sans', serif" }}>
@@ -227,11 +227,12 @@ export const BecomePartnerPage: React.FC = () => {
             <p className="text-center text-gray-600 mt-2 sm:mt-3 text-sm sm:text-base">Our thriving wellness partner network</p>
           </div>
 
-          {/* Infinite Horizontal Scroll Animation */}
-          <div className="relative">
-            {/* First Row - Left to Right */}
-            <div className="flex gap-4 sm:gap-6 mb-4 sm:mb-6 animate-scroll-left">
-              <div className="flex gap-4 sm:gap-6 flex-shrink-0">
+          {/* Enhanced Infinite Horizontal Scroll Animation - Webflow Style */}
+          <div className="relative space-y-4 sm:space-y-6">
+            {/* First Row - Smooth Left Scroll */}
+            <div className="scroll-container">
+              <div className="scroll-content animate-scroll-left">
+                {/* Original Set */}
                 {[
                   '/images/luxury_spa_treatment_ef5ecb59.jpg',
                   '/images/professional_beauty__6992f974.jpg',
@@ -240,18 +241,22 @@ export const BecomePartnerPage: React.FC = () => {
                   '/images/premium_wellness_spa_05199f74.jpg',
                   '/images/beauty_treatment_sal_bed4837c.jpg'
                 ].map((img, idx) => (
-                  <div key={idx} className="relative group flex-shrink-0">
-                    <div className="w-[280px] sm:w-[320px] md:w-[380px] h-[200px] sm:h-[240px] md:h-[280px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl">
+                  <div key={`row1-${idx}`} className="relative group flex-shrink-0">
+                    <div className="w-[280px] sm:w-[320px] md:w-[380px] h-[200px] sm:h-[240px] md:h-[280px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border-4 border-white/80">
                       <img 
                         src={img} 
                         alt={`Partner Success ${idx + 1}`}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="text-sm sm:text-base font-bold drop-shadow-lg">Premium Partner</div>
+                      </div>
                     </div>
                   </div>
                 ))}
-                {/* Duplicate for seamless loop */}
+                {/* Duplicate for seamless infinite loop */}
                 {[
                   '/images/luxury_spa_treatment_ef5ecb59.jpg',
                   '/images/professional_beauty__6992f974.jpg',
@@ -260,23 +265,28 @@ export const BecomePartnerPage: React.FC = () => {
                   '/images/premium_wellness_spa_05199f74.jpg',
                   '/images/beauty_treatment_sal_bed4837c.jpg'
                 ].map((img, idx) => (
-                  <div key={`dup-${idx}`} className="relative group flex-shrink-0">
-                    <div className="w-[280px] sm:w-[320px] md:w-[380px] h-[200px] sm:h-[240px] md:h-[280px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl">
+                  <div key={`row1-dup-${idx}`} className="relative group flex-shrink-0">
+                    <div className="w-[280px] sm:w-[320px] md:w-[380px] h-[200px] sm:h-[240px] md:h-[280px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border-4 border-white/80">
                       <img 
                         src={img} 
                         alt={`Partner Success ${idx + 1}`}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="text-sm sm:text-base font-bold drop-shadow-lg">Premium Partner</div>
+                      </div>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Second Row - Right to Left */}
-            <div className="flex gap-4 sm:gap-6 animate-scroll-right">
-              <div className="flex gap-4 sm:gap-6 flex-shrink-0">
+            {/* Second Row - Smooth Right Scroll */}
+            <div className="scroll-container">
+              <div className="scroll-content animate-scroll-right">
+                {/* Original Set */}
                 {[
                   '/images/luxury_spa_reception_05371daf.jpg',
                   '/images/spa_treatment_room_i_609c3288.jpg',
@@ -285,18 +295,22 @@ export const BecomePartnerPage: React.FC = () => {
                   '/images/luxury_spa_massage_t_2767ba26.jpg',
                   '/images/spa_treatment_room_i_79626365.jpg'
                 ].map((img, idx) => (
-                  <div key={idx} className="relative group flex-shrink-0">
-                    <div className="w-[280px] sm:w-[320px] md:w-[380px] h-[200px] sm:h-[240px] md:h-[280px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl">
+                  <div key={`row2-${idx}`} className="relative group flex-shrink-0">
+                    <div className="w-[280px] sm:w-[320px] md:w-[380px] h-[200px] sm:h-[240px] md:h-[280px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border-4 border-white/80">
                       <img 
                         src={img} 
                         alt={`Partner Gallery ${idx + 1}`}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="text-sm sm:text-base font-bold drop-shadow-lg">Elite Partner</div>
+                      </div>
                     </div>
                   </div>
                 ))}
-                {/* Duplicate for seamless loop */}
+                {/* Duplicate for seamless infinite loop */}
                 {[
                   '/images/luxury_spa_reception_05371daf.jpg',
                   '/images/spa_treatment_room_i_609c3288.jpg',
@@ -305,14 +319,18 @@ export const BecomePartnerPage: React.FC = () => {
                   '/images/luxury_spa_massage_t_2767ba26.jpg',
                   '/images/spa_treatment_room_i_79626365.jpg'
                 ].map((img, idx) => (
-                  <div key={`dup-${idx}`} className="relative group flex-shrink-0">
-                    <div className="w-[280px] sm:w-[320px] md:w-[380px] h-[200px] sm:h-[240px] md:h-[280px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl">
+                  <div key={`row2-dup-${idx}`} className="relative group flex-shrink-0">
+                    <div className="w-[280px] sm:w-[320px] md:w-[380px] h-[200px] sm:h-[240px] md:h-[280px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border-4 border-white/80">
                       <img 
                         src={img} 
                         alt={`Partner Gallery ${idx + 1}`}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        <div className="text-sm sm:text-base font-bold drop-shadow-lg">Elite Partner</div>
+                      </div>
                     </div>
                   </div>
                 ))}
