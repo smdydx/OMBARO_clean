@@ -591,6 +591,24 @@ img {
   }
 }
 
+@keyframes wave-slow {
+  0%, 100% {
+    d: path("M0,0 C150,50 350,0 600,30 C850,60 1050,20 1200,40 L1200,120 L0,120 Z");
+  }
+  50% {
+    d: path("M0,20 C150,30 350,40 600,20 C850,0 1050,50 1200,30 L1200,120 L0,120 Z");
+  }
+}
+
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-15px) scale(1.05);
+  }
+}
+
 @keyframes wave-reverse {
   0% {
     transform: translateX(0) translateZ(0) scaleY(1);
