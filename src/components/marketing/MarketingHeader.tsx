@@ -126,7 +126,7 @@ export const MarketingHeader: React.FC = () => {
             {/* Action Buttons Section */}
             <div className="px-5 pb-8 space-y-3">
               <Link
-                to="/vendor/quick-signup"
+                to="/become-a-partner"
                 className="flex items-center justify-center gap-2.5 px-6 py-4 bg-white text-green-600 border-2 border-green-500 hover:bg-green-50 active:bg-green-100 rounded-xl transition-all duration-200 font-bold text-base shadow-sm hover:shadow-md"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -137,7 +137,7 @@ export const MarketingHeader: React.FC = () => {
               </Link>
 
               <Link
-                to="/auth"
+                to="/app"
                 className="flex items-center justify-center gap-2.5 px-6 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white hover:from-green-600 hover:to-green-700 active:from-green-700 active:to-green-800 rounded-xl transition-all duration-200 font-bold text-base shadow-lg hover:shadow-xl"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
