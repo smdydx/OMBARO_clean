@@ -316,14 +316,25 @@ export const BecomePartnerPage: React.FC = () => {
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-600">Explosive Growth</span>
                   </h3>
                   <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-4 sm:mb-6">
-                    Our platform helps you grow your business by connecting you with customers actively looking for wellness services in your area
+                    Our platform helps you <strong className="text-green-600">grow your business exponentially</strong> by connecting you with customers actively seeking <strong className="text-green-600">premium wellness services</strong> in your area. Reach thousands of potential clients daily.
                   </p>
-                  <div className="bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl p-3 sm:p-4 mb-3 sm:mb-4 shadow-lg">
-                    <div className="text-2xl sm:text-3xl font-bold text-white mb-1">Real Growth</div>
-                    <div className="text-xs sm:text-sm text-green-50">Steady Customer Flow</div>
+                  <div className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-gray-700 mb-4 sm:mb-6">
+                    <div className="flex items-center space-x-2">
+                      <Star className="w-3 h-3 sm:w-4 sm:h-4 text-green-600 flex-shrink-0" />
+                      <span>Verified customer bookings guaranteed</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4 text-green-600 flex-shrink-0" />
+                      <span>Average 3X revenue growth in 6 months</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <DollarSign className="w-3 h-3 sm:w-4 sm:h-4 text-green-600 flex-shrink-0" />
+                      <span>Premium pricing support & marketing tools</span>
+                    </div>
                   </div>
-                  <div className="text-[10px] sm:text-xs text-gray-600 italic">
-                    *Results vary by location and services
+                  <div className="bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl p-3 sm:p-4 shadow-lg">
+                    <div className="text-2xl sm:text-3xl font-bold text-white mb-1">Real Growth</div>
+                    <div className="text-xs sm:text-sm text-green-50">Steady Customer Flow Daily</div>
                   </div>
                 </div>
               </div>
