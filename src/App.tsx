@@ -71,6 +71,7 @@ import { VendorApplicantPortal } from './components/vendor/VendorApplicantPortal
 import { VendorApplicationTracking } from './components/vendor/VendorApplicationTracking';
 import { Button } from './components/ui/Button';
 import { UserRole } from './types/auth';
+import ServiceChatbot from './components/chatbot/ServiceChatbot';
 
 function App() {
   const { authState, setCurrentStep, setSelectedEntity, loginUser, selectRole, logout, sendOTP, verifyOTP, completeProfile } = useAuth();
@@ -1031,6 +1032,7 @@ function App() {
           }}
         />
       )}
+      <ServiceChatbot />
     </div>
   );
 }

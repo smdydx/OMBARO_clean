@@ -14,7 +14,7 @@ export default function FixedHeader() {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <div className="p-2 bg-white rounded-full shadow-lg shadow-emerald-500/50 border border-emerald-100">
+            <div className="p-2 bg-white rounded-full shadow-lg border-4 border-emerald-500 ring-2 ring-emerald-200">
               <img 
                 src="/ombaro-logo-new.png" 
                 alt="Ombaro" 
