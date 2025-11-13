@@ -14,7 +14,7 @@ const ContactPage = lazy(() => import('./pages/ContactPage').then(m => ({ defaul
 const PrivacyPage = lazy(() => import('./pages/PrivacyPage').then(m => ({ default: m.PrivacyPage })));
 const TermsPage = lazy(() => import('./pages/TermsPage').then(m => ({ default: m.TermsPage })));
 const RefundPolicyPage = lazy(() => import('./pages/RefundPolicyPage').then(m => ({ default: m.RefundPolicyPage })));
-const BecomePartnerPage = lazy(() => import('./pages/BecomePartnerPage').then(m => ({ default: m.BecomePartnerPage })));
+import BecomePartnerPage from './pages/BecomePartnerPage';
 const SpaMassagePage = lazy(() => import('./pages/SpaMassagePage').then(m => ({ default: m.SpaMassagePage })));
 const BridalMakeupPage = lazy(() => import('./pages/BridalMakeupPage').then(m => ({ default: m.BridalMakeupPage })));
 const BeautySalonPage = lazy(() => import('./pages/BeautySalonPage').then(m => ({ default: m.BeautySalonPage })));

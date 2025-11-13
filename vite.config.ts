@@ -51,6 +51,7 @@ export default defineConfig({
     cssCodeSplit: true,
     sourcemap: false,
     minify: 'terser',
+    target: 'es2015',
     terserOptions: {
       compress: {
         drop_console: true,

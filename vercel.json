@@ -112,8 +112,12 @@
       "handle": "filesystem"
     },
     {
-      "src": "/images/(.*)",
-      "dest": "/images/$1"
+      "src": "/assets/(.*)",
+      "dest": "/assets/$1"
+    },
+    {
+      "src": "/(.*\\.(png|jpg|jpeg|gif|svg|webp|ico))",
+      "dest": "/$1"
     },
     {
       "src": "/(.*)",
