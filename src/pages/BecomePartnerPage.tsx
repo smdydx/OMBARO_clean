@@ -34,7 +34,7 @@ export const BecomePartnerPage: React.FC = () => {
                 {/* Animated Badge with Pulsing Effect */}
                 <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 rounded-full px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-3 mb-4 sm:mb-6 md:mb-8 shadow-2xl shadow-green-500/50 animate-pulse">
                   <Crown className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-white animate-bounce" />
-                  <span className="text-white text-xs sm:text-sm font-bold tracking-wider uppercase">🌟 Elite Partner Program 2024</span>
+                  <span className="text-white text-xs sm:text-sm font-bold tracking-wider uppercase">Elite Partner Program 2024</span>
                 </div>
 
                 {/* Success Metrics Strip */}
@@ -50,15 +50,15 @@ export const BecomePartnerPage: React.FC = () => {
                   </div>
                 </div>
 
-                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4 md:mb-6 leading-tight text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light mb-3 sm:mb-4 md:mb-6 leading-tight text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
                   India's #1 Platform to<br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 animate-gradient">
                     Grow Your Wellness Empire
                   </span>
                 </h1>
 
-                <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-3 sm:mb-4 text-gray-800 leading-relaxed font-semibold">
-                  🚀 Join 500+ Successful Partners Earning <span className="text-green-600 font-bold">₹5-15 Lakhs Monthly</span>
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-3 sm:mb-4 text-gray-700 leading-relaxed">
+                  Join 500+ Successful Partners Earning <span className="text-green-600 font-bold">₹5-15 Lakhs Monthly</span>
                 </p>
                 
                 <p className="text-sm sm:text-base md:text-lg mb-4 sm:mb-6 md:mb-8 text-gray-700 leading-relaxed">
@@ -78,27 +78,27 @@ export const BecomePartnerPage: React.FC = () => {
                     <div className="grid sm:grid-cols-2 gap-2 sm:gap-3">
                       <div className="flex items-center text-gray-800 bg-white/70 rounded-lg p-2">
                         <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0" />
-                        <span className="text-xs sm:text-sm font-medium">🎯 50,000+ Active Customers</span>
+                        <span className="text-xs sm:text-sm font-medium">50,000+ Active Customers</span>
                       </div>
                       <div className="flex items-center text-gray-800 bg-white/70 rounded-lg p-2">
                         <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0" />
-                        <span className="text-xs sm:text-sm font-medium">💰 3X Revenue Growth Guaranteed</span>
+                        <span className="text-xs sm:text-sm font-medium">3X Revenue Growth Guaranteed</span>
                       </div>
                       <div className="flex items-center text-gray-800 bg-white/70 rounded-lg p-2">
                         <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0" />
-                        <span className="text-xs sm:text-sm font-medium">⚡ Zero Setup Cost</span>
+                        <span className="text-xs sm:text-sm font-medium">Zero Setup Cost</span>
                       </div>
                       <div className="flex items-center text-gray-800 bg-white/70 rounded-lg p-2">
                         <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0" />
-                        <span className="text-xs sm:text-sm font-medium">🔒 100% Payment Security</span>
+                        <span className="text-xs sm:text-sm font-medium">100% Payment Security</span>
                       </div>
                       <div className="flex items-center text-gray-800 bg-white/70 rounded-lg p-2">
                         <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0" />
-                        <span className="text-xs sm:text-sm font-medium">📱 Advanced Tech Dashboard</span>
+                        <span className="text-xs sm:text-sm font-medium">Advanced Tech Dashboard</span>
                       </div>
                       <div className="flex items-center text-gray-800 bg-white/70 rounded-lg p-2">
                         <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0" />
-                        <span className="text-xs sm:text-sm font-medium">🌟 Premium Brand Association</span>
+                        <span className="text-xs sm:text-sm font-medium">Premium Brand Association</span>
                       </div>
                     </div>
                   </div>
@@ -108,7 +108,7 @@ export const BecomePartnerPage: React.FC = () => {
                   <Link to="/app" className="w-full sm:w-auto group">
                     <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 hover:from-green-600 hover:via-emerald-600 hover:to-teal-600 text-white shadow-2xl shadow-green-500/50 text-sm sm:text-base md:text-lg px-8 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 rounded-full transform hover:scale-110 transition-all duration-300 font-bold relative overflow-hidden">
                       <span className="relative z-10 flex items-center justify-center">
-                        🚀 Start Earning Today - FREE
+                        Start Earning Today - FREE
                         <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                       </span>
                       {/* Animated shine effect */}
@@ -118,7 +118,7 @@ export const BecomePartnerPage: React.FC = () => {
                   <a href="tel:+919876543210" className="w-full sm:w-auto">
                     <Button size="lg" variant="outline" className="w-full sm:w-auto border-3 border-green-600 text-green-700 bg-white hover:bg-green-600 hover:text-white text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 rounded-full font-bold shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
                       <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
-                      📞 Call: +91 98765 43210
+                      Call: +91 98765 43210
                     </Button>
                   </a>
                 </div>
@@ -222,8 +222,8 @@ export const BecomePartnerPage: React.FC = () => {
         <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-white to-green-50 relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10 sm:mb-12 md:mb-16">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6" style={{ fontFamily: "'Tenor Sans', serif" }}>
-                Why Top Spas Choose <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-emerald-600">OMBARO</span>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-4 sm:mb-6" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                Why Top Spas Choose <span className="font-normal text-primary-600">OMBARO</span>
               </h2>
               <div className="w-16 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-green-500 to-emerald-600 mx-auto mb-4 sm:mb-6"></div>
               <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-6 sm:mb-8">
@@ -467,7 +467,7 @@ export const BecomePartnerPage: React.FC = () => {
         <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-green-50 to-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10 sm:mb-12 md:mb-16">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6" style={{ fontFamily: "'Tenor Sans', serif" }}>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-4 sm:mb-6" style={{ fontFamily: "'Tenor Sans', serif" }}>
                 Real Partners, Real Success
               </h2>
               <div className="w-16 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-green-500 to-emerald-600 mx-auto mb-4 sm:mb-6"></div>
@@ -528,7 +528,7 @@ export const BecomePartnerPage: React.FC = () => {
         <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-white via-green-50 to-green-100">
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10 sm:mb-12 md:mb-16">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light mb-4 sm:mb-6 text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
                 Start Earning in 3 Simple Steps
               </h2>
               <div className="w-16 sm:w-20 md:w-24 h-1 bg-green-600 mx-auto mb-4 sm:mb-6"></div>
@@ -585,7 +585,7 @@ export const BecomePartnerPage: React.FC = () => {
         <section className="py-12 sm:py-16 md:py-20 bg-white">
           <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10 sm:mb-12 md:mb-16">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 sm:mb-6" style={{ fontFamily: "'Tenor Sans', serif" }}>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-4 sm:mb-6" style={{ fontFamily: "'Tenor Sans', serif" }}>
                 Questions? We've Got Answers
               </h2>
               <div className="w-16 sm:w-20 md:w-24 h-1 bg-green-600 mx-auto"></div>
@@ -652,7 +652,7 @@ export const BecomePartnerPage: React.FC = () => {
             {/* Premium Badge */}
             <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-md rounded-full px-4 sm:px-6 py-2 sm:py-3 mb-6 sm:mb-8 border-2 border-white/30">
               <Crown className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-300 animate-bounce" />
-              <span className="text-sm sm:text-base font-bold tracking-wide">🌟 EXCLUSIVE PARTNERSHIP OPPORTUNITY</span>
+              <span className="text-sm sm:text-base font-bold tracking-wide">EXCLUSIVE PARTNERSHIP OPPORTUNITY</span>
             </div>
 
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight" style={{ fontFamily: "'Tenor Sans', serif" }}>
