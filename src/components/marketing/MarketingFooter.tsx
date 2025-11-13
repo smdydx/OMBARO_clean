@@ -146,6 +146,11 @@ export const MarketingFooter: React.FC = () => {
                   Privacy Policy
                 </Link>
               </li>
+              <li>
+                <Link to="/refund-policy" className="text-xs sm:text-sm text-gray-700 hover:text-emerald-600 transition-colors block py-0.5 sm:py-1">
+                  Refund Policy
+                </Link>
+              </li>
             </ul>
           </div>
         </div>

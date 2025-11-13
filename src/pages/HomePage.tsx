@@ -43,7 +43,8 @@ export const HomePage: React.FC = () => {
     setIsClosing(true);
     setTimeout(() => {
       setShowTermsBanner(false);
-    }, 300);
+      setIsClosing(false);
+    }, 500);
   };
 
   // Auto-close banner after 5 seconds
@@ -163,7 +164,7 @@ export const HomePage: React.FC = () => {
       <main>
         {/* Animated Terms & Conditions Banner - Above hero section */}
         {showTermsBanner && (
-          <div className={`bg-gradient-to-r from-primary-600 to-primary-700 border-b-2 sm:border-b-4 border-primary-800 transition-all duration-300 ${isClosing ? 'opacity-0 -translate-y-full' : 'opacity-100 translate-y-0'}`}>
+          <div className={`bg-gradient-to-r from-primary-600 to-primary-700 border-b-2 sm:border-b-4 border-primary-800 transition-all duration-500 ease-in-out transform ${isClosing ? 'opacity-0 -translate-y-full scale-95' : 'opacity-100 translate-y-0 scale-100'}`}>
             <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-3 sm:py-4">
               <div className="flex items-center justify-between gap-2">
                 <div className="flex items-center space-x-2 flex-1">

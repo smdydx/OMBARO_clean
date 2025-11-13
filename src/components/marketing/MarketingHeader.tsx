@@ -61,23 +61,6 @@ export const MarketingHeader: React.FC = () => {
           </nav>
 
           <div className="hidden lg:flex items-center space-x-2 xl:space-x-3 flex-shrink-0">
-            <Link 
-              to="/terms" 
-              className="group flex items-center space-x-1.5 px-3 py-2 text-gray-700 hover:text-green-600 font-medium transition-all duration-200 hover:bg-emerald-50 rounded-lg"
-              title="Terms & Conditions"
-            >
-              <FileText className="w-4 h-4 group-hover:scale-110 transition-transform flex-shrink-0" />
-              <span className="text-sm whitespace-nowrap">Terms & Conditions</span>
-            </Link>
-            <Link 
-              to="/refund-policy" 
-              className="group flex items-center space-x-1.5 px-3 py-2 text-gray-700 hover:text-green-600 font-medium transition-all duration-200 hover:bg-emerald-50 rounded-lg"
-              title="Refund Policy"
-            >
-              <FileText className="w-4 h-4 group-hover:scale-110 transition-transform flex-shrink-0" />
-              <span className="text-sm whitespace-nowrap">Refund Policy</span>
-            </Link>
-            <div className="h-6 w-px bg-gray-300 mx-1"></div>
             <Link to="/app">
               <button
                 className="px-4 py-2 text-gray-700 hover:text-gray-900 font-medium transition-all duration-200 hover:bg-emerald-50 rounded-full text-sm whitespace-nowrap"
@@ -135,25 +118,6 @@ export const MarketingHeader: React.FC = () => {
                 {link.name}
               </Link>
             ))}
-            <div className="border-t border-gray-200 my-2 sm:my-3"></div>
-            <div className="grid grid-cols-2 gap-2 sm:gap-3">
-              <Link
-                to="/terms"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="flex flex-col items-center justify-center space-y-1.5 px-3 py-3 sm:py-3.5 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-xl transition-all font-medium border border-gray-200 hover:border-emerald-200"
-              >
-                <FileText className="w-5 h-5 sm:w-6 sm:h-6" />
-                <span className="text-xs sm:text-sm text-center">Terms & Conditions</span>
-              </Link>
-              <Link
-                to="/refund-policy"
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="flex flex-col items-center justify-center space-y-1.5 px-3 py-3 sm:py-3.5 text-gray-700 hover:bg-emerald-50 hover:text-emerald-600 rounded-xl transition-all font-medium border border-gray-200 hover:border-emerald-200"
-              >
-                <FileText className="w-5 h-5 sm:w-6 sm:h-6" />
-                <span className="text-xs sm:text-sm text-center">Refund Policy</span>
-              </Link>
-            </div>
             <div className="border-t border-gray-200 my-2 sm:my-3"></div>
             <Link
               to="/app"
