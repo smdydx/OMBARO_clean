@@ -7,7 +7,7 @@ export const PrivacyPage: React.FC = () => {
     <div className="min-h-screen bg-white">
       <MarketingHeader />
 
-      <main className="pt-16">
+      <main>
         <section className="bg-gradient-to-br from-green-50 via-purple-50 to-pink-50 py-20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-6">

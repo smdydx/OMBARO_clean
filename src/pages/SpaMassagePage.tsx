@@ -120,7 +120,7 @@ export const SpaMassagePage: React.FC = () => {
     <div className="min-h-screen bg-white">
       <MarketingHeader />
 
-      <main className="pt-16">
+      <main>
         <section className="relative py-20 bg-gradient-to-br from-emerald-600 via-teal-600 to-green-600 overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1920&q=90')] bg-cover bg-center opacity-30" />
           <div className="absolute inset-0 bg-gradient-to-b from-emerald-900/60 via-transparent to-teal-900/60" />

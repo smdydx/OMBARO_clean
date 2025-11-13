@@ -259,7 +259,7 @@ export const TermsPage: React.FC = () => {
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-green-50">
       <MarketingHeader />
 
-      <main className="pt-16">
+      <main>
         {/* Critical Notice Banner */}
         
 

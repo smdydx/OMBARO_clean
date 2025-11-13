@@ -120,7 +120,7 @@ export const BridalMakeupPage: React.FC = () => {
     <div className="min-h-screen bg-white">
       <MarketingHeader />
 
-      <main className="pt-16">
+      <main>
         <section className="relative py-20 bg-gradient-to-br from-pink-600 via-rose-600 to-red-600 text-white overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1920&q=90')] bg-cover bg-center opacity-20" />
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

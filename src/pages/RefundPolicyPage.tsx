@@ -134,7 +134,7 @@ export const RefundPolicyPage: React.FC = () => {
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-green-50">
       <MarketingHeader />
 
-      <main className="pt-16">
+      <main>
         {/* Hero Section */}
         <section className="relative py-16 sm:py-20 md:py-24 bg-gradient-to-br from-primary-600 via-primary-700 to-black text-white overflow-hidden">
           {/* Animated Water Wave - Top */}

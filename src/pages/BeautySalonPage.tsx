@@ -120,7 +120,7 @@ export const BeautySalonPage: React.FC = () => {
     <div className="min-h-screen bg-white">
       <MarketingHeader />
 
-      <main className="pt-16">
+      <main>
         <section className="relative py-20 bg-gradient-to-br from-rose-600 via-pink-600 to-fuchsia-600 overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1562322140-8baeececf3df?w=1920&q=90')] bg-cover bg-center opacity-30" />
           <div className="absolute inset-0 bg-gradient-to-b from-rose-900/60 via-transparent to-pink-900/60" />
