@@ -218,6 +218,109 @@ export const BecomePartnerPage: React.FC = () => {
           </div>
         </section>
 
+        {/* Horizontal Scrolling Image Carousel - Similar to Webflow Design */}
+        <section className="py-8 sm:py-12 md:py-16 bg-white overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-6 sm:mb-8">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 text-center" style={{ fontFamily: "'Tenor Sans', serif" }}>
+              Partner <span className="text-green-600 font-normal">Success Gallery</span>
+            </h2>
+            <p className="text-center text-gray-600 mt-2 sm:mt-3 text-sm sm:text-base">Our thriving wellness partner network</p>
+          </div>
+
+          {/* Infinite Horizontal Scroll Animation */}
+          <div className="relative">
+            {/* First Row - Left to Right */}
+            <div className="flex gap-4 sm:gap-6 mb-4 sm:mb-6 animate-scroll-left">
+              <div className="flex gap-4 sm:gap-6 flex-shrink-0">
+                {[
+                  '/images/luxury_spa_treatment_ef5ecb59.jpg',
+                  '/images/professional_beauty__6992f974.jpg',
+                  '/images/spa_massage_therapy__22ac4be9.jpg',
+                  '/images/elegant_spa_interior_b93a48aa.jpg',
+                  '/images/premium_wellness_spa_05199f74.jpg',
+                  '/images/beauty_treatment_sal_bed4837c.jpg'
+                ].map((img, idx) => (
+                  <div key={idx} className="relative group flex-shrink-0">
+                    <div className="w-[280px] sm:w-[320px] md:w-[380px] h-[200px] sm:h-[240px] md:h-[280px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl">
+                      <img 
+                        src={img} 
+                        alt={`Partner Success ${idx + 1}`}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                  </div>
+                ))}
+                {/* Duplicate for seamless loop */}
+                {[
+                  '/images/luxury_spa_treatment_ef5ecb59.jpg',
+                  '/images/professional_beauty__6992f974.jpg',
+                  '/images/spa_massage_therapy__22ac4be9.jpg',
+                  '/images/elegant_spa_interior_b93a48aa.jpg',
+                  '/images/premium_wellness_spa_05199f74.jpg',
+                  '/images/beauty_treatment_sal_bed4837c.jpg'
+                ].map((img, idx) => (
+                  <div key={`dup-${idx}`} className="relative group flex-shrink-0">
+                    <div className="w-[280px] sm:w-[320px] md:w-[380px] h-[200px] sm:h-[240px] md:h-[280px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl">
+                      <img 
+                        src={img} 
+                        alt={`Partner Success ${idx + 1}`}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Second Row - Right to Left */}
+            <div className="flex gap-4 sm:gap-6 animate-scroll-right">
+              <div className="flex gap-4 sm:gap-6 flex-shrink-0">
+                {[
+                  '/images/luxury_spa_reception_05371daf.jpg',
+                  '/images/spa_treatment_room_i_609c3288.jpg',
+                  '/images/beauty_salon_facial__29de6e5b.jpg',
+                  '/images/spa_business_growth__be25d321.jpg',
+                  '/images/luxury_spa_massage_t_2767ba26.jpg',
+                  '/images/spa_treatment_room_i_79626365.jpg'
+                ].map((img, idx) => (
+                  <div key={idx} className="relative group flex-shrink-0">
+                    <div className="w-[280px] sm:w-[320px] md:w-[380px] h-[200px] sm:h-[240px] md:h-[280px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl">
+                      <img 
+                        src={img} 
+                        alt={`Partner Gallery ${idx + 1}`}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                  </div>
+                ))}
+                {/* Duplicate for seamless loop */}
+                {[
+                  '/images/luxury_spa_reception_05371daf.jpg',
+                  '/images/spa_treatment_room_i_609c3288.jpg',
+                  '/images/beauty_salon_facial__29de6e5b.jpg',
+                  '/images/spa_business_growth__be25d321.jpg',
+                  '/images/luxury_spa_massage_t_2767ba26.jpg',
+                  '/images/spa_treatment_room_i_79626365.jpg'
+                ].map((img, idx) => (
+                  <div key={`dup-${idx}`} className="relative group flex-shrink-0">
+                    <div className="w-[280px] sm:w-[320px] md:w-[380px] h-[200px] sm:h-[240px] md:h-[280px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl">
+                      <img 
+                        src={img} 
+                        alt={`Partner Gallery ${idx + 1}`}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Exclusive Benefits Section */}
         <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-white to-green-50 relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
