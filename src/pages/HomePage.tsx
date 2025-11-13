@@ -46,6 +46,17 @@ export const HomePage: React.FC = () => {
     }, 300);
   };
 
+  // Auto-close banner after 5 seconds
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (showTermsBanner) {
+        handleCloseBanner();
+      }
+    }, 5000);
+    return () => clearTimeout(timer);
+  }, [showTermsBanner]);
+
+
   const handleOpenTermsModal = () => {
     setShowTermsModal(true);
   };
@@ -155,20 +166,20 @@ export const HomePage: React.FC = () => {
           <div className={`bg-gradient-to-r from-primary-600 to-primary-700 border-b-2 sm:border-b-4 border-primary-800 transition-all duration-300 ${isClosing ? 'opacity-0 -translate-y-full' : 'opacity-100 translate-y-0'}`}>
             <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-3 sm:py-4">
               <div className="flex items-center justify-between gap-2">
-                <div className="flex items-center space-x-2 text-white flex-1">
-                  <Shield className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0" />
-                  <p className="text-xs sm:text-sm md:text-base font-semibold">
+                <div className="flex items-center space-x-2 flex-1">
+                  <Shield className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 text-white" />
+                  <p className="text-xs sm:text-sm md:text-base font-semibold text-white">
                     Please read our{' '}
                     <button
                       onClick={handleOpenTermsModal}
-                      className="underline font-bold hover:text-white/90 transition-colors cursor-pointer"
+                      className="underline font-bold hover:text-white/90 transition-colors cursor-pointer text-white"
                       type="button"
                     >
                       Terms & Conditions
                     </button>
                     {' '}before booking
                   </p>
-                  <Shield className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 hidden sm:block" />
+                  <Shield className="w-5 h-5 sm:w-6 sm:h-6 flex-shrink-0 hidden sm:block text-white" />
                 </div>
                 <button
                   onClick={handleCloseBanner}
@@ -176,7 +187,7 @@ export const HomePage: React.FC = () => {
                   aria-label="Close banner"
                   type="button"
                 >
-                  <X className="w-5 h-5 text-white" />
+                  <X className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                 </button>
               </div>
             </div>
@@ -211,7 +222,7 @@ export const HomePage: React.FC = () => {
                 <div className="relative p-4 bg-gradient-to-br from-white via-gray-50 to-gray-100 rounded-3xl shadow-2xl">
                   <div className="absolute inset-0 rounded-3xl border-8 border-white shadow-inner"></div>
                   <div className="absolute inset-2 rounded-2xl border-4 border-amber-100/50"></div>
-                  
+
                   <div className="relative rounded-2xl overflow-hidden shadow-xl">
                     <img 
                       src="/images/beauty_salon_facial__338eb5d5.jpg"
@@ -264,7 +275,7 @@ export const HomePage: React.FC = () => {
                   {/* Painted Frame Border */}
                   <div className="absolute inset-0 rounded-3xl border-8 border-white shadow-inner"></div>
                   <div className="absolute inset-2 rounded-2xl border-4 border-amber-100/50"></div>
-                  
+
                   <img
                     src={services[0].image}
                     alt={services[0].title}
@@ -320,7 +331,7 @@ export const HomePage: React.FC = () => {
                     {/* Painted Frame Border */}
                     <div className="absolute inset-0 rounded-3xl border-8 border-white shadow-inner"></div>
                     <div className="absolute inset-2 rounded-2xl border-4 border-amber-100/50"></div>
-                    
+
                     <img
                       src={service.image}
                       alt={service.title}
@@ -388,7 +399,7 @@ export const HomePage: React.FC = () => {
                       <div className="absolute inset-0 rounded-3xl border-6 border-white shadow-inner"></div>
                       <div className="absolute inset-2 rounded-2xl border-3 border-amber-100/40"></div>
                     </div>
-                    
+
                     <div className="relative h-80 m-3 rounded-2xl overflow-hidden">
                       <img
                         src={category.image}
