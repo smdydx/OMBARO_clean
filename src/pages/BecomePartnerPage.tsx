@@ -15,9 +15,9 @@ export const BecomePartnerPage: React.FC = () => {
     <div className="min-h-screen bg-white">
       <MarketingHeader />
 
-      <main className="pt-20 sm:pt-24 md:pt-28">
+      <main className="pt-0">
         {/* Premium Hero Section - Enhanced Attractive Design */}
-        <section className="relative min-h-[500px] sm:min-h-[600px] md:min-h-[700px] lg:min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50">
+        <section className="relative min-h-[500px] sm:min-h-[600px] md:min-h-[700px] lg:min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 mt-20 sm:mt-24 md:mt-28">
           {/* Animated Background Elements */}
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute top-0 left-0 w-48 h-48 sm:w-64 sm:h-64 md:w-96 md:h-96 bg-gradient-to-br from-green-300 to-emerald-400 rounded-full blur-3xl opacity-30 animate-pulse"></div>
@@ -243,7 +243,7 @@ export const BecomePartnerPage: React.FC = () => {
                     '/images/beauty_treatment_sal_bed4837c.jpg'
                   ].map((img, idx) => (
                     <div key={`row1-${setIndex}-${idx}`} className="relative group flex-shrink-0">
-                      <div className="w-[280px] sm:w-[320px] md:w-[380px] h-[200px] sm:h-[240px] md:h-[280px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border-4 border-white/80">
+                      <div className="w-[280px] sm:w-[320px] md:w-[380px] h-[200px] sm:h-[240px] md:h-[280px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-[6px] border-white/90 ring-2 ring-green-200/50">
                         <img 
                           src={img} 
                           alt={`Partner Success ${idx + 1}`}
@@ -275,7 +275,7 @@ export const BecomePartnerPage: React.FC = () => {
                     '/images/spa_treatment_room_i_79626365.jpg'
                   ].map((img, idx) => (
                     <div key={`row2-${setIndex}-${idx}`} className="relative group flex-shrink-0">
-                      <div className="w-[280px] sm:w-[320px] md:w-[380px] h-[200px] sm:h-[240px] md:h-[280px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl border-4 border-white/80">
+                      <div className="w-[280px] sm:w-[320px] md:w-[380px] h-[200px] sm:h-[240px] md:h-[280px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border-[6px] border-white/90 ring-2 ring-green-200/50">
                         <img 
                           src={img} 
                           alt={`Partner Gallery ${idx + 1}`}

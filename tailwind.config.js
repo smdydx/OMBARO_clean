@@ -1,4 +1,3 @@
-
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
@@ -95,6 +94,8 @@ export default {
         'bounce-subtle': 'bounceSubtle 2s infinite',
         'float': 'float 3s ease-in-out infinite',
         'shimmer': 'shimmer 2s infinite',
+        'scroll-left': 'scroll-left 25s linear infinite',
+        'scroll-right': 'scroll-right 25s linear infinite',
       },
       keyframes: {
         fadeIn: {

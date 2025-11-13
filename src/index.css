@@ -47,7 +47,7 @@
   animation: shine 2s infinite;
 }
 
-/* Infinite Horizontal Scroll Animations - Enhanced Webflow Style */
+/* Infinite Horizontal Scroll Animations - Enhanced Webflow Style - Faster */
 @keyframes scroll-left {
   0% {
     transform: translateX(0);
