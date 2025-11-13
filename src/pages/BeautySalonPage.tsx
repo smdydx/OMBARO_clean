@@ -121,16 +121,16 @@ export const BeautySalonPage: React.FC = () => {
       <MarketingHeader />
 
       <main>
-        <section className="relative py-20 bg-gradient-to-br from-rose-600 via-pink-600 to-fuchsia-600 overflow-hidden">
+        <section className="relative py-20 bg-gradient-to-br from-green-600 via-emerald-600 to-teal-600 overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1562322140-8baeececf3df?w=1920&q=90')] bg-cover bg-center opacity-30" />
-          <div className="absolute inset-0 bg-gradient-to-b from-rose-900/60 via-transparent to-pink-900/60" />
+          <div className="absolute inset-0 bg-gradient-to-b from-green-900/60 via-transparent to-emerald-900/60" />
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-3xl">
               <div className="inline-flex items-center space-x-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
-                <Scissors className="w-4 h-4 text-amber-300" />
+                <Scissors className="w-4 h-4 text-green-300" />
                 <span className="text-white text-sm font-medium">India's Largest Salon Network</span>
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
                 Beauty Salon Services
               </h1>
               <p className="text-xl mb-8 text-white/90 leading-relaxed">
@@ -139,7 +139,7 @@ export const BeautySalonPage: React.FC = () => {
                 Compare services, read reviews, and transform your look with confidence.
               </p>
               <Link to="/app">
-                <Button size="lg" className="bg-white text-rose-600 hover:bg-neutral-100">
+                <Button size="lg" className="bg-white text-green-600 hover:bg-neutral-100">
                   Find Salons Near You
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
@@ -163,11 +163,11 @@ export const BeautySalonPage: React.FC = () => {
               {services.map((service, index) => (
                 <div
                   key={index}
-                  className="bg-white rounded-2xl p-6 border-2 border-neutral-200 hover:border-rose-500 hover:shadow-xl transition-all duration-300"
+                  className="bg-white rounded-2xl p-6 border-2 border-neutral-200 hover:border-green-500 hover:shadow-xl transition-all duration-300"
                 >
                   <div className="flex items-center space-x-2 mb-3">
-                    <div className="w-10 h-10 rounded-full bg-rose-100 flex items-center justify-center">
-                      <CheckCircle className="w-5 h-5 text-rose-600" />
+                    <div className="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center">
+                      <CheckCircle className="w-5 h-5 text-green-600" />
                     </div>
                     <h3 className="text-xl font-bold text-neutral-900">{service.name}</h3>
                   </div>
@@ -178,7 +178,7 @@ export const BeautySalonPage: React.FC = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-gradient-to-br from-rose-50 to-pink-50">
+        <section className="py-20 bg-gradient-to-br from-green-50 to-emerald-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-neutral-900 mb-4">
@@ -195,8 +195,8 @@ export const BeautySalonPage: React.FC = () => {
                   key={index}
                   className="bg-white rounded-2xl p-6 shadow-soft hover:shadow-strong transition-all duration-300"
                 >
-                  <div className="w-12 h-12 rounded-full bg-rose-100 flex items-center justify-center mb-4">
-                    <feature.icon className="w-6 h-6 text-rose-600" />
+                  <div className="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center mb-4">
+                    <feature.icon className="w-6 h-6 text-green-600" />
                   </div>
                   <h3 className="text-xl font-bold text-neutral-900 mb-2">{feature.title}</h3>
                   <p className="text-neutral-600 leading-relaxed">{feature.description}</p>
@@ -221,7 +221,7 @@ export const BeautySalonPage: React.FC = () => {
               {salonTypes.map((type, index) => (
                 <div
                   key={index}
-                  className="bg-gradient-to-br from-white to-rose-50 rounded-2xl p-6 border-2 border-rose-200 hover:border-rose-400 hover:shadow-xl transition-all duration-300"
+                  className="bg-gradient-to-br from-white to-green-50 rounded-2xl p-6 border-2 border-green-200 hover:border-green-400 hover:shadow-xl transition-all duration-300"
                 >
                   <h3 className="text-xl font-bold text-neutral-900 mb-3">{type.title}</h3>
                   <p className="text-neutral-600 leading-relaxed">{type.description}</p>
@@ -245,7 +245,7 @@ export const BeautySalonPage: React.FC = () => {
                 <div className="space-y-3">
                   {benefits.map((benefit, index) => (
                     <div key={index} className="flex items-start space-x-3">
-                      <CheckCircle className="w-5 h-5 text-rose-600 flex-shrink-0 mt-0.5" />
+                      <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
                       <span className="text-neutral-700">{benefit}</span>
                     </div>
                   ))}
@@ -258,7 +258,7 @@ export const BeautySalonPage: React.FC = () => {
                   className="rounded-2xl shadow-xl"
                 />
                 <div className="absolute -bottom-6 -right-6 bg-white rounded-2xl p-6 shadow-strong">
-                  <div className="text-4xl font-bold text-rose-600 mb-1">5,000+</div>
+                  <div className="text-4xl font-bold text-green-600 mb-1">5,000+</div>
                   <div className="text-sm text-neutral-600">Beauty Salons<br />Nationwide</div>
                 </div>
               </div>
@@ -266,9 +266,9 @@ export const BeautySalonPage: React.FC = () => {
           </div>
         </section>
 
-        <section className="py-20 bg-gradient-to-br from-rose-600 to-pink-600 text-white">
+        <section className="py-20 bg-gradient-to-br from-green-600 to-emerald-600 text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <Scissors className="w-16 h-16 mx-auto mb-6 text-amber-300" />
+            <Scissors className="w-16 h-16 mx-auto mb-6 text-green-300" />
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
               Ready for Your Beauty Transformation?
             </h2>
@@ -278,7 +278,7 @@ export const BeautySalonPage: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/app">
-                <button className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center">
+                <button className="bg-white hover:bg-neutral-100 text-green-600 px-8 py-3 rounded-full text-sm font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center">
                   Book Salon Service
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </button>
