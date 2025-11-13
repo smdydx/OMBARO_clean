@@ -41,7 +41,7 @@ export const MarketingHeader: React.FC = () => {
                 <img
                   src="/ombaro-logo-new.png"
                   alt="OMBARO"
-                  className="h-8 sm:h-9 lg:h-12 xl:h-16 w-auto object-contain transition-all duration-300 group-hover:scale-105"
+                  className="h-10 sm:h-11 lg:h-12 xl:h-16 w-auto object-contain transition-all duration-300 group-hover:scale-105"
                 />
               </div>
             </Link>
@@ -101,41 +101,33 @@ export const MarketingHeader: React.FC = () => {
           />
         )}
 
-        {/* Mobile Menu - Professional MNC Style */}
+        {/* Mobile Menu - Professional Clean Design */}
       {isMobileMenuOpen && (
         <div className="lg:hidden fixed inset-0 top-16 z-40 bg-white">
           {/* Menu Content */}
-          <div className="h-full overflow-y-auto bg-gradient-to-b from-white via-gray-50/50 to-white">
+          <div className="h-full overflow-y-auto bg-white">
             {/* Navigation Section */}
-            <nav className="px-4 py-4 space-y-0.5">
+            <nav className="px-5 py-6 space-y-1">
               {navLinks.map((link, index) => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className="flex items-center justify-between px-4 py-3.5 text-gray-700 hover:bg-green-50 active:bg-green-100 rounded-lg transition-all duration-150 group"
+                  className="block px-5 py-4 text-gray-800 hover:bg-green-50 active:bg-green-100 rounded-xl transition-all duration-200 group border-b border-gray-100 last:border-b-0"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
-                  <span className="font-medium text-[15px] group-hover:text-green-600 transition-colors">{link.name}</span>
-                  <svg 
-                    className="w-5 h-5 text-gray-400 group-hover:text-green-600 group-hover:translate-x-0.5 transition-all" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+                  <span className="font-semibold text-base group-hover:text-green-600 transition-colors">{link.name}</span>
                 </Link>
               ))}
             </nav>
 
             {/* Divider */}
-            <div className="h-2 bg-gradient-to-r from-transparent via-gray-200 to-transparent my-3 mx-4"></div>
+            <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent my-4 mx-5"></div>
 
             {/* Action Buttons Section */}
-            <div className="px-4 pb-6 space-y-3">
+            <div className="px-5 pb-8 space-y-3">
               <Link
                 to="/vendor/quick-signup"
-                className="flex items-center justify-center gap-2 px-5 py-3.5 bg-white text-green-600 border-2 border-green-500 hover:bg-green-50 active:bg-green-100 rounded-lg transition-all duration-150 font-semibold text-[15px] shadow-sm"
+                className="flex items-center justify-center gap-2.5 px-6 py-4 bg-white text-green-600 border-2 border-green-500 hover:bg-green-50 active:bg-green-100 rounded-xl transition-all duration-200 font-bold text-base shadow-sm hover:shadow-md"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -146,7 +138,7 @@ export const MarketingHeader: React.FC = () => {
 
               <Link
                 to="/auth"
-                className="flex items-center justify-center gap-2 px-5 py-3.5 bg-gradient-to-r from-green-500 to-green-600 text-white hover:from-green-600 hover:to-green-700 active:from-green-700 active:to-green-800 rounded-lg transition-all duration-150 font-semibold text-[15px] shadow-md"
+                className="flex items-center justify-center gap-2.5 px-6 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white hover:from-green-600 hover:to-green-700 active:from-green-700 active:to-green-800 rounded-xl transition-all duration-200 font-bold text-base shadow-lg hover:shadow-xl"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -154,16 +146,6 @@ export const MarketingHeader: React.FC = () => {
                 </svg>
                 <span>Login / Sign Up</span>
               </Link>
-            </div>
-
-            {/* Professional Footer */}
-            <div className="px-4 py-4 text-center border-t border-gray-200 mt-4">
-              <p className="text-xs text-gray-600 font-medium">
-                © 2024 OMBARO. All rights reserved.
-              </p>
-              <p className="text-[11px] text-gray-500 mt-0.5">
-                Professional Wellness Solutions
-              </p>
             </div>
           </div>
         </div>
