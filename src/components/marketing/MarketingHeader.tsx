@@ -101,40 +101,80 @@ export const MarketingHeader: React.FC = () => {
           />
         )}
 
-        {/* Mobile Menu */}
-        <div
-          className={`fixed top-20 sm:top-24 md:top-28 right-0 left-0 bg-white border-b border-emerald-200 shadow-2xl z-40 lg:hidden transform transition-all duration-300 ease-in-out overflow-y-auto max-h-[calc(100vh-5rem)] ${
-            isMobileMenuOpen ? 'translate-y-0 opacity-100' : '-translate-y-full opacity-0 pointer-events-none'
-          }`}
-        >
-          <nav className="flex flex-col p-4 sm:p-6 space-y-2 sm:space-y-3 bg-white">
-            {navLinks.map((link) => (
+        {/* Mobile Menu - Professional MNC Style */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden fixed inset-0 top-16 z-40 bg-white shadow-2xl">
+          {/* Overlay backdrop */}
+          <div className="absolute inset-0 bg-gradient-to-b from-gray-50 to-white"></div>
+
+          {/* Menu Content */}
+          <div className="relative h-full overflow-y-auto">
+            <div className="px-6 py-6 space-y-1">
+              {/* Navigation Links */}
+              {navLinks.map((link, index) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className="block px-5 py-3.5 text-gray-800 hover:bg-gradient-to-r hover:from-primary-50 hover:to-transparent rounded-xl transition-all duration-200 font-medium text-base border-b border-gray-100 hover:border-primary-200 group"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  style={{ animationDelay: `${index * 50}ms` }}
+                >
+                  <div className="flex items-center justify-between">
+                    <span className="group-hover:text-primary-600 transition-colors">{link.name}</span>
+                    <svg 
+                      className="w-5 h-5 text-gray-400 group-hover:text-primary-600 group-hover:translate-x-1 transition-all" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </div>
+                </Link>
+              ))}
+            </div>
+
+            {/* Action Buttons Section */}
+            <div className="px-6 pb-8 pt-4 space-y-3 border-t border-gray-200 mt-4 bg-gradient-to-b from-gray-50 to-white">
               <Link
-                key={link.path}
-                to={link.path}
+                to="/vendor/quick-signup"
+                className="block px-6 py-4 text-primary-600 bg-white hover:bg-primary-50 rounded-xl transition-all duration-200 font-semibold text-center border-2 border-primary-200 hover:border-primary-300 shadow-sm hover:shadow-md"
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="px-4 sm:px-5 py-3 sm:py-3.5 text-gray-800 hover:bg-emerald-50 hover:text-emerald-700 rounded-xl transition-all font-medium border border-gray-100 hover:border-emerald-300"
               >
-                {link.name}
+                <div className="flex items-center justify-center space-x-2">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <span>Become a Partner</span>
+                </div>
               </Link>
-            ))}
-            <div className="border-t border-emerald-200 my-2 sm:my-3"></div>
-            <Link
-              to="/app"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="px-4 sm:px-5 py-3 sm:py-3.5 text-gray-800 hover:bg-emerald-50 hover:text-emerald-700 rounded-xl transition-all font-medium border border-gray-100 hover:border-emerald-300 text-center"
-            >
-              Login
-            </Link>
-            <Link
-              to="/app"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="px-4 sm:px-5 py-3 sm:py-3.5 bg-gradient-to-r from-green-500 to-green-600 text-white rounded-xl hover:from-green-600 hover:to-green-700 transition-all shadow-lg text-center font-semibold"
-            >
-              Get Started
-            </Link>
-          </nav>
+
+              <Link
+                to="/auth"
+                className="block px-6 py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white hover:from-primary-700 hover:to-primary-800 rounded-xl transition-all duration-200 text-center font-semibold shadow-lg hover:shadow-xl transform hover:scale-[1.02]"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                <div className="flex items-center justify-center space-x-2">
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
+                  </svg>
+                  <span>Login / Sign Up</span>
+                </div>
+              </Link>
+            </div>
+
+            {/* Professional Footer */}
+            <div className="px-6 pb-6 pt-4 text-center border-t border-gray-200">
+              <p className="text-xs text-gray-500 font-medium">
+                © 2024 OMBARO. All rights reserved.
+              </p>
+              <p className="text-xs text-gray-400 mt-1">
+                Professional Wellness Solutions
+              </p>
+            </div>
+          </div>
         </div>
+      )}
 
         </div>
     </header>
