@@ -26,11 +26,6 @@ export default defineConfig({
     },
   },
   build: {
-    target: 'es2020',
-    outDir: 'dist',
-    chunkSizeWarningLimit: 1000,
-    minify: 'esbuild',
-    sourcemap: false,
     rollupOptions: {
       output: {
         manualChunks: {
@@ -38,12 +33,12 @@ export default defineConfig({
           'ui-vendor': ['lucide-react', 'react-slick', 'slick-carousel'],
         },
         assetFileNames: (assetInfo) => {
-          if (!assetInfo.name) return `assets/[name]-[hash][extname]`;
           const info = assetInfo.name.split('.');
           const ext = info[info.length - 1];
-          if (/png|jpe?g|svg|gif|tiff|bmp|ico/i.test(ext)) {
+          if (/png|jpe?g|svg|gif|tiff|bmp|ico|webp/i.test(ext)) {
             return `assets/images/[name]-[hash][extname]`;
-          } else if (/woff|woff2|eot|ttf|otf/i.test(ext)) {
+          }
+          if (/woff|woff2|eot|ttf|otf/i.test(ext)) {
             return `assets/fonts/[name]-[hash][extname]`;
           }
           return `assets/[name]-[hash][extname]`;
@@ -52,5 +47,17 @@ export default defineConfig({
         entryFileNames: 'assets/js/[name]-[hash].js',
       },
     },
+    assetsInlineLimit: 4096,
+    cssCodeSplit: true,
+    sourcemap: false,
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+      },
+    },
   },
+  publicDir: 'public',
+  assetsInclude: ['**/*.jpg', '**/*.jpeg', '**/*.png', '**/*.svg', '**/*.gif', '**/*.webp'],
 });
