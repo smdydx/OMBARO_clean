@@ -17,7 +17,7 @@ export const BecomePartnerPage: React.FC = () => {
 
       <main className="pt-0">
         {/* Premium Hero Section - Enhanced Attractive Design */}
-        <section className="relative min-h-[500px] sm:min-h-[600px] md:min-h-[700px] lg:min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 pt-20 sm:pt-24 md:pt-28">
+        <section className="relative min-h-[500px] sm:min-h-[600px] md:min-h-[700px] lg:min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 pt-16 sm:pt-18 md:pt-20">
           {/* Animated Background Elements */}
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute top-0 left-0 w-48 h-48 sm:w-64 sm:h-64 md:w-96 md:h-96 bg-gradient-to-br from-green-300 to-emerald-400 rounded-full blur-3xl opacity-30 animate-pulse"></div>
@@ -637,39 +637,76 @@ export const BecomePartnerPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Final CTA */}
-        <section className="py-16 sm:py-20 md:py-24 bg-gradient-to-br from-green-500 via-green-600 to-green-700 text-white relative overflow-hidden">
-          <div className="absolute inset-0 opacity-10">
-            <div className="absolute top-0 left-0 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-white rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-0 right-0 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-white rounded-full blur-3xl animate-pulse delay-1000"></div>
+        {/* Final CTA - Enhanced Attractive Green Design */}
+        <section className="relative py-16 sm:py-20 md:py-24 lg:py-28 bg-gradient-to-br from-green-400 via-emerald-500 to-teal-600 text-white overflow-hidden">
+          {/* Animated Background Elements */}
+          <div className="absolute inset-0">
+            <div className="absolute top-0 left-0 w-64 sm:w-96 md:w-[500px] h-64 sm:h-96 md:h-[500px] bg-white/20 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute bottom-0 right-0 w-64 sm:w-96 md:w-[500px] h-64 sm:h-96 md:h-[500px] bg-white/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 sm:w-72 md:w-96 h-48 sm:h-72 md:h-96 bg-yellow-300/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+            {/* Decorative Grid Pattern */}
+            <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSA2MCAwIEwgMCAwIDAgNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgyNTUsIDI1NSwgMjU1LCAwLjA1KSIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] opacity-40"></div>
           </div>
 
-          <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6" style={{ fontFamily: "'Tenor Sans', serif" }}>
-              Ready to Grow Your Business?
+          <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            {/* Premium Badge */}
+            <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-md rounded-full px-4 sm:px-6 py-2 sm:py-3 mb-6 sm:mb-8 border-2 border-white/30">
+              <Crown className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-300 animate-bounce" />
+              <span className="text-sm sm:text-base font-bold tracking-wide">🌟 EXCLUSIVE PARTNERSHIP OPPORTUNITY</span>
+            </div>
+
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight" style={{ fontFamily: "'Tenor Sans', serif" }}>
+              Ready to Grow Your<br className="hidden sm:block" />
+              <span className="text-yellow-300 drop-shadow-2xl">Business Empire?</span>
             </h2>
-            <p className="text-lg sm:text-xl md:text-2xl mb-6 sm:mb-8 text-white/95">
+            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl mb-8 sm:mb-10 text-white font-semibold drop-shadow-lg">
               Join OMBARO's trusted wellness platform today
             </p>
 
-            <div className="bg-white/10 backdrop-blur-md border-2 border-white/30 rounded-2xl sm:rounded-3xl p-6 sm:p-8 mb-8 sm:mb-10 max-w-2xl mx-auto">
-              <h3 className="text-lg sm:text-xl md:text-2xl font-bold mb-4 sm:mb-6">Partnership Benefits:</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4 text-left">
-                <div className="flex items-start space-x-2 sm:space-x-3">
-                  <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-green-300 flex-shrink-0 mt-0.5 sm:mt-1" />
-                  <span className="text-sm sm:text-base">Simple onboarding process</span>
+            {/* Enhanced Benefits Card */}
+            <div className="bg-white/20 backdrop-blur-xl border-2 border-white/40 rounded-3xl sm:rounded-[2rem] p-6 sm:p-8 md:p-10 mb-10 sm:mb-12 max-w-3xl mx-auto shadow-2xl">
+              <div className="flex items-center justify-center mb-6 sm:mb-8">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white/30 rounded-full flex items-center justify-center mr-3 sm:mr-4">
+                  <Gift className="w-6 h-6 sm:w-8 sm:h-8 text-white" />
                 </div>
-                <div className="flex items-start space-x-2 sm:space-x-3">
-                  <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-green-300 flex-shrink-0 mt-0.5 sm:mt-1" />
-                  <span className="text-sm sm:text-base">Verified customer base</span>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold">Partnership Benefits</h3>
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5 text-left">
+                <div className="flex items-start space-x-3 bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl p-3 sm:p-4 border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-400/30 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-base sm:text-lg font-bold mb-1">Quick Onboarding</div>
+                    <div className="text-xs sm:text-sm text-white/90">Get started in 24 hours</div>
+                  </div>
                 </div>
-                <div className="flex items-start space-x-2 sm:space-x-3">
-                  <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-green-300 flex-shrink-0 mt-0.5 sm:mt-1" />
-                  <span className="text-sm sm:text-base">Secure payment system</span>
+                <div className="flex items-start space-x-3 bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl p-3 sm:p-4 border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-400/30 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-base sm:text-lg font-bold mb-1">50,000+ Customers</div>
+                    <div className="text-xs sm:text-sm text-white/90">Ready to book your services</div>
+                  </div>
                 </div>
-                <div className="flex items-start space-x-2 sm:space-x-3">
-                  <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-green-300 flex-shrink-0 mt-0.5 sm:mt-1" />
-                  <span className="text-sm sm:text-base">Platform support</span>
+                <div className="flex items-start space-x-3 bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl p-3 sm:p-4 border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-400/30 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-base sm:text-lg font-bold mb-1">Instant Payments</div>
+                    <div className="text-xs sm:text-sm text-white/90">Secure & guaranteed payouts</div>
+                  </div>
+                </div>
+                <div className="flex items-start space-x-3 bg-white/10 backdrop-blur-sm rounded-xl sm:rounded-2xl p-3 sm:p-4 border border-white/20 hover:bg-white/20 transition-all duration-300 group">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-green-400/30 rounded-full flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                    <CheckCircle className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                  </div>
+                  <div>
+                    <div className="text-base sm:text-lg font-bold mb-1">24/7 Support</div>
+                    <div className="text-xs sm:text-sm text-white/90">Dedicated partner success team</div>
+                  </div>
                 </div>
               </div>
             </div>
