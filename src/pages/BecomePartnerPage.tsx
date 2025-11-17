@@ -83,29 +83,23 @@ export const BecomePartnerPage: React.FC = () => {
                   className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light mb-3 sm:mb-4 md:mb-6 leading-tight text-gray-900"
                   style={{ fontFamily: "'Tenor Sans', serif" }}
                 >
-                  India's #1 Platform to
+                  Partner with OMBARO
                   <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 animate-gradient">
-                    Grow Your Wellness Empire
+                    at 0% commission for 1st month!
                   </span>
                 </h1>
 
                 <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-3 sm:mb-4 text-gray-700 leading-relaxed">
-                  Join 500+ Successful Partners Earning{" "}
+                  Join thousands of successful wellness businesses growing their revenue by{" "}
                   <span className="text-green-600 font-bold">
-                    ₹5-15 Lakhs Monthly
+                    3X
                   </span>
+                  {" "}with more customers than traditional methods.
                 </p>
 
                 <p className="text-sm sm:text-base md:text-lg mb-4 sm:mb-6 md:mb-8 text-gray-700 leading-relaxed">
-                  Whether you own a{" "}
-                  <strong className="text-green-600">
-                    luxury spa chain, beauty salon network, wellness center
-                  </strong>
-                  , or manage{" "}
-                  <strong className="text-green-600">multiple locations</strong>{" "}
-                  - OMBARO's aggregator platform helps you scale faster, earn
-                  more, and reach millions of customers across India.
+                  Stop relying only on walk-ins and word-of-mouth. Our aggregator platform brings you qualified customers actively searching for your services.
                 </p>
 
                 {/* Premium Benefits with Gradient Background */}
@@ -117,44 +111,44 @@ export const BecomePartnerPage: React.FC = () => {
                     <h3 className="text-gray-900 font-bold text-base sm:text-lg mb-3 sm:mb-4 flex items-center">
                       <Gift className="w-5 h-5 sm:w-6 sm:h-6 text-green-600 mr-2 animate-bounce" />
                       <span className="bg-gradient-to-r from-green-600 to-emerald-600 bg-clip-text text-transparent">
-                        Why Top Businesses Choose OMBARO
+                        With OMBARO - Exponential Growth
                       </span>
                     </h3>
                     <div className="grid sm:grid-cols-2 gap-2 sm:gap-3">
                       <div className="flex items-center text-gray-800 bg-white/70 rounded-lg p-2">
                         <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0" />
                         <span className="text-xs sm:text-sm font-medium">
-                          50,000+ Active Customers
+                          50,000+ customers actively searching monthly
                         </span>
                       </div>
                       <div className="flex items-center text-gray-800 bg-white/70 rounded-lg p-2">
                         <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0" />
                         <span className="text-xs sm:text-sm font-medium">
-                          3X Revenue Growth Guaranteed
+                          100% automated booking & payment system
                         </span>
                       </div>
                       <div className="flex items-center text-gray-800 bg-white/70 rounded-lg p-2">
                         <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0" />
                         <span className="text-xs sm:text-sm font-medium">
-                          Zero Setup Cost
+                          Real-time analytics & revenue dashboard
                         </span>
                       </div>
                       <div className="flex items-center text-gray-800 bg-white/70 rounded-lg p-2">
                         <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0" />
                         <span className="text-xs sm:text-sm font-medium">
-                          100% Payment Security
+                          Fill 90% of available time slots
                         </span>
                       </div>
                       <div className="flex items-center text-gray-800 bg-white/70 rounded-lg p-2">
                         <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0" />
                         <span className="text-xs sm:text-sm font-medium">
-                          Advanced Tech Dashboard
+                          Customer preferences & behavior insights
                         </span>
                       </div>
                       <div className="flex items-center text-gray-800 bg-white/70 rounded-lg p-2">
                         <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-green-600 mr-2 flex-shrink-0" />
                         <span className="text-xs sm:text-sm font-medium">
-                          Premium Brand Association
+                          3X Average Revenue Increase
                         </span>
                       </div>
                     </div>
@@ -395,13 +389,12 @@ export const BecomePartnerPage: React.FC = () => {
                 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-4 sm:mb-6"
                 style={{ fontFamily: "'Tenor Sans', serif" }}
               >
-                Why Top Spas Choose{" "}
-                <span className="font-normal text-primary-600">OMBARO</span>
+                Everything You Need{" "}
+                <span className="font-normal text-primary-600">to Succeed</span>
               </h2>
               <div className="w-16 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-green-500 to-emerald-600 mx-auto mb-4 sm:mb-6"></div>
               <p className="text-base sm:text-lg md:text-xl text-gray-700 max-w-3xl mx-auto mb-6 sm:mb-8">
-                We connect you with customers looking for quality wellness
-                services
+                Our comprehensive platform provides all the tools and support you need to manage and grow your beauty business successfully
               </p>
 
               {/* Collage-Style Image Grid */}
@@ -471,7 +464,7 @@ export const BecomePartnerPage: React.FC = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-12 sm:mb-16">
-              {/* High-Value Clients */}
+              {/* Increase Your Revenue */}
               <div className="group relative bg-white rounded-3xl overflow-hidden shadow-2xl hover:shadow-green-500/30 transition-all duration-500 border-2 border-green-200 hover:border-green-400 transform hover:-translate-y-2">
                 <div className="absolute top-0 right-0 w-32 sm:w-40 h-32 sm:h-40 bg-green-100 rounded-bl-full opacity-50 group-hover:opacity-70 transition-opacity"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-green-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
@@ -479,75 +472,7 @@ export const BecomePartnerPage: React.FC = () => {
                 <div className="relative h-40 sm:h-48 md:h-56 overflow-hidden">
                   <img
                     src="/images/luxury_spa_treatment_ef5ecb59.jpg"
-                    alt="Premium VIP Clients"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent"></div>
-                </div>
-
-                <div className="relative z-10 p-6 sm:p-8 md:p-10 -mt-6 sm:-mt-8">
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 shadow-lg shadow-green-500/30 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
-                    <Gem className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white" />
-                  </div>
-                  <h3
-                    className="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4"
-                    style={{ fontFamily: "'Tenor Sans', serif" }}
-                  >
-                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-600">
-                      Premium Clientele
-                    </span>
-                  </h3>
-                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-4 sm:mb-6">
-                    Access to{" "}
-                    <strong className="text-green-600">
-                      verified high-net-worth individuals
-                    </strong>{" "}
-                    seeking exclusive wellness experiences,{" "}
-                    <strong className="text-green-600">couples therapy</strong>,{" "}
-                    <strong className="text-green-600">
-                      luxury travel packages
-                    </strong>
-                    , and{" "}
-                    <strong className="text-green-600">
-                      personalized private companionship services
-                    </strong>
-                  </p>
-                  <div className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-gray-700">
-                    <div className="flex items-center space-x-2">
-                      <Star className="w-3 h-3 sm:w-4 sm:h-4 text-green-600 flex-shrink-0" />
-                      <span>
-                        Corporate executives, celebrities & VIP clients
-                      </span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Lock className="w-3 h-3 sm:w-4 sm:h-4 text-green-600 flex-shrink-0" />
-                      <span>
-                        Exclusive dating & companion wellness programs
-                      </span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Eye className="w-3 h-3 sm:w-4 sm:h-4 text-green-600 flex-shrink-0" />
-                      <span>Hotel partnerships & travel vouchers included</span>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <Shield className="w-3 h-3 sm:w-4 sm:h-4 text-green-600 flex-shrink-0" />
-                      <span>
-                        100% discreet premium intimate wellness services
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Maximum Revenue */}
-              <div className="group relative bg-white rounded-3xl overflow-hidden shadow-2xl hover:shadow-green-500/30 transition-all duration-500 border-2 border-green-200 hover:border-green-400 transform hover:-translate-y-2">
-                <div className="absolute top-0 right-0 w-32 sm:w-40 h-32 sm:h-40 bg-green-100 rounded-bl-full opacity-50 group-hover:opacity-70 transition-opacity"></div>
-                <div className="absolute inset-0 bg-gradient-to-br from-green-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
-
-                <div className="relative h-40 sm:h-48 md:h-56 overflow-hidden">
-                  <img
-                    src="/images/spa_business_growth__be25d321.jpg"
-                    alt="Business Growth"
+                    alt="Increase Your Revenue"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent"></div>
@@ -562,54 +487,47 @@ export const BecomePartnerPage: React.FC = () => {
                     style={{ fontFamily: "'Tenor Sans', serif" }}
                   >
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-600">
-                      Explosive Growth
+                      Increase Your Revenue
                     </span>
                   </h3>
                   <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-4 sm:mb-6">
-                    Our platform helps you{" "}
+                    Get access to thousands of customers actively searching for beauty and wellness services. Our partners see an{" "}
                     <strong className="text-green-600">
-                      grow your business exponentially
-                    </strong>{" "}
-                    by connecting you with customers actively seeking{" "}
-                    <strong className="text-green-600">
-                      premium wellness services
-                    </strong>{" "}
-                    in your area. Reach thousands of potential clients daily.
+                      average 40% increase in monthly bookings
+                    </strong>.
                   </p>
-                  <div className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-gray-700 mb-4 sm:mb-6">
+                  <div className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-gray-700">
                     <div className="flex items-center space-x-2">
                       <Star className="w-3 h-3 sm:w-4 sm:h-4 text-green-600 flex-shrink-0" />
-                      <span>Verified customer bookings guaranteed</span>
+                      <span>
+                        Verified customer bookings guaranteed
+                      </span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <TrendingUp className="w-3 h-3 sm:w-4 sm:h-4 text-green-600 flex-shrink-0" />
-                      <span>Average 3X revenue growth in 6 months</span>
+                      <span>
+                        Average 3X revenue growth in 6 months
+                      </span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <DollarSign className="w-3 h-3 sm:w-4 sm:h-4 text-green-600 flex-shrink-0" />
-                      <span>Premium pricing support & marketing tools</span>
-                    </div>
-                  </div>
-                  <div className="bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl p-3 sm:p-4 shadow-lg">
-                    <div className="text-2xl sm:text-3xl font-bold text-white mb-1">
-                      Real Growth
-                    </div>
-                    <div className="text-xs sm:text-sm text-green-50">
-                      Steady Customer Flow Daily
+                      <span>
+                        Premium pricing support & marketing tools
+                      </span>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Complete Freedom */}
+              {/* Smart Booking Management */}
               <div className="group relative bg-white rounded-3xl overflow-hidden shadow-2xl hover:shadow-green-500/30 transition-all duration-500 border-2 border-green-200 hover:border-green-400 transform hover:-translate-y-2">
                 <div className="absolute top-0 right-0 w-32 sm:w-40 h-32 sm:h-40 bg-green-100 rounded-bl-full opacity-50 group-hover:opacity-70 transition-opacity"></div>
                 <div className="absolute inset-0 bg-gradient-to-br from-green-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
 
                 <div className="relative h-40 sm:h-48 md:h-56 overflow-hidden">
                   <img
-                    src="/images/professional_beauty__6992f974.jpg"
-                    alt="Business Freedom"
+                    src="/images/spa_business_growth__be25d321.jpg"
+                    alt="Smart Booking Management"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent"></div>
@@ -617,40 +535,83 @@ export const BecomePartnerPage: React.FC = () => {
 
                 <div className="relative z-10 p-6 sm:p-8 md:p-10 -mt-6 sm:-mt-8">
                   <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 shadow-lg shadow-green-500/30 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
-                    <Briefcase className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white" />
+                    <Sparkles className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white" />
                   </div>
                   <h3
                     className="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4"
                     style={{ fontFamily: "'Tenor Sans', serif" }}
                   >
                     <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-600">
-                      Your Business, Your Rules
+                      Smart Booking Management
                     </span>
                   </h3>
                   <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-4 sm:mb-6">
-                    <strong className="text-green-600">Complete control</strong>{" "}
-                    over your services, pricing, and special offerings. We
-                    support{" "}
+                    Automated scheduling, real-time availability updates, and instant booking confirmations.{" "}
                     <strong className="text-green-600">
-                      all types of wellness services
-                    </strong>
+                      Never miss an appointment or double-book again
+                    </strong>.
                   </p>
                   <div className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-gray-700">
                     <div className="flex items-center space-x-2">
                       <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-green-600 flex-shrink-0" />
-                      <span>Premium couples & intimate wellness packages</span>
+                      <span>Automated scheduling system</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-green-600 flex-shrink-0" />
-                      <span>Travel vouchers & luxury hotel partnerships</span>
+                      <span>Real-time availability updates</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-green-600 flex-shrink-0" />
-                      <span>VIP dating & companionship wellness services</span>
+                      <span>Instant booking confirmations</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Secure Payment Processing */}
+              <div className="group relative bg-white rounded-3xl overflow-hidden shadow-2xl hover:shadow-green-500/30 transition-all duration-500 border-2 border-green-200 hover:border-green-400 transform hover:-translate-y-2">
+                <div className="absolute top-0 right-0 w-32 sm:w-40 h-32 sm:h-40 bg-green-100 rounded-bl-full opacity-50 group-hover:opacity-70 transition-opacity"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-green-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+
+                <div className="relative h-40 sm:h-48 md:h-56 overflow-hidden">
+                  <img
+                    src="/images/professional_beauty__6992f974.jpg"
+                    alt="Secure Payments"
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-white via-white/80 to-transparent"></div>
+                </div>
+
+                <div className="relative z-10 p-6 sm:p-8 md:p-10 -mt-6 sm:-mt-8">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl sm:rounded-2xl flex items-center justify-center mb-4 sm:mb-6 shadow-lg shadow-green-500/30 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500">
+                    <Wallet className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white" />
+                  </div>
+                  <h3
+                    className="text-lg sm:text-xl md:text-2xl font-bold mb-3 sm:mb-4"
+                    style={{ fontFamily: "'Tenor Sans', serif" }}
+                  >
+                    <span className="bg-clip-text text-transparent bg-gradient-to-r from-green-600 to-emerald-600">
+                      Secure Payment Processing
+                    </span>
+                  </h3>
+                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-4 sm:mb-6">
+                    Get paid instantly with our secure payment gateway.{" "}
+                    <strong className="text-green-600">
+                      Track all transactions, generate invoices, and manage your finances effortlessly
+                    </strong>.
+                  </p>
+                  <div className="space-y-1.5 sm:space-y-2 text-xs sm:text-sm text-gray-700">
+                    <div className="flex items-center space-x-2">
+                      <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-green-600 flex-shrink-0" />
+                      <span>Instant & secure payments</span>
                     </div>
                     <div className="flex items-center space-x-2">
                       <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-green-600 flex-shrink-0" />
-                      <span>All adult wellness services fully supported</span>
+                      <span>Automated invoice generation</span>
+                    </div>
+                    <div className="flex items-center space-x-2">
+                      <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-green-600 flex-shrink-0" />
+                      <span>Complete transaction tracking</span>
                     </div>
                   </div>
                 </div>
