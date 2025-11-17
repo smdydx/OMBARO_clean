@@ -7,7 +7,38 @@ import { eq, and } from 'drizzle-orm';
 const app = express();
 const port = 3001;
 
-app.use(cors());
+// CORS configuration for production
+// Parse allowed origins from environment variables
+// FRONTEND_ORIGINS should be a comma-separated list of allowed origins
+// Example: https://ombaro.vercel.app,https://www.ombaro.com,https://ombaro-preview.netlify.app
+const frontendOrigins = process.env.FRONTEND_ORIGINS 
+  ? process.env.FRONTEND_ORIGINS.split(',').map(origin => origin.trim())
+  : [];
+
+const allowedOrigins = [
+  'http://localhost:5000',
+  'http://localhost:3000',
+  ...frontendOrigins,
+].filter(Boolean);
+
+console.log('CORS allowed origins:', allowedOrigins);
+
+app.use(cors({
+  origin: (origin, callback) => {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true);
+    
+    // Check if origin exactly matches one of the allowed origins
+    if (allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      // Log unauthorized attempts for debugging
+      console.warn(`CORS: Blocked origin: ${origin}`);
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true,
+}));
 app.use(express.json());
 
 // Health check endpoint

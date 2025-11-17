@@ -1,0 +1,8 @@
+# Netlify redirects for SPA routing
+# This ensures all routes are handled by index.html for client-side routing
+
+# API calls should not be redirected (if you're using Netlify functions)
+# /api/* /api/:splat 200
+
+# All other routes go to index.html for React Router to handle
+/*    /index.html   200
