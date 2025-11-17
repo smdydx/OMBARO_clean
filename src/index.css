@@ -53,8 +53,27 @@
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-33.333%);
+    transform: translateX(-50%);
   }
+}
+
+.animate-scroll-left {
+  animation: scroll-left 30s linear infinite;
+}
+
+.animate-scroll-left:hover {
+  animation-play-state: paused;
+}
+
+/* Smooth horizontal scrolling */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
 }
 
 @keyframes scroll-right {
@@ -64,23 +83,6 @@
   100% {
     transform: translateX(0);
   }
-}
-
-.animate-scroll-left {
-  animation: scroll-left 30s linear infinite;
-}
-
-.animate-scroll-right {
-  animation: scroll-right 30s linear infinite;
-}
-
-.animate-scroll-left {
-  animation: scroll-left 60s linear infinite;
-  will-change: transform;
-}
-
-.animate-scroll-left:hover {
-  animation-play-state: paused;
 }
 
 .animate-scroll-right {
@@ -114,7 +116,7 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-  
+
   @keyframes scroll {
     0% {
       transform: translateX(0);
@@ -123,11 +125,11 @@
       transform: translateX(-50%);
     }
   }
-  
+
   .animate-scroll {
     animation: scroll 30s linear infinite;
   }
-  
+
   .animate-scroll:hover {
     animation-play-state: paused;
   }
@@ -138,7 +140,7 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
-  
+
   .scrollbar-hide {
     -ms-overflow-style: none;
     scrollbar-width: none;

@@ -713,78 +713,86 @@ export const BecomePartnerPage: React.FC = () => {
           </div>
         </section>
 
-        {/* FAQ */}
-        <section className="py-12 sm:py-16 md:py-20 bg-white">
-          <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-10 sm:mb-12 md:mb-16">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-4 sm:mb-6" style={{ fontFamily: "'Tenor Sans', serif" }}>
+        {/* FAQ - Modern Horizontal Scroll Layout */}
+        <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-green-50 to-white overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-8 sm:mb-10">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-light text-gray-900 mb-3" style={{ fontFamily: "'Tenor Sans', serif" }}>
                 Frequently Asked <span className="text-green-600 font-normal">Questions</span>
               </h2>
-              <div className="w-16 sm:w-20 md:w-24 h-1 bg-green-600 mx-auto mb-4"></div>
-              <p className="text-base sm:text-lg text-gray-700">
+              <div className="w-16 h-1 bg-gradient-to-r from-green-500 to-emerald-600 mx-auto mb-3"></div>
+              <p className="text-sm sm:text-base text-gray-600">
                 Everything you need to know about partnering with OMBARO
               </p>
             </div>
 
-            <div className="space-y-3 sm:space-y-4">
-              {[
-                {
-                  q: "How long does the registration process take?",
-                  a: "The registration process is quick and simple. After you submit your application with all required documents, our team reviews it within 24-48 hours. Once approved, you can immediately start setting up your profile and go live to accept bookings."
-                },
-                {
-                  q: "What commission does OMBARO charge?",
-                  a: "We offer 0% commission for your first month as a welcome offer! After that, our commission structure is competitive and transparent, typically ranging from 15-25% depending on your service category and booking volume. Higher volume partners enjoy lower commission rates."
-                },
-                {
-                  q: "When do I receive payments?",
-                  a: "Payments are processed quickly and securely. You receive payments within 24-48 hours after service completion directly to your registered bank account. We offer weekly settlements to ensure smooth cash flow for your business."
-                },
-                {
-                  q: "Can I manage multiple locations?",
-                  a: "Yes! Our platform supports multi-location management. You can manage multiple branches or outlets from a single dashboard, making it perfect for growing businesses with franchises or multiple locations across different cities."
-                },
-                {
-                  q: "What kind of support do partners receive?",
-                  a: "We provide comprehensive support including: 24/7 customer service, dedicated account manager, technical assistance, marketing support, training resources, and business growth consultation. Our success team is always ready to help you grow."
-                },
-                {
-                  q: "Can I set my own service prices?",
-                  a: "Absolutely! You have complete control over your service pricing. Set your rates based on your expertise, market positioning, and business strategy. We provide market insights to help you price competitively while maximizing your revenue."
-                },
-                {
-                  q: "How do I handle cancellations?",
-                  a: "Our platform has a clear cancellation policy that protects both partners and customers. You can set your own cancellation terms. The system automatically handles cancellations, refunds, and rescheduling according to your policy settings."
-                },
-                {
-                  q: "What if there is a dispute with a customer?",
-                  a: "We have a dedicated dispute resolution team that mediates fairly between partners and customers. Our platform protection ensures you're not unfairly penalized. We review each case individually and work towards amicable solutions."
-                },
-                {
-                  q: "Do I need technical knowledge to use the platform?",
-                  a: "Not at all! Our platform is designed to be user-friendly and intuitive. We provide complete onboarding training, video tutorials, and step-by-step guides. Our support team is always available to help you navigate any technical aspects."
-                },
-                {
-                  q: "Can I offer special promotions and discounts?",
-                  a: "Yes! You can create and manage your own promotional campaigns, special offers, seasonal discounts, and loyalty programs. Our marketing tools help you attract new customers and retain existing ones through targeted promotions."
-                }
-              ].map((faq, idx) => (
-                <div key={idx} className="bg-gradient-to-br from-green-50 to-white rounded-xl sm:rounded-2xl shadow-lg overflow-hidden border-2 border-green-100">
-                  <button onClick={() => setOpenFaq(openFaq === idx ? null : idx)} className="w-full px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6 text-left flex items-center justify-between hover:bg-green-50/50 transition-colors">
-                    <span className="font-bold text-gray-900 text-sm sm:text-base md:text-lg pr-4">{faq.q}</span>
-                    {openFaq === idx ? (
-                      <ChevronUp className="w-5 h-5 sm:w-6 sm:h-6 text-green-600 flex-shrink-0" />
-                    ) : (
-                      <ChevronDown className="w-5 h-5 sm:w-6 sm:h-6 text-green-600 flex-shrink-0" />
-                    )}
-                  </button>
-                  {openFaq === idx && (
-                    <div className="px-4 sm:px-6 md:px-8 pb-4 sm:pb-5 md:pb-6 text-sm sm:text-base text-gray-700 leading-relaxed">
-                      {faq.a}
+            {/* Horizontal Scrollable FAQ Cards */}
+            <div className="relative">
+              <div className="flex overflow-x-auto gap-4 pb-4 snap-x snap-mandatory scrollbar-hide" style={{ scrollbarWidth: 'none', msOverflowStyle: 'none' }}>
+                {[
+                  {
+                    q: "How long does the registration process take?",
+                    a: "The registration process is quick and simple. After you submit your application with all required documents, our team reviews it within 24-48 hours. Once approved, you can immediately start setting up your profile and go live to accept bookings."
+                  },
+                  {
+                    q: "What commission does OMBARO charge?",
+                    a: "We offer 0% commission for your first month as a welcome offer! After that, our commission structure is competitive and transparent, typically ranging from 15-25% depending on your service category and booking volume. Higher volume partners enjoy lower commission rates."
+                  },
+                  {
+                    q: "When do I receive payments?",
+                    a: "Payments are processed quickly and securely. You receive payments within 24-48 hours after service completion directly to your registered bank account. We offer weekly settlements to ensure smooth cash flow for your business."
+                  },
+                  {
+                    q: "Can I manage multiple locations?",
+                    a: "Yes! Our platform supports multi-location management. You can manage multiple branches or outlets from a single dashboard, making it perfect for growing businesses with franchises or multiple locations across different cities."
+                  },
+                  {
+                    q: "What kind of support do partners receive?",
+                    a: "We provide comprehensive support including: 24/7 customer service, dedicated account manager, technical assistance, marketing support, training resources, and business growth consultation. Our success team is always ready to help you grow."
+                  },
+                  {
+                    q: "Can I set my own service prices?",
+                    a: "Absolutely! You have complete control over your service pricing. Set your rates based on your expertise, market positioning, and business strategy. We provide market insights to help you price competitively while maximizing your revenue."
+                  },
+                  {
+                    q: "How do I handle cancellations?",
+                    a: "Our platform has a clear cancellation policy that protects both partners and customers. You can set your own cancellation terms. The system automatically handles cancellations, refunds, and rescheduling according to your policy settings."
+                  },
+                  {
+                    q: "What if there is a dispute with a customer?",
+                    a: "We have a dedicated dispute resolution team that mediates fairly between partners and customers. Our platform protection ensures you're not unfairly penalized. We review each case individually and work towards amicable solutions."
+                  },
+                  {
+                    q: "Do I need technical knowledge to use the platform?",
+                    a: "Not at all! Our platform is designed to be user-friendly and intuitive. We provide complete onboarding training, video tutorials, and step-by-step guides. Our support team is always available to help you navigate any technical aspects."
+                  },
+                  {
+                    q: "Can I offer special promotions and discounts?",
+                    a: "Yes! You can create and manage your own promotional campaigns, special offers, seasonal discounts, and loyalty programs. Our marketing tools help you attract new customers and retain existing ones through targeted promotions."
+                  }
+                ].map((faq, idx) => (
+                  <div key={idx} className="flex-shrink-0 w-80 sm:w-96 snap-start">
+                    <div className="bg-white rounded-2xl p-5 sm:p-6 shadow-xl border-2 border-green-200 hover:border-green-400 transition-all h-full hover:shadow-2xl transform hover:-translate-y-1 duration-300">
+                      <div className="flex items-start justify-between mb-3">
+                        <h3 className="text-base sm:text-lg font-bold text-gray-900 pr-2 leading-tight">{faq.q}</h3>
+                        <div className="w-8 h-8 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center flex-shrink-0">
+                          <span className="text-white font-bold text-sm">{idx + 1}</span>
+                        </div>
+                      </div>
+                      <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">{faq.a}</p>
                     </div>
-                  )}
-                </div>
-              ))}
+                  </div>
+                ))}
+              </div>
+              
+              {/* Scroll Indicator */}
+              <div className="text-center mt-4">
+                <p className="text-xs text-gray-500 flex items-center justify-center gap-2">
+                  <span>←</span>
+                  <span>Scroll to see more</span>
+                  <span>→</span>
+                </p>
+              </div>
             </div>
           </div>
         </section>
