@@ -18,6 +18,7 @@ import {
   UserCheck,
   Gift,
   Briefcase,
+  Sparkles,
 } from "lucide-react";
 import { Button } from "../components/ui/Button";
 import { MarketingHeader } from "../components/marketing/MarketingHeader";
