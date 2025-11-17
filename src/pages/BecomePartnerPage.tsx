@@ -11,16 +11,28 @@ import {
   ChevronDown,
   ChevronUp,
   Crown,
+  Lock,
+  Eye,
+  Gem,
+  DollarSign,
+  UserCheck,
+  Gift,
+  Briefcase,
   Sparkles,
   Users,
   BarChart3,
+  HeadphonesIcon,
   MapPin,
+  Calendar,
+  CreditCard,
+  FileText,
   Award,
+  Target,
+  Clock,
   CheckCircle2,
   Building2,
   BadgeCheck,
   Zap,
-  Briefcase,
 } from "lucide-react";
 import { Button } from "../components/ui/Button";
 import { MarketingHeader } from "../components/marketing/MarketingHeader";
@@ -103,31 +115,31 @@ export const BecomePartnerPage: React.FC = () => {
             <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSA2MCAwIEwgMCAwIDAgNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgxNiwgMTg1LCAxMjksIDAuMDUpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-40"></div>
           </div>
 
-          <div className="relative z-10 max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 w-full py-8 sm:py-10 md:py-12 lg:py-16">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-center">
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full py-6 sm:py-8 md:py-12">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-12 items-center">
               {/* Left Content */}
-              <div className="order-2 lg:order-1 text-center lg:text-left">
-                <div className="inline-flex items-center justify-center space-x-2 bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 rounded-full px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 mb-4 sm:mb-5 md:mb-6 lg:mb-8 shadow-2xl shadow-green-500/50 animate-pulse">
-                  <Crown className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5 text-white animate-bounce" />
-                  <span className="text-white text-xs sm:text-sm md:text-base font-bold tracking-wider uppercase">
+              <div className="order-2 lg:order-1">
+                <div className="inline-flex items-center space-x-2 bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 rounded-full px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 md:py-3 mb-4 sm:mb-6 md:mb-8 shadow-2xl shadow-green-500/50 animate-pulse">
+                  <Crown className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 text-white animate-bounce" />
+                  <span className="text-white text-xs sm:text-sm font-bold tracking-wider uppercase">
                     0% Commission for 1st Month
                   </span>
                 </div>
 
                 {/* Success Metrics */}
-                <div className="flex flex-wrap justify-center lg:justify-start gap-2 sm:gap-3 md:gap-4 mb-4 sm:mb-5 md:mb-6">
-                  <div className="bg-white/90 backdrop-blur-sm rounded-lg sm:rounded-xl px-3 sm:px-4 py-1.5 sm:py-2 shadow-lg border-2 border-green-200">
-                    <div className="text-green-600 font-bold text-xs sm:text-sm whitespace-nowrap">500+ Partners</div>
+                <div className="flex flex-wrap gap-3 sm:gap-4 mb-4 sm:mb-6">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-xl px-3 sm:px-4 py-2 shadow-lg border-2 border-green-200">
+                    <div className="text-green-600 font-bold text-xs sm:text-sm">500+ Partner Businesses</div>
                   </div>
-                  <div className="bg-white/90 backdrop-blur-sm rounded-lg sm:rounded-xl px-3 sm:px-4 py-1.5 sm:py-2 shadow-lg border-2 border-green-200">
-                    <div className="text-green-600 font-bold text-xs sm:text-sm whitespace-nowrap">50K+ Bookings</div>
+                  <div className="bg-white/90 backdrop-blur-sm rounded-xl px-3 sm:px-4 py-2 shadow-lg border-2 border-green-200">
+                    <div className="text-green-600 font-bold text-xs sm:text-sm">50K+ Monthly Bookings</div>
                   </div>
-                  <div className="bg-white/90 backdrop-blur-sm rounded-lg sm:rounded-xl px-3 sm:px-4 py-1.5 sm:py-2 shadow-lg border-2 border-green-200">
-                    <div className="text-green-600 font-bold text-xs sm:text-sm whitespace-nowrap">25+ Cities</div>
+                  <div className="bg-white/90 backdrop-blur-sm rounded-xl px-3 sm:px-4 py-2 shadow-lg border-2 border-green-200">
+                    <div className="text-green-600 font-bold text-xs sm:text-sm">25+ Cities Covered</div>
                   </div>
                 </div>
 
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light mb-3 sm:mb-4 md:mb-5 lg:mb-6 leading-tight text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light mb-3 sm:mb-4 md:mb-6 leading-tight text-gray-900" style={{ fontFamily: "'Tenor Sans', serif" }}>
                   Partner with
                   <br />
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 animate-gradient">
@@ -135,48 +147,48 @@ export const BecomePartnerPage: React.FC = () => {
                   </span>
                 </h1>
 
-                <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold mb-3 sm:mb-4 md:mb-5 text-green-600">
+                <h2 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 text-green-600">
                   at 0% commission for 1st month!
                 </h2>
 
-                <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-5 sm:mb-6 md:mb-7 lg:mb-8 text-gray-700 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl mb-4 sm:mb-6 text-gray-700 leading-relaxed">
                   Join thousands of successful wellness businesses growing their revenue by <span className="text-green-600 font-bold">3X</span> with more customers than traditional methods.
                 </p>
 
-                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8 justify-center lg:justify-start">
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
                   <Link to="/app" className="w-full sm:w-auto group">
-                    <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 hover:from-green-600 hover:via-emerald-600 hover:to-teal-600 text-white shadow-2xl shadow-green-500/50 text-base sm:text-lg md:text-xl px-6 sm:px-8 md:px-10 lg:px-12 py-3 sm:py-4 md:py-5 lg:py-6 rounded-full transform hover:scale-105 transition-all duration-300 font-bold relative overflow-hidden">
+                    <Button size="lg" className="w-full sm:w-auto bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 hover:from-green-600 hover:via-emerald-600 hover:to-teal-600 text-white shadow-2xl shadow-green-500/50 text-sm sm:text-base md:text-lg px-8 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 rounded-full transform hover:scale-110 transition-all duration-300 font-bold relative overflow-hidden">
                       <span className="relative z-10 flex items-center justify-center">
                         Get Started
-                        <ArrowRight className="w-5 h-5 sm:w-5 sm:h-5 md:w-6 md:h-6 ml-2 group-hover:translate-x-1 transition-transform" />
+                        <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                       </span>
                       <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-700"></div>
                     </Button>
                   </Link>
-                  <Button size="lg" variant="outline" className="w-full sm:w-auto border-2 sm:border-3 border-green-600 text-green-700 bg-white hover:bg-green-600 hover:text-white text-base sm:text-lg md:text-xl px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 lg:py-6 rounded-full font-bold shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+                  <Button size="lg" variant="outline" className="w-full sm:w-auto border-3 border-green-600 text-green-700 bg-white hover:bg-green-600 hover:text-white text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 rounded-full font-bold shadow-lg hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
                     See How It Works
                   </Button>
                 </div>
               </div>
 
               {/* Right Content - Image Collage */}
-              <div className="relative order-1 lg:order-2 px-4 sm:px-0">
+              <div className="relative order-1 lg:order-2">
                 <div className="grid grid-cols-12 gap-2 sm:gap-3 md:gap-4">
                   <div className="col-span-7 relative group">
-                    <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-green-600 rounded-xl sm:rounded-2xl md:rounded-3xl transform rotate-2 opacity-20 group-hover:rotate-3 group-hover:scale-105 transition-all duration-500"></div>
-                    <img src="/images/luxury_spa_treatment_ef5ecb59.jpg" alt="Luxury Spa Treatment" className="relative rounded-xl sm:rounded-2xl md:rounded-3xl shadow-2xl w-full h-48 sm:h-56 md:h-64 lg:h-80 xl:h-96 object-cover border-2 border-green-500/30 group-hover:scale-105 transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl sm:rounded-3xl transform rotate-2 opacity-20 group-hover:rotate-3 group-hover:scale-105 transition-all duration-500"></div>
+                    <img src="/images/luxury_spa_treatment_ef5ecb59.jpg" alt="Luxury Spa Treatment" className="relative rounded-2xl sm:rounded-3xl shadow-2xl w-full h-40 sm:h-56 md:h-72 lg:h-96 object-cover border-2 border-green-500/30 group-hover:scale-105 transition-transform duration-500" />
                   </div>
                   <div className="col-span-5 relative group">
-                    <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-green-700 rounded-xl sm:rounded-2xl md:rounded-3xl transform -rotate-1 opacity-15 group-hover:rotate-1 group-hover:scale-105 transition-all duration-500"></div>
-                    <img src="/images/professional_beauty__6992f974.jpg" alt="Beauty Services" className="rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl w-full h-36 sm:h-40 md:h-48 lg:h-56 xl:h-64 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-green-700 rounded-2xl sm:rounded-3xl transform -rotate-1 opacity-15 group-hover:rotate-1 group-hover:scale-105 transition-all duration-500"></div>
+                    <img src="/images/professional_beauty__6992f974.jpg" alt="Beauty Services" className="rounded-2xl sm:rounded-3xl shadow-xl w-full h-32 sm:h-40 md:h-52 lg:h-64 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-transform duration-500" />
                   </div>
                   <div className="col-span-5 relative group">
-                    <div className="absolute inset-0 bg-gradient-to-br from-green-600 to-green-400 rounded-xl sm:rounded-2xl md:rounded-3xl transform rotate-1 opacity-15 group-hover:-rotate-1 group-hover:scale-105 transition-all duration-500"></div>
-                    <img src="/images/spa_massage_therapy__22ac4be9.jpg" alt="Massage Therapy" className="rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl w-full h-36 sm:h-40 md:h-48 lg:h-56 xl:h-64 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-green-600 to-green-400 rounded-2xl sm:rounded-3xl transform rotate-1 opacity-15 group-hover:-rotate-1 group-hover:scale-105 transition-all duration-500"></div>
+                    <img src="/images/spa_massage_therapy__22ac4be9.jpg" alt="Massage Therapy" className="rounded-2xl sm:rounded-3xl shadow-xl w-full h-32 sm:h-40 md:h-52 lg:h-64 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-transform duration-500" />
                   </div>
                   <div className="col-span-7 relative group">
-                    <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-green-600 rounded-xl sm:rounded-2xl md:rounded-3xl transform -rotate-2 opacity-20 group-hover:rotate-2 group-hover:scale-105 transition-all duration-500"></div>
-                    <img src="/images/elegant_spa_interior_b93a48aa.jpg" alt="Spa Interior" className="rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl w-full h-36 sm:h-40 md:h-48 lg:h-56 xl:h-64 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-transform duration-500" />
+                    <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-green-600 rounded-2xl sm:rounded-3xl transform -rotate-2 opacity-20 group-hover:rotate-2 group-hover:scale-105 transition-all duration-500"></div>
+                    <img src="/images/elegant_spa_interior_b93a48aa.jpg" alt="Spa Interior" className="rounded-2xl sm:rounded-3xl shadow-xl w-full h-32 sm:h-40 md:h-52 lg:h-64 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-transform duration-500" />
                   </div>
                 </div>
               </div>
