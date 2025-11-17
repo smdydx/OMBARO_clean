@@ -700,6 +700,144 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
 
+        {/* FAQ Section */}
+        <section className="py-20 bg-gradient-to-b from-white to-primary-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-light text-gray-800 mb-4">
+                Frequently Asked{" "}
+                <span className="font-normal text-primary-600">Questions</span>
+              </h2>
+              <p className="text-gray-600 text-lg">
+                Everything you need to know about partnering with OMBARO
+              </p>
+            </div>
+
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex justify-center gap-4 mb-12">
+              <button className="px-6 py-3 bg-primary-500 text-white rounded-full font-medium hover:bg-primary-600 transition-colors">
+                General
+              </button>
+              <button className="px-6 py-3 bg-gray-100 text-gray-700 rounded-full font-medium hover:bg-gray-200 transition-colors">
+                For Vendors
+              </button>
+              <button className="px-6 py-3 bg-gray-100 text-gray-700 rounded-full font-medium hover:bg-gray-200 transition-colors">
+                For Customers
+              </button>
+            </div>
+
+            {/* FAQ Cards - Swipeable on Mobile, Grid on Desktop */}
+            <div className="md:hidden overflow-x-auto pb-8 -mx-4 px-4">
+              <div className="flex gap-6 snap-x snap-mandatory">
+                {[
+                  {
+                    category: "General",
+                    questions: [
+                      {
+                        q: "What is OMBARO?",
+                        a: "OMBARO is India's premier on-demand beauty and wellness platform connecting customers with verified service providers.",
+                      },
+                      {
+                        q: "Which cities do you operate in?",
+                        a: "We currently operate in 25+ major cities across India with plans to expand further.",
+                      },
+                    ],
+                  },
+                  {
+                    category: "For Vendors",
+                    questions: [
+                      {
+                        q: "How do I become a partner?",
+                        a: "Click 'Become a Partner' and complete our simple registration process. Our team will verify and approve your application.",
+                      },
+                      {
+                        q: "What are the commission rates?",
+                        a: "Enjoy 0% commission for your first month! After that, competitive rates apply based on your service category.",
+                      },
+                    ],
+                  },
+                  {
+                    category: "For Customers",
+                    questions: [
+                      {
+                        q: "How do I book a service?",
+                        a: "Simply browse services, select your preferred provider, choose a time slot, and confirm your booking.",
+                      },
+                      {
+                        q: "What payment methods do you accept?",
+                        a: "We accept UPI, credit/debit cards, net banking, and digital wallets.",
+                      },
+                    ],
+                  },
+                ].map((category, idx) => (
+                  <div
+                    key={idx}
+                    className="min-w-[85vw] snap-center bg-white rounded-2xl p-6 shadow-lg"
+                  >
+                    <h3 className="text-xl font-bold text-primary-600 mb-6">
+                      {category.category}
+                    </h3>
+                    <div className="space-y-4">
+                      {category.questions.map((item, qIdx) => (
+                        <div key={qIdx} className="border-b border-gray-100 pb-4 last:border-0">
+                          <h4 className="font-semibold text-gray-900 mb-2">
+                            {item.q}
+                          </h4>
+                          <p className="text-gray-600 text-sm leading-relaxed">
+                            {item.a}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Desktop Grid */}
+            <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {[
+                {
+                  q: "What is OMBARO?",
+                  a: "OMBARO is India's premier on-demand beauty and wellness platform connecting customers with verified service providers.",
+                },
+                {
+                  q: "How do I become a partner?",
+                  a: "Click 'Become a Partner' and complete our simple registration process. Our team will verify and approve your application.",
+                },
+                {
+                  q: "What are the commission rates?",
+                  a: "Enjoy 0% commission for your first month! After that, competitive rates apply based on your service category.",
+                },
+                {
+                  q: "How do I book a service?",
+                  a: "Simply browse services, select your preferred provider, choose a time slot, and confirm your booking.",
+                },
+                {
+                  q: "Which cities do you operate in?",
+                  a: "We currently operate in 25+ major cities across India with plans to expand further.",
+                },
+                {
+                  q: "What payment methods do you accept?",
+                  a: "We accept UPI, credit/debit cards, net banking, and digital wallets.",
+                },
+              ].map((item, idx) => (
+                <div
+                  key={idx}
+                  className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-shadow"
+                >
+                  <h4 className="font-semibold text-gray-900 mb-3">
+                    {item.q}
+                  </h4>
+                  <p className="text-gray-600 text-sm leading-relaxed">
+                    {item.a}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
         <section className="py-20 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
