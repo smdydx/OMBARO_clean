@@ -321,9 +321,53 @@ export const BecomePartnerPage: React.FC = () => {
           </div>
         </section>
 
-        {/* Platform Benefits */}
-        <section className="py-12 sm:py-16 md:py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Infinite Scrolling Image Showcase */}
+        <section className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-white to-green-50 overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+            <div className="text-center">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-4" style={{ fontFamily: "'Tenor Sans', serif" }}>
+                Our <span className="text-green-600 font-normal">Partner Network</span>
+              </h2>
+              <p className="text-base sm:text-lg text-gray-700">Trusted by thousands of wellness professionals across India</p>
+            </div>
+          </div>
+
+          {/* Infinite Scroll Container */}
+          <div className="relative">
+            <div className="flex overflow-hidden">
+              <div className="flex animate-scroll-left whitespace-nowrap">
+                {[...Array(3)].map((_, setIdx) => (
+                  <div key={setIdx} className="flex space-x-6">
+                    {[
+                      "/images/luxury_spa_treatment_ef5ecb59.jpg",
+                      "/images/professional_beauty__6992f974.jpg",
+                      "/images/premium_wellness_spa_05199f74.jpg",
+                      "/images/spa_massage_therapy__22ac4be9.jpg",
+                      "/images/elegant_spa_interior_b93a48aa.jpg",
+                      "/images/spa_treatment_room_i_609c3288.jpg"
+                    ].map((img, idx) => (
+                      <div key={idx} className="relative group flex-shrink-0">
+                        <div className="w-64 h-40 sm:w-80 sm:h-52 rounded-2xl overflow-hidden shadow-xl border-2 border-green-200 group-hover:border-green-400 transition-all duration-300">
+                          <img src={img} alt="Partner Showcase" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Platform Benefits - Modern Transaction Cards */}
+        <section className="py-12 sm:py-16 md:py-20 bg-white relative overflow-hidden">
+          {/* Background Effects */}
+          <div className="absolute inset-0 overflow-hidden pointer-events-none">
+            <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-green-200/20 to-emerald-300/20 rounded-full blur-3xl opacity-40 animate-pulse"></div>
+            <div className="absolute bottom-0 right-0 w-96 h-96 bg-gradient-to-br from-teal-200/20 to-green-300/20 rounded-full blur-3xl opacity-30 animate-pulse" style={{ animationDelay: '1s' }}></div>
+          </div>
+
+          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10 sm:mb-12 md:mb-16">
               <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-light text-gray-900 mb-4 sm:mb-6" style={{ fontFamily: "'Tenor Sans', serif" }}>
                 Platform <span className="text-green-600 font-normal">Benefits</span>
@@ -337,63 +381,98 @@ export const BecomePartnerPage: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {[
                 {
                   icon: TrendingUp,
                   title: "Increase Your Revenue",
-                  description: "Get access to thousands of customers actively searching for beauty and wellness services. Our partners see an average 40% increase in monthly bookings.",
-                  color: "green"
+                  description: "Get access to thousands of customers actively searching for beauty and wellness services.",
+                  stat: "+40%",
+                  statLabel: "Avg. Increase",
+                  gradient: "from-green-500 to-emerald-600"
                 },
                 {
                   icon: Sparkles,
-                  title: "Smart Booking Management",
-                  description: "Automated scheduling, real-time availability updates, and instant booking confirmations. Never miss an appointment or double-book again.",
-                  color: "emerald"
+                  title: "Smart Booking",
+                  description: "Automated scheduling, real-time availability updates, and instant confirmations.",
+                  stat: "100%",
+                  statLabel: "Automated",
+                  gradient: "from-emerald-500 to-teal-600"
                 },
                 {
                   icon: Wallet,
-                  title: "Secure Payment Processing",
-                  description: "Get paid instantly with our secure payment gateway. Track all transactions, generate invoices, and manage your finances effortlessly.",
-                  color: "teal"
+                  title: "Secure Payments",
+                  description: "Get paid instantly with our secure payment gateway and financial management tools.",
+                  stat: "24-48h",
+                  statLabel: "Settlement",
+                  gradient: "from-teal-500 to-green-600"
                 },
                 {
                   icon: BarChart3,
                   title: "Business Analytics",
-                  description: "Powerful insights into your business performance. Track revenue, customer preferences, peak hours, and growth trends to make data-driven decisions.",
-                  color: "green"
+                  description: "Powerful insights into your business performance with real-time dashboards.",
+                  stat: "Real-time",
+                  statLabel: "Data",
+                  gradient: "from-green-500 to-emerald-600"
                 },
                 {
                   icon: Users,
-                  title: "Customer Relationship Management",
-                  description: "Build lasting relationships with integrated CRM tools. Track customer history, preferences, and send personalized offers to increase retention.",
-                  color: "emerald"
+                  title: "CRM Tools",
+                  description: "Build lasting relationships with integrated customer management tools.",
+                  stat: "360°",
+                  statLabel: "View",
+                  gradient: "from-emerald-500 to-teal-600"
                 },
                 {
                   icon: Shield,
                   title: "Trust & Safety",
-                  description: "Verified customer reviews, secure transactions, and platform protection. We handle disputes and ensure a safe environment for your business.",
-                  color: "teal"
+                  description: "Verified reviews, secure transactions, and platform protection for your business.",
+                  stat: "100%",
+                  statLabel: "Secure",
+                  gradient: "from-teal-500 to-green-600"
                 },
                 {
                   icon: Zap,
-                  title: "Marketing & Promotions",
-                  description: "Get featured in our app, run promotional campaigns, and reach new customers. Our marketing team helps you grow your brand visibility.",
-                  color: "green"
+                  title: "Marketing Support",
+                  description: "Get featured in our app and run promotional campaigns to reach new customers.",
+                  stat: "50K+",
+                  statLabel: "Monthly Reach",
+                  gradient: "from-green-500 to-emerald-600"
                 },
                 {
                   icon: MapPin,
-                  title: "Multi-Location Management",
-                  description: "Manage multiple branches or locations from a single dashboard. Perfect for growing businesses with multiple outlets or franchises.",
-                  color: "emerald"
+                  title: "Multi-Location",
+                  description: "Manage multiple branches or locations from a single powerful dashboard.",
+                  stat: "Unlimited",
+                  statLabel: "Locations",
+                  gradient: "from-emerald-500 to-teal-600"
                 }
               ].map((benefit, idx) => (
-                <div key={idx} className="group bg-gradient-to-br from-white to-green-50 rounded-3xl p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-green-200 hover:border-green-400 transform hover:-translate-y-2">
-                  <div className={`w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-${benefit.color}-500 to-${benefit.color}-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg group-hover:scale-110 group-hover:rotate-6 transition-all duration-500`}>
-                    <benefit.icon className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
+                <div key={idx} className="group relative bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-200 hover:border-green-400 transform hover:-translate-y-2 overflow-hidden">
+                  {/* Background Gradient on Hover */}
+                  <div className={`absolute inset-0 bg-gradient-to-br ${benefit.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
+                  
+                  {/* Icon with Modern Badge */}
+                  <div className="relative mb-4">
+                    <div className={`w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br ${benefit.gradient} rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
+                      <benefit.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+                    </div>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-bold mb-3 text-gray-900">{benefit.title}</h3>
-                  <p className="text-sm sm:text-base text-gray-700 leading-relaxed">{benefit.description}</p>
+
+                  {/* Content */}
+                  <h3 className="text-base sm:text-lg font-bold mb-2 text-gray-900 group-hover:text-green-600 transition-colors">{benefit.title}</h3>
+                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">{benefit.description}</p>
+
+                  {/* Stat Badge - Transaction Style */}
+                  <div className="flex items-center justify-between bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-3 border border-green-200">
+                    <div>
+                      <div className={`text-xl sm:text-2xl font-bold bg-gradient-to-r ${benefit.gradient} bg-clip-text text-transparent`}>{benefit.stat}</div>
+                      <div className="text-xs text-gray-600">{benefit.statLabel}</div>
+                    </div>
+                    <div className={`w-8 h-8 bg-gradient-to-br ${benefit.gradient} rounded-lg flex items-center justify-center opacity-20 group-hover:opacity-100 transition-opacity`}>
+                      <ArrowRight className="w-4 h-4 text-white" />
+                    </div>
+                  </div>
                 </div>
               ))}
             </div>
