@@ -509,12 +509,12 @@ export const HomePage: React.FC = () => {
                       <img
                         src={category.image}
                         alt={category.title}
-                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 "
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
                     </div>
                     <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                      <h3 className="text-2xl font-bold mb-2">
+                      <h3 className="text-2xl font-bold mb-2 text-white">
                         {category.title}
                       </h3>
                       <p className="text-sm text-gray-200 mb-4">
