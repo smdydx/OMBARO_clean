@@ -295,6 +295,16 @@ img {
 
   body {
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .container, section, div {
+    max-width: 100%;
   }
 
   /* Ensure proper text contrast */

@@ -546,7 +546,7 @@ export const HomePage: React.FC = () => {
           ref={heroRef}
           className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-emerald-950 to-black py-8 sm:py-12 md:py-16 lg:py-20 scroll-revealed"
         >
-          <div className="absolute inset-0 overflow-hidden opacity-20">
+          <div className="absolute inset-0 overflow-hidden opacity-30">
             <svg
               className="absolute bottom-0 w-full h-48 sm:h-56 md:h-64"
               viewBox="0 0 1440 320"
@@ -554,8 +554,8 @@ export const HomePage: React.FC = () => {
             >
               <path
                 fill="none"
-                stroke="#00ff87"
-                strokeWidth="2"
+                stroke="#047857"
+                strokeWidth="3"
                 d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128"
               >
                 <animate
@@ -571,11 +571,11 @@ export const HomePage: React.FC = () => {
             </svg>
           </div>
 
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center mb-8 sm:mb-10">
-              <div className="space-y-4 sm:space-y-6">
-                <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-light leading-tight" style={{ letterSpacing: '0.05em' }}>
-                  <div className="hero-word-1 text-white">
+              <div className="space-y-4 sm:space-y-6 w-full">
+                <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light leading-tight w-full" style={{ letterSpacing: '0.05em' }}>
+                  <div className="hero-word-1 bg-gradient-to-r from-emerald-400 via-green-500 to-emerald-600 bg-clip-text text-transparent">
                     RELAX & ENJOY
                   </div>
                 </h2>
@@ -594,10 +594,13 @@ export const HomePage: React.FC = () => {
                 </div>
               </div>
 
-              <div className="hero-image-wrapper relative">
+              <div className="hero-image-wrapper relative w-full">
                 <div
                   ref={heroImageRef}
                   className="hero-image relative rounded-2xl sm:rounded-3xl overflow-hidden parallax-image"
+                  style={{
+                    clipPath: 'polygon(5% 0%, 95% 0%, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0% 95%, 0% 5%)'
+                  }}
                 >
                   <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-4 sm:border-6 md:border-8 border-white shadow-2xl z-10 pointer-events-none"></div>
 
@@ -718,8 +721,11 @@ export const HomePage: React.FC = () => {
                 </div>
               </div>
 
-              <div className="animate-on-scroll-right stagger-2 relative">
-                <div className="relative">
+              <div className="animate-on-scroll-right stagger-2 relative w-full">
+                <div className="relative"
+                  style={{
+                    clipPath: 'polygon(5% 0%, 95% 0%, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0% 95%, 0% 5%)'
+                  }}>
                   <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-8 sm:border-12 md:border-16 border-white shadow-2xl z-10 pointer-events-none"></div>
                   <div className="absolute inset-2 sm:inset-3 md:inset-4 rounded-xl sm:rounded-2xl border-4 sm:border-6 md:border-8 border-emerald-400/30 z-10 pointer-events-none"></div>
                   <div className="absolute -inset-2 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-emerald-500/30 to-green-500/30 blur-xl z-0"></div>
@@ -875,8 +881,11 @@ export const HomePage: React.FC = () => {
 
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
-              <div className="animate-on-scroll-left stagger-1 relative order-2 lg:order-1">
-                <div className="relative h-64 sm:h-72 md:h-80 lg:h-96">
+              <div className="animate-on-scroll-left stagger-1 relative order-2 lg:order-1 w-full">
+                <div className="relative h-64 sm:h-72 md:h-80 lg:h-96"
+                  style={{
+                    clipPath: 'polygon(5% 0%, 95% 0%, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0% 95%, 0% 5%)'
+                  }}>
                   <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-4 sm:border-6 border-white shadow-2xl z-10 pointer-events-none"></div>
 
                   <img
@@ -1114,8 +1123,11 @@ export const HomePage: React.FC = () => {
                 </div>
               </div>
 
-              <div className="animate-on-scroll-right stagger-2 relative">
-                <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden">
+              <div className="animate-on-scroll-right stagger-2 relative w-full">
+                <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden"
+                  style={{
+                    clipPath: 'polygon(5% 0%, 95% 0%, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0% 95%, 0% 5%)'
+                  }}>
                   <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-8 sm:border-12 md:border-16 border-white shadow-2xl z-10 pointer-events-none"></div>
                   <div className="absolute inset-2 sm:inset-3 md:inset-4 rounded-xl sm:rounded-2xl border-4 sm:border-6 md:border-8 border-emerald-400/30 z-10 pointer-events-none"></div>
                   <div className="absolute -inset-2 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-emerald-500/30 to-green-500/30 blur-xl z-0"></div>

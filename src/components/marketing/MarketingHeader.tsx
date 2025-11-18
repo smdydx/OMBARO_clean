@@ -25,9 +25,9 @@ export const MarketingHeader: React.FC = () => {
             <path d="M0,20 C200,60 400,10 600,50 C800,90 1000,40 1200,60 L1200,120 L0,120 Z" fill="url(#wave-gradient)" opacity="0.08"></path>
             <defs>
               <linearGradient id="wave-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#047857" />
-                <stop offset="50%" stopColor="#065f46" />
-                <stop offset="100%" stopColor="#064e3b" />
+                <stop offset="0%" stopColor="#064e3b" />
+                <stop offset="50%" stopColor="#022c22" />
+                <stop offset="100%" stopColor="#001a11" />
               </linearGradient>
             </defs>
           </svg>
@@ -37,7 +37,7 @@ export const MarketingHeader: React.FC = () => {
         <div className="flex items-center justify-between h-20 lg:h-24 xl:h-28">
           <div className="flex items-center lg:flex-1">
             <Link to="/" className="flex items-center group z-50">
-              <div className="relative rounded-full p-2 sm:p-2.5 lg:p-3 xl:p-4 bg-white shadow-lg lg:shadow-2xl border-3 sm:border-4 lg:border-4 xl:border-5 border-green-500/40">
+              <div className="relative rounded-full p-2 sm:p-2.5 lg:p-3 xl:p-4 bg-white shadow-lg lg:shadow-2xl border-3 sm:border-4 lg:border-4 xl:border-5 border-emerald-600">
                 <img
                   src="/ombaro-logo-new.png"
                   alt="OMBARO"
