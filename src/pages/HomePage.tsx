@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Star, Shield, X, Sparkles, Check } from "lucide-react";
@@ -11,8 +10,7 @@ export const HomePage: React.FC = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
-  const [scrollY, setScrollY] = useState(0);
-  
+
   const carouselRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLElement>(null);
   const aboutRef = useRef<HTMLElement>(null);
@@ -21,12 +19,6 @@ export const HomePage: React.FC = () => {
   const testimonialsRef = useRef<HTMLElement>(null);
   const faqRef = useRef<HTMLElement>(null);
   const ctaRef = useRef<HTMLElement>(null);
-  
-  const heroImageRef = useRef<HTMLDivElement>(null);
-  const aboutImageRef = useRef<HTMLImageElement>(null);
-  const whyChooseImageRef = useRef<HTMLImageElement>(null);
-  const testimonialsImageRef = useRef<HTMLDivElement>(null);
-  const faqImageRef = useRef<HTMLImageElement>(null);
 
   const handleCloseBanner = () => {
     setIsClosing(true);
@@ -46,47 +38,7 @@ export const HomePage: React.FC = () => {
   }, [showTermsBanner]);
 
   useEffect(() => {
-    let ticking = false;
-
     const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          setScrollY(window.scrollY);
-          updateParallax();
-          updateScrollAnimations();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-
-    const updateParallax = () => {
-      const scrollPos = window.scrollY;
-      
-      if (heroImageRef.current) {
-        const parallaxOffset = scrollPos * 0.5;
-        heroImageRef.current.style.transform = `translateY(${parallaxOffset}px)`;
-      }
-      
-      const parallaxImages = [
-        aboutImageRef.current,
-        whyChooseImageRef.current,
-        testimonialsImageRef.current,
-        faqImageRef.current
-      ];
-
-      parallaxImages.forEach((img) => {
-        if (!img) return;
-        const rect = img.getBoundingClientRect();
-        const scrollProgress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
-        if (scrollProgress > 0 && scrollProgress < 1) {
-          const parallaxOffset = (scrollProgress - 0.5) * -100;
-          img.style.transform = `translateY(${parallaxOffset}px)`;
-        }
-      });
-    };
-
-    const updateScrollAnimations = () => {
       const sections = [
         heroRef.current,
         aboutRef.current,
@@ -97,34 +49,40 @@ export const HomePage: React.FC = () => {
         ctaRef.current,
       ];
 
-      sections.forEach((section) => {
+      sections.forEach((section, index) => {
         if (!section) return;
-        
+
         const rect = section.getBoundingClientRect();
         const windowHeight = window.innerHeight;
-        const triggerPoint = windowHeight * 0.75;
-        
-        if (rect.top < triggerPoint && rect.bottom > 0) {
-          const scrollProgress = Math.min(
-            1,
-            Math.max(0, (triggerPoint - rect.top) / (windowHeight * 0.5))
-          );
+        const scrollProgress = Math.min(
+          Math.max(0, (windowHeight - rect.top) / windowHeight),
+          1
+        );
+
+        // Parallax effect: previous section moves left/down as new section appears
+        if (scrollProgress > 0 && scrollProgress < 1) {
+          const translateY = scrollProgress * 30;
+          const translateX = scrollProgress * -20;
+          const opacity = 1 - scrollProgress * 0.3;
           
-          section.style.setProperty('--scroll-progress', scrollProgress.toString());
-          
-          if (!section.classList.contains('scroll-revealed')) {
-            section.classList.add('scroll-revealed');
-          }
+          section.style.transform = `translateY(${translateY}px) translateX(${translateX}px)`;
+          section.style.opacity = opacity.toString();
+        } else if (scrollProgress >= 1) {
+          section.style.transform = 'translateY(0) translateX(0)';
+          section.style.opacity = '1';
+        }
+
+        // Reveal animations
+        if (rect.top < windowHeight * 0.8) {
+          section.classList.add('scroll-revealed');
         }
       });
     };
 
-    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
 
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleMouseDown = (e: React.MouseEvent) => {
@@ -158,7 +116,7 @@ export const HomePage: React.FC = () => {
         @keyframes slideFromLeft {
           from {
             opacity: 0;
-            transform: translateX(-100px);
+            transform: translateX(-60px);
           }
           to {
             opacity: 1;
@@ -169,7 +127,7 @@ export const HomePage: React.FC = () => {
         @keyframes slideFromRight {
           from {
             opacity: 0;
-            transform: translateX(100px);
+            transform: translateX(60px);
           }
           to {
             opacity: 1;
@@ -180,7 +138,7 @@ export const HomePage: React.FC = () => {
         @keyframes fadeUp {
           from {
             opacity: 0;
-            transform: translateY(40px);
+            transform: translateY(30px);
           }
           to {
             opacity: 1;
@@ -197,133 +155,96 @@ export const HomePage: React.FC = () => {
           }
         }
 
-        @keyframes scaleUp {
-          from {
-            opacity: 0;
-            transform: scale(0.9);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1);
-          }
-        }
-
+        /* Hero animations */
         .hero-word-1 {
-          animation: slideFromLeft 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation: slideFromLeft 800ms ease-out forwards;
           animation-delay: 0ms;
           opacity: 0;
-          will-change: transform, opacity;
         }
 
         .hero-word-2 {
-          animation: slideFromLeft 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
-          animation-delay: 200ms;
+          animation: slideFromLeft 800ms ease-out forwards;
+          animation-delay: 150ms;
           opacity: 0;
-          will-change: transform, opacity;
         }
 
         .hero-word-3 {
-          animation: slideFromLeft 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
-          animation-delay: 400ms;
+          animation: slideFromLeft 800ms ease-out forwards;
+          animation-delay: 300ms;
           opacity: 0;
-          will-change: transform, opacity;
         }
 
         .hero-subtitle {
-          animation: slideFromLeft 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
-          animation-delay: 600ms;
+          animation: slideFromLeft 800ms ease-out forwards;
+          animation-delay: 450ms;
           opacity: 0;
-          will-change: transform, opacity;
         }
 
         .hero-button {
-          animation: fadeUp 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
-          animation-delay: 800ms;
+          animation: fadeUp 800ms ease-out forwards;
+          animation-delay: 600ms;
           opacity: 0;
-          will-change: transform, opacity;
         }
 
         .hero-image-wrapper {
-          animation: slideFromRight 1200ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation: slideFromRight 900ms ease-out forwards;
           animation-delay: 300ms;
           opacity: 0;
-          will-change: transform, opacity;
         }
 
-        .hero-stat-1 {
-          animation: fadeUp 800ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
-          animation-delay: 1000ms;
+        .hero-stat {
+          animation: fadeUp 600ms ease-out forwards;
           opacity: 0;
-          will-change: transform, opacity;
         }
 
-        .hero-stat-2 {
-          animation: fadeUp 800ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
-          animation-delay: 1150ms;
-          opacity: 0;
-          will-change: transform, opacity;
-        }
+        .hero-stat-1 { animation-delay: 700ms; }
+        .hero-stat-2 { animation-delay: 850ms; }
+        .hero-stat-3 { animation-delay: 1000ms; }
+        .hero-stat-4 { animation-delay: 1150ms; }
 
-        .hero-stat-3 {
-          animation: fadeUp 800ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
-          animation-delay: 1300ms;
-          opacity: 0;
-          will-change: transform, opacity;
-        }
-
-        .hero-stat-4 {
-          animation: fadeUp 800ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
-          animation-delay: 1450ms;
-          opacity: 0;
-          will-change: transform, opacity;
-        }
-
+        /* Scroll-triggered animations */
         section {
           opacity: 0;
+          transition: transform 0.3s ease-out, opacity 0.3s ease-out;
         }
 
         section.scroll-revealed .animate-on-scroll-left {
-          animation: slideFromLeft 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation: slideFromLeft 800ms ease-out forwards;
         }
 
         section.scroll-revealed .animate-on-scroll-right {
-          animation: slideFromRight 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation: slideFromRight 800ms ease-out forwards;
         }
 
         section.scroll-revealed .animate-on-scroll-up {
-          animation: fadeUp 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation: fadeUp 800ms ease-out forwards;
         }
 
         section.scroll-revealed .animate-on-scroll-fade {
-          animation: fadeIn 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
-        }
-
-        section.scroll-revealed .animate-on-scroll-scale {
-          animation: scaleUp 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation: fadeIn 800ms ease-out forwards;
         }
 
         .animate-on-scroll-left,
         .animate-on-scroll-right,
         .animate-on-scroll-up,
-        .animate-on-scroll-fade,
-        .animate-on-scroll-scale {
+        .animate-on-scroll-fade {
           opacity: 0;
-          will-change: transform, opacity;
         }
 
         .stagger-1 { animation-delay: 0ms !important; }
-        .stagger-2 { animation-delay: 200ms !important; }
-        .stagger-3 { animation-delay: 400ms !important; }
-        .stagger-4 { animation-delay: 600ms !important; }
-
-        .stagger-fast-1 { animation-delay: 0ms !important; }
-        .stagger-fast-2 { animation-delay: 150ms !important; }
-        .stagger-fast-3 { animation-delay: 300ms !important; }
-        .stagger-fast-4 { animation-delay: 450ms !important; }
+        .stagger-2 { animation-delay: 150ms !important; }
+        .stagger-3 { animation-delay: 300ms !important; }
+        .stagger-4 { animation-delay: 450ms !important; }
 
         section.scroll-revealed {
           opacity: 1;
-          transition: opacity 600ms ease-out;
+        }
+
+        /* Simple frame for images */
+        .image-frame {
+          border: 3px solid rgba(16, 185, 129, 0.3);
+          border-radius: 1.5rem;
+          box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
         }
 
         .hero-image {
@@ -393,7 +314,7 @@ export const HomePage: React.FC = () => {
           flex: 0 0 auto;
           width: 280px;
           cursor: pointer;
-          transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s;
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
         @media (min-width: 640px) {
@@ -415,21 +336,16 @@ export const HomePage: React.FC = () => {
         }
 
         .service-card:hover {
-          transform: translateY(-12px) scale(1.05);
-          box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+          transform: translateY(-8px);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
         }
 
         .service-card img {
-          transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+          transition: transform 0.4s ease;
         }
 
         .service-card:hover img {
-          transform: scale(1.15);
-        }
-
-        .parallax-image {
-          will-change: transform;
-          transition: transform 0.1s linear;
+          transform: scale(1.05);
         }
 
         @media (prefers-reduced-motion: reduce) {
@@ -441,7 +357,7 @@ export const HomePage: React.FC = () => {
         }
       `}</style>
 
-      <main className="pt-16">
+      <main className="">
         {/* Terms Banner */}
         <div
           className={`bg-gradient-to-r from-primary-600 to-primary-700 border-b-2 sm:border-b-4 border-primary-800 transition-all duration-700 ease-in-out overflow-hidden ${
@@ -471,32 +387,30 @@ export const HomePage: React.FC = () => {
         </div>
 
         {/* Hero Section */}
-        <section ref={heroRef} className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-emerald-950 to-black py-8 sm:py-12 md:py-16 lg:py-20 scroll-revealed">
-          <div className="absolute inset-0 overflow-hidden opacity-20">
-            <svg className="absolute bottom-0 w-full h-48 sm:h-56 md:h-64" viewBox="0 0 1440 320" preserveAspectRatio="none">
-              <path fill="none" stroke="#00ff87" strokeWidth="2" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128">
-                <animate attributeName="d" dur="8s" repeatCount="indefinite" values="
-                  M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128;
-                  M0,128L48,138.7C96,149,192,171,288,165.3C384,160,480,128,576,122.7C672,117,768,139,864,144C960,149,1056,139,1152,128C1248,117,1344,107,1392,101.3L1440,96;
-                  M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128" />
-              </path>
-            </svg>
-          </div>
-          
+        <section
+          ref={heroRef}
+          className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-emerald-950 to-black py-8 sm:py-12 md:py-16 lg:py-20 scroll-revealed"
+        >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center mb-8 sm:mb-10">
               <div className="space-y-4 sm:space-y-6">
                 <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-normal leading-tight">
-                  <div className="hero-word-1 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-green-300 to-emerald-500">India's #1</div>
+                  <div className="hero-word-1 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-green-300 to-emerald-500">
+                    India's #1
+                  </div>
                   <div className="hero-word-2 text-white">Spa & Salon</div>
-                  <div className="hero-word-3 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-green-300 to-emerald-500">Platform</div>
+                  <div className="hero-word-3 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-green-300 to-emerald-500">
+                    Platform
+                  </div>
                 </h1>
                 <p className="hero-subtitle text-white/90 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed max-w-xl">
-                  Experience premium spa and salon services at your doorstep. Book verified professionals, enjoy transparent pricing, and relax with certified therapists across India.
+                  Experience premium spa and salon services at your doorstep.
+                  Book verified professionals, enjoy transparent pricing, and
+                  relax with certified therapists across India.
                 </p>
                 <div className="hero-button pt-2">
                   <Link to="/app">
-                    <button className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-full text-sm sm:text-base md:text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-emerald-500/50 inline-flex items-center gap-2">
+                    <button className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-full text-sm sm:text-base md:text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center gap-2">
                       Book Now
                       <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" />
                     </button>
@@ -505,53 +419,59 @@ export const HomePage: React.FC = () => {
               </div>
 
               <div className="hero-image-wrapper relative">
-                <div ref={heroImageRef} className="hero-image relative rounded-2xl sm:rounded-3xl overflow-hidden parallax-image">
-                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-2 sm:border-4 border-emerald-400 shadow-2xl shadow-emerald-500/50 z-10 pointer-events-none animate-pulse"></div>
-                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-emerald-500/20 to-green-500/20 z-10 pointer-events-none"></div>
-                  
+                <div className="hero-image relative rounded-2xl sm:rounded-3xl overflow-hidden image-frame">
                   <img
                     src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1200&q=80"
                     alt="Luxury Spa Interior"
                     className="absolute inset-0 w-full h-full object-cover"
+                    loading="eager"
                   />
                 </div>
               </div>
             </div>
 
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 pt-6 sm:pt-8 border-t border-emerald-500/30">
-              <div className="hero-stat-1 text-center">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 mb-1 sm:mb-2">10,000+</h2>
-                <p className="text-white/80 text-xs sm:text-sm md:text-base lg:text-lg">Verified Professionals</p>
+              <div className="hero-stat hero-stat-1 text-center">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 mb-1 sm:mb-2">
+                  10,000+
+                </h2>
+                <p className="text-white/80 text-xs sm:text-sm md:text-base lg:text-lg">
+                  Verified Professionals
+                </p>
               </div>
-              <div className="hero-stat-2 text-center">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 mb-1 sm:mb-2">50+</h2>
-                <p className="text-white/80 text-xs sm:text-sm md:text-base lg:text-lg">Cities Covered</p>
+              <div className="hero-stat hero-stat-2 text-center">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 mb-1 sm:mb-2">
+                  50+
+                </h2>
+                <p className="text-white/80 text-xs sm:text-sm md:text-base lg:text-lg">
+                  Cities Covered
+                </p>
               </div>
-              <div className="hero-stat-3 text-center">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 mb-1 sm:mb-2">1M+</h2>
-                <p className="text-white/80 text-xs sm:text-sm md:text-base lg:text-lg">Happy Customers</p>
+              <div className="hero-stat hero-stat-3 text-center">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 mb-1 sm:mb-2">
+                  1M+
+                </h2>
+                <p className="text-white/80 text-xs sm:text-sm md:text-base lg:text-lg">
+                  Happy Customers
+                </p>
               </div>
-              <div className="hero-stat-4 text-center">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 mb-1 sm:mb-2">24/7</h2>
-                <p className="text-white/80 text-xs sm:text-sm md:text-base lg:text-lg">Customer Support</p>
+              <div className="hero-stat hero-stat-4 text-center">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 mb-1 sm:mb-2">
+                  24/7
+                </h2>
+                <p className="text-white/80 text-xs sm:text-sm md:text-base lg:text-lg">
+                  Customer Support
+                </p>
               </div>
             </div>
           </div>
         </section>
 
         {/* About Section */}
-        <section ref={aboutRef} className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-b from-black via-gray-900 to-emerald-950 overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-24 sm:h-32 opacity-30">
-            <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
-              <path fill="none" stroke="#10b981" strokeWidth="3" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128">
-                <animate attributeName="d" dur="10s" repeatCount="indefinite" values="
-                  M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128;
-                  M0,128L48,138.7C96,149,192,171,288,165.3C384,160,480,128,576,122.7C672,117,768,139,864,144C960,149,1056,139,1152,128C1248,117,1344,107,1392,101.3L1440,96;
-                  M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128" />
-              </path>
-            </svg>
-          </div>
-          
+        <section
+          ref={aboutRef}
+          className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-b from-black via-gray-900 to-emerald-950 overflow-hidden"
+        >
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
               <div className="space-y-4 sm:space-y-6 lg:space-y-8">
@@ -563,37 +483,69 @@ export const HomePage: React.FC = () => {
                     Your Wellness Partner, At Your Doorstep
                   </h2>
                   <p className="animate-on-scroll-left stagger-3 text-white/90 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl leading-relaxed">
-                    Ombaro brings professional spa and salon services to your home. With a network of certified therapists and beauty experts, we ensure quality, hygiene, and convenience. From relaxing massages to premium facials, we've got you covered.
+                    Ombaro brings professional spa and salon services to your
+                    home. With a network of certified therapists and beauty
+                    experts, we ensure quality, hygiene, and convenience. From
+                    relaxing massages to premium facials, we've got you covered.
                   </p>
                 </div>
-                <div className="animate-on-scroll-left stagger-4 bg-gradient-to-br from-emerald-900/40 to-green-900/40 backdrop-blur-sm p-4 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl border border-emerald-500/30 shadow-2xl shadow-emerald-500/20">
-                  <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
-                    <img
-                      src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=200&q=80"
-                      alt="Customer"
-                      className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full object-cover border-2 border-emerald-400"
-                    />
-                    <div>
-                      <p className="font-semibold text-white text-sm sm:text-base lg:text-lg">Priya Sharma</p>
-                      <p className="text-xs sm:text-sm text-emerald-300">Regular Customer</p>
+                <div className="animate-on-scroll-left stagger-4 bg-gradient-to-br from-emerald-900/40 to-green-900/40 backdrop-blur-sm p-4 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl border border-emerald-500/30 shadow-2xl">
+                  <div className="grid grid-cols-2 gap-3 sm:gap-4 lg:gap-6">
+                    <div className="flex items-center gap-2 sm:gap-3">
+                      <Shield className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 text-emerald-400" />
+                      <div>
+                        <p className="text-white font-semibold text-xs sm:text-sm lg:text-base">
+                          Verified
+                        </p>
+                        <p className="text-white/70 text-xs sm:text-sm">
+                          Professionals
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 sm:gap-3">
+                      <Star className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 text-emerald-400" />
+                      <div>
+                        <p className="text-white font-semibold text-xs sm:text-sm lg:text-base">
+                          Premium
+                        </p>
+                        <p className="text-white/70 text-xs sm:text-sm">
+                          Quality
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 sm:gap-3">
+                      <Sparkles className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 text-emerald-400" />
+                      <div>
+                        <p className="text-white font-semibold text-xs sm:text-sm lg:text-base">
+                          Hygienic
+                        </p>
+                        <p className="text-white/70 text-xs sm:text-sm">
+                          Services
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 sm:gap-3">
+                      <Check className="w-6 h-6 sm:w-8 sm:h-8 lg:w-10 lg:h-10 text-emerald-400" />
+                      <div>
+                        <p className="text-white font-semibold text-xs sm:text-sm lg:text-base">
+                          Transparent
+                        </p>
+                        <p className="text-white/70 text-xs sm:text-sm">
+                          Pricing
+                        </p>
+                      </div>
                     </div>
                   </div>
-                  <p className="text-white/80 leading-relaxed italic text-sm sm:text-base lg:text-lg">
-                    "Ombaro has made my life so easy! Professional therapists, great service, and the convenience of home service is unbeatable."
-                  </p>
                 </div>
               </div>
-              
+
               <div className="animate-on-scroll-right stagger-2 relative">
-                <div className="relative">
-                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-2 sm:border-4 border-emerald-400 shadow-2xl shadow-emerald-500/60 z-10 pointer-events-none animate-pulse"></div>
-                  <div className="absolute -inset-2 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-emerald-500/30 to-green-500/30 blur-xl z-0"></div>
-                  
+                <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden image-frame h-64 sm:h-80 md:h-96 lg:h-[500px]">
                   <img
-                    ref={aboutImageRef}
-                    src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1200&q=80"
-                    alt="Spa Treatment Room"
-                    className="relative w-full rounded-2xl sm:rounded-3xl shadow-2xl parallax-image z-5"
+                    src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=1200&q=80"
+                    alt="Professional Spa Service"
+                    className="absolute inset-0 w-full h-full object-cover"
+                    loading="lazy"
                   />
                 </div>
               </div>
@@ -602,30 +554,27 @@ export const HomePage: React.FC = () => {
         </section>
 
         {/* Services Section */}
-        <section ref={servicesRef} className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-b from-emerald-950 via-gray-900 to-black overflow-hidden">
-          <div className="absolute bottom-0 left-0 w-full h-32 sm:h-40 md:h-48 opacity-20">
-            <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
-              <path fill="none" stroke="#10b981" strokeWidth="2" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128">
-                <animate attributeName="d" dur="12s" repeatCount="indefinite" values="
-                  M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128;
-                  M0,160L48,170.7C96,181,192,203,288,213.3C384,224,480,224,576,213.3C672,203,768,181,864,186.7C960,192,1056,224,1152,213.3C1248,203,1344,149,1392,122.7L1440,96;
-                  M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128" />
-              </path>
-            </svg>
-          </div>
-          
+        <section
+          ref={servicesRef}
+          className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-b from-emerald-950 via-gray-900 to-black overflow-hidden"
+        >
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="mb-8 sm:mb-10 lg:mb-12">
+            <div className="text-center mb-8 sm:mb-12 md:mb-16">
               <p className="animate-on-scroll-fade stagger-1 text-xs sm:text-sm font-semibold text-emerald-400 tracking-wider mb-2 sm:mb-3 uppercase">
                 Our Services
               </p>
-              <h2 className="animate-on-scroll-left stagger-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white font-normal">
-                Premium Wellness Services at Home
+              <h2 className="animate-on-scroll-up stagger-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white mb-4 sm:mb-6 font-normal">
+                Indulge in Our Premium Services
               </h2>
+              <p className="animate-on-scroll-up stagger-3 text-white/80 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl max-w-3xl mx-auto leading-relaxed">
+                From relaxing spa treatments to stunning salon makeovers, we
+                bring luxury to your doorstep.
+              </p>
             </div>
-            <div 
+
+            <div
               ref={carouselRef}
-              className={`services-carousel ${isDragging ? 'dragging' : ''}`}
+              className={`services-carousel ${isDragging ? "dragging" : ""}`}
               onMouseDown={handleMouseDown}
               onMouseMove={handleMouseMove}
               onMouseUp={handleMouseUp}
@@ -633,48 +582,47 @@ export const HomePage: React.FC = () => {
             >
               {[
                 {
-                  title: "Spa Massage",
-                  image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80",
-                  link: "/spa-massage"
+                  title: "Spa & Massage",
+                  desc: "Relax and rejuvenate with our therapeutic massages",
+                  img: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=800&q=80",
+                  link: "/services/spa-massage",
                 },
                 {
                   title: "Beauty Salon",
-                  image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80",
-                  link: "/beauty-salon"
+                  desc: "Hair, makeup, and beauty treatments at home",
+                  img: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80",
+                  link: "/services/beauty-salon",
                 },
                 {
                   title: "Bridal Makeup",
-                  image: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&q=80",
-                  link: "/bridal-makeup"
+                  desc: "Look stunning on your special day",
+                  img: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&q=80",
+                  link: "/services/bridal-makeup",
                 },
-                {
-                  title: "Hair Styling",
-                  image: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&q=80",
-                  link: "/services"
-                }
               ].map((service, index) => (
-                <Link key={index} to={service.link}>
-                  <div 
-                    className={`service-card animate-on-scroll-scale stagger-fast-${index + 1} group relative rounded-xl sm:rounded-2xl`}
-                  >
-                    <div className="absolute -inset-1 rounded-xl sm:rounded-2xl bg-gradient-to-r from-emerald-500 via-green-500 to-emerald-500 opacity-75 blur-lg group-hover:opacity-100 transition duration-500"></div>
-                    <div className="absolute inset-0 rounded-xl sm:rounded-2xl border-2 border-emerald-400 shadow-2xl shadow-emerald-500/50 z-10 pointer-events-none group-hover:border-green-300 transition duration-500"></div>
-                    
-                    <div className="relative h-80 sm:h-88 md:h-96 overflow-hidden rounded-xl sm:rounded-2xl">
-                      <img
-                        src={service.image}
-                        alt={service.title}
-                        className="w-full h-full object-cover"
-                        draggable="false"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
-                    </div>
-                    <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6">
-                      <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">{service.title}</h3>
-                      <div className="flex items-center justify-between">
-                        <div className="w-12 sm:w-14 md:w-16 h-1 bg-gradient-to-r from-emerald-400 to-green-300 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 shadow-lg shadow-emerald-500/50"></div>
-                        <span className="text-emerald-400 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-500">Learn More →</span>
-                      </div>
+                <Link
+                  key={index}
+                  to={service.link}
+                  className="service-card bg-gradient-to-b from-gray-800 to-gray-900 rounded-xl sm:rounded-2xl overflow-hidden border border-emerald-500/20"
+                >
+                  <div className="relative h-48 sm:h-56 md:h-64 overflow-hidden">
+                    <img
+                      src={service.img}
+                      alt={service.title}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="p-4 sm:p-5 md:p-6">
+                    <h3 className="text-white text-lg sm:text-xl md:text-2xl font-semibold mb-2">
+                      {service.title}
+                    </h3>
+                    <p className="text-white/70 text-sm sm:text-base mb-3 sm:mb-4">
+                      {service.desc}
+                    </p>
+                    <div className="flex items-center text-emerald-400 text-xs sm:text-sm font-semibold">
+                      Explore Service
+                      <ArrowRight className="w-4 h-4 ml-1" />
                     </div>
                   </div>
                 </Link>
@@ -683,68 +631,69 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Why Choose Us */}
-        <section ref={whyChooseRef} className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-b from-black via-gray-900 to-emerald-950 overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-24 sm:h-32 opacity-30">
-            <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
-              <path fill="none" stroke="#10b981" strokeWidth="3" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128">
-                <animate attributeName="d" dur="10s" repeatCount="indefinite" values="
-                  M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128;
-                  M0,128L48,138.7C96,149,192,171,288,165.3C384,160,480,128,576,122.7C672,117,768,139,864,144C960,149,1056,139,1152,128C1248,117,1344,107,1392,101.3L1440,96;
-                  M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128" />
-              </path>
-            </svg>
-          </div>
-
+        {/* Why Choose Us Section */}
+        <section
+          ref={whyChooseRef}
+          className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-b from-black via-emerald-950 to-gray-900 overflow-hidden"
+        >
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
               <div className="animate-on-scroll-left stagger-1 relative order-2 lg:order-1">
-                <div className="relative">
-                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-2 sm:border-4 border-emerald-400 shadow-2xl shadow-emerald-500/60 z-10 pointer-events-none animate-pulse"></div>
-                  <div className="absolute -inset-2 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-emerald-500/30 to-green-500/30 blur-xl z-0"></div>
-                  
+                <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden image-frame h-64 sm:h-80 md:h-96 lg:h-[500px]">
                   <img
-                    ref={whyChooseImageRef}
-                    src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=1200&q=80"
-                    alt="Professional Spa Service"
-                    className="relative w-full rounded-2xl sm:rounded-3xl shadow-2xl parallax-image z-5"
+                    src="https://images.unsplash.com/photo-1519415387722-a1c3bbef716c?w=1200&q=80"
+                    alt="Professional Team"
+                    className="absolute inset-0 w-full h-full object-cover"
+                    loading="lazy"
                   />
                 </div>
               </div>
 
-              <div className="space-y-4 sm:space-y-6 order-1 lg:order-2">
+              <div className="space-y-4 sm:space-y-6 lg:space-y-8 order-1 lg:order-2">
                 <div>
                   <p className="animate-on-scroll-fade stagger-1 text-xs sm:text-sm font-semibold text-emerald-400 tracking-wider mb-2 sm:mb-3 uppercase">
                     Why Choose Us
                   </p>
-                  <h2 className="animate-on-scroll-right stagger-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-4 sm:mb-6 font-normal">
-                    What Makes Ombaro Different
+                  <h2 className="animate-on-scroll-left stagger-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white mb-4 sm:mb-6 font-normal">
+                    Experience Excellence in Every Service
                   </h2>
                 </div>
-                <div className="space-y-3 sm:space-y-4">
+
+                <div className="space-y-3 sm:space-y-4 md:space-y-6">
                   {[
                     {
-                      title: "Verified Professionals",
-                      desc: "Background-checked therapists and beauticians"
+                      icon: Shield,
+                      title: "100% Verified Professionals",
+                      desc: "All our therapists are certified and background-verified",
                     },
                     {
+                      icon: Star,
+                      title: "Premium Quality Products",
+                      desc: "We use only the best and safest products",
+                    },
+                    {
+                      icon: Sparkles,
+                      title: "Hygienic Standards",
+                      desc: "Strict hygiene protocols followed at all times",
+                    },
+                    {
+                      icon: Check,
                       title: "Transparent Pricing",
-                      desc: "No hidden charges, fixed prices"
+                      desc: "No hidden charges, what you see is what you pay",
                     },
-                    {
-                      title: "100% Hygiene",
-                      desc: "Sanitized equipment and products"
-                    }
-                  ].map((item, index) => (
-                    <div key={index} className={`animate-on-scroll-right stagger-${index + 3} bg-gradient-to-br from-emerald-900/40 to-green-900/40 backdrop-blur-sm p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl border border-emerald-500/30`}>
-                      <div className="flex items-start gap-3 sm:gap-4">
-                        <div className="flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-emerald-500 to-green-500 rounded-full flex items-center justify-center">
-                          <Check className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-                        </div>
-                        <div>
-                          <h3 className="text-base sm:text-lg md:text-xl font-semibold text-white mb-1">{item.title}</h3>
-                          <p className="text-xs sm:text-sm md:text-base text-white/80">{item.desc}</p>
-                        </div>
+                  ].map((feature, index) => (
+                    <div
+                      key={index}
+                      className={`animate-on-scroll-left stagger-${index + 2} flex items-start gap-3 sm:gap-4 bg-gradient-to-r from-emerald-900/20 to-transparent backdrop-blur-sm p-3 sm:p-4 lg:p-6 rounded-lg sm:rounded-xl border border-emerald-500/20`}
+                    >
+                      <feature.icon className="w-5 h-5 sm:w-6 sm:h-6 lg:w-8 lg:h-8 text-emerald-400 flex-shrink-0 mt-0.5 sm:mt-1" />
+                      <div>
+                        <h3 className="text-white text-sm sm:text-base md:text-lg lg:text-xl font-semibold mb-0.5 sm:mb-1">
+                          {feature.title}
+                        </h3>
+                        <p className="text-white/70 text-xs sm:text-sm md:text-base">
+                          {feature.desc}
+                        </p>
                       </div>
                     </div>
                   ))}
@@ -754,67 +703,57 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Testimonials */}
-        <section ref={testimonialsRef} className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-b from-emerald-950 via-gray-900 to-black overflow-hidden">
-          <div className="absolute bottom-0 left-0 w-full h-32 sm:h-40 md:h-48 opacity-20">
-            <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
-              <path fill="none" stroke="#10b981" strokeWidth="2" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128">
-                <animate attributeName="d" dur="12s" repeatCount="indefinite" values="
-                  M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128;
-                  M0,160L48,170.7C96,181,192,203,288,213.3C384,224,480,224,576,213.3C672,203,768,181,864,186.7C960,192,1056,224,1152,213.3C1248,203,1344,149,1392,122.7L1440,96;
-                  M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128" />
-              </path>
-            </svg>
-          </div>
-
+        {/* Testimonials Section */}
+        <section
+          ref={testimonialsRef}
+          className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-b from-gray-900 via-black to-emerald-950 overflow-hidden"
+        >
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-8 sm:mb-10 lg:mb-12">
+            <div className="text-center mb-8 sm:mb-12 md:mb-16">
               <p className="animate-on-scroll-fade stagger-1 text-xs sm:text-sm font-semibold text-emerald-400 tracking-wider mb-2 sm:mb-3 uppercase">
-                What Our Customers Say
+                Testimonials
               </p>
-              <h2 className="animate-on-scroll-left stagger-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-normal">
-                Loved by Thousands Across India
+              <h2 className="animate-on-scroll-up stagger-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white mb-4 sm:mb-6 font-normal">
+                What Our Customers Say
               </h2>
             </div>
+
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
               {[
                 {
-                  quote: "The convenience of booking spa services at home is incredible! Professional service, verified therapists, and great prices. Ombaro has become my go-to for all wellness needs.",
                   name: "Priya Sharma",
-                  role: "Mumbai",
-                  image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80"
+                  rating: 5,
+                  text: "Amazing service! The therapist was professional and the massage was incredibly relaxing.",
                 },
                 {
-                  quote: "I love how easy it is to compare different salons and their services. The reviews helped me choose the perfect makeup artist for my wedding. Highly recommend Ombaro!",
                   name: "Rahul Verma",
-                  role: "Delhi",
-                  image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80"
+                  rating: 5,
+                  text: "Best spa experience at home. Highly recommend for anyone looking for convenience and quality.",
                 },
                 {
-                  quote: "As a working professional, Ombaro saves me so much time. I can book appointments at my convenience and get quality services at home. The platform is easy to use and reliable.",
-                  name: "Anjali Patel",
-                  role: "Bangalore",
-                  image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80"
-                }
+                  name: "Anita Singh",
+                  rating: 5,
+                  text: "The bridal makeup was flawless. I felt like a princess on my wedding day!",
+                },
               ].map((testimonial, index) => (
-                <div key={index} className={`animate-on-scroll-scale stagger-${index + 2} bg-gradient-to-br from-emerald-900/40 to-green-900/40 backdrop-blur-sm p-4 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl border border-emerald-500/30 shadow-2xl shadow-emerald-500/20`}>
-                  <div className="flex items-center space-x-1 mb-3 sm:mb-4 md:mb-6">
-                    {[...Array(5)].map((_, i) => (
-                      <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 fill-amber-400 text-amber-400" />
+                <div
+                  key={index}
+                  className={`animate-on-scroll-up stagger-${index + 1} bg-gradient-to-br from-emerald-900/30 to-gray-900/50 backdrop-blur-sm p-4 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl border border-emerald-500/20 shadow-xl`}
+                >
+                  <div className="flex items-center gap-1 mb-3 sm:mb-4">
+                    {[...Array(testimonial.rating)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="w-4 h-4 sm:w-5 sm:h-5 fill-emerald-400 text-emerald-400"
+                      />
                     ))}
                   </div>
-                  <p className="text-white/90 mb-4 sm:mb-5 md:mb-6 text-sm sm:text-base lg:text-lg leading-relaxed italic">"{testimonial.quote}"</p>
-                  <div className="flex items-center gap-3 sm:gap-4">
-                    <img
-                      src={testimonial.image}
-                      alt={testimonial.name}
-                      className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full object-cover border-2 border-emerald-400"
-                    />
-                    <div>
-                      <p className="font-semibold text-white text-sm sm:text-base lg:text-lg">{testimonial.name}</p>
-                      <p className="text-xs sm:text-sm text-emerald-300">{testimonial.role}</p>
-                    </div>
-                  </div>
+                  <p className="text-white/90 text-sm sm:text-base md:text-lg leading-relaxed mb-3 sm:mb-4">
+                    "{testimonial.text}"
+                  </p>
+                  <p className="text-emerald-400 font-semibold text-xs sm:text-sm md:text-base">
+                    - {testimonial.name}
+                  </p>
                 </div>
               ))}
             </div>
@@ -822,112 +761,73 @@ export const HomePage: React.FC = () => {
         </section>
 
         {/* FAQ Section */}
-        <section ref={faqRef} className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-b from-emerald-950 via-gray-900 to-black overflow-hidden">
-          <div className="absolute bottom-0 left-0 w-full h-32 sm:h-40 md:h-48 opacity-20">
-            <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
-              <path fill="none" stroke="#10b981" strokeWidth="2" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128">
-                <animate attributeName="d" dur="12s" repeatCount="indefinite" values="
-                  M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128;
-                  M0,160L48,170.7C96,181,192,203,288,213.3C384,224,480,224,576,213.3C672,203,768,181,864,186.7C960,192,1056,224,1152,213.3C1248,203,1344,149,1392,122.7L1440,96;
-                  M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128" />
-              </path>
-            </svg>
-          </div>
-          
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-start">
-              <div className="space-y-4 sm:space-y-6 lg:space-y-8">
-                <div>
-                  <p className="animate-on-scroll-fade stagger-1 text-xs sm:text-sm font-semibold text-emerald-400 tracking-wider mb-2 sm:mb-3 uppercase">
-                    FAQ
-                  </p>
-                  <h2 className="animate-on-scroll-left stagger-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-normal mb-3 sm:mb-4 md:mb-6">
-                    Common questions answered
-                  </h2>
-                  <p className="animate-on-scroll-left stagger-3 text-sm sm:text-base lg:text-lg text-white/80">
-                    Everything you need to know about our spa services
-                  </p>
-                </div>
-                
-                <div className="animate-on-scroll-left stagger-4 space-y-3 sm:space-y-4 md:space-y-6">
-                  {[
-                    {
-                      q: "How do I book a spa service?",
-                      a: "Simply click the 'Book Now' button, select your service, choose date & time, and confirm."
-                    },
-                    {
-                      q: "Are your therapists certified?",
-                      a: "Yes, all our therapists are certified, background-verified professionals with years of experience."
-                    },
-                    {
-                      q: "What if I need to reschedule?",
-                      a: "You can reschedule up to 2 hours before your appointment free of charge."
-                    }
-                  ].map((faq, index) => (
-                    <div key={index} className="bg-gradient-to-br from-emerald-900/40 to-green-900/40 backdrop-blur-sm p-4 sm:p-5 md:p-6 rounded-xl sm:rounded-2xl border border-emerald-500/30 hover:border-emerald-400 transition-colors duration-300">
-                      <h3 className="text-base sm:text-lg md:text-xl font-semibold text-white mb-2 sm:mb-3">{faq.q}</h3>
-                      <p className="text-xs sm:text-sm md:text-base text-white/80 leading-relaxed">{faq.a}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
+        <section
+          ref={faqRef}
+          className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-b from-emerald-950 via-gray-900 to-black overflow-hidden"
+        >
+          <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-8 sm:mb-12">
+              <p className="animate-on-scroll-fade stagger-1 text-xs sm:text-sm font-semibold text-emerald-400 tracking-wider mb-2 sm:mb-3 uppercase">
+                FAQ
+              </p>
+              <h2 className="animate-on-scroll-up stagger-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-4 font-normal">
+                Frequently Asked Questions
+              </h2>
+            </div>
 
-              <div className="animate-on-scroll-right stagger-2 relative">
-                <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden">
-                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-2 sm:border-4 border-emerald-400 shadow-2xl shadow-emerald-500/60 z-10 pointer-events-none animate-pulse"></div>
-                  <div className="absolute -inset-2 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-emerald-500/30 to-green-500/30 blur-xl z-0"></div>
-                  
-                  <img
-                    ref={faqImageRef}
-                    src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1200&q=80"
-                    alt="Spa FAQ"
-                    className="relative w-full h-auto rounded-2xl sm:rounded-3xl parallax-image z-5"
-                  />
+            <div className="space-y-3 sm:space-y-4">
+              {[
+                {
+                  q: "How do I book a service?",
+                  a: "Simply browse our services, select what you need, choose your preferred time slot, and confirm your booking. It's that easy!",
+                },
+                {
+                  q: "Are the professionals verified?",
+                  a: "Yes, all our professionals are thoroughly background-checked, certified, and trained to provide the best service.",
+                },
+                {
+                  q: "What safety measures do you follow?",
+                  a: "We follow strict hygiene protocols, use sanitized equipment, and our professionals wear protective gear during service.",
+                },
+                {
+                  q: "Can I reschedule or cancel my booking?",
+                  a: "Yes, you can reschedule or cancel your booking up to 6 hours before the scheduled time without any charges.",
+                },
+              ].map((faq, index) => (
+                <div
+                  key={index}
+                  className={`animate-on-scroll-left stagger-${index + 1} bg-gradient-to-r from-emerald-900/20 to-gray-900/30 backdrop-blur-sm p-4 sm:p-6 rounded-xl border border-emerald-500/20`}
+                >
+                  <h3 className="text-white text-sm sm:text-base md:text-lg font-semibold mb-2">
+                    {faq.q}
+                  </h3>
+                  <p className="text-white/70 text-xs sm:text-sm md:text-base leading-relaxed">
+                    {faq.a}
+                  </p>
                 </div>
-                <div className="absolute -bottom-4 sm:-bottom-6 -right-4 sm:-right-6 bg-gradient-to-r from-emerald-500 to-green-500 text-white p-4 sm:p-6 md:p-8 rounded-xl sm:rounded-2xl shadow-2xl max-w-xs sm:max-w-sm">
-                  <p className="text-sm sm:text-base md:text-lg font-semibold mb-1 sm:mb-2">Still have questions?</p>
-                  <p className="text-xs sm:text-sm text-white/90 mb-2 sm:mb-3 md:mb-4">We're here to help you</p>
-                  <Link to="/contact">
-                    <button className="bg-white text-emerald-600 px-4 sm:px-5 md:px-6 py-2 sm:py-2.5 md:py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300 inline-flex items-center gap-2 text-xs sm:text-sm md:text-base">
-                      Contact Us
-                      <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
-                    </button>
-                  </Link>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
 
         {/* CTA Section */}
-        <section ref={ctaRef} className="relative py-16 sm:py-20 md:py-24 lg:py-32 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white overflow-hidden scroll-revealed">
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0djItMnptMC0ydi0yaDJ2Mmgtem0tMiAyaC0ydjJoMnYtem0wLTJoMnYtMmgtMnYyem0tMiAwaC0ydjJoMnYtem0wIDBoMnYtMmgtMnYyem0wLTJ2LTJoLTJ2Mmgyem0yIDBWMzBoMnYyaC0yem0wIDBoLTJ2Mmgydi0yem0yIDB2Mmgydi0yaC0yem0wIDJ2Mmgydi0yaC0yem0yLTJ2LTJoMnYyaC0yem0wIDBoLTJ2Mmgydi0yem0wIDJoMnYyaC0ydi0yem0tMiAwdi0yaC0ydjJoMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-40"></div>
-          
-          <div className="absolute top-10 sm:top-20 left-5 sm:left-10 w-48 sm:w-60 md:w-72 h-48 sm:h-60 md:h-72 bg-gradient-to-br from-white/10 to-transparent rounded-full blur-3xl animate-float"></div>
-          <div className="absolute bottom-10 sm:bottom-20 right-5 sm:right-10 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-gradient-to-br from-white/5 to-transparent rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }}></div>
-          
+        <section
+          ref={ctaRef}
+          className="relative py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-br from-black via-emerald-950 to-gray-900 overflow-hidden"
+        >
           <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="animate-on-scroll-scale stagger-1 inline-block mb-4 sm:mb-6 md:mb-8 px-4 sm:px-6 py-1.5 sm:py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-              <p className="text-xs sm:text-sm font-semibold text-white tracking-wider uppercase">
-                Experience Luxury at Home
+            <div className="animate-on-scroll-up stagger-1">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white mb-4 sm:mb-6 font-normal">
+                Ready to Experience Luxury?
+              </h2>
+              <p className="text-white/90 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed mb-6 sm:mb-8 max-w-3xl mx-auto">
+                Book your first service and enjoy premium spa and salon
+                treatments in the comfort of your home.
               </p>
-            </div>
-            <h2 className="animate-on-scroll-up stagger-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl mb-4 sm:mb-6 md:mb-8 font-normal leading-tight">
-              Ready to Relax<br />& Rejuvenate?
-            </h2>
-            <p className="animate-on-scroll-up stagger-3 text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-6 sm:mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed">
-              Book your first session today and discover why thousands of Indians trust Ombaro for their wellness needs
-            </p>
-            <div className="animate-on-scroll-up stagger-4 flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center items-center">
               <Link to="/app">
-                <button className="group bg-white hover:bg-gray-100 text-black px-8 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 rounded-full text-base sm:text-lg md:text-xl font-bold transition-all duration-500 shadow-2xl hover:shadow-white/20 hover:scale-110 inline-flex items-center gap-2 sm:gap-3">
-                  Book Your Service
-                  <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform duration-300" />
-                </button>
-              </Link>
-              <Link to="/services">
-                <button className="px-8 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 rounded-full text-base sm:text-lg md:text-xl font-semibold border-2 border-white/30 hover:border-white text-white transition-all duration-500 hover:bg-white/10 hover:scale-105">
-                  Explore Services
+                <button className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white px-8 sm:px-10 md:px-12 py-4 sm:py-5 md:py-6 rounded-full text-base sm:text-lg md:text-xl font-semibold transition-all duration-300 shadow-2xl hover:shadow-emerald-500/50 inline-flex items-center gap-2 sm:gap-3">
+                  Book Now
+                  <ArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
                 </button>
               </Link>
             </div>
