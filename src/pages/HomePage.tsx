@@ -97,27 +97,49 @@ export const HomePage: React.FC = () => {
         ctaRef.current,
       ];
 
-      sections.forEach((section) => {
+      sections.forEach((section, index) => {
         if (!section) return;
 
         const rect = section.getBoundingClientRect();
         const windowHeight = window.innerHeight;
-        const triggerPoint = windowHeight * 0.75;
+        const triggerPoint = windowHeight * 0.8;
 
+        // Calculate scroll progress
+        const scrollProgress = Math.min(
+          1,
+          Math.max(0, (triggerPoint - rect.top) / (windowHeight * 0.5)),
+        );
+
+        // Smooth fade in when section enters viewport
         if (rect.top < triggerPoint && rect.bottom > 0) {
-          const scrollProgress = Math.min(
-            1,
-            Math.max(0, (triggerPoint - rect.top) / (windowHeight * 0.5)),
-          );
-
-          section.style.setProperty(
-            "--scroll-progress",
-            scrollProgress.toString(),
-          );
-
           if (!section.classList.contains("scroll-revealed")) {
             section.classList.add("scroll-revealed");
           }
+          
+          // Apply parallax text movement
+          const textElements = section.querySelectorAll('.animate-on-scroll-left, .animate-on-scroll-right');
+          textElements.forEach((el: Element) => {
+            const htmlEl = el as HTMLElement;
+            const offset = (1 - scrollProgress) * 50;
+            if (el.classList.contains('animate-on-scroll-left')) {
+              htmlEl.style.transform = `translateX(${offset}px)`;
+            } else if (el.classList.contains('animate-on-scroll-right')) {
+              htmlEl.style.transform = `translateX(-${offset}px)`;
+            }
+          });
+        }
+
+        // Slide out previous section smoothly when scrolling past
+        if (rect.bottom < windowHeight * 0.3) {
+          const slideOutProgress = Math.min(
+            1,
+            Math.max(0, (windowHeight * 0.3 - rect.bottom) / (windowHeight * 0.3)),
+          );
+          section.style.opacity = (1 - slideOutProgress * 0.5).toString();
+          section.style.transform = `translateY(-${slideOutProgress * 30}px)`;
+        } else {
+          section.style.opacity = '1';
+          section.style.transform = 'translateY(0)';
         }
       });
     };
@@ -184,6 +206,28 @@ export const HomePage: React.FC = () => {
           from {
             opacity: 0;
             transform: translateY(40px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes slideOutLeft {
+          from {
+            opacity: 1;
+            transform: translateX(0);
+          }
+          to {
+            opacity: 0;
+            transform: translateX(-100px);
+          }
+        }
+
+        @keyframes slideInFromBottom {
+          from {
+            opacity: 0;
+            transform: translateY(100px);
           }
           to {
             opacity: 1;
@@ -283,26 +327,29 @@ export const HomePage: React.FC = () => {
 
         section {
           opacity: 0;
+          transition: opacity 0.8s ease-out, transform 0.6s ease-out;
         }
 
         section.scroll-revealed .animate-on-scroll-left {
-          animation: slideFromLeft 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation: slideFromLeft 1200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+          transition: transform 0.3s ease-out;
         }
 
         section.scroll-revealed .animate-on-scroll-right {
-          animation: slideFromRight 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation: slideFromRight 1200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+          transition: transform 0.3s ease-out;
         }
 
         section.scroll-revealed .animate-on-scroll-up {
-          animation: fadeUp 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation: slideInFromBottom 1200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
         }
 
         section.scroll-revealed .animate-on-scroll-fade {
-          animation: fadeIn 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation: fadeIn 1200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
         }
 
         section.scroll-revealed .animate-on-scroll-scale {
-          animation: scaleUp 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation: scaleUp 1200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
         }
 
         .animate-on-scroll-left,
@@ -427,7 +474,7 @@ export const HomePage: React.FC = () => {
         }
 
         .service-card:hover img {
-          transform: scale(1.15);
+          transform: scale(1);
         }
 
         .parallax-image {
