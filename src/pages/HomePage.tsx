@@ -577,14 +577,14 @@ export const HomePage: React.FC = () => {
           </div>
 
           <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center mb-8 sm:mb-10">
-              <div className="space-y-4 sm:space-y-6 w-full">
-                <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light leading-tight w-full" style={{ letterSpacing: '0.05em' }}>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center mb-8 sm:mb-10">
+              <div className="space-y-4 sm:space-y-6 w-full px-2 sm:px-0">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light leading-tight w-full" style={{ letterSpacing: '0.05em' }}>
                   <div className="hero-word-1 text-white">
                     RELAX & ENJOY
                   </div>
                 </h2>
-                <p className="hero-subtitle text-white/90 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed max-w-xl font-light">
+                <p className="hero-subtitle text-white/90 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-xl font-light">
                   Experience ultimate relaxation with our premium spa and
                   wellness services. Book your perfect moment of tranquility
                   today.
@@ -622,36 +622,36 @@ export const HomePage: React.FC = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8 pt-6 sm:pt-8 border-t border-emerald-500/30">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8 pt-6 sm:pt-8 border-t border-emerald-500/30 px-2 sm:px-0">
               <div className="hero-stat-1 text-center">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 mb-1 sm:mb-2">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 mb-1 sm:mb-2">
                   10,000+
                 </h2>
-                <p className="text-white/80 text-xs sm:text-sm md:text-base lg:text-lg">
+                <p className="text-white/80 text-xs sm:text-sm md:text-base">
                   Verified Professionals
                 </p>
               </div>
               <div className="hero-stat-2 text-center">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 mb-1 sm:mb-2">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 mb-1 sm:mb-2">
                   50+
                 </h2>
-                <p className="text-white/80 text-xs sm:text-sm md:text-base lg:text-lg">
+                <p className="text-white/80 text-xs sm:text-sm md:text-base">
                   Cities Covered
                 </p>
               </div>
               <div className="hero-stat-3 text-center">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 mb-1 sm:mb-2">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 mb-1 sm:mb-2">
                   1M+
                 </h2>
-                <p className="text-white/80 text-xs sm:text-sm md:text-base lg:text-lg">
+                <p className="text-white/80 text-xs sm:text-sm md:text-base">
                   Happy Customers
                 </p>
               </div>
               <div className="hero-stat-4 text-center">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 mb-1 sm:mb-2">
+                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 mb-1 sm:mb-2">
                   24/7
                 </h2>
-                <p className="text-white/80 text-xs sm:text-sm md:text-base lg:text-lg">
+                <p className="text-white/80 text-xs sm:text-sm md:text-base">
                   Customer Support
                 </p>
               </div>
@@ -662,7 +662,7 @@ export const HomePage: React.FC = () => {
         {/* About Section */}
         <section
           ref={aboutRef}
-          className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-b from-black via-gray-900 to-emerald-950 overflow-hidden"
+          className="relative py-16 sm:py-20 md:py-24 lg:py-32 bg-gradient-to-b from-black via-gray-900 to-emerald-950 overflow-hidden"
         >
           <div className="absolute top-0 left-0 w-full h-24 sm:h-32 opacity-30">
             <svg
@@ -690,8 +690,8 @@ export const HomePage: React.FC = () => {
           </div>
 
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
-              <div className="space-y-4 sm:space-y-6 lg:space-y-8">
+            <div className="grid lg:grid-cols-2 gap-10 sm:gap-12 lg:gap-16 items-center">
+              <div className="space-y-6 sm:space-y-8 lg:space-y-10">
                 <div>
                   <p className="animate-on-scroll-fade stagger-1 text-xs sm:text-sm font-semibold text-emerald-400 tracking-wider mb-2 sm:mb-3 uppercase">
                     About Us

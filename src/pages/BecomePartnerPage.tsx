@@ -217,7 +217,7 @@ export const BecomePartnerPage: React.FC = () => {
         {/* Premium Hero Section */}
         <section
           ref={heroRef}
-          className="relative min-h-[500px] sm:min-h-[600px] md:min-h-[700px] lg:min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 scroll-revealed"
+          className="relative min-h-[450px] sm:min-h-[550px] md:min-h-[600px] lg:min-h-[75vh] flex items-center overflow-hidden bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 scroll-revealed"
         >
           {/* Animated Background Elements */}
           <div className="absolute inset-0 overflow-hidden">
@@ -233,7 +233,7 @@ export const BecomePartnerPage: React.FC = () => {
             <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSA2MCAwIEwgMCAwIDAgNjAiIGZpbGw9Im5vbmUiIHN0cm9rZT0icmdiYSgxNiwgMTg1LCAxMjksIDAuMDUpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-40"></div>
           </div>
 
-          <div className="relative z-10 max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 w-full py-8 sm:py-10 md:py-12 lg:py-16">
+          <div className="relative z-10 max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8 w-full py-6 sm:py-8 md:py-10 lg:py-12">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-center">
               {/* Left Content */}
               <div className="order-2 lg:order-1 text-center lg:text-left">
@@ -572,9 +572,9 @@ export const BecomePartnerPage: React.FC = () => {
           {/* Infinite Scroll Container */}
           <div className="relative">
             <div className="flex overflow-hidden">
-              <div className="flex animate-scroll-left whitespace-nowrap">
+              <div className="flex animate-scroll-left">
                 {[...Array(3)].map((_, setIdx) => (
-                  <div key={setIdx} className="flex space-x-6">
+                  <div key={setIdx} className="flex gap-4 sm:gap-6 mr-4 sm:mr-6">
                     {[
                       "/images/luxury_spa_treatment_ef5ecb59.jpg",
                       "/images/professional_beauty__6992f974.jpg",
