@@ -1,28 +1,13 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Star, Shield, X } from "lucide-react";
+import { ArrowRight, Star, Shield, X, Clock, Users, Award, CheckCircle } from "lucide-react";
 import { MarketingHeader } from "../components/marketing/MarketingHeader";
 import { MarketingFooter } from "../components/marketing/MarketingFooter";
 
 export const HomePage: React.FC = () => {
   const [showTermsBanner, setShowTermsBanner] = useState(true);
   const [isClosing, setIsClosing] = useState(false);
-  const [isDragging, setIsDragging] = useState(false);
-  const [startX, setStartX] = useState(0);
-  const [scrollLeft, setScrollLeft] = useState(0);
   const [scrollY, setScrollY] = useState(0);
-  
-  const carouselRef = useRef<HTMLDivElement>(null);
-  const heroRef = useRef<HTMLElement>(null);
-  const aboutRef = useRef<HTMLElement>(null);
-  const servicesRef = useRef<HTMLElement>(null);
-  const caseStudiesRef = useRef<HTMLElement>(null);
-  const testimonialsRef = useRef<HTMLElement>(null);
-  const pricingRef = useRef<HTMLElement>(null);
-  const ctaRef = useRef<HTMLElement>(null);
-  
-  const heroImageRef = useRef<HTMLDivElement>(null);
-  const aboutImageRef = useRef<HTMLImageElement>(null);
 
   const handleCloseBanner = () => {
     setIsClosing(true);
@@ -42,133 +27,31 @@ export const HomePage: React.FC = () => {
   }, [showTermsBanner]);
 
   useEffect(() => {
-    let ticking = false;
-
     const handleScroll = () => {
-      if (!ticking) {
-        window.requestAnimationFrame(() => {
-          setScrollY(window.scrollY);
-          updateParallax();
-          updateScrollAnimations();
-          ticking = false;
-        });
-        ticking = true;
-      }
-    };
-
-    const updateParallax = () => {
-      const scrollPos = window.scrollY;
-      
-      if (heroImageRef.current) {
-        const parallaxOffset = scrollPos * 0.5;
-        heroImageRef.current.style.transform = `translateY(${parallaxOffset}px)`;
-      }
-      
-      if (aboutImageRef.current) {
-        const rect = aboutImageRef.current.getBoundingClientRect();
-        const scrollProgress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
-        if (scrollProgress > 0 && scrollProgress < 1) {
-          const parallaxOffset = (scrollProgress - 0.5) * -100;
-          aboutImageRef.current.style.transform = `translateY(${parallaxOffset}px)`;
-        }
-      }
-    };
-
-    const updateScrollAnimations = () => {
-      const sections = [
-        heroRef.current,
-        aboutRef.current,
-        servicesRef.current,
-        caseStudiesRef.current,
-        testimonialsRef.current,
-        pricingRef.current,
-        ctaRef.current,
-      ];
-
-      sections.forEach((section) => {
-        if (!section) return;
-        
-        const rect = section.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-        const triggerPoint = windowHeight * 0.75;
-        
-        if (rect.top < triggerPoint && rect.bottom > 0) {
-          const scrollProgress = Math.min(
-            1,
-            Math.max(0, (triggerPoint - rect.top) / (windowHeight * 0.5))
-          );
-          
-          section.style.setProperty('--scroll-progress', scrollProgress.toString());
-          
-          if (!section.classList.contains('scroll-revealed')) {
-            section.classList.add('scroll-revealed');
-          }
-        }
-      });
+      setScrollY(window.scrollY);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
+    return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleMouseDown = (e: React.MouseEvent) => {
-    if (!carouselRef.current) return;
-    setIsDragging(true);
-    setStartX(e.pageX - carouselRef.current.offsetLeft);
-    setScrollLeft(carouselRef.current.scrollLeft);
-  };
-
-  const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging || !carouselRef.current) return;
-    e.preventDefault();
-    const x = e.pageX - carouselRef.current.offsetLeft;
-    const walk = (x - startX) * 2;
-    carouselRef.current.scrollLeft = scrollLeft - walk;
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-  };
-
-  const handleMouseLeave = () => {
-    setIsDragging(false);
-  };
-
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white snap-y snap-mandatory overflow-y-scroll h-screen">
       <MarketingHeader />
 
       <style>{`
-        @keyframes slideFromLeft {
-          from {
-            opacity: 0;
-            transform: translateX(-100px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
+        /* Snap Scrolling */
+        .snap-section {
+          scroll-snap-align: start;
+          scroll-snap-stop: always;
+          min-height: 100vh;
         }
 
-        @keyframes slideFromRight {
+        /* Smooth Animations */
+        @keyframes fadeInUp {
           from {
             opacity: 0;
-            transform: translateX(100px);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-
-        @keyframes fadeUp {
-          from {
-            opacity: 0;
-            transform: translateY(40px);
+            transform: translateY(60px);
           }
           to {
             opacity: 1;
@@ -176,16 +59,29 @@ export const HomePage: React.FC = () => {
           }
         }
 
-        @keyframes fadeIn {
+        @keyframes fadeInLeft {
           from {
             opacity: 0;
+            transform: translateX(-60px);
           }
           to {
             opacity: 1;
+            transform: translateX(0);
           }
         }
 
-        @keyframes scaleUp {
+        @keyframes fadeInRight {
+          from {
+            opacity: 0;
+            transform: translateX(60px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes scaleIn {
           from {
             opacity: 0;
             transform: scale(0.9);
@@ -196,227 +92,76 @@ export const HomePage: React.FC = () => {
           }
         }
 
-        .hero-word-1 {
-          animation: slideFromLeft 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
-          animation-delay: 0ms;
-          opacity: 0;
-          will-change: transform, opacity;
+        .animate-fade-in-up {
+          animation: fadeInUp 1s ease-out forwards;
         }
 
-        .hero-word-2 {
-          animation: slideFromLeft 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
-          animation-delay: 200ms;
-          opacity: 0;
-          will-change: transform, opacity;
+        .animate-fade-in-left {
+          animation: fadeInLeft 1s ease-out forwards;
         }
 
-        .hero-word-3 {
-          animation: slideFromLeft 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
-          animation-delay: 400ms;
-          opacity: 0;
-          will-change: transform, opacity;
+        .animate-fade-in-right {
+          animation: fadeInRight 1s ease-out forwards;
         }
 
-        .hero-subtitle {
-          animation: slideFromLeft 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
-          animation-delay: 600ms;
-          opacity: 0;
-          will-change: transform, opacity;
+        .animate-scale-in {
+          animation: scaleIn 1s ease-out forwards;
         }
 
-        .hero-button {
-          animation: fadeUp 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
-          animation-delay: 800ms;
-          opacity: 0;
-          will-change: transform, opacity;
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+        .delay-500 { animation-delay: 500ms; }
+        .delay-600 { animation-delay: 600ms; }
+        .delay-700 { animation-delay: 700ms; }
+        .delay-800 { animation-delay: 800ms; }
+
+
+        /* Parallax Effect */
+        .parallax {
+          transform: translateY(calc(var(--scroll) * 0.5px));
         }
 
-        .hero-image-wrapper {
-          animation: slideFromRight 1200ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
-          animation-delay: 300ms;
-          opacity: 0;
-          will-change: transform, opacity;
-        }
-
-        .hero-stat-1 {
-          animation: fadeUp 800ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
-          animation-delay: 1000ms;
-          opacity: 0;
-          will-change: transform, opacity;
-        }
-
-        .hero-stat-2 {
-          animation: fadeUp 800ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
-          animation-delay: 1150ms;
-          opacity: 0;
-          will-change: transform, opacity;
-        }
-
-        .hero-stat-3 {
-          animation: fadeUp 800ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
-          animation-delay: 1300ms;
-          opacity: 0;
-          will-change: transform, opacity;
-        }
-
-        .hero-stat-4 {
-          animation: fadeUp 800ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
-          animation-delay: 1450ms;
-          opacity: 0;
-          will-change: transform, opacity;
-        }
-
-        section {
-          opacity: 0;
-        }
-
-        section.scroll-revealed .animate-on-scroll-left {
-          animation: slideFromLeft 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
-        }
-
-        section.scroll-revealed .animate-on-scroll-right {
-          animation: slideFromRight 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
-        }
-
-        section.scroll-revealed .animate-on-scroll-up {
-          animation: fadeUp 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
-        }
-
-        section.scroll-revealed .animate-on-scroll-fade {
-          animation: fadeIn 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
-        }
-
-        section.scroll-revealed .animate-on-scroll-scale {
-          animation: scaleUp 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
-        }
-
-        .animate-on-scroll-left,
-        .animate-on-scroll-right,
-        .animate-on-scroll-up,
-        .animate-on-scroll-fade,
-        .animate-on-scroll-scale {
-          opacity: 0;
-          will-change: transform, opacity;
-        }
-
-        .stagger-1 { animation-delay: 0ms !important; }
-        .stagger-2 { animation-delay: 200ms !important; }
-        .stagger-3 { animation-delay: 400ms !important; }
-        .stagger-4 { animation-delay: 600ms !important; }
-
-        .stagger-fast-1 { animation-delay: 0ms !important; }
-        .stagger-fast-2 { animation-delay: 150ms !important; }
-        .stagger-fast-3 { animation-delay: 300ms !important; }
-        .stagger-fast-4 { animation-delay: 450ms !important; }
-
-        section.scroll-revealed {
-          opacity: 1;
-          transition: opacity 600ms ease-out;
-        }
-
-        .hero-image {
-          height: 50vw;
-          max-height: 600px;
-          min-height: 400px;
-          will-change: transform;
-          transition: transform 0.1s linear;
-        }
-
-        @media (min-width: 992px) {
-          .hero-image {
-            height: 50vw;
-          }
-        }
-
-        .webflow-heading {
-          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-          font-weight: 400;
-          line-height: 1.1;
-          letter-spacing: -0.02em;
-        }
-
-        .webflow-text {
-          font-family: system-ui, -apple-system, sans-serif;
-          font-size: 1.125rem;
-          line-height: 1.6;
-          color: #666;
-        }
-
-        .services-carousel {
-          display: flex;
-          gap: 1.5rem;
-          overflow-x: auto;
-          scroll-behavior: smooth;
-          -webkit-overflow-scrolling: touch;
-          scrollbar-width: none;
-          -ms-overflow-style: none;
-          padding: 1rem 0;
-          cursor: grab;
-        }
-
-        .services-carousel::-webkit-scrollbar {
-          display: none;
-        }
-
-        .services-carousel.dragging {
-          cursor: grabbing;
-          scroll-behavior: auto;
-        }
-
-        .service-card {
+        /* Image Frame Effect */
+        .image-frame {
           position: relative;
           overflow: hidden;
-          flex: 0 0 auto;
-          width: 320px;
-          cursor: pointer;
-          transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s;
+          border-radius: 24px;
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
         }
 
-        @media (min-width: 768px) {
-          .service-card {
-            width: 380px;
-          }
+        .image-frame::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          border: 2px solid rgba(255, 255, 255, 0.2);
+          border-radius: 24px;
+          pointer-events: none;
+          z-index: 1;
         }
 
-        .service-card:hover {
-          transform: translateY(-12px) scale(1.05);
-          box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
-        }
-
-        .service-card img {
+        .image-frame img {
           transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        .service-card:hover img {
-          transform: scale(1.15);
-        }
-
-        .case-study-card {
-          transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s;
-        }
-
-        .case-study-card:hover {
-          transform: translateY(-8px);
-          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-        }
-
-        .case-study-card img {
-          transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .case-study-card:hover img {
+        .image-frame:hover img {
           transform: scale(1.1);
         }
 
-        .parallax-image {
-          will-change: transform;
-          transition: transform 0.1s linear;
+        /* Card Hover Effects */
+        .service-card-hover {
+          transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .service-card-hover:hover {
+          transform: translateY(-12px);
+          box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
         }
 
         @media (prefers-reduced-motion: reduce) {
           *, *::before, *::after {
             animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
             transition-duration: 0.01ms !important;
           }
         }
@@ -451,272 +196,304 @@ export const HomePage: React.FC = () => {
           </div>
         </div>
 
-        {/* Hero Section - Staggered Word-by-Word Animation */}
-        <section ref={heroRef} className="relative overflow-hidden bg-white py-12 md:py-20 lg:py-32 scroll-revealed">
-          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-12">
-              {/* Left Text Content - Staggered Animation */}
-              <div className="space-y-6">
-                <h1 className="webflow-heading text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-gray-900 font-normal">
-                  <div className="hero-word-1">Empowering</div>
-                  <div className="hero-word-2">Business</div>
-                  <div className="hero-word-3">Growth</div>
+        {/* Hero Section */}
+        <section className="snap-section relative overflow-hidden bg-gradient-to-br from-white via-gray-50 to-white flex items-center">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+              {/* Left Content */}
+              <div className="space-y-8">
+                <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold text-gray-900 leading-tight animate-fade-in-left">
+                  Your Wellness,<br />
+                  <span className="text-primary-600">Our Priority</span>
                 </h1>
-                <p className="hero-subtitle webflow-text max-w-xl text-lg">
-                  Our digital marketing solutions are designed to deliver measurable results and accelerate your online growth through innovative strategies.
+                <p className="text-xl md:text-2xl text-gray-600 leading-relaxed animate-fade-in-left delay-200">
+                  Experience premium spa and salon services at home. Book expert therapists and beauticians in minutes.
                 </p>
-                <div className="hero-button flex gap-4 pt-4">
+                <div className="flex flex-wrap gap-4 animate-fade-in-left delay-400">
                   <Link to="/app">
-                    <button className="bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-full text-base font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center gap-2">
-                      Let's Talk
-                      <ArrowRight className="w-5 h-5" />
+                    <button className="bg-primary-600 hover:bg-primary-700 text-white px-10 py-5 rounded-full text-lg font-semibold transition-all duration-300 shadow-xl hover:shadow-2xl inline-flex items-center gap-3">
+                      Book Now
+                      <ArrowRight className="w-6 h-6" />
+                    </button>
+                  </Link>
+                  <Link to="/services">
+                    <button className="border-2 border-gray-300 hover:border-primary-600 text-gray-900 px-10 py-5 rounded-full text-lg font-semibold transition-all duration-300">
+                      Explore Services
                     </button>
                   </Link>
                 </div>
               </div>
 
-              {/* Right Image - Slides from Right with Parallax */}
-              <div className="hero-image-wrapper relative">
-                <div ref={heroImageRef} className="hero-image relative rounded-3xl overflow-hidden shadow-2xl parallax-image">
+              {/* Right Image */}
+              <div className="animate-fade-in-right delay-300">
+                <div className="image-frame">
                   <img
-                    src="https://cdn.prod.website-files.com/68bfd5901895b58f0d2e6d33/68c01353ba4fe52ebf9e1cd6_d899696bed5fc7d310c42da48c1b171f_IMG3.avif"
-                    alt="Hero"
-                    className="absolute inset-0 w-full h-full object-cover"
+                    src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80"
+                    alt="Premium Spa Experience"
+                    className="w-full h-auto rounded-3xl"
                   />
                 </div>
               </div>
             </div>
 
-            {/* Stats Section - Staggered Fade Up */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-gray-200">
-              <div className="hero-stat-1">
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">125+</h2>
-                <p className="text-gray-600">Industries served</p>
+            {/* Stats */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-12 border-t border-gray-200">
+              <div className="text-center animate-fade-in-up delay-500">
+                <h3 className="text-4xl md:text-5xl font-bold text-primary-600 mb-2">50K+</h3>
+                <p className="text-gray-600 font-medium">Happy Customers</p>
               </div>
-              <div className="hero-stat-2">
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">95%</h2>
-                <p className="text-gray-600">Client retention</p>
+              <div className="text-center animate-fade-in-up delay-600">
+                <h3 className="text-4xl md:text-5xl font-bold text-primary-600 mb-2">1000+</h3>
+                <p className="text-gray-600 font-medium">Expert Professionals</p>
               </div>
-              <div className="hero-stat-3">
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">500+</h2>
-                <p className="text-gray-600">Projects completed</p>
+              <div className="text-center animate-fade-in-up delay-700">
+                <h3 className="text-4xl md:text-5xl font-bold text-primary-600 mb-2">25+</h3>
+                <p className="text-gray-600 font-medium">Cities Covered</p>
               </div>
-              <div className="hero-stat-4">
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">24/7</h2>
-                <p className="text-gray-600">Support available</p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* About Section - Coordinated Left/Right */}
-        <section ref={aboutRef} className="py-20 bg-gray-50">
-          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              {/* Left Content - Slides from Left */}
-              <div className="space-y-8">
-                <div>
-                  <p className="animate-on-scroll-fade stagger-1 text-sm font-semibold text-gray-500 tracking-wider mb-3 uppercase">
-                    01 / About
-                  </p>
-                  <h2 className="animate-on-scroll-left stagger-2 webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900 mb-6 font-normal">
-                    Trusted by over 100 businesses worldwide
-                  </h2>
-                  <p className="animate-on-scroll-left stagger-3 webflow-text text-lg">
-                    We believe in creating meaningful, lasting connections through digital innovation. Whether it's building your brand, optimizing your website, or driving traffic with cutting-edge marketing strategies.
-                  </p>
-                </div>
-                <div className="animate-on-scroll-left stagger-4 bg-white p-8 rounded-2xl shadow-lg">
-                  <div className="flex items-center gap-4 mb-4">
-                    <img
-                      src="https://cdn.prod.website-files.com/68bfd5901895b58f0d2e6d33/68c151d7ece54bad85171ad3_fe3ef22dcd0ff322e4c249d33d30f9bc_Testimonials-1.avif"
-                      alt="CEO"
-                      className="w-16 h-16 rounded-full object-cover"
-                    />
-                    <div>
-                      <p className="font-semibold text-gray-900">Miles, Esther</p>
-                      <p className="text-sm text-gray-600">Chairman</p>
-                    </div>
-                  </div>
-                  <p className="text-gray-600 leading-relaxed italic">
-                    "Working with this team transformed our business. Their innovative approach and dedication to results is unmatched."
-                  </p>
-                </div>
-              </div>
-              
-              {/* Right Image - Slides from Right with Parallax */}
-              <div className="animate-on-scroll-right stagger-2">
-                <img
-                  ref={aboutImageRef}
-                  src="https://cdn.prod.website-files.com/68bfd5901895b58f0d2e6d33/68c0fa82a5e8c587cb5976bd_2039ece10f2ad381c4a36262e21daef2_about-img.avif"
-                  alt="About"
-                  className="w-full rounded-3xl shadow-2xl parallax-image"
-                />
+              <div className="text-center animate-fade-in-up delay-800">
+                <h3 className="text-4xl md:text-5xl font-bold text-primary-600 mb-2">4.8/5</h3>
+                <p className="text-gray-600 font-medium">Customer Rating</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Services Section - Staggered Service Cards */}
-        <section ref={servicesRef} className="py-20 bg-white">
-          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="mb-12">
-              <p className="animate-on-scroll-fade stagger-1 text-sm font-semibold text-gray-500 tracking-wider mb-3 uppercase">
-                02 / Services
-              </p>
-              <h2 className="animate-on-scroll-left stagger-2 webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900 font-normal">
-                Digital solutions that deliver results
+        {/* Services Section */}
+        <section className="snap-section relative bg-white flex items-center overflow-hidden">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div className="text-center mb-16">
+              <p className="text-primary-600 font-semibold text-lg mb-4 uppercase tracking-wider">Our Services</p>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+                Premium Wellness Services
               </h2>
-            </div>
-            <div 
-              ref={carouselRef}
-              className={`services-carousel ${isDragging ? 'dragging' : ''}`}
-              onMouseDown={handleMouseDown}
-              onMouseMove={handleMouseMove}
-              onMouseUp={handleMouseUp}
-              onMouseLeave={handleMouseLeave}
-            >
-              {[
-                {
-                  title: "Web design",
-                  image: "https://cdn.prod.website-files.com/68c1d32faae3f16628f1caa1/6917fb138b51b9bdb722a009_service-img-1.avif"
-                },
-                {
-                  title: "Photography",
-                  image: "https://cdn.prod.website-files.com/68c1d32faae3f16628f1caa1/6917fb45c4bc0481021b7e7a_service-img-2.avif"
-                },
-                {
-                  title: "Branding",
-                  image: "https://cdn.prod.website-files.com/68c1d32faae3f16628f1caa1/6917fc0c55ebb78e4a468fe6_service-img-3.avif"
-                },
-                {
-                  title: "Develop",
-                  image: "https://cdn.prod.website-files.com/68c1d32faae3f16628f1caa1/6917fc3d0e38b2018a72f5d3_service-img-4.avif"
-                }
-              ].map((service, index) => (
-                <div 
-                  key={index} 
-                  className={`service-card animate-on-scroll-scale stagger-fast-${index + 1} group relative rounded-2xl shadow-lg`}
-                >
-                  <div className="relative h-96 overflow-hidden rounded-2xl">
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="w-full h-full object-cover"
-                      draggable="false"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <h3 className="text-3xl font-bold text-white mb-2">{service.title}</h3>
-                    <div className="w-12 h-1 bg-white transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Case Studies - Staggered Cards */}
-        <section ref={caseStudiesRef} className="py-20 bg-gray-50">
-          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="mb-12">
-              <p className="animate-on-scroll-fade stagger-1 text-sm font-semibold text-gray-500 tracking-wider mb-3 uppercase">
-                03 / Case studies
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                From relaxing spa treatments to professional beauty services, we bring everything to your doorstep
               </p>
-              <h2 className="animate-on-scroll-left stagger-2 webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900 font-normal">
-                Explore our proven success stories
-              </h2>
             </div>
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  title: "Website Redesign for Indromate Company",
-                  subtitle: "Increased traffic by 120%",
-                  image: "https://cdn.prod.website-files.com/68c1d32faae3f16628f1caa1/6917fe79f3c529f153a06d61_Case-Studies-img-1.avif"
-                },
-                {
-                  title: "SEO & Digital Marketing for HomeStyle",
-                  subtitle: "Increased client inquiries by 90%",
-                  image: "https://cdn.prod.website-files.com/68c1d32faae3f16628f1caa1/6917feb9e68a344d90703d58_Case-Studies-img-2.avif"
-                },
-                {
-                  title: "Time Management Strategies",
-                  subtitle: "Crafted campaigns that convert",
-                  image: "https://cdn.prod.website-files.com/68c1d32faae3f16628f1caa1/6917ff716163f9b04d5eb949_Case-Studies-img-3.avif"
-                }
-              ].map((study, index) => (
-                <div 
-                  key={index} 
-                  className={`case-study-card animate-on-scroll-up stagger-${index + 2} bg-white rounded-2xl shadow-lg overflow-hidden`}
-                >
-                  <div className="relative h-72 overflow-hidden">
-                    <img
-                      src={study.image}
-                      alt={study.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  <div className="p-8">
-                    <h3 className="text-2xl font-semibold text-gray-900 mb-3 leading-tight">
-                      {study.title}
-                    </h3>
-                    <p className="text-gray-600 text-lg">{study.subtitle}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
-        {/* Testimonials - Staggered Cards */}
-        <section ref={testimonialsRef} className="py-20 bg-white">
-          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <p className="animate-on-scroll-fade stagger-1 text-sm font-semibold text-gray-500 tracking-wider mb-3 uppercase">
-                04 / Testimonials
-              </p>
-              <h2 className="animate-on-scroll-left stagger-2 webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900 font-normal">
-                Trusted by our clients
-              </h2>
-            </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  quote: "Working with this team was a game-changer. They turned our ideas into a website that perfectly reflects our brand.",
-                  name: "Sarah Mitchell",
-                  role: "Marketing Director",
-                  image: "https://cdn.prod.website-files.com/68bfd5901895b58f0d2e6d33/69182a3eb549c5fb65f3102a_testi-4.avif"
+                  title: "Spa & Massage",
+                  description: "Rejuvenate with our expert massage therapists",
+                  image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=600&q=80",
+                  icon: "🧘‍♀️"
                 },
                 {
-                  quote: "Our traffic and engagement have skyrocketed since launching the new site. These guys know what they're doing!",
-                  name: "David Khan",
-                  role: "Founder of StyleNest",
-                  image: "https://cdn.prod.website-files.com/68bfd5901895b58f0d2e6d33/69182a6c2c690da68c523eeb_testi-5.avif"
+                  title: "Beauty Salon",
+                  description: "Professional beauty services at home",
+                  image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&q=80",
+                  icon: "💅"
                 },
                 {
-                  quote: "They didn't just design a website they built an online experience that helps us convert visitors into clients.",
-                  name: "James Park",
-                  role: "CEO at FintechX",
-                  image: "https://cdn.prod.website-files.com/68bfd5901895b58f0d2e6d33/69182b367ef2d7a7ce7e916c_testi-6.avif"
+                  title: "Bridal Makeup",
+                  description: "Look stunning on your special day",
+                  image: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&q=80",
+                  icon: "💄"
+                },
+                {
+                  title: "Hair Care",
+                  description: "Expert hair styling and treatments",
+                  image: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=600&q=80",
+                  icon: "💇‍♀️"
+                },
+                {
+                  title: "Skin Care",
+                  description: "Advanced facial and skin treatments",
+                  image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=600&q=80",
+                  icon: "✨"
+                },
+                {
+                  title: "Wellness",
+                  description: "Holistic wellness and therapy sessions",
+                  image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=600&q=80",
+                  icon: "🌿"
+                }
+              ].map((service, index) => (
+                <div key={index} className="service-card-hover bg-white rounded-3xl overflow-hidden shadow-lg group">
+                  <div className="image-frame rounded-none">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-64 object-cover"
+                    />
+                  </div>
+                  <div className="p-8">
+                    <div className="text-5xl mb-4">{service.icon}</div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3">{service.title}</h3>
+                    <p className="text-gray-600 text-lg leading-relaxed mb-6">{service.description}</p>
+                    <button className="text-primary-600 font-semibold inline-flex items-center gap-2 group-hover:gap-4 transition-all">
+                      Learn More
+                      <ArrowRight className="w-5 h-5" />
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Why Choose Us */}
+        <section className="snap-section relative bg-gradient-to-br from-primary-50 to-white flex items-center overflow-hidden">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div className="grid lg:grid-cols-2 gap-16 items-center">
+              <div className="image-frame">
+                <img
+                  src="https://images.unsplash.com/photo-1519415387722-a1c3bbef716c?w=800&q=80"
+                  alt="Professional Service"
+                  className="w-full h-auto rounded-3xl"
+                />
+              </div>
+
+              <div className="space-y-8">
+                <div>
+                  <p className="text-primary-600 font-semibold text-lg mb-4 uppercase tracking-wider">Why OMBARO</p>
+                  <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+                    Your Trusted Wellness Partner
+                  </h2>
+                  <p className="text-xl text-gray-600 leading-relaxed">
+                    We connect you with certified professionals who deliver exceptional services in the comfort of your home.
+                  </p>
+                </div>
+
+                <div className="space-y-6">
+                  {[
+                    {
+                      icon: CheckCircle,
+                      title: "Verified Professionals",
+                      description: "All our therapists and beauticians are certified and background-verified"
+                    },
+                    {
+                      icon: Clock,
+                      title: "Flexible Booking",
+                      description: "Book services at your convenient time, 7 days a week"
+                    },
+                    {
+                      icon: Award,
+                      title: "Premium Quality",
+                      description: "We use only high-quality products and follow strict hygiene protocols"
+                    },
+                    {
+                      icon: Users,
+                      title: "Customer Support",
+                      description: "24/7 customer support to assist you with any queries"
+                    }
+                  ].map((item, index) => (
+                    <div key={index} className="flex gap-6 items-start group">
+                      <div className="flex-shrink-0 w-14 h-14 bg-primary-100 rounded-2xl flex items-center justify-center group-hover:bg-primary-600 transition-colors duration-300">
+                        <item.icon className="w-7 h-7 text-primary-600 group-hover:text-white transition-colors duration-300" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                        <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* How It Works */}
+        <section className="snap-section relative bg-white flex items-center overflow-hidden">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div className="text-center mb-16">
+              <p className="text-primary-600 font-semibold text-lg mb-4 uppercase tracking-wider">Simple Process</p>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+                Book in 3 Easy Steps
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-12">
+              {[
+                {
+                  step: "01",
+                  title: "Choose Service",
+                  description: "Select from our wide range of spa and salon services",
+                  image: "https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=500&q=80"
+                },
+                {
+                  step: "02",
+                  title: "Book Appointment",
+                  description: "Pick your preferred date, time, and professional",
+                  image: "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=500&q=80"
+                },
+                {
+                  step: "03",
+                  title: "Relax & Enjoy",
+                  description: "Sit back and enjoy premium services at your doorstep",
+                  image: "https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=500&q=80"
+                }
+              ].map((step, index) => (
+                <div key={index} className="text-center group">
+                  <div className="mb-8 relative">
+                    <div className="image-frame mx-auto w-full max-w-sm">
+                      <img
+                        src={step.image}
+                        alt={step.title}
+                        className="w-full h-80 object-cover rounded-3xl"
+                      />
+                    </div>
+                    <div className="absolute -top-6 -left-6 w-20 h-20 bg-primary-600 rounded-2xl flex items-center justify-center shadow-xl group-hover:scale-110 transition-transform">
+                      <span className="text-3xl font-bold text-white">{step.step}</span>
+                    </div>
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4">{step.title}</h3>
+                  <p className="text-gray-600 text-lg leading-relaxed">{step.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Testimonials */}
+        <section className="snap-section relative bg-gradient-to-br from-gray-50 to-white flex items-center overflow-hidden">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-20">
+            <div className="text-center mb-16">
+              <p className="text-primary-600 font-semibold text-lg mb-4 uppercase tracking-wider">Testimonials</p>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
+                What Our Customers Say
+              </h2>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  name: "Priya Sharma",
+                  role: "Regular Customer",
+                  image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80",
+                  review: "OMBARO has been a game-changer for me. The convenience of getting spa services at home with such professional therapists is amazing!"
+                },
+                {
+                  name: "Rajesh Kumar",
+                  role: "Corporate Professional",
+                  image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80",
+                  review: "The quality of service is outstanding. All professionals are well-trained and the booking process is super smooth."
+                },
+                {
+                  name: "Anita Desai",
+                  role: "Homemaker",
+                  image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80",
+                  review: "I love how easy it is to book appointments. The therapists are punctual, professional, and use high-quality products."
                 }
               ].map((testimonial, index) => (
-                <div key={index} className={`animate-on-scroll-scale stagger-${index + 2} bg-gray-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-500`}>
+                <div key={index} className="bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500">
                   <div className="flex items-center space-x-1 mb-6">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
                     ))}
                   </div>
-                  <p className="text-gray-700 mb-6 text-lg leading-relaxed italic">"{testimonial.quote}"</p>
+                  <p className="text-gray-700 text-lg leading-relaxed mb-8 italic">"{testimonial.review}"</p>
                   <div className="flex items-center gap-4">
                     <img
                       src={testimonial.image}
                       alt={testimonial.name}
-                      className="w-14 h-14 rounded-full object-cover"
+                      className="w-16 h-16 rounded-full object-cover"
                     />
                     <div>
-                      <p className="font-semibold text-gray-900 text-lg">{testimonial.name}</p>
-                      <p className="text-sm text-gray-600">{testimonial.role}</p>
+                      <p className="font-bold text-gray-900 text-lg">{testimonial.name}</p>
+                      <p className="text-gray-600">{testimonial.role}</p>
                     </div>
                   </div>
                 </div>
@@ -725,209 +502,27 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Pricing - Staggered Cards with Parallax */}
-        <section ref={pricingRef} className="relative py-20 bg-gray-50 overflow-hidden">
-          {/* Animated Background Elements */}
-          <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-to-br from-gray-200/40 to-gray-300/40 rounded-full blur-3xl animate-float"></div>
-          <div className="absolute bottom-20 right-10 w-72 h-72 bg-gradient-to-br from-gray-300/40 to-gray-200/40 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
-          
-          <div className="relative max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <p className="animate-on-scroll-fade stagger-1 text-sm font-semibold text-gray-500 tracking-wider mb-3 uppercase">
-                05 / Pricing
-              </p>
-              <h2 className="animate-on-scroll-up stagger-2 webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900 font-normal mb-4">
-                Choose your perfect plan
-              </h2>
-              <p className="animate-on-scroll-fade stagger-3 webflow-text text-lg max-w-2xl mx-auto">
-                Flexible pricing options designed to grow with your business
-              </p>
-            </div>
-            <div className="grid md:grid-cols-3 gap-8">
-              {[
-                {
-                  name: "Starter Package",
-                  subtitle: "Best for solo founders",
-                  price: "$899",
-                  features: [
-                    "1–2 Page Website Design",
-                    "Mobile Responsive Design",
-                    "Basic UI/UX Flow",
-                    "1 Revision Round",
-                    "Delivery in 5 Business Days"
-                  ]
-                },
-                {
-                  name: "Pro Package",
-                  subtitle: "Best for growing businesses",
-                  price: "$1,699",
-                  features: [
-                    "Up to 5 Pages",
-                    "Full UI/UX Design",
-                    "Responsive all devices",
-                    "Design system",
-                    "Delivery in 7–10 days"
-                  ],
-                  featured: true
-                },
-                {
-                  name: "Ultimate Package",
-                  subtitle: "Best for enterprises",
-                  price: "$1,899",
-                  features: [
-                    "Unlimited Pages",
-                    "Advanced UI/UX Design",
-                    "Custom Features",
-                    "Unlimited Revisions",
-                    "Priority Support"
-                  ]
-                }
-              ].map((plan, index) => (
-                <div
-                  key={index}
-                  className={`animate-on-scroll-scale stagger-${index + 2} bg-white p-8 rounded-2xl shadow-lg transition-all duration-700 hover:shadow-2xl hover:-translate-y-3 ${
-                    plan.featured ? "ring-2 ring-black md:scale-105 relative z-10" : ""
-                  }`}
-                >
-                  {plan.featured && (
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-black text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
-                      Most Popular
-                    </div>
-                  )}
-                  <div className="mb-6">
-                    <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-                    <p className="text-gray-600">{plan.subtitle}</p>
-                  </div>
-                  <div className="mb-8 pb-8 border-b border-gray-200">
-                    <p className="text-5xl font-bold text-gray-900">{plan.price}</p>
-                    <p className="text-gray-600 mt-1">per project</p>
-                  </div>
-                  <ul className="space-y-4 mb-8">
-                    {plan.features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-3 text-gray-700">
-                        <svg className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                        </svg>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link to="/contact">
-                    <button
-                      className={`w-full py-4 rounded-full font-semibold transition-all duration-500 transform hover:scale-105 ${
-                        plan.featured
-                          ? "bg-black hover:bg-gray-800 text-white shadow-lg hover:shadow-2xl"
-                          : "bg-gray-100 hover:bg-gray-900 hover:text-white text-gray-900"
-                      }`}
-                    >
-                      Get Started Today
-                    </button>
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+        {/* CTA Section */}
+        <section className="snap-section relative bg-gradient-to-br from-primary-600 to-primary-800 text-white flex items-center overflow-hidden">
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wNSI+PHBhdGggZD0iTTM2IDM0djItMnptMC0ydi0yaDJ2Mmgtem0tMiAyaC0ydjJoMnYtem0wLTJoMnYtMmgtMnYyem0tMiAwaC0ydjJoMnYtem0wIDBoMnYtMmgtMnYyem0wLTJ2LTJoLTJ2Mmgyem0yIDBWMzBoMnYyaC0yem0wIDBoLTJ2Mmgydi0yem0yIDB2Mmgydi0yaC0yem0wIDJ2Mmgydi0yaC0yem0yLTJ2LTJoMnYyaC0yem0wIDBoLTJ2Mmgydi0yem0wIDJoMnYyaC0ydi0yem0tMiAwdi0yaC0ydjJoMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-30"></div>
 
-        {/* FAQ Section - Staggered with Smooth Reveal */}
-        <section ref={ctaRef} className="relative py-20 bg-white overflow-hidden">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-gray-100/60 to-gray-200/60 rounded-full blur-3xl animate-float"></div>
-          
-          <div className="relative max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-2 gap-16 items-start">
-              {/* Left Content - Slides from Left */}
-              <div className="space-y-8">
-                <div>
-                  <p className="animate-on-scroll-fade stagger-1 text-sm font-semibold text-gray-500 tracking-wider mb-3 uppercase">
-                    06 / FAQ
-                  </p>
-                  <h2 className="animate-on-scroll-left stagger-2 webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900 font-normal mb-6">
-                    Common questions answered
-                  </h2>
-                  <p className="animate-on-scroll-left stagger-3 webflow-text text-lg">
-                    Everything you need to know about our services and how we work
-                  </p>
-                </div>
-                
-                <div className="animate-on-scroll-left stagger-4 space-y-6">
-                  {[
-                    {
-                      q: "How long does a typical project take?",
-                      a: "Most projects are completed within 2-4 weeks, depending on complexity and scope."
-                    },
-                    {
-                      q: "Do you offer ongoing support?",
-                      a: "Yes, we provide 24/7 support and maintenance packages for all our clients."
-                    },
-                    {
-                      q: "Can I request changes after launch?",
-                      a: "Absolutely! We offer revision packages and can make updates as your business evolves."
-                    }
-                  ].map((faq, index) => (
-                    <div key={index} className="bg-gray-50 p-6 rounded-2xl hover:bg-gray-100 transition-colors duration-300">
-                      <h3 className="text-xl font-semibold text-gray-900 mb-3">{faq.q}</h3>
-                      <p className="text-gray-600 leading-relaxed">{faq.a}</p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Right Image - Slides from Right */}
-              <div className="animate-on-scroll-right stagger-2 relative">
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                  <img
-                    src="https://cdn.prod.website-files.com/68bfd5901895b58f0d2e6d33/68c14e3b3be7f93cfe07eeda_81e8a0ed9b0cfc31bfd2ad7d64be4603_FAQ.avif"
-                    alt="FAQ"
-                    className="w-full h-auto"
-                  />
-                </div>
-                <div className="absolute -bottom-6 -right-6 bg-black text-white p-8 rounded-2xl shadow-2xl max-w-sm">
-                  <p className="text-lg font-semibold mb-2">Still have questions?</p>
-                  <p className="text-gray-300 mb-4">We're here to help you succeed</p>
-                  <Link to="/contact">
-                    <button className="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300 inline-flex items-center gap-2">
-                      Contact Us
-                      <ArrowRight className="w-4 h-4" />
-                    </button>
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section - Coordinated Animation with Parallax */}
-        <section className="relative py-32 md:py-40 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white overflow-hidden">
-          {/* Animated Grid Pattern */}
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0djItMnptMC0ydi0yaDJ2Mmgtem0tMiAyaC0ydjJoMnYtem0wLTJoMnYtMmgtMnYyem0tMiAwaC0ydjJoMnYtem0wIDBoMnYtMmgtMnYyem0wLTJ2LTJoLTJ2Mmgyem0yIDBWMzBoMnYyaC0yem0wIDBoLTJ2Mmgydi0yem0yIDB2Mmgydi0yaC0yem0wIDJ2Mmgydi0yaC0yem0yLTJ2LTJoMnYyaC0yem0wIDBoLTJ2Mmgydi0yem0wIDJoMnYyaC0ydi0yem0tMiAwdi0yaC0ydjJoMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-40"></div>
-          
-          {/* Floating Gradient Orbs */}
-          <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-white/10 to-transparent rounded-full blur-3xl animate-float"></div>
-          <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-white/5 to-transparent rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }}></div>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-white/5 to-transparent rounded-full blur-3xl animate-float" style={{ animationDelay: '1.5s' }}></div>
-          
-          <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="animate-on-scroll-scale stagger-1 inline-block mb-8 px-6 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
-              <p className="text-sm font-semibold text-white tracking-wider uppercase">
-                Let's Build Something Amazing
-              </p>
-            </div>
-            <h2 className="animate-on-scroll-up stagger-2 webflow-heading text-5xl md:text-6xl lg:text-7xl xl:text-8xl mb-8 font-normal leading-tight">
-              Ready to Transform<br />Your Digital Presence?
+          <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-32 text-center">
+            <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight">
+              Ready to Experience<br />Premium Wellness?
             </h2>
-            <p className="animate-on-scroll-up stagger-3 text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Let's discuss how we can help elevate your brand and drive measurable results with cutting-edge digital solutions
+            <p className="text-xl md:text-2xl text-white/90 mb-12 max-w-3xl mx-auto leading-relaxed">
+              Join thousands of satisfied customers who trust OMBARO for their wellness needs
             </p>
-            <div className="animate-on-scroll-up stagger-4 flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <Link to="/contact">
-                <button className="group bg-white hover:bg-gray-100 text-black px-12 py-5 rounded-full text-xl font-bold transition-all duration-500 shadow-2xl hover:shadow-white/20 hover:scale-110 inline-flex items-center gap-3">
-                  Let's Talk
-                  <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <Link to="/app">
+                <button className="bg-white hover:bg-gray-100 text-primary-600 px-12 py-6 rounded-full text-xl font-bold transition-all duration-500 shadow-2xl hover:shadow-white/20 hover:scale-110 inline-flex items-center gap-3">
+                  Book Your Service
+                  <ArrowRight className="w-6 h-6" />
                 </button>
               </Link>
-              <Link to="/services">
-                <button className="px-12 py-5 rounded-full text-xl font-semibold border-2 border-white/30 hover:border-white text-white transition-all duration-500 hover:bg-white/10 hover:scale-105">
-                  View Our Services
+              <Link to="/contact">
+                <button className="border-2 border-white/50 hover:border-white text-white px-12 py-6 rounded-full text-xl font-semibold transition-all duration-500 hover:bg-white/10">
+                  Contact Us
                 </button>
               </Link>
             </div>

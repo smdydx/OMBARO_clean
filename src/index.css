@@ -65,6 +65,15 @@
   animation-play-state: paused;
 }
 
+/* Snap Scrolling */
+.snap-y {
+  scroll-snap-type: y mandatory;
+}
+
+.snap-mandatory {
+  scroll-behavior: smooth;
+}
+
 /* Smooth horizontal scrolling */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
@@ -74,6 +83,19 @@
   -ms-overflow-style: none;
   scrollbar-width: none;
   scroll-behavior: smooth;
+}
+
+/* Snap scrolling for desktop */
+@media (min-width: 1024px) {
+  html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+  }
+  
+  .snap-section {
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
 }
 
 @keyframes scroll-right {
