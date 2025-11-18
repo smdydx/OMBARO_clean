@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Star, Shield, X } from "lucide-react";
@@ -11,6 +10,7 @@ export const HomePage: React.FC = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
+  const [scrollY, setScrollY] = useState(0);
   
   const carouselRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLElement>(null);
@@ -20,6 +20,9 @@ export const HomePage: React.FC = () => {
   const testimonialsRef = useRef<HTMLElement>(null);
   const pricingRef = useRef<HTMLElement>(null);
   const ctaRef = useRef<HTMLElement>(null);
+  
+  const heroImageRef = useRef<HTMLDivElement>(null);
+  const aboutImageRef = useRef<HTMLImageElement>(null);
 
   const handleCloseBanner = () => {
     setIsClosing(true);
@@ -39,39 +42,76 @@ export const HomePage: React.FC = () => {
   }, [showTermsBanner]);
 
   useEffect(() => {
-    const sections = [
-      heroRef.current,
-      aboutRef.current,
-      servicesRef.current,
-      caseStudiesRef.current,
-      testimonialsRef.current,
-      pricingRef.current,
-      ctaRef.current,
-    ];
+    let ticking = false;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("scroll-revealed");
-          }
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrollY(window.scrollY);
+          updateParallax();
+          updateScrollAnimations();
+          ticking = false;
         });
-      },
-      { threshold: 0.1, rootMargin: "0px 0px -100px 0px" }
-    );
-
-    sections.forEach((section) => {
-      if (section) {
-        observer.observe(section);
+        ticking = true;
       }
-    });
+    };
 
-    return () => {
+    const updateParallax = () => {
+      const scrollPos = window.scrollY;
+      
+      if (heroImageRef.current) {
+        const parallaxOffset = scrollPos * 0.5;
+        heroImageRef.current.style.transform = `translateY(${parallaxOffset}px)`;
+      }
+      
+      if (aboutImageRef.current) {
+        const rect = aboutImageRef.current.getBoundingClientRect();
+        const scrollProgress = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+        if (scrollProgress > 0 && scrollProgress < 1) {
+          const parallaxOffset = (scrollProgress - 0.5) * -100;
+          aboutImageRef.current.style.transform = `translateY(${parallaxOffset}px)`;
+        }
+      }
+    };
+
+    const updateScrollAnimations = () => {
+      const sections = [
+        heroRef.current,
+        aboutRef.current,
+        servicesRef.current,
+        caseStudiesRef.current,
+        testimonialsRef.current,
+        pricingRef.current,
+        ctaRef.current,
+      ];
+
       sections.forEach((section) => {
-        if (section) {
-          observer.unobserve(section);
+        if (!section) return;
+        
+        const rect = section.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+        const triggerPoint = windowHeight * 0.75;
+        
+        if (rect.top < triggerPoint && rect.bottom > 0) {
+          const scrollProgress = Math.min(
+            1,
+            Math.max(0, (triggerPoint - rect.top) / (windowHeight * 0.5))
+          );
+          
+          section.style.setProperty('--scroll-progress', scrollProgress.toString());
+          
+          if (!section.classList.contains('scroll-revealed')) {
+            section.classList.add('scroll-revealed');
+          }
         }
       });
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
     };
   }, []);
 
@@ -103,32 +143,10 @@ export const HomePage: React.FC = () => {
       <MarketingHeader />
 
       <style>{`
-        @keyframes fadeInUp {
+        @keyframes slideFromLeft {
           from {
             opacity: 0;
-            transform: translateY(30px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-
-        @keyframes scaleIn {
-          from {
-            opacity: 0;
-            transform: scale(1.2) translateY(-250px);
-          }
-          to {
-            opacity: 1;
-            transform: scale(1) translateY(0);
-          }
-        }
-
-        @keyframes slideInRight {
-          from {
-            opacity: 0;
-            transform: translateX(500px);
+            transform: translateX(-100px);
           }
           to {
             opacity: 1;
@@ -136,10 +154,21 @@ export const HomePage: React.FC = () => {
           }
         }
 
-        @keyframes scrollReveal {
+        @keyframes slideFromRight {
           from {
             opacity: 0;
-            transform: translateY(60px);
+            transform: translateX(100px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        @keyframes fadeUp {
+          from {
+            opacity: 0;
+            transform: translateY(40px);
           }
           to {
             opacity: 1;
@@ -147,27 +176,142 @@ export const HomePage: React.FC = () => {
           }
         }
 
-        .animate-fade-in-up {
-          animation: fadeInUp 0.8s ease-out forwards;
+        @keyframes fadeIn {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
         }
 
-        .animate-scale-in {
-          animation: scaleIn 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        @keyframes scaleUp {
+          from {
+            opacity: 0;
+            transform: scale(0.9);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1);
+          }
         }
 
-        .animate-slide-in-right {
-          animation: slideInRight 0.8s ease-out forwards;
+        .hero-word-1 {
+          animation: slideFromLeft 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation-delay: 0ms;
+          opacity: 0;
+          will-change: transform, opacity;
+        }
+
+        .hero-word-2 {
+          animation: slideFromLeft 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation-delay: 200ms;
+          opacity: 0;
+          will-change: transform, opacity;
+        }
+
+        .hero-word-3 {
+          animation: slideFromLeft 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation-delay: 400ms;
+          opacity: 0;
+          will-change: transform, opacity;
+        }
+
+        .hero-subtitle {
+          animation: slideFromLeft 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation-delay: 600ms;
+          opacity: 0;
+          will-change: transform, opacity;
+        }
+
+        .hero-button {
+          animation: fadeUp 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation-delay: 800ms;
+          opacity: 0;
+          will-change: transform, opacity;
+        }
+
+        .hero-image-wrapper {
+          animation: slideFromRight 1200ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation-delay: 300ms;
+          opacity: 0;
+          will-change: transform, opacity;
+        }
+
+        .hero-stat-1 {
+          animation: fadeUp 800ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation-delay: 1000ms;
+          opacity: 0;
+          will-change: transform, opacity;
+        }
+
+        .hero-stat-2 {
+          animation: fadeUp 800ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation-delay: 1150ms;
+          opacity: 0;
+          will-change: transform, opacity;
+        }
+
+        .hero-stat-3 {
+          animation: fadeUp 800ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation-delay: 1300ms;
+          opacity: 0;
+          will-change: transform, opacity;
+        }
+
+        .hero-stat-4 {
+          animation: fadeUp 800ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation-delay: 1450ms;
+          opacity: 0;
+          will-change: transform, opacity;
         }
 
         section {
           opacity: 0;
-          transform: translateY(60px);
-          transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
+
+        section.scroll-revealed .animate-on-scroll-left {
+          animation: slideFromLeft 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        section.scroll-revealed .animate-on-scroll-right {
+          animation: slideFromRight 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        section.scroll-revealed .animate-on-scroll-up {
+          animation: fadeUp 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        section.scroll-revealed .animate-on-scroll-fade {
+          animation: fadeIn 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        section.scroll-revealed .animate-on-scroll-scale {
+          animation: scaleUp 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        .animate-on-scroll-left,
+        .animate-on-scroll-right,
+        .animate-on-scroll-up,
+        .animate-on-scroll-fade,
+        .animate-on-scroll-scale {
+          opacity: 0;
+          will-change: transform, opacity;
+        }
+
+        .stagger-1 { animation-delay: 0ms !important; }
+        .stagger-2 { animation-delay: 200ms !important; }
+        .stagger-3 { animation-delay: 400ms !important; }
+        .stagger-4 { animation-delay: 600ms !important; }
+
+        .stagger-fast-1 { animation-delay: 0ms !important; }
+        .stagger-fast-2 { animation-delay: 150ms !important; }
+        .stagger-fast-3 { animation-delay: 300ms !important; }
+        .stagger-fast-4 { animation-delay: 450ms !important; }
 
         section.scroll-revealed {
           opacity: 1;
-          transform: translateY(0);
+          transition: opacity 600ms ease-out;
         }
 
         .hero-image {
@@ -175,6 +319,7 @@ export const HomePage: React.FC = () => {
           max-height: 600px;
           min-height: 400px;
           will-change: transform;
+          transition: transform 0.1s linear;
         }
 
         @media (min-width: 992px) {
@@ -262,6 +407,19 @@ export const HomePage: React.FC = () => {
         .case-study-card:hover img {
           transform: scale(1.1);
         }
+
+        .parallax-image {
+          will-change: transform;
+          transition: transform 0.1s linear;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          *, *::before, *::after {
+            animation-duration: 0.01ms !important;
+            animation-iteration-count: 1 !important;
+            transition-duration: 0.01ms !important;
+          }
+        }
       `}</style>
 
       <main className="pt-20">
@@ -293,20 +451,21 @@ export const HomePage: React.FC = () => {
           </div>
         </div>
 
-        {/* Hero Section - Exact Webflow Style */}
-        <section ref={heroRef} className="relative overflow-hidden bg-white py-12 md:py-20 lg:py-32">
+        {/* Hero Section - Staggered Word-by-Word Animation */}
+        <section ref={heroRef} className="relative overflow-hidden bg-white py-12 md:py-20 lg:py-32 scroll-revealed">
           <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-            {/* Hero Content */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-12">
-              {/* Left Text Content */}
-              <div className="space-y-6 animate-fade-in-up">
+              {/* Left Text Content - Staggered Animation */}
+              <div className="space-y-6">
                 <h1 className="webflow-heading text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-gray-900 font-normal">
-                  Empowering Business Growth
+                  <div className="hero-word-1">Empowering</div>
+                  <div className="hero-word-2">Business</div>
+                  <div className="hero-word-3">Growth</div>
                 </h1>
-                <p className="webflow-text max-w-xl text-lg">
+                <p className="hero-subtitle webflow-text max-w-xl text-lg">
                   Our digital marketing solutions are designed to deliver measurable results and accelerate your online growth through innovative strategies.
                 </p>
-                <div className="flex gap-4 pt-4">
+                <div className="hero-button flex gap-4 pt-4">
                   <Link to="/app">
                     <button className="bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-full text-base font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center gap-2">
                       Let's Talk
@@ -316,9 +475,9 @@ export const HomePage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Right Image */}
-              <div className="relative animate-scale-in">
-                <div className="hero-image relative rounded-3xl overflow-hidden shadow-2xl">
+              {/* Right Image - Slides from Right with Parallax */}
+              <div className="hero-image-wrapper relative">
+                <div ref={heroImageRef} className="hero-image relative rounded-3xl overflow-hidden shadow-2xl parallax-image">
                   <img
                     src="https://cdn.prod.website-files.com/68bfd5901895b58f0d2e6d33/68c01353ba4fe52ebf9e1cd6_d899696bed5fc7d310c42da48c1b171f_IMG3.avif"
                     alt="Hero"
@@ -328,21 +487,21 @@ export const HomePage: React.FC = () => {
               </div>
             </div>
 
-            {/* Stats Section */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-gray-200 animate-slide-in-right">
-              <div>
+            {/* Stats Section - Staggered Fade Up */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-gray-200">
+              <div className="hero-stat-1">
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">125+</h2>
                 <p className="text-gray-600">Industries served</p>
               </div>
-              <div>
+              <div className="hero-stat-2">
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">95%</h2>
                 <p className="text-gray-600">Client retention</p>
               </div>
-              <div>
+              <div className="hero-stat-3">
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">500+</h2>
                 <p className="text-gray-600">Projects completed</p>
               </div>
-              <div>
+              <div className="hero-stat-4">
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">24/7</h2>
                 <p className="text-gray-600">Support available</p>
               </div>
@@ -350,23 +509,24 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* About Section - Exact Webflow Style */}
+        {/* About Section - Coordinated Left/Right */}
         <section ref={aboutRef} className="py-20 bg-gray-50">
           <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Left Content - Slides from Left */}
               <div className="space-y-8">
                 <div>
-                  <p className="text-sm font-semibold text-gray-500 tracking-wider mb-3 uppercase">
+                  <p className="animate-on-scroll-fade stagger-1 text-sm font-semibold text-gray-500 tracking-wider mb-3 uppercase">
                     01 / About
                   </p>
-                  <h2 className="webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900 mb-6 font-normal">
+                  <h2 className="animate-on-scroll-left stagger-2 webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900 mb-6 font-normal">
                     Trusted by over 100 businesses worldwide
                   </h2>
-                  <p className="webflow-text text-lg">
+                  <p className="animate-on-scroll-left stagger-3 webflow-text text-lg">
                     We believe in creating meaningful, lasting connections through digital innovation. Whether it's building your brand, optimizing your website, or driving traffic with cutting-edge marketing strategies.
                   </p>
                 </div>
-                <div className="bg-white p-8 rounded-2xl shadow-lg">
+                <div className="animate-on-scroll-left stagger-4 bg-white p-8 rounded-2xl shadow-lg">
                   <div className="flex items-center gap-4 mb-4">
                     <img
                       src="https://cdn.prod.website-files.com/68bfd5901895b58f0d2e6d33/68c151d7ece54bad85171ad3_fe3ef22dcd0ff322e4c249d33d30f9bc_Testimonials-1.avif"
@@ -383,25 +543,28 @@ export const HomePage: React.FC = () => {
                   </p>
                 </div>
               </div>
-              <div>
+              
+              {/* Right Image - Slides from Right with Parallax */}
+              <div className="animate-on-scroll-right stagger-2">
                 <img
+                  ref={aboutImageRef}
                   src="https://cdn.prod.website-files.com/68bfd5901895b58f0d2e6d33/68c0fa82a5e8c587cb5976bd_2039ece10f2ad381c4a36262e21daef2_about-img.avif"
                   alt="About"
-                  className="w-full rounded-3xl shadow-2xl"
+                  className="w-full rounded-3xl shadow-2xl parallax-image"
                 />
               </div>
             </div>
           </div>
         </section>
 
-        {/* Services Section - Horizontal Scrolling Carousel */}
+        {/* Services Section - Staggered Service Cards */}
         <section ref={servicesRef} className="py-20 bg-white">
           <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12">
-              <p className="text-sm font-semibold text-gray-500 tracking-wider mb-3 uppercase">
+              <p className="animate-on-scroll-fade stagger-1 text-sm font-semibold text-gray-500 tracking-wider mb-3 uppercase">
                 02 / Services
               </p>
-              <h2 className="webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900 font-normal">
+              <h2 className="animate-on-scroll-left stagger-2 webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900 font-normal">
                 Digital solutions that deliver results
               </h2>
             </div>
@@ -433,7 +596,7 @@ export const HomePage: React.FC = () => {
               ].map((service, index) => (
                 <div 
                   key={index} 
-                  className="service-card group relative rounded-2xl shadow-lg"
+                  className={`service-card animate-on-scroll-scale stagger-fast-${index + 1} group relative rounded-2xl shadow-lg`}
                 >
                   <div className="relative h-96 overflow-hidden rounded-2xl">
                     <img
@@ -454,14 +617,14 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Case Studies - Exact Webflow Cards */}
+        {/* Case Studies - Staggered Cards */}
         <section ref={caseStudiesRef} className="py-20 bg-gray-50">
           <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12">
-              <p className="text-sm font-semibold text-gray-500 tracking-wider mb-3 uppercase">
+              <p className="animate-on-scroll-fade stagger-1 text-sm font-semibold text-gray-500 tracking-wider mb-3 uppercase">
                 03 / Case studies
               </p>
-              <h2 className="webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900 font-normal">
+              <h2 className="animate-on-scroll-left stagger-2 webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900 font-normal">
                 Explore our proven success stories
               </h2>
             </div>
@@ -485,7 +648,7 @@ export const HomePage: React.FC = () => {
               ].map((study, index) => (
                 <div 
                   key={index} 
-                  className="case-study-card bg-white rounded-2xl shadow-lg overflow-hidden"
+                  className={`case-study-card animate-on-scroll-up stagger-${index + 2} bg-white rounded-2xl shadow-lg overflow-hidden`}
                 >
                   <div className="relative h-72 overflow-hidden">
                     <img
@@ -506,14 +669,14 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Testimonials - Exact Webflow Style */}
+        {/* Testimonials - Staggered Cards */}
         <section ref={testimonialsRef} className="py-20 bg-white">
           <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <p className="text-sm font-semibold text-gray-500 tracking-wider mb-3 uppercase">
+              <p className="animate-on-scroll-fade stagger-1 text-sm font-semibold text-gray-500 tracking-wider mb-3 uppercase">
                 04 / Testimonials
               </p>
-              <h2 className="webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900 font-normal">
+              <h2 className="animate-on-scroll-left stagger-2 webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900 font-normal">
                 Trusted by our clients
               </h2>
             </div>
@@ -538,7 +701,7 @@ export const HomePage: React.FC = () => {
                   image: "https://cdn.prod.website-files.com/68bfd5901895b58f0d2e6d33/69182b367ef2d7a7ce7e916c_testi-6.avif"
                 }
               ].map((testimonial, index) => (
-                <div key={index} className="bg-gray-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-500">
+                <div key={index} className={`animate-on-scroll-scale stagger-${index + 2} bg-gray-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-500`}>
                   <div className="flex items-center space-x-1 mb-6">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
@@ -562,14 +725,14 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Pricing - Exact Webflow Cards */}
+        {/* Pricing - Staggered Cards */}
         <section ref={pricingRef} className="py-20 bg-gray-50">
           <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <p className="text-sm font-semibold text-gray-500 tracking-wider mb-3 uppercase">
+              <p className="animate-on-scroll-fade stagger-1 text-sm font-semibold text-gray-500 tracking-wider mb-3 uppercase">
                 05 / Pricing
               </p>
-              <h2 className="webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900 font-normal">
+              <h2 className="animate-on-scroll-left stagger-2 webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900 font-normal">
                 Choose your perfect plan
               </h2>
             </div>
@@ -615,7 +778,7 @@ export const HomePage: React.FC = () => {
               ].map((plan, index) => (
                 <div
                   key={index}
-                  className={`bg-white p-8 rounded-2xl shadow-lg transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 ${
+                  className={`animate-on-scroll-up stagger-${index + 2} bg-white p-8 rounded-2xl shadow-lg transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 ${
                     plan.featured ? "ring-2 ring-black scale-105 relative" : ""
                   }`}
                 >
@@ -659,22 +822,22 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* CTA Section - Enhanced Bold & Prominent */}
+        {/* CTA Section - Coordinated Animation */}
         <section ref={ctaRef} className="relative py-32 md:py-40 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white overflow-hidden">
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0djItMnptMC0ydi0yaDJ2Mmgtem0tMiAyaC0ydjJoMnYtem0wLTJoMnYtMmgtMnYyem0tMiAwaC0ydjJoMnYtem0wIDBoMnYtMmgtMnYyem0wLTJ2LTJoLTJ2Mmgyem0yIDBWMzBoMnYyaC0yem0wIDBoLTJ2Mmgydi0yem0yIDB2Mmgydi0yaC0yem0wIDJ2Mmgydi0yaC0yem0yLTJ2LTJoMnYyaC0yem0wIDBoLTJ2Mmgydi0yem0wIDJoMnYyaC0ydi0yem0tMiAwdi0yaC0ydjJoMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-40"></div>
           <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="inline-block mb-6 px-6 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
+            <div className="animate-on-scroll-fade stagger-1 inline-block mb-6 px-6 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
               <p className="text-sm font-semibold text-white tracking-wider uppercase">
                 Let's Build Something Amazing
               </p>
             </div>
-            <h2 className="webflow-heading text-5xl md:text-6xl lg:text-7xl xl:text-8xl mb-8 font-normal leading-tight">
+            <h2 className="animate-on-scroll-up stagger-2 webflow-heading text-5xl md:text-6xl lg:text-7xl xl:text-8xl mb-8 font-normal leading-tight">
               Ready to Transform<br />Your Digital Presence?
             </h2>
-            <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+            <p className="animate-on-scroll-up stagger-3 text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
               Let's discuss how we can help elevate your brand and drive measurable results with cutting-edge digital solutions
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <div className="animate-on-scroll-up stagger-4 flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Link to="/contact">
                 <button className="group bg-white hover:bg-gray-100 text-black px-12 py-5 rounded-full text-xl font-bold transition-all duration-300 shadow-2xl hover:shadow-white/20 hover:scale-105 inline-flex items-center gap-3">
                   Let's Talk
@@ -686,24 +849,6 @@ export const HomePage: React.FC = () => {
                   View Our Services
                 </button>
               </Link>
-            </div>
-            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-white/20">
-              <div className="text-center">
-                <p className="text-4xl md:text-5xl font-bold mb-2">125+</p>
-                <p className="text-gray-400 text-sm">Industries Served</p>
-              </div>
-              <div className="text-center">
-                <p className="text-4xl md:text-5xl font-bold mb-2">95%</p>
-                <p className="text-gray-400 text-sm">Client Retention</p>
-              </div>
-              <div className="text-center">
-                <p className="text-4xl md:text-5xl font-bold mb-2">500+</p>
-                <p className="text-gray-400 text-sm">Projects Done</p>
-              </div>
-              <div className="text-center">
-                <p className="text-4xl md:text-5xl font-bold mb-2">24/7</p>
-                <p className="text-gray-400 text-sm">Support</p>
-              </div>
             </div>
           </div>
         </section>
