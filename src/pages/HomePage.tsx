@@ -38,7 +38,7 @@ export const HomePage: React.FC = () => {
 
   useEffect(() => {
     if (!showTermsBanner) return;
-    
+
     const countdownInterval = setInterval(() => {
       setCountdown((prev) => {
         if (prev <= 1) {
@@ -48,7 +48,7 @@ export const HomePage: React.FC = () => {
         return prev - 1;
       });
     }, 1000);
-    
+
     return () => clearInterval(countdownInterval);
   }, [showTermsBanner]);
 
@@ -138,7 +138,13 @@ export const HomePage: React.FC = () => {
 
             // Entry animation (from left when coming into view from bottom)
             if (elementRect.top < windowHeight && elementRect.bottom > 0) {
-              const entryProgress = Math.min(1, Math.max(0, (windowHeight - elementRect.top) / (windowHeight * 0.8)));
+              const entryProgress = Math.min(
+                1,
+                Math.max(
+                  0,
+                  (windowHeight - elementRect.top) / (windowHeight * 0.8),
+                ),
+              );
 
               if (el.classList.contains("animate-on-scroll-left")) {
                 const xOffset = Math.max(0, (1 - entryProgress) * 150);
@@ -153,10 +159,16 @@ export const HomePage: React.FC = () => {
 
             // Exit animation (to top when scrolling past)
             if (elementRect.top < 0) {
-              const exitProgress = Math.min(1, Math.abs(elementRect.top) / (windowHeight * 0.5));
+              const exitProgress = Math.min(
+                1,
+                Math.abs(elementRect.top) / (windowHeight * 0.5),
+              );
               const yOffset = exitProgress * 80;
               htmlEl.style.transform = `translateY(-${yOffset}px)`;
-              htmlEl.style.opacity = Math.max(0, 1 - exitProgress * 1.2).toString();
+              htmlEl.style.opacity = Math.max(
+                0,
+                1 - exitProgress * 1.2,
+              ).toString();
             }
           });
         }
@@ -539,11 +551,14 @@ export const HomePage: React.FC = () => {
               <div className="flex items-center space-x-2 flex-1">
                 <Shield className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 text-white" />
                 <p className="text-xs sm:text-sm font-semibold text-white">
-                  Please read our{' '}
-                  <Link to="/terms" className="underline hover:text-emerald-300 transition-colors">
+                  Please read our{" "}
+                  <Link
+                    to="/terms"
+                    className="underline hover:text-emerald-300 transition-colors"
+                  >
                     Terms & Conditions
-                  </Link>
-                  {' '}before booking
+                  </Link>{" "}
+                  before booking
                 </p>
               </div>
               <div className="flex items-center gap-2">
@@ -596,11 +611,12 @@ export const HomePage: React.FC = () => {
           <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center mb-8 sm:mb-10">
               <div className="space-y-4 sm:space-y-6 w-full px-2 sm:px-0">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light leading-tight w-full" style={{ letterSpacing: '0.05em' }}>
-                  <div className="hero-word-1 text-white">
-                    RELAX & ENJOY
-                  </div>
-                </h2>
+                <h4
+                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light leading-tight w-full"
+                  style={{ letterSpacing: "0.05em" }}
+                >
+                  <div className="hero-word-1 text-white">RELAX & ENJOY</div>
+                </h4>
                 <p className="hero-subtitle text-white/90 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-xl font-light">
                   Experience ultimate relaxation with our premium spa and
                   wellness services. Book your perfect moment of tranquility
@@ -621,12 +637,15 @@ export const HomePage: React.FC = () => {
                   ref={heroImageRef}
                   className="hero-image relative rounded-2xl sm:rounded-3xl overflow-hidden parallax-image"
                   style={{
-                    clipPath: 'polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 0% 100%)'
+                    clipPath:
+                      "polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 0% 100%)",
                   }}
                 >
-                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-4 sm:border-6 md:border-8 border-white shadow-2xl z-10 pointer-events-none"
+                  <div
+                    className="absolute inset-0 rounded-2xl sm:rounded-3xl border-4 sm:border-6 md:border-8 border-white shadow-2xl z-10 pointer-events-none"
                     style={{
-                      clipPath: 'polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 0% 100%)'
+                      clipPath:
+                        "polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 0% 100%)",
                     }}
                   ></div>
 
@@ -748,18 +767,24 @@ export const HomePage: React.FC = () => {
               </div>
 
               <div className="animate-on-scroll-right stagger-2 relative w-full">
-                <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden"
+                <div
+                  className="relative rounded-2xl sm:rounded-3xl overflow-hidden"
                   style={{
-                    clipPath: 'polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 0% 100%)'
-                  }}>
-                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-8 sm:border-12 md:border-16 border-white shadow-2xl z-10 pointer-events-none"
+                    clipPath:
+                      "polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 0% 100%)",
+                  }}
+                >
+                  <div
+                    className="absolute inset-0 rounded-2xl sm:rounded-3xl border-8 sm:border-12 md:border-16 border-white shadow-2xl z-10 pointer-events-none"
                     style={{
-                      clipPath: 'polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 0% 100%)'
+                      clipPath:
+                        "polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 0% 100%)",
                     }}
                   ></div>
-                  <div className="absolute top-0 right-0 w-32 sm:w-40 md:w-48 h-32 sm:h-40 md:h-48 border-t-8 sm:border-t-12 md:border-t-16 border-r-8 sm:border-r-12 md:border-r-16 border-white z-20 pointer-events-none"
+                  <div
+                    className="absolute top-0 right-0 w-32 sm:w-40 md:w-48 h-32 sm:h-40 md:h-48 border-t-8 sm:border-t-12 md:border-t-16 border-r-8 sm:border-r-12 md:border-r-16 border-white z-20 pointer-events-none"
                     style={{
-                      clipPath: 'polygon(85% 0%, 100% 0%, 100% 15%)'
+                      clipPath: "polygon(85% 0%, 100% 0%, 100% 15%)",
                     }}
                   ></div>
                   <div className="absolute -inset-2 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-emerald-500/30 to-green-500/30 blur-xl z-0"></div>
@@ -916,13 +941,18 @@ export const HomePage: React.FC = () => {
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
               <div className="animate-on-scroll-left stagger-1 relative order-2 lg:order-1 w-full">
-                <div className="relative h-64 sm:h-72 md:h-80 lg:h-96 rounded-2xl sm:rounded-3xl overflow-hidden"
+                <div
+                  className="relative h-64 sm:h-72 md:h-80 lg:h-96 rounded-2xl sm:rounded-3xl overflow-hidden"
                   style={{
-                    clipPath: 'polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 0% 100%)'
-                  }}>
-                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-4 sm:border-6 border-white shadow-2xl z-10 pointer-events-none"
+                    clipPath:
+                      "polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 0% 100%)",
+                  }}
+                >
+                  <div
+                    className="absolute inset-0 rounded-2xl sm:rounded-3xl border-4 sm:border-6 border-white shadow-2xl z-10 pointer-events-none"
                     style={{
-                      clipPath: 'polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 0% 100%)'
+                      clipPath:
+                        "polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 0% 100%)",
                     }}
                   ></div>
 
@@ -1163,18 +1193,24 @@ export const HomePage: React.FC = () => {
               </div>
 
               <div className="animate-on-scroll-right stagger-2 relative w-full">
-                <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden"
+                <div
+                  className="relative rounded-2xl sm:rounded-3xl overflow-hidden"
                   style={{
-                    clipPath: 'polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 0% 100%)'
-                  }}>
-                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-8 sm:border-12 md:border-16 border-white shadow-2xl z-10 pointer-events-none"
+                    clipPath:
+                      "polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 0% 100%)",
+                  }}
+                >
+                  <div
+                    className="absolute inset-0 rounded-2xl sm:rounded-3xl border-8 sm:border-12 md:border-16 border-white shadow-2xl z-10 pointer-events-none"
                     style={{
-                      clipPath: 'polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 0% 100%)'
+                      clipPath:
+                        "polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 0% 100%)",
                     }}
                   ></div>
-                  <div className="absolute top-0 right-0 w-32 sm:w-40 md:w-48 h-32 sm:h-40 md:h-48 border-t-8 sm:border-t-12 md:border-t-16 border-r-8 sm:border-r-12 md:border-r-16 border-white z-20 pointer-events-none"
+                  <div
+                    className="absolute top-0 right-0 w-32 sm:w-40 md:w-48 h-32 sm:h-40 md:h-48 border-t-8 sm:border-t-12 md:border-t-16 border-r-8 sm:border-r-12 md:border-r-16 border-white z-20 pointer-events-none"
                     style={{
-                      clipPath: 'polygon(85% 0%, 100% 0%, 100% 15%)'
+                      clipPath: "polygon(85% 0%, 100% 0%, 100% 15%)",
                     }}
                   ></div>
                   <div className="absolute -inset-2 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-emerald-500/30 to-green-500/30 blur-xl z-0"></div>
@@ -1249,7 +1285,7 @@ export const HomePage: React.FC = () => {
         </section>
       </main>
 
-      <MarketingFooter className="footer-rounded-corners"/>
+      <MarketingFooter className="footer-rounded-corners" />
     </div>
   );
 };
