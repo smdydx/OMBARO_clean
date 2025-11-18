@@ -875,18 +875,6 @@ export const HomePage: React.FC = () => {
                     "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&q=80",
                   link: "/services",
                 },
-                {
-                  title: "Hair Styling",
-                  image:
-                    "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&q=80",
-                  link: "/services",
-                },
-                {
-                  title: "Hair Styling",
-                  image:
-                    "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&q=80",
-                  link: "/services",
-                },
               ].map((service, index) => (
                 <Link key={index} to={service.link}>
                   <div
