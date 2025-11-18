@@ -46,6 +46,7 @@ export const HomePage: React.FC = () => {
 
   useEffect(() => {
     let ticking = false;
+    let autoScrollInterval: NodeJS.Timeout | null = null;
 
     const handleScroll = () => {
       if (!ticking) {
@@ -53,9 +54,42 @@ export const HomePage: React.FC = () => {
           setScrollY(window.scrollY);
           updateParallax();
           updateScrollAnimations();
+          handleServiceCarouselAutoScroll();
           ticking = false;
         });
         ticking = true;
+      }
+    };
+
+    const handleServiceCarouselAutoScroll = () => {
+      if (!servicesRef.current || !carouselRef.current) return;
+      
+      const servicesRect = servicesRef.current.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      
+      // Check if services section is in viewport
+      const isInView = servicesRect.top < windowHeight * 0.8 && servicesRect.bottom > windowHeight * 0.2;
+      
+      if (isInView && !isDragging) {
+        if (!autoScrollInterval) {
+          autoScrollInterval = setInterval(() => {
+            if (carouselRef.current) {
+              const maxScroll = carouselRef.current.scrollWidth - carouselRef.current.clientWidth;
+              const currentScroll = carouselRef.current.scrollLeft;
+              
+              if (currentScroll >= maxScroll) {
+                carouselRef.current.scrollLeft = 0;
+              } else {
+                carouselRef.current.scrollLeft += 1;
+              }
+            }
+          }, 20);
+        }
+      } else {
+        if (autoScrollInterval) {
+          clearInterval(autoScrollInterval);
+          autoScrollInterval = null;
+        }
       }
     };
 
@@ -102,42 +136,55 @@ export const HomePage: React.FC = () => {
 
         const rect = section.getBoundingClientRect();
         const windowHeight = window.innerHeight;
-        const triggerPoint = windowHeight * 0.8;
+        const triggerPoint = windowHeight * 0.75;
 
-        // Calculate scroll progress
+        // Calculate how much the section has scrolled into view
         const scrollProgress = Math.min(
           1,
-          Math.max(0, (triggerPoint - rect.top) / (windowHeight * 0.5)),
+          Math.max(0, (windowHeight - rect.top) / windowHeight),
         );
 
-        // Smooth fade in when section enters viewport
+        // Reveal section when entering viewport
         if (rect.top < triggerPoint && rect.bottom > 0) {
           if (!section.classList.contains("scroll-revealed")) {
             section.classList.add("scroll-revealed");
           }
 
-          // Apply parallax text movement
+          // Apply smooth parallax text movement based on scroll position
           const textElements = section.querySelectorAll('.animate-on-scroll-left, .animate-on-scroll-right');
           textElements.forEach((el: Element) => {
             const htmlEl = el as HTMLElement;
-            const offset = (1 - scrollProgress) * 50;
+            const elementRect = el.getBoundingClientRect();
+            const elementScrollProgress = Math.min(
+              1,
+              Math.max(0, (windowHeight - elementRect.top) / windowHeight),
+            );
+            const offset = (1 - elementScrollProgress) * 100;
+            
             if (el.classList.contains('animate-on-scroll-left')) {
               htmlEl.style.transform = `translateX(${offset}px)`;
+              htmlEl.style.opacity = elementScrollProgress.toString();
             } else if (el.classList.contains('animate-on-scroll-right')) {
               htmlEl.style.transform = `translateX(-${offset}px)`;
+              htmlEl.style.opacity = elementScrollProgress.toString();
             }
           });
         }
 
-        // Slide out previous section smoothly when scrolling past
-        if (rect.bottom < windowHeight * 0.3) {
+        // Webflow-style: Fade out and slide up when scrolling past
+        if (rect.bottom < windowHeight * 0.2) {
           const slideOutProgress = Math.min(
             1,
-            Math.max(0, (windowHeight * 0.3 - rect.bottom) / (windowHeight * 0.3)),
+            Math.max(0, (windowHeight * 0.2 - rect.bottom) / (windowHeight * 0.5)),
           );
-          section.style.opacity = (1 - slideOutProgress * 0.5).toString();
-          section.style.transform = `translateY(-${slideOutProgress * 30}px)`;
+          section.style.opacity = (1 - slideOutProgress * 0.7).toString();
+          section.style.transform = `translateY(-${slideOutProgress * 50}px)`;
+        } else if (rect.top > windowHeight) {
+          // Section hasn't entered yet
+          section.style.opacity = '0';
+          section.style.transform = 'translateY(50px)';
         } else {
+          // Section is visible
           section.style.opacity = '1';
           section.style.transform = 'translateY(0)';
         }
@@ -149,8 +196,11 @@ export const HomePage: React.FC = () => {
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
+      if (autoScrollInterval) {
+        clearInterval(autoScrollInterval);
+      }
     };
-  }, []);
+  }, [isDragging]);
 
   const handleMouseDown = (e: React.MouseEvent) => {
     if (!carouselRef.current) return;
@@ -326,22 +376,24 @@ export const HomePage: React.FC = () => {
         }
 
         section {
-          opacity: 1;
-          transition: opacity 0.3s ease-out, transform 0.1s linear;
+          opacity: 0;
+          transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+          will-change: opacity, transform;
         }
 
         section.scroll-revealed {
           opacity: 1;
         }
 
-        section.scroll-revealed .animate-on-scroll-left {
-          animation: slideFromLeft 1200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-          transition: transform 0.3s ease-out;
+        section.scroll-revealed .animate-on-scroll-left,
+        section.scroll-revealed .animate-on-scroll-right {
+          transition: transform 0.1s linear, opacity 0.3s ease-out;
+          will-change: transform, opacity;
         }
 
-        section.scroll-revealed .animate-on-scroll-right {
-          animation: slideFromRight 1200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-          transition: transform 0.3s ease-out;
+        .animate-on-scroll-left,
+        .animate-on-scroll-right {
+          opacity: 0;
         }
 
         section.scroll-revealed .animate-on-scroll-up {
