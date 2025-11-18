@@ -725,16 +725,23 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Pricing - Staggered Cards */}
-        <section ref={pricingRef} className="py-20 bg-gray-50">
-          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
+        {/* Pricing - Staggered Cards with Parallax */}
+        <section ref={pricingRef} className="relative py-20 bg-gray-50 overflow-hidden">
+          {/* Animated Background Elements */}
+          <div className="absolute top-20 left-10 w-64 h-64 bg-gradient-to-br from-gray-200/40 to-gray-300/40 rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-20 right-10 w-72 h-72 bg-gradient-to-br from-gray-300/40 to-gray-200/40 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
+          
+          <div className="relative max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
               <p className="animate-on-scroll-fade stagger-1 text-sm font-semibold text-gray-500 tracking-wider mb-3 uppercase">
                 05 / Pricing
               </p>
-              <h2 className="animate-on-scroll-left stagger-2 webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900 font-normal">
+              <h2 className="animate-on-scroll-up stagger-2 webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900 font-normal mb-4">
                 Choose your perfect plan
               </h2>
+              <p className="animate-on-scroll-fade stagger-3 webflow-text text-lg max-w-2xl mx-auto">
+                Flexible pricing options designed to grow with your business
+              </p>
             </div>
             <div className="grid md:grid-cols-3 gap-8">
               {[
@@ -778,12 +785,12 @@ export const HomePage: React.FC = () => {
               ].map((plan, index) => (
                 <div
                   key={index}
-                  className={`animate-on-scroll-up stagger-${index + 2} bg-white p-8 rounded-2xl shadow-lg transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 ${
-                    plan.featured ? "ring-2 ring-black scale-105 relative" : ""
+                  className={`animate-on-scroll-scale stagger-${index + 2} bg-white p-8 rounded-2xl shadow-lg transition-all duration-700 hover:shadow-2xl hover:-translate-y-3 ${
+                    plan.featured ? "ring-2 ring-black md:scale-105 relative z-10" : ""
                   }`}
                 >
                   {plan.featured && (
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-black text-white px-4 py-1 rounded-full text-sm font-semibold">
+                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-black text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg">
                       Most Popular
                     </div>
                   )}
@@ -791,7 +798,7 @@ export const HomePage: React.FC = () => {
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
                     <p className="text-gray-600">{plan.subtitle}</p>
                   </div>
-                  <div className="mb-8">
+                  <div className="mb-8 pb-8 border-b border-gray-200">
                     <p className="text-5xl font-bold text-gray-900">{plan.price}</p>
                     <p className="text-gray-600 mt-1">per project</p>
                   </div>
@@ -807,10 +814,10 @@ export const HomePage: React.FC = () => {
                   </ul>
                   <Link to="/contact">
                     <button
-                      className={`w-full py-4 rounded-full font-semibold transition-all duration-300 ${
+                      className={`w-full py-4 rounded-full font-semibold transition-all duration-500 transform hover:scale-105 ${
                         plan.featured
-                          ? "bg-black hover:bg-gray-800 text-white shadow-lg hover:shadow-xl"
-                          : "bg-gray-100 hover:bg-gray-200 text-gray-900"
+                          ? "bg-black hover:bg-gray-800 text-white shadow-lg hover:shadow-2xl"
+                          : "bg-gray-100 hover:bg-gray-900 hover:text-white text-gray-900"
                       }`}
                     >
                       Get Started Today
@@ -822,11 +829,85 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* CTA Section - Coordinated Animation */}
-        <section ref={ctaRef} className="relative py-32 md:py-40 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white overflow-hidden">
+        {/* FAQ Section - Staggered with Smooth Reveal */}
+        <section ref={ctaRef} className="relative py-20 bg-white overflow-hidden">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-gradient-to-br from-gray-100/60 to-gray-200/60 rounded-full blur-3xl animate-float"></div>
+          
+          <div className="relative max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid lg:grid-cols-2 gap-16 items-start">
+              {/* Left Content - Slides from Left */}
+              <div className="space-y-8">
+                <div>
+                  <p className="animate-on-scroll-fade stagger-1 text-sm font-semibold text-gray-500 tracking-wider mb-3 uppercase">
+                    06 / FAQ
+                  </p>
+                  <h2 className="animate-on-scroll-left stagger-2 webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900 font-normal mb-6">
+                    Common questions answered
+                  </h2>
+                  <p className="animate-on-scroll-left stagger-3 webflow-text text-lg">
+                    Everything you need to know about our services and how we work
+                  </p>
+                </div>
+                
+                <div className="animate-on-scroll-left stagger-4 space-y-6">
+                  {[
+                    {
+                      q: "How long does a typical project take?",
+                      a: "Most projects are completed within 2-4 weeks, depending on complexity and scope."
+                    },
+                    {
+                      q: "Do you offer ongoing support?",
+                      a: "Yes, we provide 24/7 support and maintenance packages for all our clients."
+                    },
+                    {
+                      q: "Can I request changes after launch?",
+                      a: "Absolutely! We offer revision packages and can make updates as your business evolves."
+                    }
+                  ].map((faq, index) => (
+                    <div key={index} className="bg-gray-50 p-6 rounded-2xl hover:bg-gray-100 transition-colors duration-300">
+                      <h3 className="text-xl font-semibold text-gray-900 mb-3">{faq.q}</h3>
+                      <p className="text-gray-600 leading-relaxed">{faq.a}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right Image - Slides from Right */}
+              <div className="animate-on-scroll-right stagger-2 relative">
+                <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                  <img
+                    src="https://cdn.prod.website-files.com/68bfd5901895b58f0d2e6d33/68c14e3b3be7f93cfe07eeda_81e8a0ed9b0cfc31bfd2ad7d64be4603_FAQ.avif"
+                    alt="FAQ"
+                    className="w-full h-auto"
+                  />
+                </div>
+                <div className="absolute -bottom-6 -right-6 bg-black text-white p-8 rounded-2xl shadow-2xl max-w-sm">
+                  <p className="text-lg font-semibold mb-2">Still have questions?</p>
+                  <p className="text-gray-300 mb-4">We're here to help you succeed</p>
+                  <Link to="/contact">
+                    <button className="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300 inline-flex items-center gap-2">
+                      Contact Us
+                      <ArrowRight className="w-4 h-4" />
+                    </button>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* CTA Section - Coordinated Animation with Parallax */}
+        <section className="relative py-32 md:py-40 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white overflow-hidden">
+          {/* Animated Grid Pattern */}
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0djItMnptMC0ydi0yaDJ2Mmgtem0tMiAyaC0ydjJoMnYtem0wLTJoMnYtMmgtMnYyem0tMiAwaC0ydjJoMnYtem0wIDBoMnYtMmgtMnYyem0wLTJ2LTJoLTJ2Mmgyem0yIDBWMzBoMnYyaC0yem0wIDBoLTJ2Mmgydi0yem0yIDB2Mmgydi0yaC0yem0wIDJ2Mmgydi0yaC0yem0yLTJ2LTJoMnYyaC0yem0wIDBoLTJ2Mmgydi0yem0wIDJoMnYyaC0ydi0yem0tMiAwdi0yaC0ydjJoMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-40"></div>
+          
+          {/* Floating Gradient Orbs */}
+          <div className="absolute top-20 left-10 w-72 h-72 bg-gradient-to-br from-white/10 to-transparent rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-br from-white/5 to-transparent rounded-full blur-3xl animate-float" style={{ animationDelay: '3s' }}></div>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-gradient-to-br from-white/5 to-transparent rounded-full blur-3xl animate-float" style={{ animationDelay: '1.5s' }}></div>
+          
           <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <div className="animate-on-scroll-fade stagger-1 inline-block mb-6 px-6 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
+            <div className="animate-on-scroll-scale stagger-1 inline-block mb-8 px-6 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
               <p className="text-sm font-semibold text-white tracking-wider uppercase">
                 Let's Build Something Amazing
               </p>
@@ -839,13 +920,13 @@ export const HomePage: React.FC = () => {
             </p>
             <div className="animate-on-scroll-up stagger-4 flex flex-col sm:flex-row gap-6 justify-center items-center">
               <Link to="/contact">
-                <button className="group bg-white hover:bg-gray-100 text-black px-12 py-5 rounded-full text-xl font-bold transition-all duration-300 shadow-2xl hover:shadow-white/20 hover:scale-105 inline-flex items-center gap-3">
+                <button className="group bg-white hover:bg-gray-100 text-black px-12 py-5 rounded-full text-xl font-bold transition-all duration-500 shadow-2xl hover:shadow-white/20 hover:scale-110 inline-flex items-center gap-3">
                   Let's Talk
-                  <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
                 </button>
               </Link>
               <Link to="/services">
-                <button className="px-12 py-5 rounded-full text-xl font-semibold border-2 border-white/30 hover:border-white text-white transition-all duration-300 hover:bg-white/10">
+                <button className="px-12 py-5 rounded-full text-xl font-semibold border-2 border-white/30 hover:border-white text-white transition-all duration-500 hover:bg-white/10 hover:scale-105">
                   View Our Services
                 </button>
               </Link>
