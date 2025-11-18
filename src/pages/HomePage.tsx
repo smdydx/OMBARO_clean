@@ -611,12 +611,13 @@ export const HomePage: React.FC = () => {
           <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center mb-8 sm:mb-10">
               <div className="space-y-4 sm:space-y-6 w-full px-2 sm:px-0">
-                <h4
-                  className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-light leading-tight w-full"
-                  style={{ letterSpacing: "0.05em" }}
+                <h2
+                  className="text-6xl sm:text-7xl md:text-8xl lg:text-6xl xl:text-[8rem] font-light leading-tight w-full text-white"
+                  style={{ letterSpacing: "0.02em" }}
                 >
-                  <div className="hero-word-1 text-white">RELAX & ENJOY</div>
-                </h4>
+                  RELAX & ENJOY
+                </h2>
+
                 <p className="hero-subtitle text-white/90 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-xl font-light">
                   Experience ultimate relaxation with our premium spa and
                   wellness services. Book your perfect moment of tranquility

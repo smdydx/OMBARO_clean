@@ -1,6 +1,18 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { Sparkles, Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, Briefcase, Shield, FileText } from 'lucide-react';
+import React from "react";
+import { Link } from "react-router-dom";
+import {
+  Sparkles,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin,
+  Mail,
+  Phone,
+  MapPin,
+  Briefcase,
+  Shield,
+  FileText,
+} from "lucide-react";
 
 export const MarketingFooter: React.FC = () => {
   return (
@@ -16,7 +28,8 @@ export const MarketingFooter: React.FC = () => {
             />
           </div>
           <p className="text-xs sm:text-sm text-gray-700 mb-3 max-w-md">
-            Your trusted beauty and wellness partner. Discover premium services near you.
+            Your trusted beauty and wellness partner. Discover premium services
+            near you.
           </p>
           <div className="flex space-x-2 sm:space-x-3">
             <a
@@ -62,25 +75,39 @@ export const MarketingFooter: React.FC = () => {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
           {/* Quick Links */}
           <div>
-            <h3 className="text-xs sm:text-base font-semibold mb-2 sm:mb-3 text-gray-900">Quick Links</h3>
+            <h3 className="text-xs sm:text-base font-semibold mb-2 sm:mb-3 text-gray-900">
+              Quick Links
+            </h3>
             <ul className="space-y-1 sm:space-y-1.5">
               <li>
-                <Link to="/" className="text-xs sm:text-sm text-gray-700 hover:text-emerald-600 transition-colors block py-0.5 sm:py-1">
+                <Link
+                  to="/"
+                  className="text-xs sm:text-sm text-gray-700 hover:text-emerald-600 transition-colors block py-0.5 sm:py-1"
+                >
                   Home
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-xs sm:text-sm text-gray-700 hover:text-emerald-600 transition-colors block py-0.5 sm:py-1">
+                <Link
+                  to="/about"
+                  className="text-xs sm:text-sm text-gray-700 hover:text-emerald-600 transition-colors block py-0.5 sm:py-1"
+                >
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/services" className="text-xs sm:text-sm text-gray-700 hover:text-emerald-600 transition-colors block py-0.5 sm:py-1">
+                <Link
+                  to="/services"
+                  className="text-xs sm:text-sm text-gray-700 hover:text-emerald-600 transition-colors block py-0.5 sm:py-1"
+                >
                   Services
                 </Link>
               </li>
               <li>
-                <Link to="/how-it-works" className="text-xs sm:text-sm text-gray-700 hover:text-emerald-600 transition-colors block py-0.5 sm:py-1">
+                <Link
+                  to="/how-it-works"
+                  className="text-xs sm:text-sm text-gray-700 hover:text-emerald-600 transition-colors block py-0.5 sm:py-1"
+                >
                   How It Works
                 </Link>
               </li>
@@ -89,20 +116,31 @@ export const MarketingFooter: React.FC = () => {
 
           {/* For Businesses */}
           <div>
-            <h3 className="text-xs sm:text-base font-semibold mb-2 sm:mb-3 text-gray-900">For Business</h3>
+            <h3 className="text-xs sm:text-base font-semibold mb-2 sm:mb-3 text-gray-900">
+              For Business
+            </h3>
             <ul className="space-y-1 sm:space-y-1.5">
               <li>
-                <Link to="/become-a-partner" className="text-xs sm:text-sm text-gray-700 hover:text-emerald-600 transition-colors block py-0.5 sm:py-1">
+                <Link
+                  to="/become-a-partner"
+                  className="text-xs sm:text-sm text-gray-700 hover:text-emerald-600 transition-colors block py-0.5 sm:py-1"
+                >
                   Partner With Us
                 </Link>
               </li>
               <li>
-                <Link to="/app" className="text-xs sm:text-sm text-gray-700 hover:text-emerald-600 transition-colors block py-0.5 sm:py-1">
+                <Link
+                  to="/app"
+                  className="text-xs sm:text-sm text-gray-700 hover:text-emerald-600 transition-colors block py-0.5 sm:py-1"
+                >
                   Vendor Login
                 </Link>
               </li>
               <li>
-                <Link to="/become-a-partner" className="text-xs sm:text-sm text-gray-700 hover:text-emerald-600 transition-colors block py-0.5 sm:py-1">
+                <Link
+                  to="/become-a-partner"
+                  className="text-xs sm:text-sm text-gray-700 hover:text-emerald-600 transition-colors block py-0.5 sm:py-1"
+                >
                   Partner Benefits
                 </Link>
               </li>
@@ -111,43 +149,64 @@ export const MarketingFooter: React.FC = () => {
 
           {/* Contact Us */}
           <div>
-            <h3 className="text-xs sm:text-base font-semibold mb-2 sm:mb-3 text-gray-900">Contact Us</h3>
+            <h3 className="text-xs sm:text-base font-semibold mb-2 sm:mb-3 text-gray-900">
+              Contact Us
+            </h3>
             <ul className="space-y-1 sm:space-y-1.5">
               <li className="flex items-start space-x-1.5">
                 <Phone className="w-3 h-3 sm:w-3.5 sm:h-3.5 mt-0.5 flex-shrink-0 text-emerald-600" />
-                <a href="tel:+911234567890" className="text-xs sm:text-sm text-gray-700 hover:text-emerald-600 transition-colors">
+                <a
+                  href="tel:+911234567890"
+                  className="text-xs sm:text-sm text-gray-700 hover:text-emerald-600 transition-colors"
+                >
                   +91 123 456 7890
                 </a>
               </li>
               <li className="flex items-start space-x-1.5">
                 <Mail className="w-3 h-3 sm:w-3.5 sm:h-3.5 mt-0.5 flex-shrink-0 text-emerald-600" />
-                <a href="mailto:hello@ombaro.com" className="text-xs sm:text-sm text-gray-700 hover:text-emerald-600 transition-colors">
+                <a
+                  href="mailto:hello@ombaro.com"
+                  className="text-xs sm:text-sm text-gray-700 hover:text-emerald-600 transition-colors"
+                >
                   hello@ombaro.com
                 </a>
               </li>
               <li className="flex items-start space-x-1.5">
                 <MapPin className="w-3 h-3 sm:w-3.5 sm:h-3.5 mt-0.5 flex-shrink-0 text-emerald-600" />
-                <span className="text-xs sm:text-sm text-gray-700">123 Beauty Street, IN 110001</span>
+                <span className="text-xs sm:text-sm text-gray-700">
+                  123 Beauty Street, IN 110001
+                </span>
               </li>
             </ul>
           </div>
 
           {/* Legal */}
           <div>
-            <h3 className="text-xs sm:text-base font-semibold mb-2 sm:mb-3 text-gray-900">Legal</h3>
+            <h3 className="text-xs sm:text-base font-semibold mb-2 sm:mb-3 text-gray-900">
+              Legal
+            </h3>
             <ul className="space-y-1 sm:space-y-1.5">
               <li>
-                <Link to="/terms" className="text-xs sm:text-sm text-emerald-600 hover:text-emerald-700 font-semibold transition-colors block py-0.5 sm:py-1">
+                <Link
+                  to="/terms"
+                  className="text-xs sm:text-sm text-emerald-600 hover:text-emerald-700 font-semibold transition-colors block py-0.5 sm:py-1"
+                >
                   Terms & Conditions
                 </Link>
               </li>
               <li>
-                <Link to="/privacy" className="text-xs sm:text-sm text-gray-700 hover:text-emerald-600 transition-colors block py-0.5 sm:py-1">
+                <Link
+                  to="/privacy"
+                  className="text-xs sm:text-sm text-gray-700 hover:text-emerald-600 transition-colors block py-0.5 sm:py-1"
+                >
                   Privacy Policy
                 </Link>
               </li>
               <li>
-                <Link to="/refund-policy" className="text-xs sm:text-sm text-gray-700 hover:text-emerald-600 transition-colors block py-0.5 sm:py-1">
+                <Link
+                  to="/refund-policy"
+                  className="text-xs sm:text-sm text-gray-700 hover:text-emerald-600 transition-colors block py-0.5 sm:py-1"
+                >
                   Refund Policy
                 </Link>
               </li>
@@ -161,14 +220,6 @@ export const MarketingFooter: React.FC = () => {
               <p className="text-xs text-gray-700 text-center sm:text-left">
                 &copy; 2025 OMBARO. All rights reserved.
               </p>
-              <div className="flex space-x-4 sm:space-x-6">
-                <Link to="/privacy" className="text-xs text-gray-700 hover:text-emerald-600 transition-colors">
-                  Privacy Policy
-                </Link>
-                <Link to="/terms" className="text-xs text-gray-700 hover:text-emerald-600 transition-colors">
-                  Terms of Service
-                </Link>
-              </div>
             </div>
           </div>
         </div>
