@@ -11,6 +11,7 @@ export const HomePage: React.FC = () => {
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
   const [scrollY, setScrollY] = useState(0);
+  const [countdown, setCountdown] = useState(5);
 
   const carouselRef = useRef<HTMLDivElement>(null);
   const heroRef = useRef<HTMLElement>(null);
@@ -36,12 +37,19 @@ export const HomePage: React.FC = () => {
   };
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      if (showTermsBanner) {
-        handleCloseBanner();
-      }
-    }, 5000);
-    return () => clearTimeout(timer);
+    if (!showTermsBanner) return;
+    
+    const countdownInterval = setInterval(() => {
+      setCountdown((prev) => {
+        if (prev <= 1) {
+          handleCloseBanner();
+          return 0;
+        }
+        return prev - 1;
+      });
+    }, 1000);
+    
+    return () => clearInterval(countdownInterval);
   }, [showTermsBanner]);
 
   useEffect(() => {
@@ -531,17 +539,26 @@ export const HomePage: React.FC = () => {
               <div className="flex items-center space-x-2 flex-1">
                 <Shield className="w-4 h-4 sm:w-5 sm:h-5 flex-shrink-0 text-white" />
                 <p className="text-xs sm:text-sm font-semibold text-white">
-                  Please read our Terms & Conditions before booking
+                  Please read our{' '}
+                  <Link to="/terms" className="underline hover:text-emerald-300 transition-colors">
+                    Terms & Conditions
+                  </Link>
+                  {' '}before booking
                 </p>
               </div>
-              <button
-                onClick={handleCloseBanner}
-                className="p-1.5 hover:bg-white/20 rounded-lg transition-colors flex-shrink-0"
-                aria-label="Close banner"
-                type="button"
-              >
-                <X className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
-              </button>
+              <div className="flex items-center gap-2">
+                <span className="text-xs sm:text-sm text-white/80 font-medium">
+                  {countdown}s
+                </span>
+                <button
+                  onClick={handleCloseBanner}
+                  className="p-1.5 hover:bg-white/20 rounded-lg transition-colors flex-shrink-0"
+                  aria-label="Close banner"
+                  type="button"
+                >
+                  <X className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -622,33 +639,33 @@ export const HomePage: React.FC = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8 pt-6 sm:pt-8 border-t border-emerald-500/30 px-2 sm:px-0">
-              <div className="hero-stat-1 text-center">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 mb-1 sm:mb-2">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8 pt-6 sm:pt-8 border-t border-emerald-500/30">
+              <div className="hero-stat-1 text-center px-2">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 mb-1 sm:mb-2">
                   10,000+
                 </h2>
                 <p className="text-white/80 text-xs sm:text-sm md:text-base">
                   Verified Professionals
                 </p>
               </div>
-              <div className="hero-stat-2 text-center">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 mb-1 sm:mb-2">
+              <div className="hero-stat-2 text-center px-2">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 mb-1 sm:mb-2">
                   50+
                 </h2>
                 <p className="text-white/80 text-xs sm:text-sm md:text-base">
                   Cities Covered
                 </p>
               </div>
-              <div className="hero-stat-3 text-center">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 mb-1 sm:mb-2">
+              <div className="hero-stat-3 text-center px-2">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 mb-1 sm:mb-2">
                   1M+
                 </h2>
                 <p className="text-white/80 text-xs sm:text-sm md:text-base">
                   Happy Customers
                 </p>
               </div>
-              <div className="hero-stat-4 text-center">
-                <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 mb-1 sm:mb-2">
+              <div className="hero-stat-4 text-center px-2">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 mb-1 sm:mb-2">
                   24/7
                 </h2>
                 <p className="text-white/80 text-xs sm:text-sm md:text-base">

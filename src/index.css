@@ -776,8 +776,15 @@ img {
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 12px;
-  height: 12px;
+  width: 8px;
+  height: 8px;
+}
+
+@media (min-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
 }
 
 ::-webkit-scrollbar-track {
@@ -795,6 +802,19 @@ img {
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(to bottom, var(--secondary-400), var(--accent-500));
   box-shadow: 0 0 15px rgba(var(--secondary-500), 0.7);
+}
+
+/* Mobile Scroll Behavior */
+@media (max-width: 767px) {
+  html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  body {
+    overflow-x: hidden;
+    width: 100%;
+  }
 }
 
 /* Selection Color */
