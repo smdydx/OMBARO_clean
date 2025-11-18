@@ -464,11 +464,11 @@ export const BecomePartnerPage: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 md:gap-6">
+            <div className="flex overflow-x-auto gap-4 sm:gap-5 md:gap-6 pb-4 snap-x snap-mandatory scrollbar-hide lg:grid lg:grid-cols-3 xl:grid-cols-4 lg:overflow-visible">
               {businessTypes.map((business, idx) => (
                 <div
                   key={idx}
-                  className={`animate-on-scroll-left stagger-${(idx % 4) + 1} group bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-green-200 hover:border-green-400 transform hover:-translate-y-2`}
+                  className={`animate-on-scroll-left stagger-${(idx % 4) + 1} group bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-green-200 hover:border-green-400 transform hover:-translate-y-2 flex-shrink-0 w-80 sm:w-96 snap-start lg:w-auto`}
                 >
                   <div className="relative h-40 sm:h-44 md:h-48 overflow-hidden">
                     <img

@@ -120,38 +120,40 @@ export const HomePage: React.FC = () => {
             section.classList.add("scroll-revealed");
           }
 
-          // Apply smooth parallax text movement
+          // Apply smooth scroll animations - elements enter from left and exit at bottom
           const textElements = section.querySelectorAll(
             ".animate-on-scroll-left, .animate-on-scroll-right",
           );
           textElements.forEach((el: Element) => {
             const htmlEl = el as HTMLElement;
             const elementRect = el.getBoundingClientRect();
-            const elementScrollProgress = Math.min(
-              1,
-              Math.max(0, (windowHeight - elementRect.top) / windowHeight),
-            );
-            const offset = (1 - elementScrollProgress) * 20;
-
-            if (el.classList.contains("animate-on-scroll-left")) {
-              htmlEl.style.transform = `translateX(${Math.max(0, offset)}px)`;
-              htmlEl.style.opacity = Math.min(1, elementScrollProgress + 0.3).toString();
-            } else if (el.classList.contains("animate-on-scroll-right")) {
-              htmlEl.style.transform = `translateX(-${Math.max(0, offset)}px)`;
-              htmlEl.style.opacity = Math.min(1, elementScrollProgress + 0.3).toString();
+            
+            // Calculate position relative to viewport
+            const elementCenter = elementRect.top + elementRect.height / 2;
+            const viewportCenter = windowHeight / 2;
+            
+            // Entry animation (from left when coming into view from bottom)
+            if (elementRect.top < windowHeight && elementRect.bottom > 0) {
+              const entryProgress = Math.min(1, Math.max(0, (windowHeight - elementRect.top) / windowHeight));
+              
+              if (el.classList.contains("animate-on-scroll-left")) {
+                const xOffset = Math.max(0, (1 - entryProgress) * 100);
+                htmlEl.style.transform = `translateX(-${xOffset}px)`;
+                htmlEl.style.opacity = Math.min(1, entryProgress + 0.2).toString();
+              } else if (el.classList.contains("animate-on-scroll-right")) {
+                const xOffset = Math.max(0, (1 - entryProgress) * 100);
+                htmlEl.style.transform = `translateX(${xOffset}px)`;
+                htmlEl.style.opacity = Math.min(1, entryProgress + 0.2).toString();
+              }
             }
-          });
-        }
-
-        // Reset positioning when fully in view
-        if (rect.top < windowHeight * 0.2 && rect.bottom > windowHeight * 0.8) {
-          const textElements = section.querySelectorAll(
-            ".animate-on-scroll-left, .animate-on-scroll-right",
-          );
-          textElements.forEach((el: Element) => {
-            const htmlEl = el as HTMLElement;
-            htmlEl.style.transform = "translateX(0)";
-            htmlEl.style.opacity = "1";
+            
+            // Exit animation (to bottom when scrolling past)
+            if (elementRect.bottom < viewportCenter && elementRect.top < 0) {
+              const exitProgress = Math.min(1, Math.abs(elementRect.top) / windowHeight);
+              const yOffset = exitProgress * 50;
+              htmlEl.style.transform = `translateY(${yOffset}px)`;
+              htmlEl.style.opacity = Math.max(0, 1 - exitProgress).toString();
+            }
           });
         }
       });
@@ -599,7 +601,7 @@ export const HomePage: React.FC = () => {
                   ref={heroImageRef}
                   className="hero-image relative rounded-2xl sm:rounded-3xl overflow-hidden parallax-image"
                   style={{
-                    clipPath: 'polygon(5% 0%, 80% 0%, 100% 20%, 100% 95%, 95% 100%, 5% 100%, 0% 95%, 0% 5%)'
+                    clipPath: 'polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 0% 100%)'
                   }}
                 >
                   <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-4 sm:border-6 md:border-8 border-white shadow-2xl z-10 pointer-events-none"></div>
@@ -722,12 +724,11 @@ export const HomePage: React.FC = () => {
               </div>
 
               <div className="animate-on-scroll-right stagger-2 relative w-full">
-                <div className="relative"
+                <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden"
                   style={{
-                    clipPath: 'polygon(5% 0%, 80% 0%, 100% 20%, 100% 95%, 95% 100%, 5% 100%, 0% 95%, 0% 5%)'
+                    clipPath: 'polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 0% 100%)'
                   }}>
                   <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-8 sm:border-12 md:border-16 border-white shadow-2xl z-10 pointer-events-none"></div>
-                  <div className="absolute inset-2 sm:inset-3 md:inset-4 rounded-xl sm:rounded-2xl border-4 sm:border-6 md:border-8 border-emerald-400/30 z-10 pointer-events-none"></div>
                   <div className="absolute -inset-2 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-emerald-500/30 to-green-500/30 blur-xl z-0"></div>
 
                   <img
@@ -882,9 +883,9 @@ export const HomePage: React.FC = () => {
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
               <div className="animate-on-scroll-left stagger-1 relative order-2 lg:order-1 w-full">
-                <div className="relative h-64 sm:h-72 md:h-80 lg:h-96"
+                <div className="relative h-64 sm:h-72 md:h-80 lg:h-96 rounded-2xl sm:rounded-3xl overflow-hidden"
                   style={{
-                    clipPath: 'polygon(5% 0%, 80% 0%, 100% 20%, 100% 95%, 95% 100%, 5% 100%, 0% 95%, 0% 5%)'
+                    clipPath: 'polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 0% 100%)'
                   }}>
                   <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-4 sm:border-6 border-white shadow-2xl z-10 pointer-events-none"></div>
 
@@ -1127,10 +1128,9 @@ export const HomePage: React.FC = () => {
               <div className="animate-on-scroll-right stagger-2 relative w-full">
                 <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden"
                   style={{
-                    clipPath: 'polygon(5% 0%, 80% 0%, 100% 20%, 100% 95%, 95% 100%, 5% 100%, 0% 95%, 0% 5%)'
+                    clipPath: 'polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 0% 100%)'
                   }}>
                   <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-8 sm:border-12 md:border-16 border-white shadow-2xl z-10 pointer-events-none"></div>
-                  <div className="absolute inset-2 sm:inset-3 md:inset-4 rounded-xl sm:rounded-2xl border-4 sm:border-6 md:border-8 border-emerald-400/30 z-10 pointer-events-none"></div>
                   <div className="absolute -inset-2 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-emerald-500/30 to-green-500/30 blur-xl z-0"></div>
 
                   <img
