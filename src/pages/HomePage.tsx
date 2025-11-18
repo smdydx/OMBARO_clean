@@ -68,13 +68,17 @@ export const HomePage: React.FC = () => {
       const windowHeight = window.innerHeight;
 
       // Check if services section is in viewport
-      const isInView = servicesRect.top < windowHeight * 0.8 && servicesRect.bottom > windowHeight * 0.2;
+      const isInView =
+        servicesRect.top < windowHeight * 0.8 &&
+        servicesRect.bottom > windowHeight * 0.2;
 
       if (isInView && !isDragging) {
         if (!autoScrollInterval) {
           autoScrollInterval = setInterval(() => {
             if (carouselRef.current) {
-              const maxScroll = carouselRef.current.scrollWidth - carouselRef.current.clientWidth;
+              const maxScroll =
+                carouselRef.current.scrollWidth -
+                carouselRef.current.clientWidth;
               const currentScroll = carouselRef.current.scrollLeft;
 
               if (currentScroll >= maxScroll) {
@@ -151,7 +155,9 @@ export const HomePage: React.FC = () => {
           }
 
           // Apply smooth parallax text movement based on scroll position
-          const textElements = section.querySelectorAll('.animate-on-scroll-left, .animate-on-scroll-right');
+          const textElements = section.querySelectorAll(
+            ".animate-on-scroll-left, .animate-on-scroll-right",
+          );
           textElements.forEach((el: Element) => {
             const htmlEl = el as HTMLElement;
             const elementRect = el.getBoundingClientRect();
@@ -161,10 +167,10 @@ export const HomePage: React.FC = () => {
             );
             const offset = (1 - elementScrollProgress) * 100;
 
-            if (el.classList.contains('animate-on-scroll-left')) {
+            if (el.classList.contains("animate-on-scroll-left")) {
               htmlEl.style.transform = `translateX(${offset}px)`;
               htmlEl.style.opacity = elementScrollProgress.toString();
-            } else if (el.classList.contains('animate-on-scroll-right')) {
+            } else if (el.classList.contains("animate-on-scroll-right")) {
               htmlEl.style.transform = `translateX(-${offset}px)`;
               htmlEl.style.opacity = elementScrollProgress.toString();
             }
@@ -175,18 +181,21 @@ export const HomePage: React.FC = () => {
         if (rect.bottom < windowHeight * 0.2) {
           const slideOutProgress = Math.min(
             1,
-            Math.max(0, (windowHeight * 0.2 - rect.bottom) / (windowHeight * 0.5)),
+            Math.max(
+              0,
+              (windowHeight * 0.2 - rect.bottom) / (windowHeight * 0.5),
+            ),
           );
           section.style.opacity = (1 - slideOutProgress * 0.7).toString();
           section.style.transform = `translateY(-${slideOutProgress * 50}px)`;
         } else if (rect.top > windowHeight) {
           // Section hasn't entered yet
-          section.style.opacity = '0';
-          section.style.transform = 'translateY(50px)';
+          section.style.opacity = "0";
+          section.style.transform = "translateY(50px)";
         } else {
           // Section is visible
-          section.style.opacity = '1';
-          section.style.transform = 'translateY(0)';
+          section.style.opacity = "1";
+          section.style.transform = "translateY(0)";
         }
       });
     };
@@ -1203,7 +1212,7 @@ export const HomePage: React.FC = () => {
                 Experience Luxury at Home
               </p>
             </div>
-            <h2 className="animate-on-scroll-up stagger-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl mb-4 sm:mb-6 md:mb-8 font-normal leading-tight">
+            <h2 className="animate-on-scroll-up stagger-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl mb-4 sm:mb-6 md:mb-8 font-normal leading-tight text-white">
               Ready to Relax
               <br />& Rejuvenate?
             </h2>
