@@ -112,13 +112,7 @@ export const HomePage: React.FC = () => {
 
         const rect = section.getBoundingClientRect();
         const windowHeight = window.innerHeight;
-        const triggerPoint = windowHeight * 0.7;
-
-        // Calculate scroll progress more precisely
-        const scrollProgress = Math.min(
-          1,
-          Math.max(0, (windowHeight - rect.top) / windowHeight),
-        );
+        const triggerPoint = windowHeight * 0.85;
 
         // Reveal section when entering viewport
         if (rect.top < triggerPoint && rect.bottom > 0) {
@@ -137,24 +131,28 @@ export const HomePage: React.FC = () => {
               1,
               Math.max(0, (windowHeight - elementRect.top) / windowHeight),
             );
-            const offset = (1 - elementScrollProgress) * 40;
+            const offset = (1 - elementScrollProgress) * 20;
 
             if (el.classList.contains("animate-on-scroll-left")) {
-              htmlEl.style.transform = `translateX(${offset}px)`;
-              htmlEl.style.opacity = elementScrollProgress.toString();
+              htmlEl.style.transform = `translateX(${Math.max(0, offset)}px)`;
+              htmlEl.style.opacity = Math.min(1, elementScrollProgress + 0.3).toString();
             } else if (el.classList.contains("animate-on-scroll-right")) {
-              htmlEl.style.transform = `translateX(-${offset}px)`;
-              htmlEl.style.opacity = elementScrollProgress.toString();
+              htmlEl.style.transform = `translateX(-${Math.max(0, offset)}px)`;
+              htmlEl.style.opacity = Math.min(1, elementScrollProgress + 0.3).toString();
             }
           });
         }
 
-        // Ensure proper positioning - no transform at final scroll position
-        if (rect.top < 0 && rect.bottom > windowHeight) {
-          section.style.transform = "translateY(0) translateX(0)";
-          section.style.opacity = "1";
-          section.style.position = "relative";
-          section.style.zIndex = "1";
+        // Reset positioning when fully in view
+        if (rect.top < windowHeight * 0.2 && rect.bottom > windowHeight * 0.8) {
+          const textElements = section.querySelectorAll(
+            ".animate-on-scroll-left, .animate-on-scroll-right",
+          );
+          textElements.forEach((el: Element) => {
+            const htmlEl = el as HTMLElement;
+            htmlEl.style.transform = "translateX(0)";
+            htmlEl.style.opacity = "1";
+          });
         }
       });
     };
@@ -194,14 +192,14 @@ export const HomePage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       <MarketingHeader />
 
       <style>{`
         @keyframes slideFromLeft {
           from {
             opacity: 0;
-            transform: translateX(-100px);
+            transform: translateX(-50px);
           }
           to {
             opacity: 1;
@@ -212,7 +210,7 @@ export const HomePage: React.FC = () => {
         @keyframes slideFromRight {
           from {
             opacity: 0;
-            transform: translateX(100px);
+            transform: translateX(50px);
           }
           to {
             opacity: 1;
@@ -223,7 +221,7 @@ export const HomePage: React.FC = () => {
         @keyframes fadeUp {
           from {
             opacity: 0;
-            transform: translateY(40px);
+            transform: translateY(30px);
           }
           to {
             opacity: 1;
@@ -238,14 +236,14 @@ export const HomePage: React.FC = () => {
           }
           to {
             opacity: 0;
-            transform: translateX(-100px);
+            transform: translateX(-50px);
           }
         }
 
         @keyframes slideInFromBottom {
           from {
             opacity: 0;
-            transform: translateY(100px);
+            transform: translateY(50px);
           }
           to {
             opacity: 1;
@@ -265,7 +263,7 @@ export const HomePage: React.FC = () => {
         @keyframes scaleUp {
           from {
             opacity: 0;
-            transform: scale(0.9);
+            transform: scale(0.95);
           }
           to {
             opacity: 1;
@@ -274,71 +272,71 @@ export const HomePage: React.FC = () => {
         }
 
         .hero-word-1 {
-          animation: slideFromLeft 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation: slideFromLeft 800ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
           animation-delay: 0ms;
           opacity: 0;
           will-change: transform, opacity;
         }
 
         .hero-word-2 {
-          animation: slideFromLeft 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
-          animation-delay: 200ms;
+          animation: slideFromLeft 800ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation-delay: 150ms;
           opacity: 0;
           will-change: transform, opacity;
         }
 
         .hero-word-3 {
-          animation: slideFromLeft 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
-          animation-delay: 400ms;
-          opacity: 0;
-          will-change: transform, opacity;
-        }
-
-        .hero-subtitle {
-          animation: slideFromLeft 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
-          animation-delay: 600ms;
-          opacity: 0;
-          will-change: transform, opacity;
-        }
-
-        .hero-button {
-          animation: fadeUp 1000ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
-          animation-delay: 800ms;
-          opacity: 0;
-          will-change: transform, opacity;
-        }
-
-        .hero-image-wrapper {
-          animation: slideFromRight 1200ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation: slideFromLeft 800ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
           animation-delay: 300ms;
           opacity: 0;
           will-change: transform, opacity;
         }
 
-        .hero-stat-1 {
+        .hero-subtitle {
+          animation: slideFromLeft 800ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation-delay: 450ms;
+          opacity: 0;
+          will-change: transform, opacity;
+        }
+
+        .hero-button {
           animation: fadeUp 800ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
-          animation-delay: 1000ms;
+          animation-delay: 600ms;
+          opacity: 0;
+          will-change: transform, opacity;
+        }
+
+        .hero-image-wrapper {
+          animation: slideFromRight 900ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation-delay: 200ms;
+          opacity: 0;
+          will-change: transform, opacity;
+        }
+
+        .hero-stat-1 {
+          animation: fadeUp 700ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation-delay: 750ms;
           opacity: 0;
           will-change: transform, opacity;
         }
 
         .hero-stat-2 {
-          animation: fadeUp 800ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
-          animation-delay: 1150ms;
+          animation: fadeUp 700ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation-delay: 850ms;
           opacity: 0;
           will-change: transform, opacity;
         }
 
         .hero-stat-3 {
-          animation: fadeUp 800ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
-          animation-delay: 1300ms;
+          animation: fadeUp 700ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation-delay: 950ms;
           opacity: 0;
           will-change: transform, opacity;
         }
 
         .hero-stat-4 {
-          animation: fadeUp 800ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
-          animation-delay: 1450ms;
+          animation: fadeUp 700ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+          animation-delay: 1050ms;
           opacity: 0;
           will-change: transform, opacity;
         }
@@ -364,15 +362,15 @@ export const HomePage: React.FC = () => {
         }
 
         section.scroll-revealed .animate-on-scroll-up {
-          animation: slideInFromBottom 1200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+          animation: slideInFromBottom 800ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
         }
 
         section.scroll-revealed .animate-on-scroll-fade {
-          animation: fadeIn 1200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+          animation: fadeIn 800ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
         }
 
         section.scroll-revealed .animate-on-scroll-scale {
-          animation: scaleUp 1200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+          animation: scaleUp 800ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
         }
 
         .animate-on-scroll-left,
@@ -385,18 +383,18 @@ export const HomePage: React.FC = () => {
         }
 
         .stagger-1 { animation-delay: 0ms !important; }
-        .stagger-2 { animation-delay: 200ms !important; }
-        .stagger-3 { animation-delay: 400ms !important; }
-        .stagger-4 { animation-delay: 600ms !important; }
+        .stagger-2 { animation-delay: 150ms !important; }
+        .stagger-3 { animation-delay: 300ms !important; }
+        .stagger-4 { animation-delay: 450ms !important; }
 
         .stagger-fast-1 { animation-delay: 0ms !important; }
-        .stagger-fast-2 { animation-delay: 150ms !important; }
-        .stagger-fast-3 { animation-delay: 300ms !important; }
-        .stagger-fast-4 { animation-delay: 450ms !important; }
+        .stagger-fast-2 { animation-delay: 100ms !important; }
+        .stagger-fast-3 { animation-delay: 200ms !important; }
+        .stagger-fast-4 { animation-delay: 300ms !important; }
 
         section.scroll-revealed {
           opacity: 1;
-          transition: opacity 600ms ease-out;
+          transition: opacity 400ms ease-out;
         }
 
         .hero-image {
