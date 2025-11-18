@@ -611,12 +611,12 @@ export const HomePage: React.FC = () => {
           <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center mb-8 sm:mb-10">
               <div className="space-y-4 sm:space-y-6 w-full px-2 sm:px-0">
-                <h2
-                  className="text-6xl sm:text-7xl md:text-8xl lg:text-6xl xl:text-[8rem] font-light leading-tight w-full text-white"
+                <h1
+                  className="text-6xl sm:text-7xl md:text-8xl lg:text-6xl xl:text-[6rem] font-light leading-tight w-full text-white"
                   style={{ letterSpacing: "0.02em" }}
                 >
                   RELAX & ENJOY
-                </h2>
+                </h1>
 
                 <p className="hero-subtitle text-white/90 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-xl font-light">
                   Experience ultimate relaxation with our premium spa and
@@ -737,10 +737,11 @@ export const HomePage: React.FC = () => {
                     Your Wellness Partner, At Your Doorstep
                   </h2>
                   <p className="animate-on-scroll-left stagger-3 text-white/90 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl leading-relaxed">
-                    Ombaro brings professional spa and salon services to your
-                    home. With a network of certified therapists and beauty
-                    experts, we ensure quality, hygiene, and convenience. From
-                    relaxing massages to premium facials, we've got you covered.
+                    Ombaro delivers professional spa and salon services wherever
+                    you need them. With certified therapists and experienced
+                    beauty experts, we guarantee quality, hygiene, and comfort.
+                    From relaxing massages to premium facials, everything is
+                    taken care of..
                   </p>
                 </div>
                 <div className="animate-on-scroll-left stagger-4 bg-gradient-to-br from-emerald-900/40 to-green-900/40 backdrop-blur-sm p-4 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl border border-emerald-500/30 shadow-2xl shadow-emerald-500/20">
@@ -838,7 +839,7 @@ export const HomePage: React.FC = () => {
                 Our Services
               </p>
               <h2 className="animate-on-scroll-left stagger-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white font-normal">
-                Premium Wellness Services at Home
+                Luxury Wellness Services, Anytime. Anywhere.
               </h2>
             </div>
             <div
@@ -867,6 +868,18 @@ export const HomePage: React.FC = () => {
                   image:
                     "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&q=80",
                   link: "/bridal-makeup",
+                },
+                {
+                  title: "Hair Styling",
+                  image:
+                    "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&q=80",
+                  link: "/services",
+                },
+                {
+                  title: "Hair Styling",
+                  image:
+                    "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&q=80",
+                  link: "/services",
                 },
                 {
                   title: "Hair Styling",
