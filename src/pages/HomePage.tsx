@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Star, Shield, X } from "lucide-react";
 import { MarketingHeader } from "../components/marketing/MarketingHeader";
@@ -8,6 +8,18 @@ import { MarketingFooter } from "../components/marketing/MarketingFooter";
 export const HomePage: React.FC = () => {
   const [showTermsBanner, setShowTermsBanner] = useState(true);
   const [isClosing, setIsClosing] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
+  
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const heroRef = useRef<HTMLElement>(null);
+  const aboutRef = useRef<HTMLElement>(null);
+  const servicesRef = useRef<HTMLElement>(null);
+  const caseStudiesRef = useRef<HTMLElement>(null);
+  const testimonialsRef = useRef<HTMLElement>(null);
+  const pricingRef = useRef<HTMLElement>(null);
+  const ctaRef = useRef<HTMLElement>(null);
 
   const handleCloseBanner = () => {
     setIsClosing(true);
@@ -25,6 +37,66 @@ export const HomePage: React.FC = () => {
     }, 5000);
     return () => clearTimeout(timer);
   }, [showTermsBanner]);
+
+  useEffect(() => {
+    const sections = [
+      heroRef.current,
+      aboutRef.current,
+      servicesRef.current,
+      caseStudiesRef.current,
+      testimonialsRef.current,
+      pricingRef.current,
+      ctaRef.current,
+    ];
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("scroll-revealed");
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -100px 0px" }
+    );
+
+    sections.forEach((section) => {
+      if (section) {
+        observer.observe(section);
+      }
+    });
+
+    return () => {
+      sections.forEach((section) => {
+        if (section) {
+          observer.unobserve(section);
+        }
+      });
+    };
+  }, []);
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    if (!carouselRef.current) return;
+    setIsDragging(true);
+    setStartX(e.pageX - carouselRef.current.offsetLeft);
+    setScrollLeft(carouselRef.current.scrollLeft);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging || !carouselRef.current) return;
+    e.preventDefault();
+    const x = e.pageX - carouselRef.current.offsetLeft;
+    const walk = (x - startX) * 2;
+    carouselRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -64,6 +136,17 @@ export const HomePage: React.FC = () => {
           }
         }
 
+        @keyframes scrollReveal {
+          from {
+            opacity: 0;
+            transform: translateY(60px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
         .animate-fade-in-up {
           animation: fadeInUp 0.8s ease-out forwards;
         }
@@ -74,6 +157,17 @@ export const HomePage: React.FC = () => {
 
         .animate-slide-in-right {
           animation: slideInRight 0.8s ease-out forwards;
+        }
+
+        section {
+          opacity: 0;
+          transform: translateY(60px);
+          transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        section.scroll-revealed {
+          opacity: 1;
+          transform: translateY(0);
         }
 
         .hero-image {
@@ -103,15 +197,45 @@ export const HomePage: React.FC = () => {
           color: #666;
         }
 
+        .services-carousel {
+          display: flex;
+          gap: 1.5rem;
+          overflow-x: auto;
+          scroll-behavior: smooth;
+          -webkit-overflow-scrolling: touch;
+          scrollbar-width: none;
+          -ms-overflow-style: none;
+          padding: 1rem 0;
+          cursor: grab;
+        }
+
+        .services-carousel::-webkit-scrollbar {
+          display: none;
+        }
+
+        .services-carousel.dragging {
+          cursor: grabbing;
+          scroll-behavior: auto;
+        }
+
         .service-card {
           position: relative;
           overflow: hidden;
+          flex: 0 0 auto;
+          width: 320px;
           cursor: pointer;
-          transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+          transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s;
+        }
+
+        @media (min-width: 768px) {
+          .service-card {
+            width: 380px;
+          }
         }
 
         .service-card:hover {
-          transform: translateY(-8px);
+          transform: translateY(-12px) scale(1.05);
+          box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
         }
 
         .service-card img {
@@ -119,7 +243,7 @@ export const HomePage: React.FC = () => {
         }
 
         .service-card:hover img {
-          transform: scale(1.1);
+          transform: scale(1.15);
         }
 
         .case-study-card {
@@ -170,7 +294,7 @@ export const HomePage: React.FC = () => {
         </div>
 
         {/* Hero Section - Exact Webflow Style */}
-        <section className="relative overflow-hidden bg-white py-12 md:py-20 lg:py-32">
+        <section ref={heroRef} className="relative overflow-hidden bg-white py-12 md:py-20 lg:py-32">
           <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
             {/* Hero Content */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-12">
@@ -227,7 +351,7 @@ export const HomePage: React.FC = () => {
         </section>
 
         {/* About Section - Exact Webflow Style */}
-        <section className="py-20 bg-gray-50">
+        <section ref={aboutRef} className="py-20 bg-gray-50">
           <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-8">
@@ -270,8 +394,8 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Services Section - Exact Webflow Grid */}
-        <section className="py-20 bg-white">
+        {/* Services Section - Horizontal Scrolling Carousel */}
+        <section ref={servicesRef} className="py-20 bg-white">
           <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12">
               <p className="text-sm font-semibold text-gray-500 tracking-wider mb-3 uppercase">
@@ -281,7 +405,14 @@ export const HomePage: React.FC = () => {
                 Digital solutions that deliver results
               </h2>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div 
+              ref={carouselRef}
+              className={`services-carousel ${isDragging ? 'dragging' : ''}`}
+              onMouseDown={handleMouseDown}
+              onMouseMove={handleMouseMove}
+              onMouseUp={handleMouseUp}
+              onMouseLeave={handleMouseLeave}
+            >
               {[
                 {
                   title: "Web design",
@@ -302,14 +433,14 @@ export const HomePage: React.FC = () => {
               ].map((service, index) => (
                 <div 
                   key={index} 
-                  className="service-card group relative overflow-hidden rounded-2xl shadow-lg"
-                  style={{ animationDelay: `${index * 0.1}s` }}
+                  className="service-card group relative rounded-2xl shadow-lg"
                 >
-                  <div className="relative h-96 overflow-hidden">
+                  <div className="relative h-96 overflow-hidden rounded-2xl">
                     <img
                       src={service.image}
                       alt={service.title}
                       className="w-full h-full object-cover"
+                      draggable="false"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                   </div>
@@ -324,7 +455,7 @@ export const HomePage: React.FC = () => {
         </section>
 
         {/* Case Studies - Exact Webflow Cards */}
-        <section className="py-20 bg-gray-50">
+        <section ref={caseStudiesRef} className="py-20 bg-gray-50">
           <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12">
               <p className="text-sm font-semibold text-gray-500 tracking-wider mb-3 uppercase">
@@ -376,7 +507,7 @@ export const HomePage: React.FC = () => {
         </section>
 
         {/* Testimonials - Exact Webflow Style */}
-        <section className="py-20 bg-white">
+        <section ref={testimonialsRef} className="py-20 bg-white">
           <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <p className="text-sm font-semibold text-gray-500 tracking-wider mb-3 uppercase">
@@ -432,7 +563,7 @@ export const HomePage: React.FC = () => {
         </section>
 
         {/* Pricing - Exact Webflow Cards */}
-        <section className="py-20 bg-gray-50">
+        <section ref={pricingRef} className="py-20 bg-gray-50">
           <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <p className="text-sm font-semibold text-gray-500 tracking-wider mb-3 uppercase">
@@ -528,21 +659,52 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* CTA Section - Exact Webflow Style */}
-        <section className="py-20 bg-black text-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="webflow-heading text-4xl md:text-5xl lg:text-6xl mb-6 font-normal">
-              Ready to talk? Get in touch
+        {/* CTA Section - Enhanced Bold & Prominent */}
+        <section ref={ctaRef} className="relative py-32 md:py-40 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white overflow-hidden">
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0djItMnptMC0ydi0yaDJ2Mmgtem0tMiAyaC0ydjJoMnYtem0wLTJoMnYtMmgtMnYyem0tMiAwaC0ydjJoMnYtem0wIDBoMnYtMmgtMnYyem0wLTJ2LTJoLTJ2Mmgyem0yIDBWMzBoMnYyaC0yem0wIDBoLTJ2Mmgydi0yem0yIDB2Mmgydi0yaC0yem0wIDJ2Mmgydi0yaC0yem0yLTJ2LTJoMnYyaC0yem0wIDBoLTJ2Mmgydi0yem0wIDJoMnYyaC0ydi0yem0tMiAwdi0yaC0ydjJoMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-40"></div>
+          <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div className="inline-block mb-6 px-6 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
+              <p className="text-sm font-semibold text-white tracking-wider uppercase">
+                Let's Build Something Amazing
+              </p>
+            </div>
+            <h2 className="webflow-heading text-5xl md:text-6xl lg:text-7xl xl:text-8xl mb-8 font-normal leading-tight">
+              Ready to Transform<br />Your Digital Presence?
             </h2>
-            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-              Let's discuss how we can help transform your business with our digital solutions
+            <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+              Let's discuss how we can help elevate your brand and drive measurable results with cutting-edge digital solutions
             </p>
-            <Link to="/contact">
-              <button className="bg-white hover:bg-gray-100 text-black px-10 py-4 rounded-full text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center gap-2">
-                Let's Talk
-                <ArrowRight className="w-5 h-5" />
-              </button>
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+              <Link to="/contact">
+                <button className="group bg-white hover:bg-gray-100 text-black px-12 py-5 rounded-full text-xl font-bold transition-all duration-300 shadow-2xl hover:shadow-white/20 hover:scale-105 inline-flex items-center gap-3">
+                  Let's Talk
+                  <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </Link>
+              <Link to="/services">
+                <button className="px-12 py-5 rounded-full text-xl font-semibold border-2 border-white/30 hover:border-white text-white transition-all duration-300 hover:bg-white/10">
+                  View Our Services
+                </button>
+              </Link>
+            </div>
+            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-white/20">
+              <div className="text-center">
+                <p className="text-4xl md:text-5xl font-bold mb-2">125+</p>
+                <p className="text-gray-400 text-sm">Industries Served</p>
+              </div>
+              <div className="text-center">
+                <p className="text-4xl md:text-5xl font-bold mb-2">95%</p>
+                <p className="text-gray-400 text-sm">Client Retention</p>
+              </div>
+              <div className="text-center">
+                <p className="text-4xl md:text-5xl font-bold mb-2">500+</p>
+                <p className="text-gray-400 text-sm">Projects Done</p>
+              </div>
+              <div className="text-center">
+                <p className="text-4xl md:text-5xl font-bold mb-2">24/7</p>
+                <p className="text-gray-400 text-sm">Support</p>
+              </div>
+            </div>
           </div>
         </section>
       </main>
