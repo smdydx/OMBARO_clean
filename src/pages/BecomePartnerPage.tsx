@@ -76,11 +76,6 @@ export const BecomePartnerPage: React.FC = () => {
         const windowHeight = window.innerHeight;
         const triggerPoint = windowHeight * 0.85;
 
-        const scrollProgress = Math.min(
-          1,
-          Math.max(0, (windowHeight - rect.top) / (windowHeight * 0.7)),
-        );
-
         if (rect.top < triggerPoint && rect.bottom > 0) {
           if (!section.classList.contains("scroll-revealed")) {
             section.classList.add("scroll-revealed");
@@ -94,23 +89,29 @@ export const BecomePartnerPage: React.FC = () => {
             const elementRect = el.getBoundingClientRect();
             const elementScrollProgress = Math.min(
               1,
-              Math.max(0, (windowHeight - elementRect.top) / (windowHeight * 0.8)),
+              Math.max(0, (windowHeight - elementRect.top) / windowHeight),
             );
-            const offset = (1 - elementScrollProgress) * 60;
+            const offset = (1 - elementScrollProgress) * 20;
 
             if (el.classList.contains("animate-on-scroll-left")) {
-              htmlEl.style.transform = `translateX(${offset}px)`;
-              htmlEl.style.opacity = Math.max(0.3, elementScrollProgress).toString();
+              htmlEl.style.transform = `translateX(${Math.max(0, offset)}px)`;
+              htmlEl.style.opacity = Math.min(1, elementScrollProgress + 0.3).toString();
             } else if (el.classList.contains("animate-on-scroll-right")) {
-              htmlEl.style.transform = `translateX(-${offset}px)`;
-              htmlEl.style.opacity = Math.max(0.3, elementScrollProgress).toString();
+              htmlEl.style.transform = `translateX(-${Math.max(0, offset)}px)`;
+              htmlEl.style.opacity = Math.min(1, elementScrollProgress + 0.3).toString();
             }
           });
         }
 
-        if (rect.top < windowHeight && rect.bottom > 0) {
-          section.style.opacity = "1";
-          section.style.transform = "translateY(0)";
+        if (rect.top < windowHeight * 0.2 && rect.bottom > windowHeight * 0.8) {
+          const textElements = section.querySelectorAll(
+            ".animate-on-scroll-left, .animate-on-scroll-right",
+          );
+          textElements.forEach((el: Element) => {
+            const htmlEl = el as HTMLElement;
+            htmlEl.style.transform = "translateX(0)";
+            htmlEl.style.opacity = "1";
+          });
         }
       });
     };
@@ -463,45 +464,45 @@ export const BecomePartnerPage: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 md:gap-6">
               {businessTypes.map((business, idx) => (
                 <div
                   key={idx}
-                  className="group bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 border-2 border-green-200 hover:border-green-400 transform hover:-translate-y-2"
+                  className={`animate-on-scroll-left stagger-${(idx % 4) + 1} group bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-green-200 hover:border-green-400 transform hover:-translate-y-2`}
                 >
-                  <div className="relative h-48 sm:h-56 overflow-hidden">
+                  <div className="relative h-40 sm:h-44 md:h-48 overflow-hidden">
                     <img
                       src={business.image}
                       alt={business.title}
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
-                    <div className="absolute bottom-4 left-4 right-4 text-white">
-                      <h3 className="text-xl sm:text-2xl font-bold mb-1 text-white">
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                    <div className="absolute bottom-3 left-3 right-3 text-white">
+                      <h3 className="text-base sm:text-lg md:text-xl font-bold mb-0.5 text-white leading-tight">
                         {business.title}
                       </h3>
-                      <p className="text-sm text-green-200">
+                      <p className="text-xs sm:text-sm text-green-200">
                         {business.subtitle}
                       </p>
                     </div>
                   </div>
-                  <div className="p-6 sm:p-8">
-                    <p className="text-sm sm:text-base text-gray-700 mb-4 leading-relaxed">
+                  <div className="p-4 sm:p-5 md:p-6">
+                    <p className="text-xs sm:text-sm text-gray-700 mb-3 sm:mb-4 leading-relaxed line-clamp-3">
                       {business.description}
                     </p>
-                    <div className="space-y-2 mb-6">
+                    <div className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-5">
                       {business.features.map((feature, i) => (
                         <div
                           key={i}
-                          className="flex items-center space-x-2 text-sm text-gray-600"
+                          className="flex items-start space-x-2 text-xs sm:text-sm text-gray-600"
                         >
-                          <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0" />
-                          <span>{feature}</span>
+                          <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                          <span className="line-clamp-1">{feature}</span>
                         </div>
                       ))}
                     </div>
                     <Link to="/app">
-                      <Button className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white rounded-full py-3 font-semibold shadow-lg">
+                      <Button className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white rounded-full py-2 sm:py-2.5 md:py-3 text-xs sm:text-sm font-semibold shadow-lg">
                         Get Started
                       </Button>
                     </Link>
@@ -611,7 +612,7 @@ export const BecomePartnerPage: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 md:gap-5">
               {[
                 {
                   icon: TrendingUp,
@@ -688,35 +689,31 @@ export const BecomePartnerPage: React.FC = () => {
               ].map((benefit, idx) => (
                 <div
                   key={idx}
-                  className="group relative bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-200 hover:border-green-400 transform hover:-translate-y-2 overflow-hidden"
+                  className={`animate-on-scroll-left stagger-${(idx % 4) + 1} group relative bg-white rounded-xl sm:rounded-2xl p-4 sm:p-5 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-200 hover:border-green-400 transform hover:-translate-y-2 overflow-hidden`}
                 >
-                  {/* Background Gradient on Hover */}
                   <div
                     className={`absolute inset-0 bg-gradient-to-br ${benefit.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}
                   ></div>
 
-                  {/* Icon with Modern Badge */}
-                  <div className="relative mb-4">
+                  <div className="relative flex items-center gap-3 mb-3">
                     <div
-                      className={`w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br ${benefit.gradient} rounded-xl flex items-center justify-center shadow-lg group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}
+                      className={`w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br ${benefit.gradient} rounded-lg flex items-center justify-center shadow-md group-hover:scale-110 group-hover:rotate-3 transition-all duration-500 flex-shrink-0`}
                     >
-                      <benefit.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+                      <benefit.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                     </div>
+                    <h3 className="text-sm sm:text-base md:text-lg font-bold text-gray-900 group-hover:text-green-600 transition-colors leading-tight">
+                      {benefit.title}
+                    </h3>
                   </div>
 
-                  {/* Content */}
-                  <h3 className="text-base sm:text-lg font-bold mb-2 text-gray-900 group-hover:text-green-600 transition-colors">
-                    {benefit.title}
-                  </h3>
-                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-4">
+                  <p className="text-xs sm:text-sm text-gray-600 leading-relaxed mb-3 sm:mb-4 line-clamp-3">
                     {benefit.description}
                   </p>
 
-                  {/* Stat Badge - Transaction Style */}
-                  <div className="flex items-center justify-between bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-3 border border-green-200">
+                  <div className="flex items-center justify-between bg-gradient-to-br from-green-50 to-emerald-50 rounded-lg p-2.5 sm:p-3 border border-green-200">
                     <div>
                       <div
-                        className={`text-xl sm:text-2xl font-bold bg-gradient-to-r ${benefit.gradient} bg-clip-text text-transparent`}
+                        className={`text-lg sm:text-xl md:text-2xl font-bold bg-gradient-to-r ${benefit.gradient} bg-clip-text text-transparent`}
                       >
                         {benefit.stat}
                       </div>
@@ -725,9 +722,9 @@ export const BecomePartnerPage: React.FC = () => {
                       </div>
                     </div>
                     <div
-                      className={`w-8 h-8 bg-gradient-to-br ${benefit.gradient} rounded-lg flex items-center justify-center opacity-20 group-hover:opacity-100 transition-opacity`}
+                      className={`w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br ${benefit.gradient} rounded-lg flex items-center justify-center opacity-20 group-hover:opacity-100 transition-opacity`}
                     >
-                      <ArrowRight className="w-4 h-4 text-white" />
+                      <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                     </div>
                   </div>
                 </div>
@@ -991,7 +988,7 @@ export const BecomePartnerPage: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6 sm:gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 md:gap-6">
               {[
                 {
                   icon: Building2,
@@ -1036,22 +1033,24 @@ export const BecomePartnerPage: React.FC = () => {
               ].map((requirement, idx) => (
                 <div
                   key={idx}
-                  className="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border-2 border-green-200 hover:border-green-400 transition-all hover:shadow-2xl"
+                  className={`animate-on-scroll-left stagger-${(idx % 4) + 1} bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-5 md:p-6 shadow-lg border-2 border-green-200 hover:border-green-400 transition-all hover:shadow-2xl`}
                 >
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-green-500 to-emerald-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
-                    <requirement.icon className="w-7 h-7 sm:w-8 sm:h-8 text-white" />
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-green-500 to-emerald-600 rounded-xl flex items-center justify-center shadow-lg flex-shrink-0">
+                      <requirement.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                    </div>
+                    <h3 className="text-sm sm:text-base md:text-lg font-bold text-gray-900 leading-tight">
+                      {requirement.title}
+                    </h3>
                   </div>
-                  <h3 className="text-lg sm:text-xl font-bold mb-4 text-gray-900">
-                    {requirement.title}
-                  </h3>
-                  <div className="space-y-3">
+                  <div className="space-y-2 sm:space-y-2.5">
                     {requirement.items.map((item, i) => (
                       <div
                         key={i}
-                        className="flex items-start space-x-2 text-sm sm:text-base text-gray-700"
+                        className="flex items-start space-x-2 text-xs sm:text-sm text-gray-700"
                       >
-                        <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" />
-                        <span>{item}</span>
+                        <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                        <span className="line-clamp-2">{item}</span>
                       </div>
                     ))}
                   </div>
