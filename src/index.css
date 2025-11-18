@@ -489,18 +489,6 @@ img {
 }
 
 @layer utilities {
-  /* Scroll Snap Container */
-  .snap-y {
-    scroll-snap-type: y mandatory;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
-  }
-
-  .snap-section {
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
-  }
-
   /* Hide scrollbar for Chrome, Safari and Opera */
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
