@@ -102,18 +102,36 @@ export const HomePage: React.FC = () => {
         
         const rect = section.getBoundingClientRect();
         const windowHeight = window.innerHeight;
-        const triggerPoint = windowHeight * 0.75;
+        const isVisible = rect.top < windowHeight * 0.6 && rect.bottom > windowHeight * 0.4;
         
-        if (rect.top < triggerPoint && rect.bottom > 0) {
-          const scrollProgress = Math.min(
-            1,
-            Math.max(0, (triggerPoint - rect.top) / (windowHeight * 0.5))
-          );
-          
-          section.style.setProperty('--scroll-progress', scrollProgress.toString());
-          
+        if (isVisible) {
           if (!section.classList.contains('scroll-revealed')) {
             section.classList.add('scroll-revealed');
+            
+            // Text reveal animation
+            const textElements = section.querySelectorAll('.text-reveal');
+            textElements.forEach((el, index) => {
+              setTimeout(() => {
+                el.classList.add('visible');
+              }, index * 150);
+            });
+            
+            // Image reveal
+            const imageElements = section.querySelectorAll('.image-reveal');
+            imageElements.forEach((el) => {
+              setTimeout(() => {
+                el.classList.add('visible');
+              }, 400);
+            });
+          }
+        } else {
+          // Reset when out of view
+          if (section.classList.contains('scroll-revealed')) {
+            section.classList.remove('scroll-revealed');
+            const textElements = section.querySelectorAll('.text-reveal');
+            textElements.forEach((el) => el.classList.remove('visible'));
+            const imageElements = section.querySelectorAll('.image-reveal');
+            imageElements.forEach((el) => el.classList.remove('visible'));
           }
         }
       });
@@ -151,10 +169,37 @@ export const HomePage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white snap-y snap-mandatory overflow-y-scroll h-screen">
       <MarketingHeader />
 
       <style>{`
+        .snap-section {
+          scroll-snap-align: start;
+          scroll-snap-stop: always;
+          min-height: 100vh;
+          position: relative;
+        }
+
+        .text-reveal {
+          opacity: 0;
+          transform: translateX(-60px);
+          transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .text-reveal.visible {
+          opacity: 1;
+          transform: translateX(0);
+        }
+
+        .image-reveal {
+          opacity: 0;
+          transition: opacity 0.6s ease-out;
+        }
+
+        .image-reveal.visible {
+          opacity: 1;
+        }
+
         @keyframes slideFromLeft {
           from {
             opacity: 0;
@@ -471,7 +516,7 @@ export const HomePage: React.FC = () => {
         </div>
 
         {/* Hero Section */}
-        <section ref={heroRef} className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-emerald-950 to-black py-8 sm:py-12 md:py-16 lg:py-20 scroll-revealed">
+        <section ref={heroRef} className="snap-section relative overflow-hidden bg-gradient-to-br from-gray-900 via-emerald-950 to-black flex items-center scroll-revealed">
           <div className="absolute inset-0 overflow-hidden opacity-20">
             <svg className="absolute bottom-0 w-full h-48 sm:h-56 md:h-64" viewBox="0 0 1440 320" preserveAspectRatio="none">
               <path fill="none" stroke="#00ff87" strokeWidth="2" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128">
@@ -540,7 +585,7 @@ export const HomePage: React.FC = () => {
         </section>
 
         {/* About Section */}
-        <section ref={aboutRef} className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-b from-black via-gray-900 to-emerald-950 overflow-hidden">
+        <section ref={aboutRef} className="snap-section relative bg-gradient-to-b from-black via-gray-900 to-emerald-950 overflow-hidden flex items-center">
           <div className="absolute top-0 left-0 w-full h-24 sm:h-32 opacity-30">
             <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
               <path fill="none" stroke="#10b981" strokeWidth="3" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128">
@@ -602,7 +647,7 @@ export const HomePage: React.FC = () => {
         </section>
 
         {/* Services Section */}
-        <section ref={servicesRef} className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-b from-emerald-950 via-gray-900 to-black overflow-hidden">
+        <section ref={servicesRef} className="snap-section relative bg-gradient-to-b from-emerald-950 via-gray-900 to-black overflow-hidden flex items-center">
           <div className="absolute bottom-0 left-0 w-full h-32 sm:h-40 md:h-48 opacity-20">
             <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
               <path fill="none" stroke="#10b981" strokeWidth="2" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128">
@@ -684,7 +729,7 @@ export const HomePage: React.FC = () => {
         </section>
 
         {/* Why Choose Us */}
-        <section ref={whyChooseRef} className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-b from-black via-gray-900 to-emerald-950 overflow-hidden">
+        <section ref={whyChooseRef} className="snap-section relative bg-gradient-to-b from-black via-gray-900 to-emerald-950 overflow-hidden flex items-center">
           <div className="absolute top-0 left-0 w-full h-24 sm:h-32 opacity-30">
             <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
               <path fill="none" stroke="#10b981" strokeWidth="3" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128">
@@ -755,7 +800,7 @@ export const HomePage: React.FC = () => {
         </section>
 
         {/* Testimonials */}
-        <section ref={testimonialsRef} className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-b from-emerald-950 via-gray-900 to-black overflow-hidden">
+        <section ref={testimonialsRef} className="snap-section relative bg-gradient-to-b from-emerald-950 via-gray-900 to-black overflow-hidden flex items-center">
           <div className="absolute bottom-0 left-0 w-full h-32 sm:h-40 md:h-48 opacity-20">
             <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
               <path fill="none" stroke="#10b981" strokeWidth="2" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128">
@@ -822,7 +867,7 @@ export const HomePage: React.FC = () => {
         </section>
 
         {/* FAQ Section */}
-        <section ref={faqRef} className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-b from-emerald-950 via-gray-900 to-black overflow-hidden">
+        <section ref={faqRef} className="snap-section relative bg-gradient-to-b from-emerald-950 via-gray-900 to-black overflow-hidden flex items-center">
           <div className="absolute bottom-0 left-0 w-full h-32 sm:h-40 md:h-48 opacity-20">
             <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
               <path fill="none" stroke="#10b981" strokeWidth="2" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128">
@@ -900,7 +945,7 @@ export const HomePage: React.FC = () => {
         </section>
 
         {/* CTA Section */}
-        <section ref={ctaRef} className="relative py-16 sm:py-20 md:py-24 lg:py-32 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white overflow-hidden scroll-revealed">
+        <section ref={ctaRef} className="snap-section relative bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white overflow-hidden flex items-center scroll-revealed">
           <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0djItMnptMC0ydi0yaDJ2Mmgtem0tMiAyaC0ydjJoMnYtem0wLTJoMnYtMmgtMnYyem0tMiAwaC0ydjJoMnYtem0wIDBoMnYtMmgtMnYyem0wLTJ2LTJoLTJ2Mmgyem0yIDBWMzBoMnYyaC0yem0wIDBoLTJ2Mmgydi0yem0yIDB2Mmgydi0yaC0yem0wIDJ2Mmgydi0yaC0yem0yLTJ2LTJoMnYyaC0yem0wIDBoLTJ2Mmgydi0yem0wIDJoMnYyaC0ydi0yem0tMiAwdi0yaC0ydjJoMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-40"></div>
           
           <div className="absolute top-10 sm:top-20 left-5 sm:left-10 w-48 sm:w-60 md:w-72 h-48 sm:h-60 md:h-72 bg-gradient-to-br from-white/10 to-transparent rounded-full blur-3xl animate-float"></div>
