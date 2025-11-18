@@ -149,8 +149,9 @@ export const HomePage: React.FC = () => {
           });
         }
 
-        // Ensure proper positioning
-        if (rect.top < windowHeight && rect.bottom > 0) {
+        // Ensure proper positioning - no transform at final scroll position
+        if (rect.top < 0 && rect.bottom > windowHeight) {
+          section.style.transform = "translateY(0) translateX(0)";
           section.style.opacity = "1";
           section.style.position = "relative";
           section.style.zIndex = "1";
@@ -575,17 +576,15 @@ export const HomePage: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center mb-8 sm:mb-10">
               <div className="space-y-4 sm:space-y-6">
-                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-light leading-tight tracking-tight">
-                  <div className="hero-word-1 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-green-300 to-emerald-500">
-                    RELAX
+                <h2 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-light leading-tight" style={{ letterSpacing: '0.05em' }}>
+                  <div className="hero-word-1 text-white">
+                    RELAX & ENJOY
                   </div>
-                  <div className="hero-word-2 text-white font-light">&</div>
-                  <div className="hero-word-3 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-green-300 to-emerald-500">
-                    ENJOY
-                  </div>
-                </h1>
+                </h2>
                 <p className="hero-subtitle text-white/90 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed max-w-xl font-light">
-                  Experience ultimate relaxation with our premium spa and wellness services. Book your perfect moment of tranquility today.
+                  Experience ultimate relaxation with our premium spa and
+                  wellness services. Book your perfect moment of tranquility
+                  today.
                 </p>
                 <div className="hero-button pt-2">
                   <Link to="/app">
@@ -602,9 +601,7 @@ export const HomePage: React.FC = () => {
                   ref={heroImageRef}
                   className="hero-image relative rounded-2xl sm:rounded-3xl overflow-hidden parallax-image"
                 >
-                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-8 sm:border-12 md:border-16 border-emerald-400/80 shadow-2xl shadow-emerald-500/50 z-10 pointer-events-none"></div>
-                  <div className="absolute inset-2 sm:inset-3 md:inset-4 rounded-xl sm:rounded-2xl border-4 sm:border-6 md:border-8 border-white/30 z-10 pointer-events-none"></div>
-                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-emerald-500/10 to-green-500/10 z-10 pointer-events-none"></div>
+                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-4 sm:border-6 md:border-8 border-white shadow-2xl z-10 pointer-events-none"></div>
 
                   <img
                     src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1200&q=80"
@@ -881,16 +878,14 @@ export const HomePage: React.FC = () => {
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
               <div className="animate-on-scroll-left stagger-1 relative order-2 lg:order-1">
-                <div className="relative">
-                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-8 sm:border-12 md:border-16 border-white shadow-2xl z-10 pointer-events-none"></div>
-                  <div className="absolute inset-2 sm:inset-3 md:inset-4 rounded-xl sm:rounded-2xl border-4 sm:border-6 md:border-8 border-emerald-400/30 z-10 pointer-events-none"></div>
-                  <div className="absolute -inset-2 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-emerald-500/30 to-green-500/30 blur-xl z-0"></div>
+                <div className="relative h-64 sm:h-72 md:h-80 lg:h-96">
+                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-4 sm:border-6 border-white shadow-2xl z-10 pointer-events-none"></div>
 
                   <img
                     ref={whyChooseImageRef}
                     src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=1200&q=80"
                     alt="Professional Spa Service"
-                    className="relative w-full rounded-2xl sm:rounded-3xl shadow-2xl parallax-image z-5"
+                    className="relative w-full h-full object-cover rounded-2xl sm:rounded-3xl shadow-2xl parallax-image z-5"
                   />
                 </div>
               </div>

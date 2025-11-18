@@ -25,9 +25,9 @@ export const MarketingHeader: React.FC = () => {
             <path d="M0,20 C200,60 400,10 600,50 C800,90 1000,40 1200,60 L1200,120 L0,120 Z" fill="url(#wave-gradient)" opacity="0.08"></path>
             <defs>
               <linearGradient id="wave-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#10b981" />
-                <stop offset="50%" stopColor="#059669" />
-                <stop offset="100%" stopColor="#14b8a6" />
+                <stop offset="0%" stopColor="#047857" />
+                <stop offset="50%" stopColor="#065f46" />
+                <stop offset="100%" stopColor="#064e3b" />
               </linearGradient>
             </defs>
           </svg>
