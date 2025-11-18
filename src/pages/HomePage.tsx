@@ -80,6 +80,7 @@ export const HomePage: React.FC = () => {
           height: 50vw;
           max-height: 600px;
           min-height: 400px;
+          will-change: transform;
         }
 
         @media (min-width: 992px) {
@@ -89,17 +90,53 @@ export const HomePage: React.FC = () => {
         }
 
         .webflow-heading {
-          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
           font-weight: 400;
           line-height: 1.1;
           letter-spacing: -0.02em;
         }
 
         .webflow-text {
-          font-family: 'Inter', sans-serif;
+          font-family: system-ui, -apple-system, sans-serif;
           font-size: 1.125rem;
           line-height: 1.6;
           color: #666;
+        }
+
+        .service-card {
+          position: relative;
+          overflow: hidden;
+          cursor: pointer;
+          transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .service-card:hover {
+          transform: translateY(-8px);
+        }
+
+        .service-card img {
+          transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .service-card:hover img {
+          transform: scale(1.1);
+        }
+
+        .case-study-card {
+          transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.5s;
+        }
+
+        .case-study-card:hover {
+          transform: translateY(-8px);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .case-study-card img {
+          transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .case-study-card:hover img {
+          transform: scale(1.1);
         }
       `}</style>
 
@@ -132,17 +169,17 @@ export const HomePage: React.FC = () => {
           </div>
         </div>
 
-        {/* Hero Section - Webflow Style */}
+        {/* Hero Section - Exact Webflow Style */}
         <section className="relative overflow-hidden bg-white py-12 md:py-20 lg:py-32">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
             {/* Hero Content */}
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-12">
               {/* Left Text Content */}
               <div className="space-y-6 animate-fade-in-up">
-                <h1 className="webflow-heading text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-gray-900">
+                <h1 className="webflow-heading text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-gray-900 font-normal">
                   Empowering Business Growth
                 </h1>
-                <p className="webflow-text max-w-xl">
+                <p className="webflow-text max-w-xl text-lg">
                   Our digital marketing solutions are designed to deliver measurable results and accelerate your online growth through innovative strategies.
                 </p>
                 <div className="flex gap-4 pt-4">
@@ -189,19 +226,19 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* About Section - Webflow Style */}
+        {/* About Section - Exact Webflow Style */}
         <section className="py-20 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-8">
                 <div>
                   <p className="text-sm font-semibold text-gray-500 tracking-wider mb-3 uppercase">
                     01 / About
                   </p>
-                  <h2 className="webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900 mb-6">
+                  <h2 className="webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900 mb-6 font-normal">
                     Trusted by over 100 businesses worldwide
                   </h2>
-                  <p className="webflow-text">
+                  <p className="webflow-text text-lg">
                     We believe in creating meaningful, lasting connections through digital innovation. Whether it's building your brand, optimizing your website, or driving traffic with cutting-edge marketing strategies.
                   </p>
                 </div>
@@ -233,14 +270,14 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Services Section - Webflow Grid */}
+        {/* Services Section - Exact Webflow Grid */}
         <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12">
               <p className="text-sm font-semibold text-gray-500 tracking-wider mb-3 uppercase">
                 02 / Services
               </p>
-              <h2 className="webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900">
+              <h2 className="webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900 font-normal">
                 Digital solutions that deliver results
               </h2>
             </div>
@@ -265,14 +302,14 @@ export const HomePage: React.FC = () => {
               ].map((service, index) => (
                 <div 
                   key={index} 
-                  className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer"
+                  className="service-card group relative overflow-hidden rounded-2xl shadow-lg"
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
                   <div className="relative h-96 overflow-hidden">
                     <img
                       src={service.image}
                       alt={service.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      className="w-full h-full object-cover"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
                   </div>
@@ -286,14 +323,14 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Case Studies - Webflow Cards */}
+        {/* Case Studies - Exact Webflow Cards */}
         <section className="py-20 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12">
               <p className="text-sm font-semibold text-gray-500 tracking-wider mb-3 uppercase">
                 03 / Case studies
               </p>
-              <h2 className="webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900">
+              <h2 className="webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900 font-normal">
                 Explore our proven success stories
               </h2>
             </div>
@@ -317,13 +354,13 @@ export const HomePage: React.FC = () => {
               ].map((study, index) => (
                 <div 
                   key={index} 
-                  className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                  className="case-study-card bg-white rounded-2xl shadow-lg overflow-hidden"
                 >
                   <div className="relative h-72 overflow-hidden">
                     <img
                       src={study.image}
                       alt={study.title}
-                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+                      className="w-full h-full object-cover"
                     />
                   </div>
                   <div className="p-8">
@@ -338,14 +375,14 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Testimonials - Webflow Style */}
+        {/* Testimonials - Exact Webflow Style */}
         <section className="py-20 bg-white">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <p className="text-sm font-semibold text-gray-500 tracking-wider mb-3 uppercase">
                 04 / Testimonials
               </p>
-              <h2 className="webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900">
+              <h2 className="webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900 font-normal">
                 Trusted by our clients
               </h2>
             </div>
@@ -394,14 +431,14 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Pricing - Webflow Cards */}
+        {/* Pricing - Exact Webflow Cards */}
         <section className="py-20 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
               <p className="text-sm font-semibold text-gray-500 tracking-wider mb-3 uppercase">
                 05 / Pricing
               </p>
-              <h2 className="webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900">
+              <h2 className="webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900 font-normal">
                 Choose your perfect plan
               </h2>
             </div>
@@ -491,10 +528,10 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* CTA Section - Webflow Style */}
+        {/* CTA Section - Exact Webflow Style */}
         <section className="py-20 bg-black text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="webflow-heading text-4xl md:text-5xl lg:text-6xl mb-6">
+            <h2 className="webflow-heading text-4xl md:text-5xl lg:text-6xl mb-6 font-normal">
               Ready to talk? Get in touch
             </h2>
             <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
