@@ -1,7 +1,7 @@
+
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Star, Shield, X } from "lucide-react";
-import { Button } from "../components/ui/Button";
 import { MarketingHeader } from "../components/marketing/MarketingHeader";
 import { MarketingFooter } from "../components/marketing/MarketingFooter";
 
@@ -30,7 +30,80 @@ export const HomePage: React.FC = () => {
     <div className="min-h-screen bg-white">
       <MarketingHeader />
 
-      <main>
+      <style>{`
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(30px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+
+        @keyframes scaleIn {
+          from {
+            opacity: 0;
+            transform: scale(1.2) translateY(-250px);
+          }
+          to {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+          }
+        }
+
+        @keyframes slideInRight {
+          from {
+            opacity: 0;
+            transform: translateX(500px);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0);
+          }
+        }
+
+        .animate-fade-in-up {
+          animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .animate-scale-in {
+          animation: scaleIn 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        .animate-slide-in-right {
+          animation: slideInRight 0.8s ease-out forwards;
+        }
+
+        .hero-image {
+          height: 50vw;
+          max-height: 600px;
+          min-height: 400px;
+        }
+
+        @media (min-width: 992px) {
+          .hero-image {
+            height: 50vw;
+          }
+        }
+
+        .webflow-heading {
+          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+          font-weight: 400;
+          line-height: 1.1;
+          letter-spacing: -0.02em;
+        }
+
+        .webflow-text {
+          font-family: 'Inter', sans-serif;
+          font-size: 1.125rem;
+          line-height: 1.6;
+          color: #666;
+        }
+      `}</style>
+
+      <main className="pt-20">
         {/* Terms Banner */}
         <div
           className={`bg-gradient-to-r from-primary-600 to-primary-700 border-b-2 sm:border-b-4 border-primary-800 transition-all duration-700 ease-in-out overflow-hidden ${
@@ -59,74 +132,80 @@ export const HomePage: React.FC = () => {
           </div>
         </div>
 
-        {/* Hero Section */}
-        <section className="relative overflow-hidden bg-white py-20">
+        {/* Hero Section - Webflow Style */}
+        <section className="relative overflow-hidden bg-white py-12 md:py-20 lg:py-32">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="space-y-8">
-              {/* Hero Titles */}
-              <div className="text-center space-y-4">
-                <h1 className="text-6xl md:text-8xl lg:text-9xl font-light text-gray-900 tracking-tight animate-fade-in">
-                  Empowering
+            {/* Hero Content */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-12">
+              {/* Left Text Content */}
+              <div className="space-y-6 animate-fade-in-up">
+                <h1 className="webflow-heading text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-gray-900">
+                  Empowering Business Growth
                 </h1>
-                <div className="flex flex-col md:flex-row items-center justify-center gap-8">
-                  <h1 className="text-6xl md:text-8xl lg:text-9xl font-light text-gray-900 tracking-tight">
-                    Business
-                  </h1>
-                  <div className="relative w-64 h-64 md:w-96 md:h-96">
-                    <img
-                      src="https://cdn.prod.website-files.com/68bfd5901895b58f0d2e6d33/68c01353ba4fe52ebf9e1cd6_d899696bed5fc7d310c42da48c1b171f_IMG3.avif"
-                      alt="Hero"
-                      className="absolute inset-0 w-full h-full object-cover rounded-3xl shadow-2xl"
-                    />
-                  </div>
-                  <h1 className="text-6xl md:text-8xl lg:text-9xl font-light text-primary-600 tracking-tight">
-                    Growth
-                  </h1>
-                </div>
-              </div>
-
-              {/* Stats and CTA */}
-              <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 pt-12">
-                <div className="flex gap-12">
-                  <div className="text-center md:text-left">
-                    <h2 className="text-5xl font-bold text-gray-900">125+</h2>
-                    <p className="text-gray-600">Industries served</p>
-                  </div>
-                  <div className="text-center md:text-left">
-                    <h2 className="text-5xl font-bold text-gray-900">95%</h2>
-                    <p className="text-gray-600">Client retention</p>
-                  </div>
-                </div>
-                <div className="max-w-2xl space-y-6">
-                  <p className="text-lg text-gray-600">
-                    Our digital marketing solutions are designed to deliver measurable results & accelerate your online growth
-                  </p>
+                <p className="webflow-text max-w-xl">
+                  Our digital marketing solutions are designed to deliver measurable results and accelerate your online growth through innovative strategies.
+                </p>
+                <div className="flex gap-4 pt-4">
                   <Link to="/app">
-                    <button className="bg-primary-500 hover:bg-primary-600 text-white px-8 py-4 rounded-full text-lg font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center gap-2">
+                    <button className="bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-full text-base font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center gap-2">
                       Let's Talk
                       <ArrowRight className="w-5 h-5" />
                     </button>
                   </Link>
                 </div>
               </div>
+
+              {/* Right Image */}
+              <div className="relative animate-scale-in">
+                <div className="hero-image relative rounded-3xl overflow-hidden shadow-2xl">
+                  <img
+                    src="https://cdn.prod.website-files.com/68bfd5901895b58f0d2e6d33/68c01353ba4fe52ebf9e1cd6_d899696bed5fc7d310c42da48c1b171f_IMG3.avif"
+                    alt="Hero"
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Stats Section */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-gray-200 animate-slide-in-right">
+              <div>
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">125+</h2>
+                <p className="text-gray-600">Industries served</p>
+              </div>
+              <div>
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">95%</h2>
+                <p className="text-gray-600">Client retention</p>
+              </div>
+              <div>
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">500+</h2>
+                <p className="text-gray-600">Projects completed</p>
+              </div>
+              <div>
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">24/7</h2>
+                <p className="text-gray-600">Support available</p>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* About Section */}
+        {/* About Section - Webflow Style */}
         <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-8">
                 <div>
-                  <p className="text-sm font-semibold text-primary-600 tracking-wider mb-3">
+                  <p className="text-sm font-semibold text-gray-500 tracking-wider mb-3 uppercase">
                     01 / About
                   </p>
-                  <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">
+                  <h2 className="webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900 mb-6">
                     Trusted by over 100 businesses worldwide
                   </h2>
+                  <p className="webflow-text">
+                    We believe in creating meaningful, lasting connections through digital innovation. Whether it's building your brand, optimizing your website, or driving traffic with cutting-edge marketing strategies.
+                  </p>
                 </div>
-                <div className="bg-white p-6 rounded-2xl shadow-lg">
+                <div className="bg-white p-8 rounded-2xl shadow-lg">
                   <div className="flex items-center gap-4 mb-4">
                     <img
                       src="https://cdn.prod.website-files.com/68bfd5901895b58f0d2e6d33/68c151d7ece54bad85171ad3_fe3ef22dcd0ff322e4c249d33d30f9bc_Testimonials-1.avif"
@@ -138,8 +217,8 @@ export const HomePage: React.FC = () => {
                       <p className="text-sm text-gray-600">Chairman</p>
                     </div>
                   </div>
-                  <p className="text-gray-600 leading-relaxed">
-                    We believe in creating meaningful, lasting connections through digital innovation. Whether it's building your brand, optimizing your website, or driving traffic with cutting-edge marketing strategies
+                  <p className="text-gray-600 leading-relaxed italic">
+                    "Working with this team transformed our business. Their innovative approach and dedication to results is unmatched."
                   </p>
                 </div>
               </div>
@@ -154,18 +233,18 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Services Section */}
+        {/* Services Section - Webflow Grid */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12">
-              <p className="text-sm font-semibold text-primary-600 tracking-wider mb-3">
+              <p className="text-sm font-semibold text-gray-500 tracking-wider mb-3 uppercase">
                 02 / Services
               </p>
-              <h2 className="text-4xl md:text-5xl font-light text-gray-900">
+              <h2 className="webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900">
                 Digital solutions that deliver results
               </h2>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
                 {
                   title: "Web design",
@@ -184,14 +263,22 @@ export const HomePage: React.FC = () => {
                   image: "https://cdn.prod.website-files.com/68c1d32faae3f16628f1caa1/6917fc3d0e38b2018a72f5d3_service-img-4.avif"
                 }
               ].map((service, index) => (
-                <div key={index} className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300">
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
-                    <h3 className="text-2xl font-bold text-white">{service.title}</h3>
+                <div 
+                  key={index} 
+                  className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <div className="relative h-96 overflow-hidden">
+                    <img
+                      src={service.image}
+                      alt={service.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                  </div>
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <h3 className="text-3xl font-bold text-white mb-2">{service.title}</h3>
+                    <div className="w-12 h-1 bg-white transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
                   </div>
                 </div>
               ))}
@@ -199,14 +286,14 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Case Studies */}
+        {/* Case Studies - Webflow Cards */}
         <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12">
-              <p className="text-sm font-semibold text-primary-600 tracking-wider mb-3">
+              <p className="text-sm font-semibold text-gray-500 tracking-wider mb-3 uppercase">
                 03 / Case studies
               </p>
-              <h2 className="text-4xl md:text-5xl font-light text-gray-900">
+              <h2 className="webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900">
                 Explore our proven success stories
               </h2>
             </div>
@@ -228,17 +315,22 @@ export const HomePage: React.FC = () => {
                   image: "https://cdn.prod.website-files.com/68c1d32faae3f16628f1caa1/6917ff716163f9b04d5eb949_Case-Studies-img-3.avif"
                 }
               ].map((study, index) => (
-                <div key={index} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                  <img
-                    src={study.image}
-                    alt={study.title}
-                    className="w-full h-64 object-cover"
-                  />
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                <div 
+                  key={index} 
+                  className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-2xl transition-all duration-500 hover:-translate-y-2"
+                >
+                  <div className="relative h-72 overflow-hidden">
+                    <img
+                      src={study.image}
+                      alt={study.title}
+                      className="w-full h-full object-cover hover:scale-110 transition-transform duration-700"
+                    />
+                  </div>
+                  <div className="p-8">
+                    <h3 className="text-2xl font-semibold text-gray-900 mb-3 leading-tight">
                       {study.title}
                     </h3>
-                    <p className="text-gray-600">{study.subtitle}</p>
+                    <p className="text-gray-600 text-lg">{study.subtitle}</p>
                   </div>
                 </div>
               ))}
@@ -246,14 +338,14 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Testimonials */}
+        {/* Testimonials - Webflow Style */}
         <section className="py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <p className="text-sm font-semibold text-primary-600 tracking-wider mb-3">
+              <p className="text-sm font-semibold text-gray-500 tracking-wider mb-3 uppercase">
                 04 / Testimonials
               </p>
-              <h2 className="text-4xl md:text-5xl font-light text-gray-900">
+              <h2 className="webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900">
                 Trusted by our clients
               </h2>
             </div>
@@ -278,21 +370,21 @@ export const HomePage: React.FC = () => {
                   image: "https://cdn.prod.website-files.com/68bfd5901895b58f0d2e6d33/69182b367ef2d7a7ce7e916c_testi-6.avif"
                 }
               ].map((testimonial, index) => (
-                <div key={index} className="bg-gray-50 p-8 rounded-2xl shadow-lg">
-                  <div className="flex items-center space-x-1 mb-4">
+                <div key={index} className="bg-gray-50 p-8 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-500">
+                  <div className="flex items-center space-x-1 mb-6">
                     {[...Array(5)].map((_, i) => (
                       <Star key={i} className="w-5 h-5 fill-amber-400 text-amber-400" />
                     ))}
                   </div>
-                  <p className="text-gray-600 mb-6 italic">"{testimonial.quote}"</p>
+                  <p className="text-gray-700 mb-6 text-lg leading-relaxed italic">"{testimonial.quote}"</p>
                   <div className="flex items-center gap-4">
                     <img
                       src={testimonial.image}
                       alt={testimonial.name}
-                      className="w-12 h-12 rounded-full object-cover"
+                      className="w-14 h-14 rounded-full object-cover"
                     />
                     <div>
-                      <p className="font-semibold text-gray-900">{testimonial.name}</p>
+                      <p className="font-semibold text-gray-900 text-lg">{testimonial.name}</p>
                       <p className="text-sm text-gray-600">{testimonial.role}</p>
                     </div>
                   </div>
@@ -302,9 +394,17 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Pricing */}
+        {/* Pricing - Webflow Cards */}
         <section className="py-20 bg-gray-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <p className="text-sm font-semibold text-gray-500 tracking-wider mb-3 uppercase">
+                05 / Pricing
+              </p>
+              <h2 className="webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900">
+                Choose your perfect plan
+              </h2>
+            </div>
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 {
@@ -347,30 +447,38 @@ export const HomePage: React.FC = () => {
               ].map((plan, index) => (
                 <div
                   key={index}
-                  className={`bg-white p-8 rounded-2xl shadow-lg ${
-                    plan.featured ? "ring-2 ring-primary-500 scale-105" : ""
+                  className={`bg-white p-8 rounded-2xl shadow-lg transition-all duration-500 hover:shadow-2xl hover:-translate-y-2 ${
+                    plan.featured ? "ring-2 ring-black scale-105 relative" : ""
                   }`}
                 >
+                  {plan.featured && (
+                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-black text-white px-4 py-1 rounded-full text-sm font-semibold">
+                      Most Popular
+                    </div>
+                  )}
                   <div className="mb-6">
                     <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
                     <p className="text-gray-600">{plan.subtitle}</p>
                   </div>
-                  <div className="mb-6">
+                  <div className="mb-8">
                     <p className="text-5xl font-bold text-gray-900">{plan.price}</p>
+                    <p className="text-gray-600 mt-1">per project</p>
                   </div>
-                  <ul className="space-y-3 mb-8">
+                  <ul className="space-y-4 mb-8">
                     {plan.features.map((feature, i) => (
-                      <li key={i} className="flex items-center gap-2 text-gray-600">
-                        <Star className="w-4 h-4 text-primary-500" />
+                      <li key={i} className="flex items-start gap-3 text-gray-700">
+                        <svg className="w-5 h-5 text-green-500 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
                         {feature}
                       </li>
                     ))}
                   </ul>
                   <Link to="/contact">
                     <button
-                      className={`w-full py-3 rounded-full font-medium transition-all ${
+                      className={`w-full py-4 rounded-full font-semibold transition-all duration-300 ${
                         plan.featured
-                          ? "bg-primary-500 hover:bg-primary-600 text-white"
+                          ? "bg-black hover:bg-gray-800 text-white shadow-lg hover:shadow-xl"
                           : "bg-gray-100 hover:bg-gray-200 text-gray-900"
                       }`}
                     >
@@ -383,17 +491,20 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="py-20 bg-white">
+        {/* CTA Section - Webflow Style */}
+        <section className="py-20 bg-black text-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-4xl md:text-5xl font-light text-gray-900 mb-6">
+            <h2 className="webflow-heading text-4xl md:text-5xl lg:text-6xl mb-6">
               Ready to talk? Get in touch
             </h2>
+            <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+              Let's discuss how we can help transform your business with our digital solutions
+            </p>
             <Link to="/contact">
-              <Button size="lg" className="shadow-lg hover:shadow-xl">
+              <button className="bg-white hover:bg-gray-100 text-black px-10 py-4 rounded-full text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center gap-2">
                 Let's Talk
-                <ArrowRight className="w-5 h-5 ml-2" />
-              </Button>
+                <ArrowRight className="w-5 h-5" />
+              </button>
             </Link>
           </div>
         </section>
