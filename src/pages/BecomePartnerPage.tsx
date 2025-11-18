@@ -95,10 +95,16 @@ export const BecomePartnerPage: React.FC = () => {
 
             if (el.classList.contains("animate-on-scroll-left")) {
               htmlEl.style.transform = `translateX(${Math.max(0, offset)}px)`;
-              htmlEl.style.opacity = Math.min(1, elementScrollProgress + 0.3).toString();
+              htmlEl.style.opacity = Math.min(
+                1,
+                elementScrollProgress + 0.3,
+              ).toString();
             } else if (el.classList.contains("animate-on-scroll-right")) {
               htmlEl.style.transform = `translateX(-${Math.max(0, offset)}px)`;
-              htmlEl.style.opacity = Math.min(1, elementScrollProgress + 0.3).toString();
+              htmlEl.style.opacity = Math.min(
+                1,
+                elementScrollProgress + 0.3,
+              ).toString();
             }
           });
         }
@@ -207,9 +213,12 @@ export const BecomePartnerPage: React.FC = () => {
     <div className="min-h-screen bg-white">
       <MarketingHeader />
 
-      <main className="pt-0">
+      <main className="">
         {/* Premium Hero Section */}
-        <section ref={heroRef} className="relative min-h-[500px] sm:min-h-[600px] md:min-h-[700px] lg:min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 scroll-revealed">
+        <section
+          ref={heroRef}
+          className="relative min-h-[500px] sm:min-h-[600px] md:min-h-[700px] lg:min-h-[90vh] flex items-center overflow-hidden bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 scroll-revealed"
+        >
           {/* Animated Background Elements */}
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute top-0 left-0 w-48 h-48 sm:w-64 sm:h-64 md:w-96 md:h-96 bg-gradient-to-br from-green-300 to-emerald-400 rounded-full blur-3xl opacity-30 animate-pulse"></div>
@@ -341,7 +350,10 @@ export const BecomePartnerPage: React.FC = () => {
         </section>
 
         {/* Why Traditional Methods Limit Growth */}
-        <section ref={whyTraditionalRef} className="py-12 sm:py-16 md:py-20 bg-white">
+        <section
+          ref={whyTraditionalRef}
+          className="py-12 sm:py-16 md:py-20 bg-white"
+        >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10 sm:mb-12 md:mb-16">
               <h2
@@ -442,7 +454,10 @@ export const BecomePartnerPage: React.FC = () => {
         </section>
 
         {/* Perfect For All Business Types */}
-        <section ref={businessTypesRef} className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-white to-green-50">
+        <section
+          ref={businessTypesRef}
+          className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-white to-green-50"
+        >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10 sm:mb-12 md:mb-16">
               <h2
@@ -533,7 +548,10 @@ export const BecomePartnerPage: React.FC = () => {
         </section>
 
         {/* Infinite Scrolling Image Showcase */}
-        <section ref={showcaseRef} className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-white to-green-50 overflow-hidden">
+        <section
+          ref={showcaseRef}
+          className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-white to-green-50 overflow-hidden"
+        >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
             <div className="text-center">
               <h2
@@ -583,7 +601,10 @@ export const BecomePartnerPage: React.FC = () => {
         </section>
 
         {/* Platform Benefits - Modern Transaction Cards */}
-        <section ref={benefitsRef} className="py-12 sm:py-16 md:py-20 bg-white relative overflow-hidden">
+        <section
+          ref={benefitsRef}
+          className="py-12 sm:py-16 md:py-20 bg-white relative overflow-hidden"
+        >
           {/* Background Effects */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-green-200/20 to-emerald-300/20 rounded-full blur-3xl opacity-40 animate-pulse"></div>
@@ -734,7 +755,10 @@ export const BecomePartnerPage: React.FC = () => {
         </section>
 
         {/* Simple 4-Step Process */}
-        <section ref={processRef} className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-green-50 to-emerald-50">
+        <section
+          ref={processRef}
+          className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-green-50 to-emerald-50"
+        >
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10 sm:mb-12 md:mb-16">
               <h2
@@ -968,7 +992,10 @@ export const BecomePartnerPage: React.FC = () => {
         </section>
 
         {/* Requirements & Eligibility */}
-        <section ref={requirementsRef} className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-white to-green-50">
+        <section
+          ref={requirementsRef}
+          className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-white to-green-50"
+        >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10 sm:mb-12 md:mb-16">
               <h2
@@ -1061,7 +1088,10 @@ export const BecomePartnerPage: React.FC = () => {
         </section>
 
         {/* FAQ - Modern Horizontal Scroll Layout */}
-        <section ref={faqRef} className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-green-50 to-white overflow-hidden">
+        <section
+          ref={faqRef}
+          className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-green-50 to-white overflow-hidden"
+        >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8 sm:mb-10">
               <h2
@@ -1161,7 +1191,10 @@ export const BecomePartnerPage: React.FC = () => {
         </section>
 
         {/* Final CTA */}
-        <section ref={ctaRef} className="relative py-16 sm:py-20 md:py-24 lg:py-28 bg-gradient-to-br from-green-400 via-emerald-500 to-teal-600 text-white overflow-hidden">
+        <section
+          ref={ctaRef}
+          className="relative py-16 sm:py-20 md:py-24 lg:py-28 bg-gradient-to-br from-green-400 via-emerald-500 to-teal-600 text-white overflow-hidden"
+        >
           <div className="absolute inset-0">
             <div className="absolute top-0 left-0 w-64 sm:w-96 md:w-[500px] h-64 sm:h-96 md:h-[500px] bg-white/20 rounded-full blur-3xl animate-pulse"></div>
             <div
