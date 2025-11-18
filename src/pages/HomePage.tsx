@@ -612,7 +612,7 @@ export const HomePage: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center mb-8 sm:mb-10">
               <div className="space-y-4 sm:space-y-6 w-full px-2 sm:px-0">
                 <h1
-                  className="text-6xl sm:text-7xl md:text-8xl lg:text-6xl xl:text-[6rem] font-light leading-tight w-full text-white"
+                  className="text-6xl sm:text-7xl md:text-6xl lg:text-6xl xl:text-[4rem] font-light leading-tight w-full text-white"
                   style={{ letterSpacing: "0.02em" }}
                 >
                   RELAX & ENJOY
@@ -736,7 +736,7 @@ export const HomePage: React.FC = () => {
                   <h2 className="animate-on-scroll-left stagger-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white mb-4 sm:mb-6 font-normal">
                     Your Wellness Partner, At Your Doorstep
                   </h2>
-                  <p className="animate-on-scroll-left stagger-3 text-white/90 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl leading-relaxed">
+                  <p className="animate-on-scroll-left stagger-3 text-white/90 text-sm sm:text-base md:text-md lg:text-md xl:text-xl leading-relaxed">
                     Ombaro delivers professional spa and salon services wherever
                     you need them. With certified therapists and experienced
                     beauty experts, we guarantee quality, hygiene, and comfort.
