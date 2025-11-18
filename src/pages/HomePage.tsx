@@ -120,7 +120,7 @@ export const HomePage: React.FC = () => {
             section.classList.add("scroll-revealed");
           }
 
-          // Apply smooth scroll animations - elements enter from left and exit at bottom
+          // Apply smooth scroll animations - text enters from left, images from top
           const textElements = section.querySelectorAll(
             ".animate-on-scroll-left, .animate-on-scroll-right",
           );
@@ -128,31 +128,27 @@ export const HomePage: React.FC = () => {
             const htmlEl = el as HTMLElement;
             const elementRect = el.getBoundingClientRect();
             
-            // Calculate position relative to viewport
-            const elementCenter = elementRect.top + elementRect.height / 2;
-            const viewportCenter = windowHeight / 2;
-            
             // Entry animation (from left when coming into view from bottom)
             if (elementRect.top < windowHeight && elementRect.bottom > 0) {
-              const entryProgress = Math.min(1, Math.max(0, (windowHeight - elementRect.top) / windowHeight));
+              const entryProgress = Math.min(1, Math.max(0, (windowHeight - elementRect.top) / (windowHeight * 0.8)));
               
               if (el.classList.contains("animate-on-scroll-left")) {
-                const xOffset = Math.max(0, (1 - entryProgress) * 100);
+                const xOffset = Math.max(0, (1 - entryProgress) * 150);
                 htmlEl.style.transform = `translateX(-${xOffset}px)`;
-                htmlEl.style.opacity = Math.min(1, entryProgress + 0.2).toString();
+                htmlEl.style.opacity = Math.min(1, entryProgress).toString();
               } else if (el.classList.contains("animate-on-scroll-right")) {
-                const xOffset = Math.max(0, (1 - entryProgress) * 100);
-                htmlEl.style.transform = `translateX(${xOffset}px)`;
-                htmlEl.style.opacity = Math.min(1, entryProgress + 0.2).toString();
+                const yOffset = Math.max(0, (1 - entryProgress) * 100);
+                htmlEl.style.transform = `translateY(-${yOffset}px)`;
+                htmlEl.style.opacity = Math.min(1, entryProgress).toString();
               }
             }
             
-            // Exit animation (to bottom when scrolling past)
-            if (elementRect.bottom < viewportCenter && elementRect.top < 0) {
-              const exitProgress = Math.min(1, Math.abs(elementRect.top) / windowHeight);
-              const yOffset = exitProgress * 50;
-              htmlEl.style.transform = `translateY(${yOffset}px)`;
-              htmlEl.style.opacity = Math.max(0, 1 - exitProgress).toString();
+            // Exit animation (to top when scrolling past)
+            if (elementRect.top < 0) {
+              const exitProgress = Math.min(1, Math.abs(elementRect.top) / (windowHeight * 0.5));
+              const yOffset = exitProgress * 80;
+              htmlEl.style.transform = `translateY(-${yOffset}px)`;
+              htmlEl.style.opacity = Math.max(0, 1 - exitProgress * 1.2).toString();
             }
           });
         }
@@ -604,7 +600,11 @@ export const HomePage: React.FC = () => {
                     clipPath: 'polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 0% 100%)'
                   }}
                 >
-                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-4 sm:border-6 md:border-8 border-white shadow-2xl z-10 pointer-events-none"></div>
+                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-4 sm:border-6 md:border-8 border-white shadow-2xl z-10 pointer-events-none"
+                    style={{
+                      clipPath: 'polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 0% 100%)'
+                    }}
+                  ></div>
 
                   <img
                     src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1200&q=80"
@@ -728,7 +728,11 @@ export const HomePage: React.FC = () => {
                   style={{
                     clipPath: 'polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 0% 100%)'
                   }}>
-                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-8 sm:border-12 md:border-16 border-white shadow-2xl z-10 pointer-events-none"></div>
+                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-8 sm:border-12 md:border-16 border-white shadow-2xl z-10 pointer-events-none"
+                    style={{
+                      clipPath: 'polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 0% 100%)'
+                    }}
+                  ></div>
                   <div className="absolute -inset-2 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-emerald-500/30 to-green-500/30 blur-xl z-0"></div>
 
                   <img
@@ -887,7 +891,11 @@ export const HomePage: React.FC = () => {
                   style={{
                     clipPath: 'polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 0% 100%)'
                   }}>
-                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-4 sm:border-6 border-white shadow-2xl z-10 pointer-events-none"></div>
+                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-4 sm:border-6 border-white shadow-2xl z-10 pointer-events-none"
+                    style={{
+                      clipPath: 'polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 0% 100%)'
+                    }}
+                  ></div>
 
                   <img
                     ref={whyChooseImageRef}
@@ -1130,7 +1138,11 @@ export const HomePage: React.FC = () => {
                   style={{
                     clipPath: 'polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 0% 100%)'
                   }}>
-                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-8 sm:border-12 md:border-16 border-white shadow-2xl z-10 pointer-events-none"></div>
+                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-8 sm:border-12 md:border-16 border-white shadow-2xl z-10 pointer-events-none"
+                    style={{
+                      clipPath: 'polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 0% 100%)'
+                    }}
+                  ></div>
                   <div className="absolute -inset-2 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-emerald-500/30 to-green-500/30 blur-xl z-0"></div>
 
                   <img

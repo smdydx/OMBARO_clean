@@ -37,7 +37,7 @@ export const MarketingHeader: React.FC = () => {
         <div className="flex items-center justify-between h-20 lg:h-24 xl:h-28">
           <div className="flex items-center lg:flex-1">
             <Link to="/" className="flex items-center group z-50">
-              <div className="relative rounded-full p-2 sm:p-2.5 lg:p-3 xl:p-4 bg-white shadow-lg lg:shadow-2xl border-3 sm:border-4 lg:border-4 xl:border-5 border-emerald-600">
+              <div className="relative rounded-full p-2 sm:p-2.5 lg:p-3 xl:p-4 bg-white shadow-lg lg:shadow-2xl border-3 border-emerald-600 sm:border-4 lg:border-4 xl:border-5">
                 <img
                   src="/ombaro-logo-new.png"
                   alt="OMBARO"
