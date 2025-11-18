@@ -67,12 +67,16 @@ export const HomePage: React.FC = () => {
       const servicesRect = servicesRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
 
-      // Check if services section is in viewport
-      const isInView =
-        servicesRect.top < windowHeight * 0.8 &&
-        servicesRect.bottom > windowHeight * 0.2;
+      // Calculate if section is well-centered in viewport
+      const sectionCenter = servicesRect.top + servicesRect.height / 2;
+      const viewportCenter = windowHeight / 2;
+      const distanceFromCenter = Math.abs(sectionCenter - viewportCenter);
+      
+      // Only auto-scroll when section is centered and user is actively viewing
+      const isCentered = distanceFromCenter < windowHeight * 0.25;
+      const isVisible = servicesRect.top < windowHeight * 0.75 && servicesRect.bottom > windowHeight * 0.25;
 
-      if (isInView && !isDragging) {
+      if (isCentered && isVisible && !isDragging) {
         if (!autoScrollInterval) {
           autoScrollInterval = setInterval(() => {
             if (carouselRef.current) {
@@ -84,10 +88,10 @@ export const HomePage: React.FC = () => {
               if (currentScroll >= maxScroll) {
                 carouselRef.current.scrollLeft = 0;
               } else {
-                carouselRef.current.scrollLeft += 1;
+                carouselRef.current.scrollLeft += 0.8;
               }
             }
-          }, 20);
+          }, 25);
         }
       } else {
         if (autoScrollInterval) {
@@ -140,62 +144,66 @@ export const HomePage: React.FC = () => {
 
         const rect = section.getBoundingClientRect();
         const windowHeight = window.innerHeight;
-        const triggerPoint = windowHeight * 0.75;
-
-        // Calculate how much the section has scrolled into view
-        const scrollProgress = Math.min(
-          1,
-          Math.max(0, (windowHeight - rect.top) / windowHeight),
-        );
+        const triggerPoint = windowHeight * 0.85; // Later trigger for better capture
 
         // Reveal section when entering viewport
-        if (rect.top < triggerPoint && rect.bottom > 0) {
+        if (rect.top < triggerPoint && rect.bottom > windowHeight * 0.15) {
           if (!section.classList.contains("scroll-revealed")) {
             section.classList.add("scroll-revealed");
           }
 
-          // Apply smooth parallax text movement based on scroll position
+          // Calculate viewport center alignment
+          const sectionCenter = rect.top + rect.height / 2;
+          const viewportCenter = windowHeight / 2;
+          const distanceFromCenter = Math.abs(sectionCenter - viewportCenter);
+          const isNearCenter = distanceFromCenter < windowHeight * 0.3;
+
+          // Apply smooth text movement only when not centered
           const textElements = section.querySelectorAll(
             ".animate-on-scroll-left, .animate-on-scroll-right",
           );
+          
           textElements.forEach((el: Element) => {
             const htmlEl = el as HTMLElement;
             const elementRect = el.getBoundingClientRect();
-            const elementScrollProgress = Math.min(
+            
+            // Calculate progress with snap-to-position when near viewport
+            let elementScrollProgress = Math.min(
               1,
-              Math.max(0, (windowHeight - elementRect.top) / windowHeight),
+              Math.max(0, (windowHeight - elementRect.top) / (windowHeight * 0.8)),
             );
-            const offset = (1 - elementScrollProgress) * 100;
+
+            // Snap to final position when element is well within viewport
+            if (elementRect.top < windowHeight * 0.7 && elementRect.bottom > windowHeight * 0.3) {
+              elementScrollProgress = 1;
+            }
+
+            const offset = (1 - elementScrollProgress) * 60;
 
             if (el.classList.contains("animate-on-scroll-left")) {
-              htmlEl.style.transform = `translateX(${offset}px)`;
-              htmlEl.style.opacity = elementScrollProgress.toString();
+              htmlEl.style.transform = elementScrollProgress === 1 ? 'translateX(0)' : `translateX(${offset}px)`;
+              htmlEl.style.opacity = Math.max(0.3, elementScrollProgress).toString();
             } else if (el.classList.contains("animate-on-scroll-right")) {
-              htmlEl.style.transform = `translateX(-${offset}px)`;
-              htmlEl.style.opacity = elementScrollProgress.toString();
+              htmlEl.style.transform = elementScrollProgress === 1 ? 'translateX(0)' : `translateX(-${offset}px)`;
+              htmlEl.style.opacity = Math.max(0.3, elementScrollProgress).toString();
             }
           });
-        }
 
-        // Webflow-style: Fade out and slide up when scrolling past
-        if (rect.bottom < windowHeight * 0.2) {
+          // Keep section fully visible when in reading position
+          section.style.opacity = "1";
+          section.style.transform = "translateY(0)";
+        } else if (rect.bottom < windowHeight * 0.15) {
+          // Fade out when scrolled past
           const slideOutProgress = Math.min(
             1,
-            Math.max(
-              0,
-              (windowHeight * 0.2 - rect.bottom) / (windowHeight * 0.5),
-            ),
+            Math.max(0, (windowHeight * 0.15 - rect.bottom) / (windowHeight * 0.3)),
           );
-          section.style.opacity = (1 - slideOutProgress * 0.7).toString();
-          section.style.transform = `translateY(-${slideOutProgress * 50}px)`;
+          section.style.opacity = (1 - slideOutProgress * 0.5).toString();
+          section.style.transform = `translateY(-${slideOutProgress * 30}px)`;
         } else if (rect.top > windowHeight) {
           // Section hasn't entered yet
           section.style.opacity = "0";
-          section.style.transform = "translateY(50px)";
-        } else {
-          // Section is visible
-          section.style.opacity = "1";
-          section.style.transform = "translateY(0)";
+          section.style.transform = "translateY(30px)";
         }
       });
     };

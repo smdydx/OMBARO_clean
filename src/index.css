@@ -822,3 +822,17 @@ img {
         .animate-neon-pulse {
           animation: neonPulse 2s ease-in-out infinite;
         }
+
+        .animate-on-scroll-left,
+        .animate-on-scroll-right {
+          opacity: 1;
+          transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                      opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        section.scroll-revealed .animate-on-scroll-left,
+        section.scroll-revealed .animate-on-scroll-right {
+          transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                      opacity 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+          will-change: transform, opacity;
+        }
