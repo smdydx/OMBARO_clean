@@ -451,120 +451,166 @@ export const HomePage: React.FC = () => {
           </div>
         </div>
 
-        {/* Hero Section - Staggered Word-by-Word Animation */}
-        <section ref={heroRef} className="relative overflow-hidden bg-white py-12 md:py-20 lg:py-32 scroll-revealed">
+        {/* Hero Section - Staggered Word-by-Word Animation with Dark Green Neon */}
+        <section ref={heroRef} className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-emerald-950 to-black py-12 md:py-20 lg:py-32 scroll-revealed">
+          {/* Neon Wave Effect */}
+          <div className="absolute inset-0 overflow-hidden opacity-20">
+            <svg className="absolute bottom-0 w-full h-64" viewBox="0 0 1440 320" preserveAspectRatio="none">
+              <path fill="none" stroke="#00ff87" strokeWidth="2" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128">
+                <animate attributeName="d" dur="8s" repeatCount="indefinite" values="
+                  M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128;
+                  M0,128L48,138.7C96,149,192,171,288,165.3C384,160,480,128,576,122.7C672,117,768,139,864,144C960,149,1056,139,1152,128C1248,117,1344,107,1392,101.3L1440,96;
+                  M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128" />
+              </path>
+            </svg>
+          </div>
+          
           <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-12">
               {/* Left Text Content - Staggered Animation */}
-              <div className="space-y-6">
-                <h1 className="webflow-heading text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-gray-900 font-normal">
-                  <div className="hero-word-1">India's #1</div>
-                  <div className="hero-word-2">Spa & Salon</div>
-                  <div className="hero-word-3">Platform</div>
+              <div className="space-y-8">
+                <h1 className="webflow-heading text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-normal">
+                  <div className="hero-word-1 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-green-300 to-emerald-500">India's #1</div>
+                  <div className="hero-word-2 text-white">Spa & Salon</div>
+                  <div className="hero-word-3 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-green-300 to-emerald-500">Platform</div>
                 </h1>
-                <p className="hero-subtitle webflow-text max-w-xl text-lg">
+                <p className="hero-subtitle text-white/90 max-w-xl text-xl md:text-2xl leading-relaxed">
                   Experience premium spa and salon services at your doorstep. Book verified professionals, enjoy transparent pricing, and relax with certified therapists across India.
                 </p>
                 <div className="hero-button flex gap-4 pt-4">
                   <Link to="/app">
-                    <button className="bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-full text-base font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center gap-2">
+                    <button className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white px-10 py-5 rounded-full text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-emerald-500/50 inline-flex items-center gap-2">
                       Book Now
-                      <ArrowRight className="w-5 h-5" />
+                      <ArrowRight className="w-6 h-6" />
                     </button>
                   </Link>
                 </div>
               </div>
 
-              {/* Right Image - Slides from Right with Parallax */}
+              {/* Right Image - Slides from Right with Parallax and Neon Frame */}
               <div className="hero-image-wrapper relative">
-                <div ref={heroImageRef} className="hero-image relative rounded-3xl overflow-hidden shadow-2xl parallax-image">
+                <div ref={heroImageRef} className="hero-image relative rounded-3xl overflow-hidden parallax-image">
+                  {/* Neon Frame Effect */}
+                  <div className="absolute inset-0 rounded-3xl border-4 border-emerald-400 shadow-2xl shadow-emerald-500/50 z-10 pointer-events-none animate-pulse"></div>
+                  <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-emerald-500/20 to-green-500/20 z-10 pointer-events-none"></div>
+                  
                   <img
-                    src="https://cdn.prod.website-files.com/68bfd5901895b58f0d2e6d33/68c01353ba4fe52ebf9e1cd6_d899696bed5fc7d310c42da48c1b171f_IMG3.avif"
-                    alt="Hero"
+                    src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1200&q=80"
+                    alt="Luxury Spa Interior"
                     className="absolute inset-0 w-full h-full object-cover"
                   />
                 </div>
               </div>
             </div>
 
-            {/* Stats Section - Staggered Fade Up */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-gray-200">
-              <div className="hero-stat-1">
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">10,000+</h2>
-                <p className="text-gray-600">Verified Professionals</p>
+            {/* Stats Section - Staggered Fade Up with Neon Effect */}
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-emerald-500/30">
+              <div className="hero-stat-1 text-center">
+                <h2 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 mb-2">10,000+</h2>
+                <p className="text-white/80 text-lg">Verified Professionals</p>
               </div>
-              <div className="hero-stat-2">
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">50+</h2>
-                <p className="text-gray-600">Cities Covered</p>
+              <div className="hero-stat-2 text-center">
+                <h2 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 mb-2">50+</h2>
+                <p className="text-white/80 text-lg">Cities Covered</p>
               </div>
-              <div className="hero-stat-3">
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">1M+</h2>
-                <p className="text-gray-600">Happy Customers</p>
+              <div className="hero-stat-3 text-center">
+                <h2 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 mb-2">1M+</h2>
+                <p className="text-white/80 text-lg">Happy Customers</p>
               </div>
-              <div className="hero-stat-4">
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">24/7</h2>
-                <p className="text-gray-600">Customer Support</p>
+              <div className="hero-stat-4 text-center">
+                <h2 className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 mb-2">24/7</h2>
+                <p className="text-white/80 text-lg">Customer Support</p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* About Section - Coordinated Left/Right */}
-        <section ref={aboutRef} className="py-20 bg-gray-50">
-          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+        {/* About Section - Coordinated Left/Right with Dark Green and Wave Effects */}
+        <section ref={aboutRef} className="relative py-20 bg-gradient-to-b from-black via-gray-900 to-emerald-950 overflow-hidden">
+          {/* Wave Effect */}
+          <div className="absolute top-0 left-0 w-full h-32 opacity-30">
+            <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
+              <path fill="none" stroke="#10b981" strokeWidth="3" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128">
+                <animate attributeName="d" dur="10s" repeatCount="indefinite" values="
+                  M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128;
+                  M0,128L48,138.7C96,149,192,171,288,165.3C384,160,480,128,576,122.7C672,117,768,139,864,144C960,149,1056,139,1152,128C1248,117,1344,107,1392,101.3L1440,96;
+                  M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128" />
+              </path>
+            </svg>
+          </div>
+          
+          <div className="relative max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               {/* Left Content - Slides from Left */}
               <div className="space-y-8">
                 <div>
-                  <p className="animate-on-scroll-fade stagger-1 text-sm font-semibold text-gray-500 tracking-wider mb-3 uppercase">
+                  <p className="animate-on-scroll-fade stagger-1 text-sm font-semibold text-emerald-400 tracking-wider mb-3 uppercase">
                     01 / About Us
                   </p>
-                  <h2 className="animate-on-scroll-left stagger-2 webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900 mb-6 font-normal">
+                  <h2 className="animate-on-scroll-left stagger-2 webflow-heading text-5xl md:text-6xl lg:text-7xl text-white mb-6 font-normal">
                     Your Wellness Partner, At Your Doorstep
                   </h2>
-                  <p className="animate-on-scroll-left stagger-3 webflow-text text-lg">
+                  <p className="animate-on-scroll-left stagger-3 text-white/90 text-xl md:text-2xl leading-relaxed">
                     Ombaro brings professional spa and salon services to your home. With a network of certified therapists and beauty experts, we ensure quality, hygiene, and convenience. From relaxing massages to premium facials, we've got you covered.
                   </p>
                 </div>
-                <div className="animate-on-scroll-left stagger-4 bg-white p-8 rounded-2xl shadow-lg">
+                <div className="animate-on-scroll-left stagger-4 bg-gradient-to-br from-emerald-900/40 to-green-900/40 backdrop-blur-sm p-8 rounded-2xl border border-emerald-500/30 shadow-2xl shadow-emerald-500/20">
                   <div className="flex items-center gap-4 mb-4">
                     <img
-                      src="https://cdn.prod.website-files.com/68bfd5901895b58f0d2e6d33/68c151d7ece54bad85171ad3_fe3ef22dcd0ff322e4c249d33d30f9bc_Testimonials-1.avif"
+                      src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=200&q=80"
                       alt="Customer"
-                      className="w-16 h-16 rounded-full object-cover"
+                      className="w-16 h-16 rounded-full object-cover border-2 border-emerald-400"
                     />
                     <div>
-                      <p className="font-semibold text-gray-900">Priya Sharma</p>
-                      <p className="text-sm text-gray-600">Regular Customer</p>
+                      <p className="font-semibold text-white text-lg">Priya Sharma</p>
+                      <p className="text-sm text-emerald-300">Regular Customer</p>
                     </div>
                   </div>
-                  <p className="text-gray-600 leading-relaxed italic">
+                  <p className="text-white/80 leading-relaxed italic text-lg">
                     "Ombaro has made my life so easy! Professional therapists, great service, and the convenience of home service is unbeatable."
                   </p>
                 </div>
               </div>
               
-              {/* Right Image - Slides from Right with Parallax */}
-              <div className="animate-on-scroll-right stagger-2">
-                <img
-                  ref={aboutImageRef}
-                  src="https://cdn.prod.website-files.com/68bfd5901895b58f0d2e6d33/68c0fa82a5e8c587cb5976bd_2039ece10f2ad381c4a36262e21daef2_about-img.avif"
-                  alt="About"
-                  className="w-full rounded-3xl shadow-2xl parallax-image"
-                />
+              {/* Right Image - Slides from Right with Parallax and Neon Frame */}
+              <div className="animate-on-scroll-right stagger-2 relative">
+                <div className="relative">
+                  {/* Neon Frame */}
+                  <div className="absolute inset-0 rounded-3xl border-4 border-emerald-400 shadow-2xl shadow-emerald-500/60 z-10 pointer-events-none animate-pulse"></div>
+                  <div className="absolute -inset-2 rounded-3xl bg-gradient-to-br from-emerald-500/30 to-green-500/30 blur-xl z-0"></div>
+                  
+                  <img
+                    ref={aboutImageRef}
+                    src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1200&q=80"
+                    alt="Spa Treatment Room"
+                    className="relative w-full rounded-3xl shadow-2xl parallax-image z-5"
+                  />
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Services Section - Staggered Service Cards */}
-        <section ref={servicesRef} className="py-20 bg-white">
-          <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Services Section - Staggered Service Cards with Dark Green Neon */}
+        <section ref={servicesRef} className="relative py-20 bg-gradient-to-b from-emerald-950 via-gray-900 to-black overflow-hidden">
+          {/* Animated Wave Background */}
+          <div className="absolute bottom-0 left-0 w-full h-48 opacity-20">
+            <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
+              <path fill="none" stroke="#10b981" strokeWidth="2" d="M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128">
+                <animate attributeName="d" dur="12s" repeatCount="indefinite" values="
+                  M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128;
+                  M0,160L48,170.7C96,181,192,203,288,213.3C384,224,480,224,576,213.3C672,203,768,181,864,186.7C960,192,1056,224,1152,213.3C1248,203,1344,149,1392,122.7L1440,96;
+                  M0,192L48,197.3C96,203,192,213,288,229.3C384,245,480,267,576,250.7C672,235,768,181,864,181.3C960,181,1056,235,1152,234.7C1248,235,1344,181,1392,154.7L1440,128" />
+              </path>
+            </svg>
+          </div>
+          
+          <div className="relative max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12">
-              <p className="animate-on-scroll-fade stagger-1 text-sm font-semibold text-gray-500 tracking-wider mb-3 uppercase">
+              <p className="animate-on-scroll-fade stagger-1 text-sm font-semibold text-emerald-400 tracking-wider mb-3 uppercase">
                 02 / Our Services
               </p>
-              <h2 className="animate-on-scroll-left stagger-2 webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900 font-normal">
+              <h2 className="animate-on-scroll-left stagger-2 webflow-heading text-5xl md:text-6xl lg:text-7xl text-white font-normal">
                 Premium Wellness Services at Home
               </h2>
             </div>
@@ -579,25 +625,29 @@ export const HomePage: React.FC = () => {
               {[
                 {
                   title: "Spa Massage",
-                  image: "https://cdn.prod.website-files.com/68c1d32faae3f16628f1caa1/6917fb138b51b9bdb722a009_service-img-1.avif"
+                  image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80"
                 },
                 {
                   title: "Beauty Salon",
-                  image: "https://cdn.prod.website-files.com/68c1d32faae3f16628f1caa1/6917fb45c4bc0481021b7e7a_service-img-2.avif"
+                  image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80"
                 },
                 {
                   title: "Bridal Makeup",
-                  image: "https://cdn.prod.website-files.com/68c1d32faae3f16628f1caa1/6917fc0c55ebb78e4a468fe6_service-img-3.avif"
+                  image: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&q=80"
                 },
                 {
                   title: "Hair Styling",
-                  image: "https://cdn.prod.website-files.com/68c1d32faae3f16628f1caa1/6917fc3d0e38b2018a72f5d3_service-img-4.avif"
+                  image: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&q=80"
                 }
               ].map((service, index) => (
                 <div 
                   key={index} 
-                  className={`service-card animate-on-scroll-scale stagger-fast-${index + 1} group relative rounded-2xl shadow-lg`}
+                  className={`service-card animate-on-scroll-scale stagger-fast-${index + 1} group relative rounded-2xl`}
                 >
+                  {/* Neon Frame Effect */}
+                  <div className="absolute -inset-1 rounded-2xl bg-gradient-to-r from-emerald-500 via-green-500 to-emerald-500 opacity-75 blur-lg group-hover:opacity-100 transition duration-500"></div>
+                  <div className="absolute inset-0 rounded-2xl border-2 border-emerald-400 shadow-2xl shadow-emerald-500/50 z-10 pointer-events-none group-hover:border-green-300 transition duration-500"></div>
+                  
                   <div className="relative h-96 overflow-hidden rounded-2xl">
                     <img
                       src={service.image}
@@ -605,11 +655,11 @@ export const HomePage: React.FC = () => {
                       className="w-full h-full object-cover"
                       draggable="false"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
                   </div>
                   <div className="absolute bottom-0 left-0 right-0 p-6">
-                    <h3 className="text-3xl font-bold text-white mb-2">{service.title}</h3>
-                    <div className="w-12 h-1 bg-white transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500"></div>
+                    <h3 className="text-3xl md:text-4xl font-bold text-white mb-2">{service.title}</h3>
+                    <div className="w-16 h-1 bg-gradient-to-r from-emerald-400 to-green-300 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 shadow-lg shadow-emerald-500/50"></div>
                   </div>
                 </div>
               ))}
