@@ -101,7 +101,7 @@ export const HomePage: React.FC = () => {
       const scrollPos = window.scrollY;
 
       if (heroImageRef.current) {
-        const parallaxOffset = scrollPos * 0.3;
+        const parallaxOffset = scrollPos * 0.5;
         heroImageRef.current.style.transform = `translateY(${parallaxOffset}px)`;
       }
 
@@ -115,19 +115,11 @@ export const HomePage: React.FC = () => {
       parallaxImages.forEach((img) => {
         if (!img) return;
         const rect = img.getBoundingClientRect();
-        const windowHeight = window.innerHeight;
-        
-        // Only apply parallax when image is in viewport
-        if (rect.top < windowHeight && rect.bottom > 0) {
-          const scrollProgress =
-            (windowHeight - rect.top) / (windowHeight + rect.height);
-          if (scrollProgress > 0.2 && scrollProgress < 0.8) {
-            const parallaxOffset = (scrollProgress - 0.5) * -50;
-            img.style.transform = `translateY(${parallaxOffset}px)`;
-          } else {
-            // Lock position when fully visible
-            img.style.transform = "translateY(0)";
-          }
+        const scrollProgress =
+          (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+        if (scrollProgress > 0 && scrollProgress < 1) {
+          const parallaxOffset = (scrollProgress - 0.5) * -100;
+          img.style.transform = `translateY(${parallaxOffset}px)`;
         }
       });
     };
@@ -148,7 +140,13 @@ export const HomePage: React.FC = () => {
 
         const rect = section.getBoundingClientRect();
         const windowHeight = window.innerHeight;
-        const triggerPoint = windowHeight * 0.8;
+        const triggerPoint = windowHeight * 0.75;
+
+        // Calculate how much the section has scrolled into view
+        const scrollProgress = Math.min(
+          1,
+          Math.max(0, (windowHeight - rect.top) / windowHeight),
+        );
 
         // Reveal section when entering viewport
         if (rect.top < triggerPoint && rect.bottom > 0) {
@@ -156,48 +154,48 @@ export const HomePage: React.FC = () => {
             section.classList.add("scroll-revealed");
           }
 
-          // Apply smooth text movement only when entering viewport
+          // Apply smooth parallax text movement based on scroll position
           const textElements = section.querySelectorAll(
             ".animate-on-scroll-left, .animate-on-scroll-right",
           );
           textElements.forEach((el: Element) => {
             const htmlEl = el as HTMLElement;
             const elementRect = el.getBoundingClientRect();
-            
-            // Only animate if element is entering view
-            if (elementRect.top < windowHeight && elementRect.bottom > 0) {
-              const elementScrollProgress = Math.min(
-                1,
-                Math.max(0, (windowHeight - elementRect.top) / (windowHeight * 0.5)),
-              );
+            const elementScrollProgress = Math.min(
+              1,
+              Math.max(0, (windowHeight - elementRect.top) / windowHeight),
+            );
+            const offset = (1 - elementScrollProgress) * 100;
 
-              // Smooth entry animation
-              if (elementScrollProgress < 1) {
-                const offset = (1 - elementScrollProgress) * 60;
-                if (el.classList.contains("animate-on-scroll-left")) {
-                  htmlEl.style.transform = `translateX(-${offset}px)`;
-                  htmlEl.style.opacity = elementScrollProgress.toString();
-                } else if (el.classList.contains("animate-on-scroll-right")) {
-                  htmlEl.style.transform = `translateX(${offset}px)`;
-                  htmlEl.style.opacity = elementScrollProgress.toString();
-                }
-              } else {
-                // Lock in final position once fully visible
-                htmlEl.style.transform = "translateX(0)";
-                htmlEl.style.opacity = "1";
-              }
+            if (el.classList.contains("animate-on-scroll-left")) {
+              htmlEl.style.transform = `translateX(${offset}px)`;
+              htmlEl.style.opacity = elementScrollProgress.toString();
+            } else if (el.classList.contains("animate-on-scroll-right")) {
+              htmlEl.style.transform = `translateX(-${offset}px)`;
+              htmlEl.style.opacity = elementScrollProgress.toString();
             }
           });
         }
 
-        // Keep section visible when in viewport
-        if (rect.top < windowHeight && rect.bottom > 100) {
-          section.style.opacity = "1";
-          section.style.transform = "translateY(0)";
+        // Webflow-style: Fade out and slide up when scrolling past
+        if (rect.bottom < windowHeight * 0.2) {
+          const slideOutProgress = Math.min(
+            1,
+            Math.max(
+              0,
+              (windowHeight * 0.2 - rect.bottom) / (windowHeight * 0.5),
+            ),
+          );
+          section.style.opacity = (1 - slideOutProgress * 0.7).toString();
+          section.style.transform = `translateY(-${slideOutProgress * 50}px)`;
         } else if (rect.top > windowHeight) {
           // Section hasn't entered yet
           section.style.opacity = "0";
-          section.style.transform = "translateY(30px)";
+          section.style.transform = "translateY(50px)";
+        } else {
+          // Section is visible
+          section.style.opacity = "1";
+          section.style.transform = "translateY(0)";
         }
       });
     };
@@ -387,8 +385,8 @@ export const HomePage: React.FC = () => {
         }
 
         section {
-          opacity: 0;
-          transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+          opacity: 1;
+          transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
 
         section.scroll-revealed {
@@ -397,15 +395,13 @@ export const HomePage: React.FC = () => {
 
         .animate-on-scroll-left,
         .animate-on-scroll-right {
-          opacity: 0;
-          transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.6s ease-out;
-          transform: translateX(0);
+          opacity: 1;
+          transition: transform 0.3s ease-out, opacity 0.3s ease-out;
         }
 
-        section.scroll-revealed .animate-on-scroll-left,
-        section.scroll-revealed .animate-on-scroll-right {
-          opacity: 1;
-          transform: translateX(0);
+        section.scroll-revealed .animate-on-scroll-left {
+          transition: transform 0.1s linear, opacity 0.3s ease-out;
+          will-change: transform, opacity;
         }
 
         section.scroll-revealed .animate-on-scroll-up {

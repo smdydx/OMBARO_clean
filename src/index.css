@@ -802,7 +802,7 @@ img {
 
 .parallax-image {
           will-change: transform;
-          transition: transform 0.3s ease-out;
+          transition: transform 0.1s linear;
           transform-style: preserve-3d;
         }
 
