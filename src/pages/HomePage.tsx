@@ -63,20 +63,20 @@ export const HomePage: React.FC = () => {
 
     const handleServiceCarouselAutoScroll = () => {
       if (!servicesRef.current || !carouselRef.current) return;
-      
+
       const servicesRect = servicesRef.current.getBoundingClientRect();
       const windowHeight = window.innerHeight;
-      
+
       // Check if services section is in viewport
       const isInView = servicesRect.top < windowHeight * 0.8 && servicesRect.bottom > windowHeight * 0.2;
-      
+
       if (isInView && !isDragging) {
         if (!autoScrollInterval) {
           autoScrollInterval = setInterval(() => {
             if (carouselRef.current) {
               const maxScroll = carouselRef.current.scrollWidth - carouselRef.current.clientWidth;
               const currentScroll = carouselRef.current.scrollLeft;
-              
+
               if (currentScroll >= maxScroll) {
                 carouselRef.current.scrollLeft = 0;
               } else {
@@ -160,7 +160,7 @@ export const HomePage: React.FC = () => {
               Math.max(0, (windowHeight - elementRect.top) / windowHeight),
             );
             const offset = (1 - elementScrollProgress) * 100;
-            
+
             if (el.classList.contains('animate-on-scroll-left')) {
               htmlEl.style.transform = `translateX(${offset}px)`;
               htmlEl.style.opacity = elementScrollProgress.toString();
@@ -376,24 +376,23 @@ export const HomePage: React.FC = () => {
         }
 
         section {
-          opacity: 0;
+          opacity: 1;
           transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-          will-change: opacity, transform;
         }
 
         section.scroll-revealed {
           opacity: 1;
         }
 
-        section.scroll-revealed .animate-on-scroll-left,
-        section.scroll-revealed .animate-on-scroll-right {
-          transition: transform 0.1s linear, opacity 0.3s ease-out;
-          will-change: transform, opacity;
-        }
-
         .animate-on-scroll-left,
         .animate-on-scroll-right {
-          opacity: 0;
+          opacity: 1;
+          transition: transform 0.3s ease-out, opacity 0.3s ease-out;
+        }
+
+        section.scroll-revealed .animate-on-scroll-left {
+          transition: transform 0.1s linear, opacity 0.3s ease-out;
+          will-change: transform, opacity;
         }
 
         section.scroll-revealed .animate-on-scroll-up {
@@ -937,7 +936,7 @@ export const HomePage: React.FC = () => {
                     What Makes Ombaro Different
                   </h2>
                 </div>
-                <div className="space-y-3 sm:space-y-4">
+                <div className="space-y-3 sm:space-4">
                   {[
                     {
                       title: "Verified Professionals",

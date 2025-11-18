@@ -227,6 +227,13 @@ img {
     font-weight: 400;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    opacity: 1 !important;
+  }
+
+  #root {
+    min-height: 100vh;
+    opacity: 1 !important;
   }
 
   body::before {
