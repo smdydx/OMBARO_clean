@@ -112,21 +112,21 @@ export const HomePage: React.FC = () => {
 
         const rect = section.getBoundingClientRect();
         const windowHeight = window.innerHeight;
-        const triggerPoint = windowHeight * 0.85;
+        const triggerPoint = windowHeight * 0.7;
 
-        // Calculate how much the section has scrolled into view
+        // Calculate scroll progress more precisely
         const scrollProgress = Math.min(
           1,
-          Math.max(0, (windowHeight - rect.top) / (windowHeight * 0.7)),
+          Math.max(0, (windowHeight - rect.top) / windowHeight),
         );
 
-        // Reveal section when entering viewport with better timing
+        // Reveal section when entering viewport
         if (rect.top < triggerPoint && rect.bottom > 0) {
           if (!section.classList.contains("scroll-revealed")) {
             section.classList.add("scroll-revealed");
           }
 
-          // Apply smooth parallax text movement based on scroll position
+          // Apply smooth parallax text movement
           const textElements = section.querySelectorAll(
             ".animate-on-scroll-left, .animate-on-scroll-right",
           );
@@ -135,24 +135,25 @@ export const HomePage: React.FC = () => {
             const elementRect = el.getBoundingClientRect();
             const elementScrollProgress = Math.min(
               1,
-              Math.max(0, (windowHeight - elementRect.top) / (windowHeight * 0.8)),
+              Math.max(0, (windowHeight - elementRect.top) / windowHeight),
             );
-            const offset = (1 - elementScrollProgress) * 60;
+            const offset = (1 - elementScrollProgress) * 40;
 
             if (el.classList.contains("animate-on-scroll-left")) {
               htmlEl.style.transform = `translateX(${offset}px)`;
-              htmlEl.style.opacity = Math.max(0.3, elementScrollProgress).toString();
+              htmlEl.style.opacity = elementScrollProgress.toString();
             } else if (el.classList.contains("animate-on-scroll-right")) {
               htmlEl.style.transform = `translateX(-${offset}px)`;
-              htmlEl.style.opacity = Math.max(0.3, elementScrollProgress).toString();
+              htmlEl.style.opacity = elementScrollProgress.toString();
             }
           });
         }
 
-        // Keep sections visible and in position when in viewport
+        // Ensure proper positioning
         if (rect.top < windowHeight && rect.bottom > 0) {
           section.style.opacity = "1";
-          section.style.transform = "translateY(0)";
+          section.style.position = "relative";
+          section.style.zIndex = "1";
         }
       });
     };
@@ -724,7 +725,8 @@ export const HomePage: React.FC = () => {
 
               <div className="animate-on-scroll-right stagger-2 relative">
                 <div className="relative">
-                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-2 sm:border-4 border-emerald-400 shadow-2xl shadow-emerald-500/60 z-10 pointer-events-none animate-pulse"></div>
+                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-8 sm:border-12 md:border-16 border-white shadow-2xl z-10 pointer-events-none"></div>
+                  <div className="absolute inset-2 sm:inset-3 md:inset-4 rounded-xl sm:rounded-2xl border-4 sm:border-6 md:border-8 border-emerald-400/30 z-10 pointer-events-none"></div>
                   <div className="absolute -inset-2 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-emerald-500/30 to-green-500/30 blur-xl z-0"></div>
 
                   <img
@@ -880,7 +882,8 @@ export const HomePage: React.FC = () => {
             <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
               <div className="animate-on-scroll-left stagger-1 relative order-2 lg:order-1">
                 <div className="relative">
-                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-2 sm:border-4 border-emerald-400 shadow-2xl shadow-emerald-500/60 z-10 pointer-events-none animate-pulse"></div>
+                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-8 sm:border-12 md:border-16 border-white shadow-2xl z-10 pointer-events-none"></div>
+                  <div className="absolute inset-2 sm:inset-3 md:inset-4 rounded-xl sm:rounded-2xl border-4 sm:border-6 md:border-8 border-emerald-400/30 z-10 pointer-events-none"></div>
                   <div className="absolute -inset-2 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-emerald-500/30 to-green-500/30 blur-xl z-0"></div>
 
                   <img
@@ -1120,7 +1123,8 @@ export const HomePage: React.FC = () => {
 
               <div className="animate-on-scroll-right stagger-2 relative">
                 <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden">
-                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-2 sm:border-4 border-emerald-400 shadow-2xl shadow-emerald-500/60 z-10 pointer-events-none animate-pulse"></div>
+                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-8 sm:border-12 md:border-16 border-white shadow-2xl z-10 pointer-events-none"></div>
+                  <div className="absolute inset-2 sm:inset-3 md:inset-4 rounded-xl sm:rounded-2xl border-4 sm:border-6 md:border-8 border-emerald-400/30 z-10 pointer-events-none"></div>
                   <div className="absolute -inset-2 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-emerald-500/30 to-green-500/30 blur-xl z-0"></div>
 
                   <img
