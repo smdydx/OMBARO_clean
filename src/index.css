@@ -847,16 +847,26 @@ img {
           z-index: 1;
         }
 
-        .animate-on-scroll-left,
-        .animate-on-scroll-right {
+        .animate-on-scroll-left {
           opacity: 0;
-          transition: transform 0.6s ease-out, opacity 0.6s ease-out;
+          transform: translateX(-50px);
+          transition: transform 0.8s ease-out, opacity 0.8s ease-out;
         }
 
-        section.scroll-revealed .animate-on-scroll-left,
+        .animate-on-scroll-right {
+          opacity: 0;
+          transform: translateY(50px);
+          transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+        }
+
+        section.scroll-revealed .animate-on-scroll-left {
+          opacity: 1;
+          transform: translateX(0);
+        }
+
         section.scroll-revealed .animate-on-scroll-right {
           opacity: 1;
-          will-change: transform, opacity;
+          transform: translateY(0);
         }
 
         .line-clamp-1 {
