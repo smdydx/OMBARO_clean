@@ -458,17 +458,17 @@ export const HomePage: React.FC = () => {
               {/* Left Text Content - Staggered Animation */}
               <div className="space-y-6">
                 <h1 className="webflow-heading text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-gray-900 font-normal">
-                  <div className="hero-word-1">Empowering</div>
-                  <div className="hero-word-2">Business</div>
-                  <div className="hero-word-3">Growth</div>
+                  <div className="hero-word-1">India's #1</div>
+                  <div className="hero-word-2">Spa & Salon</div>
+                  <div className="hero-word-3">Platform</div>
                 </h1>
                 <p className="hero-subtitle webflow-text max-w-xl text-lg">
-                  Our digital marketing solutions are designed to deliver measurable results and accelerate your online growth through innovative strategies.
+                  Experience premium spa and salon services at your doorstep. Book verified professionals, enjoy transparent pricing, and relax with certified therapists across India.
                 </p>
                 <div className="hero-button flex gap-4 pt-4">
                   <Link to="/app">
                     <button className="bg-black hover:bg-gray-800 text-white px-8 py-4 rounded-full text-base font-medium transition-all duration-300 shadow-lg hover:shadow-xl inline-flex items-center gap-2">
-                      Let's Talk
+                      Book Now
                       <ArrowRight className="w-5 h-5" />
                     </button>
                   </Link>
@@ -490,20 +490,20 @@ export const HomePage: React.FC = () => {
             {/* Stats Section - Staggered Fade Up */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-12 border-t border-gray-200">
               <div className="hero-stat-1">
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">125+</h2>
-                <p className="text-gray-600">Industries served</p>
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">10,000+</h2>
+                <p className="text-gray-600">Verified Professionals</p>
               </div>
               <div className="hero-stat-2">
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">95%</h2>
-                <p className="text-gray-600">Client retention</p>
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">50+</h2>
+                <p className="text-gray-600">Cities Covered</p>
               </div>
               <div className="hero-stat-3">
-                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">500+</h2>
-                <p className="text-gray-600">Projects completed</p>
+                <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">1M+</h2>
+                <p className="text-gray-600">Happy Customers</p>
               </div>
               <div className="hero-stat-4">
                 <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">24/7</h2>
-                <p className="text-gray-600">Support available</p>
+                <p className="text-gray-600">Customer Support</p>
               </div>
             </div>
           </div>
@@ -517,29 +517,29 @@ export const HomePage: React.FC = () => {
               <div className="space-y-8">
                 <div>
                   <p className="animate-on-scroll-fade stagger-1 text-sm font-semibold text-gray-500 tracking-wider mb-3 uppercase">
-                    01 / About
+                    01 / About Us
                   </p>
                   <h2 className="animate-on-scroll-left stagger-2 webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900 mb-6 font-normal">
-                    Trusted by over 100 businesses worldwide
+                    Your Wellness Partner, At Your Doorstep
                   </h2>
                   <p className="animate-on-scroll-left stagger-3 webflow-text text-lg">
-                    We believe in creating meaningful, lasting connections through digital innovation. Whether it's building your brand, optimizing your website, or driving traffic with cutting-edge marketing strategies.
+                    Ombaro brings professional spa and salon services to your home. With a network of certified therapists and beauty experts, we ensure quality, hygiene, and convenience. From relaxing massages to premium facials, we've got you covered.
                   </p>
                 </div>
                 <div className="animate-on-scroll-left stagger-4 bg-white p-8 rounded-2xl shadow-lg">
                   <div className="flex items-center gap-4 mb-4">
                     <img
                       src="https://cdn.prod.website-files.com/68bfd5901895b58f0d2e6d33/68c151d7ece54bad85171ad3_fe3ef22dcd0ff322e4c249d33d30f9bc_Testimonials-1.avif"
-                      alt="CEO"
+                      alt="Customer"
                       className="w-16 h-16 rounded-full object-cover"
                     />
                     <div>
-                      <p className="font-semibold text-gray-900">Miles, Esther</p>
-                      <p className="text-sm text-gray-600">Chairman</p>
+                      <p className="font-semibold text-gray-900">Priya Sharma</p>
+                      <p className="text-sm text-gray-600">Regular Customer</p>
                     </div>
                   </div>
                   <p className="text-gray-600 leading-relaxed italic">
-                    "Working with this team transformed our business. Their innovative approach and dedication to results is unmatched."
+                    "Ombaro has made my life so easy! Professional therapists, great service, and the convenience of home service is unbeatable."
                   </p>
                 </div>
               </div>
@@ -562,10 +562,10 @@ export const HomePage: React.FC = () => {
           <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12">
               <p className="animate-on-scroll-fade stagger-1 text-sm font-semibold text-gray-500 tracking-wider mb-3 uppercase">
-                02 / Services
+                02 / Our Services
               </p>
               <h2 className="animate-on-scroll-left stagger-2 webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900 font-normal">
-                Digital solutions that deliver results
+                Premium Wellness Services at Home
               </h2>
             </div>
             <div 
@@ -578,19 +578,19 @@ export const HomePage: React.FC = () => {
             >
               {[
                 {
-                  title: "Web design",
+                  title: "Spa Massage",
                   image: "https://cdn.prod.website-files.com/68c1d32faae3f16628f1caa1/6917fb138b51b9bdb722a009_service-img-1.avif"
                 },
                 {
-                  title: "Photography",
+                  title: "Beauty Salon",
                   image: "https://cdn.prod.website-files.com/68c1d32faae3f16628f1caa1/6917fb45c4bc0481021b7e7a_service-img-2.avif"
                 },
                 {
-                  title: "Branding",
+                  title: "Bridal Makeup",
                   image: "https://cdn.prod.website-files.com/68c1d32faae3f16628f1caa1/6917fc0c55ebb78e4a468fe6_service-img-3.avif"
                 },
                 {
-                  title: "Develop",
+                  title: "Hair Styling",
                   image: "https://cdn.prod.website-files.com/68c1d32faae3f16628f1caa1/6917fc3d0e38b2018a72f5d3_service-img-4.avif"
                 }
               ].map((service, index) => (
@@ -617,32 +617,32 @@ export const HomePage: React.FC = () => {
           </div>
         </section>
 
-        {/* Case Studies - Staggered Cards */}
+        {/* Why Choose Us - Staggered Cards */}
         <section ref={caseStudiesRef} className="py-20 bg-gray-50">
           <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12">
               <p className="animate-on-scroll-fade stagger-1 text-sm font-semibold text-gray-500 tracking-wider mb-3 uppercase">
-                03 / Case studies
+                03 / Why Choose Us
               </p>
               <h2 className="animate-on-scroll-left stagger-2 webflow-heading text-4xl md:text-5xl lg:text-6xl text-gray-900 font-normal">
-                Explore our proven success stories
+                What Makes Ombaro Different
               </h2>
             </div>
             <div className="grid md:grid-cols-3 gap-8">
               {[
                 {
-                  title: "Website Redesign for Indromate Company",
-                  subtitle: "Increased traffic by 120%",
+                  title: "Verified Professionals",
+                  subtitle: "Background-checked therapists and beauticians",
                   image: "https://cdn.prod.website-files.com/68c1d32faae3f16628f1caa1/6917fe79f3c529f153a06d61_Case-Studies-img-1.avif"
                 },
                 {
-                  title: "SEO & Digital Marketing for HomeStyle",
-                  subtitle: "Increased client inquiries by 90%",
+                  title: "Transparent Pricing",
+                  subtitle: "No hidden charges, fixed prices",
                   image: "https://cdn.prod.website-files.com/68c1d32faae3f16628f1caa1/6917feb9e68a344d90703d58_Case-Studies-img-2.avif"
                 },
                 {
-                  title: "Time Management Strategies",
-                  subtitle: "Crafted campaigns that convert",
+                  title: "100% Hygiene",
+                  subtitle: "Sanitized equipment and products",
                   image: "https://cdn.prod.website-files.com/68c1d32faae3f16628f1caa1/6917ff716163f9b04d5eb949_Case-Studies-img-3.avif"
                 }
               ].map((study, index) => (
@@ -909,25 +909,25 @@ export const HomePage: React.FC = () => {
           <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="animate-on-scroll-scale stagger-1 inline-block mb-8 px-6 py-2 bg-white/10 backdrop-blur-sm rounded-full border border-white/20">
               <p className="text-sm font-semibold text-white tracking-wider uppercase">
-                Let's Build Something Amazing
+                Experience Luxury at Home
               </p>
             </div>
             <h2 className="animate-on-scroll-up stagger-2 webflow-heading text-5xl md:text-6xl lg:text-7xl xl:text-8xl mb-8 font-normal leading-tight">
-              Ready to Transform<br />Your Digital Presence?
+              Ready to Relax<br />& Rejuvenate?
             </h2>
             <p className="animate-on-scroll-up stagger-3 text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
-              Let's discuss how we can help elevate your brand and drive measurable results with cutting-edge digital solutions
+              Book your first session today and discover why thousands of Indians trust Ombaro for their wellness needs
             </p>
             <div className="animate-on-scroll-up stagger-4 flex flex-col sm:flex-row gap-6 justify-center items-center">
-              <Link to="/contact">
+              <Link to="/app">
                 <button className="group bg-white hover:bg-gray-100 text-black px-12 py-5 rounded-full text-xl font-bold transition-all duration-500 shadow-2xl hover:shadow-white/20 hover:scale-110 inline-flex items-center gap-3">
-                  Let's Talk
+                  Book Your Service
                   <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform duration-300" />
                 </button>
               </Link>
               <Link to="/services">
                 <button className="px-12 py-5 rounded-full text-xl font-semibold border-2 border-white/30 hover:border-white text-white transition-all duration-500 hover:bg-white/10 hover:scale-105">
-                  View Our Services
+                  Explore Services
                 </button>
               </Link>
             </div>
