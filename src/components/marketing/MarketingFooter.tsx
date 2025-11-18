@@ -4,7 +4,7 @@ import { Sparkles, Facebook, Twitter, Instagram, Linkedin, Mail, Phone, MapPin, 
 
 export const MarketingFooter: React.FC = () => {
   return (
-    <footer className="bg-white text-gray-900 border-t border-gray-200">
+    <footer className="bg-white text-gray-900 border-t border-gray-200 rounded-t-3xl">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 md:py-10">
         {/* Logo and Social Media */}
         <div className="mb-6 sm:mb-8">

@@ -127,11 +127,11 @@ export const HomePage: React.FC = () => {
           textElements.forEach((el: Element) => {
             const htmlEl = el as HTMLElement;
             const elementRect = el.getBoundingClientRect();
-            
+
             // Entry animation (from left when coming into view from bottom)
             if (elementRect.top < windowHeight && elementRect.bottom > 0) {
               const entryProgress = Math.min(1, Math.max(0, (windowHeight - elementRect.top) / (windowHeight * 0.8)));
-              
+
               if (el.classList.contains("animate-on-scroll-left")) {
                 const xOffset = Math.max(0, (1 - entryProgress) * 150);
                 htmlEl.style.transform = `translateX(-${xOffset}px)`;
@@ -142,7 +142,7 @@ export const HomePage: React.FC = () => {
                 htmlEl.style.opacity = Math.min(1, entryProgress).toString();
               }
             }
-            
+
             // Exit animation (to top when scrolling past)
             if (elementRect.top < 0) {
               const exitProgress = Math.min(1, Math.abs(elementRect.top) / (windowHeight * 0.5));
@@ -501,6 +501,13 @@ export const HomePage: React.FC = () => {
           transition: transform 0.1s linear;
         }
 
+        .footer-rounded-corners {
+          border-top-left-radius: 30px;
+          border-top-right-radius: 30px;
+          border-bottom-left-radius: 30px;
+          border-bottom-right-radius: 30px;
+        }
+
         @media (prefers-reduced-motion: reduce) {
           *, *::before, *::after {
             animation-duration: 0.01ms !important;
@@ -731,6 +738,11 @@ export const HomePage: React.FC = () => {
                   <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-8 sm:border-12 md:border-16 border-white shadow-2xl z-10 pointer-events-none"
                     style={{
                       clipPath: 'polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 0% 100%)'
+                    }}
+                  ></div>
+                  <div className="absolute top-0 right-0 w-32 sm:w-40 md:w-48 h-32 sm:h-40 md:h-48 border-t-8 sm:border-t-12 md:border-t-16 border-r-8 sm:border-r-12 md:border-r-16 border-white z-20 pointer-events-none"
+                    style={{
+                      clipPath: 'polygon(85% 0%, 100% 0%, 100% 15%)'
                     }}
                   ></div>
                   <div className="absolute -inset-2 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-emerald-500/30 to-green-500/30 blur-xl z-0"></div>
@@ -994,7 +1006,7 @@ export const HomePage: React.FC = () => {
                 Loved by Thousands Across India
               </h2>
             </div>
-            
+
             <div className="flex overflow-x-auto gap-4 sm:gap-6 pb-4 snap-x snap-mandatory scrollbar-hide">
               {[
                 {
@@ -1143,6 +1155,11 @@ export const HomePage: React.FC = () => {
                       clipPath: 'polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 0% 100%)'
                     }}
                   ></div>
+                  <div className="absolute top-0 right-0 w-32 sm:w-40 md:w-48 h-32 sm:h-40 md:h-48 border-t-8 sm:border-t-12 md:border-t-16 border-r-8 sm:border-r-12 md:border-r-16 border-white z-20 pointer-events-none"
+                    style={{
+                      clipPath: 'polygon(85% 0%, 100% 0%, 100% 15%)'
+                    }}
+                  ></div>
                   <div className="absolute -inset-2 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-emerald-500/30 to-green-500/30 blur-xl z-0"></div>
 
                   <img
@@ -1176,7 +1193,7 @@ export const HomePage: React.FC = () => {
           ref={ctaRef}
           className="relative py-16 sm:py-20 md:py-24 lg:py-32 bg-gradient-to-br from-gray-900 via-black to-gray-900 text-white overflow-hidden scroll-revealed"
         >
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0djItMnptMC0ydi0yaDJ2Mmgtem0tMiAyaC0ydjJoMnYtem0wLTJoMnYtMmgtMnYyem0tMiAwaC0ydjJoMnYtem0wIDBoMnYtMmgtMnYyem0wLTJ2LTJoLTJ2Mmgyem0yIDBWMzBoMnYyaC0yem0wIDBoLTJ2Mmgydi0yem0yIDB2Mmgydi0yaC0yem0wIDJoMnYyaC0ydi0yem0yLTJ2LTJoMnYyaC0yem0wIDBoLTJ2Mmgydi0yem0wIDJoMnYyaC0ydi0yem0tMiAwdi0yaC0ydjJoMnoiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-40"></div>
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiNmZmYiIGZpbGwtb3BhY2l0eT0iMC4wMyI+PHBhdGggZD0iTTM2IDM0djItMnptMC0ydi0yaDJ2Mmgtem0tMiAyaC0ydjJoMnYtem0wLTJoMnYtMmgtMnYyem0tMiAwaC0ydjJoMnYtem0wIDBoMnYtMmgtMnYyem0wLTJ2LTJoLTJ2Mmgyem0yIDBWMzBoMnYyaC0yem0wIDBoLTJ2Mmgydi0yem0yIDBWMzBoMnYyMmg0VjMwaC0yem0wIDJoMnYyaC0ydi0yem0yLTJoLTJ2Mmgydi0yaC0yem0wIDJoMnYyaC0ydi0yem01LTJoLTV2MmgydjBnMTJINjJWMzBoLTV6TTM2IDM0djItMnptMC0ydi0yaDJ2Mmgtem0tMiAyaC0ydjJoMnYtem0wLTJoMnYtMmgtMnYyem0tMiAwaC0ydjJoMnYtem0wIDBoMnYtMmgtMnYyem0wLTJ2LTJoLTJ2Mmgyem0yIDBWMzBoMnYyaC0yem0wIDBoLTJ2Mmgydi0yem0yIDBWMzBoMnYyMmg0VjMwaC0yem0wIDJoLTJ2Mmgydi0yem0yLTJoLTJ2Mmgydi0yaC0yem0wIDJoLTJ2Mmgydi0yem01LTJoLTV2MmgydjBnMTJINjJWMzBoLTV6TTM2IDM0djItMnptMC0ydi0yaDJ2Mmgtem0tMiAyaC0ydjJoMnYtem0wLTJoMnYtMmgtMnYyem0tMiAwaC0ydjJoMnYtem0wIDBoMnYtMmgtMnYyem0wLTJ2LTJoLTJ2Mmgyem0yIDBWMzBoMnYyaC0yem0wIDBoLTJ2Mmgydi0yem0yIDBWMzBoMnYyMmg0VjMwaC0yem0wIDJoLTJ2Mmgydi0yem0yLTJoLTJ2Mmgydi0yaC0yem0wIDJoLTJ2Mmgydi0yem01LTJoLTV2MmgydjBnMTJINjJWMzBoLTV6TTM2IDM0djItMnptMC0ydi0yaDJ2Mmgtem0tMiAyaC0ydjJoMnYtem0wLTJoMnYtMmgtMnYyem0tMiAwaC0ydjJoMnYtem0wIDBoMnYtMmgtMnYyem0wLTJ2LTJoLTJ2Mmgyem0yIDBWMzBoMnYyaC0yem0wIDBoLTJ2Mmgydi0yem0yIDBWMzBoMnYyMmg0VjMwaC0yem0wIDJoLTJ2Mmgydi0yem0yLTJoLTJ2Mmgydi0yaC0yem0wIDJoLTJ2Mmgydi0yem01LTJoLTV2MmgydjBnMTJINjJWMzBoLTV6TTM2IDM0djItMnptMC0ydi0yaDJ2Mmgtem0tMiAyaC0ydjJoMnYtem0wLTJoMnYtMmgtMnYyem0tMiAwaC0ydjJoMnYtem0wIDBoMnYtMmgtMnYyem0wLTJ2LTJoLTJ2Mmgyem0yIDBWMzBoMnYyaC0yem0wIDBoLTJ2Mmgydi0yem0yIDBWMzBoMnYyMmg0VjMwaC0yem0wIDJoLTJ2Mmgydi0yem0yLTJoLTJ2Mmgydi0yaC0yem0wIDJoLTJ2Mmgydi0yem01LTJoLTV2MmgydjBnMTJINjJWMzBoLTV6TTM2IDM0djItMnptMC0ydi0yaDJ2Mmgtem0tMiAyaC0ydjJoMnYtem0wLTJoMnYtMmgtMnYyem0tMiAwaC0ydjJoMnYtem0wIDBoMnYtMmgtMnYyem0wLTJ2LTJoLTJ2Mmgyem0yIDBWMzBoMnYyaC0yem0wIDBoLTJ2Mmgydi0yem0yIDBWMzBoMnYyMmg0VjMwaC0yem0wIDJoLTJ2Mmgydi0yem0yLTJoLTJ2Mmgydi0yaC0yem0wIDJoLTJ2Mmgydi0yem01LTJoLTV2MmgydjBnMTJINjJWMzBoLTV6TTM2IDM0djItMnptMC0ydi0yaDJ2Mmgtem0tMiAyaC0ydjJoMnYtem0wLTJoMnYtMmgtMnYyem0tMiAwaC0ydjJoMnYtem0wIDBoMnYtMmgtMnYyem0wLTJ2LTJoLTJ2Mmgyem0yIDBWMzBoMnYyaC0yem0wIDBoLTJ2Mmgydi0yem0yIDBWMzBoMnYyMmg0VjMwaC0yem0wIDJoLTJ2Mmgydi0yem0yLTJoLTJ2Mmgydi0yaC0yem0wIDJoLTJ2Mmgydi0yem01LTJoLTV2MmgydjBnMTJINjJWMzBoLTV6TTM2IDM0djItMnptMC0ydi0yaDJ2Mmgtem0tMiAyaC0ydjJoMnYtem0wLTJoMnYtMmgtMnYyem0tMiAwaC0ydjJoMnYtem0wIDBoMnYtMmgtMnYyem0wLTJ2LTJoLTJ2Mmgyem0yIDBWMzBoMnYyaC0yem0wIDBoLTJ2Mmgydi0yem0yIDBWMzBoMnYyMmg0VjMwaC0yem0wIDJoLTJ2Mmgydi0yem0yLTJoLTJ2Mmgydi0yaC0yem0wIDJoLTJ2Mmgydi0yZW0gZmlsbC11vcGFjaXR5PSIwLjA3Ij48cGF0aCBkPSJNNDguNTg2IDM1LjM3M0wyOC4wODIgMTQuODcgMTguODY4IDE0LjM4N2wtMjMuMTA0IDE5LjYxMi0uMzY4IDUuMzI2IDE5LjAyNSAwLjE1Ny0xOS4zOTEgMTkuNTQzIDUuMTAzLjI1IDIwLjI2Ny0xOS44NzEgMi44MjQtMS44NXptLjU4NSAzLjUwNy0yLjQzNyA1LjMxMiAxOS45NzMgMS4wMTIgNy4wOTQtMjAuNTc1LTE1LjQ2My03LjQuMjIyIDMuNzE3IDE3LjMxNC0xMC43NTUiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-40"></div>
 
           <div className="absolute top-10 sm:top-20 left-5 sm:left-10 w-48 sm:w-60 md:w-72 h-48 sm:h-60 md:h-96 bg-gradient-to-br from-white/10 to-transparent rounded-full blur-3xl animate-float"></div>
           <div
@@ -1215,7 +1232,7 @@ export const HomePage: React.FC = () => {
         </section>
       </main>
 
-      <MarketingFooter />
+      <MarketingFooter className="footer-rounded-corners"/>
     </div>
   );
 };
