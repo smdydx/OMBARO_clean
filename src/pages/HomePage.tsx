@@ -19,7 +19,6 @@ export const HomePage: React.FC = () => {
   const servicesRef = useRef<HTMLElement>(null);
   const whyChooseRef = useRef<HTMLElement>(null);
   const testimonialsRef = useRef<HTMLElement>(null);
-  const pricingRef = useRef<HTMLElement>(null);
   const faqRef = useRef<HTMLElement>(null);
   const ctaRef = useRef<HTMLElement>(null);
   
@@ -27,7 +26,6 @@ export const HomePage: React.FC = () => {
   const aboutImageRef = useRef<HTMLImageElement>(null);
   const whyChooseImageRef = useRef<HTMLImageElement>(null);
   const testimonialsImageRef = useRef<HTMLDivElement>(null);
-  const pricingImageRef = useRef<HTMLDivElement>(null);
   const faqImageRef = useRef<HTMLImageElement>(null);
 
   const handleCloseBanner = () => {
@@ -74,7 +72,6 @@ export const HomePage: React.FC = () => {
         aboutImageRef.current,
         whyChooseImageRef.current,
         testimonialsImageRef.current,
-        pricingImageRef.current,
         faqImageRef.current
       ];
 
@@ -96,7 +93,6 @@ export const HomePage: React.FC = () => {
         servicesRef.current,
         whyChooseRef.current,
         testimonialsRef.current,
-        pricingRef.current,
         faqRef.current,
         ctaRef.current,
       ];
@@ -638,42 +634,50 @@ export const HomePage: React.FC = () => {
               {[
                 {
                   title: "Spa Massage",
-                  image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80"
+                  image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80",
+                  link: "/spa-massage"
                 },
                 {
                   title: "Beauty Salon",
-                  image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80"
+                  image: "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80",
+                  link: "/beauty-salon"
                 },
                 {
                   title: "Bridal Makeup",
-                  image: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&q=80"
+                  image: "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&q=80",
+                  link: "/bridal-makeup"
                 },
                 {
                   title: "Hair Styling",
-                  image: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&q=80"
+                  image: "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&q=80",
+                  link: "/services"
                 }
               ].map((service, index) => (
-                <div 
-                  key={index} 
-                  className={`service-card animate-on-scroll-scale stagger-fast-${index + 1} group relative rounded-xl sm:rounded-2xl`}
-                >
-                  <div className="absolute -inset-1 rounded-xl sm:rounded-2xl bg-gradient-to-r from-emerald-500 via-green-500 to-emerald-500 opacity-75 blur-lg group-hover:opacity-100 transition duration-500"></div>
-                  <div className="absolute inset-0 rounded-xl sm:rounded-2xl border-2 border-emerald-400 shadow-2xl shadow-emerald-500/50 z-10 pointer-events-none group-hover:border-green-300 transition duration-500"></div>
-                  
-                  <div className="relative h-80 sm:h-88 md:h-96 overflow-hidden rounded-xl sm:rounded-2xl">
-                    <img
-                      src={service.image}
-                      alt={service.title}
-                      className="w-full h-full object-cover"
-                      draggable="false"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
+                <Link key={index} to={service.link}>
+                  <div 
+                    className={`service-card animate-on-scroll-scale stagger-fast-${index + 1} group relative rounded-xl sm:rounded-2xl`}
+                  >
+                    <div className="absolute -inset-1 rounded-xl sm:rounded-2xl bg-gradient-to-r from-emerald-500 via-green-500 to-emerald-500 opacity-75 blur-lg group-hover:opacity-100 transition duration-500"></div>
+                    <div className="absolute inset-0 rounded-xl sm:rounded-2xl border-2 border-emerald-400 shadow-2xl shadow-emerald-500/50 z-10 pointer-events-none group-hover:border-green-300 transition duration-500"></div>
+                    
+                    <div className="relative h-80 sm:h-88 md:h-96 overflow-hidden rounded-xl sm:rounded-2xl">
+                      <img
+                        src={service.image}
+                        alt={service.title}
+                        className="w-full h-full object-cover"
+                        draggable="false"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
+                    </div>
+                    <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6">
+                      <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">{service.title}</h3>
+                      <div className="flex items-center justify-between">
+                        <div className="w-12 sm:w-14 md:w-16 h-1 bg-gradient-to-r from-emerald-400 to-green-300 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 shadow-lg shadow-emerald-500/50"></div>
+                        <span className="text-emerald-400 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-500">Learn More →</span>
+                      </div>
+                    </div>
                   </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6">
-                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">{service.title}</h3>
-                    <div className="w-12 sm:w-14 md:w-16 h-1 bg-gradient-to-r from-emerald-400 to-green-300 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 shadow-lg shadow-emerald-500/50"></div>
-                  </div>
-                </div>
+                </Link>
               ))}
             </div>
           </div>
@@ -766,29 +770,29 @@ export const HomePage: React.FC = () => {
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-8 sm:mb-10 lg:mb-12">
               <p className="animate-on-scroll-fade stagger-1 text-xs sm:text-sm font-semibold text-emerald-400 tracking-wider mb-2 sm:mb-3 uppercase">
-                Testimonials
+                What Our Customers Say
               </p>
               <h2 className="animate-on-scroll-left stagger-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-normal">
-                Trusted by our clients
+                Loved by Thousands Across India
               </h2>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
               {[
                 {
-                  quote: "Best spa experience at home! The therapist was professional and the massage was amazing.",
-                  name: "Sarah Mitchell",
+                  quote: "The convenience of booking spa services at home is incredible! Professional service, verified therapists, and great prices. Ombaro has become my go-to for all wellness needs.",
+                  name: "Priya Sharma",
                   role: "Mumbai",
                   image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&q=80"
                 },
                 {
-                  quote: "Affordable prices and excellent service. I book Ombaro every weekend for facials.",
-                  name: "David Khan",
+                  quote: "I love how easy it is to compare different salons and their services. The reviews helped me choose the perfect makeup artist for my wedding. Highly recommend Ombaro!",
+                  name: "Rahul Verma",
                   role: "Delhi",
                   image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&q=80"
                 },
                 {
-                  quote: "The bridal makeup package was perfect. My wedding day looked flawless!",
-                  name: "Priya Reddy",
+                  quote: "As a working professional, Ombaro saves me so much time. I can book appointments at my convenience and get quality services at home. The platform is easy to use and reliable.",
+                  name: "Anjali Patel",
                   role: "Bangalore",
                   image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80"
                 }
@@ -811,115 +815,6 @@ export const HomePage: React.FC = () => {
                       <p className="text-xs sm:text-sm text-emerald-300">{testimonial.role}</p>
                     </div>
                   </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Pricing */}
-        <section ref={pricingRef} className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-b from-black via-gray-900 to-emerald-950 overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-24 sm:h-32 opacity-30">
-            <svg viewBox="0 0 1440 320" className="w-full h-full" preserveAspectRatio="none">
-              <path fill="none" stroke="#10b981" strokeWidth="3" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128">
-                <animate attributeName="d" dur="10s" repeatCount="indefinite" values="
-                  M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128;
-                  M0,128L48,138.7C96,149,192,171,288,165.3C384,160,480,128,576,122.7C672,117,768,139,864,144C960,149,1056,139,1152,128C1248,117,1344,107,1392,101.3L1440,96;
-                  M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,165.3C1248,171,1344,149,1392,138.7L1440,128" />
-              </path>
-            </svg>
-          </div>
-
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-8 sm:mb-10 lg:mb-12">
-              <p className="animate-on-scroll-fade stagger-1 text-xs sm:text-sm font-semibold text-emerald-400 tracking-wider mb-2 sm:mb-3 uppercase">
-                Pricing
-              </p>
-              <h2 className="animate-on-scroll-up stagger-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white font-normal mb-3 sm:mb-4">
-                Choose your perfect plan
-              </h2>
-              <p className="animate-on-scroll-fade stagger-3 text-sm sm:text-base lg:text-lg text-white/80 max-w-2xl mx-auto">
-                Flexible pricing options designed for your wellness needs
-              </p>
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
-              {[
-                {
-                  name: "Basic Package",
-                  subtitle: "Best for individuals",
-                  price: "₹899",
-                  features: [
-                    "1 Hour Swedish Massage",
-                    "Basic Facial Treatment",
-                    "Hair Wash & Blow Dry",
-                    "Home Service Included",
-                    "Verified Therapist"
-                  ]
-                },
-                {
-                  name: "Premium Package",
-                  subtitle: "Most popular choice",
-                  price: "₹1,699",
-                  features: [
-                    "2 Hours Full Body Massage",
-                    "Advanced Facial & Cleanup",
-                    "Hair Spa Treatment",
-                    "Manicure & Pedicure",
-                    "Priority Booking"
-                  ],
-                  featured: true
-                },
-                {
-                  name: "Luxury Package",
-                  subtitle: "Ultimate wellness experience",
-                  price: "₹2,999",
-                  features: [
-                    "3 Hours Spa Experience",
-                    "Aromatherapy Massage",
-                    "Bridal Makeup Trial",
-                    "Complete Hair Styling",
-                    "24/7 Priority Support"
-                  ]
-                }
-              ].map((plan, index) => (
-                <div
-                  key={index}
-                  className={`animate-on-scroll-scale stagger-${index + 2} bg-gradient-to-br from-emerald-900/40 to-green-900/40 backdrop-blur-sm p-4 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl border border-emerald-500/30 transition-all duration-700 hover:shadow-2xl hover:shadow-emerald-500/30 hover:-translate-y-2 ${
-                    plan.featured ? "ring-2 ring-emerald-400 md:scale-105 relative z-10" : ""
-                  }`}
-                >
-                  {plan.featured && (
-                    <div className="absolute -top-3 sm:-top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-emerald-500 to-green-500 text-white px-4 sm:px-6 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-semibold shadow-lg">
-                      Most Popular
-                    </div>
-                  )}
-                  <div className="mb-4 sm:mb-6">
-                    <h3 className="text-xl sm:text-2xl font-bold text-white mb-1 sm:mb-2">{plan.name}</h3>
-                    <p className="text-xs sm:text-sm text-white/70">{plan.subtitle}</p>
-                  </div>
-                  <div className="mb-4 sm:mb-6 pb-4 sm:pb-6 border-b border-emerald-500/30">
-                    <p className="text-3xl sm:text-4xl lg:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300">{plan.price}</p>
-                    <p className="text-xs sm:text-sm text-white/70 mt-1">per session</p>
-                  </div>
-                  <ul className="space-y-2 sm:space-y-3 md:space-y-4 mb-4 sm:mb-6 lg:mb-8">
-                    {plan.features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-2 sm:gap-3 text-white/90 text-xs sm:text-sm md:text-base">
-                        <Check className="w-4 h-4 sm:w-5 sm:h-5 text-emerald-400 mt-0.5 flex-shrink-0" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link to="/app">
-                    <button
-                      className={`w-full py-3 sm:py-4 rounded-full font-semibold transition-all duration-500 transform hover:scale-105 text-sm sm:text-base ${
-                        plan.featured
-                          ? "bg-gradient-to-r from-emerald-500 to-green-500 hover:from-emerald-600 hover:to-green-600 text-white shadow-lg hover:shadow-2xl"
-                          : "bg-white/10 hover:bg-gradient-to-r hover:from-emerald-500 hover:to-green-500 text-white border border-emerald-500/30"
-                      }`}
-                    >
-                      Book Now
-                    </button>
-                  </Link>
                 </div>
               ))}
             </div>
