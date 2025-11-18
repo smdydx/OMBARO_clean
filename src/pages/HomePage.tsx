@@ -100,13 +100,11 @@ export const HomePage: React.FC = () => {
     const updateParallax = () => {
       const scrollPos = window.scrollY;
 
-      // Subtle parallax only for hero image
       if (heroImageRef.current) {
-        const parallaxOffset = scrollPos * 0.2;
+        const parallaxOffset = scrollPos * 0.5;
         heroImageRef.current.style.transform = `translateY(${parallaxOffset}px)`;
       }
 
-      // Remove parallax from other images for better readability
       const parallaxImages = [
         aboutImageRef.current,
         whyChooseImageRef.current,
@@ -116,7 +114,13 @@ export const HomePage: React.FC = () => {
 
       parallaxImages.forEach((img) => {
         if (!img) return;
-        img.style.transform = 'translateY(0)';
+        const rect = img.getBoundingClientRect();
+        const scrollProgress =
+          (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+        if (scrollProgress > 0 && scrollProgress < 1) {
+          const parallaxOffset = (scrollProgress - 0.5) * -100;
+          img.style.transform = `translateY(${parallaxOffset}px)`;
+        }
       });
     };
 
@@ -131,18 +135,65 @@ export const HomePage: React.FC = () => {
         ctaRef.current,
       ];
 
-      sections.forEach((section) => {
+      sections.forEach((section, index) => {
         if (!section) return;
 
         const rect = section.getBoundingClientRect();
         const windowHeight = window.innerHeight;
-        const triggerPoint = windowHeight * 0.85;
+        const triggerPoint = windowHeight * 0.75;
 
-        // Simple reveal when section enters viewport
-        if (rect.top < triggerPoint && rect.bottom > 100) {
+        // Calculate how much the section has scrolled into view
+        const scrollProgress = Math.min(
+          1,
+          Math.max(0, (windowHeight - rect.top) / windowHeight),
+        );
+
+        // Reveal section when entering viewport
+        if (rect.top < triggerPoint && rect.bottom > 0) {
           if (!section.classList.contains("scroll-revealed")) {
             section.classList.add("scroll-revealed");
           }
+
+          // Apply smooth parallax text movement based on scroll position
+          const textElements = section.querySelectorAll(
+            ".animate-on-scroll-left, .animate-on-scroll-right",
+          );
+          textElements.forEach((el: Element) => {
+            const htmlEl = el as HTMLElement;
+            const elementRect = el.getBoundingClientRect();
+            const elementScrollProgress = Math.min(
+              1,
+              Math.max(0, (windowHeight - elementRect.top) / windowHeight),
+            );
+            const offset = (1 - elementScrollProgress) * 100;
+
+            if (el.classList.contains("animate-on-scroll-left")) {
+              htmlEl.style.transform = `translateX(${offset}px)`;
+              htmlEl.style.opacity = elementScrollProgress.toString();
+            } else if (el.classList.contains("animate-on-scroll-right")) {
+              htmlEl.style.transform = `translateX(-${offset}px)`;
+              htmlEl.style.opacity = elementScrollProgress.toString();
+            }
+          });
+        }
+
+        // Webflow-style: Fade out and slide up when scrolling past
+        if (rect.bottom < windowHeight * 0.2) {
+          const slideOutProgress = Math.min(
+            1,
+            Math.max(
+              0,
+              (windowHeight * 0.2 - rect.bottom) / (windowHeight * 0.5),
+            ),
+          );
+          section.style.opacity = (1 - slideOutProgress * 0.7).toString();
+          section.style.transform = `translateY(-${slideOutProgress * 50}px)`;
+        } else if (rect.top > windowHeight) {
+          // Section hasn't entered yet
+          section.style.opacity = "0";
+          section.style.transform = "translateY(50px)";
+        } else {
+          // Section is visible
           section.style.opacity = "1";
           section.style.transform = "translateY(0)";
         }
@@ -334,34 +385,35 @@ export const HomePage: React.FC = () => {
         }
 
         section {
-          opacity: 0;
-          transform: translateY(20px);
-          transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+          opacity: 1;
+          transition: opacity 0.6s ease-out, transform 0.6s ease-out;
         }
 
         section.scroll-revealed {
           opacity: 1;
-          transform: translateY(0);
+        }
+
+        .animate-on-scroll-left,
+        .animate-on-scroll-right {
+          opacity: 1;
+          transition: transform 0.3s ease-out, opacity 0.3s ease-out;
         }
 
         section.scroll-revealed .animate-on-scroll-left {
-          animation: slideFromLeft 800ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
-        }
-
-        section.scroll-revealed .animate-on-scroll-right {
-          animation: slideFromRight 800ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+          transition: transform 0.1s linear, opacity 0.3s ease-out;
+          will-change: transform, opacity;
         }
 
         section.scroll-revealed .animate-on-scroll-up {
-          animation: slideInFromBottom 800ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+          animation: slideInFromBottom 1200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
         }
 
         section.scroll-revealed .animate-on-scroll-fade {
-          animation: fadeIn 800ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+          animation: fadeIn 1200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
         }
 
         section.scroll-revealed .animate-on-scroll-scale {
-          animation: scaleUp 800ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+          animation: scaleUp 1200ms cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
         }
 
         .animate-on-scroll-left,
@@ -370,6 +422,7 @@ export const HomePage: React.FC = () => {
         .animate-on-scroll-fade,
         .animate-on-scroll-scale {
           opacity: 0;
+          will-change: transform, opacity;
         }
 
         .stagger-1 { animation-delay: 0ms !important; }
