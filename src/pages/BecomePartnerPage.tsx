@@ -310,13 +310,13 @@ export const BecomePartnerPage: React.FC = () => {
 
               {/* Right Content - Image Collage */}
               <div className="relative order-1 lg:order-2 px-4 sm:px-0">
-                <div className="grid grid-cols-12 gap-2 sm:gap-3 md:gap-4">
+                <div className="grid grid-cols-12 gap-3 sm:gap-4">
                   <div className="col-span-7 relative group">
                     <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-green-600 rounded-xl sm:rounded-2xl md:rounded-3xl transform rotate-2 opacity-20 group-hover:rotate-3 group-hover:scale-105 transition-all duration-500"></div>
                     <img
                       src="/images/luxury_spa_treatment_ef5ecb59.jpg"
                       alt="Luxury Spa Treatment"
-                      className="relative rounded-xl sm:rounded-2xl md:rounded-3xl shadow-2xl w-full h-48 sm:h-56 md:h-64 lg:h-80 xl:h-96 object-cover border-2 border-green-500/30 group-hover:scale-105 transition-transform duration-500"
+                      className="relative rounded-xl sm:rounded-2xl md:rounded-3xl shadow-2xl w-full h-52 sm:h-60 md:h-72 lg:h-80 xl:h-96 object-cover border-2 border-green-500/30 group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                   <div className="col-span-5 relative group">
@@ -324,7 +324,7 @@ export const BecomePartnerPage: React.FC = () => {
                     <img
                       src="/images/professional_beauty__6992f974.jpg"
                       alt="Beauty Services"
-                      className="rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl w-full h-36 sm:h-40 md:h-48 lg:h-56 xl:h-64 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-transform duration-500"
+                      className="rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl w-full h-52 sm:h-60 md:h-72 lg:h-80 xl:h-96 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                   <div className="col-span-5 relative group">
@@ -332,7 +332,7 @@ export const BecomePartnerPage: React.FC = () => {
                     <img
                       src="/images/spa_massage_therapy__22ac4be9.jpg"
                       alt="Massage Therapy"
-                      className="rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl w-full h-36 sm:h-40 md:h-48 lg:h-56 xl:h-64 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-transform duration-500"
+                      className="rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl w-full h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                   <div className="col-span-7 relative group">
@@ -340,7 +340,7 @@ export const BecomePartnerPage: React.FC = () => {
                     <img
                       src="/images/elegant_spa_interior_b93a48aa.jpg"
                       alt="Spa Interior"
-                      className="rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl w-full h-36 sm:h-40 md:h-48 lg:h-56 xl:h-64 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-transform duration-500"
+                      className="rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl w-full h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                 </div>
@@ -572,9 +572,9 @@ export const BecomePartnerPage: React.FC = () => {
           {/* Infinite Scroll Container */}
           <div className="relative">
             <div className="flex overflow-hidden">
-              <div className="flex animate-scroll-left">
+              <div className="flex animate-scroll-left gap-4 sm:gap-6">
                 {[...Array(3)].map((_, setIdx) => (
-                  <div key={setIdx} className="flex gap-4 sm:gap-6 mr-4 sm:mr-6">
+                  <React.Fragment key={setIdx}>
                     {[
                       "/images/luxury_spa_treatment_ef5ecb59.jpg",
                       "/images/professional_beauty__6992f974.jpg",
@@ -583,7 +583,7 @@ export const BecomePartnerPage: React.FC = () => {
                       "/images/elegant_spa_interior_b93a48aa.jpg",
                       "/images/spa_treatment_room_i_609c3288.jpg",
                     ].map((img, idx) => (
-                      <div key={idx} className="relative group flex-shrink-0">
+                      <div key={`${setIdx}-${idx}`} className="relative group flex-shrink-0">
                         <div className="w-64 h-40 sm:w-80 sm:h-52 rounded-2xl overflow-hidden shadow-xl border-2 border-green-200 group-hover:border-green-400 transition-all duration-300">
                           <img
                             src={img}
@@ -593,7 +593,7 @@ export const BecomePartnerPage: React.FC = () => {
                         </div>
                       </div>
                     ))}
-                  </div>
+                  </React.Fragment>
                 ))}
               </div>
             </div>
