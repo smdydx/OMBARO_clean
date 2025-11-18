@@ -62,38 +62,10 @@ export const HomePage: React.FC = () => {
     };
 
     const handleServiceCarouselAutoScroll = () => {
-      if (!servicesRef.current || !carouselRef.current) return;
-
-      const servicesRect = servicesRef.current.getBoundingClientRect();
-      const windowHeight = window.innerHeight;
-
-      // Check if services section is in viewport
-      const isInView =
-        servicesRect.top < windowHeight * 0.8 &&
-        servicesRect.bottom > windowHeight * 0.2;
-
-      if (isInView && !isDragging) {
-        if (!autoScrollInterval) {
-          autoScrollInterval = setInterval(() => {
-            if (carouselRef.current) {
-              const maxScroll =
-                carouselRef.current.scrollWidth -
-                carouselRef.current.clientWidth;
-              const currentScroll = carouselRef.current.scrollLeft;
-
-              if (currentScroll >= maxScroll) {
-                carouselRef.current.scrollLeft = 0;
-              } else {
-                carouselRef.current.scrollLeft += 1;
-              }
-            }
-          }, 20);
-        }
-      } else {
-        if (autoScrollInterval) {
-          clearInterval(autoScrollInterval);
-          autoScrollInterval = null;
-        }
+      // Auto-scroll disabled for better user control
+      if (autoScrollInterval) {
+        clearInterval(autoScrollInterval);
+        autoScrollInterval = null;
       }
     };
 
@@ -140,15 +112,15 @@ export const HomePage: React.FC = () => {
 
         const rect = section.getBoundingClientRect();
         const windowHeight = window.innerHeight;
-        const triggerPoint = windowHeight * 0.75;
+        const triggerPoint = windowHeight * 0.85;
 
         // Calculate how much the section has scrolled into view
         const scrollProgress = Math.min(
           1,
-          Math.max(0, (windowHeight - rect.top) / windowHeight),
+          Math.max(0, (windowHeight - rect.top) / (windowHeight * 0.7)),
         );
 
-        // Reveal section when entering viewport
+        // Reveal section when entering viewport with better timing
         if (rect.top < triggerPoint && rect.bottom > 0) {
           if (!section.classList.contains("scroll-revealed")) {
             section.classList.add("scroll-revealed");
@@ -163,37 +135,22 @@ export const HomePage: React.FC = () => {
             const elementRect = el.getBoundingClientRect();
             const elementScrollProgress = Math.min(
               1,
-              Math.max(0, (windowHeight - elementRect.top) / windowHeight),
+              Math.max(0, (windowHeight - elementRect.top) / (windowHeight * 0.8)),
             );
-            const offset = (1 - elementScrollProgress) * 100;
+            const offset = (1 - elementScrollProgress) * 60;
 
             if (el.classList.contains("animate-on-scroll-left")) {
               htmlEl.style.transform = `translateX(${offset}px)`;
-              htmlEl.style.opacity = elementScrollProgress.toString();
+              htmlEl.style.opacity = Math.max(0.3, elementScrollProgress).toString();
             } else if (el.classList.contains("animate-on-scroll-right")) {
               htmlEl.style.transform = `translateX(-${offset}px)`;
-              htmlEl.style.opacity = elementScrollProgress.toString();
+              htmlEl.style.opacity = Math.max(0.3, elementScrollProgress).toString();
             }
           });
         }
 
-        // Webflow-style: Fade out and slide up when scrolling past
-        if (rect.bottom < windowHeight * 0.2) {
-          const slideOutProgress = Math.min(
-            1,
-            Math.max(
-              0,
-              (windowHeight * 0.2 - rect.bottom) / (windowHeight * 0.5),
-            ),
-          );
-          section.style.opacity = (1 - slideOutProgress * 0.7).toString();
-          section.style.transform = `translateY(-${slideOutProgress * 50}px)`;
-        } else if (rect.top > windowHeight) {
-          // Section hasn't entered yet
-          section.style.opacity = "0";
-          section.style.transform = "translateY(50px)";
-        } else {
-          // Section is visible
+        // Keep sections visible and in position when in viewport
+        if (rect.top < windowHeight && rect.bottom > 0) {
           section.style.opacity = "1";
           section.style.transform = "translateY(0)";
         }
@@ -617,19 +574,17 @@ export const HomePage: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center mb-8 sm:mb-10">
               <div className="space-y-4 sm:space-y-6">
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-normal leading-tight">
+                <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-light leading-tight tracking-tight">
                   <div className="hero-word-1 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-green-300 to-emerald-500">
-                    India's #1
+                    RELAX
                   </div>
-                  <div className="hero-word-2 text-white">Spa & Salon</div>
+                  <div className="hero-word-2 text-white font-light">&</div>
                   <div className="hero-word-3 text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-green-300 to-emerald-500">
-                    Platform
+                    ENJOY
                   </div>
                 </h1>
-                <p className="hero-subtitle text-white/90 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed max-w-xl">
-                  Experience premium spa and salon services at your doorstep.
-                  Book verified professionals, enjoy transparent pricing, and
-                  relax with certified therapists across India.
+                <p className="hero-subtitle text-white/90 text-base sm:text-lg md:text-xl lg:text-2xl leading-relaxed max-w-xl font-light">
+                  Experience ultimate relaxation with our premium spa and wellness services. Book your perfect moment of tranquility today.
                 </p>
                 <div className="hero-button pt-2">
                   <Link to="/app">
@@ -646,8 +601,9 @@ export const HomePage: React.FC = () => {
                   ref={heroImageRef}
                   className="hero-image relative rounded-2xl sm:rounded-3xl overflow-hidden parallax-image"
                 >
-                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-2 sm:border-4 border-emerald-400 shadow-2xl shadow-emerald-500/50 z-10 pointer-events-none animate-pulse"></div>
-                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-emerald-500/20 to-green-500/20 z-10 pointer-events-none"></div>
+                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl border-8 sm:border-12 md:border-16 border-emerald-400/80 shadow-2xl shadow-emerald-500/50 z-10 pointer-events-none"></div>
+                  <div className="absolute inset-2 sm:inset-3 md:inset-4 rounded-xl sm:rounded-2xl border-4 sm:border-6 md:border-8 border-white/30 z-10 pointer-events-none"></div>
+                  <div className="absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-br from-emerald-500/10 to-green-500/10 z-10 pointer-events-none"></div>
 
                   <img
                     src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1200&q=80"
