@@ -323,7 +323,7 @@ export const BecomePartnerPage: React.FC = () => {
                   <div className="col-span-5 relative group">
                     <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-green-700 rounded-xl sm:rounded-2xl md:rounded-3xl transform -rotate-1 opacity-15 group-hover:rotate-1 group-hover:scale-105 transition-all duration-500"></div>
                     <img
-                      src="/images/spa-massage-2.jpg"
+                      src="public/images/7.jpg"
                       alt="Relaxing Spa Services"
                       className="rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl w-full h-52 sm:h-60 md:h-72 lg:h-80 xl:h-96 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-transform duration-500"
                       loading="eager"
@@ -587,7 +587,10 @@ export const BecomePartnerPage: React.FC = () => {
                       "/images/elegant_spa_interior_b93a48aa.jpg",
                       "/images/spa_treatment_room_i_609c3288.jpg",
                     ].map((img, idx) => (
-                      <div key={`${setIdx}-${idx}`} className="relative group flex-shrink-0">
+                      <div
+                        key={`${setIdx}-${idx}`}
+                        className="relative group flex-shrink-0"
+                      >
                         <div className="w-64 h-40 sm:w-80 sm:h-52 rounded-2xl overflow-hidden shadow-xl border-2 border-green-200 group-hover:border-green-400 transition-all duration-300">
                           <img
                             src={img}
