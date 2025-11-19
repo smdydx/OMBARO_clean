@@ -582,11 +582,6 @@ export const HomePage: React.FC = () => {
         <section
           ref={heroRef}
           className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-emerald-950 to-black py-8 sm:py-12 md:py-16 lg:py-20 scroll-revealed transition-all duration-700 ease-out"
-          style={{ 
-            opacity: scrollY > 50 ? Math.max(0, 1 - (scrollY - 50) / 150) : 1,
-            transform: `translateY(${scrollY > 50 ? (scrollY - 50) * 0.5 : 0}px)`,
-            pointerEvents: scrollY > 200 ? 'none' : 'auto'
-          }}
         >
           <div className="absolute inset-0 overflow-hidden opacity-30">
             <svg
@@ -615,11 +610,12 @@ export const HomePage: React.FC = () => {
 
           <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center mb-8 sm:mb-10">
-              <div 
+              <div
                 className="space-y-4 sm:space-y-6 w-full px-2 sm:px-0 transition-all duration-700 ease-out"
                 style={{
-                  opacity: scrollY > 50 ? Math.max(0, 1 - (scrollY - 50) / 150) : 1,
-                  transform: `translateY(${scrollY > 50 ? (scrollY - 50) * 0.4 : 0}px)`
+                  opacity:
+                    scrollY > 50 ? Math.max(0, 1 - (scrollY - 50) / 150) : 1,
+                  transform: `translateY(${scrollY > 50 ? (scrollY - 50) * 0.4 : 0}px)`,
                 }}
               >
                 <h1
@@ -644,11 +640,12 @@ export const HomePage: React.FC = () => {
                 </div>
               </div>
 
-              <div 
+              <div
                 className="hero-image-wrapper relative w-full px-4 sm:px-0 transition-all duration-700 ease-out"
                 style={{
-                  opacity: scrollY > 50 ? Math.max(0, 1 - (scrollY - 50) / 150) : 1,
-                  transform: `translateY(${scrollY > 50 ? (scrollY - 50) * 0.3 : 0}px)`
+                  opacity:
+                    scrollY > 50 ? Math.max(0, 1 - (scrollY - 50) / 150) : 1,
+                  transform: `translateY(${scrollY > 50 ? (scrollY - 50) * 0.3 : 0}px)`,
                 }}
               >
                 <div className="grid grid-cols-12 gap-3 sm:gap-4">
@@ -692,11 +689,12 @@ export const HomePage: React.FC = () => {
               </div>
             </div>
 
-            <div 
+            <div
               className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8 pt-6 sm:pt-8 border-t border-emerald-500/30 transition-all duration-700 ease-out"
               style={{
-                opacity: scrollY > 50 ? Math.max(0, 1 - (scrollY - 50) / 150) : 1,
-                transform: `translateY(${scrollY > 50 ? (scrollY - 50) * 0.6 : 0}px)`
+                opacity:
+                  scrollY > 50 ? Math.max(0, 1 - (scrollY - 50) / 150) : 1,
+                transform: `translateY(${scrollY > 50 ? (scrollY - 50) * 0.6 : 0}px)`,
               }}
             >
               <div className="hero-stat-1 text-center px-2">
