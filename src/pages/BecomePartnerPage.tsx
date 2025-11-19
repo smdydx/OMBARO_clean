@@ -317,6 +317,7 @@ export const BecomePartnerPage: React.FC = () => {
                       src="/images/spa-massage-1.jpg"
                       alt="Professional Spa Massage Treatment"
                       className="relative rounded-xl sm:rounded-2xl md:rounded-3xl shadow-2xl w-full h-52 sm:h-60 md:h-72 lg:h-80 xl:h-96 object-cover border-2 border-green-500/30 group-hover:scale-105 transition-transform duration-500"
+                      loading="eager"
                     />
                   </div>
                   <div className="col-span-5 relative group">
@@ -325,6 +326,7 @@ export const BecomePartnerPage: React.FC = () => {
                       src="/images/spa-massage-2.jpg"
                       alt="Relaxing Spa Services"
                       className="rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl w-full h-52 sm:h-60 md:h-72 lg:h-80 xl:h-96 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-transform duration-500"
+                      loading="eager"
                     />
                   </div>
                   <div className="col-span-5 relative group">
@@ -333,6 +335,7 @@ export const BecomePartnerPage: React.FC = () => {
                       src="/images/spa-massage-3.jpg"
                       alt="Premium Massage Therapy"
                       className="rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl w-full h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
                     />
                   </div>
                   <div className="col-span-7 relative group">
@@ -341,6 +344,7 @@ export const BecomePartnerPage: React.FC = () => {
                       src="/images/facial-treatment.jpg"
                       alt="Facial Treatment Services"
                       className="rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl w-full h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
                     />
                   </div>
                 </div>

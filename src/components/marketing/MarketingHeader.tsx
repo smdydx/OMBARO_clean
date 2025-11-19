@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, FileText } from 'lucide-react';
+import { Menu, X, FileText, Smartphone, Globe } from 'lucide-react';
 
 export const MarketingHeader: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [showLoginModal, setShowLoginModal] = useState(false);
 
   const navLinks = [
     { name: 'Home', path: '/' },
@@ -61,20 +62,19 @@ export const MarketingHeader: React.FC = () => {
           </nav>
 
           <div className="hidden lg:flex items-center space-x-2 xl:space-x-3 flex-shrink-0">
-            <Link to="/app">
-              <button
-                className="px-4 py-2 text-gray-700 hover:text-gray-900 font-medium transition-all duration-200 hover:bg-emerald-50 rounded-full text-sm whitespace-nowrap"
-                style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}
-              >
-                Login
-              </button>
-            </Link>
-            <Link to="/app">
+            <button
+              onClick={() => setShowLoginModal(true)}
+              className="px-4 py-2 text-gray-700 hover:text-gray-900 font-medium transition-all duration-200 hover:bg-emerald-50 rounded-full text-sm whitespace-nowrap"
+              style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}
+            >
+              Login
+            </button>
+            <Link to="/become-partner">
               <button
                 className="px-6 py-2.5 bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 text-sm whitespace-nowrap"
                 style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600 }}
               >
-                Get Started
+                Become a Partner
               </button>
             </Link>
           </div>
@@ -126,7 +126,7 @@ export const MarketingHeader: React.FC = () => {
             {/* Action Buttons Section */}
             <div className="px-5 pb-8 space-y-3">
               <Link
-                to="/become-a-partner"
+                to="/become-partner"
                 className="flex items-center justify-center gap-2.5 px-6 py-4 bg-white text-green-600 border-2 border-green-500 hover:bg-green-50 active:bg-green-100 rounded-xl transition-all duration-200 font-bold text-base shadow-sm hover:shadow-md"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -136,22 +136,86 @@ export const MarketingHeader: React.FC = () => {
                 <span>Become a Partner</span>
               </Link>
 
-              <Link
-                to="/app"
-                className="flex items-center justify-center gap-2.5 px-6 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white hover:from-green-600 hover:to-green-700 active:from-green-700 active:to-green-800 rounded-xl transition-all duration-200 font-bold text-base shadow-lg hover:shadow-xl"
-                onClick={() => setIsMobileMenuOpen(false)}
+              <button
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  setShowLoginModal(true);
+                }}
+                className="flex items-center justify-center gap-2.5 px-6 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white hover:from-green-600 hover:to-green-700 active:from-green-700 active:to-green-800 rounded-xl transition-all duration-200 font-bold text-base shadow-lg hover:shadow-xl w-full"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
                 </svg>
                 <span>Login / Sign Up</span>
-              </Link>
+              </button>
             </div>
           </div>
         </div>
       )}
 
         </div>
+
+      {/* Login Modal */}
+      {showLoginModal && (
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] flex items-center justify-center p-4 animate-fadeIn">
+          <div className="bg-white rounded-3xl shadow-2xl max-w-md w-full p-8 relative animate-slideUp">
+            <button
+              onClick={() => setShowLoginModal(false)}
+              className="absolute top-4 right-4 p-2 hover:bg-gray-100 rounded-full transition-colors"
+              aria-label="Close modal"
+            >
+              <X className="w-5 h-5 text-gray-500" />
+            </button>
+
+            <div className="text-center mb-8">
+              <div className="mb-4">
+                <img
+                  src="/ombaro-logo-new.png"
+                  alt="OMBARO"
+                  className="h-16 w-auto mx-auto"
+                />
+              </div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-2">Welcome to OMBARO</h2>
+              <p className="text-gray-600">How would you like to continue?</p>
+            </div>
+
+            <div className="space-y-4">
+              <Link
+                to="/app"
+                className="block w-full"
+                onClick={() => setShowLoginModal(false)}
+              >
+                <button className="w-full flex items-center justify-center gap-3 px-6 py-4 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                  <Globe className="w-6 h-6" />
+                  <span>Continue with Web App</span>
+                </button>
+              </Link>
+
+              <button
+                onClick={() => {
+                  alert('Mobile app coming soon! Please use the web app for now.');
+                  setShowLoginModal(false);
+                }}
+                className="w-full flex items-center justify-center gap-3 px-6 py-4 bg-white hover:bg-gray-50 text-gray-700 border-2 border-gray-300 rounded-xl font-semibold shadow-md hover:shadow-lg transition-all duration-300"
+              >
+                <Smartphone className="w-6 h-6" />
+                <span>Continue with Mobile App</span>
+              </button>
+            </div>
+
+            <p className="text-center text-sm text-gray-500 mt-6">
+              Don't have an account?{' '}
+              <Link
+                to="/app"
+                className="text-green-600 font-semibold hover:text-green-700"
+                onClick={() => setShowLoginModal(false)}
+              >
+                Sign up here
+              </Link>
+            </p>
+          </div>
+        </div>
+      )}
     </header>
   );
 };

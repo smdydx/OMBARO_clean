@@ -633,28 +633,44 @@ export const HomePage: React.FC = () => {
                 </div>
               </div>
 
-              <div className="hero-image-wrapper relative w-full">
-                <div
-                  ref={heroImageRef}
-                  className="hero-image relative rounded-2xl sm:rounded-3xl overflow-hidden parallax-image"
-                  style={{
-                    clipPath:
-                      "polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 0% 100%)",
-                  }}
-                >
-                  <div
-                    className="absolute inset-0 rounded-2xl sm:rounded-3xl border-4 sm:border-6 md:border-8 border-white shadow-2xl z-10 pointer-events-none"
-                    style={{
-                      clipPath:
-                        "polygon(0% 0%, 85% 0%, 100% 15%, 100% 100%, 0% 100%)",
-                    }}
-                  ></div>
-
-                  <img
-                    src="/images/spa-treatment.jpg"
-                    alt="Luxury Spa Treatment"
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
+              <div className="hero-image-wrapper relative w-full px-4 sm:px-0">
+                <div className="grid grid-cols-12 gap-3 sm:gap-4">
+                  <div className="col-span-7 relative group">
+                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-xl sm:rounded-2xl md:rounded-3xl transform rotate-2 opacity-20 group-hover:rotate-3 group-hover:scale-105 transition-all duration-500"></div>
+                    <img
+                      src="/images/spa-treatment.jpg"
+                      alt="Luxury Spa Treatment"
+                      className="relative rounded-xl sm:rounded-2xl md:rounded-3xl shadow-2xl w-full h-52 sm:h-60 md:h-72 lg:h-80 xl:h-96 object-cover border-2 border-emerald-500/30 group-hover:scale-105 transition-transform duration-500"
+                      loading="eager"
+                    />
+                  </div>
+                  <div className="col-span-5 relative group">
+                    <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-green-700 rounded-xl sm:rounded-2xl md:rounded-3xl transform -rotate-1 opacity-15 group-hover:rotate-1 group-hover:scale-105 transition-all duration-500"></div>
+                    <img
+                      src="/images/massage-therapy.jpg"
+                      alt="Professional Massage Therapy"
+                      className="rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl w-full h-52 sm:h-60 md:h-72 lg:h-80 xl:h-96 object-cover border-2 border-emerald-500/20 group-hover:scale-105 transition-transform duration-500"
+                      loading="eager"
+                    />
+                  </div>
+                  <div className="col-span-5 relative group">
+                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-600 to-emerald-400 rounded-xl sm:rounded-2xl md:rounded-3xl transform rotate-1 opacity-15 group-hover:-rotate-1 group-hover:scale-105 transition-all duration-500"></div>
+                    <img
+                      src="/images/beauty-salon.jpg"
+                      alt="Beauty Salon Services"
+                      className="rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl w-full h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 object-cover border-2 border-emerald-500/20 group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                  </div>
+                  <div className="col-span-7 relative group">
+                    <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-green-600 rounded-xl sm:rounded-2xl md:rounded-3xl transform -rotate-2 opacity-20 group-hover:rotate-2 group-hover:scale-105 transition-all duration-500"></div>
+                    <img
+                      src="/images/sauna-couple.jpg"
+                      alt="Premium Spa Experience"
+                      className="rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl w-full h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 object-cover border-2 border-emerald-500/20 group-hover:scale-105 transition-transform duration-500"
+                      loading="lazy"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
