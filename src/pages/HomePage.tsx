@@ -641,15 +641,21 @@ export const HomePage: React.FC = () => {
               </div>
 
               <div
-                className="hero-image-wrapper relative w-full px-4 sm:px-0 transition-all duration-700 ease-out"
+                className="hero-image-wrapper relative w-full px-4 sm:px-0 transition-all duration-500 ease-out"
                 style={{
                   opacity:
-                    scrollY > 50 ? Math.max(0, 1 - (scrollY - 50) / 150) : 1,
-                  transform: `translateY(${scrollY > 50 ? (scrollY - 50) * 0.3 : 0}px)`,
+                    scrollY > 50 ? Math.max(0.2, 1 - (scrollY - 50) / 200) : 1,
+                  transform: `translateY(${scrollY > 50 ? Math.min((scrollY - 50) * 0.8, 300) : 0}px)`,
                 }}
               >
                 <div className="grid grid-cols-12 gap-3 sm:gap-4">
-                  <div className="col-span-7 relative group">
+                  <div 
+                    className="col-span-7 relative group transition-all duration-500 ease-out"
+                    style={{
+                      transform: `translateY(${scrollY > 50 ? Math.min((scrollY - 50) * 0.6, 200) : 0}px)`,
+                      opacity: scrollY > 50 ? Math.max(0, 1 - (scrollY - 50) / 150) : 1,
+                    }}
+                  >
                     <div className="absolute inset-0 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-xl sm:rounded-2xl md:rounded-3xl transform rotate-2 opacity-20 group-hover:rotate-3 group-hover:scale-105 transition-all duration-500"></div>
                     <img
                       src="/images/spa-treatment.jpg"
@@ -658,7 +664,13 @@ export const HomePage: React.FC = () => {
                       loading="eager"
                     />
                   </div>
-                  <div className="col-span-5 relative group">
+                  <div 
+                    className="col-span-5 relative group transition-all duration-500 ease-out"
+                    style={{
+                      transform: `translateY(${scrollY > 50 ? Math.min((scrollY - 50) * 0.9, 250) : 0}px)`,
+                      opacity: scrollY > 50 ? Math.max(0, 1 - (scrollY - 50) / 130) : 1,
+                    }}
+                  >
                     <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-green-700 rounded-xl sm:rounded-2xl md:rounded-3xl transform -rotate-1 opacity-15 group-hover:rotate-1 group-hover:scale-105 transition-all duration-500"></div>
                     <img
                       src="/images/massage-therapy.jpg"
@@ -667,7 +679,13 @@ export const HomePage: React.FC = () => {
                       loading="eager"
                     />
                   </div>
-                  <div className="col-span-5 relative group">
+                  <div 
+                    className="col-span-5 relative group transition-all duration-500 ease-out"
+                    style={{
+                      transform: `translateY(${scrollY > 50 ? Math.min((scrollY - 50) * 1.0, 280) : 0}px)`,
+                      opacity: scrollY > 50 ? Math.max(0, 1 - (scrollY - 50) / 120) : 1,
+                    }}
+                  >
                     <div className="absolute inset-0 bg-gradient-to-br from-emerald-600 to-emerald-400 rounded-xl sm:rounded-2xl md:rounded-3xl transform rotate-1 opacity-15 group-hover:-rotate-1 group-hover:scale-105 transition-all duration-500"></div>
                     <img
                       src="/images/beauty-salon.jpg"
@@ -676,7 +694,13 @@ export const HomePage: React.FC = () => {
                       loading="lazy"
                     />
                   </div>
-                  <div className="col-span-7 relative group">
+                  <div 
+                    className="col-span-7 relative group transition-all duration-500 ease-out"
+                    style={{
+                      transform: `translateY(${scrollY > 50 ? Math.min((scrollY - 50) * 0.7, 220) : 0}px)`,
+                      opacity: scrollY > 50 ? Math.max(0, 1 - (scrollY - 50) / 140) : 1,
+                    }}
+                  >
                     <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-green-600 rounded-xl sm:rounded-2xl md:rounded-3xl transform -rotate-2 opacity-20 group-hover:rotate-2 group-hover:scale-105 transition-all duration-500"></div>
                     <img
                       src="/images/sauna-couple.jpg"
