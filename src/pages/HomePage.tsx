@@ -581,13 +581,12 @@ export const HomePage: React.FC = () => {
         {/* Hero Section */}
         <section
           ref={heroRef}
-          className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-emerald-950 to-black scroll-revealed"
+          className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-emerald-950 to-black scroll-revealed transition-all duration-700 ease-out"
           style={{
-            paddingTop: scrollY > 50 ? `${Math.max(0, 2 - (scrollY - 50) * 0.04)}rem` : '2rem',
-            paddingBottom: scrollY > 50 ? `${Math.max(0, 5 - (scrollY - 50) * 0.1)}rem` : '5rem',
-            maxHeight: scrollY > 50 ? `${Math.max(0, 100 - (scrollY - 50) * 2)}vh` : '100vh',
-            opacity: scrollY > 50 ? Math.max(0, 1 - (scrollY - 50) / 100) : 1,
-            transition: 'all 0.1s linear',
+            paddingTop: scrollY > 100 ? '0' : '2rem',
+            paddingBottom: scrollY > 100 ? '0' : '5rem',
+            maxHeight: scrollY > 100 ? '0' : '100vh',
+            opacity: scrollY > 100 ? 0 : 1,
           }}
         >
           <div className="absolute inset-0 overflow-hidden opacity-30">
@@ -618,12 +617,11 @@ export const HomePage: React.FC = () => {
           <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center mb-8 sm:mb-10">
               <div
-                className="space-y-4 sm:space-y-6 w-full px-2 sm:px-0"
+                className="space-y-4 sm:space-y-6 w-full px-2 sm:px-0 transition-all duration-700 ease-out"
                 style={{
                   opacity:
                     scrollY > 50 ? Math.max(0, 1 - (scrollY - 50) / 150) : 1,
                   transform: `translateY(${scrollY > 50 ? (scrollY - 50) * 0.4 : 0}px)`,
-                  transition: 'opacity 0.1s linear, transform 0.1s linear',
                 }}
               >
                 <h1
@@ -649,21 +647,19 @@ export const HomePage: React.FC = () => {
               </div>
 
               <div
-                className="hero-image-wrapper relative w-full px-4 sm:px-0"
+                className="hero-image-wrapper relative w-full px-4 sm:px-0 transition-all duration-500 ease-out"
                 style={{
                   opacity:
                     scrollY > 50 ? Math.max(0.2, 1 - (scrollY - 50) / 200) : 1,
                   transform: `translateY(${scrollY > 50 ? Math.min((scrollY - 50) * 0.8, 300) : 0}px)`,
-                  transition: 'opacity 0.1s linear, transform 0.1s linear',
                 }}
               >
                 <div className="grid grid-cols-12 gap-3 sm:gap-4">
                   <div 
-                    className="col-span-7 relative group"
+                    className="col-span-7 relative group transition-all duration-500 ease-out"
                     style={{
                       transform: `translateY(${scrollY > 50 ? Math.min((scrollY - 50) * 0.6, 200) : 0}px)`,
                       opacity: scrollY > 50 ? Math.max(0, 1 - (scrollY - 50) / 150) : 1,
-                      transition: 'transform 0.1s linear, opacity 0.1s linear',
                     }}
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-xl sm:rounded-2xl md:rounded-3xl transform rotate-2 opacity-20 group-hover:rotate-3 group-hover:scale-105 transition-all duration-500"></div>
@@ -675,11 +671,10 @@ export const HomePage: React.FC = () => {
                     />
                   </div>
                   <div 
-                    className="col-span-5 relative group"
+                    className="col-span-5 relative group transition-all duration-500 ease-out"
                     style={{
                       transform: `translateY(${scrollY > 50 ? Math.min((scrollY - 50) * 0.9, 250) : 0}px)`,
                       opacity: scrollY > 50 ? Math.max(0, 1 - (scrollY - 50) / 130) : 1,
-                      transition: 'transform 0.1s linear, opacity 0.1s linear',
                     }}
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-green-700 rounded-xl sm:rounded-2xl md:rounded-3xl transform -rotate-1 opacity-15 group-hover:rotate-1 group-hover:scale-105 transition-all duration-500"></div>
@@ -691,11 +686,10 @@ export const HomePage: React.FC = () => {
                     />
                   </div>
                   <div 
-                    className="col-span-5 relative group"
+                    className="col-span-5 relative group transition-all duration-500 ease-out"
                     style={{
                       transform: `translateY(${scrollY > 50 ? Math.min((scrollY - 50) * 1.0, 280) : 0}px)`,
                       opacity: scrollY > 50 ? Math.max(0, 1 - (scrollY - 50) / 120) : 1,
-                      transition: 'transform 0.1s linear, opacity 0.1s linear',
                     }}
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-emerald-600 to-emerald-400 rounded-xl sm:rounded-2xl md:rounded-3xl transform rotate-1 opacity-15 group-hover:-rotate-1 group-hover:scale-105 transition-all duration-500"></div>
@@ -707,11 +701,10 @@ export const HomePage: React.FC = () => {
                     />
                   </div>
                   <div 
-                    className="col-span-7 relative group"
+                    className="col-span-7 relative group transition-all duration-500 ease-out"
                     style={{
                       transform: `translateY(${scrollY > 50 ? Math.min((scrollY - 50) * 0.7, 220) : 0}px)`,
                       opacity: scrollY > 50 ? Math.max(0, 1 - (scrollY - 50) / 140) : 1,
-                      transition: 'transform 0.1s linear, opacity 0.1s linear',
                     }}
                   >
                     <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-green-600 rounded-xl sm:rounded-2xl md:rounded-3xl transform -rotate-2 opacity-20 group-hover:rotate-2 group-hover:scale-105 transition-all duration-500"></div>
@@ -727,12 +720,11 @@ export const HomePage: React.FC = () => {
             </div>
 
             <div
-              className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8 pt-6 sm:pt-8 border-t border-emerald-500/30"
+              className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8 pt-6 sm:pt-8 border-t border-emerald-500/30 transition-all duration-700 ease-out"
               style={{
                 opacity:
                   scrollY > 50 ? Math.max(0, 1 - (scrollY - 50) / 150) : 1,
                 transform: `translateY(${scrollY > 50 ? (scrollY - 50) * 0.6 : 0}px)`,
-                transition: 'opacity 0.1s linear, transform 0.1s linear',
               }}
             >
               <div className="hero-stat-1 text-center px-2">
@@ -776,8 +768,7 @@ export const HomePage: React.FC = () => {
           ref={aboutRef}
           className="relative py-16 sm:py-20 md:py-24 lg:py-32 bg-gradient-to-b from-black via-gray-900 to-emerald-950 overflow-hidden"
           style={{
-            marginTop: scrollY > 50 ? `${Math.min(0, -((scrollY - 50) * 0.1))}rem` : '0',
-            transition: 'margin-top 0.1s linear',
+            marginTop: scrollY > 100 ? '-2rem' : '0',
           }}
         >
           <div className="absolute top-0 left-0 w-full h-24 sm:h-32 opacity-30">
