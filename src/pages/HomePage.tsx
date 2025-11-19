@@ -78,30 +78,7 @@ export const HomePage: React.FC = () => {
     };
 
     const updateParallax = () => {
-      const scrollPos = window.scrollY;
-
-      if (heroImageRef.current) {
-        const parallaxOffset = scrollPos * 0.5;
-        heroImageRef.current.style.transform = `translateY(${parallaxOffset}px)`;
-      }
-
-      const parallaxImages = [
-        aboutImageRef.current,
-        whyChooseImageRef.current,
-        testimonialsImageRef.current,
-        faqImageRef.current,
-      ];
-
-      parallaxImages.forEach((img) => {
-        if (!img) return;
-        const rect = img.getBoundingClientRect();
-        const scrollProgress =
-          (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
-        if (scrollProgress > 0 && scrollProgress < 1) {
-          const parallaxOffset = (scrollProgress - 0.5) * -100;
-          img.style.transform = `translateY(${parallaxOffset}px)`;
-        }
-      });
+      // Parallax disabled for smoother mobile experience
     };
 
     const updateScrollAnimations = () => {
@@ -115,62 +92,18 @@ export const HomePage: React.FC = () => {
         ctaRef.current,
       ];
 
-      sections.forEach((section, index) => {
+      sections.forEach((section) => {
         if (!section) return;
 
         const rect = section.getBoundingClientRect();
         const windowHeight = window.innerHeight;
         const triggerPoint = windowHeight * 0.85;
 
-        // Reveal section when entering viewport
+        // Simple reveal without transform animations
         if (rect.top < triggerPoint && rect.bottom > 0) {
           if (!section.classList.contains("scroll-revealed")) {
             section.classList.add("scroll-revealed");
           }
-
-          // Apply smooth scroll animations - text enters from left, images from top
-          const textElements = section.querySelectorAll(
-            ".animate-on-scroll-left, .animate-on-scroll-right",
-          );
-          textElements.forEach((el: Element) => {
-            const htmlEl = el as HTMLElement;
-            const elementRect = el.getBoundingClientRect();
-
-            // Entry animation (from left when coming into view from bottom)
-            if (elementRect.top < windowHeight && elementRect.bottom > 0) {
-              const entryProgress = Math.min(
-                1,
-                Math.max(
-                  0,
-                  (windowHeight - elementRect.top) / (windowHeight * 0.8),
-                ),
-              );
-
-              if (el.classList.contains("animate-on-scroll-left")) {
-                const xOffset = Math.max(0, (1 - entryProgress) * 150);
-                htmlEl.style.transform = `translateX(-${xOffset}px)`;
-                htmlEl.style.opacity = Math.min(1, entryProgress).toString();
-              } else if (el.classList.contains("animate-on-scroll-right")) {
-                const yOffset = Math.max(0, (1 - entryProgress) * 100);
-                htmlEl.style.transform = `translateY(-${yOffset}px)`;
-                htmlEl.style.opacity = Math.min(1, entryProgress).toString();
-              }
-            }
-
-            // Exit animation (to top when scrolling past)
-            if (elementRect.top < 0) {
-              const exitProgress = Math.min(
-                1,
-                Math.abs(elementRect.top) / (windowHeight * 0.5),
-              );
-              const yOffset = exitProgress * 80;
-              htmlEl.style.transform = `translateY(-${yOffset}px)`;
-              htmlEl.style.opacity = Math.max(
-                0,
-                1 - exitProgress * 1.2,
-              ).toString();
-            }
-          });
         }
       });
     };
@@ -537,7 +470,7 @@ export const HomePage: React.FC = () => {
         }
       `}</style>
 
-      <main className="">
+      <main className="w-full overflow-x-hidden">
         {/* Terms Banner */}
         <div
           className={`bg-gradient-to-r from-primary-600 to-primary-700 border-b-2 sm:border-b-4 border-primary-800 transition-all duration-700 ease-in-out overflow-hidden ${
@@ -581,7 +514,7 @@ export const HomePage: React.FC = () => {
         {/* Hero Section */}
         <section
           ref={heroRef}
-          className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-emerald-950 to-black py-8 sm:py-12 md:py-16 lg:py-20 scroll-revealed transition-all duration-700 ease-out"
+          className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-emerald-950 to-black py-8 sm:py-12 md:py-16 lg:py-20 scroll-revealed"
         >
           <div className="absolute inset-0 overflow-hidden opacity-30">
             <svg
@@ -610,14 +543,7 @@ export const HomePage: React.FC = () => {
 
           <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center mb-8 sm:mb-10">
-              <div
-                className="space-y-4 sm:space-y-6 w-full px-2 sm:px-0 transition-all duration-700 ease-out"
-                style={{
-                  opacity:
-                    scrollY > 50 ? Math.max(0, 1 - (scrollY - 50) / 150) : 1,
-                  transform: `translateY(${scrollY > 50 ? (scrollY - 50) * 0.4 : 0}px)`,
-                }}
-              >
+              <div className="space-y-4 sm:space-y-6 w-full px-2 sm:px-0">
                 <h1
                   className="text-6xl sm:text-7xl md:text-6xl lg:text-6xl xl:text-[4rem] font-light leading-tight w-full text-white"
                   style={{ letterSpacing: "0.02em" }}
@@ -640,14 +566,7 @@ export const HomePage: React.FC = () => {
                 </div>
               </div>
 
-              <div
-                className="hero-image-wrapper relative w-full px-4 sm:px-0 transition-all duration-700 ease-out"
-                style={{
-                  opacity:
-                    scrollY > 50 ? Math.max(0, 1 - (scrollY - 50) / 150) : 1,
-                  transform: `translateY(${scrollY > 50 ? (scrollY - 50) * 0.3 : 0}px)`,
-                }}
-              >
+              <div className="hero-image-wrapper relative w-full px-4 sm:px-0">
                 <div className="grid grid-cols-12 gap-3 sm:gap-4">
                   <div className="col-span-7 relative group">
                     <div className="absolute inset-0 bg-gradient-to-br from-emerald-400 to-emerald-600 rounded-xl sm:rounded-2xl md:rounded-3xl transform rotate-2 opacity-20 group-hover:rotate-3 group-hover:scale-105 transition-all duration-500"></div>
@@ -689,14 +608,7 @@ export const HomePage: React.FC = () => {
               </div>
             </div>
 
-            <div
-              className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8 pt-6 sm:pt-8 border-t border-emerald-500/30 transition-all duration-700 ease-out"
-              style={{
-                opacity:
-                  scrollY > 50 ? Math.max(0, 1 - (scrollY - 50) / 150) : 1,
-                transform: `translateY(${scrollY > 50 ? (scrollY - 50) * 0.6 : 0}px)`,
-              }}
-            >
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8 pt-6 sm:pt-8 border-t border-emerald-500/30">
               <div className="hero-stat-1 text-center px-2">
                 <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 mb-1 sm:mb-2">
                   10,000+
