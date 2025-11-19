@@ -612,13 +612,13 @@ export const HomePage: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center mb-8 sm:mb-10">
               <div className="space-y-4 sm:space-y-6 w-full px-2 sm:px-0">
                 <h1
-                  className="text-6xl sm:text-7xl md:text-6xl lg:text-6xl xl:text-[4rem] font-light leading-tight w-full text-white"
+                  className="text-6xl sm:text-7xl md:text-6xl lg:text-6xl xl:text-[4rem] font-light leading-tight w-full bg-gradient-to-r from-white via-emerald-100 to-green-200 bg-clip-text text-transparent"
                   style={{ letterSpacing: "0.02em" }}
                 >
                   RELAX & ENJOY
                 </h1>
 
-                <p className="hero-subtitle text-white/90 text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-xl font-light">
+                <p className="hero-subtitle bg-gradient-to-r from-emerald-50 via-white to-emerald-100 bg-clip-text text-transparent text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-xl font-light">
                   Experience ultimate relaxation with our premium spa and
                   wellness services. Book your perfect moment of tranquility
                   today.
@@ -661,34 +661,34 @@ export const HomePage: React.FC = () => {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8 pt-6 sm:pt-8 border-t border-emerald-500/30">
               <div className="hero-stat-1 text-center px-2">
-                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 mb-1 sm:mb-2">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-emerald-300 via-green-200 to-teal-300 mb-1 sm:mb-2">
                   10,000+
                 </h2>
-                <p className="text-white/80 text-xs sm:text-sm md:text-base">
+                <p className="bg-gradient-to-r from-emerald-100 via-white to-green-100 bg-clip-text text-transparent text-xs sm:text-sm md:text-base font-medium">
                   Verified Professionals
                 </p>
               </div>
               <div className="hero-stat-2 text-center px-2">
-                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 mb-1 sm:mb-2">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-emerald-300 via-green-200 to-teal-300 mb-1 sm:mb-2">
                   50+
                 </h2>
-                <p className="text-white/80 text-xs sm:text-sm md:text-base">
+                <p className="bg-gradient-to-r from-emerald-100 via-white to-green-100 bg-clip-text text-transparent text-xs sm:text-sm md:text-base font-medium">
                   Cities Covered
                 </p>
               </div>
               <div className="hero-stat-3 text-center px-2">
-                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 mb-1 sm:mb-2">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-emerald-300 via-green-200 to-teal-300 mb-1 sm:mb-2">
                   1M+
                 </h2>
-                <p className="text-white/80 text-xs sm:text-sm md:text-base">
+                <p className="bg-gradient-to-r from-emerald-100 via-white to-green-100 bg-clip-text text-transparent text-xs sm:text-sm md:text-base font-medium">
                   Happy Customers
                 </p>
               </div>
               <div className="hero-stat-4 text-center px-2">
-                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-green-300 mb-1 sm:mb-2">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-emerald-300 via-green-200 to-teal-300 mb-1 sm:mb-2">
                   24/7
                 </h2>
-                <p className="text-white/80 text-xs sm:text-sm md:text-base">
+                <p className="bg-gradient-to-r from-emerald-100 via-white to-green-100 bg-clip-text text-transparent text-xs sm:text-sm md:text-base font-medium">
                   Customer Support
                 </p>
               </div>
