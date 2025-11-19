@@ -651,7 +651,7 @@ export const HomePage: React.FC = () => {
                   ></div>
 
                   <img
-                    src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1200&q=80"
+                    src="public/images/11.jpg"
                     alt="Luxury Spa Interior"
                     className="absolute inset-0 w-full h-full object-cover"
                   />
@@ -747,7 +747,7 @@ export const HomePage: React.FC = () => {
                 <div className="animate-on-scroll-left stagger-4 bg-gradient-to-br from-emerald-900/40 to-green-900/40 backdrop-blur-sm p-4 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl border border-emerald-500/30 shadow-2xl shadow-emerald-500/20">
                   <div className="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
                     <img
-                      src="https://images.unsplash.com/photo-1580618672591-eb180b1a973f?w=200&q=80"
+                      src="public/images/2.jpg"
                       alt="Customer"
                       className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-full object-cover border-2 border-emerald-400"
                     />
@@ -793,7 +793,7 @@ export const HomePage: React.FC = () => {
 
                   <img
                     ref={aboutImageRef}
-                    src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1200&q=80"
+                    src="public/images/4.jpg"
                     alt="Spa Treatment Room"
                     className="relative w-full rounded-2xl sm:rounded-3xl shadow-2xl parallax-image z-5"
                   />
@@ -960,7 +960,7 @@ export const HomePage: React.FC = () => {
 
                   <img
                     ref={whyChooseImageRef}
-                    src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=1200&q=80"
+                    src="public/images/2.jpg"
                     alt="Professional Spa Service"
                     className="relative w-full h-full object-cover rounded-2xl sm:rounded-3xl shadow-2xl parallax-image z-5"
                   />
@@ -1219,7 +1219,7 @@ export const HomePage: React.FC = () => {
 
                   <img
                     ref={faqImageRef}
-                    src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1200&q=80"
+                    src="public/images/8.jpg"
                     alt="Spa FAQ"
                     className="relative w-full h-auto rounded-2xl sm:rounded-3xl parallax-image z-5"
                   />
