@@ -651,8 +651,8 @@ export const HomePage: React.FC = () => {
                   ></div>
 
                   <img
-                    src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1200&q=80"
-                    alt="Luxury Spa Interior"
+                    src="/images/spa-treatment.jpg"
+                    alt="Luxury Spa Treatment"
                     className="absolute inset-0 w-full h-full object-cover"
                   />
                 </div>
@@ -793,8 +793,8 @@ export const HomePage: React.FC = () => {
 
                   <img
                     ref={aboutImageRef}
-                    src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?w=1200&q=80"
-                    alt="Spa Treatment Room"
+                    src="/images/massage-therapy.jpg"
+                    alt="Professional Massage Therapy"
                     className="relative w-full rounded-2xl sm:rounded-3xl shadow-2xl parallax-image z-5"
                   />
                 </div>

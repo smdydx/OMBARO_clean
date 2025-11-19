@@ -141,7 +141,7 @@ export const BecomePartnerPage: React.FC = () => {
         "Service packages",
         "Membership management",
       ],
-      image: "/images/luxury_spa_treatment_ef5ecb59.jpg",
+      image: "/images/spa-massage-1.jpg",
     },
     {
       title: "Beauty Salon",
@@ -149,7 +149,7 @@ export const BecomePartnerPage: React.FC = () => {
       description:
         "Elevate your salon business with smart booking tools. Connect with beauty enthusiasts looking for expert styling and grooming.",
       features: ["Stylist scheduling", "Service catalog", "Product inventory"],
-      image: "/images/professional_beauty__6992f974.jpg",
+      image: "/images/spa-massage-2.jpg",
     },
     {
       title: "Wellness Center",
@@ -161,7 +161,7 @@ export const BecomePartnerPage: React.FC = () => {
         "Membership plans",
         "Instructor management",
       ],
-      image: "/images/premium_wellness_spa_05199f74.jpg",
+      image: "/images/spa-massage-3.jpg",
     },
     {
       title: "Home Service",
@@ -169,7 +169,7 @@ export const BecomePartnerPage: React.FC = () => {
       description:
         "Grow your on-demand beauty business. Tap into the booming market of customers who prefer professional services at home.",
       features: ["GPS tracking", "Travel charges", "Service radius"],
-      image: "/images/spa_massage_therapy__22ac4be9.jpg",
+      image: "/images/facial-treatment.jpg",
     },
     {
       title: "Hotel Spa",
@@ -177,7 +177,7 @@ export const BecomePartnerPage: React.FC = () => {
       description:
         "Enhance your hotel spa bookings. Attract both hotel guests and external customers seeking premium spa experiences.",
       features: ["Guest integration", "Package deals", "Multi-service booking"],
-      image: "/images/luxury_spa_reception_05371daf.jpg",
+      image: "/images/spa-relaxation.jpg",
     },
     {
       title: "Gym & Fitness",
@@ -185,7 +185,7 @@ export const BecomePartnerPage: React.FC = () => {
       description:
         "Boost your gym membership and wellness services. Connect with fitness enthusiasts looking for comprehensive health solutions.",
       features: ["Class scheduling", "Personal training", "Wellness packages"],
-      image: "/images/spa_treatment_room_i_609c3288.jpg",
+      image: "/images/sauna-couple.jpg",
     },
     {
       title: "Yoga & Meditation",
@@ -193,7 +193,7 @@ export const BecomePartnerPage: React.FC = () => {
       description:
         "Scale your yoga practice digitally. Reach seekers of inner peace and wellness through our growing community of mindful customers.",
       features: ["Class management", "Workshop booking", "Retreat planning"],
-      image: "/images/spa_treatment_room_i_79626365.jpg",
+      image: "/images/beauty-salon.jpg",
     },
     {
       title: "Ayurveda Center",
@@ -205,7 +205,7 @@ export const BecomePartnerPage: React.FC = () => {
         "Treatment packages",
         "Herbal products",
       ],
-      image: "/images/elegant_spa_interior_b93a48aa.jpg",
+      image: "/images/couple-massage.jpg",
     },
   ];
 
@@ -314,32 +314,32 @@ export const BecomePartnerPage: React.FC = () => {
                   <div className="col-span-7 relative group">
                     <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-green-600 rounded-xl sm:rounded-2xl md:rounded-3xl transform rotate-2 opacity-20 group-hover:rotate-3 group-hover:scale-105 transition-all duration-500"></div>
                     <img
-                      src="/images/luxury_spa_treatment_ef5ecb59.jpg"
-                      alt="Luxury Spa Treatment"
+                      src="/images/spa-massage-1.jpg"
+                      alt="Professional Spa Massage Treatment"
                       className="relative rounded-xl sm:rounded-2xl md:rounded-3xl shadow-2xl w-full h-52 sm:h-60 md:h-72 lg:h-80 xl:h-96 object-cover border-2 border-green-500/30 group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                   <div className="col-span-5 relative group">
                     <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-green-700 rounded-xl sm:rounded-2xl md:rounded-3xl transform -rotate-1 opacity-15 group-hover:rotate-1 group-hover:scale-105 transition-all duration-500"></div>
                     <img
-                      src="/images/professional_beauty__6992f974.jpg"
-                      alt="Beauty Services"
+                      src="/images/spa-massage-2.jpg"
+                      alt="Relaxing Spa Services"
                       className="rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl w-full h-52 sm:h-60 md:h-72 lg:h-80 xl:h-96 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                   <div className="col-span-5 relative group">
                     <div className="absolute inset-0 bg-gradient-to-br from-green-600 to-green-400 rounded-xl sm:rounded-2xl md:rounded-3xl transform rotate-1 opacity-15 group-hover:-rotate-1 group-hover:scale-105 transition-all duration-500"></div>
                     <img
-                      src="/images/spa_massage_therapy__22ac4be9.jpg"
-                      alt="Massage Therapy"
+                      src="/images/spa-massage-3.jpg"
+                      alt="Premium Massage Therapy"
                       className="rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl w-full h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
                   <div className="col-span-7 relative group">
                     <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-green-600 rounded-xl sm:rounded-2xl md:rounded-3xl transform -rotate-2 opacity-20 group-hover:rotate-2 group-hover:scale-105 transition-all duration-500"></div>
                     <img
-                      src="/images/elegant_spa_interior_b93a48aa.jpg"
-                      alt="Spa Interior"
+                      src="/images/facial-treatment.jpg"
+                      alt="Facial Treatment Services"
                       className="rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl w-full h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-transform duration-500"
                     />
                   </div>
