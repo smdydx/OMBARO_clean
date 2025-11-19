@@ -581,7 +581,8 @@ export const HomePage: React.FC = () => {
         {/* Hero Section */}
         <section
           ref={heroRef}
-          className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-emerald-950 to-black py-8 sm:py-12 md:py-16 lg:py-20 scroll-revealed"
+          className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-emerald-950 to-black py-8 sm:py-12 md:py-16 lg:py-20 scroll-revealed transition-opacity duration-500"
+          style={{ opacity: scrollY > 100 ? 0 : 1, pointerEvents: scrollY > 100 ? 'none' : 'auto' }}
         >
           <div className="absolute inset-0 overflow-hidden opacity-30">
             <svg

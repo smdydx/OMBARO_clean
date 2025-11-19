@@ -69,7 +69,7 @@ export const MarketingHeader: React.FC = () => {
             >
               Login
             </button>
-            <Link to="/become-partner">
+            <Link to="/become-a-partner">
               <button
                 className="px-6 py-2.5 bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 text-sm whitespace-nowrap"
                 style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600 }}
@@ -126,7 +126,7 @@ export const MarketingHeader: React.FC = () => {
             {/* Action Buttons Section */}
             <div className="px-5 pb-8 space-y-3">
               <Link
-                to="/become-partner"
+                to="/become-a-partner"
                 className="flex items-center justify-center gap-2.5 px-6 py-4 bg-white text-green-600 border-2 border-green-500 hover:bg-green-50 active:bg-green-100 rounded-xl transition-all duration-200 font-bold text-base shadow-sm hover:shadow-md"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
@@ -187,7 +187,7 @@ export const MarketingHeader: React.FC = () => {
               >
                 <button className="w-full flex items-center justify-center gap-3 px-6 py-4 bg-gradient-to-r from-green-500 to-green-600 hover:from-green-600 hover:to-green-700 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
                   <Globe className="w-6 h-6" />
-                  <span>Continue with Web App</span>
+                  <span>Continue with Website</span>
                 </button>
               </Link>
 
