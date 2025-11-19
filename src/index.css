@@ -178,7 +178,6 @@
 /* Performance optimizations */
 img {
   content-visibility: auto;
-  loading: lazy;
 }
 
 /* Reduce layout shifts */

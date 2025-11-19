@@ -13,6 +13,18 @@ OMBARO is a comprehensive beauty and wellness booking platform that connects cus
 
 **Project Status:** Production-ready with 60+ essential database tables and complete multi-portal implementation.
 
+## Recent Changes
+
+**November 19, 2025:**
+- **Image Optimization**: Added lazy loading attributes to all large marketing images (hero sections, collages) for improved page load performance
+- **Home Page Enhancement**: Replaced single hero image with collage-style grid of 4 spa/wellness images, matching the Become a Partner page design
+- **Navigation Updates**: 
+  - Added "Become a Partner" button to header navigation (desktop and mobile)
+  - Standardized routing to `/become-partner` across all CTAs
+  - Replaced all "Get Started" CTAs with "Become a Partner" links
+- **Login Modal**: Implemented modal dialog with Web/Mobile App selection options, includes smooth fadeIn/slideUp animations
+- **CSS Cleanup**: Removed invalid CSS properties and added proper modal animations in index.css
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
