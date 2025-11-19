@@ -323,7 +323,7 @@ export const BecomePartnerPage: React.FC = () => {
                   <div className="col-span-5 relative group">
                     <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-green-700 rounded-xl sm:rounded-2xl md:rounded-3xl transform -rotate-1 opacity-15 group-hover:rotate-1 group-hover:scale-105 transition-all duration-500"></div>
                     <img
-                      src="public/images/7.jpg"
+                      src="/images/7.jpg"
                       alt="Relaxing Spa Services"
                       className="rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl w-full h-52 sm:h-60 md:h-72 lg:h-80 xl:h-96 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-transform duration-500"
                       loading="eager"
