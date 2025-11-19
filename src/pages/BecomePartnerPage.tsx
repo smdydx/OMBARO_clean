@@ -141,7 +141,7 @@ export const BecomePartnerPage: React.FC = () => {
         "Service packages",
         "Membership management",
       ],
-      image: "/images/spa-massage-1.jpg",
+      image: "/images/partner-business-spa.jpg",
     },
     {
       title: "Beauty Salon",
@@ -149,7 +149,7 @@ export const BecomePartnerPage: React.FC = () => {
       description:
         "Elevate your salon business with smart booking tools. Connect with beauty enthusiasts looking for expert styling and grooming.",
       features: ["Stylist scheduling", "Service catalog", "Product inventory"],
-      image: "/images/spa-massage-2.jpg",
+      image: "/images/partner-business-salon.jpg",
     },
     {
       title: "Wellness Center",
@@ -161,7 +161,7 @@ export const BecomePartnerPage: React.FC = () => {
         "Membership plans",
         "Instructor management",
       ],
-      image: "/images/spa-massage-3.jpg",
+      image: "/images/partner-business-wellness.jpg",
     },
     {
       title: "Home Service",
@@ -169,7 +169,7 @@ export const BecomePartnerPage: React.FC = () => {
       description:
         "Grow your on-demand beauty business. Tap into the booming market of customers who prefer professional services at home.",
       features: ["GPS tracking", "Travel charges", "Service radius"],
-      image: "/images/facial-treatment.jpg",
+      image: "/images/partner-business-home.jpg",
     },
     {
       title: "Hotel Spa",
@@ -177,7 +177,7 @@ export const BecomePartnerPage: React.FC = () => {
       description:
         "Enhance your hotel spa bookings. Attract both hotel guests and external customers seeking premium spa experiences.",
       features: ["Guest integration", "Package deals", "Multi-service booking"],
-      image: "/images/spa-relaxation.jpg",
+      image: "/images/partner-business-hotel.jpg",
     },
     {
       title: "Gym & Fitness",
@@ -185,7 +185,7 @@ export const BecomePartnerPage: React.FC = () => {
       description:
         "Boost your gym membership and wellness services. Connect with fitness enthusiasts looking for comprehensive health solutions.",
       features: ["Class scheduling", "Personal training", "Wellness packages"],
-      image: "/images/sauna-couple.jpg",
+      image: "/images/partner-business-gym.jpg",
     },
     {
       title: "Yoga & Meditation",
@@ -193,7 +193,7 @@ export const BecomePartnerPage: React.FC = () => {
       description:
         "Scale your yoga practice digitally. Reach seekers of inner peace and wellness through our growing community of mindful customers.",
       features: ["Class management", "Workshop booking", "Retreat planning"],
-      image: "/images/beauty-salon.jpg",
+      image: "/images/partner-business-yoga.jpg",
     },
     {
       title: "Ayurveda Center",
@@ -205,7 +205,7 @@ export const BecomePartnerPage: React.FC = () => {
         "Treatment packages",
         "Herbal products",
       ],
-      image: "/images/couple-massage.jpg",
+      image: "/images/partner-business-ayurveda.jpg",
     },
   ];
 
@@ -314,8 +314,8 @@ export const BecomePartnerPage: React.FC = () => {
                   <div className="col-span-7 relative group">
                     <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-green-600 rounded-xl sm:rounded-2xl md:rounded-3xl transform rotate-2 opacity-20 group-hover:rotate-3 group-hover:scale-105 transition-all duration-500"></div>
                     <img
-                      src="/images/spa-massage-1.jpg"
-                      alt="Professional Spa Massage Treatment"
+                      src="/images/partner-hero-spa-1.jpg"
+                      alt="Professional Spa Partner Business"
                       className="relative rounded-xl sm:rounded-2xl md:rounded-3xl shadow-2xl w-full h-52 sm:h-60 md:h-72 lg:h-80 xl:h-96 object-cover border-2 border-green-500/30 group-hover:scale-105 transition-transform duration-500"
                       loading="eager"
                     />
@@ -323,8 +323,8 @@ export const BecomePartnerPage: React.FC = () => {
                   <div className="col-span-5 relative group">
                     <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-green-700 rounded-xl sm:rounded-2xl md:rounded-3xl transform -rotate-1 opacity-15 group-hover:rotate-1 group-hover:scale-105 transition-all duration-500"></div>
                     <img
-                      src="/images/7.jpg"
-                      alt="Relaxing Spa Services"
+                      src="/images/partner-hero-spa-2.jpg"
+                      alt="Wellness Center Partnership"
                       className="rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl w-full h-52 sm:h-60 md:h-72 lg:h-80 xl:h-96 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-transform duration-500"
                       loading="eager"
                     />
@@ -332,8 +332,8 @@ export const BecomePartnerPage: React.FC = () => {
                   <div className="col-span-5 relative group">
                     <div className="absolute inset-0 bg-gradient-to-br from-green-600 to-green-400 rounded-xl sm:rounded-2xl md:rounded-3xl transform rotate-1 opacity-15 group-hover:-rotate-1 group-hover:scale-105 transition-all duration-500"></div>
                     <img
-                      src="/images/spa-massage-3.jpg"
-                      alt="Premium Massage Therapy"
+                      src="/images/partner-hero-spa-3.jpg"
+                      alt="Beauty Salon Partnership"
                       className="rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl w-full h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-transform duration-500"
                       loading="lazy"
                     />
@@ -341,8 +341,8 @@ export const BecomePartnerPage: React.FC = () => {
                   <div className="col-span-7 relative group">
                     <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-green-600 rounded-xl sm:rounded-2xl md:rounded-3xl transform -rotate-2 opacity-20 group-hover:rotate-2 group-hover:scale-105 transition-all duration-500"></div>
                     <img
-                      src="/images/facial-treatment.jpg"
-                      alt="Facial Treatment Services"
+                      src="/images/partner-hero-spa-4.jpg"
+                      alt="Massage Therapy Business Growth"
                       className="rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl w-full h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-transform duration-500"
                       loading="lazy"
                     />
@@ -580,12 +580,12 @@ export const BecomePartnerPage: React.FC = () => {
                 {[...Array(3)].map((_, setIdx) => (
                   <React.Fragment key={setIdx}>
                     {[
-                      "/images/luxury_spa_treatment_ef5ecb59.jpg",
-                      "/images/professional_beauty__6992f974.jpg",
-                      "/images/premium_wellness_spa_05199f74.jpg",
-                      "/images/spa_massage_therapy__22ac4be9.jpg",
-                      "/images/elegant_spa_interior_b93a48aa.jpg",
-                      "/images/spa_treatment_room_i_609c3288.jpg",
+                      "/images/partner-showcase-1.jpg",
+                      "/images/partner-showcase-2.jpg",
+                      "/images/partner-showcase-3.jpg",
+                      "/images/partner-showcase-4.jpg",
+                      "/images/partner-showcase-5.jpg",
+                      "/images/partner-showcase-6.jpg",
                     ].map((img, idx) => (
                       <div
                         key={`${setIdx}-${idx}`}
