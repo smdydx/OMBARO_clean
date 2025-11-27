@@ -640,23 +640,76 @@ export const BecomePartnerPage: React.FC = () => {
               })()}
             </div>
 
-            <div className="mt-12 text-center bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 sm:p-12 border-2 border-green-200">
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4">
-                Don't see your business type?
-              </h3>
-              <p className="text-base sm:text-lg text-gray-700 mb-6 max-w-2xl mx-auto">
-                We welcome all beauty and wellness professionals! Contact us to
-                discuss how we can help grow your specific business.
-              </p>
-              <Link to="/app">
-                <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white rounded-full py-3 font-semibold shadow-lg"
-                >
-                  Register Your Business Now
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
-              </Link>
+            <div className="mt-12 bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl overflow-hidden border-2 border-green-200">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+                {/* Left - Images */}
+                <div className="relative h-64 sm:h-80 md:h-96 lg:h-auto overflow-hidden">
+                  <div className="grid grid-cols-2 gap-3 p-4 h-full">
+                    <div className="relative group rounded-2xl overflow-hidden shadow-lg">
+                      <img 
+                        src="/images/partner-business-spa.jpg" 
+                        alt="Spa Business" 
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                    </div>
+                    <div className="relative group rounded-2xl overflow-hidden shadow-lg">
+                      <img 
+                        src="/images/partner-business-salon.jpg" 
+                        alt="Salon Business" 
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                    </div>
+                    <div className="relative group rounded-2xl overflow-hidden shadow-lg col-span-2">
+                      <img 
+                        src="/images/partner-business-wellness.jpg" 
+                        alt="Wellness Center" 
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right - Content */}
+                <div className="p-8 sm:p-12 flex flex-col justify-center">
+                  <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+                    Don't see your business type?
+                  </h3>
+                  <p className="text-base sm:text-lg text-gray-700 mb-2">
+                    We welcome all beauty and wellness professionals!
+                  </p>
+                  <p className="text-base sm:text-lg text-gray-600 mb-8">
+                    Whether you run a spa, salon, fitness center, or any wellness service, we have solutions tailored just for you. Contact us to discuss how we can help grow your specific business.
+                  </p>
+                  
+                  <div className="space-y-3 mb-8">
+                    <div className="flex items-start space-x-3">
+                      <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
+                      <span className="text-gray-700">Custom business solutions</span>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
+                      <span className="text-gray-700">Dedicated partnership team</span>
+                    </div>
+                    <div className="flex items-start space-x-3">
+                      <CheckCircle className="w-5 h-5 text-green-600 flex-shrink-0 mt-1" />
+                      <span className="text-gray-700">Fast setup & approval</span>
+                    </div>
+                  </div>
+
+                  <Link to="/app">
+                    <Button
+                      size="lg"
+                      className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white rounded-full py-4 font-semibold shadow-lg transform hover:scale-105 transition-all"
+                    >
+                      Register Your Business Now
+                      <ArrowRight className="w-5 h-5 ml-2" />
+                    </Button>
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
         </section>
