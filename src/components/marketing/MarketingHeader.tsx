@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, FileText, Smartphone, Globe } from 'lucide-react';
+import { Menu, X, Smartphone, Globe } from 'lucide-react';
 
 const styles = `
   @keyframes wave-animation {
@@ -152,7 +152,7 @@ export const MarketingHeader: React.FC = () => {
           <div className="h-full overflow-y-auto bg-white">
             {/* Navigation Section */}
             <nav className="px-5 py-6 space-y-1">
-              {navLinks.map((link, index) => (
+              {navLinks.map((link) => (
                 <Link
                   key={link.path}
                   to={link.path}
