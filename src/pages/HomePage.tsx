@@ -624,7 +624,7 @@ export const HomePage: React.FC = () => {
                   RELAX & ENJOY
                 </h1>
 
-                <p className="hero-subtitle bg-gradient-to-r from-emerald-600 via-green-700 to-emerald-700 bg-clip-text text-transparent text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-xl font-light" style={{ fontFamily: "'Poppins', sans-serif" }}>
+                <p className="hero-subtitle bg-gradient-to-r from-emerald-600 via-green-700 to-emerald-700 bg-clip-text text-transparent text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-xl font-thin" style={{ fontFamily: "'Poppins', sans-serif" }}>
                   Experience ultimate relaxation with our premium spa and
                   wellness services. Book your perfect moment of tranquility
                   today.
