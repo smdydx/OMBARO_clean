@@ -922,6 +922,14 @@ export const HomePage: React.FC = () => {
         <section
           ref={whyChooseRef}
           className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-b from-black via-gray-900 to-emerald-950 overflow-hidden"
+          style={{
+            backgroundImage: 'url(/why-choose-us-bg.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat',
+            minHeight: '100vh',
+            backgroundAttachment: 'scroll'
+          }}
         >
           <div className="absolute top-0 left-0 w-full h-24 sm:h-32 opacity-30">
             <svg
