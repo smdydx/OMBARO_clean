@@ -358,7 +358,7 @@ export const BecomePartnerPage: React.FC = () => {
                       src={heroImages[currentHeroImageIndex]}
                       alt="Rotating spa business showcase"
                       className="relative rounded-xl sm:rounded-2xl md:rounded-3xl shadow-2xl w-full h-52 sm:h-60 md:h-72 lg:h-80 xl:h-96 object-cover border-2 border-green-500/30 group-hover:scale-105 transition-all duration-500 animate-slide-smooth"
-                      loading="eager"
+                      loading="lazy"
                       key={currentHeroImageIndex}
                     />
                   </div>
@@ -368,7 +368,7 @@ export const BecomePartnerPage: React.FC = () => {
                       src={heroImages[(currentHeroImageIndex + 1) % heroImages.length]}
                       alt="Rotating business showcase"
                       className="rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl w-full h-52 sm:h-60 md:h-72 lg:h-80 xl:h-96 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-all duration-500 animate-slide-smooth"
-                      loading="eager"
+                      loading="lazy"
                       key={currentHeroImageIndex + 1}
                     />
                   </div>
