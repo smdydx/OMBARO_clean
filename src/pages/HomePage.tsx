@@ -850,14 +850,26 @@ export const HomePage: React.FC = () => {
           </div>
 
           <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="mb-8 sm:mb-10 lg:mb-12">
-              <p className="animate-on-scroll-fade stagger-1 text-xs sm:text-sm font-semibold text-emerald-400 tracking-wider mb-2 sm:mb-3 uppercase">
-                Our Services
-              </p>
-              <h2 className="animate-on-scroll-left stagger-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl bg-gradient-to-r from-white via-emerald-200 via-green-300 via-teal-200 to-cyan-300 bg-clip-text text-transparent font-normal">
-                Luxury Wellness Services, Anytime. Anywhere.
-              </h2>
-            </div>
+            <div className="grid lg:grid-cols-5 gap-8 items-start">
+              {/* Left Side Button - Desktop Only */}
+              <div className="hidden lg:flex flex-col items-center justify-start pt-12">
+                <Link to="/app">
+                  <button className="bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-emerald-500/50 whitespace-nowrap">
+                    Book Service
+                  </button>
+                </Link>
+              </div>
+
+              {/* Right Side Content */}
+              <div className="lg:col-span-4">
+                <div className="mb-8 sm:mb-10 lg:mb-12">
+                  <p className="animate-on-scroll-fade stagger-1 text-xs sm:text-sm font-semibold text-emerald-400 tracking-wider mb-2 sm:mb-3 uppercase">
+                    Our Services
+                  </p>
+                  <h2 className="animate-on-scroll-left stagger-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl bg-gradient-to-r from-white via-emerald-200 via-green-300 via-teal-200 to-cyan-300 bg-clip-text text-transparent font-normal">
+                    Luxury Wellness Services, Anytime. Anywhere.
+                  </h2>
+                </div>
             <div
               ref={carouselRef}
               className={`services-carousel ${isDragging ? "dragging" : ""}`}
