@@ -1556,15 +1556,15 @@ export const BecomePartnerPage: React.FC = () => {
 
             <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 text-xs sm:text-sm font-medium text-white">
               <div className="flex items-center space-x-1.5 sm:space-x-2">
-                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5" />
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                 <span>0% Commission 1st Month</span>
               </div>
               <div className="flex items-center space-x-1.5 sm:space-x-2">
-                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5" />
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                 <span>24hr Approval</span>
               </div>
               <div className="flex items-center space-x-1.5 sm:space-x-2">
-                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5" />
+                <CheckCircle className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                 <span>No Hidden Fees</span>
               </div>
             </div>
