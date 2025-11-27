@@ -357,8 +357,9 @@ export const BecomePartnerPage: React.FC = () => {
                     <img
                       src={heroImages[currentHeroImageIndex]}
                       alt="Rotating spa business showcase"
-                      className="relative rounded-xl sm:rounded-2xl md:rounded-3xl shadow-2xl w-full h-52 sm:h-60 md:h-72 lg:h-80 xl:h-96 object-cover border-2 border-green-500/30 group-hover:scale-105 transition-all duration-500 animate-fade-in"
+                      className="relative rounded-xl sm:rounded-2xl md:rounded-3xl shadow-2xl w-full h-52 sm:h-60 md:h-72 lg:h-80 xl:h-96 object-cover border-2 border-green-500/30 group-hover:scale-105 transition-all duration-500 animate-slide-smooth"
                       loading="eager"
+                      key={currentHeroImageIndex}
                     />
                   </div>
                   <div className="col-span-5 relative group">
@@ -366,8 +367,9 @@ export const BecomePartnerPage: React.FC = () => {
                     <img
                       src={heroImages[(currentHeroImageIndex + 1) % heroImages.length]}
                       alt="Rotating business showcase"
-                      className="rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl w-full h-52 sm:h-60 md:h-72 lg:h-80 xl:h-96 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-all duration-500 animate-fade-in"
+                      className="rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl w-full h-52 sm:h-60 md:h-72 lg:h-80 xl:h-96 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-all duration-500 animate-slide-smooth"
                       loading="eager"
+                      key={currentHeroImageIndex + 1}
                     />
                   </div>
                   <div className="col-span-5 relative group">
@@ -375,8 +377,9 @@ export const BecomePartnerPage: React.FC = () => {
                     <img
                       src={heroImages[(currentHeroImageIndex + 2) % heroImages.length]}
                       alt="Rotating wellness showcase"
-                      className="rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl w-full h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-all duration-500 animate-fade-in"
+                      className="rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl w-full h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-all duration-500 animate-slide-smooth"
                       loading="lazy"
+                      key={currentHeroImageIndex + 2}
                     />
                   </div>
                   <div className="col-span-7 relative group">
@@ -384,8 +387,9 @@ export const BecomePartnerPage: React.FC = () => {
                     <img
                       src={heroImages[(currentHeroImageIndex + 3) % heroImages.length]}
                       alt="Rotating therapy showcase"
-                      className="rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl w-full h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-all duration-500 animate-fade-in"
+                      className="rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl w-full h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-all duration-500 animate-slide-smooth"
                       loading="lazy"
+                      key={currentHeroImageIndex + 3}
                     />
                   </div>
                 </div>
