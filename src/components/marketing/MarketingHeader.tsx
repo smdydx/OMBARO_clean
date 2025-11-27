@@ -163,7 +163,7 @@ export const MarketingHeader: React.FC = () => {
               style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}
             >
               <span className="relative z-10 group-hover:text-white transition-colors duration-300">Login</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-emerald-100 to-green-100 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-700 to-green-700 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
             </button>
             {!isPartnerPage && (
               <Link to="/become-a-partner">
