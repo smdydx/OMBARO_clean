@@ -144,10 +144,14 @@ export const MarketingHeader: React.FC = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className="px-3 xl:px-4 py-2.5 text-gray-700 hover:text-white hover:bg-emerald-700 font-medium transition-all duration-200 rounded-lg text-sm whitespace-nowrap"
+                className="relative px-4 xl:px-5 py-2.5 text-gray-700 font-medium transition-all duration-300 rounded-lg text-sm whitespace-nowrap group overflow-hidden"
                 style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}
               >
-                {link.name}
+                <span className="relative z-10 flex items-center gap-1.5 group-hover:text-white transition-colors duration-300">
+                  {link.name}
+                </span>
+                <div className="absolute inset-0 bg-gradient-to-r from-emerald-500 via-emerald-600 to-teal-600 rounded-lg opacity-0 group-hover:opacity-100 transition-all duration-300 transform -translate-y-full group-hover:translate-y-0 shadow-lg group-hover:shadow-xl"></div>
+                <div className="absolute bottom-0 left-0 w-0 h-1 bg-gradient-to-r from-emerald-500 to-teal-600 group-hover:w-full transition-all duration-500 rounded-full"></div>
               </Link>
             ))}
           </nav>
@@ -155,18 +159,20 @@ export const MarketingHeader: React.FC = () => {
           <div className="hidden lg:flex items-center space-x-2 xl:space-x-3 flex-shrink-0">
             <button
               onClick={() => setShowLoginModal(true)}
-              className="px-4 py-2 text-gray-700 hover:text-gray-900 font-medium transition-all duration-200 hover:bg-emerald-50 rounded-full text-sm whitespace-nowrap"
+              className="relative px-5 py-2 text-gray-700 font-medium transition-all duration-300 rounded-full text-sm whitespace-nowrap group overflow-hidden"
               style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}
             >
-              Login
+              <span className="relative z-10 group-hover:text-white transition-colors duration-300">Login</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-100 to-green-100 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
             </button>
             {!isPartnerPage && (
               <Link to="/become-a-partner">
                 <button
-                  className="px-6 py-2.5 bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 text-sm whitespace-nowrap"
+                  className="relative px-6 py-2.5 bg-gradient-to-r from-green-500 via-emerald-600 to-teal-600 text-white font-semibold rounded-full shadow-lg hover:shadow-2xl transition-all duration-400 hover:-translate-y-1 text-sm whitespace-nowrap group overflow-hidden border border-transparent hover:border-white/30"
                   style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600 }}
                 >
-                  Become a Partner
+                  <span className="relative z-10 flex items-center justify-center">Become a Partner</span>
+                  <div className="absolute inset-0 bg-gradient-to-r from-teal-600 via-emerald-700 to-green-700 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300"></div>
                 </button>
               </Link>
             )}
