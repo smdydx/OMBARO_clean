@@ -30,6 +30,26 @@ const styles = `
     }
   }
   
+  @keyframes slide-down {
+    from {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fade-in-overlay {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
   .wave-animated {
     animation: wave-animation 8s linear infinite;
     width: 300%;
@@ -42,6 +62,14 @@ const styles = `
   
   .logo-hover-spin:hover::after {
     animation: glow-pulse 1s ease-in-out infinite;
+  }
+  
+  .mobile-menu-slide {
+    animation: slide-down 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  
+  .mobile-overlay-fade {
+    animation: fade-in-overlay 0.3s ease-out;
   }
 `;
 
@@ -140,39 +168,43 @@ export const MarketingHeader: React.FC = () => {
         {/* Mobile Menu Overlay */}
         {isMobileMenuOpen && (
           <div 
-            className="fixed inset-0 bg-black/50 z-40 lg:hidden transition-opacity duration-300"
+            className="mobile-overlay-fade fixed inset-0 bg-black/40 z-40 lg:hidden"
             onClick={() => setIsMobileMenuOpen(false)}
           />
         )}
 
-        {/* Mobile Menu - Professional Clean Design */}
+        {/* Modern Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden fixed inset-0 top-20 z-40 bg-white">
+        <div className="mobile-menu-slide lg:hidden fixed inset-0 top-20 z-40 bg-gradient-to-br from-white via-emerald-50/40 to-green-50/30 shadow-2xl">
           {/* Menu Content */}
-          <div className="h-full overflow-y-auto bg-white">
+          <div className="h-full overflow-y-auto">
             {/* Navigation Section */}
-            <nav className="px-5 py-6 space-y-1">
-              {navLinks.map((link) => (
+            <nav className="px-4 pt-6 pb-4 space-y-0">
+              {navLinks.map((link, idx) => (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className="block px-5 py-4 text-gray-800 hover:bg-green-50 active:bg-green-100 rounded-xl transition-all duration-200 group border-b border-gray-100 last:border-b-0"
+                  className="block px-4 py-3.5 text-gray-700 rounded-2xl transition-all duration-200 group hover:bg-gradient-to-r hover:from-emerald-100/60 hover:to-green-100/40 active:bg-emerald-200/50 font-medium text-base"
                   onClick={() => setIsMobileMenuOpen(false)}
+                  style={{ fontFamily: "'Inter', sans-serif", animationDelay: `${idx * 50}ms` }}
                 >
-                  <span className="font-semibold text-base group-hover:text-green-600 transition-colors">{link.name}</span>
+                  <span className="group-hover:text-emerald-700 transition-colors">{link.name}</span>
                 </Link>
               ))}
             </nav>
 
-            {/* Divider */}
-            <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent my-4 mx-5"></div>
+            {/* Elegant Divider */}
+            <div className="my-2 mx-4">
+              <div className="h-px bg-gradient-to-r from-emerald-200/30 via-emerald-300/60 to-emerald-200/30 rounded-full"></div>
+            </div>
 
             {/* Action Buttons Section */}
-            <div className="px-5 pb-8 space-y-3">
+            <div className="px-4 pb-8 pt-4 space-y-3">
               <Link
                 to="/become-a-partner"
-                className="flex items-center justify-center gap-2.5 px-6 py-4 bg-white text-green-600 border-2 border-green-500 hover:bg-green-50 active:bg-green-100 rounded-xl transition-all duration-200 font-bold text-base shadow-sm hover:shadow-md"
+                className="flex items-center justify-center gap-2.5 px-5 py-3.5 bg-gradient-to-r from-emerald-50 to-green-50 text-emerald-700 border-2 border-emerald-300 hover:border-emerald-500 hover:bg-emerald-100/60 active:bg-emerald-200 rounded-2xl transition-all duration-300 font-semibold text-base shadow-md hover:shadow-lg transform hover:scale-105"
                 onClick={() => setIsMobileMenuOpen(false)}
+                style={{ fontFamily: "'Inter', sans-serif" }}
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -185,7 +217,8 @@ export const MarketingHeader: React.FC = () => {
                   setIsMobileMenuOpen(false);
                   setShowLoginModal(true);
                 }}
-                className="flex items-center justify-center gap-2.5 px-6 py-4 bg-gradient-to-r from-green-500 to-green-600 text-white hover:from-green-600 hover:to-green-700 active:from-green-700 active:to-green-800 rounded-xl transition-all duration-200 font-bold text-base shadow-lg hover:shadow-xl w-full"
+                className="flex items-center justify-center gap-2.5 px-5 py-3.5 bg-gradient-to-r from-emerald-600 to-green-600 text-white hover:from-emerald-700 hover:to-green-700 active:from-emerald-800 active:to-green-800 rounded-2xl transition-all duration-300 font-semibold text-base shadow-lg hover:shadow-2xl transform hover:scale-105 w-full"
+                style={{ fontFamily: "'Inter', sans-serif" }}
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1" />
