@@ -29,6 +29,7 @@ import { MarketingFooter } from "../components/marketing/MarketingFooter";
 export const BecomePartnerPage: React.FC = () => {
   const [openFaq, setOpenFaq] = React.useState<number | null>(null);
   const [scrollY, setScrollY] = React.useState(0);
+  const [currentStoryIndex, setCurrentStoryIndex] = React.useState(0);
 
   const heroRef = React.useRef<HTMLElement>(null);
   const whyTraditionalRef = React.useRef<HTMLElement>(null);
@@ -269,7 +270,7 @@ export const BecomePartnerPage: React.FC = () => {
                 >
                   Partner with
                   <br />
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 animate-gradient">
+                  <span className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-normal text-transparent bg-clip-text bg-gradient-to-r from-green-500 via-emerald-500 to-teal-500 animate-gradient" style={{ fontFamily: "'Tenor Sans', serif" }}>
                     OMBARO
                   </span>
                 </h1>
@@ -911,7 +912,7 @@ export const BecomePartnerPage: React.FC = () => {
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
+            <div className="hidden md:grid md:grid-cols-3 gap-6 sm:gap-8">
               {[
                 {
                   quote:
@@ -982,6 +983,98 @@ export const BecomePartnerPage: React.FC = () => {
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* Mobile/Tablet Carousel */}
+            <div className="md:hidden">
+              {(() => {
+                const stories = [
+                  {
+                    quote:
+                      "OMBARO transformed our spa business completely. We have seen a 45% increase in bookings and our revenue has doubled in just 6 months. The platform is easy to use and customer support is excellent.",
+                    name: "Meera Kapoor",
+                    business: "Serenity Spa, Mumbai",
+                    stats: { bookings: "+45%", revenue: "2x", rating: "4.8/5" },
+                  },
+                  {
+                    quote:
+                      "As a salon owner, managing appointments was always a headache. OMBARO made everything so simple. Now I can focus on providing great service while the platform handles all bookings and payments.",
+                    name: "Rajesh Sharma",
+                    business: "Glamour Salon, Delhi",
+                    stats: { bookings: "+60%", revenue: "1.8x", rating: "4.9/5" },
+                  },
+                  {
+                    quote:
+                      "Being a freelance bridal makeup artist, I was struggling to get consistent bookings. OMBARO gave me access to hundreds of brides looking for professional makeup services. My calendar is now fully booked!",
+                    name: "Priya Deshmukh",
+                    business: "Bridal Makeup Artist, Pune",
+                    stats: { bookings: "+80%", revenue: "2.5x", rating: "5.0/5" },
+                  },
+                ];
+                return (
+                  <div>
+                    <div className="bg-gradient-to-br from-white to-green-50 p-6 sm:p-8 shadow-xl border-2 border-green-200 hover:border-green-400 transition-all hover:shadow-2xl rounded-3xl">
+                      <div className="flex items-center mb-4 sm:mb-6">
+                        {[...Array(5)].map((_, i) => (
+                          <Star
+                            key={i}
+                            className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-500 fill-current"
+                          />
+                        ))}
+                      </div>
+                      <p className="text-sm sm:text-base text-gray-700 mb-4 sm:mb-6 italic leading-relaxed">
+                        "{stories[currentStoryIndex].quote}"
+                      </p>
+
+                      <div className="grid grid-cols-3 gap-4 mb-6 p-4 bg-white/70 rounded-2xl">
+                        <div className="text-center">
+                          <div className="text-lg sm:text-xl font-bold text-green-600">
+                            {stories[currentStoryIndex].stats.bookings}
+                          </div>
+                          <div className="text-xs text-gray-600">Bookings</div>
+                        </div>
+                        <div className="text-center">
+                          <div className="text-lg sm:text-xl font-bold text-green-600">
+                            {stories[currentStoryIndex].stats.revenue}
+                          </div>
+                          <div className="text-xs text-gray-600">Revenue</div>
+                        </div>
+                        <div className="text-center">
+                          <div className="text-lg sm:text-xl font-bold text-green-600">
+                            {stories[currentStoryIndex].stats.rating}
+                          </div>
+                          <div className="text-xs text-gray-600">Rating</div>
+                        </div>
+                      </div>
+
+                      <div className="pt-4 border-t border-green-200">
+                        <div className="font-bold text-gray-900 text-base sm:text-lg">
+                          {stories[currentStoryIndex].name}
+                        </div>
+                        <div className="text-xs sm:text-sm text-gray-600">
+                          {stories[currentStoryIndex].business}
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Pagination Dots */}
+                    <div className="flex items-center justify-center gap-2 mt-6">
+                      {stories.map((_, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => setCurrentStoryIndex(idx)}
+                          className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                            idx === currentStoryIndex
+                              ? "bg-green-600 w-8"
+                              : "bg-gray-300 hover:bg-gray-400"
+                          }`}
+                          aria-label={`Go to story ${idx + 1}`}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                );
+              })()}
             </div>
 
             <div className="text-center mt-10">
