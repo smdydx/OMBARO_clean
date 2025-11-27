@@ -31,6 +31,8 @@ export const BecomePartnerPage: React.FC = () => {
   const [scrollY, setScrollY] = React.useState(0);
   const [currentStoryIndex, setCurrentStoryIndex] = React.useState(0);
   const [currentBusinessTypeIndex, setCurrentBusinessTypeIndex] = React.useState(0);
+  const [touchStart, setTouchStart] = React.useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = React.useState<number | null>(null);
 
   const heroRef = React.useRef<HTMLElement>(null);
   const whyTraditionalRef = React.useRef<HTMLElement>(null);
@@ -42,6 +44,24 @@ export const BecomePartnerPage: React.FC = () => {
   const requirementsRef = React.useRef<HTMLElement>(null);
   const faqRef = React.useRef<HTMLElement>(null);
   const ctaRef = React.useRef<HTMLElement>(null);
+
+  const handleBusinessTypeSwipe = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      setCurrentBusinessTypeIndex((prev) => (prev + 1) % businessTypes.length);
+    }
+    if (isRightSwipe) {
+      setCurrentBusinessTypeIndex((prev) => (prev - 1 + businessTypes.length) % businessTypes.length);
+    }
+  };
+
+  React.useEffect(() => {
+    handleBusinessTypeSwipe();
+  }, [touchEnd]);
 
   React.useEffect(() => {
     let ticking = false;
@@ -537,7 +557,11 @@ export const BecomePartnerPage: React.FC = () => {
               {(() => {
                 const business = businessTypes[currentBusinessTypeIndex];
                 return (
-                  <div>
+                  <div
+                    onTouchStart={(e) => setTouchStart(e.targetTouches[0].clientX)}
+                    onTouchEnd={(e) => setTouchEnd(e.changedTouches[0].clientX)}
+                    className="cursor-grab active:cursor-grabbing"
+                  >
                     <div className="group bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-green-200 hover:border-green-400 transform hover:-translate-y-2">
                       <div className="relative h-40 sm:h-44 md:h-48 overflow-hidden">
                         <img
