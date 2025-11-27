@@ -175,7 +175,7 @@ export const MarketingHeader: React.FC = () => {
 
         {/* Modern Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="mobile-menu-slide lg:hidden fixed inset-0 top-20 z-40 bg-gradient-to-br from-white via-emerald-50/40 to-green-50/30 shadow-2xl">
+        <div className="mobile-menu-slide lg:hidden fixed inset-0 top-20 z-40 bg-gradient-to-br from-white/95 via-emerald-50/70 to-white/80 backdrop-blur-xl shadow-2xl">
           {/* Menu Content */}
           <div className="h-full overflow-y-auto">
             {/* Navigation Section */}
