@@ -619,9 +619,12 @@ export const HomePage: React.FC = () => {
               <div className="space-y-4 sm:space-y-6 w-full px-2 sm:px-0">
                 <h1
                   className="text-6xl sm:text-7xl md:text-6xl lg:text-6xl xl:text-[4rem] font-normal leading-tight w-full bg-gradient-to-r from-emerald-600 via-emerald-500 via-yellow-500 to-yellow-600 bg-clip-text text-transparent"
-                  style={{ letterSpacing: "0.02em", fontFamily: "'Playfair Display', serif" }}
+                  style={{
+                    letterSpacing: "0.02em",
+                    fontFamily: "'Playfair Display', serif",
+                  }}
                 >
-                  RELAX AND ENJOY
+                  RELAX & ENJOY
                 </h1>
 
                 <p
@@ -756,7 +759,13 @@ export const HomePage: React.FC = () => {
                   <h2 className="animate-on-scroll-left stagger-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 sm:mb-6 font-normal bg-gradient-to-r from-white via-emerald-300 to-emerald-600 bg-clip-text text-transparent">
                     Your Wellness Partner, At Your Doorstep
                   </h2>
-                  <p className="animate-on-scroll-left stagger-3 text-white/90 text-sm sm:text-base md:text-md lg:text-md xl:text-xl leading-relaxed font-light" style={{ fontFamily: "'Inter', sans-serif", fontWeight: "300" }}>
+                  <p
+                    className="animate-on-scroll-left stagger-3 text-white/90 text-sm sm:text-base md:text-md lg:text-md xl:text-xl leading-relaxed font-light"
+                    style={{
+                      fontFamily: "'Inter', sans-serif",
+                      fontWeight: "300",
+                    }}
+                  >
                     Ombaro delivers professional spa and salon services wherever
                     you need them. With certified therapists and experienced
                     beauty experts, we guarantee quality, hygiene, and comfort.
@@ -933,7 +942,10 @@ export const HomePage: React.FC = () => {
               <button
                 onClick={() => {
                   if (carouselRef.current) {
-                    carouselRef.current.scrollBy({ left: -400, behavior: "smooth" });
+                    carouselRef.current.scrollBy({
+                      left: -400,
+                      behavior: "smooth",
+                    });
                   }
                 }}
                 className="hidden lg:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 z-20 w-10 h-10 items-center justify-center bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white rounded-full transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-emerald-500/50"
@@ -943,7 +955,10 @@ export const HomePage: React.FC = () => {
               <button
                 onClick={() => {
                   if (carouselRef.current) {
-                    carouselRef.current.scrollBy({ left: 400, behavior: "smooth" });
+                    carouselRef.current.scrollBy({
+                      left: 400,
+                      behavior: "smooth",
+                    });
                   }
                 }}
                 className="hidden lg:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 z-20 w-10 h-10 items-center justify-center bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white rounded-full transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-emerald-500/50"
@@ -1345,19 +1360,34 @@ export const HomePage: React.FC = () => {
               Ready to Relax
               <br />& Rejuvenate?
             </h2>
-            <p className="animate-on-scroll-up stagger-3 text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-6 sm:mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed font-light" style={{ fontFamily: "'Inter', sans-serif", fontWeight: "300" }}>
+            <p
+              className="animate-on-scroll-up stagger-3 text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-6 sm:mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed font-light"
+              style={{ fontFamily: "'Inter', sans-serif", fontWeight: "300" }}
+            >
               Book your first session today and discover why thousands of
               Indians trust Ombaro for their wellness needs
             </p>
             <div className="animate-on-scroll-up stagger-4 flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center items-center">
               <Link to="/app">
-                <button className="group bg-white hover:bg-gray-100 text-black px-8 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 rounded-full text-base sm:text-lg md:text-xl font-light transition-all duration-500 shadow-2xl hover:shadow-white/20 hover:scale-110 inline-flex items-center gap-2 sm:gap-3" style={{ fontFamily: "'Inter', sans-serif", fontWeight: "300" }}>
+                <button
+                  className="group bg-white hover:bg-gray-100 text-black px-8 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 rounded-full text-base sm:text-lg md:text-xl font-light transition-all duration-500 shadow-2xl hover:shadow-white/20 hover:scale-110 inline-flex items-center gap-2 sm:gap-3"
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontWeight: "300",
+                  }}
+                >
                   Book Your Service
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform duration-300" />
                 </button>
               </Link>
               <Link to="/services">
-                <button className="px-8 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 rounded-full text-base sm:text-lg md:text-xl font-light border-2 border-white/30 hover:border-white text-white transition-all duration-500 hover:bg-white/10 hover:scale-105" style={{ fontFamily: "'Inter', sans-serif", fontWeight: "300" }}>
+                <button
+                  className="px-8 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 rounded-full text-base sm:text-lg md:text-xl font-light border-2 border-white/30 hover:border-white text-white transition-all duration-500 hover:bg-white/10 hover:scale-105"
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontWeight: "300",
+                  }}
+                >
                   Explore Services
                 </button>
               </Link>

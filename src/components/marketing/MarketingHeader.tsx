@@ -2,6 +2,47 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Menu, X, FileText, Smartphone, Globe } from 'lucide-react';
 
+const styles = `
+  @keyframes wave-animation {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(1200px);
+    }
+  }
+  
+  @keyframes logo-spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes glow-pulse {
+    0%, 100% {
+      box-shadow: 0 0 10px rgba(16, 185, 129, 0.3), 0 0 20px rgba(16, 185, 129, 0.2);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(16, 185, 129, 0.6), 0 0 40px rgba(16, 185, 129, 0.4);
+    }
+  }
+  
+  .wave-animated {
+    animation: wave-animation 8s linear infinite;
+  }
+  
+  .logo-hover-spin:hover {
+    animation: logo-spin 0.8s ease-in-out;
+  }
+  
+  .logo-hover-spin:hover::after {
+    animation: glow-pulse 1s ease-in-out infinite;
+  }
+`;
+
 export const MarketingHeader: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
@@ -16,14 +57,17 @@ export const MarketingHeader: React.FC = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-gradient-to-br from-white via-green-50/30 to-emerald-50/20 border-b border-green-100 shadow-lg relative overflow-hidden">
+      <style>{styles}</style>
       {/* Decorative Wave Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-green-200/20 to-emerald-300/20 rounded-full blur-3xl opacity-40 animate-pulse"></div>
         <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-teal-200/20 to-green-300/20 rounded-full blur-3xl opacity-30 animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 w-full h-20">
-          <svg className="w-full h-full" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M0,0 C150,50 350,0 600,30 C850,60 1050,20 1200,40 L1200,120 L0,120 Z" fill="url(#wave-gradient)" opacity="0.1"></path>
-            <path d="M0,20 C200,60 400,10 600,50 C800,90 1000,40 1200,60 L1200,120 L0,120 Z" fill="url(#wave-gradient)" opacity="0.08"></path>
+        <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 w-full h-20 overflow-hidden">
+          <svg className="w-full h-full wave-animated" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0 C150,50 350,0 600,30 C850,60 1050,20 1200,40 L1200,120 L0,120 Z" fill="url(#wave-gradient)" opacity="0.15"></path>
+            <path d="M0,20 C200,60 400,10 600,50 C800,90 1000,40 1200,60 L1200,120 L0,120 Z" fill="url(#wave-gradient)" opacity="0.12"></path>
+            <path d="M-1200,0 C-1050,50 -850,0 -600,30 C-350,60 -150,20 0,40 L0,120 L-1200,120 Z" fill="url(#wave-gradient)" opacity="0.15"></path>
+            <path d="M-1200,20 C-1000,60 -800,10 -600,50 C-400,90 -200,40 0,60 L0,120 L-1200,120 Z" fill="url(#wave-gradient)" opacity="0.12"></path>
             <defs>
               <linearGradient id="wave-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#064e3b" />
@@ -37,8 +81,8 @@ export const MarketingHeader: React.FC = () => {
       <div className="relative z-10 max-w-7xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20 lg:h-24 xl:h-28">
           <div className="flex items-center lg:flex-1">
-            <Link to="/" className="flex items-center group z-50">
-              <div className="relative rounded-full p-2 sm:p-2.5 lg:p-3 xl:p-4 bg-white shadow-lg lg:shadow-2xl border-3 border-emerald-600 sm:border-4 lg:border-4 xl:border-5">
+            <Link to="/" className="flex items-center group z-50 logo-hover-spin">
+              <div className="relative rounded-full p-2 sm:p-2.5 lg:p-3 xl:p-4 bg-white shadow-lg lg:shadow-2xl border-3 border-emerald-600 sm:border-4 lg:border-4 xl:border-5 transition-all duration-300 group-hover:border-green-400" style={{ position: 'relative' }}>
                 <img
                   src="/ombaro-logo-new.png"
                   alt="OMBARO"
