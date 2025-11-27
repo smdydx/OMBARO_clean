@@ -232,14 +232,26 @@ export const BecomePartnerPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-emerald-900" style={{
+      backgroundImage: "url('https://images.unsplash.com/photo-1540575467063-178f50d1f6e7?w=1200&h=800&fit=crop&q=80')",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundAttachment: "fixed",
+    }}>
+      <div className="absolute inset-0 bg-black/70"></div>
       <MarketingHeader />
 
-      <main className="">
+      <main className="relative z-10">
         {/* Premium Hero Section */}
         <section
           ref={heroRef}
           className="relative min-h-[450px] sm:min-h-[550px] md:min-h-[600px] lg:min-h-[75vh] flex items-center overflow-hidden bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 scroll-revealed"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1599599810694-e3d34cff620d?w=1200&h=800&fit=crop&q=80')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundBlendMode: "overlay",
+          }}
         >
           {/* Animated Background Elements */}
           <div className="absolute inset-0 overflow-hidden">
@@ -379,6 +391,12 @@ export const BecomePartnerPage: React.FC = () => {
         <section
           ref={whyTraditionalRef}
           className="py-12 sm:py-16 md:py-20 bg-white"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1544161515-81aae3ff8d23?w=1200&h=600&fit=crop&q=80')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundBlendMode: "overlay",
+          }}
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10 sm:mb-12 md:mb-16">
@@ -483,6 +501,12 @@ export const BecomePartnerPage: React.FC = () => {
         <section
           ref={businessTypesRef}
           className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-white to-green-50"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1600881333195-9701bc1c2b4e?w=1200&h=600&fit=crop&q=80')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundBlendMode: "overlay",
+          }}
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10 sm:mb-12 md:mb-16">
