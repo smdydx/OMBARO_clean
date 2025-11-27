@@ -30,6 +30,7 @@ export const BecomePartnerPage: React.FC = () => {
   const [openFaq, setOpenFaq] = React.useState<number | null>(null);
   const [scrollY, setScrollY] = React.useState(0);
   const [currentStoryIndex, setCurrentStoryIndex] = React.useState(0);
+  const [currentBusinessTypeIndex, setCurrentBusinessTypeIndex] = React.useState(0);
 
   const heroRef = React.useRef<HTMLElement>(null);
   const whyTraditionalRef = React.useRef<HTMLElement>(null);
@@ -484,7 +485,7 @@ export const BecomePartnerPage: React.FC = () => {
               </p>
             </div>
 
-            <div className="flex overflow-x-auto gap-4 sm:gap-5 md:gap-6 pb-4 snap-x snap-mandatory scrollbar-hide lg:grid lg:grid-cols-3 xl:grid-cols-4 lg:overflow-visible">
+            <div className="hidden lg:flex overflow-x-auto gap-4 sm:gap-5 md:gap-6 pb-4 snap-x snap-mandatory scrollbar-hide lg:grid lg:grid-cols-3 xl:grid-cols-4 lg:overflow-visible">
               {businessTypes.map((business, idx) => (
                 <div
                   key={idx}
@@ -529,6 +530,72 @@ export const BecomePartnerPage: React.FC = () => {
                   </div>
                 </div>
               ))}
+            </div>
+
+            {/* Mobile Business Types Carousel with Dots */}
+            <div className="lg:hidden">
+              {(() => {
+                const business = businessTypes[currentBusinessTypeIndex];
+                return (
+                  <div>
+                    <div className="group bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-green-200 hover:border-green-400 transform hover:-translate-y-2">
+                      <div className="relative h-40 sm:h-44 md:h-48 overflow-hidden">
+                        <img
+                          src={business.image}
+                          alt={business.title}
+                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+                        <div className="absolute bottom-3 left-3 right-3 text-white">
+                          <h3 className="text-base sm:text-lg md:text-xl font-bold mb-0.5 text-white leading-tight">
+                            {business.title}
+                          </h3>
+                          <p className="text-xs sm:text-sm text-green-200">
+                            {business.subtitle}
+                          </p>
+                        </div>
+                      </div>
+                      <div className="p-4 sm:p-5 md:p-6">
+                        <p className="text-xs sm:text-sm text-gray-700 mb-3 sm:mb-4 leading-relaxed line-clamp-3">
+                          {business.description}
+                        </p>
+                        <div className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-5">
+                          {business.features.map((feature, i) => (
+                            <div
+                              key={i}
+                              className="flex items-start space-x-2 text-xs sm:text-sm text-gray-600"
+                            >
+                              <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                              <span className="line-clamp-1">{feature}</span>
+                            </div>
+                          ))}
+                        </div>
+                        <Link to="/app">
+                          <Button className="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white rounded-full py-2 sm:py-2.5 md:py-3 text-xs sm:text-sm font-semibold shadow-lg">
+                            Get Started
+                          </Button>
+                        </Link>
+                      </div>
+                    </div>
+
+                    {/* Pagination Dots */}
+                    <div className="flex items-center justify-center gap-2 mt-6">
+                      {businessTypes.map((_, idx) => (
+                        <button
+                          key={idx}
+                          onClick={() => setCurrentBusinessTypeIndex(idx)}
+                          className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                            idx === currentBusinessTypeIndex
+                              ? "bg-green-600 w-8"
+                              : "bg-gray-300 hover:bg-gray-400"
+                          }`}
+                          aria-label={`Go to business type ${idx + 1}`}
+                        />
+                      ))}
+                    </div>
+                  </div>
+                );
+              })()}
             </div>
 
             <div className="mt-12 text-center bg-gradient-to-br from-green-50 to-emerald-50 rounded-3xl p-8 sm:p-12 border-2 border-green-200">
