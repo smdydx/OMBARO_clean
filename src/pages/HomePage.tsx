@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Star, Shield, X, Sparkles, Check } from "lucide-react";
+import { ArrowRight, Star, Shield, X, Check } from "lucide-react";
 import { MarketingHeader } from "../components/marketing/MarketingHeader";
 import { MarketingFooter } from "../components/marketing/MarketingFooter";
 
@@ -10,7 +10,6 @@ export const HomePage: React.FC = () => {
   const [isDragging, setIsDragging] = useState(false);
   const [startX, setStartX] = useState(0);
   const [scrollLeft, setScrollLeft] = useState(0);
-  const [scrollY, setScrollY] = useState(0);
   const [countdown, setCountdown] = useState(5);
 
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -59,7 +58,6 @@ export const HomePage: React.FC = () => {
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          setScrollY(window.scrollY);
           updateParallax();
           updateScrollAnimations();
           handleServiceCarouselAutoScroll();
@@ -115,7 +113,7 @@ export const HomePage: React.FC = () => {
         ctaRef.current,
       ];
 
-      sections.forEach((section, index) => {
+      sections.forEach((section) => {
         if (!section) return;
 
         const rect = section.getBoundingClientRect();
@@ -1319,7 +1317,7 @@ export const HomePage: React.FC = () => {
         </section>
       </main>
 
-      <MarketingFooter className="footer-rounded-corners" />
+      <MarketingFooter />
     </div>
   );
 };
