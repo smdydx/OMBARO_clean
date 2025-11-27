@@ -753,7 +753,7 @@ export const HomePage: React.FC = () => {
                   <p className="animate-on-scroll-fade stagger-1 text-xs sm:text-sm font-semibold text-emerald-400 tracking-wider mb-2 sm:mb-3 uppercase">
                     About Us
                   </p>
-                  <h2 className="animate-on-scroll-left stagger-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white mb-4 sm:mb-6 font-normal">
+                  <h2 className="animate-on-scroll-left stagger-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mb-4 sm:mb-6 font-normal bg-gradient-to-r from-emerald-600 via-emerald-500 via-yellow-500 to-yellow-600 bg-clip-text text-transparent">
                     Your Wellness Partner, At Your Doorstep
                   </h2>
                   <p className="animate-on-scroll-left stagger-3 text-white/90 text-sm sm:text-base md:text-md lg:text-md xl:text-xl leading-relaxed font-light" style={{ fontFamily: "'Inter', sans-serif", fontWeight: "300" }}>
@@ -858,7 +858,7 @@ export const HomePage: React.FC = () => {
               <p className="animate-on-scroll-fade stagger-1 text-xs sm:text-sm font-semibold text-emerald-400 tracking-wider mb-2 sm:mb-3 uppercase">
                 Our Services
               </p>
-              <h2 className="animate-on-scroll-left stagger-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl bg-gradient-to-r from-white via-emerald-200 via-green-300 via-teal-200 to-cyan-300 bg-clip-text text-transparent font-normal">
+              <h2 className="animate-on-scroll-left stagger-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl bg-gradient-to-r from-emerald-600 via-emerald-500 via-yellow-500 to-yellow-600 bg-clip-text text-transparent font-normal">
                 Luxury Wellness Services, Anytime. Anywhere.
               </h2>
             </div>
@@ -1043,7 +1043,7 @@ export const HomePage: React.FC = () => {
                   <p className="animate-on-scroll-fade stagger-1 text-xs sm:text-sm font-semibold text-emerald-400 tracking-wider mb-2 sm:mb-3 uppercase">
                     Why Choose Us
                   </p>
-                  <h2 className="animate-on-scroll-right stagger-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-green-200 via-emerald-300 via-teal-200 via-cyan-300 to-white bg-clip-text text-transparent mb-4 sm:mb-6 font-normal">
+                  <h2 className="animate-on-scroll-right stagger-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-emerald-600 via-emerald-500 via-yellow-500 to-yellow-600 bg-clip-text text-transparent mb-4 sm:mb-6 font-normal">
                     What Makes Ombaro Different
                   </h2>
                 </div>
@@ -1341,7 +1341,7 @@ export const HomePage: React.FC = () => {
                 Experience Luxury at Home
               </p>
             </div>
-            <h2 className="animate-on-scroll-up stagger-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl mb-4 sm:mb-6 md:mb-8 font-normal leading-tight bg-gradient-to-r from-white via-cyan-100 via-teal-200 via-emerald-100 to-green-200 bg-clip-text text-transparent">
+            <h2 className="animate-on-scroll-up stagger-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl mb-4 sm:mb-6 md:mb-8 font-normal leading-tight bg-gradient-to-r from-emerald-600 via-emerald-500 via-yellow-500 to-yellow-600 bg-clip-text text-transparent">
               Ready to Relax
               <br />& Rejuvenate?
             </h2>
