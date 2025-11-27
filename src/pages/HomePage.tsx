@@ -862,70 +862,113 @@ export const HomePage: React.FC = () => {
                 Luxury Wellness Services, Anytime. Anywhere.
               </h2>
             </div>
-            <div
-              ref={carouselRef}
-              className={`services-carousel ${isDragging ? "dragging" : ""}`}
-              onMouseDown={handleMouseDown}
-              onMouseMove={handleMouseMove}
-              onMouseUp={handleMouseUp}
-              onMouseLeave={handleMouseLeave}
-            >
-              {[
-                {
-                  title: "Spa Massage",
-                  image:
-                    "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80",
-                  link: "/spa-massage",
-                },
-                {
-                  title: "Beauty Salon",
-                  image:
-                    "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80",
-                  link: "/beauty-salon",
-                },
-                {
-                  title: "Bridal Makeup",
-                  image:
-                    "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&q=80",
-                  link: "/bridal-makeup",
-                },
-                {
-                  title: "Hair Styling",
-                  image:
-                    "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&q=80",
-                  link: "/services",
-                },
-              ].map((service, index) => (
-                <Link key={index} to={service.link}>
-                  <div
-                    className={`service-card animate-on-scroll-scale stagger-fast-${index + 1} group relative rounded-xl sm:rounded-2xl`}
-                  >
-                    <div className="absolute -inset-1 rounded-xl sm:rounded-2xl bg-gradient-to-r from-emerald-500 via-green-500 to-emerald-500 opacity-75 blur-lg group-hover:opacity-100 transition duration-500"></div>
-                    <div className="absolute inset-0 rounded-xl sm:rounded-2xl border-2 border-emerald-400 shadow-2xl shadow-emerald-500/50 z-10 pointer-events-none group-hover:border-green-300 transition duration-500"></div>
+            <div className="relative">
+              <div
+                ref={carouselRef}
+                className={`services-carousel ${isDragging ? "dragging" : ""}`}
+                onMouseDown={handleMouseDown}
+                onMouseMove={handleMouseMove}
+                onMouseUp={handleMouseUp}
+                onMouseLeave={handleMouseLeave}
+              >
+                {[
+                  {
+                    title: "Spa Massage",
+                    image:
+                      "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&q=80",
+                    link: "/spa-massage",
+                  },
+                  {
+                    title: "Beauty Salon",
+                    image:
+                      "https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800&q=80",
+                    link: "/beauty-salon",
+                  },
+                  {
+                    title: "Bridal Makeup",
+                    image:
+                      "https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&q=80",
+                    link: "/bridal-makeup",
+                  },
+                  {
+                    title: "Hair Styling",
+                    image:
+                      "https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800&q=80",
+                    link: "/services",
+                  },
+                ].map((service, index) => (
+                  <Link key={index} to={service.link}>
+                    <div
+                      className={`service-card animate-on-scroll-scale stagger-fast-${index + 1} group relative rounded-xl sm:rounded-2xl`}
+                    >
+                      <div className="absolute -inset-1 rounded-xl sm:rounded-2xl bg-gradient-to-r from-emerald-500 via-green-500 to-emerald-500 opacity-75 blur-lg group-hover:opacity-100 transition duration-500"></div>
+                      <div className="absolute inset-0 rounded-xl sm:rounded-2xl border-2 border-emerald-400 shadow-2xl shadow-emerald-500/50 z-10 pointer-events-none group-hover:border-green-300 transition duration-500"></div>
 
-                    <div className="relative h-80 sm:h-88 md:h-96 overflow-hidden rounded-xl sm:rounded-2xl">
-                      <img
-                        src={service.image}
-                        alt={service.title}
-                        className="w-full h-full object-cover"
-                        draggable="false"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
-                    </div>
-                    <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6">
-                      <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">
-                        {service.title}
-                      </h3>
-                      <div className="flex items-center justify-between">
-                        <div className="w-12 sm:w-14 md:w-16 h-1 bg-gradient-to-r from-emerald-400 to-green-300 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 shadow-lg shadow-emerald-500/50"></div>
-                        <span className="text-emerald-400 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                          Learn More →
-                        </span>
+                      <div className="relative h-80 sm:h-88 md:h-96 overflow-hidden rounded-xl sm:rounded-2xl">
+                        <img
+                          src={service.image}
+                          alt={service.title}
+                          className="w-full h-full object-cover"
+                          draggable="false"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
+                      </div>
+                      <div className="absolute bottom-0 left-0 right-0 p-4 sm:p-5 md:p-6">
+                        <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">
+                          {service.title}
+                        </h3>
+                        <div className="flex items-center justify-between">
+                          <div className="w-12 sm:w-14 md:w-16 h-1 bg-gradient-to-r from-emerald-400 to-green-300 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 shadow-lg shadow-emerald-500/50"></div>
+                          <span className="text-emerald-400 text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                            Learn More →
+                          </span>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </Link>
-              ))}
+                  </Link>
+                ))}
+              </div>
+
+              {/* Left/Right Arrow Buttons - Desktop Only */}
+              <button
+                onClick={() => {
+                  if (carouselRef.current) {
+                    carouselRef.current.scrollBy({ left: -400, behavior: "smooth" });
+                  }
+                }}
+                className="hidden lg:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-12 z-20 w-10 h-10 items-center justify-center bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white rounded-full transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-emerald-500/50"
+              >
+                ←
+              </button>
+              <button
+                onClick={() => {
+                  if (carouselRef.current) {
+                    carouselRef.current.scrollBy({ left: 400, behavior: "smooth" });
+                  }
+                }}
+                className="hidden lg:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-12 z-20 w-10 h-10 items-center justify-center bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white rounded-full transition-all duration-300 shadow-lg hover:shadow-2xl hover:shadow-emerald-500/50"
+              >
+                →
+              </button>
+
+              {/* Pagination Dots - Desktop Only */}
+              <div className="hidden lg:flex justify-center items-center gap-2 mt-8">
+                {[0, 1, 2, 3].map((index) => (
+                  <button
+                    key={index}
+                    onClick={() => {
+                      if (carouselRef.current) {
+                        const cardWidth = 380;
+                        carouselRef.current.scrollTo({
+                          left: index * cardWidth,
+                          behavior: "smooth",
+                        });
+                      }
+                    }}
+                    className="w-2.5 h-2.5 rounded-full bg-emerald-400 opacity-40 hover:opacity-100 transition-opacity duration-300"
+                  />
+                ))}
+              </div>
             </div>
           </div>
         </section>
