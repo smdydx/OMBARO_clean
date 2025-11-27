@@ -700,6 +700,12 @@ export const HomePage: React.FC = () => {
         <section
           ref={aboutRef}
           className="relative py-16 sm:py-20 md:py-24 lg:py-32 bg-gradient-to-b from-black via-gray-900 to-emerald-950 overflow-hidden"
+          style={{
+            backgroundImage: 'url(/about-us-bg.jpg)',
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed'
+          }}
         >
           <div className="absolute top-0 left-0 w-full h-24 sm:h-32 opacity-30">
             <svg
