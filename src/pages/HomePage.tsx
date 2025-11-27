@@ -621,7 +621,7 @@ export const HomePage: React.FC = () => {
                   className="text-6xl sm:text-7xl md:text-6xl lg:text-6xl xl:text-[4rem] font-normal leading-tight w-full bg-gradient-to-r from-emerald-600 via-emerald-500 via-yellow-500 to-yellow-600 bg-clip-text text-transparent"
                   style={{ letterSpacing: "0.02em", fontFamily: "'Playfair Display', serif" }}
                 >
-                  RELAX & ENJOY
+                  RELAX AND ENJOY
                 </h1>
 
                 <p
