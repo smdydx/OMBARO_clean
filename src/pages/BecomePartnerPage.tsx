@@ -1511,13 +1511,13 @@ export const BecomePartnerPage: React.FC = () => {
           <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div className="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-md rounded-full px-4 sm:px-6 py-2 sm:py-3 mb-6 sm:mb-8 border-2 border-white/30">
               <Crown className="w-4 h-4 sm:w-5 sm:h-5 text-yellow-300 animate-bounce" />
-              <span className="text-sm sm:text-base font-bold tracking-wide">
+              <span className="text-sm sm:text-base font-bold tracking-wide text-white">
                 LIMITED TIME OFFER
               </span>
             </div>
 
             <h2
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight text-white"
               style={{ fontFamily: "'Tenor Sans', serif" }}
             >
               Ready to Transform
