@@ -618,7 +618,7 @@ export const HomePage: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center mb-8 sm:mb-10">
               <div className="space-y-4 sm:space-y-6 w-full px-2 sm:px-0">
                 <h1
-                  className="text-6xl sm:text-7xl md:text-6xl lg:text-6xl xl:text-[4rem] leading-tight w-full"
+                  className="text-7xl sm:text-8xl md:text-8xl lg:text-8xl xl:text-9xl leading-tight w-full"
                   style={{ letterSpacing: "0.02em", fontFamily: "'Poppins', sans-serif" }}
                 >
                   <span className="font-bold bg-gradient-to-r from-emerald-700 via-green-700 to-emerald-800 bg-clip-text text-transparent">RELAX</span>
