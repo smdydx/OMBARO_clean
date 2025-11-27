@@ -385,12 +385,6 @@ export const BecomePartnerPage: React.FC = () => {
         <section
           ref={whyTraditionalRef}
           className="py-12 sm:py-16 md:py-20 bg-white"
-          style={{
-            backgroundImage: "url('/partner-form-bg.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundAttachment: "fixed",
-          }}
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10 sm:mb-12 md:mb-16">
@@ -718,12 +712,6 @@ export const BecomePartnerPage: React.FC = () => {
         <section
           ref={showcaseRef}
           className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-white to-green-50 overflow-hidden"
-          style={{
-            backgroundImage: "url('/partner-form-bg.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundAttachment: "fixed",
-          }}
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
             <div className="text-center">
@@ -940,12 +928,6 @@ export const BecomePartnerPage: React.FC = () => {
         <section
           ref={processRef}
           className="py-12 sm:py-16 md:py-20 bg-gradient-to-br from-green-50 to-emerald-50"
-          style={{
-            backgroundImage: "url('/partner-form-bg.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundAttachment: "fixed",
-          }}
         >
           <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10 sm:mb-12 md:mb-16">
@@ -1284,12 +1266,6 @@ export const BecomePartnerPage: React.FC = () => {
         <section
           ref={requirementsRef}
           className="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-white to-green-50"
-          style={{
-            backgroundImage: "url('/partner-form-bg.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundAttachment: "fixed",
-          }}
         >
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10 sm:mb-12 md:mb-16">
@@ -1495,12 +1471,6 @@ export const BecomePartnerPage: React.FC = () => {
         <section
           ref={ctaRef}
           className="relative py-16 sm:py-20 md:py-24 lg:py-28 bg-gradient-to-br from-green-400 via-emerald-500 to-teal-600 text-white overflow-hidden"
-          style={{
-            backgroundImage: "url('/partner-form-bg.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            backgroundAttachment: "fixed",
-          }}
         >
           <div className="absolute inset-0">
             <div className="absolute top-0 left-0 w-64 sm:w-96 md:w-[500px] h-64 sm:h-96 md:h-[500px] bg-white/20 rounded-full blur-3xl animate-pulse"></div>
