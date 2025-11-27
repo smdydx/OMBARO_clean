@@ -669,34 +669,34 @@ export const HomePage: React.FC = () => {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 lg:gap-8 pt-6 sm:pt-8 border-t border-emerald-500/30">
               <div className="hero-stat-1 text-center px-2">
-                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-emerald-300 via-green-200 to-teal-300 mb-1 sm:mb-2">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-emerald-700 via-green-700 to-emerald-800 mb-1 sm:mb-2">
                   10,000+
                 </h2>
-                <p className="bg-gradient-to-r from-emerald-100 via-white to-green-100 bg-clip-text text-transparent text-xs sm:text-sm md:text-base font-medium">
+                <p className="bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 bg-clip-text text-transparent text-xs sm:text-sm md:text-base font-medium">
                   Verified Professionals
                 </p>
               </div>
               <div className="hero-stat-2 text-center px-2">
-                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-emerald-300 via-green-200 to-teal-300 mb-1 sm:mb-2">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-emerald-700 via-green-700 to-emerald-800 mb-1 sm:mb-2">
                   50+
                 </h2>
-                <p className="bg-gradient-to-r from-emerald-100 via-white to-green-100 bg-clip-text text-transparent text-xs sm:text-sm md:text-base font-medium">
+                <p className="bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 bg-clip-text text-transparent text-xs sm:text-sm md:text-base font-medium">
                   Cities Covered
                 </p>
               </div>
               <div className="hero-stat-3 text-center px-2">
-                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-emerald-300 via-green-200 to-teal-300 mb-1 sm:mb-2">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-emerald-700 via-green-700 to-emerald-800 mb-1 sm:mb-2">
                   1M+
                 </h2>
-                <p className="bg-gradient-to-r from-emerald-100 via-white to-green-100 bg-clip-text text-transparent text-xs sm:text-sm md:text-base font-medium">
+                <p className="bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 bg-clip-text text-transparent text-xs sm:text-sm md:text-base font-medium">
                   Happy Customers
                 </p>
               </div>
               <div className="hero-stat-4 text-center px-2">
-                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-emerald-300 via-green-200 to-teal-300 mb-1 sm:mb-2">
+                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-emerald-700 via-green-700 to-emerald-800 mb-1 sm:mb-2">
                   24/7
                 </h2>
-                <p className="bg-gradient-to-r from-emerald-100 via-white to-green-100 bg-clip-text text-transparent text-xs sm:text-sm md:text-base font-medium">
+                <p className="bg-gradient-to-r from-emerald-600 via-green-600 to-emerald-700 bg-clip-text text-transparent text-xs sm:text-sm md:text-base font-medium">
                   Customer Support
                 </p>
               </div>
