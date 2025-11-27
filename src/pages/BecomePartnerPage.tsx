@@ -31,8 +31,19 @@ export const BecomePartnerPage: React.FC = () => {
   const [scrollY, setScrollY] = React.useState(0);
   const [currentStoryIndex, setCurrentStoryIndex] = React.useState(0);
   const [currentBusinessTypeIndex, setCurrentBusinessTypeIndex] = React.useState(0);
+  const [currentHeroImageIndex, setCurrentHeroImageIndex] = React.useState(0);
   const [touchStart, setTouchStart] = React.useState<number | null>(null);
   const [touchEnd, setTouchEnd] = React.useState<number | null>(null);
+  
+  const heroImages = [
+    "/images/partner-hero-spa-1.jpg",
+    "/images/partner-hero-spa-2.jpg",
+    "/images/partner-hero-spa-3.jpg",
+    "/images/partner-hero-spa-4.jpg",
+    "/images/partner-business-spa.jpg",
+    "/images/partner-business-salon.jpg",
+    "/images/partner-business-wellness.jpg",
+  ];
 
   const heroRef = React.useRef<HTMLElement>(null);
   const whyTraditionalRef = React.useRef<HTMLElement>(null);
@@ -62,6 +73,14 @@ export const BecomePartnerPage: React.FC = () => {
   React.useEffect(() => {
     handleBusinessTypeSwipe();
   }, [touchEnd]);
+
+  // Auto-rotate hero images
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentHeroImageIndex((prev) => (prev + 1) % heroImages.length);
+    }, 3500);
+    return () => clearInterval(interval);
+  }, [heroImages.length]);
 
   React.useEffect(() => {
     let ticking = false;
@@ -330,42 +349,42 @@ export const BecomePartnerPage: React.FC = () => {
                 </div>
               </div>
 
-              {/* Right Content - Image Collage */}
+              {/* Right Content - Auto-Rotating Image Carousel */}
               <div className="relative order-1 lg:order-2 px-4 sm:px-0">
                 <div className="grid grid-cols-12 gap-3 sm:gap-4">
                   <div className="col-span-7 relative group">
                     <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-green-600 rounded-xl sm:rounded-2xl md:rounded-3xl transform rotate-2 opacity-20 group-hover:rotate-3 group-hover:scale-105 transition-all duration-500"></div>
                     <img
-                      src="/images/partner-hero-spa-1.jpg"
-                      alt="Professional Spa Partner Business"
-                      className="relative rounded-xl sm:rounded-2xl md:rounded-3xl shadow-2xl w-full h-52 sm:h-60 md:h-72 lg:h-80 xl:h-96 object-cover border-2 border-green-500/30 group-hover:scale-105 transition-transform duration-500"
+                      src={heroImages[currentHeroImageIndex]}
+                      alt="Rotating spa business showcase"
+                      className="relative rounded-xl sm:rounded-2xl md:rounded-3xl shadow-2xl w-full h-52 sm:h-60 md:h-72 lg:h-80 xl:h-96 object-cover border-2 border-green-500/30 group-hover:scale-105 transition-all duration-500 animate-fade-in"
                       loading="eager"
                     />
                   </div>
                   <div className="col-span-5 relative group">
                     <div className="absolute inset-0 bg-gradient-to-br from-green-500 to-green-700 rounded-xl sm:rounded-2xl md:rounded-3xl transform -rotate-1 opacity-15 group-hover:rotate-1 group-hover:scale-105 transition-all duration-500"></div>
                     <img
-                      src="/images/partner-hero-spa-2.jpg"
-                      alt="Wellness Center Partnership"
-                      className="rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl w-full h-52 sm:h-60 md:h-72 lg:h-80 xl:h-96 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-transform duration-500"
+                      src={heroImages[(currentHeroImageIndex + 1) % heroImages.length]}
+                      alt="Rotating business showcase"
+                      className="rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl w-full h-52 sm:h-60 md:h-72 lg:h-80 xl:h-96 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-all duration-500 animate-fade-in"
                       loading="eager"
                     />
                   </div>
                   <div className="col-span-5 relative group">
                     <div className="absolute inset-0 bg-gradient-to-br from-green-600 to-green-400 rounded-xl sm:rounded-2xl md:rounded-3xl transform rotate-1 opacity-15 group-hover:-rotate-1 group-hover:scale-105 transition-all duration-500"></div>
                     <img
-                      src="/images/partner-hero-spa-3.jpg"
-                      alt="Beauty Salon Partnership"
-                      className="rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl w-full h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-transform duration-500"
+                      src={heroImages[(currentHeroImageIndex + 2) % heroImages.length]}
+                      alt="Rotating wellness showcase"
+                      className="rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl w-full h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-all duration-500 animate-fade-in"
                       loading="lazy"
                     />
                   </div>
                   <div className="col-span-7 relative group">
                     <div className="absolute inset-0 bg-gradient-to-br from-green-400 to-green-600 rounded-xl sm:rounded-2xl md:rounded-3xl transform -rotate-2 opacity-20 group-hover:rotate-2 group-hover:scale-105 transition-all duration-500"></div>
                     <img
-                      src="/images/partner-hero-spa-4.jpg"
-                      alt="Massage Therapy Business Growth"
-                      className="rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl w-full h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-transform duration-500"
+                      src={heroImages[(currentHeroImageIndex + 3) % heroImages.length]}
+                      alt="Rotating therapy showcase"
+                      className="rounded-xl sm:rounded-2xl md:rounded-3xl shadow-xl w-full h-40 sm:h-48 md:h-56 lg:h-64 xl:h-72 object-cover border-2 border-green-500/20 group-hover:scale-105 transition-all duration-500 animate-fade-in"
                       loading="lazy"
                     />
                   </div>
