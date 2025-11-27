@@ -1345,19 +1345,19 @@ export const HomePage: React.FC = () => {
               Ready to Relax
               <br />& Rejuvenate?
             </h2>
-            <p className="animate-on-scroll-up stagger-3 text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-6 sm:mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed">
+            <p className="animate-on-scroll-up stagger-3 text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 mb-6 sm:mb-8 md:mb-12 max-w-3xl mx-auto leading-relaxed font-light" style={{ fontFamily: "'Inter', sans-serif", fontWeight: "300" }}>
               Book your first session today and discover why thousands of
               Indians trust Ombaro for their wellness needs
             </p>
             <div className="animate-on-scroll-up stagger-4 flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center items-center">
               <Link to="/app">
-                <button className="group bg-white hover:bg-gray-100 text-black px-8 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 rounded-full text-base sm:text-lg md:text-xl font-bold transition-all duration-500 shadow-2xl hover:shadow-white/20 hover:scale-110 inline-flex items-center gap-2 sm:gap-3">
+                <button className="group bg-white hover:bg-gray-100 text-black px-8 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 rounded-full text-base sm:text-lg md:text-xl font-light transition-all duration-500 shadow-2xl hover:shadow-white/20 hover:scale-110 inline-flex items-center gap-2 sm:gap-3" style={{ fontFamily: "'Inter', sans-serif", fontWeight: "300" }}>
                   Book Your Service
                   <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform duration-300" />
                 </button>
               </Link>
               <Link to="/services">
-                <button className="px-8 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 rounded-full text-base sm:text-lg md:text-xl font-semibold border-2 border-white/30 hover:border-white text-white transition-all duration-500 hover:bg-white/10 hover:scale-105">
+                <button className="px-8 sm:px-10 md:px-12 py-3 sm:py-4 md:py-5 rounded-full text-base sm:text-lg md:text-xl font-light border-2 border-white/30 hover:border-white text-white transition-all duration-500 hover:bg-white/10 hover:scale-105" style={{ fontFamily: "'Inter', sans-serif", fontWeight: "300" }}>
                   Explore Services
                 </button>
               </Link>
