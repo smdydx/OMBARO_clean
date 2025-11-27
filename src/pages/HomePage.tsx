@@ -1043,7 +1043,7 @@ export const HomePage: React.FC = () => {
                   <p className="animate-on-scroll-fade stagger-1 text-xs sm:text-sm font-semibold text-emerald-400 tracking-wider mb-2 sm:mb-3 uppercase">
                     Why Choose Us
                   </p>
-                  <h2 className="animate-on-scroll-right stagger-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-emerald-600 via-emerald-500 via-yellow-500 to-yellow-600 bg-clip-text text-transparent mb-4 sm:mb-6 font-normal">
+                  <h2 className="animate-on-scroll-right stagger-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl bg-gradient-to-r from-white via-emerald-300 to-emerald-600 bg-clip-text text-transparent mb-4 sm:mb-6 font-normal">
                     What Makes Ombaro Different
                   </h2>
                 </div>
