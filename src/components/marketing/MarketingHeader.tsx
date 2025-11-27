@@ -22,11 +22,23 @@ const styles = `
   }
   
   @keyframes glow-pulse {
-    0%, 100% {
-      box-shadow: 0 0 10px rgba(16, 185, 129, 0.3), 0 0 20px rgba(16, 185, 129, 0.2);
+    0% {
+      box-shadow: 0 0 5px rgba(16, 185, 129, 0.4), 0 0 10px rgba(16, 185, 129, 0.3), inset 0 0 8px rgba(16, 185, 129, 0.2);
     }
     50% {
-      box-shadow: 0 0 20px rgba(16, 185, 129, 0.6), 0 0 40px rgba(16, 185, 129, 0.4);
+      box-shadow: 0 0 15px rgba(16, 185, 129, 0.8), 0 0 25px rgba(16, 185, 129, 0.6), inset 0 0 15px rgba(16, 185, 129, 0.4), 0 0 40px rgba(16, 185, 129, 0.5);
+    }
+    100% {
+      box-shadow: 0 0 5px rgba(16, 185, 129, 0.4), 0 0 10px rgba(16, 185, 129, 0.3), inset 0 0 8px rgba(16, 185, 129, 0.2);
+    }
+  }
+  
+  @keyframes logo-glow {
+    0%, 100% {
+      box-shadow: 0 0 8px rgba(16, 185, 129, 0.5), 0 0 16px rgba(16, 185, 129, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(16, 185, 129, 1), 0 0 30px rgba(16, 185, 129, 0.7), inset 0 0 10px rgba(16, 185, 129, 0.3);
     }
   }
   
@@ -60,8 +72,12 @@ const styles = `
     animation: logo-spin 0.8s ease-in-out;
   }
   
-  .logo-hover-spin:hover::after {
-    animation: glow-pulse 1s ease-in-out infinite;
+  .logo-container {
+    transition: all 0.3s ease;
+  }
+  
+  .logo-hover-spin:hover .logo-container {
+    animation: logo-glow 1.5s ease-in-out infinite;
   }
   
   .mobile-menu-slide {
@@ -110,7 +126,7 @@ export const MarketingHeader: React.FC = () => {
         <div className="flex items-center justify-between h-20 lg:h-24 xl:h-28">
           <div className="flex items-center lg:flex-1">
             <Link to="/" className="flex items-center group z-50 logo-hover-spin">
-              <div className="relative rounded-full p-2 sm:p-2.5 lg:p-3 xl:p-4 bg-white shadow-lg lg:shadow-2xl border-3 border-emerald-600 sm:border-4 lg:border-4 xl:border-5 transition-all duration-300 group-hover:border-green-400" style={{ position: 'relative' }}>
+              <div className="logo-container relative rounded-full p-2 sm:p-2.5 lg:p-3 xl:p-4 bg-white shadow-lg lg:shadow-2xl border-3 border-emerald-600 sm:border-4 lg:border-4 xl:border-5 transition-all duration-300" style={{ position: 'relative' }}>
                 <img
                   src="/ombaro-logo-new.png"
                   alt="OMBARO"
