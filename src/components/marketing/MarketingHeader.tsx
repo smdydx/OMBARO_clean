@@ -8,7 +8,7 @@ const styles = `
       transform: translateX(0);
     }
     100% {
-      transform: translateX(1200px);
+      transform: translateX(-1200px);
     }
   }
   
@@ -32,6 +32,7 @@ const styles = `
   
   .wave-animated {
     animation: wave-animation 8s linear infinite;
+    width: 200%;
   }
   
   .logo-hover-spin:hover {
@@ -62,12 +63,10 @@ export const MarketingHeader: React.FC = () => {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-0 w-96 h-96 bg-gradient-to-br from-green-200/20 to-emerald-300/20 rounded-full blur-3xl opacity-40 animate-pulse"></div>
         <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-teal-200/20 to-green-300/20 rounded-full blur-3xl opacity-30 animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute -bottom-10 left-1/2 transform -translate-x-1/2 w-full h-20 overflow-hidden">
-          <svg className="w-full h-full wave-animated" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M0,0 C150,50 350,0 600,30 C850,60 1050,20 1200,40 L1200,120 L0,120 Z" fill="url(#wave-gradient)" opacity="0.15"></path>
-            <path d="M0,20 C200,60 400,10 600,50 C800,90 1000,40 1200,60 L1200,120 L0,120 Z" fill="url(#wave-gradient)" opacity="0.12"></path>
-            <path d="M-1200,0 C-1050,50 -850,0 -600,30 C-350,60 -150,20 0,40 L0,120 L-1200,120 Z" fill="url(#wave-gradient)" opacity="0.15"></path>
-            <path d="M-1200,20 C-1000,60 -800,10 -600,50 C-400,90 -200,40 0,60 L0,120 L-1200,120 Z" fill="url(#wave-gradient)" opacity="0.12"></path>
+        <div className="absolute -bottom-10 left-0 w-full h-20 overflow-hidden">
+          <svg className="w-full h-full wave-animated" viewBox="0 0 2400 120" preserveAspectRatio="none">
+            <path d="M0,0 C150,50 350,0 600,30 C850,60 1050,20 1200,40 C1350,50 1550,0 1800,30 C2050,60 2250,20 2400,40 L2400,120 L0,120 Z" fill="url(#wave-gradient)" opacity="0.15"></path>
+            <path d="M0,20 C200,60 400,10 600,50 C800,90 1000,40 1200,60 C1400,90 1600,40 1800,60 C2000,90 2200,40 2400,60 L2400,120 L0,120 Z" fill="url(#wave-gradient)" opacity="0.12"></path>
             <defs>
               <linearGradient id="wave-gradient" x1="0%" y1="0%" x2="100%" y2="0%">
                 <stop offset="0%" stopColor="#064e3b" />
