@@ -749,7 +749,7 @@ export const HomePage: React.FC = () => {
                   <p className="animate-on-scroll-fade stagger-1 text-xs sm:text-sm font-semibold text-emerald-400 tracking-wider mb-2 sm:mb-3 uppercase">
                     About Us
                   </p>
-                  <h2 className="animate-on-scroll-left stagger-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl bg-gradient-to-r from-emerald-700 via-green-700 to-emerald-800 bg-clip-text text-transparent mb-4 sm:mb-6 font-normal">
+                  <h2 className="animate-on-scroll-left stagger-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white mb-4 sm:mb-6 font-normal">
                     Your Wellness Partner, At Your Doorstep
                   </h2>
                   <p className="animate-on-scroll-left stagger-3 text-white/90 text-sm sm:text-base md:text-md lg:text-md xl:text-xl leading-relaxed">
