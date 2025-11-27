@@ -624,10 +624,10 @@ export const HomePage: React.FC = () => {
                     fontFamily: "'Poppins', sans-serif",
                   }}
                 >
-                  <span className="font-bold bg-gradient-to-r from-emerald-700 via-green-700 to-emerald-800 bg-clip-text text-transparent text-3xl sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl">
+                  <span className="font-bold bg-gradient-to-r from-emerald-700 via-green-700 to-emerald-800 bg-clip-text text-transparent">
                     RELAX
                   </span>
-                  <span className="font-light bg-gradient-to-r from-emerald-700 via-green-700 to-emerald-800 bg-clip-text text-transparent text-3xl sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl">
+                  <span className="font-light bg-gradient-to-r from-emerald-700 via-green-700 to-emerald-800 bg-clip-text text-transparent">
                     {" "}
                     & ENJOY
                   </span>
