@@ -618,13 +618,13 @@ export const HomePage: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center mb-8 sm:mb-10">
               <div className="space-y-4 sm:space-y-6 w-full px-2 sm:px-0">
                 <h1
-                  className="text-6xl sm:text-7xl md:text-6xl lg:text-6xl xl:text-[4rem] font-light leading-tight w-full bg-gradient-to-r from-emerald-700 via-green-700 to-emerald-800 bg-clip-text text-transparent"
-                  style={{ letterSpacing: "0.02em" }}
+                  className="text-6xl sm:text-7xl md:text-6xl lg:text-6xl xl:text-[4rem] font-bold leading-tight w-full bg-gradient-to-r from-emerald-700 via-green-700 to-emerald-800 bg-clip-text text-transparent"
+                  style={{ letterSpacing: "0.02em", fontFamily: "'Fredoka', sans-serif" }}
                 >
                   RELAX & ENJOY
                 </h1>
 
-                <p className="hero-subtitle bg-gradient-to-r from-emerald-600 via-green-700 to-emerald-700 bg-clip-text text-transparent text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-xl font-light">
+                <p className="hero-subtitle bg-gradient-to-r from-emerald-600 via-green-700 to-emerald-700 bg-clip-text text-transparent text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-xl font-medium" style={{ fontFamily: "'Fredoka', sans-serif" }}>
                   Experience ultimate relaxation with our premium spa and
                   wellness services. Book your perfect moment of tranquility
                   today.
