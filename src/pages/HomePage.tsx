@@ -935,6 +935,8 @@ export const HomePage: React.FC = () => {
                 </Link>
               ))}
             </div>
+              </div>
+            </div>
           </div>
         </section>
 
