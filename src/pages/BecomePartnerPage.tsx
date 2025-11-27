@@ -1484,6 +1484,11 @@ export const BecomePartnerPage: React.FC = () => {
         <section
           ref={ctaRef}
           className="relative py-16 sm:py-20 md:py-24 lg:py-28 bg-gradient-to-br from-green-400 via-emerald-500 to-teal-600 text-white overflow-hidden"
+          style={{
+            backgroundImage: "url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZGVmcz48cGF0dGVybiBpZD0iZGlhbW9uZHMiIHdpZHRoPSIxMDAiIGhlaWdodD0iMTAwIiBwYXR0ZXJuVW5pdHM9InVzZXJTcGFjZU9uVXNlIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0ibm9uZSIvPjxwb2x5Z29uIHBvaW50cz0iNTAsMTA0MCwwIiBzdHJva2U9InJnYmEoMjU1LDI1NSwyNTUsMC4xNSkiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNkaWFtb25kcykiLz48L3N2Zz4=')',
+            backgroundSize: "100px 100px",
+            backgroundPosition: "0 0",
+          }}
         >
           <div className="absolute inset-0">
             <div className="absolute top-0 left-0 w-64 sm:w-96 md:w-[500px] h-64 sm:h-96 md:h-[500px] bg-white/20 rounded-full blur-3xl animate-pulse"></div>
