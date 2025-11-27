@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Smartphone, Globe } from 'lucide-react';
 
 const styles = `
@@ -92,6 +92,8 @@ const styles = `
 export const MarketingHeader: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showLoginModal, setShowLoginModal] = useState(false);
+  const location = useLocation();
+  const isPartnerPage = location.pathname === '/become-a-partner';
 
   const navLinks = [
     { name: 'Home', path: '/' },
@@ -157,14 +159,16 @@ export const MarketingHeader: React.FC = () => {
             >
               Login
             </button>
-            <Link to="/become-a-partner">
-              <button
-                className="px-6 py-2.5 bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 text-sm whitespace-nowrap"
-                style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600 }}
-              >
-                Become a Partner
-              </button>
-            </Link>
+            {!isPartnerPage && (
+              <Link to="/become-a-partner">
+                <button
+                  className="px-6 py-2.5 bg-gradient-to-r from-green-500 to-green-600 text-white font-semibold rounded-full shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5 text-sm whitespace-nowrap"
+                  style={{ fontFamily: "'Inter', sans-serif", fontWeight: 600 }}
+                >
+                  Become a Partner
+                </button>
+              </Link>
+            )}
           </div>
 
           <button
@@ -216,24 +220,26 @@ export const MarketingHeader: React.FC = () => {
 
             {/* Action Buttons Section */}
             <div className="px-4 pb-8 pt-4 space-y-3">
-              <Link
-                to="/become-a-partner"
-                className="flex items-center justify-center gap-2.5 px-5 py-3.5 bg-gradient-to-r from-emerald-50 to-green-50 text-emerald-700 border-2 border-emerald-300 hover:border-emerald-500 hover:bg-emerald-100/60 active:bg-emerald-200 rounded-2xl transition-all duration-300 font-semibold text-base shadow-md hover:shadow-lg transform hover:scale-105"
-                onClick={() => setIsMobileMenuOpen(false)}
-                style={{ fontFamily: "'Inter', sans-serif" }}
-              >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                <span>Become a Partner</span>
-              </Link>
+              {!isPartnerPage && (
+                <Link
+                  to="/become-a-partner"
+                  className="flex items-center justify-center gap-2.5 px-5 py-3.5 bg-gradient-to-r from-emerald-50 to-green-50 text-emerald-700 border-2 border-emerald-300 hover:border-emerald-500 hover:bg-emerald-100/60 active:bg-emerald-200 rounded-2xl transition-all duration-300 font-semibold text-base shadow-md hover:shadow-lg transform hover:scale-105"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  style={{ fontFamily: "'Inter', sans-serif" }}
+                >
+                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                  <span>Become a Partner</span>
+                </Link>
+              )}
 
               <button
                 onClick={() => {
                   setIsMobileMenuOpen(false);
                   setShowLoginModal(true);
                 }}
-                className="flex items-center justify-center gap-2.5 px-5 py-3.5 bg-gradient-to-r from-emerald-600 to-green-600 text-white hover:from-emerald-700 hover:to-green-700 active:from-emerald-800 active:to-green-800 rounded-2xl transition-all duration-300 font-semibold text-base shadow-lg hover:shadow-2xl transform hover:scale-105 w-full"
+                className={`flex items-center justify-center gap-2.5 px-5 py-3.5 bg-gradient-to-r from-emerald-600 to-green-600 text-white hover:from-emerald-700 hover:to-green-700 active:from-emerald-800 active:to-green-800 rounded-2xl transition-all duration-300 font-semibold text-base shadow-lg hover:shadow-2xl transform hover:scale-105 ${!isPartnerPage ? 'w-full' : 'w-full'}`}
                 style={{ fontFamily: "'Inter', sans-serif" }}
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
