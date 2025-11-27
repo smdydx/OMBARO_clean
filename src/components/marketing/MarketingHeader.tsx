@@ -42,6 +42,15 @@ const styles = `
     }
   }
   
+  @keyframes auto-blink {
+    0%, 100% {
+      box-shadow: 0 0 8px rgba(16, 185, 129, 0.5), 0 0 16px rgba(16, 185, 129, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(16, 185, 129, 1), 0 0 30px rgba(16, 185, 129, 0.7), inset 0 0 10px rgba(16, 185, 129, 0.3);
+    }
+  }
+  
   @keyframes slide-down {
     from {
       transform: translateY(-100%);
@@ -68,16 +77,8 @@ const styles = `
     left: 0;
   }
   
-  .logo-hover-spin:hover {
-    animation: logo-spin 0.8s ease-in-out;
-  }
-  
   .logo-container {
-    transition: all 0.3s ease;
-  }
-  
-  .logo-hover-spin:hover .logo-container {
-    animation: logo-glow 1.5s ease-in-out infinite;
+    animation: auto-blink 2s ease-in-out infinite;
   }
   
   .mobile-menu-slide {
