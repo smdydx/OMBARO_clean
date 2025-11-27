@@ -704,7 +704,7 @@ export const HomePage: React.FC = () => {
             backgroundImage: 'url(/about-us-bg.jpg)',
             backgroundSize: 'cover',
             backgroundPosition: 'center',
-            backgroundAttachment: 'fixed'
+            backgroundRepeat: 'no-repeat'
           }}
         >
           <div className="absolute top-0 left-0 w-full h-24 sm:h-32 opacity-30">
