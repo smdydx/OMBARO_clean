@@ -581,12 +581,12 @@ export const HomePage: React.FC = () => {
           ref={heroRef}
           className="relative overflow-hidden bg-gradient-to-br from-gray-900 via-emerald-950 to-black py-8 sm:py-12 md:py-16 lg:py-20 scroll-revealed"
           style={{
-            backgroundImage: 'url(/relax-enjoy-bg.jpg)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            minHeight: '100vh',
-            backgroundAttachment: 'scroll'
+            backgroundImage: "url(/relax-enjoy-bg.jpg)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            minHeight: "100vh",
+            backgroundAttachment: "scroll",
           }}
         >
           <div className="absolute inset-0 overflow-hidden opacity-30">
@@ -619,13 +619,27 @@ export const HomePage: React.FC = () => {
               <div className="space-y-4 sm:space-y-6 w-full px-2 sm:px-0">
                 <h1
                   className="text-7xl sm:text-8xl md:text-8xl lg:text-8xl xl:text-9xl leading-tight w-full"
-                  style={{ letterSpacing: "0.02em", fontFamily: "'Poppins', sans-serif" }}
+                  style={{
+                    letterSpacing: "0.02em",
+                    fontFamily: "'Poppins', sans-serif",
+                  }}
                 >
-                  <span className="font-bold bg-gradient-to-r from-emerald-700 via-green-700 to-emerald-800 bg-clip-text text-transparent">RELAX</span>
-                  <span className="font-light bg-gradient-to-r from-emerald-700 via-green-700 to-emerald-800 bg-clip-text text-transparent"> & ENJOY</span>
+                  <span className="font-bold bg-gradient-to-r from-emerald-700 via-green-700 to-emerald-800 bg-clip-text text-transparent text-3xl sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl">
+                    RELAX
+                  </span>
+                  <span className="font-light bg-gradient-to-r from-emerald-700 via-green-700 to-emerald-800 bg-clip-text text-transparent text-3xl sm:text-3xl md:text-3xl lg:text-3xl xl:text-4xl">
+                    {" "}
+                    & ENJOY
+                  </span>
                 </h1>
 
-                <p className="hero-subtitle bg-gradient-to-r from-emerald-600 via-green-700 to-emerald-700 bg-clip-text text-transparent text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-xl font-light" style={{ fontFamily: "'Inter', sans-serif", fontWeight: "300" }}>
+                <p
+                  className="hero-subtitle bg-gradient-to-r from-emerald-600 via-green-700 to-emerald-700 bg-clip-text text-transparent text-sm sm:text-base md:text-lg lg:text-xl leading-relaxed max-w-xl font-light"
+                  style={{
+                    fontFamily: "'Inter', sans-serif",
+                    fontWeight: "300",
+                  }}
+                >
                   Experience ultimate relaxation with our premium spa and
                   wellness services. Book your perfect moment of tranquility
                   today.
@@ -708,12 +722,12 @@ export const HomePage: React.FC = () => {
           ref={aboutRef}
           className="relative py-16 sm:py-20 md:py-24 lg:py-32 bg-gradient-to-b from-black via-gray-900 to-emerald-950 overflow-hidden"
           style={{
-            backgroundImage: 'url(/about-us-bg.jpg)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            minHeight: '100vh',
-            backgroundAttachment: 'scroll'
+            backgroundImage: "url(/about-us-bg.jpg)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            minHeight: "100vh",
+            backgroundAttachment: "scroll",
           }}
         >
           <div className="absolute top-0 left-0 w-full h-24 sm:h-32 opacity-30">
@@ -751,7 +765,7 @@ export const HomePage: React.FC = () => {
                   <h2 className="animate-on-scroll-left stagger-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white mb-4 sm:mb-6 font-normal">
                     Your Wellness Partner, At Your Doorstep
                   </h2>
-                  <p className="animate-on-scroll-left stagger-3 text-white/90 text-sm sm:text-base md:text-md lg:text-md xl:text-xl leading-relaxed">
+                  <p className="animate-on-scroll-left stagger-3 text-white/90 text-sm sm:text-base md:text-md lg:text-md xl:text-xl leading-relaxed font-light" style={{ fontFamily: "'Inter', sans-serif", fontWeight: "300" }}>
                     Ombaro delivers professional spa and salon services wherever
                     you need them. With certified therapists and experienced
                     beauty experts, we guarantee quality, hygiene, and comfort.
@@ -930,12 +944,12 @@ export const HomePage: React.FC = () => {
           ref={whyChooseRef}
           className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-b from-black via-gray-900 to-emerald-950 overflow-hidden"
           style={{
-            backgroundImage: 'url(/why-choose-us-bg.jpg)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            minHeight: '100vh',
-            backgroundAttachment: 'scroll'
+            backgroundImage: "url(/why-choose-us-bg.jpg)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            minHeight: "100vh",
+            backgroundAttachment: "scroll",
           }}
         >
           <div className="absolute top-0 left-0 w-full h-24 sm:h-32 opacity-30">
@@ -1147,12 +1161,12 @@ export const HomePage: React.FC = () => {
           ref={faqRef}
           className="relative py-12 sm:py-16 md:py-20 bg-gradient-to-b from-emerald-950 via-gray-900 to-black overflow-hidden"
           style={{
-            backgroundImage: 'url(/faq-bg.jpg)',
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-            minHeight: '100vh',
-            backgroundAttachment: 'scroll'
+            backgroundImage: "url(/faq-bg.jpg)",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            minHeight: "100vh",
+            backgroundAttachment: "scroll",
           }}
         >
           <div className="absolute bottom-0 left-0 w-full h-32 sm:h-40 md:h-48 opacity-20">
