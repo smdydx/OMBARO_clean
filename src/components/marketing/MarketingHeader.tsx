@@ -144,7 +144,7 @@ export const MarketingHeader: React.FC = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className="px-3 xl:px-4 py-2.5 text-gray-700 hover:text-gray-900 font-medium transition-all duration-200 hover:bg-emerald-50 rounded-lg text-sm whitespace-nowrap"
+                className="px-3 xl:px-4 py-2.5 text-gray-700 hover:text-white hover:bg-emerald-700 font-medium transition-all duration-200 rounded-lg text-sm whitespace-nowrap"
                 style={{ fontFamily: "'Inter', sans-serif", fontWeight: 500 }}
               >
                 {link.name}
