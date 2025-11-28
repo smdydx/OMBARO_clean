@@ -867,7 +867,7 @@ export const HomePage: React.FC = () => {
               <p className="animate-on-scroll-fade stagger-1 text-xs sm:text-sm font-semibold text-emerald-400 tracking-wider mb-2 sm:mb-3 uppercase">
                 Our Services
               </p>
-              <h2 className="animate-on-scroll-left stagger-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl bg-gradient-to-r from-white via-pink-400 to-green-500 bg-clip-text text-transparent font-normal">
+              <h2 className="animate-on-scroll-left stagger-2 text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl bg-gradient-to-r from-white to-yellow-400 bg-clip-text text-transparent font-normal">
                 Luxury Wellness Services, Anytime. Anywhere.
               </h2>
             </div>
