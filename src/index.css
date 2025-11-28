@@ -872,6 +872,20 @@ img {
   }
 }
 
+/* Mobile Background Image Optimization */
+@media (max-width: 768px) {
+  [class*="bg-hero"],
+  section[style*="backgroundImage"] {
+    background-attachment: scroll !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+  
+  .parallax-image {
+    will-change: auto;
+  }
+}
+
 /* Selection Color */
 ::selection {
   background: linear-gradient(135deg, rgba(var(--secondary-500), 0.4), rgba(var(--accent-600), 0.4));

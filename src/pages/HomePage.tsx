@@ -583,10 +583,10 @@ export const HomePage: React.FC = () => {
           style={{
             backgroundImage: "url(/relax-enjoy-bg.jpg)",
             backgroundSize: "cover",
-            backgroundPosition: "center",
+            backgroundPosition: "center bottom",
             backgroundRepeat: "no-repeat",
             minHeight: "100vh",
-            backgroundAttachment: "scroll",
+            backgroundAttachment: window.innerWidth > 768 ? "fixed" : "scroll",
           }}
         >
           <div className="absolute inset-0 overflow-hidden opacity-30">
@@ -995,10 +995,10 @@ export const HomePage: React.FC = () => {
           style={{
             backgroundImage: "url(/why-choose-us-bg.jpg)",
             backgroundSize: "cover",
-            backgroundPosition: "center",
+            backgroundPosition: "center right",
             backgroundRepeat: "no-repeat",
             minHeight: "100vh",
-            backgroundAttachment: "scroll",
+            backgroundAttachment: window.innerWidth > 768 ? "fixed" : "scroll",
           }}
         >
           <div className="absolute top-0 left-0 w-full h-24 sm:h-32 opacity-30">
@@ -1212,10 +1212,10 @@ export const HomePage: React.FC = () => {
           style={{
             backgroundImage: "url(/faq-bg.jpg)",
             backgroundSize: "cover",
-            backgroundPosition: "center",
+            backgroundPosition: "center left",
             backgroundRepeat: "no-repeat",
             minHeight: "100vh",
-            backgroundAttachment: "scroll",
+            backgroundAttachment: window.innerWidth > 768 ? "fixed" : "scroll",
           }}
         >
           <div className="absolute bottom-0 left-0 w-full h-32 sm:h-40 md:h-48 opacity-20">
